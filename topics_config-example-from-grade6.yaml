@@ -1,0 +1,712 @@
+# ============================================================================
+# Grade 6 Math — Topics & State Configuration
+# Single source of truth for all book types (all_in_one, study_guide, workbook,
+# step_by_step, in_30_days, practice_tests). Both generate_state_books.py and
+# generate_practice_tests.py read this file instead of keeping topic data in
+# Python code.
+# ============================================================================
+
+
+# ============================================================================
+# CHAPTERS — Core CCSS topics that every US state receives
+# ============================================================================
+# Each chapter lists its topics in teaching order.
+# - id:   Topic identifier (chXX-YY) used as the key everywhere
+# - name: Human-readable display name (for comments, headers, progress pages)
+# - file: Filename slug WITHOUT directory prefix or .tex extension
+#         The Python scripts prepend the correct directory (topics/, topics_workbook/,
+#         topics_modified/, topics_additional/, etc.) based on context.
+
+chapters:
+  - num: 1
+    title: "Ratios, Rates, and Percents"
+    topics:
+      - id: ch01-01
+        name: "What Is a Ratio?"
+        file: ch01-01-what-is-a-ratio
+        content: "Students learn that a ratio compares two amounts. They practice writing ratios in different ways (3 to 2, 3:2, 3/2) using real examples like colors of blocks."
+      - id: ch01-02
+        name: "Using Ratio Language"
+        file: ch01-02-using-ratio-language
+        content: "Students describe situations using ratio words like 'for every' and 'per.' They connect words to math expressions and simple diagrams like tape diagrams."
+      - id: ch01-03
+        name: "What Is a Rate?"
+        file: ch01-03-what-is-a-rate
+        content: "Students learn that a rate is a special ratio comparing two different units, like dollars per item. They identify units and write rates clearly."
+      - id: ch01-04
+        name: "Finding the Unit Rate"
+        file: ch01-04-finding-the-unit-rate
+        content: "Students find a unit rate by making the second quantity 1 (like miles per 1 hour). They use division to solve unit rate problems involving unit pricing and constant speed."
+      - id: ch01-05
+        name: "Tables of Equivalent Ratios"
+        file: ch01-05-tables-of-equivalent-ratios
+        content: "Students build ratio tables that keep the same relationship. They multiply or divide both parts to find missing values, compare ratios using tables, and connect tables to double number lines."
+      - id: ch01-06
+        name: "Graphing Ratios"
+        file: ch01-06-graphing-ratios
+        content: "Students plot ratio pairs on a coordinate plane and look for patterns. They notice that equivalent ratios form a straight line and use graphs to find missing values."
+      - id: ch01-07
+        name: "What Is a Percent?"
+        file: ch01-07-what-is-a-percent
+        content: "Students learn that a percent is a rate per 100. They model percents using grids and connect them to fractions and ratios in simple real-life contexts."
+      - id: ch01-08
+        name: "Solving Percent Problems"
+        file: ch01-08-solving-percent-problems
+        content: "Students solve problems like '30% of 50' using multiplication, fractions, or ratio reasoning. They also find the whole when given a part and the percent, and estimate to check if answers are reasonable."
+      - id: ch01-09
+        name: "Solving Rate and Ratio Word Problems"
+        file: ch01-09-solving-rate-and-ratio-word-problems
+        content: "Students choose tools (tables, tape diagrams, double number lines, equations) to solve real problems. They explain their reasoning with units and clear steps."
+      - id: ch01-10
+        name: "Converting Measurement Units"
+        file: ch01-10-converting-measurement-units
+        content: "Students convert units (minutes to hours, centimeters to meters) using multiplication or division with ratio reasoning. They track units to avoid mistakes."
+
+  - num: 2
+    title: "The Number System"
+    topics:
+      - id: ch02-01
+        name: "Dividing Fractions by Fractions"
+        file: ch02-01-dividing-fractions-by-fractions
+        content: "Students interpret division of fractions by fractions with pictures and stories. They connect division to multiplication to explain why the procedure for dividing fractions works."
+      - id: ch02-02
+        name: "Multi-Digit Division"
+        file: ch02-02-multi-digit-division
+        content: "Students divide multi-digit whole numbers using the standard algorithm. They estimate first and check answers with multiplication."
+      - id: ch02-03
+        name: "Decimal Operations"
+        file: ch02-03-decimal-operations
+        content: "Students add, subtract, multiply, and divide decimals fluently using standard algorithms. They use place value to line up decimals and check reasonableness."
+      - id: ch02-04
+        name: "Greatest Common Factor and Least Common Multiple"
+        file: ch02-04-gcf-and-lcm
+        content: "Students find the greatest common factor of two whole numbers up to 100 and the least common multiple of two whole numbers up to 12. They use factor pairs, lists, and prime factorization to identify common factors and multiples."
+      - id: ch02-05
+        name: "The Distributive Property with Common Factors"
+        file: ch02-05-distributive-property-with-common-factors
+        content: "Students rewrite sums like 36 + 8 as 4(9 + 2) using the distributive property. They practice factoring numbers to make mental math easier."
+      - id: ch02-06
+        name: "Understanding Positive and Negative Numbers"
+        file: ch02-06-understanding-positive-and-negative-numbers
+        content: "Students learn that positive and negative numbers describe opposite directions or values (like temperatures or money). They explain what 0 means in each context."
+      - id: ch02-07
+        name: "Opposites and Absolute Value"
+        file: ch02-07-opposites-and-absolute-value
+        content: "Students understand opposites on a number line and that absolute value is distance from 0. They interpret absolute value in real situations like debt size, and learn to distinguish between how large a number's absolute value is and where the number falls on the number line."
+      - id: ch02-08
+        name: "Rational Numbers on the Number Line"
+        file: ch02-08-rational-numbers-on-the-number-line
+        content: "Students place integers, fractions, and decimals on horizontal and vertical number lines. They explain placement using distance and direction from 0."
+      - id: ch02-09
+        name: "The Coordinate Plane"
+        file: ch02-09-the-coordinate-plane
+        content: "Students plot points with positive and negative coordinates and identify all four quadrants. They describe how changing signs reflects points across axes."
+      - id: ch02-10
+        name: "Comparing and Ordering Rational Numbers"
+        file: ch02-10-comparing-and-ordering-rational-numbers
+        content: "Students compare rational numbers using inequalities and number lines. They explain what an inequality means in context (like warmer vs. colder) and distinguish between the order of numbers and comparisons of their absolute values."
+      - id: ch02-11
+        name: "Distance on the Coordinate Plane"
+        file: ch02-11-distance-on-the-coordinate-plane
+        content: "Students find distances between points that share the same x or the same y using absolute value. They apply this to real-world grid problems."
+
+  - num: 3
+    title: "Expressions and Equations"
+    topics:
+      - id: ch03-01
+        name: "Exponents and Order of Operations"
+        file: ch03-01-exponents-and-order-of-operations
+        content: "Students write and evaluate expressions with whole-number exponents, connecting exponents to repeated multiplication. They apply the standard order of operations (including exponents) to evaluate numerical expressions correctly."
+      - id: ch03-02
+        name: "Translating Words into Expressions"
+        file: ch03-02-translating-words-into-expressions
+        content: "Students translate word phrases into algebraic expressions, like 'subtract y from 5' → 5 − y. They practice matching everyday language to operations and variables."
+      - id: ch03-03
+        name: "Terms, Factors, and Coefficients"
+        file: ch03-03-terms-factors-and-coefficients
+        content: "Students identify parts of an expression: terms, factors, coefficients, and constants. They learn to see groups like (x + 7) as one piece when needed."
+      - id: ch03-04
+        name: "Evaluating Expressions"
+        file: ch03-04-evaluating-expressions
+        content: "Students substitute values for variables and compute using the order of operations. They evaluate expressions that come from real formulas."
+      - id: ch03-05
+        name: "Equivalent Expressions"
+        file: ch03-05-equivalent-expressions
+        content: "Students use properties (especially the distributive property) to rewrite expressions without changing their value. They check equivalence by testing with specific values."
+      - id: ch03-06
+        name: "Variables in Real-World Problems"
+        file: ch03-06-variables-in-real-world-problems
+        content: "Students use variables to represent unknown numbers in real-world and math problems. They understand that a variable can stand for one unknown value or for any number in a set."
+      - id: ch03-07
+        name: "Solving One-Step Equations"
+        file: ch03-07-solving-one-step-equations
+        content: "Students solve equations like x + p = q and px = q by undoing operations. They use substitution to test whether a given value makes an equation true and verify their solutions."
+      - id: ch03-08
+        name: "Writing Inequalities"
+        file: ch03-08-writing-inequalities
+        content: "Students write inequalities for statements like 'at least' and 'no more than.' They recognize that inequalities like x > 5 have infinitely many solutions."
+      - id: ch03-09
+        name: "Graphing Inequalities on a Number Line"
+        file: ch03-09-graphing-inequalities-on-a-number-line
+        content: "Students represent solutions to inequalities like x > c and x < c on a number line. They test values to confirm which numbers are solutions."
+      - id: ch03-10
+        name: "Two Quantities That Change Together"
+        file: ch03-10-two-quantities-that-change-together
+        content: "Students use tables, graphs, and equations to describe how one quantity depends on another. They label variables clearly as independent and dependent."
+
+  - num: 4
+    title: "Geometry: Area, Surface Area, and Volume"
+    topics:
+      - id: ch04-01
+        name: "Area of Triangles"
+        file: ch04-01-area-of-triangles
+        content: "Students find the area of right triangles and other triangles by composing or decomposing shapes. They connect triangle area to rectangle area."
+      - id: ch04-02
+        name: "Area of Parallelograms and Trapezoids"
+        file: ch04-02-area-of-parallelograms-and-trapezoids
+        content: "Students find the area of parallelograms, trapezoids, and other quadrilaterals by breaking them into known shapes. They explain their method with diagrams."
+      - id: ch04-03
+        name: "Volume of Rectangular Prisms"
+        file: ch04-03-volume-of-rectangular-prisms
+        content: "Students compute volume using V = lwh, including cases with fractional edge lengths. They interpret volume as how many unit cubes fit inside."
+      - id: ch04-04
+        name: "Polygons on the Coordinate Plane"
+        file: ch04-04-polygons-on-the-coordinate-plane
+        content: "Students plot points to draw polygons in the coordinate plane. They use coordinates to describe side lengths (especially horizontal and vertical segments)."
+      - id: ch04-05
+        name: "Finding Area on the Coordinate Plane"
+        file: ch04-05-finding-area-on-the-coordinate-plane
+        content: "Students find area of polygons drawn on a grid by decomposing into rectangles and triangles. They check answers using counting and formulas."
+      - id: ch04-06
+        name: "Nets and Surface Area"
+        file: ch04-06-nets-and-surface-area
+        content: "Students use nets to represent 3D shapes and find surface area by adding areas of all faces. They connect nets to real objects like boxes."
+
+  - num: 5
+    title: "Statistics and Data"
+    topics:
+      - id: ch05-01
+        name: "Statistical Questions"
+        file: ch05-01-statistical-questions
+        content: "Students learn that statistical questions have answers that vary (like 'How many minutes do students spend on homework?'). They distinguish statistical questions from non-statistical ones and collect data to answer them."
+      - id: ch05-02
+        name: "Describing Data: Center, Spread, and Shape"
+        file: ch05-02-describing-data-center-spread-shape
+        content: "Students describe a data set by its center, spread, and overall shape. They learn to notice clusters, gaps, and outliers in data displays."
+      - id: ch05-03
+        name: "Mean and Median"
+        file: ch05-03-mean-and-median
+        content: "Students find the mean and median for data sets and explain what each one represents. They compare which measure of center is more useful in different situations."
+      - id: ch05-04
+        name: "Measures of Spread"
+        file: ch05-04-measures-of-spread
+        content: "Students describe how spread out data is using range, interquartile range (IQR), and mean absolute deviation (MAD). They connect variability to how consistent data values are."
+      - id: ch05-05
+        name: "Dot Plots and Histograms"
+        file: ch05-05-dot-plots-and-histograms
+        content: "Students display data using dot plots and histograms and interpret what the graphs show. They answer questions using the visual information."
+      - id: ch05-06
+        name: "Box Plots"
+        file: ch05-06-box-plots
+        content: "Students learn how box plots show median and spread using quartiles. They compare two box plots to discuss differences between groups."
+      - id: ch05-07
+        name: "Summarizing Data and Making Comparisons"
+        file: ch05-07-summarizing-data-and-making-comparisons
+        content: "Students summarize numerical data by describing center and spread, then compare two data sets. They choose appropriate measures based on the shape of the data and support claims using numbers and graphs."
+
+
+# ============================================================================
+# ADDITIONAL TOPICS — State-specific topics beyond CCSS
+# ============================================================================
+# These are supplementary topics. Only states that list a topic ID in their
+# 'additional' field will include it. The 'chapter' field determines where
+# the topic is inserted (after the last core topic in that chapter).
+#
+# Verified against official state standards (TEKS, B.E.S.T., SOL, MN 2022,
+# OAS-M 2022, IAS 2023, AK GL).  Each topic is required by at least one
+# reviewed state's Grade 6 standards.
+
+additional_topics:
+  - id: add-01
+    name: "Integer Addition and Subtraction"
+    file: add-01-integer-addition-and-subtraction
+    chapter: 2
+    content: "Add and subtract integers fluently using number lines, chips, and rules for signs; solve real-world problems involving gains and losses."
+  - id: add-02
+    name: "Integer Multiplication and Division"
+    file: add-02-integer-multiplication-and-division
+    chapter: 2
+    content: "Multiply and divide integers using sign rules; apply integer operations to solve multi-step real-world and mathematical problems."
+  - id: add-03
+    name: "Personal Financial Literacy"
+    file: add-03-personal-financial-literacy
+    chapter: 1
+    content: "Compare income sources and payment methods; distinguish needs from wants; create simple budgets; understand credit, debit, and savings concepts."
+  - id: add-04
+    name: "Introduction to Probability"
+    file: add-04-introduction-to-probability
+    chapter: 5
+    content: "Describe the probability of events as impossible, unlikely, equally likely, likely, or certain; express simple probabilities as fractions, decimals, and percents."
+  - id: add-05
+    name: "Stem-and-Leaf Plots"
+    file: add-05-stem-and-leaf-plots
+    chapter: 5
+    content: "Organize and display data using stem-and-leaf plots; read and interpret stem-and-leaf plots to find measures of center and spread."
+  - id: add-06
+    name: "Circle Graphs"
+    file: add-06-circle-graphs
+    chapter: 5
+    content: "Read and interpret circle (pie) graphs; relate sectors to fractions, decimals, and percents of a whole data set."
+  - id: add-07
+    name: "Proportional vs. Non-Proportional Relationships"
+    file: add-07-proportional-vs-non-proportional
+    chapter: 1
+    content: "Distinguish proportional relationships from non-proportional ones using tables, graphs, and equations; identify the constant of proportionality."
+  - id: add-08
+    name: "Transformations on the Coordinate Plane"
+    file: add-08-transformations-on-the-coordinate-plane
+    chapter: 4
+    content: "Identify and perform reflections and translations of figures on the coordinate plane; describe the effect on coordinates."
+  - id: add-09
+    name: "Financial Literacy — Budgeting and Saving"
+    file: add-09-financial-literacy-budgeting-and-saving
+    chapter: 1
+    content: "Create and analyze budgets with fixed and variable expenses; compare savings plans and calculate simple interest; understand opportunity costs."
+  - id: add-10
+    name: "Compute with Integers in Context"
+    file: add-10-compute-with-integers-in-context
+    chapter: 2
+    content: "Apply all four operations with integers in extended real-world contexts such as temperature change, elevation, and financial transactions."
+  - id: add-11
+    name: "Data Displays Extended"
+    file: add-11-data-displays-extended
+    chapter: 5
+    content: "Read and create frequency tables, double bar graphs, and line graphs; solve multi-step problems from data displays."
+  - id: add-12
+    name: "Area of Circles Introduction"
+    file: add-12-area-of-circles-introduction
+    chapter: 4
+    content: "Explore pi as the ratio of circumference to diameter; estimate and calculate circumference and area of circles using formulas."
+  - id: add-13
+    name: "Ratios with Scale Drawings"
+    file: add-13-ratios-with-scale-drawings
+    chapter: 1
+    content: "Use ratios and proportional reasoning to interpret and create scale drawings; find actual lengths from scale models."
+
+
+# ============================================================================
+# MODIFIED TOPICS — Variants of core topics for specific states
+# ============================================================================
+# These replace the corresponding core topic file (from topics/) with a
+# version in topics_modified/ that keeps ALL core CCSS content but adds
+# state-specific emphasis, contexts, or preview material.
+#
+# - file:     Must match the core topic's file slug (loaded from topics_modified/)
+# - core_id:  The core topic ID this modifies
+# - states:   Which states use this modified version
+# - content:  Description of what was changed compared to the core version
+
+modified_topics:
+  - file: ch01-04-finding-the-unit-rate
+    core_id: ch01-04
+    states: [TX]
+    content: "TX financial literacy emphasis. Replaces generic examples with unit pricing contexts: grocery store brand comparison, phone plans, streaming services, cell plan per-line costs. All problems use real-money scenarios."
+  - file: ch01-07-what-is-a-percent
+    core_id: ch01-07
+    states: [MN, TX]
+    content: "Proportional + financial literacy emphasis. Reduces grid-model focus; adds percent-as-ratio connection. Worked example covers sales tax, discount, and tip calculations. Practice includes money application problems (video game tax, restaurant tip, coupon savings)."
+  - file: ch01-08-solving-percent-problems
+    core_id: ch01-08
+    states: [TX]
+    content: "TX PFL emphasis. Replaces generic percent problems with tax, tip, markup/markdown contexts. Adds simple interest preview with I = P × r × t formula and savings-bond example. All practice problems use financial scenarios."
+  - file: ch01-09-solving-rate-and-ratio-word-problems
+    core_id: ch01-09
+    states: [OK]
+    content: "OK estimation emphasis. Adds 'Estimation' as a fifth strategy alongside ratio tables, tape diagrams, unit rates, and equations. Every worked example and practice problem includes an estimate-first step and a reasonableness check. Adds warningBox on checking answers."
+  - file: ch02-06-understanding-positive-and-negative-numbers
+    core_id: ch02-06
+    states: [AK, FL, MN, OK, TX, VA]
+    content: "Integer addition preview. Keeps all core content (positive/negative concept, number line, real-world contexts). Adds a new conceptBox with number-line addition model and quick rules for same-sign/different-sign addition. Includes integer addition practice problems and a bank-balance word problem. Bridges to add-01/add-02 additional topics."
+  - file: ch02-07-opposites-and-absolute-value
+    core_id: ch02-07
+    states: [FL, TX, VA]
+    content: "Financial absolute value applications. Keeps opposites and absolute value core content. Replaces diver/bird comparison with financial contexts: comparing account debts (who owes more?), profit-vs-loss distance from break-even. Practice includes account balance and store profit/loss problems."
+  - file: ch04-04-polygons-on-the-coordinate-plane
+    core_id: ch04-04
+    states: [IN, VA]
+    content: "Reflection preview. Keeps coordinate side-length content. Adds a conceptBox on reflecting points across axes: x-axis flips y-sign, y-axis flips x-sign. Practice includes single-point reflections and whole-triangle reflection across the x-axis. Bridges to add-08 transformations topic."
+  - file: ch05-03-mean-and-median
+    core_id: ch05-03
+    states: [AK]
+    content: "Culturally responsive Alaskan contexts. Same mean/median math but all examples use Alaska-relevant data: salmon catch per day, Fairbanks daily low temperatures (including negative values), moose survey counts, salmon weight outliers, and Anchorage monthly snowfall."
+  - file: ch05-05-dot-plots-and-histograms
+    core_id: ch05-05
+    states: [FL, IN, MN, OK, TX, VA]
+    content: "Adds frequency tables and mode. Restructures from 'Two Ways' to 'Three Ways to Display Data' (frequency table, dot plot, histogram). Worked example builds a frequency table from raw data and identifies the mode. Practice adds frequency-table construction, mode identification, and a categorical-vs-numerical display choice problem."
+  - file: ch05-06-box-plots
+    core_id: ch05-06
+    states: [TX]
+    content: "Interpretation and comparison focus. Keeps five-number summary content but shifts worked example to reading and comparing two class box plots via a table. Adds whisker-interpretation problem and store-traffic comparison problem. Less emphasis on raw IQR computation, more on what box plot features mean in context."
+  - file: ch05-07-summarizing-data-and-making-comparisons
+    core_id: ch05-07
+    states: [AK, FL, IN, MN, OK, TX, VA]
+    content: "De-emphasizes MAD. Replaces MAD as primary variability measure with IQR and range. Worked example uses IQR instead of MAD for team comparison. Key-idea rule updated: 'Use median and IQR when skewed; use mean and range when symmetric.' Store comparison uses range instead of MAD."
+
+
+# ============================================================================
+# IN 30 DAYS — Day-to-topic mapping for the "Math in 30 Days" book type
+# ============================================================================
+# Each entry maps a day number to a filename and the CCSS topic IDs it covers.
+# bonus_after: list of additional topic IDs to insert after the day (if state uses them)
+# chapters: which days start a new \chapter in the generated .tex
+
+in_30_days:
+  days:
+    # Chapter 1: Ratios, Rates, and Percents (Days 1–6)
+    - day: 1
+      file: day-01-what-is-a-ratio
+      topics: [ch01-01, ch01-02]
+    - day: 2
+      file: day-02-rates-and-unit-rates
+      topics: [ch01-03, ch01-04]
+    - day: 3
+      file: day-03-tables-and-graphs-of-ratios
+      topics: [ch01-05, ch01-06]
+    - day: 4
+      file: day-04-percents
+      topics: [ch01-07, ch01-08]
+    - day: 5
+      file: day-05-ratio-word-problems
+      topics: [ch01-09]
+    - day: 6
+      file: day-06-converting-measurement-units
+      topics: [ch01-10]
+
+    # Chapter 2: The Number System (Days 7–13)
+    - day: 7
+      file: day-07-dividing-fractions-by-fractions
+      topics: [ch02-01]
+    - day: 8
+      file: day-08-multi-digit-division-and-decimals
+      topics: [ch02-02, ch02-03]
+    - day: 9
+      file: day-09-gcf-lcm-and-distributive-property
+      topics: [ch02-04, ch02-05]
+    - day: 10
+      file: day-10-positive-negative-and-absolute-value
+      topics: [ch02-06, ch02-07]
+    - day: 11
+      file: day-11-rational-numbers-on-the-number-line
+      topics: [ch02-08]
+    - day: 12
+      file: day-12-the-coordinate-plane
+      topics: [ch02-09]
+    - day: 13
+      file: day-13-comparing-rationals-and-distance
+      topics: [ch02-10, ch02-11]
+
+    # Chapter 3: Expressions and Equations (Days 14–20)
+    - day: 14
+      file: day-14-exponents-and-order-of-operations
+      topics: [ch03-01]
+    - day: 15
+      file: day-15-translating-words-and-identifying-parts
+      topics: [ch03-02, ch03-03]
+    - day: 16
+      file: day-16-evaluating-and-equivalent-expressions
+      topics: [ch03-04, ch03-05]
+    - day: 17
+      file: day-17-variables-in-real-world-problems
+      topics: [ch03-06]
+    - day: 18
+      file: day-18-solving-one-step-equations
+      topics: [ch03-07]
+    - day: 19
+      file: day-19-writing-and-graphing-inequalities
+      topics: [ch03-08, ch03-09]
+    - day: 20
+      file: day-20-two-quantities-that-change-together
+      topics: [ch03-10]
+
+    # Chapter 4: Geometry — Area, Surface Area, and Volume (Days 21–25)
+    - day: 21
+      file: day-21-area-of-triangles
+      topics: [ch04-01]
+    - day: 22
+      file: day-22-area-of-parallelograms-and-trapezoids
+      topics: [ch04-02]
+    - day: 23
+      file: day-23-volume-of-rectangular-prisms
+      topics: [ch04-03]
+    - day: 24
+      file: day-24-polygons-and-area-on-coordinate-plane
+      topics: [ch04-04, ch04-05]
+    - day: 25
+      file: day-25-nets-and-surface-area
+      topics: [ch04-06]
+
+    # Chapter 5: Statistics and Data (Days 26–30)
+    - day: 26
+      file: day-26-statistical-questions-and-describing-data
+      topics: [ch05-01, ch05-02]
+    - day: 27
+      file: day-27-mean-and-median
+      topics: [ch05-03]
+    - day: 28
+      file: day-28-measures-of-spread
+      topics: [ch05-04]
+    - day: 29
+      file: day-29-dot-plots-histograms-and-box-plots
+      topics: [ch05-05, ch05-06]
+    - day: 30
+      file: day-30-summarizing-data-and-comparisons
+      topics: [ch05-07]
+
+  # Chapter boundaries (which days start a new \chapter)
+  chapters:
+    - chapter: 1
+      title: "Ratios, Rates, and Percents"
+      start_day: 1
+      end_day: 6
+    - chapter: 2
+      title: "The Number System"
+      start_day: 7
+      end_day: 13
+    - chapter: 3
+      title: "Expressions and Equations"
+      start_day: 14
+      end_day: 20
+    - chapter: 4
+      title: "Geometry: Area, Surface Area \\& Volume"
+      start_day: 21
+      end_day: 25
+    - chapter: 5
+      title: "Statistics \\& Data"
+      start_day: 26
+      end_day: 30
+
+
+# ============================================================================
+# US STATES — All 50 states with optional customizations
+# ============================================================================
+# - name:       Display name (used in book titles and headers)
+# - additional: List of additional topic IDs this state includes
+# - modified:   List of core topic IDs that use modified versions
+#               (file loaded from topics_modified/ instead of topics/)
+#
+# File slugs must match the 'file' field defined in chapters or
+# additional_topics above.  Using full slugs rather than bare IDs
+# makes each entry self-documenting and allows future per-state
+# variants of the same topic.
+#
+# States with NO additional or modified fields use the pure CCSS curriculum.
+#
+# Verified profiles (11 states with modifications):
+#   AK  — Alaska GL (CCSS base + integer context, data displays)
+#   CO  — CAS 2020 (personal financial literacy, budgeting & saving)
+#   FL  — B.E.S.T. 2023 (integer ops, financial literacy, probability, stem-and-leaf)
+#   GA  — Georgia K-12 2023 (probability)
+#   IN  — IAS 2023 (probability, data displays, transformations, circles)
+#   MN  — MN 2022 (probability, financial literacy, circle graphs, proportional, circles)
+#   NE  — NE CCR 2022 (probability, circle geometry)
+#   OK  — OAS-M 2022 (financial literacy, stem-and-leaf, integer ops, scale drawings, probability)
+#   SC  — SCCCR 2023 (integer operations)
+#   TX  — TEKS §111.26 Adopted 2012 / revised 2024
+#         (integer ops, PFL, proportional/non-proportional, stem-and-leaf)
+#   VA  — 2023 SOL (integer ops, probability, circle graphs,
+#         transformations, area of circles)
+# All other 39 states default to pure CCSS Grade 6.
+
+states:
+  alabama:
+    name: Alabama
+  alaska:
+    name: Alaska
+    modified:
+      - ch02-06-understanding-positive-and-negative-numbers
+      - ch05-03-mean-and-median
+      - ch05-07-summarizing-data-and-making-comparisons
+    additional:
+      - add-10-compute-with-integers-in-context
+      - add-11-data-displays-extended
+  arizona:
+    name: Arizona
+  arkansas:
+    name: Arkansas
+  california:
+    name: California
+  colorado:
+    name: Colorado
+    additional:
+      - add-03-personal-financial-literacy
+      - add-09-financial-literacy-budgeting-and-saving
+  connecticut:
+    name: Connecticut
+  delaware:
+    name: Delaware
+  florida:
+    name: Florida
+    modified:
+      - ch02-06-understanding-positive-and-negative-numbers
+      - ch02-07-opposites-and-absolute-value
+      - ch05-05-dot-plots-and-histograms
+      - ch05-07-summarizing-data-and-making-comparisons
+    additional:
+      - add-01-integer-addition-and-subtraction
+      - add-02-integer-multiplication-and-division
+      - add-03-personal-financial-literacy
+      - add-04-introduction-to-probability
+      - add-05-stem-and-leaf-plots
+  georgia:
+    name: Georgia
+    additional:
+      - add-04-introduction-to-probability
+  hawaii:
+    name: Hawaii
+  idaho:
+    name: Idaho
+  illinois:
+    name: Illinois
+  indiana:
+    name: Indiana
+    modified:
+      - ch04-04-polygons-on-the-coordinate-plane
+      - ch05-05-dot-plots-and-histograms
+      - ch05-07-summarizing-data-and-making-comparisons
+    additional:
+      - add-04-introduction-to-probability
+      - add-08-transformations-on-the-coordinate-plane
+      - add-11-data-displays-extended
+      - add-12-area-of-circles-introduction
+  iowa:
+    name: Iowa
+  kansas:
+    name: Kansas
+  kentucky:
+    name: Kentucky
+  louisiana:
+    name: Louisiana
+  maine:
+    name: Maine
+  maryland:
+    name: Maryland
+  massachusetts:
+    name: Massachusetts
+  michigan:
+    name: Michigan
+  minnesota:
+    name: Minnesota
+    modified:
+      - ch01-07-what-is-a-percent
+      - ch02-06-understanding-positive-and-negative-numbers
+      - ch05-05-dot-plots-and-histograms
+      - ch05-07-summarizing-data-and-making-comparisons
+    additional:
+      - add-01-integer-addition-and-subtraction
+      - add-03-personal-financial-literacy
+      - add-04-introduction-to-probability
+      - add-06-circle-graphs
+      - add-07-proportional-vs-non-proportional
+      - add-12-area-of-circles-introduction
+  mississippi:
+    name: Mississippi
+  missouri:
+    name: Missouri
+  montana:
+    name: Montana
+  nebraska:
+    name: Nebraska
+    additional:
+      - add-04-introduction-to-probability
+      - add-12-area-of-circles-introduction
+  nevada:
+    name: Nevada
+  new-hampshire:
+    name: New Hampshire
+  new-jersey:
+    name: New Jersey
+  new-mexico:
+    name: New Mexico
+  new-york:
+    name: New York
+  north-carolina:
+    name: North Carolina
+  north-dakota:
+    name: North Dakota
+  ohio:
+    name: Ohio
+  oklahoma:
+    name: Oklahoma
+    modified:
+      - ch01-09-solving-rate-and-ratio-word-problems
+      - ch02-06-understanding-positive-and-negative-numbers
+      - ch05-05-dot-plots-and-histograms
+      - ch05-07-summarizing-data-and-making-comparisons
+    additional:
+      - add-01-integer-addition-and-subtraction
+      - add-02-integer-multiplication-and-division
+      - add-03-personal-financial-literacy
+      - add-04-introduction-to-probability
+      - add-05-stem-and-leaf-plots
+      - add-11-data-displays-extended
+      - add-13-ratios-with-scale-drawings
+  oregon:
+    name: Oregon
+  pennsylvania:
+    name: Pennsylvania
+  rhode-island:
+    name: Rhode Island
+  south-carolina:
+    name: South Carolina
+    additional:
+      - add-01-integer-addition-and-subtraction
+      - add-02-integer-multiplication-and-division
+  south-dakota:
+    name: South Dakota
+  tennessee:
+    name: Tennessee
+  texas:
+    name: Texas
+    modified:
+      - ch01-04-finding-the-unit-rate
+      - ch01-07-what-is-a-percent
+      - ch01-08-solving-percent-problems
+      - ch02-06-understanding-positive-and-negative-numbers
+      - ch02-07-opposites-and-absolute-value
+      - ch05-05-dot-plots-and-histograms
+      - ch05-06-box-plots
+      - ch05-07-summarizing-data-and-making-comparisons
+    additional:
+      - add-01-integer-addition-and-subtraction
+      - add-02-integer-multiplication-and-division
+      - add-03-personal-financial-literacy
+      - add-05-stem-and-leaf-plots
+      - add-07-proportional-vs-non-proportional
+      - add-09-financial-literacy-budgeting-and-saving
+  utah:
+    name: Utah
+  vermont:
+    name: Vermont
+  virginia:
+    name: Virginia
+    modified:
+      - ch02-06-understanding-positive-and-negative-numbers
+      - ch02-07-opposites-and-absolute-value
+      - ch04-04-polygons-on-the-coordinate-plane
+      - ch05-05-dot-plots-and-histograms
+      - ch05-07-summarizing-data-and-making-comparisons
+    additional:
+      - add-01-integer-addition-and-subtraction
+      - add-02-integer-multiplication-and-division
+      - add-04-introduction-to-probability
+      - add-06-circle-graphs
+      - add-08-transformations-on-the-coordinate-plane
+      - add-12-area-of-circles-introduction
+  washington:
+    name: Washington
+  west-virginia:
+    name: West Virginia
+  wisconsin:
+    name: Wisconsin
+  wyoming:
+    name: Wyoming

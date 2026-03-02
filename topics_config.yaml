@@ -1,0 +1,773 @@
+# ============================================================================
+# Grade 7 Math — Topics & State Configuration
+# Single source of truth for all book types (all_in_one, study_guide, workbook,
+# step_by_step, in_30_days, practice_tests). Both generate_state_books.py and
+# generate_practice_tests.py read this file instead of keeping topic data in
+# Python code.
+# ============================================================================
+
+
+# ============================================================================
+# CHAPTERS — Core CCSS topics that every US state receives
+# ============================================================================
+# Each chapter lists its topics in teaching order.
+# - id:   Topic identifier (chXX-YY) used as the key everywhere
+# - name: Human-readable display name (for comments, headers, progress pages)
+# - file: Filename slug WITHOUT directory prefix or .tex extension
+#         The Python scripts prepend the correct directory (topics/, topics_workbook/,
+#         topics_modified/, topics_additional/, etc.) based on context.
+
+chapters:
+  - num: 1
+    title: "Ratios and Proportional Relationships"
+    topics:
+      - id: ch01-01
+        name: "Unit Rates with Fractions"
+        file: ch01-01-unit-rates-with-fractions
+        content: "Students compute unit rates where the quantities involve fractions. For example, if someone walks 1/2 mile in 1/4 hour, they compute the unit rate as (1/2)/(1/4) = 2 miles per hour. They work with rates involving lengths, areas, and other quantities in like or different units."
+      - id: ch01-02
+        name: "Recognizing Proportional Relationships"
+        file: ch01-02-recognizing-proportional-relationships
+        content: "Students decide whether two quantities are in a proportional relationship by testing for equivalent ratios in a table or by graphing on a coordinate plane and checking if the graph is a straight line through the origin."
+      - id: ch01-03
+        name: "Finding the Constant of Proportionality"
+        file: ch01-03-finding-the-constant-of-proportionality
+        content: "Students identify the constant of proportionality (unit rate) in tables, graphs, equations, diagrams, and verbal descriptions. They connect the idea of unit rate to the constant that links two proportional quantities."
+      - id: ch01-04
+        name: "Writing Equations for Proportional Relationships"
+        file: ch01-04-writing-equations-for-proportional-relationships
+        content: "Students represent proportional relationships using equations like t = pn, where t is total cost, p is the price per item, and n is the number of items. They write and use equations to solve problems."
+      - id: ch01-05
+        name: "Graphing Proportional Relationships"
+        file: ch01-05-graphing-proportional-relationships
+        content: "Students graph proportional relationships and interpret what points on the graph mean. They pay special attention to (0, 0) and (1, r), where r is the unit rate, and understand the unit rate as the steepness (slope) of the line."
+      - id: ch01-06
+        name: "Applying Proportional Reasoning to Real-World Problems"
+        file: ch01-06-applying-proportional-reasoning
+        content: "Students use proportional relationships to solve multi-step ratio problems in real-world contexts. They choose appropriate strategies like setting up proportions, using unit rates, or writing equations."
+
+  - num: 2
+    title: "Percents in Everyday Life"
+    topics:
+      - id: ch02-01
+        name: "Solving Percent Problems"
+        file: ch02-01-solving-percent-problems
+        content: "Students solve percent problems by finding a percent of a number, finding the whole when given a part and the percent, and finding the percent when given a part and the whole. They use multiple strategies including equations and proportions."
+      - id: ch02-02
+        name: "Connecting Percents and Proportions"
+        file: ch02-02-connecting-percents-and-proportions
+        content: "Students set up and solve proportions to find unknown quantities in percent problems. They see that percent problems are a special type of proportion where one ratio always has a denominator of 100."
+      - id: ch02-03
+        name: "Percent Increase and Decrease"
+        file: ch02-03-percent-increase-and-decrease
+        content: "Students calculate percent increase and decrease. They understand that 'increase by 5%' is the same as multiplying by 1.05, and 'decrease by 20%' is the same as multiplying by 0.80. They connect these ideas to expressions like a + 0.05a = 1.05a."
+      - id: ch02-04
+        name: "Markups, Discounts, and Sales Tax"
+        file: ch02-04-markups-discounts-and-sales-tax
+        content: "Students solve real-world problems involving markups (the extra amount a store adds to cost) and markdowns (discounts on sale items). They calculate sales tax and final prices using percent reasoning."
+      - id: ch02-05
+        name: "Tips, Commissions, and Fees"
+        file: ch02-05-tips-commissions-and-fees
+        content: "Students apply percent reasoning to calculate tips on restaurant bills, commissions earned by salespeople, and fees for services. They practice estimating tips mentally and computing exact amounts."
+      - id: ch02-06
+        name: "Simple Interest: Earning and Paying Interest"
+        file: ch02-06-simple-interest
+        content: "Students learn the formula for simple interest: I = Prt, where P is the principal, r is the rate, and t is the time. They calculate interest earned on savings and interest owed on loans, and find total amounts."
+      - id: ch02-07
+        name: "Percent Error: How Close Are Your Estimates?"
+        file: ch02-07-percent-error
+        content: "Students calculate percent error by comparing an estimated or measured value to an actual value. They use the formula: percent error = |estimated − actual| / actual × 100, and apply this to measurement and science problems."
+
+  - num: 3
+    title: "Operations with Rational Numbers"
+    topics:
+      - id: ch03-01
+        name: "Integers and Their Opposites"
+        file: ch03-01-integers-and-their-opposites
+        content: "Students learn what integers are and how every integer has an opposite. They explore situations where opposite quantities combine to make 0, like earning and spending the same amount. They place integers on number lines and find absolute values."
+      - id: ch03-02
+        name: "Adding Integers"
+        file: ch03-02-adding-integers
+        content: "Students use number lines to understand integer addition. They learn that adding a positive number moves right, and adding a negative number moves left. They discover that a number and its opposite always add to 0 (additive inverses) and interpret sums in real-world contexts."
+      - id: ch03-03
+        name: "Subtracting Integers"
+        file: ch03-03-subtracting-integers
+        content: "Students connect subtraction to adding the opposite: p − q = p + (−q). They use number lines to show this and learn that the distance between two numbers on the number line equals the absolute value of their difference. They apply this to real-world problems."
+      - id: ch03-04
+        name: "Adding and Subtracting Rational Numbers"
+        file: ch03-04-adding-and-subtracting-rational-numbers
+        content: "Students extend the rules for adding and subtracting integers to fractions and decimals. They use properties of operations as strategies and solve problems involving positive and negative fractions and decimals in real-world contexts."
+      - id: ch03-05
+        name: "Multiplying Integers and Rational Numbers"
+        file: ch03-05-multiplying-integers-and-rational-numbers
+        content: "Students discover the rules for multiplying signed numbers, understanding why a negative times a negative equals a positive through patterns and the distributive property. They extend multiplication to all rational numbers, including fractions and decimals, and interpret products in real-world contexts."
+      - id: ch03-06
+        name: "Dividing Integers and Rational Numbers"
+        file: ch03-06-dividing-integers-and-rational-numbers
+        content: "Students learn that integers can be divided (as long as the divisor is not zero), and every quotient of integers is a rational number. They understand that −(p/q) = (−p)/q = p/(−q) and apply division rules to rational numbers in real-world situations."
+      - id: ch03-07
+        name: "Converting Rational Numbers to Decimals"
+        file: ch03-07-converting-rational-numbers-to-decimals
+        content: "Students convert rational numbers to decimals using long division. They discover that every rational number either terminates (ends in 0s) or eventually repeats, and they learn to recognize and write repeating decimals."
+      - id: ch03-08
+        name: "Solving Real-World Problems with Rational Numbers"
+        file: ch03-08-solving-real-world-problems-with-rational-numbers
+        content: "Students solve multi-step problems that use all four operations with rational numbers, including complex fractions. They choose the right operation, convert between forms as needed, and check their answers for reasonableness."
+
+  - num: 4
+    title: "Algebraic Expressions"
+    topics:
+      - id: ch04-01
+        name: "Writing and Evaluating Expressions"
+        file: ch04-01-writing-and-evaluating-expressions
+        content: "Students write algebraic expressions from word problems and evaluate expressions by substituting values for variables. They practice with expressions that have rational coefficients, including fractions and decimals."
+      - id: ch04-02
+        name: "Simplifying Expressions by Combining Like Terms"
+        file: ch04-02-simplifying-expressions-by-combining-like-terms
+        content: "Students combine like terms to simplify linear expressions. They identify terms, coefficients, and like terms, and use properties of operations to write simpler, equivalent expressions."
+      - id: ch04-03
+        name: "Expanding Expressions with the Distributive Property"
+        file: ch04-03-expanding-expressions-with-the-distributive-property
+        content: "Students use the distributive property to expand expressions like 3(2x + 5) into 6x + 15. They work with rational coefficients and check their results by substituting values."
+      - id: ch04-04
+        name: "Factoring Expressions"
+        file: ch04-04-factoring-expressions
+        content: "Students factor linear expressions by finding and pulling out common factors. For example, they rewrite 6x + 15 as 3(2x + 5). They connect factoring to the distributive property in reverse."
+      - id: ch04-05
+        name: "Adding and Subtracting Linear Expressions"
+        file: ch04-05-adding-and-subtracting-linear-expressions
+        content: "Students add and subtract linear expressions by combining like terms across multiple expressions. They align their work carefully when subtracting, paying attention to distributing the negative sign."
+      - id: ch04-06
+        name: "Rewriting Expressions to Solve Problems"
+        file: ch04-06-rewriting-expressions-to-solve-problems
+        content: "Students see how rewriting an expression in a different form can reveal something new about a problem. For example, they learn that a + 0.05a = 1.05a means 'increase by 5%' is the same as 'multiply by 1.05.' They use this insight to solve real-world problems."
+
+  - num: 5
+    title: "Equations and Inequalities"
+    topics:
+      - id: ch05-01
+        name: "Writing Two-Step Equations from Word Problems"
+        file: ch05-01-writing-two-step-equations
+        content: "Students translate real-world problems into equations of the form px + q = r. They identify the quantities, choose a variable, and write an equation that models the situation."
+      - id: ch05-02
+        name: "Solving Two-Step Equations"
+        file: ch05-02-solving-two-step-equations
+        content: "Students solve equations of the form px + q = r fluently by undoing operations in the right order. They compare the algebraic solution to an arithmetic approach and verify their answers by substituting back."
+      - id: ch05-03
+        name: "Solving Equations with the Distributive Property"
+        file: ch05-03-solving-equations-with-distributive-property
+        content: "Students solve equations of the form p(x + q) = r by first distributing or by dividing both sides. They practice with rational number coefficients and connect these equations to word problems."
+      - id: ch05-04
+        name: "Solving Multi-Step Problems with Rational Numbers"
+        file: ch05-04-solving-multi-step-problems-with-rational-numbers
+        content: "Students solve multi-step real-life problems using positive and negative rational numbers in any form. They apply properties of operations, convert between forms, and check reasonableness using estimation."
+      - id: ch05-05
+        name: "Writing and Solving Inequalities"
+        file: ch05-05-writing-and-solving-inequalities
+        content: "Students write and solve inequalities of the form px + q > r or px + q < r, where p, q, and r are rational numbers. They set up inequalities from word problems, such as figuring out how many sales are needed to earn at least a certain amount."
+      - id: ch05-06
+        name: "Graphing Solutions to Inequalities on a Number Line"
+        file: ch05-06-graphing-solutions-to-inequalities
+        content: "Students graph the solution set of an inequality on a number line, using open or closed circles and shading. They interpret the graph in the context of the problem and explain what the solutions mean in real life."
+
+  - num: 6
+    title: "Scale Drawings, Geometric Figures, and Angle Relationships"
+    topics:
+      - id: ch06-01
+        name: "Understanding and Using Scale Drawings"
+        file: ch06-01-understanding-and-using-scale-drawings
+        content: "Students solve problems involving scale drawings, computing actual lengths and areas from a scale drawing. They understand that a scale drawing keeps all shapes proportional and learn to use scale factors."
+      - id: ch06-02
+        name: "Reproducing Scale Drawings at a Different Scale"
+        file: ch06-02-reproducing-scale-drawings
+        content: "Students reproduce a scale drawing at a different scale. They practice converting between scales and understand how changing the scale factor affects lengths and areas."
+      - id: ch06-03
+        name: "Drawing Geometric Figures with Given Conditions"
+        file: ch06-03-drawing-geometric-figures
+        content: "Students draw geometric shapes freehand, with rulers and protractors, and with technology. They focus on constructing shapes that meet specific conditions like given side lengths or angle measures."
+      - id: ch06-04
+        name: "Constructing Triangles from Three Measurements"
+        file: ch06-04-constructing-triangles
+        content: "Students construct triangles from three measures of angles or sides. They discover when given conditions produce a unique triangle, more than one triangle, or no triangle at all, building intuition about triangle inequality and angle sums."
+      - id: ch06-05
+        name: "Cross-Sections of Three-Dimensional Figures"
+        file: ch06-05-cross-sections-of-3d-figures
+        content: "Students describe the two-dimensional shapes that result from slicing three-dimensional figures with a plane. They explore cross-sections of right rectangular prisms and right rectangular pyramids."
+      - id: ch06-06
+        name: "Angle Relationships: Supplementary, Complementary, and Vertical Angles"
+        file: ch06-06-angle-relationships
+        content: "Students use facts about supplementary, complementary, vertical, and adjacent angles to write and solve equations for unknown angles. They identify these angle pairs in diagrams of intersecting lines and apply them in multi-step problems."
+
+  - num: 7
+    title: "Circles, Area, Surface Area, and Volume"
+    topics:
+      - id: ch07-01
+        name: "Parts of a Circle"
+        file: ch07-01-parts-of-a-circle
+        content: "Students learn the key parts of a circle: center, radius, diameter, and circumference. They understand the relationship between diameter and radius and prepare for the formulas that connect these measurements."
+      - id: ch07-02
+        name: "Circumference of a Circle"
+        file: ch07-02-circumference-of-a-circle
+        content: "Students learn the formula C = πd (or C = 2πr) and use it to find circumference. They explore the relationship between circumference and diameter, discovering that the ratio is always π."
+      - id: ch07-03
+        name: "Area of a Circle"
+        file: ch07-03-area-of-a-circle
+        content: "Students learn the formula A = πr² and use it to solve problems. They see an informal derivation of why the formula works by rearranging sectors of a circle into an approximate parallelogram."
+      - id: ch07-04
+        name: "Area of Composite Shapes"
+        file: ch07-04-area-of-composite-shapes
+        content: "Students find the area of figures made up of triangles, quadrilaterals, and other polygons by breaking them into simpler shapes. They add or subtract areas and apply these skills to real-world problems."
+      - id: ch07-05
+        name: "Surface Area of Three-Dimensional Objects"
+        file: ch07-05-surface-area-of-3d-objects
+        content: "Students find the surface area of three-dimensional objects composed of triangles, quadrilaterals, and polygons, including cubes and right prisms. They use nets and formulas to calculate total surface area."
+      - id: ch07-06
+        name: "Volume of Prisms"
+        file: ch07-06-volume-of-prisms
+        content: "Students solve problems involving the volume of cubes and right prisms using V = Bh, where B is the area of the base. They work with whole numbers, fractions, and decimals and apply volume to real-world contexts."
+
+  - num: 8
+    title: "Statistics: Sampling and Comparing Populations"
+    topics:
+      - id: ch08-01
+        name: "Populations and Samples"
+        file: ch08-01-populations-and-samples
+        content: "Students learn that a sample is a smaller group chosen from a larger population. They understand that a sample must be representative to support valid conclusions, and that random sampling helps avoid bias."
+      - id: ch08-02
+        name: "Making Inferences from Random Samples"
+        file: ch08-02-making-inferences-from-random-samples
+        content: "Students use data from random samples to make predictions about a population. They generate multiple samples of the same size and observe how estimates vary, learning to gauge how reliable their predictions are."
+      - id: ch08-03
+        name: "Comparing Two Populations Visually"
+        file: ch08-03-comparing-two-populations-visually
+        content: "Students informally compare two data distributions by looking at visual overlap. They measure the difference between centers (means or medians) and express it as a multiple of a measure of variability like the mean absolute deviation."
+      - id: ch08-04
+        name: "Comparing Populations with Measures of Center and Variability"
+        file: ch08-04-comparing-populations-with-measures
+        content: "Students use mean, median, range, interquartile range, and mean absolute deviation to draw informal comparative inferences about two populations. They support their conclusions with data, graphs, and clear reasoning."
+
+  - num: 9
+    title: "Probability and Compound Events"
+    topics:
+      - id: ch09-01
+        name: "What Is Probability?"
+        file: ch09-01-what-is-probability
+        content: "Students learn that the probability of an event is a number between 0 and 1. A probability near 0 means the event is unlikely, around 1/2 means it could go either way, and near 1 means it is very likely."
+      - id: ch09-02
+        name: "Theoretical Probability"
+        file: ch09-02-theoretical-probability
+        content: "Students find the theoretical probability of events using the formula: favorable outcomes ÷ total outcomes. They develop uniform probability models by assigning equal probability to all outcomes."
+      - id: ch09-03
+        name: "Experimental Probability"
+        file: ch09-03-experimental-probability
+        content: "Students approximate probability by collecting data and observing long-run relative frequency. For example, they predict that rolling a 3 or 6 on a number cube 600 times gives roughly 200 occurrences, and test this through experiments."
+      - id: ch09-04
+        name: "Probability Models"
+        file: ch09-04-probability-models
+        content: "Students develop probability models—both uniform and non-uniform—and compare predicted probabilities to observed frequencies. When predictions and results don't agree, they explore possible reasons for the discrepancy."
+      - id: ch09-05
+        name: "Sample Spaces for Compound Events"
+        file: ch09-05-sample-spaces-for-compound-events
+        content: "Students represent sample spaces for compound events using organized lists, tables, and tree diagrams. They identify all possible outcomes and understand that the probability of a compound event is the fraction of outcomes in the sample space for which the event occurs."
+      - id: ch09-06
+        name: "Finding Probabilities of Compound Events"
+        file: ch09-06-finding-probabilities-of-compound-events
+        content: "Students calculate probabilities of compound events by counting favorable outcomes in a sample space. They work with everyday situations like rolling dice, drawing cards, or selecting items at random."
+      - id: ch09-07
+        name: "Simulating Compound Events"
+        file: ch09-07-simulating-compound-events
+        content: "Students design and use simulations to generate frequencies for compound events. For example, they use random digits to model real-world situations like finding the probability that it takes at least 4 donors to find one with type A blood."
+
+
+# ============================================================================
+# ADDITIONAL TOPICS — State-specific topics beyond CCSS
+# ============================================================================
+# These are supplementary topics. Only states that list a topic ID in their
+# 'additional' field will include it. The 'chapter' field determines where
+# the topic is inserted (after the last core topic in that chapter).
+#
+# Verified against official state standards (TEKS, B.E.S.T., SOL, MN 2022,
+# OAS-M 2022, IAS 2023, AK GL).  Each topic is required by at least one
+# reviewed state's Grade 7 standards.
+
+additional_topics:
+  - id: ch01-07
+    name: "Proportional Reasoning with Scale Models"
+    file: ch01-07-proportional-reasoning-with-scale-models
+    chapter: 1
+    content: "Apply proportional reasoning to interpret and create scale models; calculate actual dimensions from scale factors in real-world contexts like architecture and engineering."
+  - id: ch02-08
+    name: "Personal Financial Literacy"
+    file: ch02-08-personal-financial-literacy
+    chapter: 2
+    content: "Compare financial institutions and their services; understand credit, debit, and interest rates; analyze advantages and disadvantages of different payment methods and financial options."
+  - id: ch02-09
+    name: "Financial Literacy — Budgeting, Saving, and Investing"
+    file: ch02-09-financial-literacy-budgeting-saving-and-investing
+    chapter: 2
+    content: "Create and analyze budgets with income, fixed expenses, and variable expenses; develop savings plans; compare simple and compound interest; understand investments and opportunity costs."
+  - id: ch02-10
+    name: "Compound Interest Introduction"
+    file: ch02-10-compound-interest-introduction
+    chapter: 2
+    content: "Compare simple and compound interest; calculate compound interest for short periods; understand how compounding frequency affects the growth of savings and cost of loans."
+  - id: ch03-09
+    name: "Introduction to Square Roots"
+    file: ch03-09-introduction-to-square-roots
+    chapter: 3
+    content: "Understand perfect squares and their square roots; estimate square roots of non-perfect squares; locate square roots on a number line."
+  - id: ch03-10
+    name: "Rational Number Operations in Extended Contexts"
+    file: ch03-10-rational-number-operations-in-extended-contexts
+    chapter: 3
+    content: "Apply all four operations with rational numbers in extended real-world contexts such as temperature change, elevation, stock prices, and multi-step financial transactions."
+  - id: ch03-11
+    name: "Introduction to Scientific Notation"
+    file: ch03-11-introduction-to-scientific-notation
+    chapter: 3
+    content: "Understand powers of ten and their role in expressing large and small numbers; write numbers in scientific notation (a × 10ⁿ); compare and order numbers in scientific notation; multiply and divide using powers of ten."
+  - id: ch04-07
+    name: "Laws of Exponents"
+    file: ch04-07-laws-of-exponents
+    chapter: 4
+    content: "Apply the laws of exponents (product rule, quotient rule, power of a power) with whole-number exponents and rational-number bases; evaluate expressions using exponent rules; connect exponents to repeated multiplication with integers and fractions."
+  - id: ch06-07
+    name: "Transformations on the Coordinate Plane"
+    file: ch06-07-transformations-on-the-coordinate-plane
+    chapter: 6
+    content: "Identify and perform translations, reflections, and rotations on the coordinate plane; describe the effect of each transformation on the coordinates of vertices."
+  - id: ch06-08
+    name: "Similar Figures and Proportions"
+    file: ch06-08-similar-figures-and-proportions
+    chapter: 6
+    content: "Identify similar figures and use proportional reasoning to find missing side lengths; apply scale factor relationships between corresponding sides; solve real-world problems involving similar triangles and indirect measurement."
+  - id: ch07-07
+    name: "Cylinder Surface Area and Volume"
+    file: ch07-07-cylinder-surface-area-and-volume
+    chapter: 7
+    content: "Find the surface area and volume of right circular cylinders using formulas SA = 2πr² + 2πrh and V = πr²h; use nets to visualize cylinder surfaces; solve real-world problems involving cylindrical containers."
+  - id: ch08-05
+    name: "Stem-and-Leaf Plots"
+    file: ch08-05-stem-and-leaf-plots
+    chapter: 8
+    content: "Organize and display data using stem-and-leaf plots; read and interpret them to find measures of center, spread, and make comparisons between data sets."
+  - id: ch08-06
+    name: "Circle Graphs"
+    file: ch08-06-circle-graphs
+    chapter: 8
+    content: "Read, interpret, and create circle (pie) graphs; relate sectors to fractions, decimals, and percents of the whole data set."
+  - id: ch08-07
+    name: "Data Displays Extended"
+    file: ch08-07-data-displays-extended
+    chapter: 8
+    content: "Read and create frequency tables, double bar graphs, and line graphs; solve multi-step problems using information from multiple data displays."
+
+
+# ============================================================================
+# MODIFIED TOPICS — Variants of core topics for specific states
+# ============================================================================
+# These replace the corresponding core topic file (from topics/) with a
+# version in topics_modified/ that keeps ALL core CCSS content but adds
+# state-specific emphasis, contexts, or preview material.
+#
+# - file:     Must match the core topic's file slug (loaded from topics_modified/)
+# - core_id:  The core topic ID this modifies
+# - states:   Which states use this modified version
+# - content:  Description of what was changed compared to the core version
+
+modified_topics:
+  - file: ch01-06-applying-proportional-reasoning
+    core_id: ch01-06
+    states: [OK]
+    content: "OAS-M estimation emphasis. Adds estimation as a fifth strategy alongside ratio tables, tape diagrams, unit rates, and equations. Every worked example and practice problem includes an estimate-first step and a reasonableness check. Adds warningBox on checking answers."
+  - file: ch02-01-solving-percent-problems
+    core_id: ch02-01
+    states: [MN]
+    content: "MN percent-application emphasis. Adds explicit real-world financial contexts for percent problems, including discount, markup, tax, and tip computations. Aligns with MN 2007/2022 benchmarks that require proportional reasoning applied to money contexts."
+  - file: ch02-06-simple-interest
+    core_id: ch02-06
+    states: [FL, TX]
+    content: "Financial literacy emphasis. Expands simple interest formula (I = Prt) with additional financial contexts including savings account comparisons, loan interest calculations, and explicit connections between interest rates and real-world financial decisions. TX version aligns with TEKS 7.13; FL version aligns with B.E.S.T. MA.7.AR.3.1."
+  - file: ch03-01-integers-and-their-opposites
+    core_id: ch03-01
+    states: [VA]
+    content: "VA SOL rational number emphasis. Expands opposites and absolute value with additional ordering, comparison, and number-line contexts. Includes comparing and ordering rational numbers in multiple forms using inequality symbols, aligning with 2023 SOL expectations."
+  - file: ch03-08-solving-real-world-problems-with-rational-numbers
+    core_id: ch03-08
+    states: [AK]
+    content: "Culturally responsive Alaskan contexts. Same rational-number problem-solving content but all examples use Alaska-relevant data: winter temperatures, fisheries catch data, elevation changes, and subsistence economy contexts. Emphasises estimation and verbal justification."
+  - file: ch06-03-drawing-geometric-figures
+    core_id: ch06-03
+    states: [IN]
+    content: "IAS 2023 construction emphasis. Adds explicit requirements for justifying each step in geometric constructions. Includes technology-based construction methods alongside hand-drawn approaches, aligning with Indiana Academic Standards procedural expectations."
+  - file: ch06-06-angle-relationships
+    core_id: ch06-06
+    states: [VA]
+    content: "VA SOL extended angle emphasis. Keeps supplementary, complementary, and vertical angle content. Adds connections to congruence and similarity concepts, and includes more complex multi-step angle problems with algebraic expressions."
+  - file: ch08-01-populations-and-samples
+    core_id: ch08-01
+    states: [OK, TX]
+    content: "Experimental design emphasis. Adds designing experiments and collecting data as precursors to sampling concepts. Aligns with OAS-M 7.D.1 (full data-collection cycle) and TEKS data-analysis expectations that precede inference."
+  - file: ch08-03-comparing-two-populations-visually
+    core_id: ch08-03
+    states: [FL, IN, MN, VA]
+    content: "Multiple display emphasis. Expands visual comparison to include stem-and-leaf plots, circle graphs, and frequency tables alongside dot plots, histograms, and box plots. Adds multiple-representation comparison problems."
+  - file: ch08-04-comparing-populations-with-measures
+    core_id: ch08-04
+    states: [AK, OK, TX]
+    content: "Extended measures emphasis. Expands comparative inference with additional measures of center and variability. De-emphasises MAD in favour of IQR and range; adds extended contextual applications using localised or financial data."
+  - file: ch09-03-experimental-probability
+    core_id: ch09-03
+    states: [FL, TX]
+    content: "Simulation emphasis. Expands experimental probability with additional simulation design. Includes using random-number generators and frequency tables to compare experimental results to theoretical predictions. FL aligns with B.E.S.T. MA.7.DP.2.4; TX aligns with TEKS probability strand."
+
+
+# ============================================================================
+# IN 30 DAYS — Day-to-topic mapping for the "Math in 30 Days" book type
+# ============================================================================
+# Each entry maps a day number to a filename and the CCSS topic IDs it covers.
+# bonus_after: list of additional topic IDs to insert after the day (if state uses them)
+# chapters: which days start a new \chapter in the generated .tex
+
+in_30_days:
+  days:
+    # Chapter 1: Ratios and Proportional Relationships (Days 1–3)
+    - day: 1
+      file: day-01-unit-rates-and-proportional-relationships
+      topics: [ch01-01, ch01-02]
+    - day: 2
+      file: day-02-constant-of-proportionality-and-equations
+      topics: [ch01-03, ch01-04]
+    - day: 3
+      file: day-03-graphing-and-applying-proportional-reasoning
+      topics: [ch01-05, ch01-06]
+
+    # Chapter 2: Percents in Everyday Life (Days 4–7)
+    - day: 4
+      file: day-04-percent-problems-and-proportions
+      topics: [ch02-01, ch02-02]
+    - day: 5
+      file: day-05-percent-change-markups-and-discounts
+      topics: [ch02-03, ch02-04]
+    - day: 6
+      file: day-06-tips-commissions-and-simple-interest
+      topics: [ch02-05, ch02-06]
+    - day: 7
+      file: day-07-percent-error
+      topics: [ch02-07]
+
+    # Chapter 3: Operations with Rational Numbers (Days 8–12)
+    - day: 8
+      file: day-08-integers-and-adding-integers
+      topics: [ch03-01, ch03-02]
+    - day: 9
+      file: day-09-subtracting-integers-and-rational-numbers
+      topics: [ch03-03, ch03-04]
+    - day: 10
+      file: day-10-multiplying-and-dividing-rational-numbers
+      topics: [ch03-05, ch03-06]
+    - day: 11
+      file: day-11-converting-rational-numbers-to-decimals
+      topics: [ch03-07]
+    - day: 12
+      file: day-12-real-world-problems-with-rational-numbers
+      topics: [ch03-08]
+
+    # Chapter 4: Algebraic Expressions (Days 13–15)
+    - day: 13
+      file: day-13-writing-evaluating-and-simplifying-expressions
+      topics: [ch04-01, ch04-02]
+    - day: 14
+      file: day-14-expanding-and-factoring-expressions
+      topics: [ch04-03, ch04-04]
+    - day: 15
+      file: day-15-combining-and-rewriting-expressions
+      topics: [ch04-05, ch04-06]
+
+    # Chapter 5: Equations and Inequalities (Days 16–18)
+    - day: 16
+      file: day-16-writing-and-solving-two-step-equations
+      topics: [ch05-01, ch05-02]
+    - day: 17
+      file: day-17-distributive-property-and-multi-step-problems
+      topics: [ch05-03, ch05-04]
+    - day: 18
+      file: day-18-writing-solving-and-graphing-inequalities
+      topics: [ch05-05, ch05-06]
+
+    # Chapter 6: Scale Drawings, Geometric Figures, and Angle Relationships (Days 19–21)
+    - day: 19
+      file: day-19-scale-drawings
+      topics: [ch06-01, ch06-02]
+    - day: 20
+      file: day-20-drawing-figures-and-constructing-triangles
+      topics: [ch06-03, ch06-04]
+    - day: 21
+      file: day-21-cross-sections-and-angle-relationships
+      topics: [ch06-05, ch06-06]
+
+    # Chapter 7: Circles, Area, Surface Area, and Volume (Days 22–24)
+    - day: 22
+      file: day-22-parts-of-a-circle-and-circumference
+      topics: [ch07-01, ch07-02]
+    - day: 23
+      file: day-23-area-of-circles-and-composite-shapes
+      topics: [ch07-03, ch07-04]
+    - day: 24
+      file: day-24-surface-area-and-volume
+      topics: [ch07-05, ch07-06]
+
+    # Chapter 8: Statistics — Sampling and Comparing Populations (Days 25–26)
+    - day: 25
+      file: day-25-populations-samples-and-inferences
+      topics: [ch08-01, ch08-02]
+    - day: 26
+      file: day-26-comparing-populations
+      topics: [ch08-03, ch08-04]
+
+    # Chapter 9: Probability and Compound Events (Days 27–30)
+    - day: 27
+      file: day-27-probability-basics-and-theoretical-probability
+      topics: [ch09-01, ch09-02]
+    - day: 28
+      file: day-28-experimental-probability-and-models
+      topics: [ch09-03, ch09-04]
+    - day: 29
+      file: day-29-sample-spaces-and-compound-events
+      topics: [ch09-05, ch09-06]
+    - day: 30
+      file: day-30-simulating-compound-events
+      topics: [ch09-07]
+
+  # Chapter boundaries (which days start a new \chapter)
+  chapters:
+    - chapter: 1
+      title: "Ratios and Proportional Relationships"
+      start_day: 1
+      end_day: 3
+    - chapter: 2
+      title: "Percents in Everyday Life"
+      start_day: 4
+      end_day: 7
+    - chapter: 3
+      title: "Operations with Rational Numbers"
+      start_day: 8
+      end_day: 12
+    - chapter: 4
+      title: "Algebraic Expressions"
+      start_day: 13
+      end_day: 15
+    - chapter: 5
+      title: "Equations \\& Inequalities"
+      start_day: 16
+      end_day: 18
+    - chapter: 6
+      title: "Scale Drawings, Geometric Figures \\& Angle Relationships"
+      start_day: 19
+      end_day: 21
+    - chapter: 7
+      title: "Circles, Area, Surface Area \\& Volume"
+      start_day: 22
+      end_day: 24
+    - chapter: 8
+      title: "Statistics: Sampling \\& Comparing Populations"
+      start_day: 25
+      end_day: 26
+    - chapter: 9
+      title: "Probability \\& Compound Events"
+      start_day: 27
+      end_day: 30
+
+
+# ============================================================================
+# US STATES — All 50 states with optional customizations
+# ============================================================================
+# - name:       Display name (used in book titles and headers)
+# - additional: List of additional topic IDs this state includes
+# - modified:   List of core topic IDs that use modified versions
+#               (file loaded from topics_modified/ instead of topics/)
+#
+# File slugs must match the 'file' field defined in chapters or
+# additional_topics above.  Using full slugs rather than bare IDs
+# makes each entry self-documenting and allows future per-state
+# variants of the same topic.
+#
+# States with NO additional or modified fields use the pure CCSS curriculum.
+#
+# Verified profiles (7 states with modifications):
+#   AK  — Alaska GL (CCSS base + rational-number context, data displays)
+#   FL  — B.E.S.T. 2023 (exponent laws, stem-and-leaf, circle graphs,
+#         cylinder SA/volume)
+#   IN  — IAS 2023 (transformations, data displays)
+#   MN  — MN 2007/2022 (PFL, circle graphs, percent emphasis)
+#   OK  — OAS-M 2022 (PFL, stem-and-leaf, data displays, scale models)
+#   TX  — TEKS §111.27 Adopted 2012 / revised 2024
+#         (PFL, budgeting/investing, compound interest, stem-and-leaf,
+#         circle graphs, similar figures)
+#   VA  — 2023 SOL (transformations, square roots, exponents,
+#         scientific notation, cylinders, similar figures,
+#         circle graphs, stem-and-leaf)
+# All other 43 states default to pure CCSS Grade 7.
+
+states:
+  alabama:
+    name: Alabama
+  alaska:
+    name: Alaska
+    modified:
+      - ch03-08-solving-real-world-problems-with-rational-numbers
+      - ch08-04-comparing-populations-with-measures
+    additional:
+      - ch03-10-rational-number-operations-in-extended-contexts
+      - ch08-07-data-displays-extended
+  arizona:
+    name: Arizona
+  arkansas:
+    name: Arkansas
+  california:
+    name: California
+  colorado:
+    name: Colorado
+  connecticut:
+    name: Connecticut
+  delaware:
+    name: Delaware
+  florida:
+    name: Florida
+    modified:
+      - ch02-06-simple-interest
+      - ch08-03-comparing-two-populations-visually
+      - ch09-03-experimental-probability
+    additional:
+      - ch04-07-laws-of-exponents
+      - ch07-07-cylinder-surface-area-and-volume
+      - ch08-05-stem-and-leaf-plots
+      - ch08-06-circle-graphs
+  georgia:
+    name: Georgia
+  hawaii:
+    name: Hawaii
+  idaho:
+    name: Idaho
+  illinois:
+    name: Illinois
+  indiana:
+    name: Indiana
+    modified:
+      - ch06-03-drawing-geometric-figures
+      - ch08-03-comparing-two-populations-visually
+    additional:
+      - ch06-07-transformations-on-the-coordinate-plane
+      - ch08-07-data-displays-extended
+  iowa:
+    name: Iowa
+  kansas:
+    name: Kansas
+  kentucky:
+    name: Kentucky
+  louisiana:
+    name: Louisiana
+  maine:
+    name: Maine
+  maryland:
+    name: Maryland
+  massachusetts:
+    name: Massachusetts
+  michigan:
+    name: Michigan
+  minnesota:
+    name: Minnesota
+    modified:
+      - ch02-01-solving-percent-problems
+      - ch08-03-comparing-two-populations-visually
+    additional:
+      - ch02-08-personal-financial-literacy
+      - ch08-06-circle-graphs
+  mississippi:
+    name: Mississippi
+  missouri:
+    name: Missouri
+  montana:
+    name: Montana
+  nebraska:
+    name: Nebraska
+  nevada:
+    name: Nevada
+  new-hampshire:
+    name: New Hampshire
+  new-jersey:
+    name: New Jersey
+  new-mexico:
+    name: New Mexico
+  new-york:
+    name: New York
+  north-carolina:
+    name: North Carolina
+  north-dakota:
+    name: North Dakota
+  ohio:
+    name: Ohio
+  oklahoma:
+    name: Oklahoma
+    modified:
+      - ch01-06-applying-proportional-reasoning
+      - ch08-01-populations-and-samples
+      - ch08-04-comparing-populations-with-measures
+    additional:
+      - ch01-07-proportional-reasoning-with-scale-models
+      - ch02-08-personal-financial-literacy
+      - ch08-05-stem-and-leaf-plots
+      - ch08-07-data-displays-extended
+  oregon:
+    name: Oregon
+  pennsylvania:
+    name: Pennsylvania
+  rhode-island:
+    name: Rhode Island
+  south-carolina:
+    name: South Carolina
+  south-dakota:
+    name: South Dakota
+  tennessee:
+    name: Tennessee
+  texas:
+    name: Texas
+    modified:
+      - ch02-06-simple-interest
+      - ch08-01-populations-and-samples
+      - ch08-04-comparing-populations-with-measures
+      - ch09-03-experimental-probability
+    additional:
+      - ch02-08-personal-financial-literacy
+      - ch02-09-financial-literacy-budgeting-saving-and-investing
+      - ch02-10-compound-interest-introduction
+      - ch06-08-similar-figures-and-proportions
+      - ch08-05-stem-and-leaf-plots
+      - ch08-06-circle-graphs
+  utah:
+    name: Utah
+  vermont:
+    name: Vermont
+  virginia:
+    name: Virginia
+    modified:
+      - ch03-01-integers-and-their-opposites
+      - ch06-06-angle-relationships
+      - ch08-03-comparing-two-populations-visually
+    additional:
+      - ch03-09-introduction-to-square-roots
+      - ch03-11-introduction-to-scientific-notation
+      - ch04-07-laws-of-exponents
+      - ch06-07-transformations-on-the-coordinate-plane
+      - ch06-08-similar-figures-and-proportions
+      - ch07-07-cylinder-surface-area-and-volume
+      - ch08-05-stem-and-leaf-plots
+      - ch08-06-circle-graphs
+  washington:
+    name: Washington
+  west-virginia:
+    name: West Virginia
+  wisconsin:
+    name: Wisconsin
+  wyoming:
+    name: Wyoming
