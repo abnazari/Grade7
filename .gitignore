@@ -1,0 +1,21 @@
+build/
+test/
+.DS_Store
+**/.DS_Store
+*.pdf
+
+## Except for pdf in images folder
+!images/*.pdf
+
+*.zip
+.env
+.venv/
+*.pyc
+__pycache__/
+*.log
+*.aux
+*.toc
+*.out
+*.lof
+*.lot
+*.fls       
