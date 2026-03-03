@@ -1,0 +1,462 @@
+%----------------------------------------------------------------------------------------
+% VMfunDays.sty — Day-specific environments for "In 30 Days" book type
+%
+%   dayPage         Full-page day opener with day number & title
+%   todaysGoals     Orange goals box  — what you'll learn today
+%   quickLesson     Compact concept teaching box
+%   dailyPractice   Practice section for the day
+%   dailyChallenge  End-of-day bonus challenge
+%   dayComplete     Checkmark "I did it!" end-of-day marker
+%   weeklyReview    End-of-week review section
+%   bonusLesson     State-specific bonus content box
+%   progressBar     Visual 30-day progress tracker
+%   minuteTimer     Estimated time indicator
+%----------------------------------------------------------------------------------------
+\ProvidesPackage{VMfunDays}[2026/03/02 Grade 6 - Day Environments for 30 Days Book]
+
+% Safety: \writeAnsDay is defined in VMfunAnswers.sty. Provide a no-op fallback
+% so VMfunDays can be loaded independently without errors.
+\providecommand{\writeAnsDay}[2]{}
+
+%----------------------------------------------------------------------------------------
+% DAY PAGE — Full-page day opener
+%   #1 = day number
+%   #2 = day title (topic name)
+%   #3 = brief description / topics covered
+%----------------------------------------------------------------------------------------
+\newcommand{\dayPage}[3]{%
+    \newpage
+    \thispagestyle{empty}%
+    \refstepcounter{dayNumber}%
+    %
+    % Register this day in the TOC (feeds the mini week TOC).
+    % Uses custom 'dayentry' level (depth 1) so it is distinct from \section
+    % entries — the mini week-TOC shows only Day N entries, never the 1.1 headers.
+    \phantomsection
+    \addcontentsline{toc}{dayentry}{Day #1: #2}%
+    % Write a day marker to the answer key file (day mode only — no-op otherwise)
+    \writeAnsDay{#1}{#2}%
+    %
+    % Update headers for this day
+    \markboth{\sffamily\normalsize\bfseries Day #1: #2}%
+             {\sffamily\normalsize Day #1: #2}%
+    %
+    \begin{tikzpicture}[remember picture, overlay]
+        %
+        % ============ BACKGROUND ============
+        \fill[funOrange!4]
+            (current page.south west) rectangle (current page.north east);
+        %
+        % ============ TOP GRADIENT BAND ============
+        \shade[left color=funOrange!25, right color=funYellow!20]
+            (current page.north west) rectangle
+            ([yshift=-9cm]current page.north east);
+        %
+        % Diagonal accent
+        \fill[funOrange!20]
+            ([yshift=-9cm]current page.north west) --
+            ([yshift=-9cm]current page.north east) --
+            ([yshift=-9.8cm]current page.north east) --
+            ([yshift=-9.4cm]current page.north west) -- cycle;
+        %
+        % ============ DECORATIVE ELEMENTS ============
+        \fill[funOrange, opacity=0.04]
+            ([xshift=-3cm, yshift=-1.5cm]current page.north east) circle (4cm);
+        \fill[funOrange, opacity=0.03]
+            ([xshift=2cm, yshift=-5.5cm]current page.north west) circle (3cm);
+        %
+        % Small calendar icon
+        \node[opacity=0.12] at ([xshift=2cm, yshift=-1.3cm]current page.north west)
+            {\textcolor{funOrange}{\fontsize{24}{26}\selectfont\faCalendarDay}};
+        %
+        % ============ "DAY" LABEL ============
+        \node[
+            font=\fontsize{14}{17}\selectfont\sffamily\color{funOrange!60},
+            inner sep=0pt,
+        ] at ([yshift=-2cm]current page.north)
+            {D\kern0.15em A\kern0.15em Y};
+        %
+        % ============ DAY NUMBER — Large calendar square ============
+        % Shadow
+        \fill[funOrangeDark, opacity=0.1, rounded corners=6pt]
+            ([xshift=1.5mm, yshift=-5.2cm]current page.north) rectangle ++(3.2cm, -3.2cm);
+        % Main square
+        \node[
+            rounded corners=6pt,
+            fill=white,
+            draw=funOrange, line width=2.5pt,
+            inner sep=0pt, minimum size=3cm,
+            font=\fontsize{48}{52}\selectfont\sffamily\bfseries\color{funOrangeDark},
+        ] at ([yshift=-4.5cm]current page.north) {#1};
+        %
+        % ============ DAY TITLE ============
+        \node[
+            text width=0.82\paperwidth, align=center,
+            font=\fontsize{22}{28}\selectfont\sffamily\bfseries\color{funOrangeDark},
+        ] at ([yshift=-7.2cm]current page.north) {#2};
+        %
+        % ============ DIVIDER ============
+        \draw[funYellow!80, line width=1.5pt]
+            ([xshift=3cm, yshift=-8.2cm]current page.north west) --
+            ([xshift=-3cm, yshift=-8.2cm]current page.north east);
+        %
+        % ============ DESCRIPTION BOX ============
+        \node[anchor=north, inner sep=0pt] at ([yshift=-12cm]current page.north) {%
+            \begin{minipage}{0.78\textwidth}%
+            \begin{tcolorbox}[
+                enhanced,
+                colback=white,
+                colframe=funOrange!25,
+                colbacktitle=funOrange!65,
+                coltitle=white,
+                fonttitle=\large\bfseries\sffamily,
+                title={\faBookOpen\hspace{3mm}Today You Will Learn\hspace{3mm}\faBookOpen},
+                halign title=center,
+                arc=10pt,
+                outer arc=10pt,
+                boxrule=1.5pt,
+                width=\textwidth,
+                top=6mm, bottom=6mm,
+                left=10mm, right=10mm,
+                toptitle=4mm, bottomtitle=4mm,
+                shadow={2mm}{-2mm}{0mm}{funOrange!8},
+            ]
+                \sffamily\normalsize
+                #3
+            \end{tcolorbox}%
+            \end{minipage}%
+        };%
+        %
+        % ============ PROGRESS INDICATOR ============
+        % Mini progress bar at bottom
+        \pgfmathsetmacro{\progresswidth}{0.6 * \textwidth / 1cm}
+        \pgfmathsetmacro{\filledwidth}{\progresswidth * #1 / 30}
+        %
+        \node[anchor=south, inner sep=0pt] at ([yshift=5cm]current page.south) {%
+            \begin{minipage}{0.6\textwidth}%
+            \begin{center}
+                {\sffamily\small\color{funGray}\faChartBar\hspace{2mm}Your Progress: Day #1 of 30}\\[4pt]
+                \begin{tikzpicture}
+                    % Background bar
+                    \fill[funGrayLight, rounded corners=4pt]
+                        (0,0) rectangle (\progresswidth cm, 0.5cm);
+                    % Filled portion
+                    \fill[funOrange!80, rounded corners=4pt]
+                        (0,0) rectangle (\filledwidth cm, 0.5cm);
+                    % Percentage text
+                    \pgfmathsetmacro{\pct}{round(#1 / 30 * 100)}
+                    \node[font=\sffamily\scriptsize\bfseries\color{white}] 
+                        at (\filledwidth/2 cm, 0.25cm) {\pgfmathprintnumber[assume math mode=true]{\pct}\%};
+                \end{tikzpicture}
+            \end{center}
+            \end{minipage}%
+        };%
+        %
+        % ============ MOTIVATIONAL TEXT ============
+        \node[
+            font=\sffamily\normalsize\color{funOrangeDark},
+        ] at ([yshift=3.5cm]current page.south)
+            {Ready to begin?\hspace{2mm}\faArrowRight};
+        %
+    \end{tikzpicture}%
+    %
+    \newpage
+}
+
+%----------------------------------------------------------------------------------------
+% TODAY'S GOALS — What you'll learn today
+%----------------------------------------------------------------------------------------
+\newtcolorbox{todaysGoals}{%
+    enhanced,
+    breakable,
+    colback=funOrangeLight,
+    colframe=funOrange!60,
+    coltitle=white,
+    fonttitle=\large\bfseries\sffamily,
+    title={\faBullseye\hspace{3mm}Today's Goals},
+    attach boxed title to top left={xshift=6mm, yshift=-\tcboxedtitleheight/2},
+    boxed title style={
+        colback=funOrange!80,
+        arc=4pt,
+        outer arc=4pt,
+    },
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=8mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    leftrule=5pt,
+    overlay unbroken and first={
+        \node[opacity=0.06, anchor=south east]
+            at ([xshift=-3mm, yshift=3mm]frame.south east)
+            {\textcolor{funOrange}{\fontsize{50}{50}\selectfont\faBullseye}};
+    },
+}
+
+%----------------------------------------------------------------------------------------
+% QUICK LESSON — Condensed teaching box
+%   #1 = optional title (default "Key Concept")
+%----------------------------------------------------------------------------------------
+\newtcolorbox{quickLesson}[1][Key Concept]{%
+    enhanced,
+    breakable,
+    colback=funTealLight,
+    colframe=funTeal!60,
+    coltitle=white,
+    fonttitle=\large\bfseries\sffamily,
+    title={\faLightbulb\hspace{3mm}#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    shadow={1.5mm}{-1.5mm}{0mm}{funTeal!10},
+}
+
+%----------------------------------------------------------------------------------------
+% DAILY PRACTICE — Practice section for the day
+%   #1 = optional title (default "Practice Time!")
+%----------------------------------------------------------------------------------------
+\newtcolorbox{dailyPractice}[1][Practice]{%
+    enhanced,
+    breakable,
+    colback=funBlueLight,
+    colframe=funBlue!50,
+    coltitle=white,
+    fonttitle=\large\bfseries\sffamily,
+    title={\faIcon{pencil-alt}\hspace{3mm}#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    overlay unbroken and first={
+        \node[opacity=0.05, anchor=south east]
+            at ([xshift=-3mm, yshift=3mm]frame.south east)
+            {\textcolor{funBlue}{\fontsize{45}{45}\selectfont\faIcon{pencil-alt}}};
+    },
+}
+
+%----------------------------------------------------------------------------------------
+% DAILY CHALLENGE — Bonus challenge problem
+%   #1 = optional title (default "Daily Challenge!")
+%----------------------------------------------------------------------------------------
+\newtcolorbox{dailyChallenge}[1][Daily Challenge]{%
+    enhanced,
+    breakable,
+    colback=funPurpleLight,
+    colframe=funPurple!50,
+    coltitle=white,
+    fonttitle=\large\bfseries\sffamily,
+    title={\faTrophy\hspace{3mm}#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    overlay unbroken and first={
+        \node[opacity=0.08, anchor=south east]
+            at ([xshift=-3mm, yshift=3mm]frame.south east)
+            {\textcolor{funPurple}{\fontsize{40}{40}\selectfont\faTrophy}};
+    },
+    shadow={1.5mm}{-1.5mm}{0mm}{funPurple!10},
+}
+
+%----------------------------------------------------------------------------------------
+% BONUS LESSON — State-specific bonus content
+%   #1 = title
+%----------------------------------------------------------------------------------------
+\newtcolorbox{bonusLesson}[1]{%
+    enhanced,
+    breakable,
+    colback=funPinkLight,
+    colframe=funPink!50,
+    coltitle=white,
+    fonttitle=\large\bfseries\sffamily,
+    title={\faStar\hspace{3mm}Bonus: #1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    overlay unbroken and first={
+        \node[opacity=0.06, anchor=south east]
+            at ([xshift=-3mm, yshift=3mm]frame.south east)
+            {\textcolor{funPink}{\fontsize{40}{40}\selectfont\faStar}};
+    },
+}
+
+%----------------------------------------------------------------------------------------
+% DAY COMPLETE — End-of-day checkoff marker
+%----------------------------------------------------------------------------------------
+\newcommand{\dayComplete}{%
+    \vspace{6mm}
+    \begin{center}
+    \begin{tcolorbox}[
+        enhanced,
+        colback=funGreenLight,
+        colframe=funGreen!50,
+        arc=10pt,
+        outer arc=10pt,
+        boxrule=1.5pt,
+        width=0.7\linewidth,
+        halign=center,
+        top=4mm, bottom=4mm,
+        shadow={1.5mm}{-1.5mm}{0mm}{funGreen!12},
+    ]
+        \sffamily\large\bfseries\color{funGreenDark}%
+        \faCheckCircle\hspace{3mm}Day Complete\hspace{3mm}\faCheckCircle%
+        \\[3mm]
+        {\normalsize\normalfont\color{funGrayDark}%
+            $\square$\hspace{2mm}I understand today's lesson%
+            \hspace{6mm}$\square$\hspace{2mm}I finished the practice%
+        }
+    \end{tcolorbox}
+    \end{center}
+    \vspace{4mm}
+}
+
+%----------------------------------------------------------------------------------------
+% WEEKLY REVIEW — End-of-week review section
+%   #1 = week number
+%----------------------------------------------------------------------------------------
+\newtcolorbox{weeklyReview}[1][]{%
+    enhanced,
+    breakable,
+    colback=funYellowLight,
+    colframe=funYellow!70,
+    coltitle=funOrangeDark,
+    fonttitle=\Large\bfseries\sffamily,
+    title={\faCalendarCheck\hspace{3mm}Week #1 Review},
+    arc=10pt,
+    outer arc=10pt,
+    boxrule=2pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    overlay unbroken and first={
+        \node[opacity=0.06, anchor=south east]
+            at ([xshift=-5mm, yshift=5mm]frame.south east)
+            {\textcolor{funYellow}{\fontsize{60}{60}\selectfont\faCalendarCheck}};
+    },
+    shadow={2mm}{-2mm}{0mm}{funYellow!15},
+}
+
+%----------------------------------------------------------------------------------------
+% PROGRESS TRACKER — Full 30-day visual tracker (for initial pages)
+%   Draws a 5×6 grid of day boxes (weeks × days)
+%----------------------------------------------------------------------------------------
+\newcommand{\progressTracker}{%
+    \begin{center}
+    \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=funOrange!40,
+        colbacktitle=funOrange!70,
+        coltitle=white,
+        fonttitle=\Large\bfseries\sffamily,
+        title={\faIcon{calendar-alt}\hspace{3mm}My 30-Day Progress\hspace{3mm}\faIcon{calendar-alt}},
+        halign title=center,
+        arc=10pt,
+        outer arc=10pt,
+        boxrule=1.5pt,
+        width=0.9\linewidth,
+        top=6mm, bottom=6mm,
+        left=6mm, right=6mm,
+        toptitle=4mm, bottomtitle=4mm,
+    ]
+        \centering\sffamily
+        \begin{tikzpicture}[
+            daybox/.style={
+                rectangle, rounded corners=4pt,
+                minimum width=2.4cm, minimum height=1.5cm,
+                draw=funOrange!40, line width=0.8pt,
+                fill=funOrangeLight,
+                font=\sffamily\small,
+                align=center,
+            },
+        ]
+        \foreach \row in {0,...,4} {
+            \foreach \col in {0,...,5} {
+                \pgfmathtruncatemacro{\daynum}{\row * 6 + \col + 1}
+                \ifnum\daynum<31
+                    \node[daybox] at (\col * 2.7, -\row * 1.8)
+                        {\textbf{\color{funOrangeDark}Day \daynum}\\[1pt]
+                         {\scriptsize\color{funGray}\faSquare}};
+                \fi
+            }
+        }
+        \end{tikzpicture}
+        \vspace{4mm}
+
+        {\small\color{funGrayDark}
+            \faCheckSquare\ = Done \hspace{6mm}
+            Check off each day as you complete it.
+        }
+    \end{tcolorbox}
+    \end{center}
+}
+
+%----------------------------------------------------------------------------------------
+% MINUTE TIMER — Shows estimated minutes for a section
+%   #1 = minutes
+%----------------------------------------------------------------------------------------
+\newcommand{\minuteTimer}[1]{%
+    \hfill{\sffamily\small\color{funGray}\faClock\hspace{2mm}About #1 minutes}%
+    \par\vspace{2mm}%
+}
+
+%----------------------------------------------------------------------------------------
+% KEY TAKEAWAY — End-of-day summary point
+%   #1 = the key takeaway text
+%----------------------------------------------------------------------------------------
+\newcommand{\keyTakeaway}[1]{%
+    \vspace{3mm}
+    \begin{tcolorbox}[
+        enhanced,
+        colback=funYellowLight,
+        colframe=funYellow!60,
+        arc=6pt,
+        outer arc=6pt,
+        boxrule=1pt,
+        left=5mm, right=5mm,
+        top=3mm, bottom=3mm,
+    ]
+        \sffamily\color{funOrangeDark}%
+        \faLightbulb\hspace{3mm}\textbf{Key Takeaway:}\hspace{2mm}#1%
+    \end{tcolorbox}
+    \vspace{2mm}
+}
+
+%----------------------------------------------------------------------------------------
+% DAY TOPIC TITLE — Simpler than full topicTitle, used within days
+%   #1 = topic title
+%----------------------------------------------------------------------------------------
+\newcommand{\dayTopic}[1]{%
+    \vspace{3mm}
+    \begin{tcolorbox}[
+        enhanced,
+        colback=funBlue!8,
+        colframe=funBlue!40,
+        arc=6pt,
+        outer arc=6pt,
+        boxrule=1pt,
+        left=5mm, right=5mm,
+        top=3mm, bottom=3mm,
+        halign=center,
+    ]
+        {\sffamily\Large\bfseries\color{funBlueDark}\faBookmark\hspace{3mm}#1}%
+    \end{tcolorbox}
+    \vspace{3mm}
+}

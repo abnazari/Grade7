@@ -1,0 +1,55 @@
+% CCSS 7.G.A.2 — Drawing Geometric Figures (IN: IAS 2023 construction emphasis)
+\section{Drawing Geometric Figures with Given Conditions}
+
+\begin{learningGoals}
+\begin{itemize}
+    \item Draw and construct shapes that meet specific conditions
+    \item Justify each step in a geometric construction
+\end{itemize}
+\end{learningGoals}
+
+\begin{conceptBox}{When Can You Draw a Shape?}
+Given conditions may produce:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Exactly one shape} — the conditions fully determine it (e.g., three sides of a triangle with valid lengths).
+    \item \textbf{More than one shape} — the conditions allow flexibility (e.g., a quadrilateral with four given sides can have different angles).
+    \item \textbf{No shape} — the conditions are impossible (e.g., a triangle with sides $2$, $3$, $10$).
+\end{itemize}
+\end{conceptBox}
+
+\begin{workedExample}{Constructing and Justifying}
+Construct a triangle with sides $5$ cm, $7$ cm, and $3$ cm. Justify each step.
+
+\textbf{Step 1:} Draw a segment $7$ cm long (the longest side). \textit{Justification: We need a base to build on.}
+
+\textbf{Step 2:} Set a compass to $5$ cm. Draw an arc from one endpoint. \textit{Justification: All points on this arc are $5$ cm from that vertex.}
+
+\textbf{Step 3:} Reset the compass to $3$ cm. Draw an arc from the other endpoint. \textit{Justification: All points on this arc are $3$ cm from the second vertex.}
+
+\textbf{Step 4:} Mark where the arcs intersect. Connect to form the triangle. \textit{Justification: The intersection point is exactly $5$ cm from one vertex and $3$ cm from the other.}
+
+Check triangle inequality: $5 + 3 = 8 > 7$ \checkmark, $5 + 7 = 12 > 3$ \checkmark, $7 + 3 = 10 > 5$ \checkmark.
+\answerHighlight{One unique triangle is formed. All three inequalities hold.}
+\end{workedExample}
+
+\tipBox{Whether you use a compass and straightedge, a protractor, or drawing software, always explain \textbf{why} each step works — not just \textbf{what} you did.}
+
+\begin{practiceBox}{Drawing Geometric Figures}
+\resetProblems
+
+\prob Can you draw a triangle with sides $4$ cm, $6$ cm, and $11$ cm? Justify using the triangle inequality.
+\answerExplain{No}{Check: $4 + 6 = 10$, but $10 < 11$. The two shorter sides cannot reach each other. The triangle inequality fails, so no triangle is possible.}
+
+\prob Describe the steps to construct an equilateral triangle with side $5$ cm. Justify each step.
+\answerExplain{Draw $5$ cm base; arc $5$ cm from each endpoint; connect intersection}{Step 1: Draw a $5$ cm segment (one side). Step 2: Arc $5$ cm from the left endpoint (all points at distance $5$). Step 3: Arc $5$ cm from the right endpoint. Step 4: Connect the intersection — it is $5$ cm from both endpoints, making all sides equal.}
+
+\prob A rectangle has a perimeter of $20$ cm. How many different rectangles are possible? Explain.
+\answerExplain{Many}{The sides must add to $10$ (half the perimeter). Possible pairs: $1 \times 9$, $2 \times 8$, $3 \times 7$, etc. Perimeter alone does not fix the shape.}
+
+\prob You know two sides of a triangle are $6$ cm and $8$ cm, with a $90°$ angle between them. How many triangles can you draw? Justify.
+\answerExplain{Exactly one}{Two sides and the included angle (SAS condition) fully determine a triangle. There is only one right triangle with legs $6$ and $8$ cm.}
+
+\trueOrFalse{If you know all three angles of a triangle, there is exactly one triangle you can draw.}
+\answerTF{False}
+
+\end{practiceBox}

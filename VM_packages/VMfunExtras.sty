@@ -1,0 +1,383 @@
+%----------------------------------------------------------------------------------------
+% VMfunExtras.sty - Extra Elements for Grade 6
+% Includes: Mascot, Tips, Fun Facts, Warnings, Think About It, Notes
+%----------------------------------------------------------------------------------------
+\ProvidesPackage{VMfunExtras}[2026/03/02 Grade 6 Extra Elements]
+
+%========================================================================================
+% 1. MASCOT SAYS (Owl character with speech bubble)
+%    An owl mascot gives tips, encouragement, or fun explanations.
+%    Design: Owl icon on the left, purple speech bubble on the right.
+%    Usage: \mascotSays{Division = fair sharing! Split things into equal groups.}
+%========================================================================================
+\newcommand{\mascotSays}[1]{%
+    \par\vspace{4mm}%
+    \noindent
+    \begin{minipage}[c]{0.1\linewidth}
+        \centering
+        \iconOwl[1.4cm]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.85\linewidth}
+        \begin{tcolorbox}[
+            enhanced,
+            colback=funPurple!8,
+            colframe=funPurple!50,
+            boxrule=1.5pt,
+            arc=10pt,
+            outer arc=10pt,
+            left=5mm, right=5mm,
+            top=3mm, bottom=3mm,
+            fontupper=\itshape\sffamily,
+            before upper={\color{funPurpleDark}\faQuoteLeft~},
+            after upper={~\color{funPurpleDark}\faQuoteRight},
+        ]
+            #1
+        \end{tcolorbox}
+    \end{minipage}%
+    \par\vspace{4mm}%
+}
+
+%========================================================================================
+% 2. TIP BOX (Pencil character with helpful tip)
+%    A pencil character gives a useful tip or trick.
+%    Design: Pencil icon + cream/yellow dotted-border speech bubble.
+%    Usage: \tipBox{Line up your numbers by place value!}
+%========================================================================================
+\newcommand{\tipBox}[1]{%
+    \par\vspace{4mm}%
+    \noindent
+    \begin{minipage}[c]{0.08\linewidth}
+        \centering
+        \iconPencil[1.2cm]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.88\linewidth}
+        \begin{tcolorbox}[
+            enhanced,
+            colback=funYellowLight,
+            colframe=funYellow,
+            boxrule=0pt,
+            borderline={1.5pt}{0pt}{funOrange, dashed},
+            arc=10pt,
+            outer arc=10pt,
+            left=5mm, right=5mm,
+            top=3mm, bottom=3mm,
+            fontupper=\sffamily,
+            overlay={
+                \node[anchor=north west, fill=funOrange, text=white, rounded corners=3pt,
+                      inner sep=2pt, font=\tiny\bfseries\sffamily]
+                    at ([xshift=3mm, yshift=-1mm]frame.north west) {\faInfoCircle~TIP};
+            },
+        ]
+            \vspace{1mm}#1
+        \end{tcolorbox}
+    \end{minipage}%
+    \par\vspace{4mm}%
+}
+
+%========================================================================================
+% 3. FUN FACT BOX
+%    An interesting math fact to engage students.
+%    Design: Pink/yellow box with lightbulb icon.
+%    Usage: \begin{funFact} Did you know that... \end{funFact}
+%========================================================================================
+\newtcolorbox{funFact}{
+    enhanced,
+    colback=funPinkLight,
+    colframe=funPink,
+    colbacktitle=funPink!15,
+    coltitle=funPinkDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\iconLightbulb~~Fun Fact!},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=4mm, bottom=4mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 4. WARNING BOX (Common Mistakes)
+%    Warns students about common errors.
+%    Design: Red header with warning icon, light red content.
+%    Usage: \begin{warningBox} Don't forget to carry! \end{warningBox}
+%    Optional title: \begin{warningBox}[Common Mistake!] ... \end{warningBox}
+%========================================================================================
+\newtcolorbox{warningBox}[1][Watch Out!]{
+    enhanced,
+    colback=funRedLight,
+    colframe=funRed,
+    colbacktitle=funRed!15,
+    coltitle=funRed!80!black,
+    fonttitle=\large\bfseries\sffamily,
+    title={\iconWarning~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 5. THINK ABOUT IT (Thought-provoking questions)
+%    Encourages students to think deeper.
+%    Design: Teal box with brain/magnifying glass icon.
+%    Usage: \begin{thinkAboutIt} Why does this work? \end{thinkAboutIt}
+%========================================================================================
+\newtcolorbox{thinkAboutIt}[1][Think About It]{
+    enhanced,
+    colback=funTealLight,
+    colframe=funTeal,
+    colbacktitle=funTeal!15,
+    coltitle=funTealDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\iconBrain~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 6. ENCOURAGEMENT BANNER
+%    A motivational message to encourage students.
+%    Design: Colorful gradient-like banner with fun text.
+%    Usage: \encouragement{Great job! You're a math superstar!}
+%========================================================================================
+\newcommand{\encouragement}[1]{%
+    \par\vspace{4mm}%
+    \begin{center}
+    \begin{tcolorbox}[
+        enhanced,
+        colback=funYellow!15,
+        colframe=funYellow,
+        boxrule=2pt,
+        arc=12pt,
+        outer arc=12pt,
+        width=0.92\linewidth,
+        halign=center,
+        top=4mm, bottom=4mm,
+        left=8mm, right=8mm,
+        fontupper=\large\bfseries\sffamily\color{funOrangeDark},
+    ]
+        #1
+    \end{tcolorbox}
+    \end{center}
+    \vspace{2mm}%
+}
+
+%========================================================================================
+% 7. DID YOU KNOW? (Quick interesting tidbit)
+%    A shorter version of Fun Fact for quick facts.
+%    Usage: \didYouKnow{Zero is neither odd nor even!}
+%========================================================================================
+\newcommand{\didYouKnow}[1]{%
+    \par\vspace{3mm}%
+    \noindent
+    \begin{tcolorbox}[
+        enhanced,
+        colback=funYellowLight,
+        colframe=funYellow!70,
+        boxrule=1pt,
+        arc=6pt,
+        outer arc=6pt,
+        left=5mm, right=5mm,
+        top=3mm, bottom=3mm,
+    ]
+        {\color{funYellowDark}\faLightbulb[regular]}~{\bfseries\sffamily\color{funYellowDark}Did you know?}\hspace{3mm}#1
+    \end{tcolorbox}
+    \vspace{2mm}%
+}
+
+%========================================================================================
+% 8. REAL WORLD CONNECTION
+%    Shows how math connects to the real world.
+%    Design: Blue-green box with globe/world icon.
+%    Usage: \begin{realWorld} We use division when sharing pizza! \end{realWorld}
+%========================================================================================
+% ICON NEEDED: Globe/world icon (colorful cartoon Earth)
+% File: icons/globe-icon.pdf
+\newtcolorbox{realWorld}[1][Real-World Connection]{
+    enhanced,
+    colback=funBlue!5,
+    colframe=funBlue!70,
+    colbacktitle=funBlue!12,
+    coltitle=funBlueDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{funBlueDark}\faGlobeAmericas}~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 9. STORY PROBLEM BOX
+%     A special box for story/word problems with a scene setter.
+%     Design: Illustrated box with a small scene at top.
+%     Usage: \begin{storyProblem}{At the Bakery} ... \end{storyProblem}
+%========================================================================================
+% ICON NEEDED: Various scene-setter icons (bakery, playground, store, etc.)
+% File: icons/scene-bakery.pdf, icons/scene-playground.pdf, etc.
+\newtcolorbox{storyProblem}[2][funBlue]{
+    enhanced,
+    colback=white,
+    colframe=#1,
+    colbacktitle=#1!15,
+    coltitle=#1!80!black,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{#1}\faBookOpen}~~#2},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 10. CONVERSATION BUBBLES (for dialogues between characters)
+%     Usage: \sayLeft{mascot}{I have 12 cookies!}
+%            \sayRight{student}{How do we share them with 3 friends?}
+%========================================================================================
+\newcommand{\sayLeft}[2]{%
+    \par\vspace{2mm}\noindent
+    \begin{minipage}[t]{0.12\linewidth}
+        \centering{\color{funBlue}\faComment}\\[1mm]\small\sffamily\bfseries #1
+    \end{minipage}%
+    \begin{minipage}[t]{0.55\linewidth}
+        \begin{tcolorbox}[
+            enhanced,
+            colback=funBlueLight,
+            colframe=funBlue!40,
+            boxrule=1pt,
+            arc=8pt,
+            left=3mm, right=3mm,
+            top=2mm, bottom=2mm,
+        ]
+            \sffamily #2
+        \end{tcolorbox}
+    \end{minipage}%
+    \par\vspace{1mm}%
+}
+
+\newcommand{\sayRight}[2]{%
+    \par\vspace{1mm}%
+    \hfill
+    \begin{minipage}[t]{0.55\linewidth}
+        \begin{tcolorbox}[
+            enhanced,
+            colback=funGreenLight,
+            colframe=funGreen!40,
+            boxrule=1pt,
+            arc=8pt,
+            left=3mm, right=3mm,
+            top=2mm, bottom=2mm,
+        ]
+            \sffamily #2
+        \end{tcolorbox}
+    \end{minipage}%
+    \begin{minipage}[t]{0.12\linewidth}
+        \centering{\color{funGreen}\faComment}\\[1mm]\small\sffamily\bfseries #1
+    \end{minipage}%
+    \par\vspace{2mm}%
+}
+
+%========================================================================================
+% 11. SUMMARY BOX
+%     End-of-topic summary of what was learned.
+%     Usage: \begin{summaryBox} ... \end{summaryBox}
+%========================================================================================
+\newtcolorbox{summaryBox}[1][What We Learned]{
+    enhanced,
+    colback=funBlue!5,
+    colframe=funBlue,
+    colbacktitle=funBlueDark!15,
+    coltitle=funBlueDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\iconCheck~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 12. RIDDLE BOX (math riddle / brain teaser)
+%     A fun math riddle that gets students excited about problem solving.
+%     Design: Pink theme with magic wand icon and playful italic text.
+%     Usage:
+%       \begin{riddleBox}
+%           I am a number less than 20. I am odd.
+%           If you multiply my digits, you get 15.
+%           What number am I? \answerBlank
+%       \end{riddleBox}
+%========================================================================================
+\newtcolorbox{riddleBox}[1][Math Riddle]{
+    enhanced,
+    colback=funPink!5,
+    colframe=funPink,
+    colbacktitle=funPink!15,
+    coltitle=funPinkDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{funPinkDark}\faMagic}~~#1},
+    arc=10pt,
+    outer arc=10pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    fontupper=\sffamily,
+    breakable,
+}
+
+%========================================================================================
+% 13. ACTIVITY BOX (hands-on / manipulatives activity)
+%     For activities that require physical objects: blocks, coins, rulers, etc.
+%     Design: Orange theme with pointing-hand icon, inviting and action-oriented.
+%     Usage:
+%       \begin{activityBox}{Build It!}
+%           Get 12 blocks. Can you arrange them into 3 equal rows?
+%           How many are in each row? \answerBlank
+%       \end{activityBox}
+%========================================================================================
+\newtcolorbox{activityBox}[1][Activity]{
+    enhanced,
+    colback=funOrange!5,
+    colframe=funOrange,
+    colbacktitle=funOrange!15,
+    coltitle=funOrangeDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{funOrangeDark}\faHandPointRight}~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+    borderline south={2pt}{0pt}{funOrange!40, dashed},
+}

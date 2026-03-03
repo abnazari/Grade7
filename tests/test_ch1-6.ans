@@ -1,0 +1,421 @@
+\ansChap{1}
+\ansSec{1.1}
+\ansItem{1}{$2$ walls per hour}
+\ansExplain{1}{Divide the wall covered by the time: $\frac {2}{3} \div \frac {1}{3}$. Flip the second fraction and multiply: $\frac {2}{3} \times \frac {3}{1} = \frac {6}{3} = 2$ walls per hour.}
+\ansItem{2}{$\frac {2}{3}$ cup per minute}
+\ansExplain{2}{Divide cups by minutes: $\frac {1}{2} \div \frac {3}{4}$. Flip and multiply: $\frac {1}{2} \times \frac {4}{3} = \frac {4}{6} = \frac {2}{3}$ cup per minute.}
+\ansItem{3}{$1\frac {1}{4}$ gallons per mile}
+\ansExplain{3}{Divide gallons by miles: $\frac {5}{6} \div \frac {2}{3}$. Flip and multiply: $\frac {5}{6} \times \frac {3}{2} = \frac {15}{12} = \frac {5}{4} = 1\frac {1}{4}$ gallons per mile.}
+\ansItem{4}{Equal --- both $2$ cups per cup}
+\ansExplain{4}{Find each unit rate. Mix A: $\frac {1}{2} \div \frac {1}{4} = \frac {1}{2} \times 4 = 2$. Mix B: $\frac {2}{3} \div \frac {1}{3} = \frac {2}{3} \times 3 = 2$. Both give $2$ cups of nuts per cup of raisins, so they are equal.}
+\ansItem{5}{Beetle: $\frac {7}{8}$ m/hr $>$ $\frac {5}{6}$ m/hr}
+\ansExplain{5}{Find each unit rate. Snail: $\frac {5}{8} \div \frac {3}{4} = \frac {5}{8} \times \frac {4}{3} = \frac {20}{24} = \frac {5}{6}$ m/hr. Beetle: $\frac {7}{10} \div \frac {4}{5} = \frac {7}{10} \times \frac {5}{4} = \frac {35}{40} = \frac {7}{8}$ m/hr. Since $\frac {7}{8} > \frac {5}{6}$, the beetle is faster.}
+\ansSec{1.2}
+\ansItem{1}{Yes}
+\ansExplain{1}{Divide $y \div x$ for each row: $9 \div 3 = 3$, $15 \div 5 = 3$, $21 \div 7 = 3$. Every ratio is $3$, so the relationship is proportional.}
+\ansItem{2}{No}
+\ansExplain{2}{Divide $y \div x$ for each row: $6 \div 2 = 3$, $10 \div 4 = 2.5$, $14 \div 6 \approx 2.3$. The ratios are not all equal, so this is not proportional. It has a constant change of $+4$, but that does not mean a constant ratio.}
+\ansItem{3}{True}
+\ansItem{4}{Plan 1}
+\ansExplain{4}{Plan 1 has no base fee, so dividing total cost by texts always gives $\$0.05$. That constant ratio means it is proportional. Plan 2 has a $\$5$ monthly charge that does not depend on texts, so the cost-per-text ratio changes and it is not proportional.}
+\ansSec{1.3}
+\ansItem{1}{$k = 4$}
+\ansExplain{1}{Pick any row and divide $y$ by $x$: $12 \div 3 = 4$. Check another row: $20 \div 5 = 4$ and $32 \div 8 = 4$. All ratios match, so $k = 4$.}
+\ansItem{2}{$k = 60$ miles per hour}
+\ansExplain{2}{Divide miles by hours: $30 \div \frac {1}{2} = 30 \times 2 = 60$. This means the car travels $60$ miles for every $1$ hour. Check: $60 \div 1 = 60$ and $120 \div 2 = 60$ \checkmark .}
+\ansItem{3}{$k = 2.5$}
+\ansExplain{3}{On a proportional graph, $k = y \div x$. Use the given point: $k = 15 \div 6 = 2.5$. This means $y$ increases by $2.5$ for every $1$ unit of $x$.}
+\ansItem{4}{$k = 16$ pages/min}
+\ansExplain{4}{Divide to find the unit rate: $80 \div 5 = 16$. The printer produces $16$ pages every minute.}
+\ansItem{5}{$y = 21$}
+\ansExplain{5}{First find $k$: $14 \div 4 = 3.5$. Then use $y = kx$ to find the missing value: $y = 3.5 \times 6 = 21$. Check: $35 \div 10 = 3.5$ \checkmark .}
+\ansSec{1.4}
+\ansItem{1}{$c = 8h$}
+\ansExplain{1}{The rate is $\$8$ per hour, so $k = 8$. Plug into $y = kx$: cost $= 8 \times $ hours, giving $c = 8h$.}
+\ansItem{2}{$g = 3.5m$}
+\ansExplain{2}{The unit rate is $3.5$ gallons per minute, so $k = 3.5$. The equation is $g = 3.5m$.}
+\ansItem{3}{$y = 2.5x$}
+\ansExplain{3}{Find $k$ by dividing any $y$ by its $x$: $10 \div 4 = 2.5$. Check: $15 \div 6 = 2.5$ \checkmark . Write the equation: $y = 2.5x$.}
+\ansItem{4}{$9$ cups}
+\ansExplain{4}{The equation is $f = \frac {3}{4}s$ where $s$ is servings. Plug in $12$: $f = \frac {3}{4} \times 12 = \frac {36}{4} = 9$ cups of flour.}
+\ansItem{5}{$250$ texts}
+\ansExplain{5}{Write the equation: $c = 0.04t$. Set $c = 10$ and solve: $10 = 0.04t$, so $t = 10 \div 0.04 = 250$ texts.}
+\ansSec{1.5}
+\ansItem{1}{One ticket costs $\$5$}
+\ansExplain{1}{The point $(1, r)$ on a proportional graph gives the unit rate. Here $x = 1$ ticket and $y = 5$ dollars, so one ticket costs $\$5$.}
+\ansItem{2}{Unit rate $= 6$; $y = 42$}
+\ansExplain{2}{Find the unit rate: $k = 18 \div 3 = 6$. This means $y$ increases by $6$ for every $1$ unit of $x$. Now plug in $x = 7$: $y = 6 \times 7 = 42$.}
+\ansItem{3}{Runner A}
+\ansExplain{3}{Find each unit rate. Runner A: $k = 10 \div 2 = 5$ units per time. Runner B: $k = 8 \div 2 = 4$. A higher $k$ means a steeper line and a faster speed, so Runner A is faster.}
+\ansItem{4}{False}
+\ansItem{5}{$y = 2.5x$; $x = 16$}
+\ansExplain{5}{Find $k$: $12.5 \div 5 = 2.5$, so the equation is $y = 2.5x$. To find $x$ when $y = 40$: $40 = 2.5x$, divide both sides by $2.5$: $x = 40 \div 2.5 = 16$.}
+\ansSec{1.6}
+\ansItem{1}{$350$ miles}
+\ansExplain{1}{Find the unit rate: $210 \div 6 = 35$ miles per gallon. Multiply by $10$: $35 \times 10 = 350$ miles.}
+\ansItem{2}{$3\frac {3}{4}$ cups}
+\ansExplain{2}{Find rice per person: $\frac {3}{2} \div 4 = \frac {3}{8}$ cup. Multiply by $10$: $\frac {3}{8} \times 10 = \frac {30}{8} = 3\frac {3}{4}$ cups.}
+\ansItem{3}{$64$ km}
+\ansExplain{3}{Set up a proportion: $\frac {3}{24} = \frac {8}{d}$. Cross-multiply: $3d = 24 \times 8 = 192$. Divide: $d = 192 \div 3 = 64$ km.}
+\ansItem{4}{$30$ min}
+\ansExplain{4}{Find the unit rate: $120 \div 8 = 15$ pages per minute. Divide: $450 \div 15 = 30$ minutes.}
+\ansItem{5}{Large by $\$2$/gal}
+\ansExplain{5}{Find each unit price. Small: $18 \div 0.75 = \$24$ per gallon. Large: $33 \div 1.5 = \$22$ per gallon. The large can costs $\$2$ less per gallon, so it is the better deal.}
+\ansChap{2}
+\ansSec{2.1}
+\ansItem{1}{$30$}
+\ansExplain{1}{Convert the percent to a decimal: $15\% = 0.15$. Multiply: $0.15 \times 200 = 30$.}
+\ansItem{2}{$40\%$}
+\ansExplain{2}{Divide the part by the whole: $36 \div 90 = 0.4$. Convert to a percent by multiplying by $100$: $0.4 \times 100 = 40\%$.}
+\ansItem{3}{$36$}
+\ansExplain{3}{You know the part ($27$) and the percent ($75\% = 0.75$). Divide the part by the percent: $27 \div 0.75 = 36$. Check: $0.75 \times 36 = 27$ \checkmark .}
+\ansItem{4}{$70\%$}
+\ansExplain{4}{Divide the part by the whole: $42 \div 60 = 0.7$. Multiply by $100$ to get the percent: $0.7 \times 100 = 70\%$.}
+\ansItem{5}{$204$}
+\ansExplain{5}{Convert $85\%$ to a decimal: $0.85$. Multiply by the total: $0.85 \times 240 = 204$ items in stock.}
+\ansSec{2.2}
+\ansItem{1}{$36$}
+\ansExplain{1}{Set up the proportion: $\frac {n}{80} = \frac {45}{100}$. Cross-multiply: $100n = 80 \times 45 = 3600$. Divide both sides by $100$: $n = 36$.}
+\ansItem{2}{$45\%$}
+\ansExplain{2}{Set up the proportion with the percent unknown: $\frac {54}{120} = \frac {p}{100}$. Cross-multiply: $120p = 54 \times 100 = 5400$. Divide: $p = 5400 \div 120 = 45$, so $45\%$.}
+\ansItem{3}{$130$}
+\ansExplain{3}{Set up the proportion with the whole unknown: $\frac {78}{w} = \frac {60}{100}$. Cross-multiply: $60w = 78 \times 100 = 7800$. Divide: $w = 7800 \div 60 = 130$.}
+\ansItem{4}{$14\%$}
+\ansExplain{4}{Set up the proportion: $\frac {35}{250} = \frac {p}{100}$. Cross-multiply: $250p = 3500$. Divide: $p = 3500 \div 250 = 14$, so $14\%$ of the marbles are red.}
+\ansItem{5}{$345.6 \approx 346$ students}
+\ansExplain{5}{Set up: $\frac {n}{480} = \frac {72}{100}$. Cross-multiply: $100n = 480 \times 72 = 34{,}560$. Divide: $n = 345.6$. Round to $346$ since you can't have a partial student.}
+\ansSec{2.3}
+\ansItem{1}{$15\%$}
+\ansExplain{1}{First find the change: $9{,}200 - 8{,}000 = 1{,}200$. Divide by the original: $1{,}200 \div 8{,}000 = 0.15$. Multiply by $100$: the population increased by $15\%$.}
+\ansItem{2}{$\$135$}
+\ansExplain{2}{A $25\%$ discount means you pay $100\% - 25\% = 75\%$ of the price. Multiply: $180 \times 0.75 = \$135$.}
+\ansItem{3}{$25\%$}
+\ansExplain{3}{Find the change: $15 - 12 = 3$ cm. Divide by the original height: $3 \div 12 = 0.25$. Multiply by $100$: that is a $25\%$ increase.}
+\ansItem{4}{$0.60$}
+\ansExplain{4}{A $40\%$ decrease means you keep $100\% - 40\% = 60\%$. Convert to a decimal: $60\% = 0.60$. Multiply the original by $0.60$ to get the result.}
+\ansItem{5}{$20\%$}
+\ansExplain{5}{Find the change: $40 - 32 = 8$. Divide by the original price: $8 \div 40 = 0.2$. Multiply by $100$: the price decreased by $20\%$.}
+\ansSec{2.4}
+\ansItem{1}{$\$21$}
+\ansExplain{1}{A $75\%$ markup means the price is $100\% + 75\% = 175\%$ of the cost. Multiply: $12 \times 1.75 = \$21$.}
+\ansItem{2}{$\$45.50$}
+\ansExplain{2}{A $30\%$ discount means you pay $100\% - 30\% = 70\%$. Multiply: $65 \times 0.70 = \$45.50$.}
+\ansItem{3}{$\$23.32$}
+\ansExplain{3}{Tax is added on top, so multiply by $1 + 0.06 = 1.06$. Total: $22 \times 1.06 = \$23.32$.}
+\ansItem{4}{$\$73.44$}
+\ansExplain{4}{First apply the discount: $80 \times 0.85 = \$68$. Then add tax to the sale price: $68 \times 1.08 = \$73.44$. Always apply tax last.}
+\ansItem{5}{$60\%$}
+\ansExplain{5}{Find the markup amount: $40 - 25 = \$15$. Divide by the original cost: $15 \div 25 = 0.60$. Multiply by $100$: that is a $60\%$ markup.}
+\ansSec{2.5}
+\ansItem{1}{$\$6.30$}
+\ansExplain{1}{Convert the percent to a decimal: $18\% = 0.18$. Multiply by the bill: $35 \times 0.18 = \$6.30$.}
+\ansItem{2}{$\$270$}
+\ansExplain{2}{Commission means she earns $6\%$ of total sales. Convert: $6\% = 0.06$. Multiply: $4{,}500 \times 0.06 = \$270$.}
+\ansItem{3}{$\$84$}
+\ansExplain{3}{The fee is added on top, so you pay $100\% + 12\% = 112\%$. Multiply: $75 \times 1.12 = \$84$.}
+\ansItem{4}{About $\$9.30$}
+\ansExplain{4}{Find $10\%$ by moving the decimal: $\$6.20$. Find $5\%$ by taking half of that: $\$3.10$. Add them: $6.20 + 3.10 = \$9.30$. That is $15\%$.}
+\ansItem{5}{$\$14{,}000$}
+\ansExplain{5}{Convert the percent: $4\% = 0.04$. Multiply by the sale price: $350{,}000 \times 0.04 = \$14{,}000$.}
+\ansSec{2.6}
+\ansItem{1}{$\$80$}
+\ansExplain{1}{Use the formula $I = Prt$. Convert the rate: $5\% = 0.05$. Multiply: $I = 800 \times 0.05 \times 2 = \$80$.}
+\ansItem{2}{$\$288$}
+\ansExplain{2}{Use $I = Prt$. Convert: $6\% = 0.06$. Multiply: $I = 1{,}200 \times 0.06 \times 4 = \$288$. This is the extra amount you pay for borrowing.}
+\ansItem{3}{$\$402.50$}
+\ansExplain{3}{First find the interest: $I = 350 \times 0.03 \times 5 = \$52.50$. Then add to the principal: $350 + 52.50 = \$402.50$.}
+\ansItem{4}{$4\%$}
+\ansExplain{4}{Start with $I = Prt$ and solve for $r$: $240 = 2{,}000 \times r \times 3$. Simplify: $240 = 6{,}000r$. Divide: $r = 240 \div 6{,}000 = 0.04 = 4\%$.}
+\ansItem{5}{$2$ years}
+\ansExplain{5}{Start with $I = Prt$ and solve for $t$: $75 = 1{,}500 \times 0.025 \times t$. Simplify: $75 = 37.5t$. Divide: $t = 75 \div 37.5 = 2$ years.}
+\ansSec{2.7}
+\ansItem{1}{$20\%$}
+\ansExplain{1}{Find the difference: $|30 - 25| = 5$. Divide by the actual value: $5 \div 25 = 0.2$. Multiply by $100$: the percent error is $20\%$.}
+\ansItem{2}{$20\%$}
+\ansExplain{2}{Find the difference: $|2 - 2.5| = 0.5$. Divide by the actual: $0.5 \div 2.5 = 0.2$. Multiply by $100$: $20\%$ error. The absolute value makes the answer positive even though the estimate was too low.}
+\ansItem{3}{$\approx 6.7\%$}
+\ansExplain{3}{Find the difference: $|3.2 - 3| = 0.2$. Divide by the actual: $0.2 \div 3 = 0.0\overline {6}$. Multiply by $100$: about $6.7\%$ error.}
+\ansItem{4}{$\approx 8.7\%$}
+\ansExplain{4}{Find the difference: $|5{,}000 - 4{,}600| = 400$. Divide by the actual value: $400 \div 4{,}600 \approx 0.087$. Multiply by $100$: about $8.7\%$ error.}
+\ansItem{5}{True}
+\ansChap{3}
+\ansSec{3.1}
+\ansItem{1}{$8$}
+\ansExplain{1}{The opposite of a negative number is positive. $-8$ is $8$ units left of $0$, so its opposite is $8$ units right of $0$.}
+\ansItem{2}{$12$ and $7$}
+\ansExplain{2}{Absolute value measures distance from $0$. $-12$ is $12$ units from $0$, so $|-12| = 12$. $7$ is $7$ units from $0$, so $|7| = 7$.}
+\ansItem{3}{$0$ yards}
+\ansExplain{3}{Gain $= +6$, loss $= -6$. Add: $6 + (-6) = 0$. The team is back where it started because the gain and loss are opposites.}
+\ansItem{4}{False}
+\ansItem{5}{$-7, \; -4, \; 0, \; 2, \; 5$}
+\ansExplain{5}{On a number line, numbers increase from left to right. $-7$ is farthest left, then $-4$, then $0$, then $2$, then $5$.}
+\ansSec{3.2}
+\ansItem{1}{$-13$}
+\ansExplain{1}{Both are negative, so add the absolute values: $8 + 5 = 13$. Keep the negative sign: $-13$.}
+\ansItem{2}{$-5$}
+\ansExplain{2}{Different signs, so subtract: $12 - 7 = 5$. The larger absolute value is $12$ (negative), so the answer is $-5$.}
+\ansItem{3}{$0$}
+\ansExplain{3}{These are opposites (additive inverses). A number plus its opposite always equals $0$.}
+\ansItem{4}{$8°$C}
+\ansExplain{4}{Start at $-6$ and add $14$: $(-6) + 14 = 8$. Different signs, so subtract $14 - 6 = 8$, and the larger absolute value is positive.}
+\ansItem{5}{$-7$}
+\ansExplain{5}{First add the negatives: $(-9) + (-4) = -13$. Then add $6$: $(-13) + 6 = -7$. Subtract $13 - 6 = 7$, keep the negative sign.}
+\ansSec{3.3}
+\ansItem{1}{$-6$}
+\ansExplain{1}{Rewrite as adding the opposite: $10 + (-16)$. Different signs, so subtract: $16 - 10 = 6$. The larger absolute value is negative, so the answer is $-6$.}
+\ansItem{2}{$5$}
+\ansExplain{2}{Rewrite: $(-7) + 12$. Different signs, so $12 - 7 = 5$. The larger absolute value is positive, so the answer is $5$.}
+\ansItem{3}{$-13°$C}
+\ansExplain{3}{Subtract: $-8 - 5 = -8 + (-5) = -13$. The temperature dropped $13$ degrees.}
+\ansItem{4}{$13$ units}
+\ansExplain{4}{Distance $= |{-9} - 4| = |{-13}| = 13$. You can also count: from $-9$ to $0$ is $9$ units, then $0$ to $4$ is $4$ units, total $13$.}
+\ansItem{5}{$2$}
+\ansExplain{5}{Rewrite both subtractions: $(-3) + (-5) + 10$. Add the negatives first: $-3 + (-5) = -8$. Then add $10$: $-8 + 10 = 2$.}
+\ansSec{3.4}
+\ansItem{1}{$-1.7$}
+\ansExplain{1}{Different signs, so subtract the absolute values: $3.5 - 1.8 = 1.7$. The larger absolute value ($3.5$) is negative, so the answer is $-1.7$.}
+\ansItem{2}{$-\dfrac {5}{4}$ or $-1\dfrac {1}{4}$}
+\ansExplain{2}{Rewrite subtraction as addition: $-\frac {1}{2} + (-\frac {3}{4})$. Common denominator $4$: $-\frac {2}{4} + (-\frac {3}{4})$. Same signs, add: $\frac {2+3}{4} = \frac {5}{4}$. Both negative, so $-\frac {5}{4}$.}
+\ansItem{3}{$-2.5$}
+\ansExplain{3}{Different signs, so subtract: $6.7 - 4.2 = 2.5$. The larger absolute value ($6.7$) is negative, so the answer is $-2.5$.}
+\ansItem{4}{$\dfrac {7}{6}$ or $1\dfrac {1}{6}$}
+\ansExplain{4}{Subtracting a negative means add: $\frac {5}{6} + \frac {1}{3}$. Common denominator $6$: $\frac {5}{6} + \frac {2}{6} = \frac {7}{6} = 1\frac {1}{6}$.}
+\ansItem{5}{$-10.9$ m}
+\ansExplain{5}{Start at $-12.5$. Go up: $-12.5 + 4.8 = -7.7$. Go down: $-7.7 + (-3.2) = -10.9$ m.}
+\ansSec{3.5}
+\ansItem{1}{$54$}
+\ansExplain{1}{Multiply the absolute values: $6 \times 9 = 54$. Same signs (both negative) give a positive result: $54$.}
+\ansItem{2}{$-28$}
+\ansExplain{2}{Multiply the absolute values: $4 \times 7 = 28$. Different signs (one negative, one positive) give a negative result: $-28$.}
+\ansItem{3}{$\dfrac {3}{10}$}
+\ansExplain{3}{Multiply numerators: $3 \times 2 = 6$. Multiply denominators: $4 \times 5 = 20$. Both negative → positive: $\frac {6}{20} = \frac {3}{10}$.}
+\ansItem{4}{$-0.6$}
+\ansExplain{4}{Multiply the absolute values: $1.5 \times 0.4 = 0.6$. Different signs → negative: $-0.6$.}
+\ansItem{5}{$-30$}
+\ansExplain{5}{Multiply in steps: $(-2) \times (-3) = 6$ (same signs → positive). Then $6 \times (-5) = -30$ (different signs → negative). Three negatives (odd count) give a negative product.}
+\ansSec{3.6}
+\ansItem{1}{$8$}
+\ansExplain{1}{Divide the absolute values: $48 \div 6 = 8$. Same signs (both negative) give a positive result: $8$.}
+\ansItem{2}{$-5$}
+\ansExplain{2}{Divide the absolute values: $35 \div 7 = 5$. Different signs → negative: $-5$.}
+\ansItem{3}{$-\dfrac {5}{2}$ or $-2\dfrac {1}{2}$}
+\ansExplain{3}{Flip and multiply: $\frac {5}{6} \times \frac {3}{1} = \frac {15}{6} = \frac {5}{2}$. Different signs → negative: $-\frac {5}{2}$.}
+\ansItem{4}{$-4$}
+\ansExplain{4}{Divide the absolute values: $4.8 \div 1.2 = 4$. Different signs → negative: $-4$.}
+\ansItem{5}{$-30$ m/min}
+\ansExplain{5}{Descending means negative depth: $-240 \div 8 = -30$. The submarine goes down $30$ meters each minute.}
+\ansSec{3.7}
+\ansItem{1}{$0.875$}
+\ansExplain{1}{Divide $7 \div 8$: $8$ goes into $70$ eight times ($64$), remainder $6$. $8$ into $60$ seven times ($56$), remainder $4$. $8$ into $40$ five times ($40$), remainder $0$. So $\frac {7}{8} = 0.875$ (terminates).}
+\ansItem{2}{$0.\overline {4}$}
+\ansExplain{2}{Divide $4 \div 9 = 0.444\ldots $ The remainder keeps being $4$, so the digit $4$ repeats forever. Write $0.\overline {4}$.}
+\ansItem{3}{$0.\overline {45}$}
+\ansExplain{3}{Divide $5 \div 11 = 0.454545\ldots $ The pattern $45$ repeats. Write $0.\overline {45}$.}
+\ansItem{4}{False}
+\ansItem{5}{$-0.58\overline {3}$}
+\ansExplain{5}{Divide $7 \div 12 = 0.5833\ldots $ The digit $3$ repeats after $58$. Add the negative sign: $-0.58\overline {3}$.}
+\ansSec{3.8}
+\ansItem{1}{$\$41.70$}
+\ansExplain{1}{Add each change in order: $42.30 + 1.75 = 44.05$. Then $44.05 - 3.20 = 40.85$. Then $40.85 + 0.85 = 41.70$.}
+\ansItem{2}{$1\frac {7}{12}$ cups}
+\ansExplain{2}{Subtract: $2\frac {1}{4} - \frac {2}{3} = \frac {9}{4} - \frac {2}{3}$. Common denominator $12$: $\frac {27}{12} - \frac {8}{12} = \frac {19}{12} = 1\frac {7}{12}$ cups of water.}
+\ansItem{3}{$6$ yards}
+\ansExplain{3}{Add all changes: $3 + (-7) + 12 + (-2)$. Group positives: $3 + 12 = 15$. Group negatives: $(-7) + (-2) = -9$. Combine: $15 + (-9) = 6$ yards gained.}
+\ansItem{4}{$\$14.65$}
+\ansExplain{4}{Divide the bill: $48.60 \div 4 = \$12.15$ per person. Add the tip: $12.15 + 2.50 = \$14.65$.}
+\ansItem{5}{$-5\frac {1}{2}$}
+\ansExplain{5}{Multiply first: $-\frac {1}{2} \times 8 = -4$. Divide: $\frac {3}{4} \div (-\frac {1}{2}) = \frac {3}{4} \times (-2) = -\frac {3}{2}$. Add: $-4 + (-\frac {3}{2}) = -\frac {8}{2} + (-\frac {3}{2}) = -\frac {11}{2} = -5\frac {1}{2}$.}
+\ansChap{4}
+\ansSec{4.1}
+\ansItem{1}{$3n - 8$}
+\ansExplain{1}{``$3$ times a number'' is $3n$. ``$8$ less than'' means subtract $8$ from that result: $3n - 8$.}
+\ansItem{2}{$-1$}
+\ansExplain{2}{Substitute: $4(-2) + 7 = -8 + 7 = -1$.}
+\ansItem{3}{$-1$}
+\ansExplain{3}{Substitute: $\frac {12}{3} - 5 = 4 - 5 = -1$.}
+\ansItem{4}{$0.10t + 15$}
+\ansExplain{4}{Each text costs $\$0.10$, so $t$ texts cost $0.10t$. Add the $\$15$ fee: $0.10t + 15$.}
+\ansItem{5}{$\$23.50$}
+\ansExplain{5}{Substitute $t = 85$: $0.10(85) + 15 = 8.50 + 15 = \$23.50$.}
+\ansSec{4.2}
+\ansItem{1}{$8a - 3$}
+\ansExplain{1}{$6a$ and $2a$ are like terms: $6a + 2a = 8a$. The $-3$ has no like term, so the result is $8a - 3$.}
+\ansItem{2}{$8x - 5$}
+\ansExplain{2}{Group like terms: $(5x + 3x) + (-9 + 4) = 8x + (-5) = 8x - 5$.}
+\ansItem{3}{$4y - 3$}
+\ansExplain{3}{Combine variable terms: $-2y + 6y = 4y$. Combine constants: $7 + (-10) = -3$. Result: $4y - 3$.}
+\ansItem{4}{$\frac {5}{4}n - 2$ or $1\frac {1}{4}n - 2$}
+\ansExplain{4}{Find a common denominator for the coefficients: $\frac {2}{4}n + \frac {3}{4}n = \frac {5}{4}n$. The constant stays: $\frac {5}{4}n - 2$.}
+\ansItem{5}{False}
+\ansSec{4.3}
+\ansItem{1}{$10x + 15$}
+\ansExplain{1}{Multiply $5$ by each term inside: $5 \times 2x = 10x$ and $5 \times 3 = 15$. Result: $10x + 15$.}
+\ansItem{2}{$-12a + 6$}
+\ansExplain{2}{Multiply $-3$ by each term: $-3 \times 4a = -12a$ and $-3 \times (-2) = +6$. A negative times a negative is positive.}
+\ansItem{3}{$3x - 5$}
+\ansExplain{3}{Multiply $\frac {1}{2}$ by each term: $\frac {1}{2} \times 6x = 3x$ and $\frac {1}{2} \times (-10) = -5$. Result: $3x - 5$.}
+\ansItem{4}{$10x + 2$}
+\ansExplain{4}{First expand: $2(3x + 1) = 6x + 2$. Then combine like terms: $6x + 2 + 4x = 10x + 2$.}
+\ansItem{5}{$4x + 13$}
+\ansExplain{5}{Expand each part: $-2x + 10 + 6x + 3$. Combine like terms: $(-2x + 6x) + (10 + 3) = 4x + 13$.}
+\ansSec{4.4}
+\ansItem{1}{$5(2x + 5)$}
+\ansExplain{1}{The GCF of $10$ and $25$ is $5$. Divide each term: $10x \div 5 = 2x$ and $25 \div 5 = 5$. Write: $5(2x + 5)$.}
+\ansItem{2}{$6(2y - 3)$}
+\ansExplain{2}{The GCF of $12$ and $18$ is $6$. Divide: $12y \div 6 = 2y$ and $-18 \div 6 = -3$. Write: $6(2y - 3)$.}
+\ansItem{3}{$7(2a + 3b)$}
+\ansExplain{3}{The GCF of $14$ and $21$ is $7$. Divide: $14a \div 7 = 2a$ and $21b \div 7 = 3b$. Write: $7(2a + 3b)$.}
+\ansItem{4}{$-3(3x + 2)$}
+\ansExplain{4}{The GCF is $3$. Factor out $-3$: $-9x \div (-3) = 3x$ and $-6 \div (-3) = 2$. Write: $-3(3x + 2)$. Check: $-3(3x + 2) = -9x - 6$ \checkmark .}
+\ansItem{5}{False}
+\ansSec{4.5}
+\ansItem{1}{$7x + 4$}
+\ansExplain{1}{Remove parentheses: $4x + 6 + 3x - 2$. Combine like terms: $(4x + 3x) + (6 - 2) = 7x + 4$.}
+\ansItem{2}{$5n - 12$}
+\ansExplain{2}{Distribute the negative: $8n - 5 - 3n - 7$. Combine: $(8n - 3n) + (-5 - 7) = 5n - 12$.}
+\ansItem{3}{$10$}
+\ansExplain{3}{Distribute the negative: $2y + 9 - 2y + 1$. The variable terms cancel: $0y + 10 = 10$. The answer is just a constant.}
+\ansItem{4}{$5x - 4$}
+\ansExplain{4}{Combine: $(-x + 6x) + (4 - 8) = 5x - 4$.}
+\ansItem{5}{$6x + 2$}
+\ansExplain{5}{Add all three sides: $(2x + 1) + (3x - 4) + (x + 5)$. Combine: $(2x + 3x + x) + (1 - 4 + 5) = 6x + 2$.}
+\ansSec{4.6}
+\ansItem{1}{$1.08x$; an $8\%$ increase}
+\ansExplain{1}{Factor out $x$: $x(1 + 0.08) = 1.08x$. This means the total is $108\%$ of the original — like adding $8\%$ sales tax.}
+\ansItem{2}{$p - 0.15p$ and $0.85p$}
+\ansExplain{2}{The discount is $0.15p$. Subtract: $p - 0.15p$. Factor: $p(1 - 0.15) = 0.85p$. Both give the same sale price.}
+\ansItem{3}{$x + 12$}
+\ansExplain{3}{Expand: $3x + 12 - 2x$. Combine like terms: $(3x - 2x) + 12 = x + 12$.}
+\ansItem{4}{$40h + 50$}
+\ansExplain{4}{Hourly pay for $40$ hours is $40h$. Add the bonus: $40h + 50$. This is already simplified since $40h$ and $50$ are not like terms.}
+\ansItem{5}{$1.25p \times 0.80 = 1.00p = p$}
+\ansExplain{5}{Increase by $25\%$: multiply by $1.25$. Then decrease by $20\%$: multiply by $0.80$. Combined: $1.25 \times 0.80 = 1.00$, so the final price equals the original $p$.}
+\ansChap{5}
+\ansSec{5.1}
+\ansItem{1}{$3n + 7 = 22$}
+\ansExplain{1}{Each notebook costs $\$3$, so $n$ notebooks cost $3n$. Add the binder: $3n + 7$. Set equal to the total: $3n + 7 = 22$.}
+\ansItem{2}{$2.50m + 3 = 18$}
+\ansExplain{2}{The per-mile charge is $2.50m$. Add the base fare: $2.50m + 3$. Set equal to the total cost: $2.50m + 3 = 18$.}
+\ansItem{3}{$60 - 8w = 12$}
+\ansExplain{3}{Start with $\$60$ and subtract $\$8$ each week: $60 - 8w$. You want $\$12$ left: $60 - 8w = 12$.}
+\ansItem{4}{$0.05t + 15 = 21.50$}
+\ansExplain{4}{Text cost: $0.05t$. Add monthly fee: $0.05t + 15$. Set equal to bill: $0.05t + 15 = 21.50$.}
+\ansItem{5}{$5n - 9 = 31$}
+\ansExplain{5}{``Five times a number'' is $5n$. ``Minus $9$'' gives $5n - 9$. ``Equals $31$'' gives $5n - 9 = 31$.}
+\ansSec{5.2}
+\ansItem{1}{$x = 8$}
+\ansExplain{1}{Subtract $9$ from both sides: $2x = 16$. Divide both sides by $2$: $x = 8$. Check: $2(8) + 9 = 25$ \checkmark .}
+\ansItem{2}{$n = 9$}
+\ansExplain{2}{Add $12$ to both sides: $5n = 45$. Divide by $5$: $n = 9$. Check: $5(9) - 12 = 45 - 12 = 33$ \checkmark .}
+\ansItem{3}{$y = 24$}
+\ansExplain{3}{Subtract $7$: $\frac {y}{3} = 8$. Multiply both sides by $3$: $y = 24$. Check: $\frac {24}{3} + 7 = 8 + 7 = 15$ \checkmark .}
+\ansItem{4}{$x = 4$}
+\ansExplain{4}{Subtract $10$: $-4x = -16$. Divide by $-4$: $x = 4$. Check: $-4(4) + 10 = -16 + 10 = -6$ \checkmark .}
+\ansItem{5}{$6$ months}
+\ansExplain{5}{Equation: $10m + 25 = 85$. Subtract $25$: $10m = 60$. Divide by $10$: $m = 6$. Check: $10(6) + 25 = 85$ \checkmark .}
+\ansSec{5.3}
+\ansItem{1}{$x = 4$}
+\ansExplain{1}{Divide both sides by $2$: $x + 5 = 9$. Subtract $5$: $x = 4$. Check: $2(4 + 5) = 2(9) = 18$ \checkmark .}
+\ansItem{2}{$n = 1$}
+\ansExplain{2}{Divide both sides by $5$: $n - 3 = -2$. Add $3$: $n = 1$. Check: $5(1 - 3) = 5(-2) = -10$ \checkmark .}
+\ansItem{3}{$y = -9$}
+\ansExplain{3}{Divide by $-3$: $y + 4 = -5$. Subtract $4$: $y = -9$. Check: $-3(-9 + 4) = -3(-5) = 15$ \checkmark .}
+\ansItem{4}{$x = 4$}
+\ansExplain{4}{Distribute: $12x - 6 = 42$. Add $6$: $12x = 48$. Divide by $12$: $x = 4$. Check: $6(2 \cdot 4 - 1) = 6(7) = 42$ \checkmark .}
+\ansItem{5}{$x = 10$}
+\ansExplain{5}{Perimeter $= 4(x + 3) = 52$. Divide by $4$: $x + 3 = 13$. Subtract $3$: $x = 10$. Each side is $13$ cm.}
+\ansSec{5.4}
+\ansItem{1}{$x = 10$}
+\ansExplain{1}{Subtract $2.1$: $0.3x = 3.0$. Divide by $0.3$: $x = 10$. Check: $0.3(10) + 2.1 = 3 + 2.1 = 5.1$ \checkmark .}
+\ansItem{2}{$x = 17$}
+\ansExplain{2}{Multiply every term by $4$: $x + 3 = 20$. Subtract $3$: $x = 17$. Check: $\frac {17}{4} + \frac {3}{4} = \frac {20}{4} = 5$ \checkmark .}
+\ansItem{3}{$y = 8$}
+\ansExplain{3}{Subtract $4$: $-1.5y = -12$. Divide by $-1.5$: $y = 8$. Check: $-1.5(8) + 4 = -12 + 4 = -8$ \checkmark .}
+\ansItem{4}{$n = 10$}
+\ansExplain{4}{Add $5$: $\frac {3n}{2} = 15$. Multiply by $2$: $3n = 30$. Divide by $3$: $n = 10$. Check: $\frac {3(10)}{2} - 5 = 15 - 5 = 10$ \checkmark .}
+\ansItem{5}{$\$24$}
+\ansExplain{5}{Let $p$ = original. After markdown: $p - \frac {p}{3} = \frac {2p}{3}$. After $\$4$ off: $\frac {2p}{3} - 4 = 12$. Add $4$: $\frac {2p}{3} = 16$. Multiply by $\frac {3}{2}$: $p = 24$.}
+\ansSec{5.5}
+\ansItem{1}{$x > 6$}
+\ansExplain{1}{Subtract $5$: $2x > 12$. Divide by $2$: $x > 6$. Any number greater than $6$ is a solution.}
+\ansItem{2}{$n \geq 3$}
+\ansExplain{2}{Subtract $9$: $-3n \leq -9$. Divide by $-3$ and flip the sign: $n \geq 3$.}
+\ansItem{3}{More than $6$ days}
+\ansExplain{3}{Equation: $50 - 6d < 14$. Subtract $50$: $-6d < -36$. Divide by $-6$ and flip: $d > 6$. After more than $6$ days.}
+\ansItem{4}{$x \geq 20$}
+\ansExplain{4}{Add $2$: $\frac {x}{4} \geq 5$. Multiply by $4$: $x \geq 20$.}
+\ansItem{5}{At least $13$ questions}
+\ansExplain{5}{Inequality: $5q + 15 \geq 80$. Subtract $15$: $5q \geq 65$. Divide by $5$: $q \geq 13$.}
+\ansSec{5.6}
+\ansItem{1}{$x \geq 3$; closed circle at $3$, shade right}
+\ansExplain{1}{Subtract $4$: $x \geq 3$. Since it includes $3$ (``or equal to''), use a closed circle at $3$ and shade to the right.}
+\ansItem{2}{$n > 2$; open circle at $2$, shade right}
+\ansExplain{2}{Add $6$: $3n > 6$. Divide by $3$: $n > 2$. Strictly greater than $2$, so use an open circle at $2$ and shade right.}
+\ansItem{3}{$x \geq -4$; closed circle at $-4$, shade right}
+\ansExplain{3}{Divide by $-2$ and flip the sign: $x \geq -4$. Closed circle at $-4$, shade right.}
+\ansItem{4}{False}
+\ansItem{5}{$h \leq 6\frac {2}{3}$; closed circle at $6\frac {2}{3}$, shade left}
+\ansExplain{5}{Inequality: $3h \leq 20$. Divide by $3$: $h \leq \frac {20}{3} = 6\frac {2}{3}$. You can park at most $6\frac {2}{3}$ hours. Closed circle at $6\frac {2}{3}$, shade left toward $0$.}
+\ansChap{6}
+\ansSec{6.1}
+\ansItem{1}{$20$ ft}
+\ansExplain{1}{Multiply drawing length by scale factor: $2.5 \times 8 = 20$ ft.}
+\ansItem{2}{$15$ km per cm}
+\ansExplain{2}{Divide to find the unit rate: $45 \div 3 = 15$. Each centimeter on the map represents $15$ km in real life.}
+\ansItem{3}{$144$ inches or $12$ ft}
+\ansExplain{3}{Multiply by the scale factor: $6 \times 24 = 144$ inches. Convert: $144 \div 12 = 12$ feet.}
+\ansItem{4}{$96$ m$^2$}
+\ansExplain{4}{Actual dimensions: $2 \times 4 = 8$ m and $3 \times 4 = 12$ m. Area: $8 \times 12 = 96$ m$^2$.}
+\ansItem{5}{False}
+\ansSec{6.2}
+\ansItem{1}{$8$ cm}
+\ansExplain{1}{Scale ratio: $\frac {50}{25} = 2$. New length: $4 \times 2 = 8$ cm. The new scale is more detailed, so the drawing gets bigger.}
+\ansItem{2}{$6$ cm}
+\ansExplain{2}{Scale ratio: $\frac {100}{50} = 2$. New length: $3 \times 2 = 6$ cm.}
+\ansItem{3}{$3$ cm}
+\ansExplain{3}{Scale ratio: $\frac {2}{6} = \frac {1}{3}$. New length: $9 \times \frac {1}{3} = 3$ cm. A smaller scale means a smaller drawing.}
+\ansItem{4}{$96$ cm$^2$}
+\ansExplain{4}{Scale ratio: $\frac {10}{5} = 2$. New dimensions: $4 \times 2 = 8$ cm by $6 \times 2 = 12$ cm. New area: $8 \times 12 = 96$ cm$^2$.}
+\ansItem{5}{False}
+\ansSec{6.3}
+\ansItem{1}{No}
+\ansExplain{1}{Check: $4 + 6 = 10$, but $10 < 11$. The two shorter sides can't reach each other, so no triangle exists.}
+\ansItem{2}{Yes — exactly one (equilateral)}
+\ansExplain{2}{All three sums pass: $5 + 5 = 10 > 5$ \checkmark . Three equal sides make exactly one equilateral triangle.}
+\ansItem{3}{Many}
+\ansExplain{3}{The sides must add to $10$ (half the perimeter). Possible pairs: $1 \times 9$, $2 \times 8$, $3 \times 7$, etc. Many rectangles satisfy this condition.}
+\ansItem{4}{Exactly one}
+\ansExplain{4}{Two sides and the angle between them (SAS) fully determine a triangle. There is only one right triangle with legs $6$ and $8$.}
+\ansItem{5}{False}
+\ansSec{6.4}
+\ansItem{1}{The angles work, but the triangle is not unique}
+\ansExplain{1}{$35 + 65 + 80 = 180°$ \checkmark . However, three angles (AAA) allow many triangles of different sizes but the same shape.}
+\ansItem{2}{Yes, unique}
+\ansExplain{2}{Check: $7 + 10 = 17 > 15$ \checkmark , $7 + 15 = 22 > 10$ \checkmark , $10 + 15 = 25 > 7$ \checkmark . Three valid sides (SSS) give exactly one triangle.}
+\ansItem{3}{Yes, unique}
+\ansExplain{3}{Two sides and the angle between them (SAS) always produce exactly one triangle. This is a right triangle with legs $3$ and $4$.}
+\ansItem{4}{No}
+\ansExplain{4}{$90 + 90 + 0 = 180°$, but an angle of $0°$ means the sides collapse into a line. Every angle must be greater than $0°$.}
+\ansItem{5}{$70°$}
+\ansExplain{5}{$180° - 40° - 70° = 70°$. The third angle is $70°$, making this triangle isosceles (two equal angles).}
+\ansSec{6.5}
+\ansItem{1}{Rectangle}
+\ansExplain{1}{A horizontal cut parallel to the base of a rectangular prism always produces a rectangle the same size and shape as the base.}
+\ansItem{2}{A smaller rectangle}
+\ansExplain{2}{A horizontal cut of a rectangular pyramid parallel to the base gives a rectangle. It is smaller than the base because the pyramid narrows toward the top.}
+\ansItem{3}{A rectangle or a triangle}
+\ansExplain{3}{Depending on the exact angle, a diagonal slice through a cube can create a rectangle, a triangle, or even a hexagon. One common diagonal gives a rectangle.}
+\ansItem{4}{True}
+\ansItem{5}{A circle}
+\ansExplain{5}{A cone has a circular base. A horizontal cut parallel to the base is a smaller circle. The higher you cut, the smaller the circle.}
+\ansSec{6.6}
+\ansItem{1}{$55°$}
+\ansExplain{1}{Complementary angles sum to $90°$. Subtract: $90° - 35° = 55°$.}
+\ansItem{2}{$52°$}
+\ansExplain{2}{Supplementary angles sum to $180°$. Subtract: $180° - 128° = 52°$.}
+\ansItem{3}{$x = 10$; angles are $45°$}
+\ansExplain{3}{Vertical angles are equal: $4x + 5 = 6x - 15$. Subtract $4x$: $5 = 2x - 15$. Add $15$: $20 = 2x$. Divide: $x = 10$. Angle: $4(10) + 5 = 45°$.}
+\ansItem{4}{$36°$ and $54°$}
+\ansExplain{4}{Let the angles be $2x$ and $3x$. They sum to $90°$: $2x + 3x = 90$, so $5x = 90$ and $x = 18$. Angles: $2(18) = 36°$ and $3(18) = 54°$.}
+\ansItem{5}{$80°$ and $100°$}
+\ansExplain{5}{$x + 30 + 2x = 180$. Combine: $3x + 30 = 180$. Subtract $30$: $3x = 150$. Divide: $x = 50$. Angles: $50 + 30 = 80°$ and $2(50) = 100°$.}

@@ -1,4 +1,3 @@
-````skill
 ---
 name: writing_study_guide_topics
 description: Guidelines for writing engaging Grade 7 math study guide topics
@@ -10,10 +9,10 @@ description: Guidelines for writing engaging Grade 7 math study guide topics
 
 The finished book MUST be **150–170 pages total** (including front matter, all topics, and the answer key). There are **56 topics**, so each topic averages roughly **2–3 printed pages**. That means:
 
-- **Target: 80–120 lines of LaTeX per topic file.** This is the single most important constraint. If your file is over 120 lines, cut it down. Every sentence must earn its place.
-- A simple topic (e.g., "What Is Probability?") might be 70–90 lines (~2 pages).
-- A dense topic (e.g., "Solving Equations with the Distributive Property") can go up to 130 lines (~3 pages) but no more.
-- **Never exceed 3 printed pages for any single topic.**
+- **Target: 60–90 lines of LaTeX per topic file.** This is the single most important constraint. If your file is over 90 lines, cut it down. Every sentence must earn its place.
+- A simple topic (e.g., "What Is Probability?") might be 55–70 lines (~1.5 pages).
+- A dense topic (e.g., "Solving Equations with the Distributive Property") can go up to 100 lines (~2 pages) but no more.
+- **Never exceed 2 printed pages for any single topic.**
 
 When in doubt, cut. A short, clear explanation that a student actually reads beats a long one they skip.
 
@@ -72,7 +71,7 @@ You have access to **100+ environments and commands** (see the toolkit reference
 **General principles:**
 - **Teach the concept, then let them practice.** That's the only hard structure rule.
 - **Be ruthlessly concise.** Every environment, every sentence, every example must pull its weight. If something is "nice to have" but not essential — cut it.
-- **Limit teaching environments to 2–3 per topic.** For example: one `conceptBox` + one `workedExample` + one `tipBox`. That's usually enough. Don't stack five boxes.
+- **Limit teaching environments to 2–3 per topic.** For example: one `conceptBox` + one `workedExample` + one `mascotSays`. That's usually enough. Don't stack four or five boxes.
 - **One worked example is usually enough.** Add a second only if the concept has two clearly different cases (e.g., percent increase vs. percent decrease). Never more than two.
 - **Vary the flow between topics.** If the last topic opened with a conceptBox, try a real-world scenario or a bold definition.
 - **Don't force environments.** Only include a `riddleBox` if you have a great riddle. An empty filler environment is worse than nothing.
@@ -127,32 +126,31 @@ A typical topic might flow like this — but feel free to deviate:
 % --- Teaching (keep to 2–3 environments total) ---
 % e.g., one conceptBox + one workedExample + one mascotSays
 
-% --- Practice ---
-\newpage
+% --- Practice (NO \newpage — let content flow naturally) ---
 \begin{practiceBox}{Title}
 \resetProblems
-% 4–6 problems with answers
+% 4–5 problems with answers
 \end{practiceBox}
 ```
 
-**Target: entire file = 80–120 lines.**
+**Target: entire file = 60–90 lines.**
 
 **Firm structural rules:**
-1. Start with `\section{Title}` and `\topicTitle{Title}`.
-2. Include `\begin{learningGoals}` near the top (2–4 goals, not 4+).
+1. Start with `\section{Title}` (**DO NOT** add `\topicTitle{}` — the class file’s `\section` already renders a blue banner; adding `\topicTitle` creates a duplicate).
+2. Include `\begin{learningGoals}` near the top (2 goals is ideal).
 3. End with a practice section (usually `practiceBox`).
 4. Every problem MUST have an answer (see Answer Rules below).
-5. Put `\newpage` before the practice section.
-6. **keep it concise.** As a guide, aim for the file to be 80–120 lines of LaTeX.
+5. **DO NOT** put `\newpage` before the practice section. The `\section` command already forces a page break for each topic. Adding `\newpage` before practice wastes half a page of whitespace. Let content flow naturally — boxes are breakable and will split across pages.
+6. **keep it concise.** Aim for 60–90 lines of LaTeX.
 
 Everything in between is up to you — but keep it lean.
 
 ## Practice Sections
 
-**Problem count:** Aim for **4–6 problems** per topic. Quality over quantity. A few well-chosen problems teach more than a long list.
-- A computation topic might have 6 short drill problems.
+**Problem count:** Aim for **4–5 problems** per topic. Quality over quantity. A few well-chosen problems teach more than a long list.
+- A computation topic might have 5 short drill problems.
 - A conceptual topic might have 4 thoughtful ones.
-- **Never exceed 8 problems.** Space is limited.
+- **Never exceed 6 problems.** Space is limited.
 
 **Difficulty progression:** Start easy, end harder:
 - **Basic** (2–3 problems): straightforward application
@@ -184,12 +182,35 @@ Everything in between is up to you — but keep it lean.
 
 | Answer type | Command | When to use |
 |---|---|---|
-| Simple answer | `\answer{42}` | Most problems |
-| With explanation | `\answerExplain{42}{Divide 84 by 2}` | When a worked solution adds value |
+| Simple answer | `\answer{42}` | Only for `\multiChoice` key or trivially obvious one-step answers |
+| With explanation | `\answerExplain{42}{...}` | **Most problems — the default choice** |
 | True/False | `\answerTF{True}` | `\trueOrFalse` problems |
 | Multiple choice | `\answerMC{C}` | `\multiChoice` problems |
 
-**Use `\answerExplain` for word problems and multi-step problems.** For simple drill problems, `\answer{}` is fine. Don't over-explain — keep answer explanations to one sentence.
+### Writing Good Answer Explanations (CRITICAL)
+
+**Use `\answerExplain` for nearly every problem.** The student just learned this topic — if they couldn't solve a problem, a bare calculation won't help them either. The explanation is their mini-tutor.
+
+**Length:** Each explanation should be **1–2 full printed lines** (~80–200 characters). Walk the student through the reasoning step by step, not just the arithmetic.
+
+**What a good explanation includes:**
+1. **What to do first** — name the operation or strategy ("Find the unit rate by dividing…", "Set up a proportion…")
+2. **The key calculation** — show the math with intermediate steps
+3. **Why it makes sense** — a brief sanity check or connection back to the concept ("…which is the cost for one pound", "…this matches because a larger percent means a bigger discount")
+
+| BAD (too short) | GOOD (teaches) |
+|---|---|
+| `$\frac{2}{3} \div \frac{1}{3} = 2$` | `Divide the wall covered by the time: $\frac{2}{3} \div \frac{1}{3}$. Flip and multiply: $\frac{2}{3} \times \frac{3}{1} = 2$ walls per hour.` |
+| `$36 \div 90 = 0.4 = 40\%$` | `Divide the part by the whole: $36 \div 90 = 0.4$. Convert to a percent by multiplying by $100$: $0.4 \times 100 = 40\%$.` |
+| `$180 \times 0.75 = 135$` | `A $25\%$ discount means you pay $75\%$. Multiply: $180 \times 0.75 = \$135$.` |
+| `$(15 - 12) \div 12 = 0.25$` | `Subtract to find the change: $15 - 12 = 3$ cm. Divide by the original: $3 \div 12 = 0.25$. Multiply by $100$ to get $25\%$.` |
+
+**Rules:**
+- **Always prefer `\answerExplain` over `\answer`.** Use bare `\answer{}` only when the answer is self-evident (e.g., "Write the equation" → `\answer{$c = 8h$}`).
+- **Name the strategy.** Don't just show numbers — say "Divide…", "Set up…", "Multiply by the multiplier…".
+- **Show intermediate steps.** If there are two operations, show both, not just the final result.
+- **Keep the tone simple.** Same 8–12 word sentences as the teaching sections.
+- **For `\answerTF{}` problems, add a brief reason** in the text before or after if the answer isn't obvious.
 
 ## Visual Math Commands
 
@@ -365,16 +386,56 @@ For the full environment reference with usage examples and code samples, see `.a
 
 Before finishing a topic, verify:
 
-- [ ] **File is 80–120 lines of LaTeX** (the #1 most important check)
+- [ ] **File is 60–90 lines of LaTeX** (the #1 most important check)
 - [ ] File is named `ch<CC>-<SS>-slug.tex` and placed in `topics/`
-- [ ] Starts with `\section{Title}` + `\topicTitle{Title}`
+- [ ] Starts with `\section{Title}` (NO `\topicTitle` — the section banner handles it)
 - [ ] Has `\begin{learningGoals}` with 2–4 bullet points
-- [ ] Teaching uses at most 2–4 environments (e.g., one conceptBox + one workedExample + one tipBox)
+- [ ] Teaching uses at most 2–3 environments (e.g., one conceptBox + one workedExample + one mascotSays)
 - [ ] At most 1–2 worked examples
 - [ ] Includes at least one visual math command
-- [ ] Practice section has 4–6 problems with `\resetProblems` and `\newpage` before it
+- [ ] Practice section has 4–5 problems with `\resetProblems` and **NO** `\newpage` before it
 - [ ] Every problem has a corresponding `\answer{}`, `\answerExplain{}{}`, `\answerTF{}`, or `\answerMC{}`
 - [ ] Math is wrapped in `$...$`
 - [ ] Sentences average 8–12 words — dead simple language
 - [ ] No filler sentences — every sentence teaches something
-````
+
+## Conciseness Lessons (Learned from Chapter 1 Rewrites)
+
+These are concrete, tested techniques that cut topic files from 100–150 lines down to 60–90 without losing teaching quality.
+
+### What to cut
+
+| Cut this | Saves | Why it's safe |
+|---|---|---|
+| 4-line header comment blocks | 3 lines | One-liner (`% CCSS 7.RP.A.1 — Topic Title`) carries the same info |
+| `\renewcommand{\arraystretch}{1.3}` in tables | 1 line/table | Default spacing is fine for study guides |
+| `\bigskip` between elements inside environments | 1–3 lines | Environments already have internal spacing |
+| `\solutionLabel` when solution is inline | 1 line | Obvious from context; only use when steps follow |
+| `\begin{solutionSteps}` wrapper with `\solStep` | 3–5 lines | Inline math (`$k = 10 \div 4 = 2.5$`) is shorter and just as clear |
+| `\practiceHeader` subsections in practice | 2–3 lines | Unnecessary when there are only 4–5 problems |
+| Redundant teaching environments (e.g., tipBox repeating what conceptBox said) | 3–5 lines | One clear explanation > two overlapping ones |
+| Transition sentences ("Let's see...", "Now let's...") | 1–2 lines | Just show the next thing |
+
+### Structure rules for compact files
+
+1. **One header comment line.** `% CCSS 7.RP.A.1 — Topic Title`
+2. **Two learning goals, not three or four.** Two goals ≈ 5 lines. Four goals ≈ 8 lines. The extra goals rarely add value.
+3. **One conceptBox + one workedExample = enough teaching.** Add a `mascotSays` or `tipBox` only if it adds a genuinely new insight, not repetition.
+4. **Inline solutions over solutionSteps.** Write `$k = 13.50 \div 3 = 4.50$` on one line instead of 3 `\solStep` lines.
+5. **Compact tables.** Put table rows on one line: `$2$ & $\$3.50$ \\ $4$ & $\$7.00$ \\`. Skip `\arraystretch`.
+6. **4–5 practice problems, not 6.** Fewer, well-chosen problems beat a longer list. Cut the "medium" problems; keep easy + hard.
+7. **Use `\answerExplain{}{}` for nearly every problem.** Write 1–2 full lines that walk the student through the reasoning. Only use bare `\answer{}` when the answer is self-evident.
+8. **No blank lines between `\prob` entries** unless switching problem types.
+
+### The "earn its place" test
+
+Before adding any environment, sentence, or problem, ask: *If I remove this, does the student lose something important?* If the answer is no, cut it. A 65-line file that teaches clearly is better than a 90-line file with padding.
+
+### Page-flow rules (critical for page budget)
+
+- **Never use `\topicTitle{}`** in topic files. The `\section{}` command already renders a styled blue banner via the class file. Adding `\topicTitle` creates a duplicate header and wastes ~1cm of vertical space.
+- **Never use `\newpage` before practice sections.** Each `\section` already forces a page break. A second `\newpage` before practice leaves half a page blank. Let content flow naturally into the practice box.
+- **All major boxes are breakable.** `conceptBox`, `workedExample`, `practiceBox`, `errorBox`, `warningBox`, `realWorld` — they all break across pages automatically. Don’t try to prevent breaks; embrace them.
+- **Prefer inline content over boxed content when possible.** A `\mascotSays{}` (minipage-based, ~3 lines) is lighter than an `errorBox` (tcolorbox, ~5+ lines) for the same message.
+- **Use `\setstretch{1.25}`** in test/main files, not `1.4`. The tighter line spacing saves ~10% vertical space across the book.
+- **Blank-page bug — page breaks must happen OUTSIDE `\titleformat`.** Issuing `\clearpage` or `\newpage` inside `\sectionBanner` (which runs inside titlesec's `\titleformat` callback) causes a phantom blank page. The page break is shipped after the current page, but titlesec's internal state then ships an extra empty page before placing the banner. **Fix:** The page-break logic (`\ifdim\pagetotal<50pt\else\newpage\fi`) is placed in `\AddToHook{cmd/section/before}` in `studyGuide.cls`, which fires BEFORE titlesec processes the section. The `\sectionBanner` command itself must NOT contain any page-break commands.

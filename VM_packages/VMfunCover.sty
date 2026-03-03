@@ -1,0 +1,142 @@
+%----------------------------------------------------------------------------------------
+% VMfunCover.sty - Cover Page with State Name Overlay
+%----------------------------------------------------------------------------------------
+\ProvidesPackage{VMfunCover}[2026/03/02 Grade 6 Cover Page - State Name Overlay]
+
+%----------------------------------------------------------------------------------------
+% REQUIRED PACKAGES
+%----------------------------------------------------------------------------------------
+\RequirePackage{tikz}
+
+%----------------------------------------------------------------------------------------
+% STATE NAME — set via \StateName{...} in main.tex before \makeCoverPage
+%----------------------------------------------------------------------------------------
+\newcommand{\theStateName}{}
+\newcommand{\StateName}[1]{\renewcommand{\theStateName}{#1}}
+
+%----------------------------------------------------------------------------------------
+% STATE NAME LAYOUT CONFIGURATION
+%
+% Each variable has a sensible default. Override any of them in the
+% preamble (or per-state .tex file) BEFORE calling \makeCoverPage.
+%
+% Positioning (measured from the page's south-west corner):
+%   \StateNameXOffset{4in}        — horizontal offset
+%   \StateNameYOffset{10in}       — vertical offset
+%
+% Rotation:
+%   \StateNameRotation{2}         — degrees counter-clockwise
+%
+% Font size (LaTeX \fontsize{size}{baselineskip}):
+%   \StateNameFontSize{45}        — pt size
+%   \StateNameBaselineSkip{54}    — baselineskip in pt
+%
+% Font style — pick one via \StateNameFontStyle{...}:
+%   bold-sans      (default)  Nunito Black         — rounded geometric, modern
+%   helvetica                 Helvetica Neue Bold   — clean, slightly rounded
+%   arial-rounded             Arial Rounded MT Bold — rounded corners, soft
+%   chalkboard                Chalkboard SE Bold    — playful chalk style
+%   nunito-xbold              Nunito ExtraBold      — rounded, slightly lighter
+%   comic-neue                Comic Neue Bold       — polished Comic Sans alt.
+%   custom                    uses \StateNameCustomFont{...} verbatim
+%
+% Text color:
+%   \StateNameColor{black}        — any xcolor name or definition
+%
+% Cover image:
+%   \CoverImage{images/cover-blank.png}
+%----------------------------------------------------------------------------------------
+
+% --- Defaults ---
+\newcommand{\theStateNameXOffset}{4in}
+\newcommand{\StateNameXOffset}[1]{\renewcommand{\theStateNameXOffset}{#1}}
+
+\newcommand{\theStateNameYOffset}{10in}
+\newcommand{\StateNameYOffset}[1]{\renewcommand{\theStateNameYOffset}{#1}}
+
+\newcommand{\theStateNameRotation}{2}
+\newcommand{\StateNameRotation}[1]{\renewcommand{\theStateNameRotation}{#1}}
+
+\newcommand{\theStateNameFontSize}{32}
+\newcommand{\StateNameFontSize}[1]{\renewcommand{\theStateNameFontSize}{#1}}
+
+\newcommand{\theStateNameBaselineSkip}{38}
+\newcommand{\StateNameBaselineSkip}[1]{\renewcommand{\theStateNameBaselineSkip}{#1}}
+
+\newcommand{\theStateNameFontStyle}{bold-sans}
+\newcommand{\StateNameFontStyle}[1]{\renewcommand{\theStateNameFontStyle}{#1}}
+
+\newcommand{\theStateNameCustomFont}{}
+\newcommand{\StateNameCustomFont}[1]{\renewcommand{\theStateNameCustomFont}{#1}}
+
+\newcommand{\theStateNameColor}{black}
+\newcommand{\StateNameColor}[1]{\renewcommand{\theStateNameColor}{#1}}
+
+\newcommand{\theCoverImage}{images/cover-blank.png}
+\newcommand{\CoverImage}[1]{\renewcommand{\theCoverImage}{#1}}
+
+% --- Pre-defined cover font faces (loaded once at package time) ---
+% Under XeLaTeX + fontspec we load system/OTF fonts by PostScript name.
+% \newfontface creates a simple switch command that works inside TikZ nodes.
+\newfontface\@coverFontNunitoBlack{Nunito-Black.otf}[
+    Path=/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/nunito/]
+\newfontface\@coverFontNunitoXBold{Nunito-ExtraBold.otf}[
+    Path=/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/nunito/]
+\newfontface\@coverFontHelvetica{HelveticaNeue-Bold}
+\newfontface\@coverFontArialRounded{ArialRoundedMTBold}
+\newfontface\@coverFontChalkboard{ChalkboardSE-Bold}
+\newfontface\@coverFontComicNeue{ComicNeue-Bold.otf}[
+    Path=/usr/local/texlive/2025/texmf-dist/fonts/opentype/rozynski/comicneue/]
+
+% --- Internal: resolve font style token to a font-face switch ---
+% Available styles:
+%   bold-sans      — Nunito Black (rounded geometric, modern)
+%   helvetica      — Helvetica Neue Bold (clean, slightly rounded)
+%   arial-rounded  — Arial Rounded MT Bold (rounded corners, soft)
+%   chalkboard     — Chalkboard SE Bold (playful chalk style)
+%   nunito-xbold   — Nunito ExtraBold (rounded, slightly lighter)
+%   comic-neue     — Comic Neue Bold (polished Comic Sans alternative)
+%   custom         — uses \StateNameCustomFont{...} verbatim
+\newcommand{\@resolveStateNameFont}{%
+    \def\@snstyle{\theStateNameFontStyle}%
+    \ifdefstring{\@snstyle}{bold-sans}{\@coverFontNunitoBlack}{%
+    \ifdefstring{\@snstyle}{helvetica}{\@coverFontHelvetica}{%
+    \ifdefstring{\@snstyle}{arial-rounded}{\@coverFontArialRounded}{%
+    \ifdefstring{\@snstyle}{chalkboard}{\@coverFontChalkboard}{%
+    \ifdefstring{\@snstyle}{nunito-xbold}{\@coverFontNunitoXBold}{%
+    \ifdefstring{\@snstyle}{comic-neue}{\@coverFontComicNeue}{%
+    \ifdefstring{\@snstyle}{custom}{\theStateNameCustomFont}{%
+        \@coverFontNunitoBlack
+    }}}}}}}%
+}
+
+%----------------------------------------------------------------------------------------
+% COVER PAGE COMMAND
+% Places the cover image as full-page background, then overlays the
+% state name at the configured position.
+%
+% Usage:
+%   \StateName{California}
+%   \StateNameXOffset{4.2in}   % optional tweaks
+%   \StateNameYOffset{1.5in}   % e.g. bottom placement
+%   \makeCoverPage
+%----------------------------------------------------------------------------------------
+\newcommand{\makeCoverPage}{%
+    \thispagestyle{empty}%
+    \begin{tikzpicture}[remember picture, overlay]
+        % Background image — full bleed
+        \node[anchor=south west, inner sep=0] at (current page.south west) {%
+            \includegraphics[width=\paperwidth, height=\paperheight]{\theCoverImage}%
+        };
+        % State name on the sign
+        \node[
+            anchor=center,
+            color=\theStateNameColor,
+            rotate=\theStateNameRotation
+        ] at ([xshift=\theStateNameXOffset, yshift=\theStateNameYOffset]current page.south west) {%
+            {\fontsize{\theStateNameFontSize}{\theStateNameBaselineSkip}\selectfont
+             \@resolveStateNameFont \theStateName}%
+        };
+    \end{tikzpicture}%
+    \clearpage
+}

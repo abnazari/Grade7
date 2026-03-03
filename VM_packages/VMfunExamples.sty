@@ -1,0 +1,273 @@
+%----------------------------------------------------------------------------------------
+% VMfunExamples.sty - Worked Examples & Solutions for Grade 6
+% Includes: Worked Examples, Step-by-Step Solutions, Answer Highlights
+%----------------------------------------------------------------------------------------
+\ProvidesPackage{VMfunExamples}[2026/03/02 Grade 6 Examples]
+
+%========================================================================================
+% 1. WORKED EXAMPLE BOX
+%    A colorful box for demonstrating a worked example.
+%    Design: Orange header with star, light orange content area.
+%    Usage: \begin{workedExample}{Add 347 + 285} ... \end{workedExample}
+%    Optional color: \begin{workedExample}[funBlue]{...} ... \end{workedExample}
+%========================================================================================
+\newcounter{exampleNum}[section]
+
+\newtcolorbox{workedExample}[2][funOrange]{
+    enhanced,
+    colback=#1!5,
+    colframe=#1,
+    colbacktitle=#1!15,
+    coltitle=#1!80!black,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{#1}\faPen}~~#2},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=3mm,
+    bottomtitle=3mm,
+    before skip=8pt,
+    after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 2. ANOTHER EXAMPLE (alternate style - side-by-side layout)
+%    A two-column example: work on left, explanation on right.
+%    Usage:
+%      \begin{sideBySideExample}{Title}
+%          Left content (work) \tcblower Right content (explanation)
+%      \end{sideBySideExample}
+%========================================================================================
+\newtcolorbox{sideBySideExample}[2][funOrange]{
+    enhanced,
+    colback=#1!5,
+    colframe=#1,
+    colbacktitle=#1!15,
+    coltitle=#1!80!black,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{#1}\faPen}~~#2},
+    bicolor,
+    colbacklower=white,
+    boxrule=1.5pt,
+    arc=8pt,
+    outer arc=8pt,
+    sidebyside,
+    sidebyside align=top seam,
+    sidebyside gap=5mm,
+    lefthand ratio=0.4,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt,
+    after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 3. SOLUTION LABEL
+%    A styled "Solution:" or "Step by Step:" label.
+%    Usage: \solutionLabel  or  \solutionLabel[Step by Step:]
+%========================================================================================
+\newcommand{\solutionLabel}[1][Solution:]{%
+    \par\vspace{3mm}%
+    {\large\bfseries\sffamily\color{funBlueDark}#1}%
+    \par\vspace{2mm}%
+}
+
+%========================================================================================
+% 4. ANSWER HIGHLIGHT BOX
+%    A prominent box for displaying the final answer.
+%    Design: Blue bordered box with "Answer:" label.
+%    Usage: \answerHighlight{347 + 285 = 632}
+%========================================================================================
+\newcommand{\answerHighlight}[2][funBlue]{%
+    \par\vspace{3mm}%
+    \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=#1,
+        boxrule=2pt,
+        arc=6pt,
+        outer arc=6pt,
+        left=5mm, right=5mm,
+        top=3mm, bottom=3mm,
+        halign=center,
+        fontupper=\large\bfseries\sffamily,
+        width=\linewidth,
+        before skip=4pt,
+        after skip=4pt,
+    ]
+        {\color{#1}\faCheckCircle}\hspace{3mm}\textbf{Answer:}\hspace{4mm}#2
+    \end{tcolorbox}
+    \vspace{2mm}%
+}
+
+%========================================================================================
+% 5. MINI ANSWER (inline answer box)
+%    A smaller inline answer box for use within text or steps.
+%    Usage: So the answer is \miniAnswer{42}.
+%========================================================================================
+\newtcbox{\miniAnswer}[1][funBlue]{%
+    on line,
+    colback=white,
+    colframe=#1,
+    boxrule=1.5pt,
+    arc=4pt,
+    outer arc=4pt,
+    boxsep=2pt,
+    left=4pt, right=4pt,
+    top=2pt, bottom=2pt,
+    fontupper=\bfseries\sffamily,
+}
+
+%========================================================================================
+% 6. SOLUTION STEPS ENVIRONMENT
+%    Auto-numbered steps within a solution.
+%    Usage:
+%      \begin{solutionSteps}
+%          \solStep Ones: $6 + 8 = 14$, write 4, carry 1
+%          \solStep Tens: $5 + 7 + 1 = 13$, write 3, carry 1
+%          \solStep Hundreds: $4 + 2 + 1 = 7$
+%      \end{solutionSteps}
+%========================================================================================
+\newcounter{solStepCounter}
+
+\newenvironment{solutionSteps}{%
+    \setcounter{solStepCounter}{0}%
+    \par\vspace{2mm}%
+}{%
+    \par\vspace{2mm}%
+}
+
+\newcommand{\solStep}{%
+    \stepcounter{solStepCounter}%
+    \par\vspace{2mm}\noindent
+    \textbf{\color{funBlueDark}\sffamily\thesolStepCounter.}\hspace{3mm}%
+}
+
+%========================================================================================
+% 7. EXAMPLE WITH NUMBER (auto-numbered)
+%    Usage: \begin{numberedExample} ... \end{numberedExample}
+%========================================================================================
+\newtcolorbox{numberedExample}{
+    enhanced,
+    colback=funOrangeLight,
+    colframe=funOrange,
+    colbacktitle=funOrange!15,
+    coltitle=funOrangeDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\stepcounter{exampleNum}\raisebox{-0.1em}{\color{funOrangeDark}\faPen}~~Example~\theexampleNum},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 8. TRY IT YOURSELF (quick try-it prompt)
+%    A small prompt encouraging students to try.
+%    Usage: \tryIt{Now you try: $456 + 278 = $\answerBlank}
+%========================================================================================
+\newcommand{\tryIt}[1]{%
+    \par\vspace{3mm}%
+    \begin{tcolorbox}[
+        enhanced,
+        colback=funYellowLight,
+        colframe=funYellow,
+        boxrule=1.5pt,
+        arc=6pt,
+        outer arc=6pt,
+        left=5mm, right=5mm,
+        top=3mm, bottom=3mm,
+        before skip=4pt, after skip=4pt,
+    ]
+        {\color{funYellowDark}\faHandPointRight}\hspace{3mm}{\bfseries\sffamily\color{funYellowDark}Your Turn}\hspace{4mm}#1
+    \end{tcolorbox}
+    \vspace{2mm}%
+}
+
+%========================================================================================
+% 9. ANSWER BLANK LINE
+%    A blank line for students to write their answer.
+%    Usage: Answer: \answerBlank  or  \answerBlank[4cm]
+%========================================================================================
+\DeclareRobustCommand{\answerBlank}[1][3cm]{%
+    \underline{\hspace{#1}}%
+}
+
+%========================================================================================
+% 9b. ANSWER LINE
+%     A full-width ruled line for longer written answers.
+%     Usage: \answerLine  or  \answerLine[10cm]
+%========================================================================================
+\DeclareRobustCommand{\answerLine}[1][\linewidth]{%
+    \par\vspace{3pt}\noindent\rule{#1}{0.4pt}\par\vspace{3pt}%
+}
+
+%========================================================================================
+% 10. SHOW ME BOX (detailed walkthrough with visual)
+%     A prominent walkthrough box with visual emphasis.
+%     Usage: \begin{showMeBox}{Let me show you!} ... \end{showMeBox}
+%========================================================================================
+\newtcolorbox{showMeBox}[1][Walkthrough]{
+    enhanced,
+    colback=funBlueLight,
+    colframe=funBlue,
+    colbacktitle=funBlue!15,
+    coltitle=funBlueDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{funBlueDark}\faEye}~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 11. ERROR BOX (Find and Fix the Mistake)
+%     Shows intentionally wrong work; students must spot and correct the error.
+%     Design: Red-orange theme with warning icon.
+%     Usage: \begin{errorBox}{Find the Mistake!} ... \end{errorBox}
+%     Default title: "Spot the Error"
+%========================================================================================
+\@ifpackageloaded{ulem}{}{\usepackage[normalem]{ulem}}
+
+\newtcolorbox{errorBox}[1][Spot the Error]{
+    enhanced,
+    colback=funRed!5,
+    colframe=funRed!60,
+    colbacktitle=funRed!12,
+    coltitle=funRed!80!black,
+    fonttitle=\large\bfseries\sffamily,
+    title={\iconWarning~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+}
+
+%% Helper: show wrong work crossed out, with a blank for the correct answer
+%% Usage: \wrongAnswer{$3 \times 5 = 20$}
+\newcommand{\wrongAnswer}[1]{%
+    \par\vspace{2mm}%
+    {\color{funRed}\sffamily\bfseries\sout{#1}}%
+    \hspace{4mm}$\longrightarrow$\hspace{4mm}\answerBlank[3cm]%
+    \par\vspace{2mm}%
+}

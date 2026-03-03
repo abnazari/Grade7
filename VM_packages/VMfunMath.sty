@@ -1,0 +1,857 @@
+%----------------------------------------------------------------------------------------
+% VMfunMath.sty - Math-Specific Visual Environments for Grade 6
+% Includes: Place Value Charts, Column Arithmetic, Number Lines,
+%           Visual Models, Fraction Visuals, Grouping Diagrams
+%----------------------------------------------------------------------------------------
+\ProvidesPackage{VMfunMath}[2026/03/02 Grade 6 Math Visuals]
+
+%========================================================================================
+% 1. COLUMN ADDITION (Vertical Addition Layout)
+%    Draws a formatted vertical addition problem with place value columns.
+%    Usage: \columnAdd{347}{285}
+%    With carry digits: \columnAddCarry{347}{285}{11}{632}
+%========================================================================================
+
+%%% Simple column addition (no answer shown)
+%%% Supports both 3-digit and 4-digit numbers automatically.
+\newcommand{\columnAdd}[2]{%
+    \begin{center}
+    \begin{tikzpicture}[
+        every node/.style={minimum width=0.8cm, minimum height=0.8cm, font=\Large\sffamily},
+    ]
+        % Parse digits of first number (thousands, hundreds, tens, ones)
+        \pgfmathtruncatemacro{\aTh}{int(#1/1000)}
+        \pgfmathtruncatemacro{\aH}{int(mod(int(#1/100),10))}
+        \pgfmathtruncatemacro{\aT}{int(mod(int(#1/10),10))}
+        \pgfmathtruncatemacro{\aO}{int(mod(#1,10))}
+        % Parse digits of second number (thousands, hundreds, tens, ones)
+        \pgfmathtruncatemacro{\bTh}{int(#2/1000)}
+        \pgfmathtruncatemacro{\bH}{int(mod(int(#2/100),10))}
+        \pgfmathtruncatemacro{\bT}{int(mod(int(#2/10),10))}
+        \pgfmathtruncatemacro{\bO}{int(mod(#2,10))}
+        % Choose 4-digit or 3-digit layout
+        \pgfmathtruncatemacro{\isFour}{int(#1 >= 1000 || #2 >= 1000)}
+        \ifnum\isFour=1
+            % 4-digit layout
+            \node at (0, 1) {\aTh};
+            \node at (1, 1) {\aH};
+            \node at (2, 1) {\aT};
+            \node at (3, 1) {\aO};
+            \node at (-0.7, 0) {$+$};
+            \node at (0, 0) {\bTh};
+            \node at (1, 0) {\bH};
+            \node at (2, 0) {\bT};
+            \node at (3, 0) {\bO};
+            \draw[thick] (-0.5, -0.45) -- (3.5, -0.45);
+        \else
+            % 3-digit layout
+            \node at (0, 1) {\aH};
+            \node at (1, 1) {\aT};
+            \node at (2, 1) {\aO};
+            \node at (-0.7, 0) {$+$};
+            \node at (0, 0) {\bH};
+            \node at (1, 0) {\bT};
+            \node at (2, 0) {\bO};
+            \draw[thick] (-0.5, -0.45) -- (2.5, -0.45);
+        \fi
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%%% Column addition with carry digits and answer
+%%% Usage: \columnAddFull{347}{285}{11}{632}
+%%%   #1=first number, #2=second number, #3=carry string (e.g. "11" for carries in tens and hundreds), #4=answer
+\newcommand{\columnAddFull}[4]{%
+    \begin{center}
+    \begin{tikzpicture}[
+        every node/.style={minimum width=0.8cm, minimum height=0.8cm, font=\Large\sffamily},
+        carry/.style={font=\scriptsize\color{funRed}, minimum width=0.4cm, minimum height=0.4cm},
+    ]
+        % Parse digits of first number
+        \pgfmathtruncatemacro{\aH}{int(#1/100)}
+        \pgfmathtruncatemacro{\aT}{int(mod(int(#1/10),10))}
+        \pgfmathtruncatemacro{\aO}{int(mod(#1,10))}
+        % Parse digits of second number
+        \pgfmathtruncatemacro{\bH}{int(#2/100)}
+        \pgfmathtruncatemacro{\bT}{int(mod(int(#2/10),10))}
+        \pgfmathtruncatemacro{\bO}{int(mod(#2,10))}
+        % Parse answer digits
+        \pgfmathtruncatemacro{\rH}{int(#4/100)}
+        \pgfmathtruncatemacro{\rT}{int(mod(int(#4/10),10))}
+        \pgfmathtruncatemacro{\rO}{int(mod(#4,10))}
+        %
+        % Carry digits (shown above first number in red)
+        % #3 is a string like "11" meaning carry 1 over tens and 1 over hundreds
+        \node[carry] at (0, 1.65) {\pgfmathtruncatemacro{\tmp}{int(#3/10)}\tmp};
+        \node[carry] at (1, 1.65) {\pgfmathtruncatemacro{\tmp}{int(mod(#3,10))}\tmp};
+        % First number
+        \node at (0, 1) {\aH};
+        \node at (1, 1) {\aT};
+        \node at (2, 1) {\aO};
+        % Plus sign
+        \node at (-0.7, 0) {$+$};
+        % Second number
+        \node at (0, 0) {\bH};
+        \node at (1, 0) {\bT};
+        \node at (2, 0) {\bO};
+        % Line
+        \draw[thick] (-0.5, -0.45) -- (2.5, -0.45);
+        % Answer
+        \node[font=\Large\sffamily\bfseries\color{funBlueDark}] at (0, -1) {\rH};
+        \node[font=\Large\sffamily\bfseries\color{funBlueDark}] at (1, -1) {\rT};
+        \node[font=\Large\sffamily\bfseries\color{funBlueDark}] at (2, -1) {\rO};
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%%% Column addition workspace (blank answer for student to fill in)
+\newcommand{\columnAddWork}[2]{%
+    \begin{center}
+    \begin{tikzpicture}[
+        every node/.style={minimum width=0.8cm, minimum height=0.8cm, font=\Large\sffamily},
+    ]
+        % Parse digits (thousands, hundreds, tens, ones)
+        \pgfmathtruncatemacro{\aTh}{int(#1/1000)}
+        \pgfmathtruncatemacro{\aH}{int(mod(int(#1/100),10))}
+        \pgfmathtruncatemacro{\aT}{int(mod(int(#1/10),10))}
+        \pgfmathtruncatemacro{\aO}{int(mod(#1,10))}
+        \pgfmathtruncatemacro{\bTh}{int(#2/1000)}
+        \pgfmathtruncatemacro{\bH}{int(mod(int(#2/100),10))}
+        \pgfmathtruncatemacro{\bT}{int(mod(int(#2/10),10))}
+        \pgfmathtruncatemacro{\bO}{int(mod(#2,10))}
+        % Choose 4-digit or 3-digit layout
+        \pgfmathtruncatemacro{\isFour}{int(#1 >= 1000 || #2 >= 1000)}
+        \ifnum\isFour=1
+            % 4-digit layout
+            \node at (0, 1) {\aTh};
+            \node at (1, 1) {\aH};
+            \node at (2, 1) {\aT};
+            \node at (3, 1) {\aO};
+            \node at (-0.7, 0) {$+$};
+            \node at (0, 0) {\bTh};
+            \node at (1, 0) {\bH};
+            \node at (2, 0) {\bT};
+            \node at (3, 0) {\bO};
+            \draw[thick] (-0.5, -0.45) -- (3.5, -0.45);
+            % Blank answer space
+            \node[minimum height=1.2cm] at (1.5, -1.1) {};
+        \else
+            % 3-digit layout
+            \node at (0, 1) {\aH};
+            \node at (1, 1) {\aT};
+            \node at (2, 1) {\aO};
+            \node at (-0.7, 0) {$+$};
+            \node at (0, 0) {\bH};
+            \node at (1, 0) {\bT};
+            \node at (2, 0) {\bO};
+            \draw[thick] (-0.5, -0.45) -- (2.5, -0.45);
+            % Blank answer space
+            \node[minimum height=1.2cm] at (1, -1.1) {};
+        \fi
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 2. PLACE VALUE TABLE
+%    A colored grid showing place value columns (H, T, O).
+%    Usage: \placeValueTable{3}{4}{7}
+%    With labels: \placeValueTableLabeled{H}{T}{O}{3}{4}{7}
+%========================================================================================
+\newcommand{\placeValueTable}[3]{%
+    \begin{center}
+    \begin{tikzpicture}
+        % Column headers
+        \node[fill=pvHundreds, minimum width=1.2cm, minimum height=0.6cm, font=\sffamily\bfseries\color{white}] at (0, 0.8) {H};
+        \node[fill=pvTens, minimum width=1.2cm, minimum height=0.6cm, font=\sffamily\bfseries\color{white}] at (1.3, 0.8) {T};
+        \node[fill=pvOnes, minimum width=1.2cm, minimum height=0.6cm, font=\sffamily\bfseries\color{white}] at (2.6, 0.8) {O};
+        % Digit cells
+        \node[draw=funGray, minimum width=1.2cm, minimum height=1cm, font=\LARGE\sffamily\bfseries] at (0, 0) {#1};
+        \node[draw=funGray, minimum width=1.2cm, minimum height=1cm, font=\LARGE\sffamily\bfseries] at (1.3, 0) {#2};
+        \node[draw=funGray, minimum width=1.2cm, minimum height=1cm, font=\LARGE\sffamily\bfseries] at (2.6, 0) {#3};
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%% Place value table with two rows (for addition)
+%% Usage: \placeValueAdd{3}{4}{7}{2}{8}{5}
+\newcommand{\placeValueAdd}[6]{%
+    \begin{center}
+    \begin{tikzpicture}
+        % Column headers
+        \node[fill=pvHundreds, minimum width=1.2cm, minimum height=0.5cm, font=\small\sffamily\bfseries\color{white}] at (0, 1.6) {H};
+        \node[fill=pvTens, minimum width=1.2cm, minimum height=0.5cm, font=\small\sffamily\bfseries\color{white}] at (1.3, 1.6) {T};
+        \node[fill=pvOnes, minimum width=1.2cm, minimum height=0.5cm, font=\small\sffamily\bfseries\color{white}] at (2.6, 1.6) {O};
+        % First number
+        \node[draw=funGray, minimum width=1.2cm, minimum height=0.9cm, font=\Large\sffamily\bfseries] at (0, 0.8) {#1};
+        \node[draw=funGray, minimum width=1.2cm, minimum height=0.9cm, font=\Large\sffamily\bfseries] at (1.3, 0.8) {#2};
+        \node[draw=funGray, minimum width=1.2cm, minimum height=0.9cm, font=\Large\sffamily\bfseries] at (2.6, 0.8) {#3};
+        % Plus sign
+        \node[font=\Large\sffamily\bfseries] at (-0.9, 0) {$+$};
+        % Second number
+        \node[draw=funGray, minimum width=1.2cm, minimum height=0.9cm, font=\Large\sffamily\bfseries] at (0, 0) {#4};
+        \node[draw=funGray, minimum width=1.2cm, minimum height=0.9cm, font=\Large\sffamily\bfseries] at (1.3, 0) {#5};
+        \node[draw=funGray, minimum width=1.2cm, minimum height=0.9cm, font=\Large\sffamily\bfseries] at (2.6, 0) {#6};
+        % Line
+        \draw[thick, funBlueDark] (-0.7, -0.5) -- (3.3, -0.5);
+        % Answer cells (blank)
+        \node[draw=funBlue, minimum width=1.2cm, minimum height=0.9cm, fill=funBlueLight] at (0, -1.2) {};
+        \node[draw=funBlue, minimum width=1.2cm, minimum height=0.9cm, fill=funBlueLight] at (1.3, -1.2) {};
+        \node[draw=funBlue, minimum width=1.2cm, minimum height=0.9cm, fill=funBlueLight] at (2.6, -1.2) {};
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 3. NUMBER LINE
+%    Draws a number line with tick marks.
+%    Usage: \numberLine{0}{10}       (0 to 10, step 1)
+%    Usage: \numberLine[5]{0}{50}    (0 to 50, step 5)
+%========================================================================================
+\newcommand{\numberLine}[3][1]{%
+    \begin{center}
+    \begin{tikzpicture}
+        \pgfmathtruncatemacro{\numSteps}{int((#3 - #2) / #1)}
+        \draw[->, thick, funBlueDark] (-0.3, 0) -- (\numSteps * 0.8 + 0.5, 0);
+        \foreach \i in {0,...,\numSteps} {
+            \pgfmathtruncatemacro{\val}{int(#2 + \i * #1)}
+            \draw[thick] (\i * 0.8, -0.15) -- (\i * 0.8, 0.15);
+            \node[below, font=\small\sffamily] at (\i * 0.8, -0.2) {\val};
+        }
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 4. DOT GROUPS (for multiplication and division visuals)
+%    Shows dots arranged in groups.
+%    Usage: \dotGroups{3}{4}  (3 groups of 4 dots)
+%========================================================================================
+\newcommand{\dotGroups}[3][funOrange]{%
+    \begin{center}
+    \begin{tikzpicture}
+        % Auto-size box height: ceil(dots/3) rows × 0.35 + 0.3 margin
+        \pgfmathsetmacro{\dotBoxHt}{ceil(#3/3) * 0.35 + 0.3}%
+        \foreach \g in {1,...,#2} {
+            \pgfmathtruncatemacro{\xoff}{int((\g - 1))}
+            \draw[rounded corners=3pt, fill=#1!15, draw=#1] (\xoff * 1.8, -0.4) rectangle ++(1.4, \dotBoxHt);
+            \foreach \d in {1,...,#3} {
+                \pgfmathtruncatemacro{\row}{int((\d - 1) / 3)}
+                \pgfmathtruncatemacro{\col}{int(mod(\d - 1, 3))}
+                \fill[#1] (\xoff * 1.8 + 0.3 + \col * 0.35, -0.1 + \row * 0.35) circle (0.1);
+            }
+        }
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 5. EQUAL SHARING VISUAL (for division)
+%    Shows items being shared equally among groups.
+%    Usage: \equalSharing{12}{3}  (12 items shared among 3)
+%========================================================================================
+\newcommand{\equalSharing}[3][funGreen]{%
+    \pgfmathtruncatemacro{\perGroup}{int(#2 / #3)}%
+    \pgfmathtruncatemacro{\remCount}{#2 - #3 * \perGroup}%
+    \begin{center}
+    \begin{tikzpicture}
+        \foreach \g in {1,...,#3} {
+            \pgfmathtruncatemacro{\xoff}{int((\g - 1))}
+            % Group box
+            \draw[rounded corners=4pt, fill=#1!10, draw=#1, thick]
+                (\xoff * 2.2, -0.2) rectangle ++(1.8, 1.2);
+            % Dots in group
+            \foreach \d in {1,...,\perGroup} {
+                \pgfmathtruncatemacro{\row}{int((\d - 1) / 3)}
+                \pgfmathtruncatemacro{\col}{int(mod(\d - 1, 3))}
+                \fill[#1!80] (\xoff * 2.2 + 0.3 + \col * 0.45, 0.1 + \row * 0.4) circle (0.12);
+            }
+            % Label below
+            \node[below, font=\sffamily\bfseries\color{#1!80!black}] at (\xoff * 2.2 + 0.9, -0.3) {\perGroup};
+        }
+        % Remainder dot(s) shown in a dashed box labelled R
+        \ifnum\remCount>0
+            \pgfmathtruncatemacro{\remXoff}{int(#3)}%
+            \draw[rounded corners=4pt, fill=#1!5, draw=#1, thick, dashed]
+                (\remXoff * 2.2, -0.2) rectangle ++(1.8, 1.2);%
+            \foreach \r in {1,...,\remCount} {%
+                \pgfmathtruncatemacro{\rcol}{int((\r - 1))}%
+                \fill[#1!80] (\remXoff * 2.2 + 0.3 + \rcol * 0.45, 0.1) circle (0.12);%
+            }%
+            \node[below, font=\sffamily\bfseries\color{#1!80!black}]
+                at (\remXoff * 2.2 + 0.9, -0.3) {R};%
+        \fi
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 6. FRACTION BAR VISUAL
+%    Shows a fraction as a divided bar with shaded parts.
+%    Usage: \fractionBar{3}{4}  (3 out of 4 parts shaded)
+%========================================================================================
+\newcommand{\fractionBar}[3][funBlue]{%
+    \begin{center}
+    \begin{tikzpicture}
+        \foreach \i in {1,...,#3} {
+            \pgfmathtruncatemacro{\idx}{int(\i - 1)}
+            \ifnum\i>#2
+                \draw[fill=white, draw=funGray] (\idx * 0.8, 0) rectangle ++(0.75, 0.5);
+            \else
+                \draw[fill=#1!40, draw=#1] (\idx * 0.8, 0) rectangle ++(0.75, 0.5);
+            \fi
+        }
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 7. FRACTION CIRCLE VISUAL
+%    Shows a fraction as a circle (pie chart style).
+%    Usage: \fractionCircle{1}{4}  (1 out of 4 parts shaded)
+%========================================================================================
+\newcommand{\fractionCircle}[3][funBlue]{%
+    \begin{center}
+    \begin{tikzpicture}
+        \pgfmathsetmacro{\angle}{360 / #3}
+        % Draw all slices
+        \foreach \i in {1,...,#3} {
+            \pgfmathsetmacro{\startAngle}{90 - (\i - 1) * \angle}
+            \pgfmathsetmacro{\endAngle}{90 - \i * \angle}
+            \ifnum\i>#2
+                \fill[white, draw=funGray] (0,0) -- (\startAngle:0.8) arc (\startAngle:\endAngle:0.8) -- cycle;
+            \else
+                \fill[#1!40, draw=#1] (0,0) -- (\startAngle:0.8) arc (\startAngle:\endAngle:0.8) -- cycle;
+            \fi
+        }
+        \draw[thick, funGray] (0,0) circle (0.8);
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 8. TALLY MARKS
+%    Draws tally marks.
+%    Usage: \tallyMarks{7}  (draws ||||| || )
+%========================================================================================
+\newcommand{\tallyMarks}[1]{%
+    \begin{tikzpicture}[baseline=-0.2ex]
+        \pgfmathtruncatemacro{\groups}{int(#1 / 5)}
+        \pgfmathtruncatemacro{\remainder}{int(mod(#1, 5))}
+        \foreach \g in {1,...,\groups} {%
+            \ifnum\groups>0
+                \pgfmathtruncatemacro{\goff}{int((\g - 1))}
+                \foreach \t in {1,...,4} {
+                    \draw[thick, funBlueDark] (\goff * 1.2 + \t * 0.2, -0.2) -- ++(0, 0.5);
+                }
+                % Cross line
+                \draw[thick, funRed] (\goff * 1.2 + 0.1, 0) -- ++(0.9, 0.3);
+            \fi
+        }
+        % Remaining marks
+        \ifnum\remainder>0
+            \foreach \t in {1,...,\remainder} {
+                \draw[thick, funBlueDark] (\groups * 1.2 + \t * 0.2, -0.2) -- ++(0, 0.5);
+            }
+        \fi
+    \end{tikzpicture}%
+}
+
+%========================================================================================
+% 9. COIN VISUALS
+%    Simple coin representations for money problems.
+%    Usage: \coin{25\textcent} or \coin{1\$}
+%========================================================================================
+\newcommand{\coin}[2][funYellow]{%
+    \tikz[baseline=-0.3ex]{%
+        \node[circle, fill=#1!30, draw=#1!70, thick, inner sep=3pt, font=\small\sffamily\bfseries]{#2};%
+    }%
+}
+
+%========================================================================================
+% 10. CLOCK FACE
+%     Draws an analog clock face showing a given time.
+%     Usage: \clockFace{3}{30}  (shows 3:30)
+%========================================================================================
+\newcommand{\clockFace}[2]{%
+    \begin{center}
+    \begin{tikzpicture}[scale=0.5]
+        % Clock face
+        \draw[thick, fill=white] (0,0) circle (2);
+        % Hour markers
+        \foreach \h in {1,...,12} {
+            \pgfmathsetmacro{\a}{90 - \h * 30}
+            \draw[thick] (\a:1.7) -- (\a:2);
+            \node[font=\tiny\sffamily\bfseries] at (\a:1.4) {\h};
+        }
+        % Hour hand
+        \pgfmathsetmacro{\hourAngle}{90 - (#1 * 30 + #2 * 0.5)}
+        \draw[very thick, funBlueDark, ->, >=stealth] (0,0) -- (\hourAngle:1);
+        % Minute hand
+        \pgfmathsetmacro{\minAngle}{90 - #2 * 6}
+        \draw[thick, funRed, ->, >=stealth] (0,0) -- (\minAngle:1.5);
+        % Center dot
+        \fill[funBlueDark] (0,0) circle (0.1);
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 11. BASE-TEN BLOCKS (Visual for place value)
+%     Shows hundreds (flat), tens (rod), ones (unit).
+%     Usage: \baseTenBlocks{2}{3}{5}  (2 flats, 3 rods, 5 units)
+%========================================================================================
+
+% ICON NEEDED: Base-ten flat (100-block), rod (10-block), unit (1-block)
+% File: icons/base-ten-flat.pdf, icons/base-ten-rod.pdf, icons/base-ten-unit.pdf
+
+\newcommand{\baseTenBlocks}[3]{%
+    \begin{center}
+    \begin{tikzpicture}[scale=0.4]
+        % Hundreds (flats) - shown as squares
+        \foreach \h in {1,...,#1} {
+            \ifnum#1>0
+                \pgfmathtruncatemacro{\hoff}{int((\h - 1))}
+                \draw[fill=pvHundreds!40, draw=pvHundreds, thick, rounded corners=1pt]
+                    (\hoff * 1.5, 0) rectangle ++(1.2, 1.2);
+                \node[font=\tiny\sffamily\bfseries, color=pvHundreds!80!black] at (\hoff * 1.5 + 0.6, 0.6) {100};
+            \fi
+        }
+        % Tens (rods) - shown as rectangles
+        \pgfmathtruncatemacro{\tensStart}{int(#1 * 1.5 + 0.5)}
+        \foreach \t in {1,...,#2} {
+            \ifnum#2>0
+                \pgfmathtruncatemacro{\toff}{int((\t - 1))}
+                \draw[fill=pvTens!40, draw=pvTens, thick, rounded corners=1pt]
+                    (\tensStart + \toff * 0.5, 0) rectangle ++(0.3, 1.2);
+            \fi
+        }
+        % Ones (units) - shown as small squares
+        \pgfmathtruncatemacro{\onesStart}{int(\tensStart + #2 * 0.5 + 0.5)}
+        \foreach \o in {1,...,#3} {
+            \ifnum#3>0
+                \pgfmathtruncatemacro{\ooff}{int((\o - 1))}
+                \pgfmathtruncatemacro{\orow}{int(\ooff / 5)}
+                \pgfmathtruncatemacro{\ocol}{int(mod(\ooff, 5))}
+                \fill[pvOnes!60, draw=pvOnes, rounded corners=0.5pt]
+                    (\onesStart + \ocol * 0.35, \orow * 0.35) rectangle ++(0.25, 0.25);
+            \fi
+        }
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 12. COMPARISON SYMBOLS (visual > < = for kids)
+%     Usage: \funCompare{5}{>}{3}
+%========================================================================================
+\newcommand{\funCompare}[3]{%
+    \begin{tikzpicture}[baseline=-0.3ex]
+        \node[fill=funBlueLight, rounded corners=4pt, inner sep=5pt, font=\Large\sffamily\bfseries] (left) {#1};
+        \node[right=5mm of left, fill=funYellowLight, rounded corners=4pt, inner sep=5pt, font=\Large\sffamily\bfseries\color{funRed}] (op) {#2};
+        \node[right=5mm of op, fill=funBlueLight, rounded corners=4pt, inner sep=5pt, font=\Large\sffamily\bfseries] (right) {#3};
+    \end{tikzpicture}%
+}
+
+%========================================================================================
+% 13. MULTIPLICATION TABLE CELL
+%     A highlighted multiplication fact.
+%     Usage: \multFact{3}{4}{12}
+%========================================================================================
+\newcommand{\multFact}[3]{%
+    \begin{tcolorbox}[
+        on line,
+        colback=funBlueLight,
+        colframe=funBlue,
+        boxrule=1pt,
+        arc=4pt,
+        boxsep=3pt,
+        left=3pt, right=3pt,
+        top=1pt, bottom=1pt,
+    ]
+        $#1 \times #2 = #3$
+    \end{tcolorbox}%
+}
+
+%========================================================================================
+% 14. FACT FAMILY TRIANGLE
+%     Shows a fact family relationship (multiplication/division).
+%     Usage: \factFamily{3}{4}{12}
+%========================================================================================
+\newcommand{\factFamily}[3]{%
+    \begin{center}
+    \begin{tikzpicture}
+        % Triangle
+        \draw[thick, funBlue, fill=funBlueLight, rounded corners=3pt]
+            (0, 2) -- (-1.5, 0) -- (1.5, 0) -- cycle;
+        % Numbers
+        \node[font=\Large\sffamily\bfseries, color=funBlueDark] at (0, 1.5) {#3};
+        \node[font=\Large\sffamily\bfseries, color=funGreenDark] at (-0.8, 0.3) {#1};
+        \node[font=\Large\sffamily\bfseries, color=funOrangeDark] at (0.8, 0.3) {#2};
+        % Operation symbols
+        \node[font=\small\sffamily, color=funGray] at (0, 0.8) {$\times$ \,/\, $\div$};
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 15. NUMBER BOND (Part-Part-Whole Visual)
+%     Shows the relationship: whole = part + part.
+%     Design: Circle at top (whole), two circles at bottom (parts), lines connecting.
+%     Usage: \numberBond{12}{7}{5}  (12 = 7 + 5)
+%     Usage: \numberBond{12}{7}{}   (12 = 7 + ?)  — blank for student to fill in
+%========================================================================================
+\newcommand{\numberBond}[4][funBlue]{%
+    \begin{center}
+    \begin{tikzpicture}
+        % Whole (top)
+        \node[circle, draw=#1, thick, fill=#1!15, minimum size=1cm,
+              font=\Large\sffamily\bfseries] (whole) at (0, 1.5) {#2};
+        % Part left
+        \ifx&#3&%
+            \node[circle, draw=#1, thick, fill=white, minimum size=1cm,
+                  font=\Large\sffamily\bfseries] (left) at (-1.2, 0) {?};
+        \else
+            \node[circle, draw=#1, thick, fill=#1!15, minimum size=1cm,
+                  font=\Large\sffamily\bfseries] (left) at (-1.2, 0) {#3};
+        \fi
+        % Part right
+        \ifx&#4&%
+            \node[circle, draw=#1, thick, fill=white, minimum size=1cm,
+                  font=\Large\sffamily\bfseries] (right) at (1.2, 0) {?};
+        \else
+            \node[circle, draw=#1, thick, fill=#1!15, minimum size=1cm,
+                  font=\Large\sffamily\bfseries] (right) at (1.2, 0) {#4};
+        \fi
+        % Lines
+        \draw[thick, #1] (whole) -- (left);
+        \draw[thick, #1] (whole) -- (right);
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 16. ARRAY GRID (Rows x Columns Visual for Multiplication)
+%     Draws a grid of colored squares arranged in rows and columns.
+%     More structured than dotGroups — clearly shows rows x columns.
+%     Usage: \arrayGrid{3}{4}  (3 rows, 4 columns)
+%     Optional color: \arrayGrid[funGreen]{3}{4}
+%========================================================================================
+\newcommand{\arrayGrid}[3][funBlue]{%
+    \begin{center}
+    \begin{tikzpicture}
+        \foreach \r in {1,...,#2} {
+            \foreach \c in {1,...,#3} {
+                \fill[#1!50, draw=#1, rounded corners=1pt]
+                    ({(\c - 1) * 0.55}, {-((\r - 1) * 0.55)}) rectangle ++(0.45, 0.45);
+            }
+        }
+        % Row label
+        \node[left, font=\small\sffamily\bfseries\color{#1!80!black}]
+            at (-0.15, {-(#2 - 1) * 0.55 / 2 + 0.225}) {#2 rows};
+        % Column label
+        \node[above, font=\small\sffamily\bfseries\color{#1!80!black}]
+            at ({(#3 - 1) * 0.55 / 2 + 0.225}, 0.55) {#3 columns};
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 17. COLUMN SUBTRACTION (Vertical Subtraction Layout)
+%     Mirrors the column addition commands for subtraction.
+%     Usage: \columnSub{532}{275}
+%========================================================================================
+
+%%% Simple column subtraction (no answer shown)
+\newcommand{\columnSub}[2]{%
+    \begin{center}
+    \begin{tikzpicture}[
+        every node/.style={minimum width=0.8cm, minimum height=0.8cm, font=\Large\sffamily},
+    ]
+        \pgfmathtruncatemacro{\aH}{int(#1/100)}
+        \pgfmathtruncatemacro{\aT}{int(mod(int(#1/10),10))}
+        \pgfmathtruncatemacro{\aO}{int(mod(#1,10))}
+        \pgfmathtruncatemacro{\bH}{int(#2/100)}
+        \pgfmathtruncatemacro{\bT}{int(mod(int(#2/10),10))}
+        \pgfmathtruncatemacro{\bO}{int(mod(#2,10))}
+        %
+        \node at (0, 1) {\aH};
+        \node at (1, 1) {\aT};
+        \node at (2, 1) {\aO};
+        \node at (-0.7, 0) {$-$};
+        \node at (0, 0) {\bH};
+        \node at (1, 0) {\bT};
+        \node at (2, 0) {\bO};
+        \draw[thick] (-0.5, -0.45) -- (2.5, -0.45);
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%%% Column subtraction with answer shown
+%%% Usage: \columnSubFull{532}{275}{257}
+\newcommand{\columnSubFull}[3]{%
+    \begin{center}
+    \begin{tikzpicture}[
+        every node/.style={minimum width=0.8cm, minimum height=0.8cm, font=\Large\sffamily},
+    ]
+        \pgfmathtruncatemacro{\aH}{int(#1/100)}
+        \pgfmathtruncatemacro{\aT}{int(mod(int(#1/10),10))}
+        \pgfmathtruncatemacro{\aO}{int(mod(#1,10))}
+        \pgfmathtruncatemacro{\bH}{int(#2/100)}
+        \pgfmathtruncatemacro{\bT}{int(mod(int(#2/10),10))}
+        \pgfmathtruncatemacro{\bO}{int(mod(#2,10))}
+        \pgfmathtruncatemacro{\rH}{int(#3/100)}
+        \pgfmathtruncatemacro{\rT}{int(mod(int(#3/10),10))}
+        \pgfmathtruncatemacro{\rO}{int(mod(#3,10))}
+        %
+        \node at (0, 1) {\aH};
+        \node at (1, 1) {\aT};
+        \node at (2, 1) {\aO};
+        \node at (-0.7, 0) {$-$};
+        \node at (0, 0) {\bH};
+        \node at (1, 0) {\bT};
+        \node at (2, 0) {\bO};
+        \draw[thick] (-0.5, -0.45) -- (2.5, -0.45);
+        \node[font=\Large\sffamily\bfseries\color{funBlueDark}] at (0, -1) {\rH};
+        \node[font=\Large\sffamily\bfseries\color{funBlueDark}] at (1, -1) {\rT};
+        \node[font=\Large\sffamily\bfseries\color{funBlueDark}] at (2, -1) {\rO};
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%%% Column subtraction workspace (blank answer for student)
+\newcommand{\columnSubWork}[2]{%
+    \begin{center}
+    \begin{tikzpicture}[
+        every node/.style={minimum width=0.8cm, minimum height=0.8cm, font=\Large\sffamily},
+    ]
+        \pgfmathtruncatemacro{\aH}{int(#1/100)}
+        \pgfmathtruncatemacro{\aT}{int(mod(int(#1/10),10))}
+        \pgfmathtruncatemacro{\aO}{int(mod(#1,10))}
+        \pgfmathtruncatemacro{\bH}{int(#2/100)}
+        \pgfmathtruncatemacro{\bT}{int(mod(int(#2/10),10))}
+        \pgfmathtruncatemacro{\bO}{int(mod(#2,10))}
+        %
+        \node at (0, 1) {\aH};
+        \node at (1, 1) {\aT};
+        \node at (2, 1) {\aO};
+        \node at (-0.7, 0) {$-$};
+        \node at (0, 0) {\bH};
+        \node at (1, 0) {\bT};
+        \node at (2, 0) {\bO};
+        \draw[thick] (-0.5, -0.45) -- (2.5, -0.45);
+        \node[minimum height=1.2cm] at (1, -1.1) {};
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 17b. COLUMN SUBTRACTION WORK AREA — 4-DIGIT
+%     Like \columnSubWork but for 4-digit numbers.
+%     Usage: \columnSubWorkFour{7246}{3589}
+%========================================================================================
+\newcommand{\columnSubWorkFour}[2]{%
+    \begin{center}
+    \begin{tikzpicture}[
+        every node/.style={minimum width=0.8cm, minimum height=0.8cm, font=\Large\sffamily},
+    ]
+        \pgfmathtruncatemacro{\aTh}{int(#1/1000)}
+        \pgfmathtruncatemacro{\aH}{int(mod(int(#1/100),10))}
+        \pgfmathtruncatemacro{\aT}{int(mod(int(#1/10),10))}
+        \pgfmathtruncatemacro{\aO}{int(mod(#1,10))}
+        \pgfmathtruncatemacro{\bTh}{int(#2/1000)}
+        \pgfmathtruncatemacro{\bH}{int(mod(int(#2/100),10))}
+        \pgfmathtruncatemacro{\bT}{int(mod(int(#2/10),10))}
+        \pgfmathtruncatemacro{\bO}{int(mod(#2,10))}
+        %
+        \node at (0, 1) {\aTh};
+        \node at (1, 1) {\aH};
+        \node at (2, 1) {\aT};
+        \node at (3, 1) {\aO};
+        \node at (-0.7, 0) {$-$};
+        \node at (0, 0) {\bTh};
+        \node at (1, 0) {\bH};
+        \node at (2, 0) {\bT};
+        \node at (3, 0) {\bO};
+        \draw[thick] (-0.5, -0.45) -- (3.5, -0.45);
+        \node[minimum height=1.2cm] at (1.5, -1.1) {};
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 18. MEASUREMENT RULER
+%     Draws a ruler with inch or cm markings.
+%     Usage: \ruler{6}{inches}  or  \ruler{15}{cm}
+%========================================================================================
+\newcommand{\ruler}[2]{%
+    \begin{center}
+    \begin{tikzpicture}
+        % Ruler body
+        \fill[funYellow!20, draw=funYellow!60, thick, rounded corners=2pt]
+            (-0.3, -0.4) rectangle (#1 * 0.8 + 0.3, 0.6);
+        % Markings
+        \foreach \i in {0,...,#1} {
+            \draw[thick] (\i * 0.8, -0.3) -- (\i * 0.8, 0.2);
+            \node[below, font=\scriptsize\sffamily] at (\i * 0.8, -0.35) {\i};
+        }
+        % Label
+        \node[above, font=\tiny\sffamily\color{funGrayDark}] at (#1 * 0.4, 0.55) {#2};
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 19. VERTICAL BAR GRAPH
+%     Draws a simple vertical bar chart for data/graph topics.
+%     Usage: \barGraph{Favorite Fruits}{Apple/5,Banana/3,Orange/7,Grape/2}{8}
+%     Optional color: \barGraph[funGreen]{Title}{data}{max}
+%========================================================================================
+\newcommand{\barGraph}[4][funBlue]{%
+    \begin{center}
+    \begin{tikzpicture}
+        % Y-axis
+        \draw[thick, funGrayDark] (0, 0) -- (0, {#4 * 0.55 + 0.3});
+        \foreach \y in {0,...,#4} {
+            \draw[funGray!50] (-0.08, {\y * 0.55}) -- (0.08, {\y * 0.55});
+            \node[left, font=\scriptsize\sffamily] at (-0.12, {\y * 0.55}) {\y};
+        }
+        % Bars
+        \foreach \lbl/\val [count=\i] in {#3} {
+            \fill[#1!50, draw=#1, thick, rounded corners=1.5pt]
+                ({\i * 1.1 - 0.8}, 0) rectangle ++(0.7, {\val * 0.55});
+            \node[below, font=\scriptsize\sffamily, text width=1.2cm, align=center]
+                at ({\i * 1.1 - 0.45}, -0.15) {\lbl};
+            \node[above, font=\scriptsize\sffamily\bfseries, color=#1!80!black]
+                at ({\i * 1.1 - 0.45}, {\val * 0.55 + 0.05}) {\val};
+        }
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 20. AREA GRID (unit squares for measuring area)
+%     Draws a grid of unit squares for area counting (Ch 7).
+%     More contiguous than arrayGrid — shows true unit-square tiling.
+%     Usage: \areaGrid{3}{5}             % 3 rows × 5 columns
+%     Optional color: \areaGrid[funGreen]{4}{6}
+%========================================================================================
+\newcommand{\areaGrid}[3][funBlue]{%
+    \begin{center}
+    \begin{tikzpicture}
+        % Filled unit squares
+        \foreach \r in {1,...,#2} {
+            \foreach \c in {1,...,#3} {
+                \fill[#1!12] ({(\c-1)*0.6}, {(#2-\r)*0.6}) rectangle ++(0.6, 0.6);
+                \draw[#1!40, thin] ({(\c-1)*0.6}, {(#2-\r)*0.6}) rectangle ++(0.6, 0.6);
+            }
+        }
+        % Thick outer border
+        \draw[#1, thick] (0, 0) rectangle ({#3*0.6}, {#2*0.6});
+        % "1 unit" bracket on top
+        \draw[<->, #1!70, thick] (0, {#2*0.6 + 0.2}) -- (0.6, {#2*0.6 + 0.2});
+        \node[above, font=\tiny\sffamily\color{#1!70}] at (0.3, {#2*0.6 + 0.2}) {1};
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 21. PERIMETER RECTANGLE (with labeled sides)
+%     Draws a rectangle with side lengths shown for perimeter problems.
+%     Usage: \perimeterRect{8}{5}{cm}
+%     Optional color: \perimeterRect[funGreen]{6}{3}{in}
+%========================================================================================
+\newcommand{\perimeterRect}[4][funBlue]{%
+    \begin{center}
+    \begin{tikzpicture}
+        \pgfmathsetmacro{\w}{min(#2 * 0.5, 4)}
+        \pgfmathsetmacro{\h}{min(#3 * 0.5, 3)}
+        % Rectangle
+        \draw[#1, thick, fill=#1!6, rounded corners=2pt] (0, 0) rectangle (\w, \h);
+        % Side labels
+        \node[below, font=\small\sffamily\bfseries\color{#1!80!black}]
+            at ({\w/2}, -0.1) {#2 #4};
+        \node[above, font=\small\sffamily\bfseries\color{#1!80!black}]
+            at ({\w/2}, {\h + 0.1}) {#2 #4};
+        \node[left, font=\small\sffamily\bfseries\color{#1!80!black}, rotate=90, anchor=south]
+            at (-0.1, {\h/2}) {#3 #4};
+        \node[right, font=\small\sffamily\bfseries\color{#1!80!black}, rotate=-90, anchor=south]
+            at ({\w + 0.1}, {\h/2}) {#3 #4};
+        % Corner dots
+        \fill[#1] (0, 0) circle (2pt);
+        \fill[#1] (\w, 0) circle (2pt);
+        \fill[#1] (0, \h) circle (2pt);
+        \fill[#1] (\w, \h) circle (2pt);
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 22. SKIP COUNTING ARCS (number line with hop arcs)
+%     Number line with colored arcs showing skip counting jumps.
+%     Perfect for teaching multiplication as repeated addition.
+%     Usage: \skipCountArc{0}{30}{5}     % skip count by 5 from 0 to 30
+%     Optional color: \skipCountArc[funGreen]{0}{20}{4}
+%========================================================================================
+\newcommand{\skipCountArc}[4][funOrange]{%
+    \begin{center}
+    \begin{tikzpicture}
+        \pgfmathtruncatemacro{\numJumps}{int((#3 - #2) / #4)}
+        \pgfmathtruncatemacro{\lastJump}{\numJumps - 1}
+        % Number line arrow
+        \draw[->, thick, funGrayDark] (-0.3, 0) -- ({\numJumps * 1.2 + 0.5}, 0);
+        % Tick marks and labels
+        \foreach \j in {0,...,\numJumps} {
+            \pgfmathtruncatemacro{\val}{#2 + \j * #4}
+            \draw[thick] ({\j * 1.2}, -0.15) -- ({\j * 1.2}, 0.15);
+            \node[below, font=\small\sffamily\bfseries] at ({\j * 1.2}, -0.25) {\val};
+        }
+        % Jump arcs with "+step" labels
+        \ifnum\lastJump<0\else
+        \foreach \j in {0,...,\lastJump} {
+            \pgfmathsetmacro{\startX}{\j * 1.2 + 0.1}
+            \pgfmathsetmacro{\endX}{(\j+1) * 1.2 - 0.1}
+            \pgfmathsetmacro{\midX}{(\j * 1.2 + (\j+1) * 1.2) / 2}
+            \draw[->, #1, thick]
+                (\startX, 0.12) to[out=60, in=120] (\endX, 0.12);
+            \node[above, font=\tiny\sffamily\bfseries\color{#1}]
+                at (\midX, 0.55) {$+#4$};
+        }
+        \fi
+    \end{tikzpicture}%
+    \end{center}%
+}
+
+%========================================================================================
+% 23. FRACTION NUMBER LINE
+%     Number line from 0 to 1 divided into equal parts for fraction visualization.
+%     Usage: \numberLineFraction{4}     % 0 to 1 divided into fourths
+%     Optional color: \numberLineFraction[funGreen]{6}
+%========================================================================================
+\newcommand{\numberLineFraction}[2][funBlue]{%
+    \begin{center}
+    \begin{tikzpicture}
+        \pgfmathsetmacro{\segW}{0.9}
+        % Main line
+        \draw[thick, funGrayDark] (-0.3, 0) -- ({#2 * \segW + 0.3}, 0);
+        % Tick marks and labels
+        \foreach \i in {0,...,#2} {
+            \pgfmathsetmacro{\x}{\i * \segW}
+            \pgfmathtruncatemacro{\isFirst}{\i == 0 ? 1 : 0}
+            \pgfmathtruncatemacro{\isLast}{\i == #2 ? 1 : 0}
+            \ifnum\isFirst=1
+                \draw[thick] (\x, -0.2) -- (\x, 0.2);
+                \node[below, font=\small\sffamily\bfseries] at (\x, -0.25) {$0$};
+            \else
+                \ifnum\isLast=1
+                    \draw[thick] (\x, -0.2) -- (\x, 0.2);
+                    \node[below, font=\small\sffamily\bfseries] at (\x, -0.25) {$1$};
+                \else
+                    \draw[#1!60] (\x, -0.15) -- (\x, 0.15);
+                    \node[below, font=\scriptsize\sffamily\color{#1}] at (\x, -0.25) {$\frac{\i}{#2}$};
+                \fi
+            \fi
+        }
+    \end{tikzpicture}%
+    \end{center}%
+}

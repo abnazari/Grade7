@@ -1,0 +1,140 @@
+\ansChap{1}
+\ansSec{1.1}
+\ansItem{1}{$2$ walls per hour}
+\ansExplain{1}{Divide the wall covered by the time: $\frac {2}{3} \div \frac {1}{3}$. Flip the second fraction and multiply: $\frac {2}{3} \times \frac {3}{1} = \frac {6}{3} = 2$ walls per hour.}
+\ansItem{2}{$\frac {2}{3}$ cup per minute}
+\ansExplain{2}{Divide cups by minutes: $\frac {1}{2} \div \frac {3}{4}$. Flip and multiply: $\frac {1}{2} \times \frac {4}{3} = \frac {4}{6} = \frac {2}{3}$ cup per minute.}
+\ansItem{3}{$1\frac {1}{4}$ gallons per mile}
+\ansExplain{3}{Divide gallons by miles: $\frac {5}{6} \div \frac {2}{3}$. Flip and multiply: $\frac {5}{6} \times \frac {3}{2} = \frac {15}{12} = \frac {5}{4} = 1\frac {1}{4}$ gallons per mile.}
+\ansItem{4}{Equal --- both $2$ cups per cup}
+\ansExplain{4}{Find each unit rate. Mix A: $\frac {1}{2} \div \frac {1}{4} = \frac {1}{2} \times 4 = 2$. Mix B: $\frac {2}{3} \div \frac {1}{3} = \frac {2}{3} \times 3 = 2$. Both give $2$ cups of nuts per cup of raisins, so they are equal.}
+\ansItem{5}{Beetle: $\frac {7}{8}$ m/hr $>$ $\frac {5}{6}$ m/hr}
+\ansExplain{5}{Find each unit rate. Snail: $\frac {5}{8} \div \frac {3}{4} = \frac {5}{8} \times \frac {4}{3} = \frac {20}{24} = \frac {5}{6}$ m/hr. Beetle: $\frac {7}{10} \div \frac {4}{5} = \frac {7}{10} \times \frac {5}{4} = \frac {35}{40} = \frac {7}{8}$ m/hr. Since $\frac {7}{8} > \frac {5}{6}$, the beetle is faster.}
+\ansSec{1.2}
+\ansItem{1}{Yes}
+\ansExplain{1}{Divide $y \div x$ for each row: $9 \div 3 = 3$, $15 \div 5 = 3$, $21 \div 7 = 3$. Every ratio is $3$, so the relationship is proportional.}
+\ansItem{2}{No}
+\ansExplain{2}{Divide $y \div x$ for each row: $6 \div 2 = 3$, $10 \div 4 = 2.5$, $14 \div 6 \approx 2.3$. The ratios are not all equal, so this is not proportional. It has a constant change of $+4$, but that does not mean a constant ratio.}
+\ansItem{3}{True}
+\ansItem{4}{Plan 1}
+\ansExplain{4}{Plan 1 has no base fee, so dividing total cost by texts always gives $\$0.05$. That constant ratio means it is proportional. Plan 2 has a $\$5$ monthly charge that does not depend on texts, so the cost-per-text ratio changes and it is not proportional.}
+\ansSec{1.3}
+\ansItem{1}{$k = 4$}
+\ansExplain{1}{Pick any row and divide $y$ by $x$: $12 \div 3 = 4$. Check another row: $20 \div 5 = 4$ and $32 \div 8 = 4$. All ratios match, so $k = 4$.}
+\ansItem{2}{$k = 60$ miles per hour}
+\ansExplain{2}{Divide miles by hours: $30 \div \frac {1}{2} = 30 \times 2 = 60$. This means the car travels $60$ miles for every $1$ hour. Check: $60 \div 1 = 60$ and $120 \div 2 = 60$ \checkmark .}
+\ansItem{3}{$k = 2.5$}
+\ansExplain{3}{On a proportional graph, $k = y \div x$. Use the given point: $k = 15 \div 6 = 2.5$. This means $y$ increases by $2.5$ for every $1$ unit of $x$.}
+\ansItem{4}{$k = 16$ pages/min}
+\ansExplain{4}{Divide to find the unit rate: $80 \div 5 = 16$. The printer produces $16$ pages every minute.}
+\ansItem{5}{$y = 21$}
+\ansExplain{5}{First find $k$: $14 \div 4 = 3.5$. Then use $y = kx$ to find the missing value: $y = 3.5 \times 6 = 21$. Check: $35 \div 10 = 3.5$ \checkmark .}
+\ansSec{1.4}
+\ansItem{1}{$c = 8h$}
+\ansExplain{1}{The rate is $\$8$ per hour, so $k = 8$. Plug into $y = kx$: cost $= 8 \times $ hours, giving $c = 8h$.}
+\ansItem{2}{$g = 3.5m$}
+\ansExplain{2}{The unit rate is $3.5$ gallons per minute, so $k = 3.5$. The equation is $g = 3.5m$.}
+\ansItem{3}{$y = 2.5x$}
+\ansExplain{3}{Find $k$ by dividing any $y$ by its $x$: $10 \div 4 = 2.5$. Check: $15 \div 6 = 2.5$ \checkmark . Write the equation: $y = 2.5x$.}
+\ansItem{4}{$9$ cups}
+\ansExplain{4}{The equation is $f = \frac {3}{4}s$ where $s$ is servings. Plug in $12$: $f = \frac {3}{4} \times 12 = \frac {36}{4} = 9$ cups of flour.}
+\ansItem{5}{$250$ texts}
+\ansExplain{5}{Write the equation: $c = 0.04t$. Set $c = 10$ and solve: $10 = 0.04t$, so $t = 10 \div 0.04 = 250$ texts.}
+\ansSec{1.5}
+\ansItem{1}{One ticket costs $\$5$}
+\ansExplain{1}{The point $(1, r)$ on a proportional graph gives the unit rate. Here $x = 1$ ticket and $y = 5$ dollars, so one ticket costs $\$5$.}
+\ansItem{2}{Unit rate $= 6$; $y = 42$}
+\ansExplain{2}{Find the unit rate: $k = 18 \div 3 = 6$. This means $y$ increases by $6$ for every $1$ unit of $x$. Now plug in $x = 7$: $y = 6 \times 7 = 42$.}
+\ansItem{3}{Runner A}
+\ansExplain{3}{Find each unit rate. Runner A: $k = 10 \div 2 = 5$ units per time. Runner B: $k = 8 \div 2 = 4$. A higher $k$ means a steeper line and a faster speed, so Runner A is faster.}
+\ansItem{4}{False}
+\ansItem{5}{$y = 2.5x$; $x = 16$}
+\ansExplain{5}{Find $k$: $12.5 \div 5 = 2.5$, so the equation is $y = 2.5x$. To find $x$ when $y = 40$: $40 = 2.5x$, divide both sides by $2.5$: $x = 40 \div 2.5 = 16$.}
+\ansSec{1.6}
+\ansItem{1}{$350$ miles}
+\ansExplain{1}{Find the unit rate: $210 \div 6 = 35$ miles per gallon. Multiply by $10$: $35 \times 10 = 350$ miles.}
+\ansItem{2}{$3\frac {3}{4}$ cups}
+\ansExplain{2}{Find rice per person: $\frac {3}{2} \div 4 = \frac {3}{8}$ cup. Multiply by $10$: $\frac {3}{8} \times 10 = \frac {30}{8} = 3\frac {3}{4}$ cups.}
+\ansItem{3}{$64$ km}
+\ansExplain{3}{Set up a proportion: $\frac {3}{24} = \frac {8}{d}$. Cross-multiply: $3d = 24 \times 8 = 192$. Divide: $d = 192 \div 3 = 64$ km.}
+\ansItem{4}{$30$ min}
+\ansExplain{4}{Find the unit rate: $120 \div 8 = 15$ pages per minute. Divide: $450 \div 15 = 30$ minutes.}
+\ansItem{5}{Large by $\$2$/gal}
+\ansExplain{5}{Find each unit price. Small: $18 \div 0.75 = \$24$ per gallon. Large: $33 \div 1.5 = \$22$ per gallon. The large can costs $\$2$ less per gallon, so it is the better deal.}
+\ansChap{2}
+\ansSec{2.1}
+\ansItem{1}{$30$}
+\ansExplain{1}{Convert the percent to a decimal: $15\% = 0.15$. Multiply: $0.15 \times 200 = 30$.}
+\ansItem{2}{$40\%$}
+\ansExplain{2}{Divide the part by the whole: $36 \div 90 = 0.4$. Convert to a percent by multiplying by $100$: $0.4 \times 100 = 40\%$.}
+\ansItem{3}{$36$}
+\ansExplain{3}{You know the part ($27$) and the percent ($75\% = 0.75$). Divide the part by the percent: $27 \div 0.75 = 36$. Check: $0.75 \times 36 = 27$ \checkmark .}
+\ansItem{4}{$70\%$}
+\ansExplain{4}{Divide the part by the whole: $42 \div 60 = 0.7$. Multiply by $100$ to get the percent: $0.7 \times 100 = 70\%$.}
+\ansItem{5}{$204$}
+\ansExplain{5}{Convert $85\%$ to a decimal: $0.85$. Multiply by the total: $0.85 \times 240 = 204$ items in stock.}
+\ansSec{2.2}
+\ansItem{1}{$36$}
+\ansExplain{1}{Set up the proportion: $\frac {n}{80} = \frac {45}{100}$. Cross-multiply: $100n = 80 \times 45 = 3600$. Divide both sides by $100$: $n = 36$.}
+\ansItem{2}{$45\%$}
+\ansExplain{2}{Set up the proportion with the percent unknown: $\frac {54}{120} = \frac {p}{100}$. Cross-multiply: $120p = 54 \times 100 = 5400$. Divide: $p = 5400 \div 120 = 45$, so $45\%$.}
+\ansItem{3}{$130$}
+\ansExplain{3}{Set up the proportion with the whole unknown: $\frac {78}{w} = \frac {60}{100}$. Cross-multiply: $60w = 78 \times 100 = 7800$. Divide: $w = 7800 \div 60 = 130$.}
+\ansItem{4}{$14\%$}
+\ansExplain{4}{Set up the proportion: $\frac {35}{250} = \frac {p}{100}$. Cross-multiply: $250p = 3500$. Divide: $p = 3500 \div 250 = 14$, so $14\%$ of the marbles are red.}
+\ansItem{5}{$345.6 \approx 346$ students}
+\ansExplain{5}{Set up: $\frac {n}{480} = \frac {72}{100}$. Cross-multiply: $100n = 480 \times 72 = 34{,}560$. Divide: $n = 345.6$. Round to $346$ since you can't have a partial student.}
+\ansSec{2.3}
+\ansItem{1}{$15\%$}
+\ansExplain{1}{First find the change: $9{,}200 - 8{,}000 = 1{,}200$. Divide by the original: $1{,}200 \div 8{,}000 = 0.15$. Multiply by $100$: the population increased by $15\%$.}
+\ansItem{2}{$\$135$}
+\ansExplain{2}{A $25\%$ discount means you pay $100\% - 25\% = 75\%$ of the price. Multiply: $180 \times 0.75 = \$135$.}
+\ansItem{3}{$25\%$}
+\ansExplain{3}{Find the change: $15 - 12 = 3$ cm. Divide by the original height: $3 \div 12 = 0.25$. Multiply by $100$: that is a $25\%$ increase.}
+\ansItem{4}{$0.60$}
+\ansExplain{4}{A $40\%$ decrease means you keep $100\% - 40\% = 60\%$. Convert to a decimal: $60\% = 0.60$. Multiply the original by $0.60$ to get the result.}
+\ansItem{5}{$20\%$}
+\ansExplain{5}{Find the change: $40 - 32 = 8$. Divide by the original price: $8 \div 40 = 0.2$. Multiply by $100$: the price decreased by $20\%$.}
+\ansSec{2.4}
+\ansItem{1}{$\$21$}
+\ansExplain{1}{A $75\%$ markup means the price is $100\% + 75\% = 175\%$ of the cost. Multiply: $12 \times 1.75 = \$21$.}
+\ansItem{2}{$\$45.50$}
+\ansExplain{2}{A $30\%$ discount means you pay $100\% - 30\% = 70\%$. Multiply: $65 \times 0.70 = \$45.50$.}
+\ansItem{3}{$\$23.32$}
+\ansExplain{3}{Tax is added on top, so multiply by $1 + 0.06 = 1.06$. Total: $22 \times 1.06 = \$23.32$.}
+\ansItem{4}{$\$73.44$}
+\ansExplain{4}{First apply the discount: $80 \times 0.85 = \$68$. Then add tax to the sale price: $68 \times 1.08 = \$73.44$. Always apply tax last.}
+\ansItem{5}{$60\%$}
+\ansExplain{5}{Find the markup amount: $40 - 25 = \$15$. Divide by the original cost: $15 \div 25 = 0.60$. Multiply by $100$: that is a $60\%$ markup.}
+\ansSec{2.5}
+\ansItem{1}{$\$6.30$}
+\ansExplain{1}{Convert the percent to a decimal: $18\% = 0.18$. Multiply by the bill: $35 \times 0.18 = \$6.30$.}
+\ansItem{2}{$\$270$}
+\ansExplain{2}{Commission means she earns $6\%$ of total sales. Convert: $6\% = 0.06$. Multiply: $4{,}500 \times 0.06 = \$270$.}
+\ansItem{3}{$\$84$}
+\ansExplain{3}{The fee is added on top, so you pay $100\% + 12\% = 112\%$. Multiply: $75 \times 1.12 = \$84$.}
+\ansItem{4}{About $\$9.30$}
+\ansExplain{4}{Find $10\%$ by moving the decimal: $\$6.20$. Find $5\%$ by taking half of that: $\$3.10$. Add them: $6.20 + 3.10 = \$9.30$. That is $15\%$.}
+\ansItem{5}{$\$14{,}000$}
+\ansExplain{5}{Convert the percent: $4\% = 0.04$. Multiply by the sale price: $350{,}000 \times 0.04 = \$14{,}000$.}
+\ansSec{2.6}
+\ansItem{1}{$\$80$}
+\ansExplain{1}{Use the formula $I = Prt$. Convert the rate: $5\% = 0.05$. Multiply: $I = 800 \times 0.05 \times 2 = \$80$.}
+\ansItem{2}{$\$288$}
+\ansExplain{2}{Use $I = Prt$. Convert: $6\% = 0.06$. Multiply: $I = 1{,}200 \times 0.06 \times 4 = \$288$. This is the extra amount you pay for borrowing.}
+\ansItem{3}{$\$402.50$}
+\ansExplain{3}{First find the interest: $I = 350 \times 0.03 \times 5 = \$52.50$. Then add to the principal: $350 + 52.50 = \$402.50$.}
+\ansItem{4}{$4\%$}
+\ansExplain{4}{Start with $I = Prt$ and solve for $r$: $240 = 2{,}000 \times r \times 3$. Simplify: $240 = 6{,}000r$. Divide: $r = 240 \div 6{,}000 = 0.04 = 4\%$.}
+\ansItem{5}{$2$ years}
+\ansExplain{5}{Start with $I = Prt$ and solve for $t$: $75 = 1{,}500 \times 0.025 \times t$. Simplify: $75 = 37.5t$. Divide: $t = 75 \div 37.5 = 2$ years.}
+\ansSec{2.7}
+\ansItem{1}{$20\%$}
+\ansExplain{1}{Find the difference: $|30 - 25| = 5$. Divide by the actual value: $5 \div 25 = 0.2$. Multiply by $100$: the percent error is $20\%$.}
+\ansItem{2}{$20\%$}
+\ansExplain{2}{Find the difference: $|2 - 2.5| = 0.5$. Divide by the actual: $0.5 \div 2.5 = 0.2$. Multiply by $100$: $20\%$ error. The absolute value makes the answer positive even though the estimate was too low.}
+\ansItem{3}{$\approx 6.7\%$}
+\ansExplain{3}{Find the difference: $|3.2 - 3| = 0.2$. Divide by the actual: $0.2 \div 3 = 0.0\overline {6}$. Multiply by $100$: about $6.7\%$ error.}
+\ansItem{4}{$\approx 8.7\%$}
+\ansExplain{4}{Find the difference: $|5{,}000 - 4{,}600| = 400$. Divide by the actual value: $400 \div 4{,}600 \approx 0.087$. Multiply by $100$: about $8.7\%$ error.}
+\ansItem{5}{True}

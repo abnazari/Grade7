@@ -1,0 +1,57 @@
+% CCSS 7.G.A.2 — Constructing Triangles from Three Measurements
+\section{Constructing Triangles from Three Measurements}
+
+\begin{learningGoals}
+\begin{itemize}
+    \item Determine when three measurements produce a unique triangle, more than one, or none
+    \item Apply the triangle inequality and angle sum rules
+\end{itemize}
+\end{learningGoals}
+
+\begin{conceptBox}{Triangle Conditions}
+\begin{center}
+\begin{tabular}{l l}
+    \textbf{Given} & \textbf{Result} \\
+    \hline
+    Three sides (SSS) & Unique triangle (if inequality holds) \\
+    Two sides + included angle (SAS) & Unique triangle \\
+    Two angles + included side (ASA) & Unique triangle \\
+    Two angles + non-included side (AAS) & Unique triangle \\
+    Three angles (AAA) & Many triangles (same shape, different sizes) \\
+\end{tabular}
+\end{center}
+\textbf{Key facts:}
+\begin{itemize}[leftmargin=*]
+    \item Triangle inequality: each side $<$ sum of the other two.
+    \item Angle sum: the three angles must add to $180°$.
+\end{itemize}
+\end{conceptBox}
+
+\begin{workedExample}{Checking Angle Conditions}
+Can you draw a triangle with angles $50°$, $60°$, and $80°$?
+
+$50 + 60 + 80 = 190°$. But triangle angles must sum to $180°$.
+\answerHighlight{No triangle is possible.}
+\end{workedExample}
+
+\tipBox{If you know two angles, you can always find the third: $180° - \text{angle 1} - \text{angle 2}$.}
+
+\begin{practiceBox}{Constructing Triangles}
+\resetProblems
+
+\prob Can a triangle have angles $35°$, $65°$, and $80°$? If so, is it unique?
+\answerExplain{The angles work, but the triangle is not unique}{$35 + 65 + 80 = 180°$ \checkmark. However, three angles (AAA) allow many triangles of different sizes but the same shape.}
+
+\prob Sides $7$, $10$, $15$. Can a triangle be formed? Is it unique?
+\answerExplain{Yes, unique}{Check: $7 + 10 = 17 > 15$ \checkmark, $7 + 15 = 22 > 10$ \checkmark, $10 + 15 = 25 > 7$ \checkmark. Three valid sides (SSS) give exactly one triangle.}
+
+\prob Sides $3$, $4$, and included angle $90°$. Unique?
+\answerExplain{Yes, unique}{Two sides and the angle between them (SAS) always produce exactly one triangle. This is a right triangle with legs $3$ and $4$.}
+
+\prob Can a triangle have angles $90°$, $90°$, and $0°$?
+\answerExplain{No}{$90 + 90 + 0 = 180°$, but an angle of $0°$ means the sides collapse into a line. Every angle must be greater than $0°$.}
+
+\prob Two angles of a triangle are $40°$ and $70°$. What is the third angle?
+\answerExplain{$70°$}{$180° - 40° - 70° = 70°$. The third angle is $70°$, making this triangle isosceles (two equal angles).}
+
+\end{practiceBox}

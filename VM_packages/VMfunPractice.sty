@@ -1,0 +1,718 @@
+%----------------------------------------------------------------------------------------
+% VMfunPractice.sty - Practice & Assessment Environments for Grade 6
+% Includes: Practice, Show Work, Find Missing, Challenge, Quick Check
+%----------------------------------------------------------------------------------------
+\ProvidesPackage{VMfunPractice}[2026/03/02 Grade 6 Practice Environments]
+
+%========================================================================================
+% 1. PRACTICE BOX
+%    A titled practice section with numbered problems.
+%    Design: Blue header with pencil decorations, white/light blue content.
+%    Usage: \begin{practiceBox}{Addition Practice} ... \end{practiceBox}
+%    Optional color: \begin{practiceBox}[funGreen]{...} ... \end{practiceBox}
+%========================================================================================
+
+% ICON NEEDED: Writing pencil icon (yellow pencil, slightly tilted)
+% File: icons/writing-pencil.pdf
+
+\newtcolorbox{practiceBox}[2][funBlue]{
+    enhanced,
+    colback=white,
+    colframe=#1,
+    colbacktitle=#1!15,
+    coltitle=#1!80!black,
+    fonttitle=\Large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{#1}\faPen}~~#2~~\raisebox{-0.1em}{\color{#1}\faPen}},
+    halign title=center,
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=4mm,
+    bottomtitle=4mm,
+    before={\par\addvspace{10pt}},
+    after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 2. PRACTICE SUBSECTION HEADER
+%    A colored header bar inside practice boxes to separate sections.
+%    Design: Colored bar with white or colored text.
+%    Usage: \practiceHeader{Add These 3-Digit Numbers}
+%    Optional: \practiceHeader[funOrange]{Show Your Work}
+%========================================================================================
+\newcommand{\practiceHeader}[2][funBlue]{%
+    \par\vspace{4mm}%
+    \begin{tcolorbox}[
+        enhanced,
+        colback=#1!15,
+        colframe=#1,
+        boxrule=1pt,
+        arc=5pt,
+        outer arc=5pt,
+        left=4mm, right=4mm,
+        top=2mm, bottom=2mm,
+    ]
+        {\bfseries\sffamily\color{#1!80!black}#2}
+    \end{tcolorbox}
+    \vspace{2mm}%
+}
+
+%========================================================================================
+% 3. SHOW YOUR WORK BOX
+%    A section with space for students to show their work (column format).
+%    Design: Orange header, divided into columns for vertical arithmetic.
+%    Usage: \begin{showWorkBox}{Add. Show Your Work.} ... \end{showWorkBox}
+%========================================================================================
+\newtcolorbox{showWorkBox}[2][funOrange]{
+    enhanced,
+    colback=white,
+    colframe=#1,
+    colbacktitle=#1!15,
+    coltitle=#1!80!black,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{#1}\faEdit}~~\textit{#2}},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=3mm,
+    bottomtitle=3mm,
+    before skip=8pt,
+    after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 4. FIND THE MISSING NUMBER BOX
+%    Problems where students fill in a blank.
+%    Design: Green header, problems with blanks.
+%    Usage: \begin{findMissingBox}{Find the Missing Number} ... \end{findMissingBox}
+%========================================================================================
+\newtcolorbox{findMissingBox}[2][funGreen]{
+    enhanced,
+    colback=#1!5,
+    colframe=#1,
+    colbacktitle=#1!15,
+    coltitle=#1!80!black,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{#1}\faQuestion}~~#2},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=3mm,
+    bottomtitle=3mm,
+    before skip=8pt,
+    after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 5. CHALLENGE BOX
+%    Harder problems to stretch students' thinking.
+%    Design: Purple header with star/trophy, light purple content.
+%    Usage: \begin{challengeBox} ... \end{challengeBox}
+%    Optional title: \begin{challengeBox}[Super Challenge!] ... \end{challengeBox}
+%========================================================================================
+\newtcolorbox{challengeBox}[1][Challenge!]{
+    enhanced,
+    colback=funPurpleLight,
+    colframe=funPurple,
+    colbacktitle=funPurple!15,
+    coltitle=funPurpleDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{funPurpleDark}\faTrophy}~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=2pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=3mm,
+    bottomtitle=3mm,
+    before skip=8pt,
+    after skip=8pt,
+    breakable,
+    borderline={3pt}{-2pt}{funPurple!12},
+}
+
+%========================================================================================
+% 6. QUICK CHECK
+%    Fast assessment problems to check understanding.
+%    Design: Teal box with rocket icon.
+%    Usage: \begin{quickCheck} ... \end{quickCheck}
+%========================================================================================
+\newtcolorbox{quickCheck}[1][Quick Check]{
+    enhanced,
+    colback=funTealLight,
+    colframe=funTeal,
+    colbacktitle=funTeal!15,
+    coltitle=funTealDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\iconRocket~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=3mm,
+    bottomtitle=3mm,
+    before skip=8pt,
+    after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 7. PROBLEM NUMBERING SYSTEM
+%    Auto-numbered problems for practice sections.
+%========================================================================================
+\newcounter{funProblem}[section]
+
+\newcommand{\prob}{%
+    \stepcounter{funProblem}%
+    \par\vspace{2mm}\noindent
+    \textbf{\sffamily\thefunProblem.}\hspace{3mm}%
+}
+
+%% Inline problem (for grid layouts)
+\newcommand{\probInline}{%
+    \stepcounter{funProblem}%
+    \textbf{\sffamily\thefunProblem.}\hspace{2mm}%
+}
+
+%% Reset problem counter
+\newcommand{\resetProblems}{\setcounter{funProblem}{0}}
+
+%========================================================================================
+% 8. ANSWER SPACE (vertical space for student work)
+%    Usage: \answerSpace  or  \answerSpace[3cm]
+%========================================================================================
+\newcommand{\answerSpace}[1][2cm]{%
+    \par\vspace{#1}%
+}
+
+%========================================================================================
+% 9. WORD PROBLEM
+%    A styled word problem with answer line.
+%    Usage: \wordProblem{A library has 375 math books and 248 science books.
+%            How many books are in total?}{books}
+%========================================================================================
+\newcommand{\wordProblem}[2]{%
+    \par\vspace{3mm}\noindent
+    \stepcounter{funProblem}%
+    \textbf{\sffamily\thefunProblem.}~#1%
+    \par\vspace{2mm}%
+    \hfill\textbf{Answer:}~\answerBlank~#2%
+    \par\vspace{3mm}%
+}
+
+%========================================================================================
+% 10. TRUE OR FALSE
+%     Usage: \trueOrFalse{$5 \times 3 = 15$}
+%========================================================================================
+\newcommand{\trueOrFalse}[1]{%
+    \par\vspace{2mm}\noindent
+    \stepcounter{funProblem}%
+    \textbf{\sffamily\thefunProblem.}~#1\hfill%
+    \textbf{True}~{\color{funGreen}\faCircle[regular]}\hspace{5mm}\textbf{False}~{\color{funRed}\faCircle[regular]}%
+    \par\vspace{2mm}%
+}
+
+%========================================================================================
+% 11. MULTIPLE CHOICE
+%     Usage: \multiChoice{What is $12 \div 3$?}{2}{3}{4}{6}
+%========================================================================================
+\newcommand{\multiChoice}[5]{%
+    \par\vspace{2mm}\noindent
+    \stepcounter{funProblem}%
+    \textbf{\sffamily\thefunProblem.}~#1%
+    \par\vspace{1mm}%
+    \hspace{5mm}\textbf{A.}~#2\hspace{8mm}%
+    \textbf{B.}~#3\hspace{8mm}%
+    \textbf{C.}~#4\hspace{8mm}%
+    \textbf{D.}~#5%
+    \par\vspace{2mm}%
+}
+
+%========================================================================================
+% 11b. MULTIPLE CHOICE — 2×2 GRID LAYOUT
+%     Like \multiChoice but displays A+B on row 1, C+D on row 2.
+%     Usage: \multiChoiceGrid{Question}{A}{B}{C}{D}
+%========================================================================================
+\newcommand{\multiChoiceGrid}[5]{%
+    \par\vspace{2mm}\noindent
+    \stepcounter{funProblem}%
+    \textbf{\sffamily\thefunProblem.}~#1%
+    \par\vspace{1mm}%
+    \hspace{5mm}\textbf{A.}~#2\hspace{12mm}\textbf{B.}~#3%
+    \par\vspace{1mm}%
+    \hspace{5mm}\textbf{C.}~#4\hspace{12mm}\textbf{D.}~#5%
+    \par\vspace{2mm}%
+}
+
+%========================================================================================
+% 12. CIRCLE THE ANSWER
+%     Usage: \circleAnswer{Which is the correct answer?}{15}{20}{25}{30}
+%========================================================================================
+\newcommand{\circleAnswer}[5]{%
+    \par\vspace{2mm}\noindent
+    \stepcounter{funProblem}%
+    \textbf{\sffamily\thefunProblem.}~#1%
+    \par\vspace{1mm}\hspace{5mm}%
+    \tikz[baseline=-0.3ex]{\node[draw=funGray, rounded corners=3pt, inner sep=4pt]{#2};}%
+    \hspace{5mm}%
+    \tikz[baseline=-0.3ex]{\node[draw=funGray, rounded corners=3pt, inner sep=4pt]{#3};}%
+    \hspace{5mm}%
+    \tikz[baseline=-0.3ex]{\node[draw=funGray, rounded corners=3pt, inner sep=4pt]{#4};}%
+    \hspace{5mm}%
+    \tikz[baseline=-0.3ex]{\node[draw=funGray, rounded corners=3pt, inner sep=4pt]{#5};}%
+    \par\vspace{2mm}%
+}
+
+%========================================================================================
+% 13. MATCH THE PAIRS (connect matching items)
+%     A two-column layout for matching exercises.
+%     Usage: \begin{matchBox}{Match the pairs} ... \end{matchBox}
+%========================================================================================
+\newtcolorbox{matchBox}[2][funTeal]{
+    enhanced,
+    colback=white,
+    colframe=#1,
+    colbacktitle=#1!15,
+    coltitle=#1!80!black,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{#1}\faLink}~~#2},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+}
+
+%========================================================================================
+% 14. SORT BOX (Classification / Sorting Activity)
+%     Students sort items into categories (e.g., odd/even, shapes, fractions).
+%     Design: Orange header with two-column or multi-column body.
+%     Usage: \begin{sortBox}{Sort These Numbers} ... \end{sortBox}
+%========================================================================================
+\newtcolorbox{sortBox}[2][funOrange]{
+    enhanced,
+    colback=white,
+    colframe=#1,
+    colbacktitle=#1!15,
+    coltitle=#1!80!black,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{#1}\faThLarge}~~#2},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+}
+
+%% Helper: category label for inside sort boxes
+%% Usage: \sortCategory{Even Numbers}
+\newcommand{\sortCategory}[2][funBlue]{%
+    \par\vspace{2mm}%
+    \begin{tcolorbox}[
+        enhanced,
+        colback=#1!10,
+        colframe=#1!40,
+        boxrule=1pt,
+        arc=5pt,
+        outer arc=5pt,
+        left=3mm, right=3mm,
+        top=2mm, bottom=8mm,
+        fontupper=\bfseries\sffamily\color{#1!80!black},
+    ]
+        #2\par\vspace{6mm}
+    \end{tcolorbox}%
+    \vspace{2mm}%
+}
+
+%% Helper: single sortable item tag for inside sort boxes
+%% Usage: \sortItem $45°$
+\newcommand{\sortItem}{\par\noindent\hspace{4mm}{\small\color{funOrangeDark}\faTag}~}
+
+%========================================================================================
+% 15. FILL TABLE (Input/Output Table for Patterns)
+%     A structured table environment for "rule" or "function machine" problems.
+%     Usage: \begin{fillTable}{title} tabular content \end{fillTable}
+%========================================================================================
+\newtcolorbox{fillTable}[2][funTeal]{
+    enhanced,
+    colback=white,
+    colframe=#1,
+    colbacktitle=#1!15,
+    coltitle=#1!80!black,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{#1}\faTable}~~#2},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    halign=center,
+    before skip=8pt, after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 16. SCORING / SELF-CHECK
+%     A small box for students to self-assess.
+%     Usage: \selfCheck
+%========================================================================================
+\newcommand{\selfCheck}{%
+    \par\vspace{4mm}%
+    \begin{tcolorbox}[
+        enhanced,
+        colback=funGrayLight,
+        colframe=funGray,
+        boxrule=1pt,
+        arc=5pt,
+        outer arc=5pt,
+        width=0.5\linewidth,
+        left=4mm, right=4mm,
+        top=2mm, bottom=2mm,
+    ]
+        {\sffamily\bfseries\faClipboard\hspace{2mm}How did I do?}\hspace{5mm}%
+        $\bigcirc$~Got it\hspace{5mm}$\bigcirc$~Almost\hspace{5mm}$\bigcirc$~Need review%
+    \end{tcolorbox}
+}
+
+%========================================================================================
+% 17. CODE BREAKER (solve math problems to decode a secret message)
+%     Students solve problems, each answer maps to a letter, then decode a message.
+%     Design: Purple theme with key icon — feels like a secret spy mission.
+%     Usage:
+%       \begin{codeBreaker}
+%           \codeClue{A}{$3 \times 4$}
+%           \codeClue{T}{$20 \div 5$}
+%           \secretMessage{12 \quad 4 \quad 12}
+%       \end{codeBreaker}
+%========================================================================================
+\newtcolorbox{codeBreaker}[1][Code Breaker]{
+    enhanced,
+    colback=funPurple!4,
+    colframe=funPurple,
+    colbacktitle=funPurple!15,
+    coltitle=funPurpleDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{funPurpleDark}\faKey}~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+    overlay={
+        \node[opacity=0.06] at ([xshift=-8mm, yshift=8mm]frame.south east)
+            {\textcolor{funPurple}{\fontsize{28}{30}\selectfont\faKey}};
+    },
+}
+
+%% Code clue: letter-circle followed by a problem
+%% Usage: \codeClue{A}{$5 \times 6$}
+\newcommand{\codeClue}[2]{%
+    \par\vspace{2mm}\noindent
+    \tikz[baseline=-0.3ex]{\node[circle, fill=funPurple, text=white, inner sep=2pt,
+          font=\small\bfseries\sffamily, minimum size=0.55cm]{#1};}%
+    \hspace{3mm}#2\hspace{3mm}$=$\hspace{2mm}\answerBlank[2cm]%
+    \par\vspace{2mm}%
+}
+
+%% Secret message decoder line
+%% Usage: \secretMessage{Write the secret message format here}
+\newcommand{\secretMessage}[1]{%
+    \par\vspace{4mm}%
+    \begin{center}
+    \begin{tcolorbox}[
+        enhanced,
+        colback=funPurple!6,
+        colframe=funPurple!40,
+        boxrule=1pt,
+        arc=6pt,
+        outer arc=6pt,
+        width=0.85\linewidth,
+        halign=center,
+        top=4mm, bottom=4mm,
+        left=5mm, right=5mm,
+    ]
+        {\sffamily\bfseries\color{funPurpleDark}\faLock~~Secret Message:}\\[3mm]#1
+    \end{tcolorbox}
+    \end{center}
+}
+
+%========================================================================================
+% 18. PICTOGRAPH ENVIRONMENT
+%     A picture graph where each symbol represents a quantity.
+%     Design: Blue-themed chart box with bar-chart icon.
+%     Usage:
+%       \begin{picGraph}{Favorite Fruits}
+%           \picRow{Apple}{5}
+%           \picRow{Banana}{3}
+%           \picKey{2 votes}
+%       \end{picGraph}
+%========================================================================================
+\newtcolorbox{picGraph}[2][funBlue]{
+    enhanced,
+    colback=white,
+    colframe=#1,
+    colbacktitle=#1!15,
+    coltitle=#1!80!black,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{#1}\faChartBar}~~#2},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    halign=center,
+    before skip=8pt, after skip=8pt,
+    breakable,
+}
+
+%% Pictograph row: label + repeated symbols
+%% Usage: \picRow{Apples}{5}   (5 stars)
+%% Optional symbol: \picRow[\faHeart]{Red}{3}
+\newcommand{\picRow}[3][\faStar]{%
+    \par\vspace{2mm}\noindent
+    \makebox[3cm][r]{\sffamily\bfseries #2}\hspace{5mm}%
+    \foreach \s in {1,...,#3} {%
+        {\color{funYellow}\large #1}~%
+    }%
+    \par\vspace{2mm}%
+}
+
+%% Pictograph key/legend
+%% Usage: \picKey{2 students}
+\newcommand{\picKey}[2][\faStar]{%
+    \par\vspace{4mm}%
+    {\small\sffamily\itshape\color{funGrayDark}Key:\hspace{2mm}Each {\color{funYellow}#1} $=$ #2}%
+    \par%
+}
+
+%========================================================================================
+% 19. MATH TRAIL (connected sequence of problems)
+%     Problems where each answer leads to the next — a "journey" through math.
+%     Design: Green trail theme with map marker icon.
+%     Usage:
+%       \begin{mathTrail}
+%           \trailStop Start with $5$. Double it!  \answerBlank
+%           \trailStop Add $3$ to your answer.     \answerBlank
+%           \trailStop Multiply by $2$.            \answerBlank
+%       \end{mathTrail}
+%========================================================================================
+\newcounter{trailStep}
+
+\newtcolorbox{mathTrail}[1][Math Trail]{
+    enhanced,
+    colback=funGreen!4,
+    colframe=funGreen,
+    colbacktitle=funGreen!15,
+    coltitle=funGreenDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{funGreenDark}\faMapMarker}~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    before upper={\setcounter{trailStep}{0}},
+    breakable,
+}
+
+%% Trail stop: auto-numbered stop on the trail
+\newcommand{\trailStop}{%
+    \stepcounter{trailStep}%
+    \par\vspace{3mm}\noindent
+    \tikz[baseline=-0.3ex]{\node[circle, fill=funGreen, text=white, inner sep=2pt,
+          font=\small\bfseries\sffamily, minimum size=0.55cm]{\thetrailStep};}%
+    \hspace{2mm}$\longrightarrow$\hspace{2mm}%
+}
+
+%========================================================================================
+% 20. PRACTICE QUESTION COMPONENTS
+%     Environments and commands for the Practice Question Bank format.
+%     DESIGN: Print-friendly — no heavy fills. Uses thin left borders and
+%     subtle accents that remain readable in B&W.  Color adds charm but is
+%     not required for comprehension.
+%========================================================================================
+
+% ── Cycling accent colours (print-friendly: only used for thin borders) ──
+\newcounter{ptQColor}           % cycles 0-1-2 per question
+\newcommand{\ptCurrentColor}{funBlue}
+\newcommand{\ptCurrentColorLight}{funBlueLight}
+\newcommand{\ptAdvanceColor}{%
+    \stepcounter{ptQColor}%
+    \ifcase\value{ptQColor}\relax
+        \renewcommand{\ptCurrentColor}{funBlue}%
+        \renewcommand{\ptCurrentColorLight}{funBlueLight}%
+    \or
+        \renewcommand{\ptCurrentColor}{funGreen}%
+        \renewcommand{\ptCurrentColorLight}{funGreenLight}%
+    \or
+        \renewcommand{\ptCurrentColor}{funTeal}%
+        \renewcommand{\ptCurrentColorLight}{funTealLight}%
+        \setcounter{ptQColor}{-1}%  wrap around
+    \fi
+}
+
+% ── Boolean: is current question short-answer? ──
+\newif\ifptSA
+
+% ── Wrapper for a single question (ID, Type) ─────────────────────────────
+%    Thin coloured left border (2.5pt), white body, rounded corners.
+%    NO background fill — safe for B&W printing.
+\newtcolorbox{practiceQuestion}[2]{
+    enhanced,
+    colback=white,
+    colframe=\ptCurrentColor!25,
+    boxrule=0.4pt,
+    borderline west={2.5pt}{0pt}{\ptCurrentColor!60},
+    arc=6pt,
+    outer arc=6pt,
+    left=4mm, right=3mm,
+    top=3mm, bottom=3mm,
+    before skip=6pt,
+    after skip=6pt,
+    unbreakable,
+    before upper={\ptAdvanceColor
+        \def\ptArgType{#2}%
+        \def\ptSALabel{sa}%
+        \def\ptGSALabel{gsa}%
+        \ptSAfalse
+        \ifx\ptArgType\ptSALabel\ptSAtrue\fi
+        \ifx\ptArgType\ptGSALabel\ptSAtrue\fi
+    },
+    after upper={%
+        % ── Auto-insert answer box for SA questions ──
+        \ifptSA
+            \par\vspace{3mm}%
+            \noindent
+            \begin{tikzpicture}
+                \draw[rounded corners=4pt, \ptCurrentColor!40, thick, densely dashed]
+                    (0,0) rectangle (\linewidth - 2mm, 1.3cm);
+                \node[anchor=north west, font=\footnotesize\sffamily\color{\ptCurrentColor!60},
+                      inner sep=0pt]
+                    at (3mm, 1.3cm - 2mm) {Your Answer:};
+                % Writing line
+                \draw[\ptCurrentColor!25] (3mm, 4mm) -- (\linewidth - 5mm, 4mm);
+            \end{tikzpicture}%
+        \fi
+    },
+}
+
+% ── Question Text Environment ────────────────────────────────────────────
+%    Number rendered as bold "N." label — distinct from circled option letters.
+\newenvironment{questionText}{%
+    \stepcounter{funProblem}%
+    \par\noindent
+    {\bfseries\sffamily\color{\ptCurrentColor!85}\thefunProblem.}\hspace{2.5mm}%
+    \ignorespaces
+}{%
+    \par\vspace{2mm}%
+}
+
+% ── Helper: single choice cell with circled letter ───────────────────────
+%    All letters use the same neutral gray so they print identically in B&W.
+%    Circle is slightly larger and vertically centred with the text.
+\newcommand{\ptChoiceCell}[2]{%  #1=letter, #2=content
+    \tikz[baseline=-0.5ex]{%
+        \node[circle, draw=black!45, line width=0.7pt,
+              inner sep=0pt, minimum size=0.5cm,
+              font=\footnotesize\bfseries\sffamily\color{black!65}] {#1};%
+    }\hspace{2mm}#2%
+}
+
+% ── Multiple Choice Options — styled 2×2 grid ───────────────────────────
+%    All letters use a uniform gray circle. No divider line between rows.
+\newcommand{\ptChoiceA}{}
+\newcommand{\ptChoiceB}{}
+\newcommand{\ptChoiceC}{}
+\newcommand{\choiceA}[1]{\renewcommand{\ptChoiceA}{#1}}
+\newcommand{\choiceB}[1]{\renewcommand{\ptChoiceB}{#1}}
+\newcommand{\choiceC}[1]{\renewcommand{\ptChoiceC}{#1}}
+\newcommand{\choiceD}[1]{%
+    \par\vspace{3mm}%
+    \noindent
+    \begin{tabular}{@{\hspace{3mm}}p{0.44\linewidth}@{\hspace{6mm}}p{0.44\linewidth}@{}}
+        \ptChoiceCell{A}{\ptChoiceA} &
+        \ptChoiceCell{B}{\ptChoiceB} \\[4mm]
+        \ptChoiceCell{C}{\ptChoiceC} &
+        \ptChoiceCell{D}{#1} \\
+    \end{tabular}%
+    \par\vspace{2mm}%
+}
+
+% ── Short Answer Section Divider ─────────────────────────────────────────
+%    Inserted by the Python generator between MC and SA blocks.
+\newcommand{\practiceTestSASection}{%
+    \par\vspace{6mm}%
+    \noindent
+    \begin{tikzpicture}
+        \draw[funTeal!40, line width=0.8pt] (0,0) -- (\linewidth, 0);
+        \node[fill=white, inner xsep=6mm, inner ysep=1mm,
+              font=\normalsize\bfseries\sffamily\color{funTealDark}]
+            at (0.5\linewidth, 0)
+            {\faPen\hspace{2.5mm}Short Answer\hspace{2.5mm}\faPen};
+    \end{tikzpicture}%
+    \par\vspace{4mm}%
+}
+
+% ── Answer and Explanation (HIDDEN by default for Student Version) ───────
+% Toggle these to visible if generating an Answer Key document
+\newcommand{\correctAnswer}[1]{}
+\newcommand{\explanation}[1]{}
+
+%========================================================================================
+% 21. STRATEGY BOX
+%     For teaching problem-solving strategies and approaches.
+%     Ideal for Grade 6 students developing independent problem-solving skills.
+%     Design: Teal header with lightbulb icon, clean layout.
+%     Usage: \begin{strategyBox}{Title} ... \end{strategyBox}
+%     Default title: "Problem-Solving Strategy"
+%========================================================================================
+\newtcolorbox{strategyBox}[1][Problem-Solving Strategy]{
+    enhanced,
+    colback=funTeal!4,
+    colframe=funTeal,
+    colbacktitle=funTeal!15,
+    coltitle=funTealDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{funTealDark}\faLightbulb}~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+    borderline west={3pt}{-2pt}{funTeal!30},
+}

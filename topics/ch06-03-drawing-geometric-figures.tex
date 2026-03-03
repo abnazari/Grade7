@@ -1,0 +1,52 @@
+% CCSS 7.G.A.2 — Drawing Geometric Figures with Given Conditions
+\section{Drawing Geometric Figures with Given Conditions}
+
+\begin{learningGoals}
+\begin{itemize}
+    \item Draw shapes that meet specific side-length and angle conditions
+    \item Determine when conditions produce one, many, or no shapes
+\end{itemize}
+\end{learningGoals}
+
+\begin{conceptBox}{When Can You Draw a Shape?}
+Given conditions may produce:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Exactly one shape} — the conditions fully determine it (e.g., three sides of a triangle with valid lengths).
+    \item \textbf{More than one shape} — the conditions allow flexibility (e.g., a quadrilateral with four given sides can have different angles).
+    \item \textbf{No shape} — the conditions are impossible (e.g., a triangle with sides $2$, $3$, $10$ — violates the triangle inequality).
+\end{itemize}
+\end{conceptBox}
+
+\begin{workedExample}{Testing Conditions}
+Can you draw a triangle with sides $5$ cm, $7$ cm, and $3$ cm?
+
+Check the \textbf{triangle inequality}: the sum of any two sides must be greater than the third.
+\begin{itemize}[leftmargin=*]
+    \item $5 + 7 = 12 > 3$ \checkmark
+    \item $5 + 3 = 8 > 7$ \checkmark
+    \item $7 + 3 = 10 > 5$ \checkmark
+\end{itemize}
+\answerHighlight{Yes — all three checks pass.}
+\end{workedExample}
+
+\mascotSays{Think of it like building with sticks. If one stick is longer than the other two combined, they can't connect to form a triangle!}
+
+\begin{practiceBox}{Drawing Geometric Figures}
+\resetProblems
+
+\prob Can you draw a triangle with sides $4$ cm, $6$ cm, and $11$ cm?
+\answerExplain{No}{Check: $4 + 6 = 10$, but $10 < 11$. The two shorter sides can't reach each other, so no triangle exists.}
+
+\prob Can you draw a triangle with sides $5$, $5$, and $5$?
+\answerExplain{Yes — exactly one (equilateral)}{All three sums pass: $5 + 5 = 10 > 5$ \checkmark. Three equal sides make exactly one equilateral triangle.}
+
+\prob A rectangle has a perimeter of $20$ cm. How many different rectangles are possible?
+\answerExplain{Many}{The sides must add to $10$ (half the perimeter). Possible pairs: $1 \times 9$, $2 \times 8$, $3 \times 7$, etc. Many rectangles satisfy this condition.}
+
+\prob You know two sides of a triangle are $6$ cm and $8$ cm, and the angle between them is $90°$. How many triangles can you draw?
+\answerExplain{Exactly one}{Two sides and the angle between them (SAS) fully determine a triangle. There is only one right triangle with legs $6$ and $8$.}
+
+\trueOrFalse{If you know all three angles of a triangle, there is exactly one triangle you can draw.}
+\answerTF{False}
+
+\end{practiceBox}

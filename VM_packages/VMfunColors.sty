@@ -1,0 +1,448 @@
+%----------------------------------------------------------------------------------------
+% VMfunColors.sty - Color Palette for Grade 6
+%----------------------------------------------------------------------------------------
+\ProvidesPackage{VMfunColors}[2026/03/02 Grade 6 Color Palette]
+
+%----------------------------------------------------------------------------------------
+% PRIMARY THEME COLORS
+%----------------------------------------------------------------------------------------
+\definecolor{funBlue}{HTML}{2196F3}           % Title banners, practice headers
+\definecolor{funBlueDark}{HTML}{1565C0}       % Darker blue accents
+\definecolor{funBlueLight}{HTML}{E3F2FD}      % Light blue backgrounds
+
+%----------------------------------------------------------------------------------------
+% TEACHING / CONCEPT COLORS (Green family)
+%----------------------------------------------------------------------------------------
+\definecolor{funGreen}{HTML}{4CAF50}          % Concept boxes, rules
+\definecolor{funGreenDark}{HTML}{2E7D32}      % Dark green headers (Remember!)
+\definecolor{funGreenLight}{HTML}{E8F5E9}     % Light green backgrounds
+
+%----------------------------------------------------------------------------------------
+% EXAMPLE COLORS (Orange family)
+%----------------------------------------------------------------------------------------
+\definecolor{funOrange}{HTML}{FF9800}         % Example headers
+\definecolor{funOrangeDark}{HTML}{E65100}     % Darker orange accents
+\definecolor{funOrangeLight}{HTML}{FFF3E0}    % Light orange backgrounds
+
+%----------------------------------------------------------------------------------------
+% CHALLENGE COLORS (Purple family)
+%----------------------------------------------------------------------------------------
+\definecolor{funPurple}{HTML}{9C27B0}         % Challenge boxes, mascot
+\definecolor{funPurpleDark}{HTML}{6A1B9A}     % Dark purple headers
+\definecolor{funPurpleLight}{HTML}{F3E5F5}    % Light purple backgrounds
+
+%----------------------------------------------------------------------------------------
+% WARNING / MISTAKE COLORS (Red family)
+%----------------------------------------------------------------------------------------
+\definecolor{funRed}{HTML}{F44336}            % Warning boxes
+\definecolor{funRedDark}{HTML}{C62828}        % Dark red headers
+\definecolor{funRedLight}{HTML}{FFEBEE}       % Light red backgrounds
+
+%----------------------------------------------------------------------------------------
+% TIP / HINT COLORS (Yellow family)
+%----------------------------------------------------------------------------------------
+\definecolor{funYellow}{HTML}{FFC107}         % Stars, tip highlights
+\definecolor{funYellowDark}{HTML}{F57F17}     % Dark yellow accents
+\definecolor{funYellowLight}{HTML}{FFF8E1}    % Light yellow backgrounds (tip bubbles)
+
+%----------------------------------------------------------------------------------------
+% VOCABULARY COLORS (Teal family)
+%----------------------------------------------------------------------------------------
+\definecolor{funTeal}{HTML}{009688}           % Vocabulary boxes
+\definecolor{funTealDark}{HTML}{00695C}       % Dark teal headers
+\definecolor{funTealLight}{HTML}{E0F2F1}      % Light teal backgrounds
+
+%----------------------------------------------------------------------------------------
+% FUN FACT COLORS (Pink family)
+%----------------------------------------------------------------------------------------
+\definecolor{funPink}{HTML}{E91E63}           % Fun fact boxes
+\definecolor{funPinkDark}{HTML}{AD1457}       % Dark pink headers
+\definecolor{funPinkLight}{HTML}{FCE4EC}      % Light pink backgrounds
+
+%----------------------------------------------------------------------------------------
+% NEUTRAL / UTILITY COLORS
+%----------------------------------------------------------------------------------------
+\definecolor{funGray}{HTML}{9E9E9E}           % Note boxes, subtle elements
+\definecolor{funGrayLight}{HTML}{F5F5F5}      % Light gray backgrounds
+\definecolor{funGrayDark}{HTML}{616161}       % Dark gray text
+\definecolor{funCream}{HTML}{FFFDE7}          % Cream backgrounds (speech bubbles)
+
+%----------------------------------------------------------------------------------------
+% STEP NUMBER COLORS (for numbered steps in teaching)
+%----------------------------------------------------------------------------------------
+\definecolor{stepOne}{HTML}{4CAF50}           % Step 1 - Green
+\definecolor{stepTwo}{HTML}{2196F3}           % Step 2 - Blue
+\definecolor{stepThree}{HTML}{F44336}         % Step 3 - Red
+\definecolor{stepFour}{HTML}{FF9800}          % Step 4 - Orange
+\definecolor{stepFive}{HTML}{9C27B0}          % Step 5 - Purple
+
+%----------------------------------------------------------------------------------------
+% PLACE VALUE COLORS (for arithmetic columns)
+%----------------------------------------------------------------------------------------
+\definecolor{pvOnes}{HTML}{4FC3F7}            % Ones column - Light blue
+\definecolor{pvTens}{HTML}{81C784}            % Tens column - Light green
+\definecolor{pvHundreds}{HTML}{FFB74D}        % Hundreds column - Light orange
+\definecolor{pvThousands}{HTML}{CE93D8}       % Thousands column - Light purple
+
+%----------------------------------------------------------------------------------------
+% BACKWARD COMPATIBILITY - mainThemeColor alias
+%----------------------------------------------------------------------------------------
+\colorlet{mainThemeColor}{funBlue}
+\colorlet{exampleSideBarColor}{funOrange}
+\colorlet{chapterBoxColor}{funBlueDark}
+
+%========================================================================================
+%
+%   ICON PLACEHOLDER SYSTEM
+%
+%   When icon PDFs are ready, place them in the icons/ directory.
+%   Until then, TikZ fallbacks are rendered automatically.
+%
+%   FORMAT: All icons should be delivered as vector PDF files.
+%   ARTBOARD: Each icon should have a square artboard with no extra padding.
+%             The icon artwork should fill the artboard edge-to-edge.
+%   STYLE: Clean, modern flat style. Consistent outlines (2-3pt stroke).
+%          Bright, saturated colors. Friendly faces where applicable.
+%          No gradients — use flat fills with occasional simple shading.
+%   COLORS: Use the palette defined above (funBlue, funGreen, funOrange, etc.)
+%           unless a specific color is noted in the icon brief below.
+%
+%========================================================================================
+\newcommand{\funIcon}[3]{% #1=icon filename, #2=fallback TikZ, #3=height
+    \IfFileExists{icons/#1}{%
+        \includegraphics[height=#3]{icons/#1}%
+    }{#2}%
+}
+
+%% ======================================================================================
+%%   ICON BRIEFS FOR GRAPHIC DESIGNER
+%%   Each entry describes: filename, display size, description, color notes, usage context.
+%% ======================================================================================
+
+%% ---- 1. STAR ICON ----
+%% File:    icons/star-icon.pdf
+%% Size:    Artboard 80x80pt.  Displayed at 0.5–0.7 cm height.
+%% Desc:    Classic 5-pointed star. Slightly rounded tips for a friendly feel.
+%%          Warm gold/yellow fill (#FFC107). Thin darker outline (#F57F17).
+%%          Optional: subtle inner highlight (lighter yellow streak) for shininess.
+%% Used in: Topic title banners (flanking the title text),
+%%          math-rule headers, challenge headers, encouragement banners.
+\newcommand{\iconStar}[1][0.5cm]{%
+    \funIcon{star-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funYellow}{\large\faStar}}%
+    }{#1}%
+}
+
+%% ---- 2. PENCIL CHARACTER ----
+%% File:    icons/pencil-character.pdf
+%% Size:    Artboard 100x200pt.  Displayed at 1.0–1.4 cm height.
+%% Desc:    Cartoon pencil character (simple eyes, small smile).
+%%          Yellow body (#FFC107), pink eraser top (#E91E63), silver ferrule,
+%%          sharpened wood tip with graphite point.
+%%          One arm waving or giving a thumbs-up (stick-figure arm).
+%%          Slightly tilted ~10 degrees clockwise for a dynamic pose.
+%% Used in: Tip boxes — sits to the left of the tip speech bubble.
+\newcommand{\iconPencil}[1][1.2cm]{%
+    \funIcon{pencil-character.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funYellow}{\LARGE\faPen}}%
+    }{#1}%
+}
+
+%% ---- 3. OWL MASCOT ----
+%% File:    icons/owl-mascot.pdf
+%% Size:    Artboard 150x180pt.  Displayed at 1.2–1.6 cm height.
+%% Desc:    Friendly cartoon owl — the book's main mascot/guide character.
+%%          Round body, big expressive eyes (white sclera, large black pupils
+%%          with small white highlight dots), small orange triangular beak,
+%%          two ear tufts on top. Wings folded at sides.
+%%          Body color: purple tones (#9C27B0 body, #CE93D8 belly patch).
+%%          Optionally holding a tiny book or pointer stick.
+%%          Sitting on a small branch or standing upright — whichever looks cuter.
+%%          IMPORTANT: This is the recurring mascot. Keep the design consistent
+%%          so the same character is recognisable throughout the book.
+%% Used in: "Mascot Says" speech bubbles — sits to the left of the bubble.
+%%          Also used in chapter openers and encouragement sections.
+\newcommand{\iconOwl}[1][1.5cm]{%
+    \funIcon{owl-mascot.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funPurple}{\fontsize{22}{24}\selectfont\faKiwiBird}}%
+    }{#1}%
+}
+
+%% ---- 4. LIGHT BULB ICON ----
+%% File:    icons/lightbulb-icon.pdf
+%% Size:    Artboard 80x100pt.  Displayed at 0.5–0.7 cm height.
+%% Desc:    Classic incandescent bulb shape. Bright yellow glass (#FFC107)
+%%          with 3-4 short radiating lines around it to suggest "bright idea".
+%%          Gray/silver screw base at bottom. Optional tiny sparkle stars.
+%%          Style: flat, no realistic shading — just cheerful and bold.
+%% Used in: "Fun Fact" box headers, "Did You Know?" callouts.
+\newcommand{\iconLightbulb}[1][0.6cm]{%
+    \funIcon{lightbulb-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funYellow}{\large\faLightbulb[regular]}}%
+    }{#1}%
+}
+
+%% ---- 5. TROPHY ICON ----
+%% File:    icons/trophy-icon.pdf
+%% Size:    Artboard 80x100pt.  Displayed at 0.5–0.7 cm height.
+%% Desc:    Gold trophy cup with two handles. Gold fill (#FFC107) with a
+%%          slightly darker rim (#F57F17). A small star or "#1" on the cup face.
+%%          Short rectangular base. Optional confetti dots around it.
+%% Used in: Challenge box headers, end-of-topic achievement prompts.
+\newcommand{\iconTrophy}[1][0.6cm]{%
+    \funIcon{trophy-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funYellow}{\large\faTrophy}}%
+    }{#1}%
+}
+
+%% ---- 6. WARNING ICON ----
+%% File:    icons/warning-icon.pdf
+%% Size:    Artboard 80x80pt.  Displayed at 0.5–0.7 cm height.
+%% Desc:    Rounded triangle shape. Yellow-orange fill (#FF9800) with a
+%%          thick dark-red outline (#C62828). White exclamation mark "!" in
+%%          the centre (bold, rounded ends). Corners of the triangle should
+%%          be well-rounded (not sharp) for a clean look.
+%% Used in: "Watch Out!" / "Common Mistakes" warning box headers.
+\newcommand{\iconWarning}[1][0.6cm]{%
+    \funIcon{warning-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funRed}{\large\faExclamationTriangle}}%
+    }{#1}%
+}
+
+%% ---- 7. BOOK ICON ----
+%% File:    icons/book-icon.pdf
+%% Size:    Artboard 80x80pt.  Displayed at 0.5–0.7 cm height.
+%% Desc:    Open book seen from the front. Pages fanning slightly upward.
+%%          Teal/green cover (#009688) with white pages. A few wavy lines
+%%          on the pages to suggest text. Spine visible in the middle.
+%%          Cheerful, simple — no realistic detail.
+%% Used in: "Vocabulary" box headers.
+\newcommand{\iconBook}[1][0.6cm]{%
+    \funIcon{book-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funTeal}{\large\faBookOpen}}%
+    }{#1}%
+}
+
+%% ---- 8. BRAIN / THINKING ICON ----
+%% File:    icons/brain-icon.pdf
+%% Size:    Artboard 80x80pt.  Displayed at 0.5–0.7 cm height.
+%% Desc:    Cartoon brain in profile/top-down view. Teal (#009688) fill
+%%          with darker teal (#00695C) squiggly folds. Two small gear cogs
+%%          or question marks floating around it to suggest "thinking".
+%%          Alternatively: a magnifying glass with a question mark inside
+%%          (if the brain feels too complex, use the magnifying glass alternative).
+%% Used in: "Think About It" box headers.
+\newcommand{\iconBrain}[1][0.6cm]{%
+    \funIcon{brain-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funTeal}{\large\faBrain}}%
+    }{#1}%
+}
+
+%% ---- 9. CHECKMARK ICON ----
+%% File:    icons/check-icon.pdf
+%% Size:    Artboard 80x80pt.  Displayed at 0.4–0.6 cm height.
+%% Desc:    Thick white checkmark inside a green (#4CAF50) filled circle.
+%%          Circle has a slightly darker green (#2E7D32) outline.
+%%          The checkmark should be bold and rounded at the ends.
+%% Used in: "What We Learned" summary headers, correct-answer indicators.
+\newcommand{\iconCheck}[1][0.5cm]{%
+    \funIcon{check-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funGreen}{\large\faCheckCircle}}%
+    }{#1}%
+}
+
+%% ---- 10. EXCLAMATION ICON ----
+%% File:    icons/exclamation-icon.pdf
+%% Size:    Artboard 60x60pt.  Displayed at 0.4–0.5 cm height.
+%% Desc:    Bold white "!" inside an orange (#FF9800) filled circle.
+%%          Rounded stroke ends. Circle outline slightly darker orange.
+%% Used in: Important callouts, "Division is sharing equally!" labels.
+\newcommand{\iconExclamation}[1][0.5cm]{%
+    \funIcon{exclamation-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funOrange}{\large\faExclamationCircle}}%
+    }{#1}%
+}
+
+%% ---- 11. ROCKET ICON ----
+%% File:    icons/rocket-icon.pdf
+%% Size:    Artboard 80x120pt.  Displayed at 0.5–0.7 cm height.
+%% Desc:    Cartoon rocket ship blasting upward (tilted ~30 degrees).
+%%          White/light-gray body, red (#F44336) nose cone, blue (#2196F3)
+%%          fins, round porthole window with yellow glow.
+%%          Small orange/yellow flame trail at the bottom.
+%%          Conveys speed and excitement — used for timed/quick activities.
+%% Used in: "Quick Check" box headers.
+\newcommand{\iconRocket}[1][0.6cm]{%
+    \funIcon{rocket-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funRed}{\large\faRocket}}%
+    }{#1}%
+}
+
+%% ---- 12. GLOBE ICON ----
+%% File:    icons/globe-icon.pdf
+%% Size:    Artboard 80x80pt.  Displayed at 0.5–0.7 cm height.
+%% Desc:    Cartoon Earth globe. Blue ocean (#2196F3), green continents
+%%          (#4CAF50), simplified shapes (no need for accurate geography).
+%%          Slightly tilted. Optional: two small curved arrows around it
+%%          to suggest "real world" connection.
+%% Used in: "Math in Real Life" box headers.
+\newcommand{\iconGlobe}[1][0.6cm]{%
+    \funIcon{globe-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funBlue}{\large\faGlobeAmericas}}%
+    }{#1}%
+}
+
+%% ---- 13. TARGET / BULLSEYE ICON ----
+%% File:    icons/target-icon.pdf
+%% Size:    Artboard 80x80pt.  Displayed at 0.5–0.7 cm height.
+%% Desc:    Concentric circles: outer red (#F44336), middle white, inner
+%%          red, centre gold/yellow (#FFC107). A small arrow sticking into
+%%          the bullseye at a jaunty angle. Clean, bold outlines.
+%% Used in: "Learning Goals" box headers.
+\newcommand{\iconTarget}[1][0.6cm]{%
+    \funIcon{target-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funRed}{\large\faBullseye}}%
+    }{#1}%
+}
+
+%% ---- 14. WRITING PENCIL ICON (simpler than the character) ----
+%% File:    icons/writing-pencil.pdf
+%% Size:    Artboard 80x80pt.  Displayed at 0.5–0.7 cm height.
+%% Desc:    Simple yellow (#FFC107) pencil, no face, tilted 45 degrees as
+%%          if writing. Pink eraser, silver ferrule, graphite tip.
+%%          Two small curved lines near the tip to suggest motion/writing.
+%% Used in: Practice section title decorations.
+\newcommand{\iconWritingPencil}[1][0.6cm]{%
+    \funIcon{writing-pencil.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funOrange}{\large\faEdit}}%
+    }{#1}%
+}
+
+%% ---- 15. HEART ICON ----
+%% File:    icons/heart-icon.pdf
+%% Size:    Artboard 60x60pt.  Displayed at 0.4–0.5 cm height.
+%% Desc:    Simple rounded heart shape. Pink/red (#E91E63) flat fill,
+%%          slightly darker outline. Optional tiny highlight in upper-left.
+%% Used in: Encouragement banners, "Math is fun!" callouts.
+\newcommand{\iconHeart}[1][0.5cm]{%
+    \funIcon{heart-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funPink}{\large\faHeart}}%
+    }{#1}%
+}
+
+%% ---- 16. MEDAL ICON ----
+%% File:    icons/medal-icon.pdf
+%% Size:    Artboard 80x100pt.  Displayed at 0.5–0.7 cm height.
+%% Desc:    Gold circular medal hanging from a short blue (#2196F3) ribbon.
+%%          Star or number on the medal face. Gold fill (#FFC107),
+%%          darker gold outline (#F57F17).
+%% Used in: Achievement/reward prompts, self-check sections.
+\newcommand{\iconMedal}[1][0.6cm]{%
+    \funIcon{medal-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funYellow}{\large\faMedal}}%
+    }{#1}%
+}
+
+%% ---- 17. SPEECH BUBBLE ICON (standalone, for decoration) ----
+%% File:    icons/speech-bubble.pdf
+%% Size:    Artboard 100x80pt.  Displayed at 0.6–0.8 cm height.
+%% Desc:    Rounded-rectangle speech bubble with a small triangular tail
+%%          pointing down-left. Light purple (#F3E5F5) fill, purple
+%%          (#9C27B0) outline. Interior blank (used as a background frame).
+%% Used in: Decorative element near mascot quotes.
+
+%% ---- 18. NUMBER CIRCLES (1 through 10) ----
+%% Files:   icons/num-1.pdf through icons/num-10.pdf
+%% Size:    Artboard 60x60pt each.  Displayed at 0.5–0.6 cm height.
+%% Desc:    Each is a filled circle with a bold white number in the centre.
+%%          Use these colors in order:
+%%            1=Green(#4CAF50)  2=Blue(#2196F3)  3=Red(#F44336)
+%%            4=Orange(#FF9800) 5=Purple(#9C27B0) 6=Teal(#009688)
+%%            7=Pink(#E91E63)   8=Green(#4CAF50)  9=Blue(#2196F3)
+%%            10=Red(#F44336)
+%%          Numbers should be bold sans-serif, centred, and large enough
+%%          to read clearly at small sizes.
+%% Used in: Step-by-step sequences inside concept and solution boxes.
+
+%% ======================================================================================
+%%   ICON SUMMARY TABLE (for quick reference)
+%% ------------------------------------------------------------------------------------------
+%%   #  | Filename              | Artboard   | Display height | Context
+%% ------------------------------------------------------------------------------------------
+%%   1  | star-icon.pdf         | 80x80pt    | 0.5–0.7 cm     | Titles, headers, stars
+%%   2  | pencil-character.pdf  | 100x200pt  | 1.0–1.4 cm     | Tip box mascot
+%%   3  | owl-mascot.pdf        | 150x180pt  | 1.2–1.6 cm     | Main mascot character
+%%   4  | lightbulb-icon.pdf    | 80x100pt   | 0.5–0.7 cm     | Fun facts, ideas
+%%   5  | trophy-icon.pdf       | 80x100pt   | 0.5–0.7 cm     | Challenges, rewards
+%%   6  | warning-icon.pdf      | 80x80pt    | 0.5–0.7 cm     | Mistake warnings
+%%   7  | book-icon.pdf         | 80x80pt    | 0.5–0.7 cm     | Vocabulary headers
+%%   8  | brain-icon.pdf        | 80x80pt    | 0.5–0.7 cm     | Think About It
+%%   9  | check-icon.pdf        | 80x80pt    | 0.4–0.6 cm     | Summaries, correct
+%%  10  | exclamation-icon.pdf  | 60x60pt    | 0.4–0.5 cm     | Important callouts
+%%  11  | rocket-icon.pdf       | 80x120pt   | 0.5–0.7 cm     | Quick Check
+%%  12  | globe-icon.pdf        | 80x80pt    | 0.5–0.7 cm     | Real-world connection
+%%  13  | target-icon.pdf       | 80x80pt    | 0.5–0.7 cm     | Learning goals
+%%  14  | writing-pencil.pdf    | 80x80pt    | 0.5–0.7 cm     | Practice titles
+%%  15  | heart-icon.pdf        | 60x60pt    | 0.4–0.5 cm     | Encouragement
+%%  16  | medal-icon.pdf        | 80x100pt   | 0.5–0.7 cm     | Self-check / rewards
+%%  17  | speech-bubble.pdf     | 100x80pt   | 0.6–0.8 cm     | Decorative element
+%%  18  | num-1..num-10.pdf     | 60x60pt ea | 0.5–0.6 cm     | Step numbers
+%%  19  | magnifier-icon.pdf    | 80x80pt    | 0.5–0.7 cm     | Explore box headers
+%%  20  | sort-icon.pdf         | 80x80pt    | 0.5–0.7 cm     | Sort box headers
+%%  21  | pattern-icon.pdf      | 80x80pt    | 0.5–0.7 cm     | Pattern box headers
+%% ======================================================================================
+
+%% ---- 19. MAGNIFYING GLASS ICON ----
+%% File:    icons/magnifier-icon.pdf
+%% Size:    Artboard 80x80pt.  Displayed at 0.5–0.7 cm height.
+%% Desc:    Cartoon magnifying glass. Green (#4CAF50) rim with a slight
+%%          shine highlight, gray handle tilted ~30 degrees. Small sparkle
+%%          or question mark inside the glass lens area.
+%% Used in: "Let's Explore!" box headers.
+\newcommand{\iconMagnifier}[1][0.6cm]{%
+    \funIcon{magnifier-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funGreen}{\large\faSearch}}%
+    }{#1}%
+}
+
+%% ---- 20. SORT / CLASSIFY ICON ----
+%% File:    icons/sort-icon.pdf
+%% Size:    Artboard 80x80pt.  Displayed at 0.5–0.7 cm height.
+%% Desc:    Three small shapes (circle, square, triangle) with dotted arrows
+%%          pointing into two labeled bins. Orange (#FF9800) tones.
+%%          Suggests sorting and classifying objects.
+%% Used in: "Sort Box" headers.
+\newcommand{\iconSort}[1][0.6cm]{%
+    \funIcon{sort-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funOrange}{\large\faThLarge}}%
+    }{#1}%
+}
+
+%% ---- 21. PATTERN ICON ----
+%% File:    icons/pattern-icon.pdf
+%% Size:    Artboard 80x80pt.  Displayed at 0.5–0.7 cm height.
+%% Desc:    Three colored circles in a row (green, blue, green) with a
+%%          question mark circle at the end, suggesting "what comes next?"
+%%          Purple (#9C27B0) border/background tint.
+%% Used in: "Spot the Pattern!" box headers.
+\newcommand{\iconPattern}[1][0.6cm]{%
+    \funIcon{pattern-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funPurple}{\large\faPuzzlePiece}}%
+    }{#1}%
+}
+
+%----------------------------------------------------------------------------------------
+% STEP NUMBER CIRCLES (used in step-by-step teaching)
+%----------------------------------------------------------------------------------------
+\newcommand{\stepCircle}[2]{% #1=number, #2=color
+    \tikz[baseline=-0.3ex]{%
+        \node[circle, fill=#2, text=white, inner sep=3pt, font=\bfseries\sffamily, minimum size=0.6cm]{#1};%
+    }%
+}
+
+% Pre-defined colored step numbers
+\newcommand{\stepOne}{\stepCircle{1}{stepOne}}
+\newcommand{\stepTwo}{\stepCircle{2}{stepTwo}}
+\newcommand{\stepThree}{\stepCircle{3}{stepThree}}
+\newcommand{\stepFour}{\stepCircle{4}{stepFour}}
+\newcommand{\stepFive}{\stepCircle{5}{stepFive}}

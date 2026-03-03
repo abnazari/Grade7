@@ -1,0 +1,61 @@
+% CCSS 7.SP.B.4 — Comparing Populations with Measures (AK/OK/TX: extended measures emphasis)
+\section{Comparing Populations with Measures of Center and Variability}
+
+\begin{learningGoals}
+\begin{itemize}
+    \item Use mean, median, range, and IQR to compare two populations
+    \item Support conclusions with data and reasoning
+\end{itemize}
+\end{learningGoals}
+
+\begin{conceptBox}{Measures of Center and Variability}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Mean}: Add all values, divide by the count.
+    \item \textbf{Median}: The middle value when data is ordered.
+    \item \textbf{Range}: Highest $-$ lowest. Shows total spread.
+    \item \textbf{Interquartile Range (IQR)}: $Q_3 - Q_1$. Spread of the middle $50\%$.
+\end{itemize}
+The \textbf{IQR} is often more useful than range because it ignores outliers. Use \textbf{multiple} measures — not just one — to compare groups.
+\end{conceptBox}
+
+\begin{workedExample}{Comparing Fish Catch Data}
+Two fishing crews recorded daily catch (in pounds) over $5$ days:
+
+\textbf{Crew A:} $120, 135, 140, 150, 155$ \quad \textbf{Crew B:} $90, 130, 145, 160, 200$
+
+\begin{center}
+\begin{tabular}{l c c}
+ & \textbf{Crew A} & \textbf{Crew B} \\
+\hline
+Mean & $140$ & $145$ \\
+Median & $140$ & $145$ \\
+Range & $35$ & $110$ \\
+IQR & $15$ & $30$ \\
+\end{tabular}
+\end{center}
+
+Crew B catches slightly more on average, but Crew A is \textbf{far more consistent}. Crew B's large range and IQR suggest some very high and very low days.
+\answerHighlight{Crew B averages more, but Crew A is more reliable.}
+\end{workedExample}
+
+\tipBox{Range can be thrown off by a single extreme value. IQR focuses on the middle half of the data and gives a better picture of typical spread.}
+
+\begin{practiceBox}{Comparing Populations with Measures}
+\resetProblems
+
+\prob Group A: mean $70$, median $72$, range $20$, IQR $8$. Group B: mean $75$, median $74$, range $40$, IQR $18$. Which group is more consistent?
+\answerExplain{Group A}{Group A has a smaller range ($20$ vs.\ $40$) and smaller IQR ($8$ vs.\ $18$), meaning its data is more tightly clustered around the center.}
+
+\prob Two students track daily steps for a week. Student~X: mean $8{,}000$, IQR $1{,}500$. Student~Y: mean $8{,}200$, IQR $4{,}000$. Compare their activity.
+\answerExplain{Y averages slightly more but is much less consistent}{Student Y's IQR is nearly triple Student X's, meaning Y's daily steps vary much more. X is more consistent day to day.}
+
+\prob Why is IQR often better than range for comparing two groups?
+\answerExplain{IQR ignores outliers}{Range uses only the two extreme values, which can be misleading if there is an outlier. IQR measures the spread of the middle $50\%$ and gives a more stable comparison.}
+
+\prob Data set: $5, 8, 10, 12, 15, 18, 50$. Find the range and IQR. Which better represents the spread?
+\answerExplain{Range $= 45$; IQR $= 10$; IQR is better}{Range: $50 - 5 = 45$. $Q_1 = 8$, $Q_3 = 18$, so IQR $= 10$. The outlier $50$ inflates the range. IQR shows the typical spread more accurately.}
+
+\prob Two classes take a quiz. Class~A median: $82$, IQR: $6$. Class~B median: $78$, IQR: $14$. Which class performed better overall? Explain.
+\answerExplain{Class A}{Class A has a higher median ($82$ vs.\ $78$) and a smaller IQR ($6$ vs.\ $14$), meaning most students scored close to $82$. Class B is both lower and more spread out.}
+
+\end{practiceBox}

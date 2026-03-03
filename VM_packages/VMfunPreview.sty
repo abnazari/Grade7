@@ -1,0 +1,32 @@
+%----------------------------------------------------------------------------------------
+% VMfunPreview.sty — PREVIEW watermark & helpers for sample PDF previews
+%
+% Adds a diagonal "PREVIEW" watermark on every page and provides the
+% \previewCallToAction command for the final buy-now page.
+%
+% Usage in the preamble:
+%   \usepackage{VMfunPreview}
+%
+% The package uses draftwatermark for the repeating background text and
+% provides a colorful call-to-action page via TikZ.
+%----------------------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{VMfunPreview}[2026/02/16 Preview watermark and CTA for sample PDFs]
+
+%----------------------------------------------------------------------------------------
+% WATERMARK — diagonal "PREVIEW" on every page
+%----------------------------------------------------------------------------------------
+\RequirePackage{draftwatermark}
+
+\SetWatermarkText{PREVIEW}
+\SetWatermarkScale{1}           % large diagonal text
+\SetWatermarkColor[gray]{0.88}  % light enough to read content, visible enough to deter copying
+\SetWatermarkAngle{45}
+
+%----------------------------------------------------------------------------------------
+% FLAG — lets topic files or initial pages detect preview mode if needed
+%----------------------------------------------------------------------------------------
+\newif\ifpreviewmode
+\previewmodetrue
+
+\endinput

@@ -1,0 +1,821 @@
+%----------------------------------------------------------------------------------------
+% VMfunAnswers.sty - Answer Key System for Grade 6 Study Guide
+% Collects answers from practice problems and prints them at the end of the book.
+% Answers are written to \jobname.ans during compilation and rendered by \printAnswerKey.
+%
+% Supports two modes:
+%   1. Study Guide mode (default): collects answers from \answer{} commands
+%   2. Practice Test mode: collects from \correctAnswer{} and \explanation{}
+%      Activate with \enablePracticeTestAnswers in the preamble.
+%----------------------------------------------------------------------------------------
+\ProvidesPackage{VMfunAnswers}[2026/03/02 Grade 6 Answer Key System]
+
+%========================================================================================
+% 1. ANSWER COLLECTION - Write answers to an external .ans file
+%========================================================================================
+\newwrite\ans@file
+\immediate\openout\ans@file=\jobname.ans
+\newif\ifans@collecting
+\ans@collectingtrue
+
+% Practice test mode flag
+\newif\ifans@practicetest
+\ans@practicetestfalse
+
+% Quiz mode flag
+\newif\ifans@quiz
+\ans@quizfalse
+
+% Day mode flag (for "In 30 Days" book)
+\newif\ifans@daymode
+\ans@daymodefalse
+
+% Track section/chapter changes to insert group markers
+\def\ans@lastsec{}
+\def\ans@lastch{}
+
+%========================================================================================
+% 2. ANSWER COMMAND - Place immediately after each numbered practice problem
+%
+%    The answer is recorded (problem number + text) and printed in the Answer Key
+%    at the end of the book. Nothing is displayed inline.
+%
+%    Usage:
+%      \prob $3 \times 4 = $ \answerBlank[2cm]
+%      \answer{$12$}
+%========================================================================================
+\newcommand{\answer}[1]{%
+    \ifans@collecting
+        \ifans@quiz
+            % Quiz mode: use quiz-local question number (chapter tracked by \writeAnsQuiz)
+            \immediate\write\ans@file{%
+                \string\ansItem{\thequizQuestion}{\unexpanded{#1}}%
+            }%
+        \else
+            % Detect chapter change
+            \edef\ans@currch{\thechapter}%
+            \ifx\ans@currch\ans@lastch\else
+                \immediate\write\ans@file{\string\ansChap{\thechapter}}%
+                \global\let\ans@lastch\ans@currch
+            \fi
+            % Detect section change
+            \edef\ans@currsec{\thesection}%
+            \ifx\ans@currsec\ans@lastsec\else
+                \immediate\write\ans@file{\string\ansSec{\thesection}}%
+                \global\let\ans@lastsec\ans@currsec
+            \fi
+            % Write the answer entry
+            \immediate\write\ans@file{%
+                \string\ansItem{\thefunProblem}{\unexpanded{#1}}%
+            }%
+        \fi
+    \fi
+}
+
+%========================================================================================
+% 3. VARIANT COMMANDS - Semantic convenience, all delegate to \answer
+%========================================================================================
+
+%% True/False answer
+\newcommand{\answerTF}[1]{\answer{#1}}
+
+%% Multiple choice answer (letter only)
+\newcommand{\answerMC}[1]{\answer{#1}}
+
+%% Answer with explanation - answer is recorded for the key, explanation also recorded
+\newcommand{\answerExplain}[2]{%
+    \answer{#1}%
+    \ifans@collecting
+        \ifans@quiz
+            % Quiz mode: use quiz-local question number
+            \immediate\write\ans@file{%
+                \string\ansExplain{\thequizQuestion}{\unexpanded{#2}}%
+            }%
+        \else
+            \immediate\write\ans@file{%
+                \string\ansExplain{\thefunProblem}{\unexpanded{#2}}%
+            }%
+        \fi
+    \fi
+}
+
+%========================================================================================
+% 3b. PRACTICE TEST ANSWER MODE
+%     Call \enablePracticeTestAnswers in the preamble of practice test books.
+%     This redefines \correctAnswer and \explanation (from VMfunPractice.sty)
+%     to write answers and explanations to the .ans file.
+%========================================================================================
+\newcommand{\enablePracticeTestAnswers}{%
+    \ans@practicetesttrue
+    %
+    % Redefine \correctAnswer to collect answers (no section tracking needed)
+    \renewcommand{\correctAnswer}[1]{%
+        \ifans@collecting
+            % Detect chapter change
+            \edef\ans@currch{\thechapter}%
+            \ifx\ans@currch\ans@lastch\else
+                \immediate\write\ans@file{\string\ansChap{\thechapter}}%
+                \global\let\ans@lastch\ans@currch
+            \fi
+            % Write the answer entry
+            \immediate\write\ans@file{%
+                \string\ansItem{\thefunProblem}{\unexpanded{##1}}%
+            }%
+        \fi
+    }%
+    %
+    % Redefine \explanation to collect explanations
+    \renewcommand{\explanation}[1]{%
+        \ifans@collecting
+            \immediate\write\ans@file{%
+                \string\ansExplain{\thefunProblem}{\unexpanded{##1}}%
+            }%
+        \fi
+    }%
+}
+
+%========================================================================================
+% 3c. QUIZ ANSWER MODE
+%     Call \enableQuizAnswers in the preamble of quiz books.
+%     This activates per-quiz answer grouping and numbering.
+%     \quizPage will call \writeAnsQuiz to insert quiz markers in the .ans file.
+%========================================================================================
+\newcommand{\enableQuizAnswers}{%
+    \ans@quiztrue
+}
+
+%========================================================================================
+% 3d. DAY ANSWER MODE
+%     Call \enableDayAnswers in the preamble of the 30-day book.
+%     \writeAnsDay is called by \dayPage to insert day markers in the .ans file.
+%     Also suppresses spurious \ansSec markers (days have no \section commands).
+%========================================================================================
+\newcommand{\enableDayAnswers}{%
+    \ans@daymodetrue
+    % Override \answer to skip section-change detection
+    % (days mark their own boundaries via \writeAnsDay)
+    \renewcommand{\answer}[1]{%
+        \ifans@collecting
+            \edef\ans@currch{\thechapter}%
+            \ifx\ans@currch\ans@lastch\else
+                \immediate\write\ans@file{\string\ansChap{\thechapter}}%
+                \global\let\ans@lastch\ans@currch
+            \fi
+            \immediate\write\ans@file{%
+                \string\ansItem{\thefunProblem}{\unexpanded{##1}}%
+            }%
+        \fi
+    }%
+}
+
+%% Called by \dayPage to write a day marker into the .ans file.
+%% This is the primary separator mechanism for the 30-day book answer key.
+\newcommand{\writeAnsDay}[2]{%  #1=day number, #2=day title
+    \ifans@daymode
+        \ifans@collecting
+            % Write chapter marker first if chapter changed
+            \edef\ans@currch{\thechapter}%
+            \ifx\ans@currch\ans@lastch\else
+                \immediate\write\ans@file{\string\ansChap{\thechapter}}%
+                \global\let\ans@lastch\ans@currch
+            \fi
+            \immediate\write\ans@file{\string\ansDay{#1}{\unexpanded{#2}}}%
+        \fi
+    \fi
+}
+
+%% Called by \quizPage to write a quiz marker into the .ans file
+\newcommand{\writeAnsQuiz}[2]{%  #1=quiz number, #2=quiz title
+    \ifans@collecting
+        % Write chapter marker first if chapter changed
+        \edef\ans@currch{\thechapter}%
+        \ifx\ans@currch\ans@lastch\else
+            \immediate\write\ans@file{\string\ansChap{\thechapter}}%
+            \global\let\ans@lastch\ans@currch
+        \fi
+        \immediate\write\ans@file{\string\ansQuiz{#1}{#2}}%
+    \fi
+}
+
+%========================================================================================
+% 4. ANSWER NUMBER BUBBLE COLORS - cycle through fun colors
+%========================================================================================
+\newcounter{ans@numcolor}
+\setcounter{ans@numcolor}{0}
+
+% Returns the current bubble color
+\newcommand{\ans@bubblecolor}{%
+    \ifcase\value{ans@numcolor}%
+        funBlue%     0
+    \or funGreen%    1
+    \or funOrange%   2
+    \or funPurple%   3
+    \or funTeal%     4
+    \or funPink%     5
+    \fi
+}
+
+\newcommand{\ans@nextbubble}{%
+    \stepcounter{ans@numcolor}%
+    \ifnum\value{ans@numcolor}>5 \setcounter{ans@numcolor}{0}\fi
+}
+
+%========================================================================================
+% 5. SECTION ACCENT COLORS - each section gets a different accent
+%========================================================================================
+\newcounter{ans@seccolor}
+\setcounter{ans@seccolor}{0}
+
+\newcommand{\ans@secaccent}{%
+    \ifcase\value{ans@seccolor}%
+        funBlue%     0
+    \or funGreen%    1
+    \or funOrange%   2
+    \or funPurple%   3
+    \or funTeal%     4
+    \or funPink%     5
+    \fi
+}
+
+\newcommand{\ans@nextsec}{%
+    \stepcounter{ans@seccolor}%
+    \ifnum\value{ans@seccolor}>5 \setcounter{ans@seccolor}{0}\fi
+}
+
+%========================================================================================
+% 6. PRINT ANSWER KEY - Call once at the end of the book
+%    Supports two modes:
+%      - Study Guide mode: shows Chapter N / Section N.M headers + compact answer chips
+%      - Practice Test mode: shows Practice Test N headers + answer chips + explanations
+%========================================================================================
+\newcommand{\printAnswerKey}{%
+    % Close the answer file so it can be read back
+    \immediate\closeout\ans@file
+    \global\ans@collectingfalse
+    %
+    % ===== Determine title and subtitle based on mode =====
+    \ifans@practicetest
+        % --- Practice Test Mode ---
+        % Structure per test: Answer Key → Encouragement → Explanations
+        %
+        \chapter*{Answer Key \& Explanations}
+        \addcontentsline{toc}{chapter}{Answer Key \& Explanations}
+        \markboth{Answer Key \& Explanations}{Answer Key \& Explanations}
+        %
+        \begin{center}
+        \begin{tcolorbox}[
+            enhanced,
+            colback=funYellowLight,
+            colframe=funYellow!80!funOrange,
+            boxrule=2pt,
+            arc=14pt,
+            outer arc=14pt,
+            width=0.92\linewidth,
+            halign=center,
+            top=6mm, bottom=6mm,
+            shadow={2pt}{-2pt}{0pt}{funGray!40},
+        ]
+            {\fontsize{22}{26}\selectfont\bfseries\sffamily\color{funOrangeDark}%
+                Answer Key%
+            }\\[4mm]
+            {\large\sffamily\color{funGrayDark}%
+            First try each test on your own, then check your work here.%
+            }
+        \end{tcolorbox}
+        \end{center}
+        \vspace{4mm}
+        %
+        % --- Explanation buffer: stores explanations for the current test ---
+        %     Explanations are rendered AFTER all answer chips for that test.
+        \gdef\ans@explist{}%
+        \newcounter{ans@testnum}%
+        \setcounter{ans@testnum}{0}%
+        %
+        % --- Render a single explanation (called when buffer is flushed) ---
+        \def\ans@renderexp##1##2{%
+            \par\noindent
+            \begin{tcolorbox}[
+                enhanced,
+                colback=funPurple!4,
+                colframe=funPurple!20,
+                boxrule=0.6pt,
+                arc=5pt,
+                outer arc=5pt,
+                left=4mm, right=4mm,
+                top=2.5mm, bottom=2.5mm,
+                before skip=2.5mm,
+                after skip=2.5mm,
+            ]
+                \sffamily\small
+                \tikz[baseline=-0.3ex]{%
+                    \node[circle, fill=funPurple!65, text=white,
+                          inner sep=0pt, minimum size=6.5mm,
+                          font=\scriptsize\bfseries\sffamily]{##1};%
+                }\hspace{2mm}%
+                {\color{funGrayDark}##2}%
+            \end{tcolorbox}%
+        }%
+        %
+        % --- Flush buffered explanations: encouragement → explanations header → items ---
+        \def\ans@flushexp{%
+            \ifnum\value{ans@testnum}>0\relax
+                %
+                % Encouragement box
+                \par\vspace{6mm}%
+                \begin{center}
+                \begin{tcolorbox}[
+                    enhanced,
+                    colback=funGreen!6,
+                    colframe=funGreen!50,
+                    boxrule=1.5pt,
+                    arc=10pt,
+                    outer arc=10pt,
+                    width=0.88\linewidth,
+                    halign=center,
+                    top=5mm, bottom=5mm,
+                    shadow={1.5pt}{-1.5pt}{0pt}{funGray!20},
+                ]
+                    {\large\bfseries\sffamily\color{funGreenDark}%
+                        \faLightbulb\hspace{3mm}Time to Learn!\hspace{3mm}\faLightbulb%
+                    }\\[4mm]
+                    {\sffamily\color{funGrayDark}%
+                        Review the explanations below, \textbf{especially for the questions you missed}.\\[2mm]
+                        Understanding \textit{why} each answer is correct builds stronger problem-solving skills.\\[2mm]
+                        \textbf{Tip:} Circle any questions you got wrong, then read their explanation carefully.%
+                    }
+                \end{tcolorbox}
+                \end{center}
+                %
+                % Explanations sub-header
+                \par\vspace{5mm}%
+                \noindent
+                \begin{tcolorbox}[
+                    enhanced,
+                    colback=funPurple!12,
+                    colframe=funPurple!40,
+                    boxrule=1pt,
+                    arc=7pt,
+                    outer arc=7pt,
+                    left=6mm, right=6mm,
+                    top=3mm, bottom=3mm,
+                ]
+                    {\large\bfseries\sffamily\color{funPurpleDark}%
+                        \faBookOpen\hspace{4mm}Practice Test~\theans@testnum~---~Detailed Explanations%
+                    }%
+                \end{tcolorbox}%
+                \vspace{3mm}%
+                %
+                % Render all buffered explanations
+                \ans@explist
+                \gdef\ans@explist{}%
+            \fi
+        }%
+        %
+        % --- CHAPTER HEADER: flush previous test's explanations, then start new test ---
+        \def\ansChap##1{%
+            \ans@flushexp
+            \setcounter{ans@testnum}{##1}%
+            \setcounter{ans@numcolor}{0}%
+            %
+            % Answer key header for this test
+            \par\vspace{8mm}%
+            \noindent
+            \begin{tcolorbox}[
+                enhanced,
+                colback=funTealLight,
+                colframe=funTeal,
+                boxrule=2pt,
+                arc=8pt,
+                outer arc=8pt,
+                left=6mm, right=6mm,
+                top=3.5mm, bottom=3.5mm,
+            ]
+                {\Large\bfseries\sffamily\color{funTealDark}%
+                    \faClipboardCheck\hspace{4mm}Practice Test~##1~---~Answer Key%
+                }%
+            \end{tcolorbox}%
+            \vspace{3mm}%
+        }%
+        %
+        % --- SECTION HEADER: not used in practice test mode ---
+        \def\ansSec##1{}%
+        %
+        % --- QUIZ HEADER: not used in practice test mode ---
+        \def\ansQuiz##1##2{}%
+        %
+        % --- ANSWER ITEM: chip with number + answer (rendered immediately) ---
+        \def\ansItem##1##2{%
+            \penalty0\relax
+            \tcbox[
+                on line,
+                colback=white,
+                colframe=\ans@bubblecolor!35,
+                boxrule=0.6pt,
+                arc=5pt,
+                outer arc=5pt,
+                left=1mm, right=2.5mm,
+                top=1.5mm, bottom=1.5mm,
+                boxsep=0pt,
+            ]{%
+                \tikz[baseline=-0.3ex]{%
+                    \node[circle, fill=\ans@bubblecolor!75, text=white,
+                          inner sep=0pt, minimum size=7mm,
+                          font=\small\bfseries\sffamily]{##1};%
+                }\hspace{2mm}%
+                {\sffamily ##2}%
+            }%
+            \hspace{1.5mm plus 3mm minus 0mm}%
+            \ans@nextbubble
+        }%
+        %
+        % --- EXPLANATION: buffer for rendering after all answers ---
+        \def\ansExplain##1##2{%
+            \g@addto@macro\ans@explist{\ans@renderexp{##1}{##2}}%
+        }%
+    \else\ifans@quiz
+        % --- Quiz Mode ---
+        % Structure: per-quiz headers with answers + explanations grouped by quiz
+        %
+        \chapter*{Answer Key \& Explanations}
+        \addcontentsline{toc}{chapter}{Answer Key \& Explanations}
+        \markboth{Answer Key \& Explanations}{Answer Key \& Explanations}
+        %
+        \begin{center}
+        \begin{tcolorbox}[
+            enhanced,
+            colback=funYellowLight,
+            colframe=funYellow!80!funOrange,
+            boxrule=2pt,
+            arc=14pt,
+            outer arc=14pt,
+            width=0.92\linewidth,
+            halign=center,
+            top=6mm, bottom=6mm,
+            shadow={2pt}{-2pt}{0pt}{funGray!40},
+        ]
+            {\fontsize{22}{26}\selectfont\bfseries\sffamily\color{funOrangeDark}%
+                Answer Key%
+            }\\[4mm]
+            {\large\sffamily\color{funGrayDark}%
+            First try each quiz on your own, then check your work here.%
+            }
+        \end{tcolorbox}
+        \end{center}
+        \vspace{4mm}
+        %
+        % --- Explanation buffer: stores explanations for the current quiz ---
+        \gdef\ans@quiz@explist{}%
+        %
+        % --- Render a single explanation ---
+        \def\ans@quiz@renderexp##1##2{%
+            \par\noindent
+            \begin{tcolorbox}[
+                enhanced,
+                colback=funPurple!4,
+                colframe=funPurple!20,
+                boxrule=0.6pt,
+                arc=5pt,
+                outer arc=5pt,
+                left=4mm, right=4mm,
+                top=2.5mm, bottom=2.5mm,
+                before skip=2.5mm,
+                after skip=2.5mm,
+            ]
+                \sffamily\small
+                \tikz[baseline=-0.3ex]{%
+                    \node[circle, fill=funPurple!65, text=white,
+                          inner sep=0pt, minimum size=6.5mm,
+                          font=\scriptsize\bfseries\sffamily]{##1};%
+                }\hspace{2mm}%
+                {\color{funGrayDark}##2}%
+            \end{tcolorbox}%
+        }%
+        %
+        % --- Flush buffered explanations for current quiz ---
+        \def\ans@quiz@flushexp{%
+            \ifx\ans@quiz@explist\empty\else
+                \par\vspace{3mm}%
+                \noindent
+                \begin{tcolorbox}[
+                    enhanced,
+                    colback=funPurple!8,
+                    colframe=funPurple!35,
+                    boxrule=0.8pt,
+                    arc=6pt,
+                    outer arc=6pt,
+                    left=5mm, right=5mm,
+                    top=2.5mm, bottom=2.5mm,
+                ]
+                    {\bfseries\sffamily\small\color{funPurpleDark}%
+                        \faLightbulb\hspace{2mm}Explanations%
+                    }%
+                \end{tcolorbox}%
+                \vspace{1mm}%
+                \ans@quiz@explist
+                \gdef\ans@quiz@explist{}%
+            \fi
+        }%
+        %
+        % --- CHAPTER HEADER: bold colored banner (for chapter grouping) ---
+        \def\ansChap##1{%
+            \ans@quiz@flushexp
+            \par\vspace{8mm}%
+            \setcounter{ans@seccolor}{0}%
+            \noindent
+            \begin{tcolorbox}[
+                enhanced,
+                colback=funBlueLight,
+                colframe=funBlue,
+                boxrule=2pt,
+                arc=8pt,
+                outer arc=8pt,
+                left=6mm, right=6mm,
+                top=3.5mm, bottom=3.5mm,
+            ]
+                {\Large\bfseries\sffamily\color{funBlueDark}%
+                    \faBookOpen\hspace{4mm}Chapter~##1%
+                }%
+            \end{tcolorbox}%
+            \vspace{1mm}%
+        }%
+        %
+        % --- SECTION HEADER: not used in quiz mode ---
+        \def\ansSec##1{}%
+        %
+        % --- QUIZ HEADER: accent-colored strip with quiz number and title ---
+        \def\ansQuiz##1##2{%
+            \ans@quiz@flushexp
+            \par\vspace{5mm}%
+            \setcounter{ans@numcolor}{0}%
+            \noindent
+            \begin{tcolorbox}[
+                enhanced,
+                colback=\ans@secaccent!10,
+                colframe=\ans@secaccent!50,
+                boxrule=1pt,
+                arc=6pt,
+                outer arc=6pt,
+                left=5mm, right=5mm,
+                top=2.5mm, bottom=2.5mm,
+            ]
+                {\bfseries\sffamily\color{\ans@secaccent!85!black}%
+                    \faClipboardCheck\hspace{2mm}Quiz~##1:~##2%
+                }%
+            \end{tcolorbox}%
+            \vspace{3mm}\noindent
+            \ans@nextsec
+        }%
+        %
+        % --- ANSWER ITEM: inline chip with colored number circle ---
+        \def\ansItem##1##2{%
+            \noindent
+            \penalty0\relax
+            \tcbox[
+                on line,
+                colback=white,
+                colframe=\ans@bubblecolor!35,
+                boxrule=0.6pt,
+                arc=5pt,
+                outer arc=5pt,
+                left=1mm, right=2.5mm,
+                top=1.5mm, bottom=1.5mm,
+                boxsep=0pt,
+            ]{%
+                \tikz[baseline=-0.3ex]{%
+                    \node[circle, fill=\ans@bubblecolor!75, text=white,
+                          inner sep=0pt, minimum size=7mm,
+                          font=\small\bfseries\sffamily]{##1};%
+                }\hspace{2mm}%
+                {\sffamily ##2}%
+            }%
+            \hspace{1.5mm plus 3mm minus 0mm}%
+            \ans@nextbubble
+        }%
+        %
+        % --- EXPLANATION: buffer for rendering after quiz answers ---
+        \def\ansExplain##1##2{%
+            \g@addto@macro\ans@quiz@explist{\ans@quiz@renderexp{##1}{##2}}%
+        }%
+    \else
+        % --- Study Guide Mode (default) ---
+        \chapter*{Answer Key}
+        \addcontentsline{toc}{chapter}{Answer Key}
+        \markboth{Answer Key}{Answer Key}
+        %
+        % --- Explanation buffer for study guide mode ---
+        \gdef\ans@sg@explist{}%
+        %
+        \begin{center}
+        \begin{tcolorbox}[
+            enhanced,
+            colback=funYellowLight,
+            colframe=funYellow!80!funOrange,
+            boxrule=2pt,
+            arc=14pt,
+            outer arc=14pt,
+            width=0.92\linewidth,
+            halign=center,
+            top=6mm, bottom=6mm,
+            shadow={2pt}{-2pt}{0pt}{funGray!40},
+        ]
+            {\fontsize{22}{26}\selectfont\bfseries\sffamily\color{funOrangeDark}%
+                Answer Key%
+            }\\[4mm]
+            {\large\sffamily\color{funGrayDark}%
+            Try each problem on your own first, then check your work here.%
+            }
+        \end{tcolorbox}
+        \end{center}
+        \vspace{6mm}
+        %
+        % --- Render a single explanation in study guide mode ---
+        \def\ans@sg@renderexp##1##2{%
+            \par\noindent
+            \begin{tcolorbox}[
+                enhanced,
+                colback=funPurple!4,
+                colframe=funPurple!20,
+                boxrule=0.6pt,
+                arc=5pt,
+                outer arc=5pt,
+                left=4mm, right=4mm,
+                top=2.5mm, bottom=2.5mm,
+                before skip=2.5mm,
+                after skip=2.5mm,
+            ]
+                \sffamily\small
+                \tikz[baseline=-0.3ex]{%
+                    \node[circle, fill=funPurple!65, text=white,
+                          inner sep=0pt, minimum size=6.5mm,
+                          font=\scriptsize\bfseries\sffamily]{##1};%
+                }\hspace{2mm}%
+                {\color{funGrayDark}##2}%
+            \end{tcolorbox}%
+        }%
+        %
+        % --- Flush buffered explanations for study guide mode ---
+        \def\ans@sg@flushexp{%
+            \ifx\ans@sg@explist\empty\else
+                \par\vspace{3mm}%
+                \noindent
+                \begin{tcolorbox}[
+                    enhanced,
+                    colback=funPurple!8,
+                    colframe=funPurple!35,
+                    boxrule=0.8pt,
+                    arc=6pt,
+                    outer arc=6pt,
+                    left=5mm, right=5mm,
+                    top=2.5mm, bottom=2.5mm,
+                ]
+                    {\bfseries\sffamily\small\color{funPurpleDark}%
+                        \faLightbulb\hspace{2mm}Explanations%
+                    }%
+                \end{tcolorbox}%
+                \vspace{1mm}%
+                \ans@sg@explist
+                \gdef\ans@sg@explist{}%
+            \fi
+        }%
+        %
+        % --- CHAPTER HEADER: bold colored banner ---
+        \def\ansChap##1{%
+            \ans@sg@flushexp
+            \par\vspace{8mm}%
+            \setcounter{ans@seccolor}{0}%
+            \noindent
+            \begin{tcolorbox}[
+                enhanced,
+                colback=funBlueLight,
+                colframe=funBlue,
+                boxrule=2pt,
+                arc=8pt,
+                outer arc=8pt,
+                left=6mm, right=6mm,
+                top=3.5mm, bottom=3.5mm,
+            ]
+                {\Large\bfseries\sffamily\color{funBlueDark}%
+                    \ifans@daymode\faCalendarDay\else\faBookOpen\fi%
+                    \hspace{4mm}Chapter~##1%
+                }%
+            \end{tcolorbox}%
+            \vspace{1mm}%
+        }%
+        %
+        % --- DAY HEADER (day mode): flush explanations, then render day separator ---
+        \ifans@daymode
+            \def\ansDay##1##2{%
+                \ans@sg@flushexp
+                \par\vspace{5mm}%
+                \setcounter{ans@numcolor}{0}%
+                \noindent
+                \begin{tcolorbox}[
+                    enhanced,
+                    colback=\ans@secaccent!10,
+                    colframe=\ans@secaccent!50,
+                    boxrule=1pt,
+                    arc=6pt,
+                    outer arc=6pt,
+                    left=5mm, right=5mm,
+                    top=2.5mm, bottom=2.5mm,
+                ]
+                    {\bfseries\sffamily\color{\ans@secaccent!85!black}%
+                        \faCalendarDay\hspace{2mm}Day~##1:~##2%
+                    }%
+                \end{tcolorbox}%
+                \vspace{3mm}\noindent
+                \ans@nextsec
+            }%
+            % In day mode, \ansSec is suppressed (days provide their own separators)
+            \def\ansSec##1{}%
+        \else
+            \def\ansDay##1##2{}%  no-op in regular study guide mode
+            % --- SECTION HEADER: accent-colored rounded strip ---
+            \def\ansSec##1{%
+                \ans@sg@flushexp
+                \par\vspace{5mm}%
+                \setcounter{ans@numcolor}{0}%
+                \noindent
+                \begin{tcolorbox}[
+                    enhanced,
+                    colback=\ans@secaccent!10,
+                    colframe=\ans@secaccent!50,
+                    boxrule=1pt,
+                    arc=6pt,
+                    outer arc=6pt,
+                    left=5mm, right=5mm,
+                    top=2.5mm, bottom=2.5mm,
+                ]
+                    {\bfseries\sffamily\color{\ans@secaccent!85!black}%
+                        \faChevronRight\hspace{2mm}Section~##1%
+                    }%
+                \end{tcolorbox}%
+                \vspace{3mm}\noindent
+                \ans@nextsec
+            }%
+        \fi
+        %
+        % --- ANSWER ITEM: inline chip with colored number circle ---
+        \def\ansItem##1##2{%
+            \noindent
+            \penalty0\relax
+            \tcbox[
+                on line,
+                colback=white,
+                colframe=\ans@bubblecolor!35,
+                boxrule=0.6pt,
+                arc=5pt,
+                outer arc=5pt,
+                left=1mm, right=2.5mm,
+                top=1.5mm, bottom=1.5mm,
+                boxsep=0pt,
+            ]{%
+                \tikz[baseline=-0.3ex]{%
+                    \node[circle, fill=\ans@bubblecolor!75, text=white,
+                          inner sep=0pt, minimum size=7mm,
+                          font=\small\bfseries\sffamily]{##1};%
+                }\hspace{2mm}%
+                {\sffamily ##2}%
+            }%
+            \hspace{1.5mm plus 3mm minus 0mm}%
+            \ans@nextbubble
+        }%
+        %
+        % --- EXPLANATION: buffer for rendering after section answers ---
+        \def\ansExplain##1##2{%
+            \g@addto@macro\ans@sg@explist{\ans@sg@renderexp{##1}{##2}}%
+        }%
+        %
+        % --- QUIZ HEADER: not used in study guide / day mode ---
+        \def\ansQuiz##1##2{}%
+    \fi\fi
+    %
+    % ===== Read and render the collected answers =====
+    % Increase vertical spacing between rows of chips and allow flexible wrapping
+    \setlength{\lineskip}{5pt}%
+    \setlength{\lineskiplimit}{5pt}%
+    \setlength{\emergencystretch}{3em}% Allow mild stretch only
+    \setlength{\parindent}{0pt}%
+    \raggedright% Left-align chips — prevents wide gaps between boxes
+    \tolerance=9999%
+    \hbadness=10000%
+    \input{\jobname.ans}%
+    %
+    % ===== Flush the last buffered explanations =====
+    \ifans@practicetest
+        \ans@flushexp
+    \else\ifans@quiz
+        \ans@quiz@flushexp
+    \else
+        \ans@sg@flushexp
+    \fi\fi
+    %
+    \par\vspace{8mm}%
+    %
+    % ===== FOOTER =====
+    \begin{center}
+        {\Large\color{funBlue}\faCheckCircle}\\[2mm]
+        {\large\sffamily\color{funGrayDark}\bfseries Well done checking your answers!}\\[1mm]
+        {\sffamily\color{funGray} Keep practicing to strengthen your skills.}
+    \end{center}
+}

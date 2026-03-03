@@ -1,0 +1,462 @@
+%----------------------------------------------------------------------------------------
+% VMfunTeaching.sty - Teaching Environments for Grade 6
+% Includes: Topic Titles, Concept Boxes, Steps, Rules, Vocabulary, Remember
+%----------------------------------------------------------------------------------------
+\ProvidesPackage{VMfunTeaching}[2026/03/02 Grade 6 Teaching Environments]
+
+%========================================================================================
+% 1. TOPIC TITLE BANNER
+%    A large banner displayed at the top of each topic page.
+%    Design: Light blue background with bold blue border, clean modern text.
+%========================================================================================
+\newcommand{\topicTitle}[1]{%
+    \begin{center}
+    \begin{tcolorbox}[
+        enhanced,
+        colback=funBlueLight,
+        colframe=funBlue,
+        coltitle=white,
+        boxrule=2pt,
+        arc=10pt,
+        outer arc=10pt,
+        top=5mm,
+        bottom=5mm,
+        left=8mm,
+        right=8mm,
+        width=0.85\linewidth,
+        halign=center,
+        fontupper=\Large\bfseries\sffamily\color{funBlueDark},
+    ]
+        #1%
+    \end{tcolorbox}
+    \end{center}
+    \vspace{2mm}
+}
+
+%========================================================================================
+% 2. CONCEPT BOX
+%    Main teaching content box with colored header bar and light background.
+%    Design: Colored title bar at top, light fill, rounded corners.
+%    Usage: \begin{conceptBox}{Title} ... \end{conceptBox}
+%    Optional color: \begin{conceptBox}[funTeal]{Title} ... \end{conceptBox}
+%========================================================================================
+\newtcolorbox{conceptBox}[2][funGreen]{
+    enhanced,
+    colback=#1!5,
+    colframe=#1,
+    colbacktitle=#1!15,
+    coltitle=#1!80!black,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{#1}\faGraduationCap}~~#2},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=3mm,
+    bottomtitle=3mm,
+    before skip=8pt,
+    after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 3. SUBTITLE INSIDE BOXES
+%    A styled subtitle for use inside concept boxes and other environments.
+%    Usage: \boxSubtitle{Steps to Add}
+%========================================================================================
+\newcommand{\boxSubtitle}[2][funBlue]{%
+    \par\vspace{3mm}%
+    {\large\bfseries\sffamily\color{#1}#2}%
+    \par\vspace{2mm}%
+}
+
+%========================================================================================
+% 4. STEPS BOX (Step-by-step instructions)
+%    A numbered sequence of steps inside a light blue box.
+%    Design: Light blue background, numbered steps with colored circles.
+%    Usage:
+%      \begin{stepsBox}{Steps to Add}
+%          \step Add the ones column
+%          \step Add the tens column
+%      \end{stepsBox}
+%========================================================================================
+\newcounter{funStepCounter}
+
+\newtcolorbox{stepsBox}[2][funBlue]{
+    enhanced,
+    colback=#1!5,
+    colframe=#1,
+    colbacktitle=#1!15,
+    coltitle=#1!80!black,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{#1}\faListOl}~~#2},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=3mm,
+    bottomtitle=3mm,
+    before skip=8pt,
+    after skip=8pt,
+    before upper={\setcounter{funStepCounter}{0}},
+    breakable,
+}
+
+%% Individual step command (auto-numbered with colored circles)
+\newcommand{\funStep}{%
+    \stepcounter{funStepCounter}%
+    \par\vspace{3mm}\noindent
+    \ifnum\value{funStepCounter}=1 \stepCircle{\thefunStepCounter}{stepOne}\fi
+    \ifnum\value{funStepCounter}=2 \stepCircle{\thefunStepCounter}{stepTwo}\fi
+    \ifnum\value{funStepCounter}=3 \stepCircle{\thefunStepCounter}{stepThree}\fi
+    \ifnum\value{funStepCounter}=4 \stepCircle{\thefunStepCounter}{stepFour}\fi
+    \ifnum\value{funStepCounter}=5 \stepCircle{\thefunStepCounter}{stepFive}\fi
+    \ifnum\value{funStepCounter}>5 \stepCircle{\thefunStepCounter}{funBlue}\fi
+    \hspace{3mm}%
+}
+
+%% Named step (manual number and color)
+\newcommand{\namedStep}[2]{\par\vspace{3mm}\noindent\stepCircle{#1}{#2}\hspace{3mm}}
+
+%========================================================================================
+% 5. REMEMBER BOX
+%    A prominent box for key points to remember.
+%    Design: Dark green title bar "Remember!", light green content.
+%========================================================================================
+\newtcolorbox{rememberBox}{
+    enhanced,
+    colback=funGreenLight,
+    colframe=funGreenDark,
+    colbacktitle=funGreenDark!15,
+    coltitle=funGreenDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{funGreenDark}\faBookmark}~~Remember!},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=3mm,
+    bottomtitle=3mm,
+    before skip=8pt,
+    after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 6. MATH RULE BOX
+%    A box for mathematical rules and formulas to memorize.
+%    Design: Blue border with "Rule" label, light blue background.
+%    Usage: \begin{mathRuleBox}{Rule Name} ... \end{mathRuleBox}
+%========================================================================================
+\newtcolorbox{mathRuleBox}[1]{
+    enhanced,
+    colback=funBlueLight,
+    colframe=funBlue,
+    colbacktitle=funBlue!15,
+    coltitle=funBlueDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{funBlueDark}\faBalanceScale}~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=3mm,
+    bottomtitle=3mm,
+    before skip=8pt,
+    after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 7. VOCABULARY BOX
+%    A box for introducing new math vocabulary words.
+%    Design: Teal header with book icon, light teal content.
+%    Usage: \begin{vocabBox}{New Words} ... \end{vocabBox}
+%========================================================================================
+\newtcolorbox{vocabBox}[1][Vocabulary]{
+    enhanced,
+    colback=funTealLight,
+    colframe=funTeal,
+    colbacktitle=funTeal!15,
+    coltitle=funTealDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\iconBook~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=3mm,
+    bottomtitle=3mm,
+    before skip=8pt,
+    after skip=8pt,
+    breakable,
+}
+
+%% Individual vocabulary entry
+%% Usage: \vocabWord{Dividend}{The number being divided.}
+\newcommand{\vocabWord}[2]{%
+    \par\noindent\textbf{\color{funTealDark}\sffamily #1} --- #2\par\vspace{2mm}%
+}
+
+%========================================================================================
+% 8. LEARNING GOAL BOX
+%    Shows what students will learn in this topic.
+%    Design: Blue box with target icon.
+%    Usage: \begin{learningGoals} \item ... \end{learningGoals}
+%========================================================================================
+% ICON NEEDED: Target/bullseye icon (colorful target with arrow)
+% File: icons/target-icon.pdf
+\newtcolorbox{learningGoals}{
+    enhanced,
+    colback=funBlueLight,
+    colframe=funBlue,
+    colbacktitle=funBlue!15,
+    coltitle=funBlueDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{funBlueDark}\faBullseye}~~Learning Goals},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=4mm,
+    bottom=4mm,
+    left=5mm,
+    right=5mm,
+    toptitle=3mm,
+    bottomtitle=3mm,
+    before skip=8pt,
+    after skip=8pt,
+    borderline west={3pt}{-2pt}{funBlue!40},
+    overlay={
+        \node[opacity=0.05] at ([xshift=-8mm, yshift=6mm]frame.south east)
+            {\textcolor{funBlue}{\fontsize{24}{26}\selectfont\faBullseye}};
+    },
+}
+
+%========================================================================================
+% 9. KEY IDEA CALLOUT (inline highlight)
+%    A small inline highlight box for key terms or ideas.
+%    Usage: The answer is \keyIdea{always positive}.
+%========================================================================================
+\newtcbox{\keyIdea}[1][funYellow]{%
+    on line,
+    colback=#1!15,
+    colframe=#1!50,
+    boxrule=0.8pt,
+    arc=4pt,
+    outer arc=4pt,
+    boxsep=2pt,
+    left=3pt,
+    right=3pt,
+    top=1pt,
+    bottom=1pt,
+    fontupper=\bfseries\sffamily,
+}
+
+%========================================================================================
+% 10. DEFINITION SPOTLIGHT
+%     A centered, prominent definition display.
+%     Usage: \definitionSpotlight{Division is sharing equally!}
+%========================================================================================
+\newcommand{\definitionSpotlight}[2][funGreen]{%
+    \par\vspace{4mm}%
+    \begin{center}
+    \begin{tcolorbox}[
+        enhanced,
+        colback=#1!8,
+        colframe=#1,
+        boxrule=2pt,
+        arc=10pt,
+        outer arc=10pt,
+        width=0.75\linewidth,
+        halign=center,
+        top=6mm, bottom=6mm,
+        left=8mm, right=8mm,
+        fontupper=\Large\bfseries\sffamily\color{#1!80!black},
+    ]
+        #2
+    \end{tcolorbox}
+    \end{center}
+    \vspace{2mm}%
+}
+
+%========================================================================================
+% 11. TWO-COLUMN COMPARISON
+%     Side-by-side comparison box (e.g., "Sharing vs Grouping").
+%     Usage:
+%       \begin{compareBox}{Title Left}{Title Right}
+%           Left content \tcblower Right content
+%       \end{compareBox}
+%========================================================================================
+\newtcolorbox{compareBox}[3][funOrange]{
+    enhanced,
+    colback=#1!5,
+    colframe=#1,
+    colbacktitle=#1!15,
+    coltitle=#1!80!black,
+    fonttitle=\bfseries\sffamily,
+    bicolor,
+    colbacklower=#1!8,
+    boxrule=1.5pt,
+    arc=8pt,
+    outer arc=8pt,
+    sidebyside,
+    sidebyside align=top,
+    sidebyside gap=4mm,
+    title={\begin{minipage}[t]{0.47\linewidth}\centering\textbf{#2}\end{minipage}\hfill%
+           \begin{minipage}[t]{0.47\linewidth}\centering\textbf{#3}\end{minipage}},
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt,
+    after skip=8pt,
+}
+
+%========================================================================================
+% 12. EXPLORE BOX (Guided Discovery Activity)
+%     An investigation prompt that encourages hands-on exploration.
+%     Design: Green with magnifying-glass feel, inviting border.
+%     Usage: \begin{exploreBox}{Try Different Numbers} ... \end{exploreBox}
+%     Default title: "Let's Explore!"
+%========================================================================================
+\newtcolorbox{exploreBox}[1][Explore]{
+    enhanced,
+    colback=funGreen!5,
+    colframe=funGreen!70,
+    colbacktitle=funGreen!12,
+    coltitle=funGreenDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{funGreenDark}\faSearch}~~#1},
+    arc=10pt,
+    outer arc=10pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    borderline south={2pt}{0pt}{funGreen!40, dashed},
+    breakable,
+}
+
+%========================================================================================
+% 13. QUICK REVIEW BOX (Workbook-style brief concept refresher)
+%     A compact reminder box used in workbook topics to briefly recap a concept
+%     before practice problems. Lighter and shorter than conceptBox.
+%     Design: Orange header with refresh icon, cream/light background.
+%     Usage: \begin{quickReview}{Place Value} ... \end{quickReview}
+%     Optional color: \begin{quickReview}[funTeal]{Adding} ... \end{quickReview}
+%========================================================================================
+\newtcolorbox{quickReview}[2][funOrange]{
+    enhanced,
+    colback=#1!4,
+    colframe=#1!70,
+    colbacktitle=#1!15,
+    coltitle=#1!80!black,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{#1}\faSync}~~Quick Review: #2},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=4mm,
+    bottom=4mm,
+    left=5mm,
+    right=5mm,
+    toptitle=3mm,
+    bottomtitle=3mm,
+    before skip=8pt,
+    after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 14. PATTERN BOX (Pattern Recognition Activity)
+%     A box for spotting and extending patterns (CCSS 3.OA.D.9).
+%     Design: Purple with repeating-dot motif in title bar.
+%     Usage: \begin{patternBox}{What Comes Next?} ... \end{patternBox}
+%     Default title: "Spot the Pattern!"
+%========================================================================================
+\newtcolorbox{patternBox}[1][Find the Pattern]{
+    enhanced,
+    colback=funPurple!5,
+    colframe=funPurple!60,
+    colbacktitle=funPurple!12,
+    coltitle=funPurpleDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\textcolor{funPurple}{\faPuzzlePiece}}~~#1},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+}
+%========================================================================================
+% 15. PROOF / JUSTIFICATION BOX
+%     For introducing basic mathematical reasoning and justifications.
+%     Appropriate for Grade 6 students beginning formal reasoning.
+%     Design: Indigo border with a "pen-nib" icon, clean lined look.
+%     Usage: \begin{proofBox}{Title} ... \end{proofBox}
+%     Default title: "Justify Your Reasoning"
+%========================================================================================
+\newtcolorbox{proofBox}[1][Justify Your Reasoning]{
+    enhanced,
+    colback=funBlue!3,
+    colframe=funBlueDark,
+    colbacktitle=funBlueDark!15,
+    coltitle=funBlueDark,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{funBlueDark}\faPenFancy}~~#1},
+    arc=6pt,
+    outer arc=6pt,
+    boxrule=1.5pt,
+    top=5mm, bottom=5mm,
+    left=5mm, right=5mm,
+    toptitle=3mm, bottomtitle=3mm,
+    before skip=8pt, after skip=8pt,
+    breakable,
+    borderline west={3pt}{-2pt}{funBlueDark!30},
+}
+
+%========================================================================================
+% 16. FORMULA CARD
+%     A prominent, centered formula reference card for key formulas.
+%     Design: Bold border, large centered formula text, light background.
+%     Usage: \formulaCard{Area of a Triangle}{$A = \frac{1}{2} \times b \times h$}
+%========================================================================================
+\newcommand{\formulaCard}[2]{%
+    \par\vspace{4mm}%
+    \begin{center}
+    \begin{tcolorbox}[
+        enhanced,
+        colback=funGreen!6,
+        colframe=funGreen,
+        boxrule=2pt,
+        arc=8pt,
+        outer arc=8pt,
+        width=0.78\linewidth,
+        halign=center,
+        top=5mm, bottom=5mm,
+        left=8mm, right=8mm,
+    ]
+        {\sffamily\bfseries\color{funGreenDark}#1}\\[4mm]
+        {\Large\color{funGreenDark}#2}
+    \end{tcolorbox}
+    \end{center}
+    \vspace{2mm}%
+}

@@ -1,0 +1,903 @@
+%----------------------------------------------------------------------------------------
+% VMfunPuzzles.sty — Puzzle & Brain Teaser environments for Grade 6
+%
+%   puzzlePageTitle      Purple banner with puzzle-piece icons
+%   puzzleGoals          Teal skills box — what math skills puzzles exercise
+%   puzzleBox            Main generic puzzle container
+%   mysteryNumberBox     "Who Am I?" mystery number with clue cards
+%   oddOneOutBox         "Which Doesn't Belong?" classification puzzle
+%   targetNumberBox      "Make This Number!" bullseye-themed puzzle
+%   scrambleBox          Equation scramble with shuffled tiles
+%   brainTeaserBox       Brain teaser with lightbulb icon
+%   logicPuzzleBox       Logic deduction puzzle with gear icon
+%   mathGameBox          Dice/card game instructions
+%   \numberPyramid       TikZ pyramid where each cell = sum of two below
+%   \magicGrid           TikZ magic square grid with target sum
+%   \puzzleCircles       Numbers in circles (for odd-one-out)
+%   \numberCross         Cross-shaped number puzzle
+%   \targetRing          TikZ bullseye target visual
+%   \puzzleHint          Inline hint with magnifying glass
+%   \puzzleDifficulty    1–3 star difficulty badge
+%   \puzzleComplete      End-of-section celebration banner
+%----------------------------------------------------------------------------------------
+\ProvidesPackage{VMfunPuzzles}[2026/03/02 Grade 6 - Puzzle & Brain Teaser Environments]
+
+%----------------------------------------------------------------------------------------
+% PUZZLE-SPECIFIC COLORS
+%----------------------------------------------------------------------------------------
+\definecolor{puzzlePurple}{HTML}{7B1FA2}        % Deeper purple for puzzle headers
+\definecolor{puzzlePurpleLight}{HTML}{EDE7F6}   % Soft lavender backgrounds
+\definecolor{puzzleTeal}{HTML}{00897B}          % Teal for goals and brain teasers
+\definecolor{puzzleTealLight}{HTML}{E0F2F1}     % Light teal backgrounds
+\definecolor{puzzleGold}{HTML}{FFB300}          % Gold for scramble/target accents
+\definecolor{puzzleMagenta}{HTML}{C2185B}       % Magenta for mystery number
+\definecolor{puzzleMagentaLight}{HTML}{FCE4EC}  % Light pink for mystery backgrounds
+
+%----------------------------------------------------------------------------------------
+% PUZZLE ICON COMMANDS
+%----------------------------------------------------------------------------------------
+
+%% Puzzle piece icon (primary icon for this book type)
+\newcommand{\iconPuzzle}[1][0.6cm]{%
+    \funIcon{puzzle-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{puzzlePurple}{\large\faPuzzlePiece}}%
+    }{#1}%
+}
+
+%% Magnifying glass for hints / mystery
+\newcommand{\iconMystery}[1][0.6cm]{%
+    \funIcon{mystery-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{puzzleMagenta}{\large\faSearch}}%
+    }{#1}%
+}
+
+%% Dice icon for games
+\newcommand{\iconDice}[1][0.6cm]{%
+    \funIcon{dice-icon.pdf}{%
+        \raisebox{-0.1em}{\textcolor{funGreen}{\large\faDice}}%
+    }{#1}%
+}
+
+%========================================================================================
+% 1. PUZZLE PAGE TITLE BANNER
+%    Purple banner with puzzle piece icons — analogous to \topicTitle.
+%    Usage: \puzzlePageTitle{Place Value Puzzles}
+%========================================================================================
+\newcommand{\puzzlePageTitle}[1]{%
+    \begin{center}
+    \begin{tcolorbox}[
+        enhanced,
+        colback=puzzlePurpleLight,
+        colframe=puzzlePurple,
+        boxrule=2pt,
+        arc=12pt,
+        outer arc=12pt,
+        top=5mm,
+        bottom=5mm,
+        left=8mm,
+        right=8mm,
+        width=\linewidth,
+        halign=center,
+        before upper={\hyphenpenalty=10000\exhyphenpenalty=10000},
+        fontupper=\Huge\bfseries\sffamily\color{puzzlePurple},
+        overlay={
+            % Subtle puzzle piece watermarks
+            \node[opacity=0.08] at ([xshift=12mm, yshift=-2mm]frame.north west)
+                {\textcolor{puzzlePurple}{\fontsize{20}{22}\selectfont\faPuzzlePiece}};
+            \node[opacity=0.08] at ([xshift=-12mm, yshift=-2mm]frame.north east)
+                {\textcolor{puzzlePurple}{\fontsize{20}{22}\selectfont\faPuzzlePiece}};
+        },
+    ]
+        \raisebox{-0.1em}{\color{puzzlePurple}\faPuzzlePiece}\hspace{4mm}%
+        \thesection\enspace#1%
+        \hspace{4mm}\raisebox{-0.1em}{\color{puzzlePurple}\faPuzzlePiece}%
+    \end{tcolorbox}
+    \end{center}
+    \vspace{2mm}
+}
+
+%========================================================================================
+% 2. PUZZLE GOALS
+%    Teal skills box — lists what math skills the puzzles exercise.
+%    Usage: \begin{puzzleGoals} \begin{itemize} ... \end{itemize} \end{puzzleGoals}
+%========================================================================================
+\newtcolorbox{puzzleGoals}{
+    enhanced,
+    colback=puzzleTealLight,
+    colframe=puzzleTeal,
+    colbacktitle=puzzleTeal,
+    coltitle=white,
+    fonttitle=\large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{white}\faBullseye}~~Skills You'll Practice},
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=4mm,
+    bottom=4mm,
+    left=5mm,
+    right=5mm,
+    toptitle=3mm,
+    bottomtitle=3mm,
+    before skip=6pt,
+    after skip=8pt,
+    leftrule=5pt,
+    left=7mm,
+}
+
+%========================================================================================
+% 3. PUZZLE BOX (main generic puzzle container)
+%    Purple frame with puzzle piece icon. Versatile container for any puzzle.
+%    Usage: \begin{puzzleBox}{Number Pyramid} ... \end{puzzleBox}
+%    Optional color: \begin{puzzleBox}[funTeal]{...} ... \end{puzzleBox}
+%========================================================================================
+\newtcolorbox{puzzleBox}[2][puzzlePurple]{
+    enhanced,
+    colback=white,
+    colframe=#1,
+    colbacktitle=#1,
+    coltitle=white,
+    fonttitle=\Large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{puzzleGold}\faPuzzlePiece}~~#2},
+    halign title=center,
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=4mm,
+    bottomtitle=4mm,
+    before skip=10pt,
+    after skip=8pt,
+    breakable,
+    overlay={
+        \node[opacity=0.04] at ([xshift=-10mm, yshift=10mm]frame.south east)
+            {\textcolor{#1}{\fontsize{36}{38}\selectfont\faPuzzlePiece}};
+    },
+}
+
+%========================================================================================
+% 4. MYSTERY NUMBER BOX
+%    "Who Am I?" style puzzle with clue cards and magnifying glass icon.
+%    Pink/magenta theme.
+%    Usage: \begin{mysteryNumberBox} ... \end{mysteryNumberBox}
+%    Optional title: \begin{mysteryNumberBox}{Guess My Number!} ... \end{mysteryNumberBox}
+%========================================================================================
+\newtcolorbox{mysteryNumberBox}[1][Mystery Number!]{
+    enhanced,
+    colback=puzzleMagentaLight,
+    colframe=puzzleMagenta,
+    colbacktitle=puzzleMagenta,
+    coltitle=white,
+    fonttitle=\Large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{white}\faSearch}~~#1~~\raisebox{-0.1em}{\color{white}\faQuestion}},
+    halign title=center,
+    arc=10pt,
+    outer arc=10pt,
+    boxrule=2pt,
+    top=5mm,
+    bottom=5mm,
+    left=6mm,
+    right=6mm,
+    toptitle=4mm,
+    bottomtitle=4mm,
+    before skip=10pt,
+    after skip=8pt,
+    breakable,
+    borderline={3pt}{-2pt}{puzzleMagenta!10},
+    overlay={
+        \node[opacity=0.06] at ([xshift=10mm, yshift=-8mm]frame.north west)
+            {\textcolor{puzzleMagenta}{\fontsize{28}{30}\selectfont\faSearch}};
+    },
+}
+
+%% Clue item for mystery number puzzles
+%% Usage: \mysteryClue{I am greater than 50.}
+\newcounter{mysteryClueNum}
+\newcommand{\mysteryClue}[1]{%
+    \stepcounter{mysteryClueNum}%
+    \par\vspace{2mm}\noindent
+    \tikz[baseline=-0.3ex]{\node[circle, fill=puzzleMagenta, text=white, inner sep=2pt,
+          font=\small\bfseries\sffamily, minimum size=0.55cm]{\themysteryClueNum};}%
+    \hspace{3mm}{\sffamily #1}%
+    \par\vspace{2mm}%
+}
+
+%% Reset clue counter (use at start of each mystery number puzzle)
+\newcommand{\resetClues}{\setcounter{mysteryClueNum}{0}}
+
+%========================================================================================
+% 5. ODD ONE OUT BOX
+%    "Which Doesn't Belong?" puzzle. Orange theme with eye icon.
+%    Usage: \begin{oddOneOutBox} ... \end{oddOneOutBox}
+%    Optional title: \begin{oddOneOutBox}{Spot the Outsider!} ... \end{oddOneOutBox}
+%========================================================================================
+\newtcolorbox{oddOneOutBox}[1][Which Doesn't Belong?]{
+    enhanced,
+    colback=funOrangeLight,
+    colframe=funOrange,
+    colbacktitle=funOrange,
+    coltitle=white,
+    fonttitle=\Large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{white}\faEye}~~#1},
+    halign title=center,
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=4mm,
+    bottomtitle=4mm,
+    before skip=10pt,
+    after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 6. TARGET NUMBER BOX
+%    "Make This Number!" puzzle. Red/orange bullseye theme.
+%    Usage: \begin{targetNumberBox}{Make 100!} ... \end{targetNumberBox}
+%    Optional color: \begin{targetNumberBox}[funRed]{...} ... \end{targetNumberBox}
+%========================================================================================
+\newtcolorbox{targetNumberBox}[2][funRed]{
+    enhanced,
+    colback=funRedLight,
+    colframe=#1,
+    colbacktitle=#1,
+    coltitle=white,
+    fonttitle=\Large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{white}\faBullseye}~~#2},
+    halign title=center,
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=2pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=4mm,
+    bottomtitle=4mm,
+    before skip=10pt,
+    after skip=8pt,
+    breakable,
+    overlay={
+        \node[opacity=0.06] at ([xshift=-8mm, yshift=8mm]frame.south east)
+            {\textcolor{#1}{\fontsize{30}{32}\selectfont\faBullseye}};
+    },
+}
+
+%========================================================================================
+% 7. SCRAMBLE BOX
+%    Equation scramble / unscramble puzzle. Yellow/gold theme with shuffle icon.
+%    Usage: \begin{scrambleBox} ... \end{scrambleBox}
+%    Optional title: \begin{scrambleBox}{Number Jumble!} ... \end{scrambleBox}
+%========================================================================================
+\newtcolorbox{scrambleBox}[1][Equation Scramble!]{
+    enhanced,
+    colback=funYellowLight,
+    colframe=puzzleGold,
+    colbacktitle=puzzleGold,
+    coltitle=white,
+    fonttitle=\Large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{white}\faRandom}~~#1},
+    halign title=center,
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=4mm,
+    bottomtitle=4mm,
+    before skip=10pt,
+    after skip=8pt,
+    breakable,
+    borderline={2pt}{-1pt}{puzzleGold!15},
+}
+
+%% Scramble tile: a single number/symbol tile
+%% Usage: \scrTile{3} \scrTile{+} \scrTile{7} \scrTile{=} \scrTile{?}
+\newcommand{\scrTile}[1]{%
+    \tikz[baseline=-0.3ex]{%
+        \node[draw=puzzleGold, fill=white, rounded corners=3pt, inner sep=4pt,
+              font=\large\bfseries\sffamily, minimum size=0.8cm, line width=1.2pt]{#1};%
+    }\hspace{1mm}%
+}
+
+%========================================================================================
+% 8. BRAIN TEASER BOX
+%    Teal theme with lightbulb/brain icon for tricky puzzles.
+%    Usage: \begin{brainTeaserBox} ... \end{brainTeaserBox}
+%    Optional title: \begin{brainTeaserBox}{Think Hard!} ... \end{brainTeaserBox}
+%========================================================================================
+\newtcolorbox{brainTeaserBox}[1][Brain Teaser!]{
+    enhanced,
+    colback=puzzleTealLight,
+    colframe=puzzleTeal,
+    colbacktitle=puzzleTeal,
+    coltitle=white,
+    fonttitle=\Large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{puzzleGold}\faLightbulb[regular]}~~#1~~\raisebox{-0.1em}{\color{puzzleGold}\faBrain}},
+    halign title=center,
+    arc=10pt,
+    outer arc=10pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=4mm,
+    bottomtitle=4mm,
+    before skip=10pt,
+    after skip=8pt,
+    breakable,
+    overlay={
+        \node[opacity=0.05] at ([xshift=10mm, yshift=8mm]frame.south west)
+            {\textcolor{puzzleTeal}{\fontsize{30}{32}\selectfont\faBrain}};
+    },
+}
+
+%========================================================================================
+% 9. LOGIC PUZZLE BOX
+%    Blue theme with gear icon for logic deduction puzzles.
+%    Usage: \begin{logicPuzzleBox} ... \end{logicPuzzleBox}
+%    Optional title: \begin{logicPuzzleBox}{Detective Challenge!} ...
+%========================================================================================
+\newtcolorbox{logicPuzzleBox}[1][Logic Puzzle!]{
+    enhanced,
+    colback=funBlueLight,
+    colframe=funBlue,
+    colbacktitle=funBlue,
+    coltitle=white,
+    fonttitle=\Large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{white}\faCog}~~#1},
+    halign title=center,
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=4mm,
+    bottomtitle=4mm,
+    before skip=10pt,
+    after skip=8pt,
+    breakable,
+}
+
+%========================================================================================
+% 10. MATH GAME BOX
+%    Green theme with dice icon for game instructions.
+%    Usage: \begin{mathGameBox}{Roll & Add!} ... \end{mathGameBox}
+%========================================================================================
+\newtcolorbox{mathGameBox}[1][Math Game!]{
+    enhanced,
+    colback=funGreenLight,
+    colframe=funGreen,
+    colbacktitle=funGreen,
+    coltitle=white,
+    fonttitle=\Large\bfseries\sffamily,
+    title={\raisebox{-0.1em}{\color{white}\faDice}~~#1},
+    halign title=center,
+    arc=8pt,
+    outer arc=8pt,
+    boxrule=1.5pt,
+    top=5mm,
+    bottom=5mm,
+    left=5mm,
+    right=5mm,
+    toptitle=4mm,
+    bottomtitle=4mm,
+    before skip=10pt,
+    after skip=8pt,
+    breakable,
+    borderline south={2pt}{0pt}{funGreen!40, dashed},
+}
+
+%% Game supply list item
+%% Usage: \gameSupply{2 dice} \gameSupply{Paper and pencil}
+\newcommand{\gameSupply}[1]{%
+    \par\noindent\hspace{3mm}{\color{funGreen}\faCheck}\hspace{2mm}{\sffamily #1}%
+}
+
+%========================================================================================
+% 11. NUMBER PYRAMID (TikZ)
+%    Draws a pyramid where each cell = sum of two cells below it.
+%    Cells can be numbers or "?" (blank for student to fill).
+%    Usage: \numberPyramid{8,3,5,2,1,4}  (bottom row first, left to right, row by row up)
+%           For a 4-base pyramid: provide 4+3+2+1 = 10 values
+%           For a 3-base pyramid: provide 3+2+1 = 6 values
+%    Use "?" for blank cells.
+%
+%    Simpler usage: \numberPyramidBase{base values}{filled cells above}
+%    Example: \numberPyramidFromBase{5,3,8,2}  (auto-fills sums, shows ? for missing)
+%========================================================================================
+\newcommand{\numberPyramid}[2][]{%
+    % #1 = optional comma-separated list of values to show (bottom-up, left-right)
+    % #2 = base size (number of cells in bottom row)
+    % We'll draw a generic pyramid grid. Content is provided by the caller using
+    % \pyramidCell commands inside a tikzpicture.
+    % This is the SIMPLE version: just draws the grid.
+    \begin{center}
+    \begin{tikzpicture}[
+        cell/.style={
+            draw=puzzlePurple, line width=1.2pt, rounded corners=3pt,
+            minimum width=2.0cm, minimum height=1.2cm, font=\normalsize\bfseries\sffamily,
+            fill=white,
+        },
+        blankcell/.style={
+            cell, fill=puzzlePurpleLight,
+        },
+    ]
+    \pgfmathtruncatemacro{\baseSize}{#2}
+    \pgfmathtruncatemacro{\totalRows}{\baseSize}
+    \foreach \row in {0,...,\the\numexpr\totalRows-1\relax} {
+        \pgfmathtruncatemacro{\cellsInRow}{\baseSize - \row}
+        \foreach \col in {1,...,\cellsInRow} {
+            \pgfmathsetmacro{\xpos}{(\col - 1) * 2.0 + \row * 1.0}
+            \pgfmathsetmacro{\ypos}{\row * 1.35}
+            \node[cell] at (\xpos, \ypos) {};
+        }
+    }
+    \end{tikzpicture}
+    \end{center}
+}
+
+%% A more practical pyramid: manually place values
+%% Usage inside tikzpicture:
+%%   \pyramidCell{row}{col}{value}  where row 0 = bottom, col starts at 0
+\newcommand{\pyramidCell}[4][puzzlePurple]{% #1=color, #2=row, #3=col, #4=value
+    \pgfmathsetmacro{\xpos}{(#3) * 2.0 + (#2) * 1.0}%
+    \pgfmathsetmacro{\ypos}{(#2) * 1.35}%
+    \node[draw=#1, line width=1.2pt, rounded corners=3pt,
+          minimum width=2.0cm, minimum height=1.2cm, font=\normalsize\bfseries\sffamily,
+          fill=white] at (\xpos, \ypos) {#4};%
+}
+
+%% Blank pyramid cell (for student to fill)
+\newcommand{\pyramidBlank}[3][puzzlePurple]{% #1=color, #2=row, #3=col
+    \pgfmathsetmacro{\xpos}{(#3) * 2.0 + (#2) * 1.0}%
+    \pgfmathsetmacro{\ypos}{(#2) * 1.35}%
+    \node[draw=#1, line width=1.2pt, rounded corners=3pt,
+          minimum width=2.0cm, minimum height=1.2cm, font=\normalsize\bfseries\sffamily,
+          fill=puzzlePurpleLight] at (\xpos, \ypos) {?};%
+}
+
+%========================================================================================
+% 12. MAGIC GRID (TikZ)
+%    Draws an n x n magic square grid with a target sum displayed.
+%    Usage: \magicGrid{3}{15}{values}
+%    Values: comma-separated, row by row, left to right, top to bottom.
+%    Use "?" for blank cells.
+%========================================================================================
+\newcommand{\magicGrid}[3]{% #1=size, #2=target sum, #3=comma-separated values
+    \begin{center}
+    \begin{tikzpicture}[
+        mgcell/.style={
+            draw=puzzlePurple, line width=1.2pt,
+            minimum size=1.1cm, font=\large\bfseries\sffamily,
+            fill=white, anchor=center,
+        },
+        blankmgcell/.style={
+            mgcell, fill=puzzlePurpleLight,
+        },
+    ]
+    % Target sum label
+    \node[fill=puzzleGold, text=white, rounded corners=4pt, inner sep=3pt,
+          font=\small\bfseries\sffamily]
+        at ({(#1-1)*1.2/2}, {#1*1.2 + 0.4}) {Target Sum: #2};
+
+    % Draw cells
+    \pgfmathtruncatemacro{\gridSize}{#1}
+    \pgfmathtruncatemacro{\lastIdx}{\gridSize - 1}
+    \foreach \val [count=\idx from 0] in {#3} {
+        \pgfmathtruncatemacro{\col}{mod(\idx, \gridSize)}
+        \pgfmathtruncatemacro{\row}{\gridSize - 1 - int(\idx / \gridSize)}
+        \pgfmathsetmacro{\xpos}{\col * 1.2}
+        \pgfmathsetmacro{\ypos}{\row * 1.2}
+        \ifnum\pdfstrcmp{\val}{?}=0
+            \node[blankmgcell] at (\xpos, \ypos) {?};
+        \else
+            \node[mgcell] at (\xpos, \ypos) {\val};
+        \fi
+    }
+    % Arrows indicating row/column sums
+    \pgfmathsetmacro{\arrowX}{\gridSize * 1.2 - 0.2}
+    \pgfmathsetmacro{\arrowY}{-0.8}
+    \node[font=\footnotesize\sffamily\color{puzzlePurple}] at (\arrowX + 0.2, {(\gridSize-1)*1.2/2})
+        {\rotatebox{-90}{$\longrightarrow$ each = #2}};
+    \end{tikzpicture}
+    \end{center}
+}
+
+%========================================================================================
+% 13. PUZZLE CIRCLES (TikZ)
+%    Displays numbers inside colored circles in a row.
+%    Perfect for odd-one-out puzzles and classification.
+%    Usage: \puzzleCircles{12,25,38,47,50}
+%    Optional color: \puzzleCircles[funOrange]{...}
+%========================================================================================
+\newcommand{\puzzleCircles}[2][puzzlePurple]{%
+    \begin{center}
+    \begin{tikzpicture}
+    \foreach \val [count=\idx from 0] in {#2} {
+        \pgfmathsetmacro{\xpos}{\idx * 2.0}
+        \node[circle, draw=#1, line width=1.5pt, fill=white,
+              minimum size=1.3cm, font=\large\bfseries\sffamily]
+            at (\xpos, 0) {\val};
+    }
+    \end{tikzpicture}
+    \end{center}
+}
+
+%========================================================================================
+% 14. NUMBER CROSS (TikZ)
+%    Cross-shaped puzzle where center + arms must satisfy a condition.
+%    Usage: \numberCross{center}{top}{right}{bottom}{left}
+%    Use "?" for blank cells.
+%========================================================================================
+\newcommand{\numberCross}[6][puzzlePurple]{% #1=color, #2=center, #3=top, #4=right, #5=bottom, #6=left
+    \begin{center}
+    \begin{tikzpicture}[
+        ncell/.style={
+            draw=#1, line width=1.2pt, rounded corners=2pt,
+            minimum size=1.1cm, font=\large\bfseries\sffamily,
+            fill=white,
+        },
+    ]
+        \node[ncell] (center) at (0,0) {#2};
+        \node[ncell] (top)    at (0,1.3) {#3};
+        \node[ncell] (right)  at (1.3,0) {#4};
+        \node[ncell] (bottom) at (0,-1.3) {#5};
+        \node[ncell] (left)   at (-1.3,0) {#6};
+    \end{tikzpicture}
+    \end{center}
+}
+
+%========================================================================================
+% 15. TARGET RING (TikZ)
+%    Bullseye target visual with a large target number in the center.
+%    Usage: \targetRing{100}
+%    Optional color: \targetRing[funRed]{50}
+%========================================================================================
+\newcommand{\targetRing}[2][funRed]{%
+    \begin{center}
+    \begin{tikzpicture}
+        % Outer ring
+        \fill[#1!20] (0,0) circle (1.6cm);
+        % Middle ring
+        \fill[white] (0,0) circle (1.2cm);
+        % Inner ring
+        \fill[#1!30] (0,0) circle (0.85cm);
+        % Bullseye center
+        \fill[#1] (0,0) circle (0.5cm);
+        % Target number
+        \node[font=\Large\bfseries\sffamily, text=white] at (0,0) {#2};
+        % Ring borders
+        \draw[#1, line width=1pt] (0,0) circle (1.6cm);
+        \draw[#1, line width=0.5pt] (0,0) circle (1.2cm);
+        \draw[#1, line width=0.5pt] (0,0) circle (0.85cm);
+    \end{tikzpicture}
+    \end{center}
+}
+
+%========================================================================================
+% 16. PUZZLE HINT
+%    Small inline hint with magnifying glass icon.
+%    Usage: \puzzleHint{Look at the tens digit!}
+%========================================================================================
+\newcommand{\puzzleHint}[1]{%
+    \par\vspace{2mm}%
+    \noindent
+    \begin{tcolorbox}[
+        enhanced,
+        colback=funYellowLight,
+        colframe=puzzleGold!60,
+        boxrule=0pt,
+        borderline={1.2pt}{0pt}{puzzleGold, dashed},
+        arc=8pt,
+        outer arc=8pt,
+        left=4mm, right=4mm,
+        top=2mm, bottom=2mm,
+        width=0.85\linewidth,
+        before skip=4pt, after skip=4pt,
+    ]
+        {\color{puzzleGold}\faSearch}~~{\small\sffamily\color{funGrayDark}\textbf{Hint:} #1}
+    \end{tcolorbox}
+    \vspace{2mm}%
+}
+
+%========================================================================================
+% 17. PUZZLE DIFFICULTY
+%    1–3 star difficulty badge (inline).
+%    Usage: \puzzleDifficulty{1}  (easy)
+%           \puzzleDifficulty{2}  (medium)
+%           \puzzleDifficulty{3}  (hard)
+%========================================================================================
+\newcommand{\puzzleDifficulty}[1]{%
+    \hfill
+    \tikz[baseline=-0.3ex]{%
+        \node[fill=puzzlePurple!10, rounded corners=4pt, inner sep=3pt,
+              font=\small\sffamily\bfseries\color{puzzlePurple}] {%
+            \ifnum#1=1\relax Level~1\fi
+            \ifnum#1=2\relax Level~2\fi
+            \ifnum#1=3\relax Level~3\fi
+        };%
+    }%
+}
+
+%========================================================================================
+% 18. PUZZLE COMPLETE
+%    End-of-section celebration banner.
+%    Usage: \puzzleComplete
+%========================================================================================
+\newcommand{\puzzleComplete}{%
+    \par\vspace{6mm}%
+    \begin{center}
+    \begin{tcolorbox}[
+        enhanced,
+        colback=puzzlePurple!8,
+        colframe=puzzlePurple,
+        boxrule=2pt,
+        arc=12pt,
+        outer arc=12pt,
+        width=0.7\linewidth,
+        halign=center,
+        top=4mm, bottom=4mm,
+        left=5mm, right=5mm,
+        fontupper=\large\bfseries\sffamily\color{puzzlePurple},
+    ]
+        \faPuzzlePiece~~Puzzles Complete~~\faCheck%
+        \\[2mm]%
+        {\normalsize\normalfont\sffamily\color{puzzlePurple!80} Nice work --- all puzzles finished.}
+    \end{tcolorbox}
+    \end{center}
+    \vspace{4mm}%
+}
+
+%========================================================================================
+% 19. DIGIT CARDS (inline visual for number building)
+%    Draws individual digit cards side by side — great for place value puzzles.
+%    Usage: \digitCard{3} \digitCard{7} \digitCard{5}
+%========================================================================================
+\newcommand{\digitCard}[2][puzzlePurple]{%
+    \tikz[baseline=-0.3ex]{%
+        \node[draw=#1, fill=#1!8, rounded corners=3pt, inner sep=3pt,
+              font=\Large\bfseries\sffamily, minimum size=0.9cm, line width=1.2pt]{#2};%
+    }\hspace{1mm}%
+}
+
+%========================================================================================
+% 20. PUZZLE SEPARATOR (decorative divider between puzzles)
+%    Usage: \puzzleSep
+%========================================================================================
+\newcommand{\puzzleSep}{%
+    \par\vspace{4mm}%
+    \begin{center}
+        {\color{puzzlePurple!30}%
+        \faPuzzlePiece\hspace{4mm}%
+        \rule[0.3ex]{3cm}{0.8pt}\hspace{4mm}%
+        \faPuzzlePiece\hspace{4mm}%
+        \rule[0.3ex]{3cm}{0.8pt}\hspace{4mm}%
+        \faPuzzlePiece}
+    \end{center}
+    \vspace{4mm}%
+}
+
+%========================================================================================
+% 21. PUZZLE ANSWER COLLECTION SYSTEM
+%    Collects puzzle answers during compilation and prints them at the end of the book.
+%    Nothing is displayed inline — answers appear only in the Puzzle Solutions chapter.
+%
+%    Usage in topic files:   \puzzleAnswer{The number is $463$ because ...}
+%    Usage in main .tex:     \printPuzzleAnswers   (at the very end, before \end{document})
+%========================================================================================
+
+% --- Answer file handle ---
+\newwrite\pzans@file
+\immediate\openout\pzans@file=\jobname.pzans
+\newif\ifpzans@collecting
+\pzans@collectingtrue
+
+% --- Puzzle counter (resets per section) ---
+\newcounter{pzAnsNum}
+\setcounter{pzAnsNum}{0}
+
+% --- Track chapter / section changes ---
+\def\pzans@lastch{}
+\def\pzans@lastsec{}
+
+% --- \puzzleAnswer{text}  — collects silently, displays nothing inline ---
+\newcommand{\puzzleAnswer}[1]{%
+    \ifpzans@collecting
+        % Detect chapter change
+        \edef\pzans@currch{\thechapter}%
+        \ifx\pzans@currch\pzans@lastch\else
+            \immediate\write\pzans@file{\string\pzAnsChap{\thechapter}}%
+            \global\let\pzans@lastch\pzans@currch
+        \fi
+        % Detect section change (resets puzzle counter)
+        \edef\pzans@currsec{\thesection}%
+        \ifx\pzans@currsec\pzans@lastsec\else
+            \immediate\write\pzans@file{\string\pzAnsSec{\thesection}}%
+            \global\let\pzans@lastsec\pzans@currsec
+            \setcounter{pzAnsNum}{0}%
+        \fi
+        % Increment puzzle number and write entry
+        \stepcounter{pzAnsNum}%
+        \immediate\write\pzans@file{%
+            \string\pzAnsItem{\thepzAnsNum}{\unexpanded{#1}}%
+        }%
+    \fi
+}
+
+% --- Color cycling for section accents ---
+\newcounter{pzans@seccolor}
+\setcounter{pzans@seccolor}{0}
+\newcommand{\pzans@secaccent}{%
+    \ifcase\value{pzans@seccolor}%
+        puzzlePurple%   0
+    \or puzzleTeal%     1
+    \or funBlue%        2
+    \or funOrange%      3
+    \or funPink%        4
+    \or funGreen%       5
+    \fi
+}
+\newcommand{\pzans@nextsec}{%
+    \stepcounter{pzans@seccolor}%
+    \ifnum\value{pzans@seccolor}>5 \setcounter{pzans@seccolor}{0}\fi
+}
+
+% --- Color cycling for answer number badges ---
+\newcounter{pzans@numcolor}
+\setcounter{pzans@numcolor}{0}
+\newcommand{\pzans@badgecolor}{%
+    \ifcase\value{pzans@numcolor}%
+        puzzlePurple%   0
+    \or puzzleTeal%     1
+    \or funBlue%        2
+    \or funOrange%      3
+    \or funPink%        4
+    \or funGreen%       5
+    \fi
+}
+\newcommand{\pzans@nextbadge}{%
+    \stepcounter{pzans@numcolor}%
+    \ifnum\value{pzans@numcolor}>5 \setcounter{pzans@numcolor}{0}\fi
+}
+
+%========================================================================================
+% 22. PRINT PUZZLE ANSWERS — Call once at the end of the book
+%    Reads the .pzans file and renders all collected answers grouped by chapter/section.
+%
+%    Usage:  \printPuzzleAnswers
+%========================================================================================
+\newcommand{\printPuzzleAnswers}{%
+    % Close the file so it can be read back
+    \immediate\closeout\pzans@file
+    \global\pzans@collectingfalse
+    %
+    % ===== Title =====
+    \chapter*{Puzzle Solutions}
+    \addcontentsline{toc}{chapter}{Puzzle Solutions}
+    \markboth{Puzzle Solutions}{Puzzle Solutions}
+    %
+    % ===== Header banner =====
+    \begin{center}
+    \begin{tcolorbox}[
+        enhanced,
+        colback=puzzlePurpleLight,
+        colframe=puzzlePurple!60,
+        boxrule=2pt,
+        arc=14pt,
+        outer arc=14pt,
+        width=0.92\linewidth,
+        halign=center,
+        top=6mm, bottom=6mm,
+        shadow={2pt}{-2pt}{0pt}{funGray!40},
+    ]
+        {\fontsize{22}{26}\selectfont\bfseries\sffamily\color{puzzlePurple}%
+            \faPuzzlePiece\hspace{4mm}Puzzle Solutions\hspace{4mm}\faPuzzlePiece%
+        }\\[4mm]
+        {\large\sffamily\color{funGrayDark}%
+        Try each puzzle on your own first!\\[1mm]
+        Then check here to see if you cracked it \faStar%
+        }
+    \end{tcolorbox}
+    \end{center}
+    \vspace{6mm}
+    %
+    % ===== Define rendering commands for .pzans entries =====
+    %
+    % --- CHAPTER HEADER ---
+    \def\pzAnsChap##1{%
+        \par\vspace{8mm}%
+        \setcounter{pzans@seccolor}{0}%
+        \noindent
+        \begin{tcolorbox}[
+            enhanced,
+            colback=puzzlePurpleLight,
+            colframe=puzzlePurple,
+            boxrule=2pt,
+            arc=8pt,
+            outer arc=8pt,
+            left=6mm, right=6mm,
+            top=3.5mm, bottom=3.5mm,
+        ]
+            {\Large\bfseries\sffamily\color{puzzlePurple}%
+                \faPuzzlePiece\hspace{4mm}Chapter~##1%
+            }%
+        \end{tcolorbox}%
+        \vspace{1mm}%
+    }%
+    %
+    % --- SECTION HEADER ---
+    \def\pzAnsSec##1{%
+        \par\vspace{5mm}%
+        \setcounter{pzans@numcolor}{0}%
+        \noindent
+        \begin{tcolorbox}[
+            enhanced,
+            colback=\pzans@secaccent!10,
+            colframe=\pzans@secaccent!50,
+            boxrule=1pt,
+            arc=6pt,
+            outer arc=6pt,
+            left=5mm, right=5mm,
+            top=2.5mm, bottom=2.5mm,
+        ]
+            {\bfseries\sffamily\color{\pzans@secaccent!85!black}%
+                \faKey\hspace{2mm}Section~##1%
+            }%
+        \end{tcolorbox}%
+        \vspace{3mm}\noindent
+        \pzans@nextsec
+    }%
+    %
+    % --- ANSWER ITEM: puzzle number badge + solution text ---
+    \def\pzAnsItem##1##2{%
+        \par\noindent
+        \begin{tcolorbox}[
+            enhanced,
+            colback=\pzans@badgecolor!4,
+            colframe=\pzans@badgecolor!25,
+            boxrule=0.6pt,
+            arc=5pt,
+            outer arc=5pt,
+            left=4mm, right=4mm,
+            top=2.5mm, bottom=2.5mm,
+            before skip=2.5mm,
+            after skip=2.5mm,
+            breakable,
+        ]
+            \sffamily\small
+            \tikz[baseline=-0.3ex]{%
+                \node[circle, fill=\pzans@badgecolor!70, text=white,
+                      inner sep=0pt, minimum size=7mm,
+                      font=\small\bfseries\sffamily]{##1};%
+            }\hspace{2.5mm}%
+            {\color{funGrayDark}##2}%
+        \end{tcolorbox}%
+        \pzans@nextbadge
+    }%
+    %
+    % ===== Read and render the collected answers =====
+    \setlength{\parindent}{0pt}%
+    \InputIfFileExists{\jobname.pzans}{}{%
+        \textit{No puzzle answers found. Compile again to generate solutions.}%
+    }%
+    %
+    % ===== Footer =====
+    \par\vspace{8mm}%
+    \begin{center}
+        {\Large\color{puzzlePurple}\faPuzzlePiece}\\[2mm]
+        {\large\sffamily\color{funGrayDark}\bfseries Puzzle solutions complete.}\\[1mm]
+        {\sffamily\color{funGray} Review any puzzles you found challenging and try them again.}
+    \end{center}
+}

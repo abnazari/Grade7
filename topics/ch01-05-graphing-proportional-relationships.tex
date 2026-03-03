@@ -1,0 +1,66 @@
+% CCSS 7.RP.A.2.D — Graphing Proportional Relationships
+\section{Graphing Proportional Relationships}
+
+\begin{learningGoals}
+\begin{itemize}
+    \item Explain what $(0, 0)$ and $(1, r)$ mean on a proportional graph
+    \item Connect the steepness of a line to the unit rate
+\end{itemize}
+\end{learningGoals}
+
+\begin{conceptBox}{Graphing $y = kx$}
+A proportional relationship graphs as a \textbf{straight line through} $(0, 0)$.
+Two special points:
+\begin{itemize}[leftmargin=*]
+    \item $(0, 0)$: zero of one gives zero of the other.
+    \item $(1, r)$: the $y$-value at $x = 1$ IS the unit rate.
+\end{itemize}
+\textbf{Steeper line = greater unit rate.} This steepness is called the \textbf{slope}, and slope $= k$.
+\end{conceptBox}
+
+\begin{workedExample}{Graphing from a Table}
+A car uses gas at a constant rate.
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline \textbf{Gallons} ($x$) & \textbf{Miles} ($y$) \\ \hline
+$0$ & $0$ \\ $1$ & $30$ \\ $2$ & $60$ \\ $4$ & $120$ \\ \hline
+\end{tabular}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+    \draw[step=1,gray!20,thin] (0,0) grid (5,5);
+    \draw[thick,->] (0,0) -- (5.3,0) node[right] {\small Gal};
+    \draw[thick,->] (0,0) -- (0,5.3) node[above] {\small Mi};
+    \foreach \x in {1,...,5} \draw (\x,0.07) -- (\x,-0.07) node[below]{\tiny \x};
+    \foreach \y/\lab in {1/30,2/60,3/90,4/120} \draw (0.07,\y) -- (-0.07,\y) node[left]{\tiny \lab};
+    \draw[thick,funBlue] (0,0) -- (4.5,4.5);
+    \fill[funBlue] (0,0) circle (2.5pt);
+    \fill[funBlue] (1,1) circle (2.5pt) node[above left]{\tiny $(1,30)$};
+    \fill[funBlue] (2,2) circle (2.5pt);
+    \fill[funBlue] (4,4) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+$(1, 30)$ → unit rate is $30$ miles per gallon.
+\end{workedExample}
+
+\mascotSays{To compare rates, graph both on the same axes. The steeper line wins!}
+
+\begin{practiceBox}{Graphing Proportional Relationships}
+\resetProblems
+
+\prob The equation $y = 5x$ gives the cost of movie tickets. What does $(1, 5)$ mean?
+\answerExplain{One ticket costs $\$5$}{The point $(1, r)$ on a proportional graph gives the unit rate. Here $x = 1$ ticket and $y = 5$ dollars, so one ticket costs $\$5$.}
+
+\prob A proportional graph passes through $(3, 18)$. Find the unit rate and $y$ when $x = 7$.
+\answerExplain{Unit rate $= 6$; $y = 42$}{Find the unit rate: $k = 18 \div 3 = 6$. This means $y$ increases by $6$ for every $1$ unit of $x$. Now plug in $x = 7$: $y = 6 \times 7 = 42$.}
+
+\prob Runner A: $(2, 10)$. Runner B: $(2, 8)$. Both start at $(0, 0)$. Who is faster?
+\answerExplain{Runner A}{Find each unit rate. Runner A: $k = 10 \div 2 = 5$ units per time. Runner B: $k = 8 \div 2 = 4$. A higher $k$ means a steeper line and a faster speed, so Runner A is faster.}
+
+\trueOrFalse{A steeper line on a proportional graph means a smaller unit rate.}
+\answerTF{False}
+
+\prob A graph passes through $(5, 12.5)$. Write the equation and find $x$ when $y = 40$.
+\answerExplain{$y = 2.5x$; $x = 16$}{Find $k$: $12.5 \div 5 = 2.5$, so the equation is $y = 2.5x$. To find $x$ when $y = 40$: $40 = 2.5x$, divide both sides by $2.5$: $x = 40 \div 2.5 = 16$.}
+
+\end{practiceBox}
