@@ -1,0 +1,176 @@
+% ============================================================================
+% What You'll Need — Practice Tests Edition
+% Supplies and materials allowed during tests
+% ============================================================================
+
+\thispagestyle{empty}
+
+{
+\sffamily
+
+% --- Title ---
+\begin{center}
+    \textcolor{funBlueDark}{\fontsize{24}{28}\selectfont\bfseries
+    \faToolbox~What You'll Need~\faToolbox}
+
+    \medskip
+    \textcolor{funGray}{\normalsize Gather these supplies before you start each test!}
+\end{center}
+
+\vspace{6mm}
+
+\begin{center}
+\begin{tikzpicture}
+
+    % --- Grid of supply items ---
+    % Row 1
+    % Pencil
+    \node[
+        draw=funBlue!40, fill=funBlueLight, rounded corners=10pt,
+        minimum width=4.8cm, minimum height=3.2cm, inner sep=4mm,
+        align=center, font=\sffamily,
+    ] (pencil) at (0, 0) {%
+        \textcolor{funBlue}{\fontsize{28}{30}\selectfont\faPen}\\[3mm]
+        \textbf{Pencils}\\[1mm]
+        {\small\color{funGrayDark} \#2 pencils work best!}
+    };
+
+    % Eraser
+    \node[
+        draw=funPink!40, fill=funPinkLight, rounded corners=10pt,
+        minimum width=4.8cm, minimum height=3.2cm, inner sep=4mm,
+        align=center, font=\sffamily,
+    ] (eraser) at (5.5, 0) {%
+        \textcolor{funPink}{\fontsize{28}{30}\selectfont\faEraser}\\[3mm]
+        \textbf{Eraser}\\[1mm]
+        {\small\color{funGrayDark} Erase cleanly!}
+    };
+
+    % Scratch Paper
+    \node[
+        draw=funTeal!40, fill=funTealLight, rounded corners=10pt,
+        minimum width=4.8cm, minimum height=3.2cm, inner sep=4mm,
+        align=center, font=\sffamily,
+    ] (paper) at (11, 0) {%
+        \textcolor{funTeal}{\fontsize{28}{30}\selectfont\faStickyNote}\\[3mm]
+        \textbf{Scratch Paper}\\[1mm]
+        {\small\color{funGrayDark} For working out problems}
+    };
+
+    % Row 2
+    % Quiet Space
+    \node[
+        draw=funGreen!40, fill=funGreenLight, rounded corners=10pt,
+        minimum width=4.8cm, minimum height=3.2cm, inner sep=4mm,
+        align=center, font=\sffamily,
+    ] (quiet) at (0, -4.2) {%
+        \textcolor{funGreen}{\fontsize{28}{30}\selectfont\faVolumeOff}\\[3mm]
+        \textbf{A Quiet Space}\\[1mm]
+        {\small\color{funGrayDark} No distractions!}
+    };
+
+    % Timer (optional)
+    \node[
+        draw=funOrange!40, fill=funOrangeLight, rounded corners=10pt,
+        minimum width=4.8cm, minimum height=3.2cm, inner sep=4mm,
+        align=center, font=\sffamily,
+    ] (timer) at (5.5, -4.2) {%
+        \textcolor{funOrange}{\fontsize{28}{30}\selectfont\faClock}\\[3mm]
+        \textbf{Timer (Optional)}\\[1mm]
+        {\small\color{funGrayDark} Ask a grown-up to set one}
+    };
+
+    % Positive attitude!
+    \node[
+        draw=funPurple!40, fill=funPurpleLight, rounded corners=10pt,
+        minimum width=4.8cm, minimum height=3.2cm, inner sep=4mm,
+        align=center, font=\sffamily,
+    ] (attitude) at (11, -4.2) {%
+        \textcolor{funPurple}{\fontsize{28}{30}\selectfont\faSmile}\\[3mm]
+        \textbf{Confidence!}\\[1mm]
+        {\small\color{funGrayDark} You've got this!}
+    };
+
+\end{tikzpicture}
+\end{center}
+
+\vspace{5mm}
+
+% --- What you CAN and CANNOT use ---
+\begin{minipage}[t]{0.48\textwidth}
+\begin{tcolorbox}[
+    enhanced,
+    colback=funGreenLight,
+    colframe=funGreen!50,
+    arc=8pt, boxrule=1pt,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    title={\textcolor{white}{\faCheckCircle~You CAN Use}},
+    colbacktitle=funGreen!70,
+    fonttitle=\bfseries\sffamily,
+    height=4.8cm,
+    valign=center,
+]
+    \small
+    \begin{itemize}[leftmargin=*, itemsep=3pt]
+        \item Pencils and erasers
+        \item Scratch paper
+        \item The \textbf{reference pages} in this book (math symbols, multiplication table)
+        \item A ruler (for measurement questions)
+    \end{itemize}
+\end{tcolorbox}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\begin{tcolorbox}[
+    enhanced,
+    colback=funRedLight,
+    colframe=funRed!50,
+    arc=8pt, boxrule=1pt,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    title={\textcolor{white}{\faTimesCircle~You CANNOT Use}},
+    colbacktitle=funRed!70,
+    fonttitle=\bfseries\sffamily,
+    height=4.8cm,
+    valign=center,
+]
+    \small
+    \begin{itemize}[leftmargin=*, itemsep=3pt]
+        \item Calculators
+        \item Cell phones or tablets
+        \item Help from others during the test
+        \item Your study guide (save it for after!)
+    \end{itemize}
+\end{tcolorbox}
+\end{minipage}
+
+\vspace{4mm}
+
+% --- Tips for parents/teachers ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funCream,
+    colframe=funYellow!60,
+    arc=10pt,
+    outer arc=10pt,
+    boxrule=1.5pt,
+    left=6mm, right=6mm, top=4mm, bottom=4mm,
+    title={\textcolor{funYellowDark}{\faUsers}~\textbf{A Note for Parents \& Teachers}},
+    colbacktitle=funYellow!30,
+    coltitle=funYellowDark,
+    fonttitle=\sffamily\bfseries,
+]
+    \sffamily\small
+    \begin{itemize}[leftmargin=*, itemsep=3pt]
+        \item Simulate real test conditions: quiet room, timed sessions, no help.
+        \item \textbf{Don't do all tests at once.} Space them out over several weeks.
+        \item After each test, review the Answer Key and explanations together.
+        \item Focus on \textbf{understanding}, not just scores.
+        \item If your child struggles with a topic, use our \textbf{Grade 5 Math Study Guide}
+            to review that concept before the next practice test.
+        \item Celebrate effort and improvement, not just perfect scores!
+    \end{itemize}
+\end{tcolorbox}
+
+}
+
+\newpage

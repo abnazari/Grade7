@@ -1,0 +1,183 @@
+% ============================================================================
+% Mission Log (Test Tracker) — 3 Practice Tests: The Launchpad
+% Radar-scope styled tracker with orbit-based progress visualization
+% Grade 7
+% ============================================================================
+
+\thispagestyle{empty}
+
+{
+\sffamily
+
+% --- Title ---
+\begin{center}
+    \textcolor{funBlueDark}{\fontsize{26}{30}\selectfont\bfseries
+    \faSatellite~Mission Log~\faSatellite}
+
+    \smallskip
+    \textcolor{funGray}{\normalsize Record each mission's data and track your trajectory}
+\end{center}
+
+\vspace{4mm}
+
+% --- Pilot info ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funBlueDark!6,
+    colframe=funBlueDark!40,
+    arc=8pt, boxrule=1.2pt,
+    left=5mm, right=5mm, top=3mm, bottom=3mm,
+]
+    \centering\normalsize
+    \textbf{Pilot Name:} \rule{7cm}{0.4pt}
+    \hfill
+    \textbf{Launch Date:} \rule{3.5cm}{0.4pt}
+\end{tcolorbox}
+
+\vspace{4mm}
+
+% --- Mission 1 ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funOrange!6,
+    colframe=funOrange!40,
+    arc=10pt, boxrule=1.2pt,
+    left=5mm, right=5mm, top=3mm, bottom=3mm,
+    title={\textcolor{white}{\faRocket~Mission 1 --- Survey Orbit (Untimed)}},
+    colbacktitle=funOrange!75,
+    fonttitle=\bfseries\sffamily,
+]
+    \small
+    \noindent
+    Date: \rule{3cm}{0.3pt}\hfill
+    Score: \rule{1.5cm}{0.3pt}\,/\,\rule{1.5cm}{0.3pt}\hfill
+    Percent: \rule{2cm}{0.3pt}
+
+    \vspace{3mm}
+    Topics I need to study more: \rule{8.5cm}{0.3pt}
+
+    \vspace{2mm}
+    \rule{\linewidth}{0.3pt}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% --- Mission 2 ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funBlueDark!5,
+    colframe=funBlueDark!40,
+    arc=10pt, boxrule=1.2pt,
+    left=5mm, right=5mm, top=3mm, bottom=3mm,
+    title={\textcolor{white}{\faRocket~Mission 2 --- Guided Re-entry (Soft Timer)}},
+    colbacktitle=funBlueDark!70,
+    fonttitle=\bfseries\sffamily,
+]
+    \small
+    \noindent
+    Date: \rule{3cm}{0.3pt}\hfill
+    Score: \rule{1.5cm}{0.3pt}\,/\,\rule{1.5cm}{0.3pt}\hfill
+    Percent: \rule{2cm}{0.3pt}
+
+    \vspace{3mm}
+    Topics I improved on: \rule{9.2cm}{0.3pt}
+
+    \vspace{2mm}
+    Topics still challenging: \rule{8.8cm}{0.3pt}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% --- Mission 3 ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funGreen!6,
+    colframe=funGreen!45,
+    arc=10pt, boxrule=1.2pt,
+    left=5mm, right=5mm, top=3mm, bottom=3mm,
+    title={\textcolor{white}{\faRocket~Mission 3 --- Full Launch (Timed)}},
+    colbacktitle=funGreen!65,
+    fonttitle=\bfseries\sffamily,
+]
+    \small
+    \noindent
+    Date: \rule{3cm}{0.3pt}\hfill
+    Score: \rule{1.5cm}{0.3pt}\,/\,\rule{1.5cm}{0.3pt}\hfill
+    Percent: \rule{2cm}{0.3pt}
+
+    \vspace{3mm}
+    How I improved from Mission 1: \rule{8cm}{0.3pt}
+
+    \vspace{2mm}
+    \rule{\linewidth}{0.3pt}
+\end{tcolorbox}
+
+\vspace{4mm}
+
+% --- Score trajectory chart ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funBlueDark!4,
+    colframe=funBlueDark!30,
+    arc=10pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    title={\textcolor{white}{\faChartLine~Flight Trajectory}},
+    colbacktitle=funBlueDark!55,
+    fonttitle=\bfseries\sffamily,
+]
+\centering
+\begin{tikzpicture}[scale=0.85]
+    % Y-axis
+    \draw[funGray, thick, ->] (0,0) -- (0,5.5)
+        node[above, font=\small\sffamily] {Score (\%)};
+    \foreach \y in {0,1,...,5} {
+        \draw[funGray!25] (0,\y) -- (10,\y);
+        \node[left, font=\tiny\sffamily, funGray] at (0,\y)
+            {\pgfmathparse{int(\y*20)}\pgfmathresult};
+    }
+    % X-axis
+    \draw[funGray, thick, ->] (0,0) -- (10.5,0)
+        node[right, font=\small\sffamily] {};
+    % Mission markers
+    \foreach \x/\label/\col in {2/Mission 1/funOrange, 5/Mission 2/funBlueDark, 8/Mission 3/funGreen} {
+        \draw[\col, thick, dashed] (\x-0.6,0) rectangle (\x+0.6,4.8);
+        \node[below, font=\scriptsize\sffamily, funGrayDark] at (\x,-0.3) {\label};
+    }
+    % Trajectory arrow hint
+    \draw[funOrange!40, thick, dashed, ->] (2,1.5) .. controls (5,3) .. (8,4.2);
+    \node[font=\tiny\sffamily\itshape, funGray] at (5,4.5) {Your trajectory!};
+\end{tikzpicture}
+
+\smallskip
+\textcolor{funGray}{\small\itshape Mark your score on each bar after every mission.}
+\end{tcolorbox}
+
+\vspace{3mm}
+
+% --- Debrief ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funOrange!5,
+    colframe=funOrange!25,
+    arc=10pt, boxrule=0.8pt,
+    left=5mm, right=5mm, top=3mm, bottom=3mm,
+    title={\textcolor{white}{\faClipboardCheck~Final Debrief}},
+    colbacktitle=funOrange!55,
+    fonttitle=\bfseries\sffamily,
+]
+    \small
+    The most important thing I learned: \rule{8cm}{0.3pt}
+
+    \vspace{2mm}
+    \rule{\linewidth}{0.3pt}
+
+    \vspace{2mm}
+    My biggest improvement was in: \rule{8.5cm}{0.3pt}
+
+    \vspace{2mm}
+    If I could add a 4th mission, I'd focus on: \rule{6.5cm}{0.3pt}
+\end{tcolorbox}
+
+}
+
+\newpage

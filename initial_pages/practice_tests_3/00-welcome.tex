@@ -1,0 +1,107 @@
+% ============================================================================
+% Welcome Page — 3 Practice Tests: The Launchpad
+% Space mission theme — deep navy/indigo with orange rocket accents
+% Grade 7 · Unique hexagonal badge design with mission countdown
+% ============================================================================
+
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+    % --- Deep space background ---
+    \fill[funBlueDark!95!black]
+        (current page.south west) rectangle (current page.north east);
+
+    % --- Subtle star field ---
+    \foreach \i in {1,...,40} {
+        \pgfmathsetmacro{\sx}{rand*10}
+        \pgfmathsetmacro{\sy}{rand*14}
+        \pgfmathsetmacro{\sop}{0.15 + rand*0.35}
+        \fill[white, opacity=\sop]
+            ([xshift=\sx cm, yshift=\sy cm]current page.south west) circle (0.4pt);
+    }
+
+    % --- Large glow behind title area ---
+    \fill[funBlue!20, opacity=0.25]
+        ([yshift=2cm]current page.center) circle (6cm);
+
+    % --- Orbital ring (decorative) ---
+    \draw[funOrange!40, line width=0.6pt, dashed]
+        ([yshift=2cm]current page.center) ellipse (7cm and 2.5cm);
+
+    % --- Hexagonal badge at top ---
+    \node[
+        regular polygon, regular polygon sides=6,
+        minimum size=3.5cm,
+        draw=funOrange, line width=2pt,
+        fill=funOrange!15,
+        rotate=30,
+    ] at ([yshift=-3.5cm]current page.north) {};
+    \node[font=\fontsize{18}{18}\selectfont, text=funOrange]
+        at ([yshift=-3.5cm]current page.north) {\faRocket};
+
+    % --- Mission Code text ---
+    \node[font=\fontsize{10}{12}\selectfont\sffamily\color{funOrange!70}]
+        at ([yshift=-5.5cm]current page.north)
+        {M\kern0.15em I\kern0.15em S\kern0.15em S\kern0.15em I\kern0.15em O\kern0.15em N\hspace{0.5em}L\kern0.15em A\kern0.15em U\kern0.15em N\kern0.15em C\kern0.15em H\kern0.15em P\kern0.15em A\kern0.15em D};
+
+    % --- Title ---
+    \node[font=\fontsize{34}{40}\selectfont\sffamily\bfseries, text=white,
+          text width=0.75\paperwidth, align=center]
+        at ([yshift=5.5cm]current page.center)
+        {3 Practice Tests};
+
+    \node[font=\fontsize{15}{18}\selectfont\sffamily, text=funOrange!80]
+        at ([yshift=4cm]current page.center)
+        {\faRocket\hspace{4mm}Grade 7 Math --- Launch Sequence\hspace{4mm}\faRocket};
+
+    % --- Divider ---
+    \draw[funOrange!50, line width=1pt]
+        ([xshift=3cm, yshift=3.2cm]current page.center) --
+        ([xshift=-3cm, yshift=3.2cm]current page.center);
+    \node at ([yshift=3.2cm]current page.center)
+        {\textcolor{funOrange}{\small\faStar}};
+
+    % --- Welcome message in frosted panel ---
+    \node[
+        fill=white!8, draw=funBlue!30, rounded corners=14pt,
+        inner sep=7mm, text width=0.68\paperwidth, align=center,
+        font=\sffamily\normalsize\color{white!90},
+    ] at ([yshift=-0.5cm]current page.center)
+    {
+        Calling all future mathematicians!\\[4mm]
+        You're about to launch into \textbf{3 full-length practice missions}
+        covering every Grade 7 math topic --- from proportional
+        relationships to probability.\\[6mm]
+        \textcolor{funOrange}{\faRocket}~\textbf{Mission 1:} Explore the terrain\\[2mm]
+        \textcolor{funOrange}{\faRocket}~\textbf{Mission 2:} Navigate with precision\\[2mm]
+        \textcolor{funOrange}{\faRocket}~\textbf{Mission 3:} Achieve orbit\\[6mm]
+        \textit{\textcolor{funOrange!70}{Three missions. One launchpad. Infinite potential.}}
+    };
+
+    % --- Owl in spacesuit (bottom left) ---
+    \node at ([xshift=3cm, yshift=3.8cm]current page.south west)
+        {\iconOwl[2.5cm]};
+
+    % --- Speech bubble ---
+    \node[
+        draw=funOrange!40, fill=funBlueDark!60,
+        rounded corners=10pt, inner sep=4mm,
+        font=\sffamily\small\itshape\color{white!85},
+        text width=5.5cm, align=center,
+        anchor=south west,
+    ] at ([xshift=5.8cm, yshift=3.2cm]current page.south west)
+    {
+        \faQuoteLeft~Three missions is the perfect count
+        for a focused launch. You'll cover the whole
+        course and still have fuel to review!~\faQuoteRight
+    };
+
+    % --- Copyright ---
+    \node[font=\tiny\sffamily\color{white!30}, anchor=south]
+        at ([yshift=0.8cm]current page.south)
+        {\textcopyright~ViewMath.com --- All Rights Reserved};
+
+\end{tikzpicture}
+
+\newpage

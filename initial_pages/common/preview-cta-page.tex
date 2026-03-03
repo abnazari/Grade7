@@ -1,0 +1,130 @@
+% ============================================================================
+% preview-cta-page.tex — "Get the Full Book" call-to-action page
+%
+% Included at the END of every preview PDF.  Full-page TikZ design
+% matching the book's visual style (blue band, yellow accents, stars).
+% ============================================================================
+
+\clearpage
+\thispagestyle{empty}
+
+\usetikzlibrary{shadows}
+\begin{tikzpicture}[remember picture, overlay]
+
+% ============ BACKGROUND ============
+\fill[funBlue!6]
+    (current page.south west) rectangle (current page.north east);
+
+% ============ TOP BLUE BAND ============
+\fill[funBlue!90]
+    (current page.north west) rectangle
+    ([yshift=-6cm]current page.north east);
+
+% Diagonal accent at bottom of band
+\fill[funBlue!70]
+    ([yshift=-6cm]current page.north west) --
+    ([yshift=-6cm]current page.north east) --
+    ([yshift=-6.8cm]current page.north east) --
+    ([yshift=-6.4cm]current page.north west) -- cycle;
+
+% ============ DECORATIVE CIRCLES ============
+\fill[white, opacity=0.06]
+    ([xshift=-3cm, yshift=-1.5cm]current page.north east) circle (4cm);
+\fill[white, opacity=0.04]
+    ([xshift=2.5cm, yshift=-4cm]current page.north west) circle (3cm);
+
+% ============ DECORATIVE STARS ============
+\node[opacity=0.20] at ([xshift=2cm, yshift=-1cm]current page.north west)
+    {\textcolor{funYellow}{\fontsize{24}{26}\selectfont\faStar}};
+\node[opacity=0.15] at ([xshift=-2cm, yshift=-1.2cm]current page.north east)
+    {\textcolor{funYellow}{\fontsize{18}{20}\selectfont\faStar}};
+\node[opacity=0.10] at ([xshift=7cm, yshift=-5cm]current page.north west)
+    {\textcolor{white}{\fontsize{14}{16}\selectfont\faStar}};
+
+% ============ HEADER TEXT ============
+\node[
+    font=\fontsize{13}{16}\selectfont\sffamily\color{white!65!funBlue},
+    inner sep=0pt,
+] at ([yshift=-1.8cm]current page.north) {%
+    T\kern0.10em H\kern0.10em A\kern0.10em N\kern0.10em K%
+    \kern0.30em Y\kern0.10em O\kern0.10em U%
+};
+
+\node[
+    text width=0.78\paperwidth, align=center,
+    font=\fontsize{28}{34}\selectfont\sffamily\bfseries\color{white},
+] at ([yshift=-3.8cm]current page.north) {%
+    Enjoyed This Preview?
+};
+
+% ============ MAIN CONTENT BOX ============
+\node[
+    text width=0.75\paperwidth,
+    align=center,
+    inner sep=12mm,
+    fill=white,
+    rounded corners=12pt,
+    drop shadow={shadow xshift=1mm, shadow yshift=-1mm, opacity=0.15},
+] at ([yshift=-0.5cm]current page.center) {%
+    {\fontsize{20}{26}\selectfont\sffamily\bfseries\color{funBlueDark}%
+        Get the Full Book!\par}%
+    \vspace{6mm}%
+    {\fontsize{13}{18}\selectfont\sffamily\color{black!75}%
+        This preview shows just a small sample of what's inside.\par
+        The complete book includes:\par}%
+    \vspace{5mm}%
+    {\fontsize{12}{17}\selectfont\sffamily\color{black!80}%
+    \begin{minipage}{0.65\textwidth}
+        \begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+            \item[\textcolor{funGreen}{\faCheckCircle}] All chapters and topics
+            \item[\textcolor{funGreen}{\faCheckCircle}] Hundreds of practice problems
+            \item[\textcolor{funGreen}{\faCheckCircle}] Complete answer key with explanations
+            \item[\textcolor{funGreen}{\faCheckCircle}] Colorful visuals and step-by-step examples
+            \item[\textcolor{funGreen}{\faCheckCircle}] Reference sheets and progress trackers
+        \end{itemize}
+    \end{minipage}%
+    \par}%
+    \vspace{8mm}%
+    {\fontsize{11}{15}\selectfont\sffamily\color{black!60}%
+        Available on Amazon and Teachers Pay Teachers\par}%
+};
+
+% ============ BOTTOM SECTION — Website ============
+\node[
+    text width=0.7\paperwidth, align=center,
+    font=\fontsize{12}{16}\selectfont\sffamily\color{black!55},
+] at ([yshift=4cm]current page.south) {%
+    \textcolor{funBlue}{\faGlobeAmericas}\quad
+    Visit us at\quad
+    {\bfseries\color{funBlueDark} ViewMath.com}\quad
+    for free resources and more books!
+};
+
+% ============ BOTTOM DECORATIVE BAND ============
+\fill[funBlue!15]
+    (current page.south west) rectangle
+    ([yshift=1.5cm]current page.south east);
+
+\fill[funYellow!40]
+    (current page.south west) rectangle
+    ([yshift=0.4cm]current page.south east);
+
+% Small stars in bottom band
+\node[opacity=0.3] at ([xshift=3cm, yshift=0.75cm]current page.south west)
+    {\textcolor{funBlue}{\fontsize{10}{12}\selectfont\faStar}};
+\node[opacity=0.25] at ([xshift=-3cm, yshift=0.8cm]current page.south east)
+    {\textcolor{funBlue}{\fontsize{12}{14}\selectfont\faStar}};
+\node[opacity=0.2] at ([yshift=0.7cm]current page.south)
+    {\textcolor{funYellowDark}{\fontsize{8}{10}\selectfont\faStar}};
+
+% ============ COPYRIGHT ============
+\node[
+    font=\fontsize{8}{10}\selectfont\sffamily\color{black!40},
+    inner sep=0pt,
+] at ([yshift=2.2cm]current page.south) {%
+    \textcopyright\ 2026 Dr.\ A.\ Nazari \kern1em|\kern1em View Math Education%
+};
+
+\end{tikzpicture}
+
+\clearpage

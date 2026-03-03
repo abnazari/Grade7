@@ -1,0 +1,114 @@
+% ============================================================================
+% Welcome Page — 10 Practice Tests: The Architect
+% Blueprint/engineering theme — steel blue/silver/white, precision lines
+% Grade 7 · Technical drawing aesthetic, 10-floor tower metaphor
+% ============================================================================
+
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+    % --- Clean white base ---
+    \fill[white] (current page.south west) rectangle (current page.north east);
+
+    % --- Blueprint grid (subtle) ---
+    \foreach \i in {-15,...,15} {
+        \draw[funBlue!6, line width=0.2pt]
+            ([xshift=\i cm]current page.south) -- ([xshift=\i cm]current page.north);
+    }
+    \foreach \j in {-20,...,20} {
+        \draw[funBlue!6, line width=0.2pt]
+            ([yshift=\j cm]current page.west) -- ([yshift=\j cm]current page.east);
+    }
+
+    % --- Left vertical accent bar ---
+    \fill[funBlue!85]
+        ([xshift=0cm]current page.north west) rectangle
+        ([xshift=1.8cm]current page.south west);
+
+    % --- Horizontal header bar ---
+    \fill[funBlue!85]
+        (current page.north west) rectangle
+        ([yshift=-4.5cm]current page.north east);
+    % --- Diagonal join ---
+    \fill[funBlue!85]
+        ([xshift=1.8cm, yshift=-4.5cm]current page.north west) --
+        ([xshift=1.8cm, yshift=-5.2cm]current page.north west) --
+        ([xshift=0cm, yshift=-4.5cm]current page.north west) -- cycle;
+
+    % --- Technical drawing accents (dimension lines) ---
+    \draw[funBlue!25, line width=0.5pt, |<->|]
+        ([xshift=3cm, yshift=-5.5cm]current page.north west) --
+        node[above, font=\tiny\sffamily\color{funBlue!40}] {10 tests $\times$ full coverage}
+        ([xshift=-3cm, yshift=-5.5cm]current page.north east);
+
+    % --- "THE ARCHITECT" spaced text ---
+    \node[font=\fontsize{10}{12}\selectfont\sffamily\color{white!65}]
+        at ([yshift=-1.5cm]current page.north)
+        {T\kern0.12em H\kern0.12em E\hspace{0.5em}A\kern0.12em R\kern0.12em C\kern0.12em H\kern0.12em I\kern0.12em T\kern0.12em E\kern0.12em C\kern0.12em T};
+
+    % --- Main title ---
+    \node[font=\fontsize{34}{40}\selectfont\sffamily\bfseries, text=white,
+          text width=0.75\paperwidth, align=center]
+        at ([yshift=-3cm]current page.north)
+        {10 Practice Tests};
+
+    % --- Subtitle ---
+    \node[font=\fontsize{14}{18}\selectfont\sffamily, text=funBlue!60]
+        at ([yshift=-6.3cm]current page.north)
+        {\faDraftingCompass\hspace{3mm}Grade 7 Math --- Engineered for Mastery\hspace{3mm}\faDraftingCompass};
+
+    % --- Large blueprint "10" watermark ---
+    \node[font=\fontsize{180}{180}\selectfont\bfseries, text=funBlue!5]
+        at ([xshift=3cm, yshift=-2cm]current page.center) {10};
+
+    % --- Welcome panel (clean, structured) ---
+    \node[
+        fill=funBlue!4, draw=funBlue!25, rounded corners=10pt,
+        inner sep=7mm, text width=0.66\paperwidth, align=center,
+        font=\sffamily\normalsize\color{funGrayDark},
+    ] at ([yshift=-1cm]current page.center)
+    {
+        Welcome to \textbf{The Architect's Workshop.}\\[4mm]
+        Ten practice tests. Ten floors of a tower you're about
+        to build. Each test lays another level of understanding ---
+        from foundation to capstone.\\[6mm]
+        \textcolor{funBlue}{\faDraftingCompass}~\textbf{Foundation (Tests 1--3):} Learn the blueprints\\[2mm]
+        \textcolor{funBlue}{\faDraftingCompass}~\textbf{Framework (Tests 4--6):} Build structural strength\\[2mm]
+        \textcolor{funBlue}{\faDraftingCompass}~\textbf{Finishing (Tests 7--9):} Refine under pressure\\[2mm]
+        \textcolor{funBlue}{\faDraftingCompass}~\textbf{Capstone (Test 10):} The final inspection\\[6mm]
+        \textit{\textcolor{funBlue!60}{Precision. Practice. Perfection.}}
+    };
+
+    % --- Owl at bottom center-right ---
+    \node at ([xshift=3.5cm, yshift=3.8cm]current page.south west)
+        {\iconOwl[2.5cm]};
+
+    % --- Speech bubble ---
+    \node[
+        draw=funBlue!30, fill=funBlue!4,
+        rounded corners=10pt, inner sep=4mm,
+        font=\sffamily\small\itshape\color{funBlueDark},
+        text width=5.5cm, align=center,
+        anchor=south west,
+    ] at ([xshift=6cm, yshift=3.2cm]current page.south west)
+    {
+        \faQuoteLeft~Every great structure is built
+        one floor at a time. Ten levels of practice
+        makes your math rock-solid.~\faQuoteRight
+    };
+
+    % --- Floor indicator on left bar ---
+    \foreach \f/\fy in {1/-12, 2/-10.5, 3/-9, 4/-7.5, 5/-6, 6/-4.5, 7/-3, 8/-1.5, 9/0, 10/1.5} {
+        \node[font=\tiny\sffamily\bfseries, text=white!70]
+            at ([xshift=0.9cm, yshift=\fy cm]current page.center) {\f};
+    }
+
+    % --- Copyright ---
+    \node[font=\tiny\sffamily\color{funBlue!30}, anchor=south]
+        at ([yshift=0.8cm]current page.south)
+        {\textcopyright~ViewMath.com --- All Rights Reserved};
+
+\end{tikzpicture}
+
+\newpage

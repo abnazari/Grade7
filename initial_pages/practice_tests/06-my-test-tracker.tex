@@ -1,0 +1,193 @@
+% ============================================================================
+% My Practice Test Tracker — Grade 5 Practice Tests
+% Interactive page to track scores and progress across tests
+% ============================================================================
+
+\thispagestyle{empty}
+
+{
+\sffamily
+
+% --- Title ---
+\begin{center}
+    \textcolor{funBlueDark}{\fontsize{24}{28}\selectfont\bfseries
+    \faChartLine~My Practice Test Tracker~\faChartLine}
+
+    \medskip
+    \textcolor{funGray}{\normalsize Write your score after each test. Watch yourself improve!}
+\end{center}
+
+\vspace{5mm}
+
+% --- Name banner ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funBlueLight,
+    colframe=funBlue!40,
+    arc=10pt,
+    boxrule=1.5pt,
+    left=5mm, right=5mm, top=4mm, bottom=4mm,
+    halign=center,
+]
+    \large\bfseries
+    This book belongs to:~\rule[-2pt]{8cm}{0.5pt}
+    \vspace{2mm}
+\end{tcolorbox}
+
+\vspace{8mm}
+
+% --- Score tracker (no box, no table) ---
+\providecommand{\NumPracticeTests}{5}
+
+% Column headers
+\noindent
+\hspace{4mm}%
+\makebox[3cm][c]{\textcolor{funBlueDark}{\bfseries\faClipboardCheck~Test}}%
+\hfill
+\makebox[4cm][c]{\textcolor{funBlueDark}{\bfseries\faCalendar~Date}}%
+\hfill
+\makebox[3.5cm][c]{\textcolor{funBlueDark}{\bfseries\faStar~Score}}%
+\hfill
+\makebox[3cm][c]{\textcolor{funBlueDark}{\bfseries\faSmile~How I Feel}}%
+\hspace{4mm}
+
+\vspace{2mm}
+\noindent\textcolor{funBlue!40}{\rule{\linewidth}{1pt}}
+
+% Row macro: one test entry with colored number circle + write lines
+\newcount\testrow
+\def\makeScoreRow{%
+    % Pick colors before entering tikz to avoid alignment shifts
+    \ifodd\testrow
+        \colorlet{rowFill}{funGreen!20}%
+        \colorlet{rowFrame}{funGreen!50}%
+        \colorlet{rowText}{funGreenDark}%
+    \else
+        \colorlet{rowFill}{funBlue!15}%
+        \colorlet{rowFrame}{funBlue!40}%
+        \colorlet{rowText}{funBlueDark}%
+    \fi
+    \par\vspace{4mm}\noindent
+    \hspace{4mm}%
+    \makebox[3cm][c]{%
+        \tikz[baseline=(n.base)]{%
+            \node[circle, fill=rowFill, draw=rowFrame, inner sep=0pt, minimum size=8mm] (n)
+                {\bfseries\textcolor{rowText}{\the\testrow}};
+        }%
+    }%
+    \hfill
+    \makebox[4cm][c]{\textcolor{funGray!60}{\rule[-2pt]{3.2cm}{0.4pt}}}%
+    \hfill
+    \makebox[3.5cm][c]{\textcolor{funGray!60}{\rule[-2pt]{1.2cm}{0.4pt}~/~\rule[-2pt]{1.2cm}{0.4pt}}}%
+    \hfill
+    \makebox[3cm][c]{\textcolor{funGray!30}{\Large\faSmile}}%
+    \hspace{4mm}%
+    \par
+    \vspace{3mm}
+    \noindent\textcolor{funBlue!15}{\rule{\linewidth}{0.4pt}}%
+    \global\advance\testrow by 1\relax
+}
+
+\testrow=1
+\loop
+    \makeScoreRow
+\ifnum\testrow<\numexpr\NumPracticeTests+1\relax
+\repeat
+
+\vfill
+
+\newpage
+
+\thispagestyle{empty}
+
+% --- Two-column: Topics to Review + Celebration ---
+\begin{minipage}[t]{0.48\textwidth}
+\begin{tcolorbox}[
+    enhanced,
+    colback=funOrangeLight,
+    colframe=funOrange!50,
+    arc=8pt,
+    boxrule=1pt,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    title={\textcolor{white}{\faPen}~\textbf{Topics I Need to Review}},
+    colbacktitle=funOrange!70,
+    fonttitle=\sffamily\small\bfseries,
+    height=19cm,
+    clip upper,
+]
+    \color{funGrayDark}
+    \vspace{2mm}
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}
+\end{tcolorbox}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\begin{tcolorbox}[
+    enhanced,
+    colback=funYellowLight,
+    colframe=funYellow,
+    arc=8pt,
+    boxrule=1pt,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    title={\textcolor{funYellowDark}{\faTrophy}~\textbf{I'm Getting Better At...}},
+    colbacktitle=funYellow!30,
+    coltitle=funYellowDark,
+    fonttitle=\sffamily\small\bfseries,
+    height=19cm,
+    clip upper,
+]
+    \color{funGrayDark}
+    \vspace{2mm}
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}\\[9mm]
+    \rule[-3pt]{\linewidth}{0.4pt}
+\end{tcolorbox}
+\end{minipage}
+
+\vfill
+
+% --- Motivational mascot ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funPurple!8,
+    colframe=funPurple!50,
+    arc=10pt,
+    boxrule=1.5pt,
+    left=5mm, right=5mm, top=3mm, bottom=3mm,
+]
+    \begin{minipage}[c]{0.08\linewidth}
+        \centering
+        \iconOwl[1.2cm]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.88\linewidth}
+        \small\itshape\color{funPurpleDark}
+        \faQuoteLeft~The most important score isn't on any test ---
+        it's how much you've \textbf{grown}! Compare your scores from your
+        first test to your last. I bet you'll see amazing progress!~\faQuoteRight
+    \end{minipage}
+\end{tcolorbox}
+
+}
+
+\newpage

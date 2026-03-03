@@ -1,0 +1,431 @@
+% ============================================================
+% Question Bank: ch08-04 Comparing Populations with Measures (Modified — AK/OK/TX)
+% Topic Title: Comparing Populations with Measures of Center and Variability (Extended Measures Emphasis)
+% CCSS: 7.SP.B.4 (AK/OK/TX: extended measures emphasis — IQR/range over MAD)
+% Questions: 30 (18 MC + 7 SA + 5 Graphical)
+% ============================================================
+
+% --- Multiple Choice Questions (18) ---
+
+\begin{practiceQuestion}{m-8-4-q01}{mc}
+\begin{questionText}
+Which measure of variability focuses on the middle $50\%$ of the data and is less affected by outliers?
+\end{questionText}
+\choiceA{Range}
+\choiceB{Mean}
+\choiceC{Interquartile range (IQR)}
+\choiceD{Median}
+\correctAnswer{C}
+\explanation{IQR $= Q_3 - Q_1$ measures the spread of the middle half of the data and ignores extreme values.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q02}{mc}
+\begin{questionText}
+Data: $10, 15, 20, 25, 30, 35, 40$. What is the IQR?
+\end{questionText}
+\choiceA{$15$}
+\choiceB{$20$}
+\choiceC{$25$}
+\choiceD{$30$}
+\correctAnswer{B}
+\explanation{Median $= 25$. Lower half: $10, 15, 20$, so $Q_1 = 15$. Upper half: $30, 35, 40$, so $Q_3 = 35$. IQR $= 35 - 15 = 20$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q03}{mc}
+\begin{questionText}
+Why is IQR often more useful than range for comparing two groups?
+\end{questionText}
+\choiceA{IQR uses more data points than range}
+\choiceB{IQR ignores outliers that can make range misleading}
+\choiceC{IQR is always larger than range}
+\choiceD{Range cannot be calculated from most data sets}
+\correctAnswer{B}
+\explanation{Range uses only the two most extreme values, which can be heavily influenced by a single outlier. IQR measures the spread of the middle $50\%$, giving a more stable picture.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q04}{mc}
+\begin{questionText}
+Data: $12, 18, 22, 25, 28, 32, 95$. The range is $83$ and the IQR is $14$. Which better represents the typical spread?
+\end{questionText}
+\choiceA{Range, because it uses all the data}
+\choiceB{IQR, because the outlier $95$ inflates the range}
+\choiceC{Both are equally good}
+\choiceD{Neither is useful}
+\correctAnswer{B}
+\explanation{The outlier $95$ makes the range ($83$) very large. IQR ($14$) is not affected by this outlier and better represents how most data values are spread.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q05}{mc}
+\begin{questionText}
+Crew A daily fish catch (lbs): mean $140$, median $140$, range $35$, IQR $15$.
+Crew B daily fish catch (lbs): mean $145$, median $145$, range $110$, IQR $30$.
+Which crew is more reliable?
+\end{questionText}
+\choiceA{Crew B because it catches more on average}
+\choiceB{Crew A because its range and IQR are both smaller}
+\choiceC{Both are equally reliable}
+\choiceD{Crew B because it has a bigger range}
+\correctAnswer{B}
+\explanation{Crew A's smaller range ($35$ vs.\ $110$) and IQR ($15$ vs.\ $30$) mean its daily catches are more consistent — more reliable.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q06}{mc}
+\begin{questionText}
+Group X: mean $8{,}000$ steps, IQR $1{,}500$. Group Y: mean $8{,}200$ steps, IQR $4{,}000$. Which statement is true?
+\end{questionText}
+\choiceA{Group Y is more consistent because its mean is higher}
+\choiceB{Group X is more consistent because its IQR is much smaller}
+\choiceC{The groups are equally consistent}
+\choiceD{IQR does not measure consistency}
+\correctAnswer{B}
+\explanation{Group X's IQR ($1{,}500$) is much smaller than Group Y's ($4{,}000$), meaning the middle $50\%$ of Group X's data is more tightly clustered.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q07}{mc}
+\begin{questionText}
+Data: $5, 8, 10, 12, 15, 18, 50$. Find the range and IQR.
+\end{questionText}
+\choiceA{Range $= 45$, IQR $= 10$}
+\choiceB{Range $= 45$, IQR $= 45$}
+\choiceC{Range $= 10$, IQR $= 45$}
+\choiceD{Range $= 50$, IQR $= 10$}
+\correctAnswer{A}
+\explanation{Range $= 50 - 5 = 45$. Median $= 12$. $Q_1 = 8$, $Q_3 = 18$. IQR $= 18 - 8 = 10$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q08}{mc}
+\begin{questionText}
+Two classes took a quiz. Class A: median $82$, IQR $6$. Class B: median $78$, IQR $14$. Which class performed better overall?
+\end{questionText}
+\choiceA{Class B — it has a larger IQR, which means more talent}
+\choiceB{Class A — higher median and more consistent scores}
+\choiceC{They performed equally}
+\choiceD{Cannot compare with these measures}
+\correctAnswer{B}
+\explanation{Class A has a higher median ($82$ vs.\ $78$) and a smaller IQR ($6$ vs.\ $14$), meaning most students scored close to $82$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q09}{mc}
+\begin{questionText}
+Data set: $20, 25, 30, 35, 40, 45, 50$. What is $Q_1$?
+\end{questionText}
+\choiceA{$20$}
+\choiceB{$25$}
+\choiceC{$30$}
+\choiceD{$35$}
+\correctAnswer{B}
+\explanation{Median $= 35$. Lower half: $20, 25, 30$. $Q_1 = 25$ (middle of lower half).}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q10}{mc}
+\begin{questionText}
+Store A weekly profits: $\$500, \$520, \$510, \$530, \$515$.
+Store B weekly profits: $\$200, \$400, \$600, \$500, \$800$.
+Which store has more predictable profits?
+\end{questionText}
+\choiceA{Store A}
+\choiceB{Store B}
+\choiceC{Both equally predictable}
+\choiceD{Cannot tell without IQR}
+\correctAnswer{A}
+\explanation{Store A's values are all close together ($\$500$--$\$530$), while Store B's spread from $\$200$ to $\$800$. Store A is far more predictable.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q11}{mc}
+\begin{questionText}
+The IQR for a data set is $0$. What does this tell you?
+\end{questionText}
+\choiceA{The data set is empty}
+\choiceB{All values in the middle $50\%$ are the same}
+\choiceC{The mean is $0$}
+\choiceD{The data has no median}
+\correctAnswer{B}
+\explanation{IQR $= 0$ means $Q_1 = Q_3$, so the middle half of the data contains identical values (no spread).}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q12}{mc}
+\begin{questionText}
+Two fishing crews' daily catch data:
+
+Crew X: median $120$ lbs, IQR $20$ lbs, range $50$ lbs.
+Crew Y: median $130$ lbs, IQR $40$ lbs, range $100$ lbs.
+
+A fishing manager wants the most consistent crew. Which should she choose?
+\end{questionText}
+\choiceA{Crew Y because it catches more}
+\choiceB{Crew X because both its IQR and range are smaller}
+\choiceC{Either — they are equally consistent}
+\choiceD{Crew Y because a larger IQR means more fish}
+\correctAnswer{B}
+\explanation{Crew X has smaller IQR ($20$ vs.\ $40$) and range ($50$ vs.\ $100$), meaning its daily catches are more predictable.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q13}{mc}
+\begin{questionText}
+Data: $30, 32, 35, 38, 40, 42, 45, 48, 50$. Find $Q_3$.
+\end{questionText}
+\choiceA{$42$}
+\choiceB{$45$}
+\choiceC{$46.5$}
+\choiceD{$48$}
+\correctAnswer{C}
+\explanation{Median $= 40$. Upper half: $42, 45, 48, 50$. $Q_3 = \frac{45 + 48}{2} = 46.5$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q14}{mc}
+\begin{questionText}
+Two students track their daily screen time (in minutes). Student A: mean $90$, IQR $15$, range $30$. Student B: mean $95$, IQR $50$, range $120$. Which student has more consistent screen time?
+\end{questionText}
+\choiceA{Student B, because the mean is higher}
+\choiceB{Student A, because IQR and range are both smaller}
+\choiceC{They are equally consistent}
+\choiceD{Student B, because the range is larger}
+\correctAnswer{B}
+\explanation{Student A's IQR ($15$) and range ($30$) are both much smaller than Student B's ($50$ and $120$), so Student A is more consistent.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q15}{mc}
+\begin{questionText}
+A data set has outliers on both ends. Which measure gives the most stable comparison between two such data sets?
+\end{questionText}
+\choiceA{Range}
+\choiceB{Mean}
+\choiceC{IQR}
+\choiceD{Maximum value}
+\correctAnswer{C}
+\explanation{IQR ignores the extreme values (outliers) and focuses on the middle $50\%$ of data, making it the most stable choice.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q16}{mc}
+\begin{questionText}
+Group A: $\{40, 45, 50, 55, 60\}$. Group B: $\{20, 35, 50, 65, 80\}$. Both have a mean of $50$. Which group has a larger IQR?
+\end{questionText}
+\choiceA{Group A}
+\choiceB{Group B}
+\choiceC{Same IQR}
+\choiceD{Cannot determine}
+\correctAnswer{B}
+\explanation{Group A: $Q_1 = 45$, $Q_3 = 55$, IQR $= 10$. Group B: $Q_1 = 35$, $Q_3 = 65$, IQR $= 30$. Group B has a larger IQR.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q17}{mc}
+\begin{questionText}
+A financial advisor compares two savings accounts' monthly returns. Account A: mean $\$120$, IQR $\$10$. Account B: mean $\$150$, IQR $\$60$. Which account provides more stable returns?
+\end{questionText}
+\choiceA{Account A, because its IQR is much smaller}
+\choiceB{Account B, because its mean is higher}
+\choiceC{Account B, because a larger IQR means more money}
+\choiceD{They are equally stable}
+\correctAnswer{A}
+\explanation{Account A's IQR ($\$10$) is far smaller than Account B's ($\$60$), meaning returns are more predictable, even though the mean is lower.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q18}{mc}
+\begin{questionText}
+The five-number summary for a data set is: min $= 10$, $Q_1 = 25$, median $= 35$, $Q_3 = 45$, max $= 60$. What are the range and IQR?
+\end{questionText}
+\choiceA{Range $= 50$, IQR $= 20$}
+\choiceB{Range $= 50$, IQR $= 35$}
+\choiceC{Range $= 20$, IQR $= 50$}
+\choiceD{Range $= 60$, IQR $= 10$}
+\correctAnswer{A}
+\explanation{Range $= 60 - 10 = 50$. IQR $= Q_3 - Q_1 = 45 - 25 = 20$.}
+\end{practiceQuestion}
+
+% --- Short Answer Questions (7) ---
+
+\begin{practiceQuestion}{m-8-4-q19}{sa}
+\begin{questionText}
+Data: $15, 20, 22, 28, 30, 35, 40$. Find $Q_1$, $Q_3$, and the IQR.
+\end{questionText}
+\correctAnswer{$Q_1 = 20$, $Q_3 = 35$, IQR $= 15$}
+\explanation{Median $= 28$. Lower half: $15, 20, 22$, so $Q_1 = 20$. Upper half: $30, 35, 40$, so $Q_3 = 35$. IQR $= 35 - 20 = 15$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q20}{sa}
+\begin{questionText}
+Data: $3, 5, 7, 9, 11, 13, 15, 80$. Find the range and IQR. Explain which is a better measure of spread and why.
+\end{questionText}
+\correctAnswer{Range $= 77$; IQR $= 8$. IQR is better because the outlier $80$ makes the range misleading.}
+\explanation{Range: $80 - 3 = 77$. $Q_1 = \frac{5+7}{2} = 6$, $Q_3 = \frac{13+15}{2} = 14$. IQR $= 14 - 6 = 8$. The outlier inflates the range but doesn't affect IQR.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q21}{sa}
+\begin{questionText}
+Team A: mean $55$, range $18$, IQR $8$. Team B: mean $60$, range $40$, IQR $22$. Compare the teams using at least two measures.
+\end{questionText}
+\correctAnswer{Team B averages higher ($60$ vs.\ $55$) but Team A is much more consistent (range $18$ vs.\ $40$, IQR $8$ vs.\ $22$)}
+\explanation{Team B has a higher center (mean $60$), but Team A's smaller range and IQR show its data is more tightly clustered.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q22}{sa}
+\begin{questionText}
+Data set A: $50, 55, 60, 65, 70$. Data set B: $30, 40, 60, 80, 90$. Both mean $60$. Find the range and IQR for each.
+\end{questionText}
+\correctAnswer{A: range $= 20$, IQR $= 10$. B: range $= 60$, IQR $= 40$.}
+\explanation{A: range $= 70-50 = 20$. $Q_1 = 55$, $Q_3 = 65$, IQR $= 10$. B: range $= 90-30 = 60$. $Q_1 = 40$, $Q_3 = 80$, IQR $= 40$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q23}{sa}
+\begin{questionText}
+A student says: ``The range of my data is $50$, so the data is very spread out.'' Could the student be wrong? Explain.
+\end{questionText}
+\correctAnswer{Yes — a single outlier can cause a large range even if most data is clustered tightly. The IQR would give a better picture.}
+\explanation{Range can be inflated by one extreme value. If the IQR is small, most data is actually close together despite the large range.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q24}{sa}
+\begin{questionText}
+Two cities track daily temperatures. City A: median $75°$F, IQR $8°$F. City B: median $70°$F, IQR $20°$F. Which city has more predictable weather? Explain.
+\end{questionText}
+\correctAnswer{City A — its IQR ($8°$) is much smaller, meaning temperatures stay closer to the median}
+\explanation{A smaller IQR means the middle $50\%$ of temperatures are within a narrow range, making City A's weather more predictable.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q25}{sa}
+\begin{questionText}
+Data: $100, 105, 110, 115, 120, 125, 130, 135, 140$. Find the five-number summary.
+\end{questionText}
+\correctAnswer{Min $= 100$, $Q_1 = 107.5$, Median $= 120$, $Q_3 = 132.5$, Max $= 140$}
+\explanation{Median (5th value) $= 120$. Lower half: $100, 105, 110, 115$. $Q_1 = \frac{105+110}{2} = 107.5$. Upper half: $125, 130, 135, 140$. $Q_3 = \frac{130+135}{2} = 132.5$.}
+\end{practiceQuestion}
+
+% --- Graphical Questions (3 GMC + 2 GSA) ---
+
+\begin{practiceQuestion}{m-8-4-q26}{gmc}
+\begin{questionText}
+The table compares two fishing crews' weekly catches (in pounds).
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+ & \textbf{Crew A} & \textbf{Crew B} \\
+\hline
+Mean & $350$ & $380$ \\
+\hline
+Median & $345$ & $370$ \\
+\hline
+Range & $80$ & $200$ \\
+\hline
+IQR & $30$ & $85$ \\
+\hline
+\end{tabular}
+\end{center}
+
+A fishing company values consistency over total catch. Which crew should they hire?
+\end{questionText}
+\choiceA{Crew B, because its mean and median are higher}
+\choiceB{Crew A, because its range and IQR are both much smaller}
+\choiceC{Either crew — they are similar}
+\choiceD{Crew B, because a larger range means more fish}
+\correctAnswer{B}
+\explanation{Crew A's range ($80$ vs.\ $200$) and IQR ($30$ vs.\ $85$) are much smaller, showing far more consistent catches.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q27}{gmc}
+\begin{questionText}
+The box plots compare daily temperatures (°F) in two Alaskan cities during January.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.12]
+  \draw[thick,->] (-31,0) -- (21,0);
+  \foreach \x in {-30,-25,...,20} {
+    \draw (\x,0.5) -- (\x,-0.5);
+    \node[below,font=\small] at (\x,-0.5) {$\x$};
+  }
+  % City A: min=-25, Q1=-15, med=-8, Q3=-2, max=5
+  \draw[thick] (-25,5) -- (5,5);
+  \draw[thick,fill=funBlue!30] (-15,3.5) rectangle (-2,6.5);
+  \draw[very thick,funBlue] (-8,3.5) -- (-8,6.5);
+  \draw[thick] (-25,3.5) -- (-25,6.5);
+  \draw[thick] (5,3.5) -- (5,6.5);
+  \node[right,font=\small] at (6,5) {City A};
+  % City B: min=-20, Q1=-10, med=-3, Q3=5, max=15
+  \draw[thick] (-20,12) -- (15,12);
+  \draw[thick,fill=funOrange!30] (-10,10.5) rectangle (5,13.5);
+  \draw[very thick,funOrange] (-3,10.5) -- (-3,13.5);
+  \draw[thick] (-20,10.5) -- (-20,13.5);
+  \draw[thick] (15,10.5) -- (15,13.5);
+  \node[right,font=\small] at (16,12) {City B};
+\end{tikzpicture}
+\end{center}
+
+What is the IQR for each city?
+\end{questionText}
+\choiceA{City A: $13$°F, City B: $15$°F}
+\choiceB{City A: $30$°F, City B: $35$°F}
+\choiceC{City A: $8$°F, City B: $3$°F}
+\choiceD{City A: $15$°F, City B: $10$°F}
+\correctAnswer{A}
+\explanation{City A: $Q_3 - Q_1 = -2 - (-15) = 13$°F. City B: $5 - (-10) = 15$°F.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q28}{gmc}
+\begin{questionText}
+The table shows weekly earnings for workers at two companies.
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+ & \textbf{Company X} & \textbf{Company Y} \\
+\hline
+Mean & $\$620$ & $\$650$ \\
+\hline
+Median & $\$600$ & $\$640$ \\
+\hline
+Range & $\$200$ & $\$500$ \\
+\hline
+IQR & $\$80$ & $\$250$ \\
+\hline
+\end{tabular}
+\end{center}
+
+A worker wants stable, predictable pay. Which company is the better choice?
+\end{questionText}
+\choiceA{Company Y, because mean and median are higher}
+\choiceB{Company X, because IQR and range indicate much more stable pay}
+\choiceC{Company Y, because a larger range means higher possible pay}
+\choiceD{Both are equally stable}
+\correctAnswer{B}
+\explanation{Company X's IQR ($\$80$) and range ($\$200$) are much smaller than Company Y's ($\$250$ and $\$500$), meaning pay is far more predictable at Company X.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q29}{gsa}
+\begin{questionText}
+The data shows daily catches (in pounds) for two fishing boats over $7$ days.
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|}
+\hline
+\textbf{Boat A} & $100$ & $110$ & $115$ & $120$ & $125$ & $130$ & $140$ \\
+\hline
+\textbf{Boat B} & $50$ & $80$ & $100$ & $120$ & $150$ & $170$ & $210$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Find the median, range, and IQR for each boat. Which boat is more consistent?
+\end{questionText}
+\correctAnswer{Boat A: median $= 120$, range $= 40$, IQR $= 20$. Boat B: median $= 120$, range $= 160$, IQR $= 90$. Boat A is far more consistent.}
+\explanation{Boat A: median $= 120$. $Q_1 = 110$, $Q_3 = 130$, IQR $= 20$. Range $= 140 - 100 = 40$. Boat B: median $= 120$. $Q_1 = 80$, $Q_3 = 170$, IQR $= 90$. Range $= 210 - 50 = 160$. Both medians are equal, but Boat A has much smaller variability.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q30}{gsa}
+\begin{questionText}
+Two students recorded their quiz scores over $9$ quizzes.
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Student A} & $78$ & $80$ & $82$ & $84$ & $85$ & $86$ & $88$ & $90$ & $92$ \\
+\hline
+\textbf{Student B} & $60$ & $70$ & $75$ & $80$ & $85$ & $90$ & $92$ & $95$ & $98$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Find the five-number summary for each student. Which student has more consistent scores? Use IQR to justify your answer.
+\end{questionText}
+\correctAnswer{Student A: min $= 78$, $Q_1 = 81$, median $= 85$, $Q_3 = 89$, max $= 92$, IQR $= 8$. Student B: min $= 60$, $Q_1 = 72.5$, median $= 85$, $Q_3 = 93.5$, max $= 98$, IQR $= 21$. Student A is more consistent (IQR $8$ vs.\ $21$).}
+\explanation{Student A: $Q_1 = \frac{80+82}{2} = 81$, $Q_3 = \frac{88+90}{2} = 89$, IQR $= 8$. Student B: $Q_1 = \frac{70+75}{2} = 72.5$, $Q_3 = \frac{92+95}{2} = 93.5$, IQR $= 21$. Both medians are $85$, but Student A's IQR is much smaller.}
+\end{practiceQuestion}

@@ -1,0 +1,112 @@
+% ============================================================================
+% Welcome Page — 7 Practice Tests: The Forge
+% Blacksmith/crafting theme — rich red-orange/bronze/charcoal palette
+% Grade 7 · Bold geometric shapes, anvil & hammer motifs, shield elements
+% ============================================================================
+
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+    % --- Dark charcoal base ---
+    \fill[funGrayDark!90!black]
+        (current page.south west) rectangle (current page.north east);
+
+    % --- Glowing ember gradient at center ---
+    \fill[funOrange!15, opacity=0.4]
+        (current page.center) circle (8cm);
+    \fill[funRed!10, opacity=0.3]
+        (current page.center) circle (5cm);
+
+    % --- Diagonal forge-stripe (upper left to lower right) ---
+    \fill[funOrangeDark!80]
+        ([yshift=-1.5cm]current page.north west) --
+        ([xshift=6cm]current page.north west) --
+        ([yshift=1.5cm]current page.south east) --
+        ([xshift=-6cm]current page.south east) -- cycle;
+
+    % --- Accent sparks (small bright dots) ---
+    \foreach \i in {1,...,15} {
+        \pgfmathsetmacro{\sx}{-3 + rand*6}
+        \pgfmathsetmacro{\sy}{-2 + rand*4}
+        \pgfmathsetmacro{\sop}{0.3 + rand*0.5}
+        \fill[funYellow, opacity=\sop]
+            ([xshift=\sx cm, yshift=\sy cm]current page.center) circle (0.6pt);
+    }
+
+    % --- Large "7" watermark ---
+    \node[font=\fontsize{220}{220}\selectfont\bfseries, text=white, opacity=0.04]
+        at ([xshift=-1cm]current page.center) {7};
+
+    % --- Shield badge at top ---
+    \node[
+        draw=funYellowDark, line width=2.5pt,
+        fill=funGrayDark!60, minimum size=2.8cm,
+        rounded corners=4pt, inner sep=0pt,
+    ] at ([yshift=-3.5cm]current page.north) {};
+    \node[font=\fontsize{24}{24}\selectfont, text=funYellow]
+        at ([yshift=-3.5cm]current page.north) {\faShieldAlt};
+
+    % --- "THE FORGE" spaced text ---
+    \node[font=\fontsize{12}{14}\selectfont\sffamily\color{funYellow!60}]
+        at ([yshift=-5.3cm]current page.north)
+        {T\kern0.15em H\kern0.15em E\hspace{0.6em}F\kern0.15em O\kern0.15em R\kern0.15em G\kern0.15em E};
+
+    % --- Title ---
+    \node[font=\fontsize{36}{42}\selectfont\sffamily\bfseries, text=white,
+          text width=0.75\paperwidth, align=center]
+        at ([yshift=4.5cm]current page.center)
+        {7 Practice Tests};
+
+    \node[font=\fontsize{14}{18}\selectfont\sffamily, text=funYellow!75]
+        at ([yshift=3cm]current page.center)
+        {\faHammer\hspace{3mm}Grade 7 Math --- Forged in Practice\hspace{3mm}\faHammer};
+
+    % --- Divider ---
+    \draw[funYellow!50, line width=1pt]
+        ([xshift=3cm, yshift=2.2cm]current page.center) --
+        ([xshift=-3cm, yshift=2.2cm]current page.center);
+
+    % --- Welcome message in dark panel ---
+    \node[
+        fill=funGrayDark!50, draw=funOrange!30, rounded corners=12pt,
+        inner sep=7mm, text width=0.68\paperwidth, align=center,
+        font=\sffamily\normalsize\color{white!90},
+    ] at ([yshift=-1.5cm]current page.center)
+    {
+        Welcome to \textbf{The Forge.}\\[3mm]
+        Seven tests. Seven chances to hammer your skills\\
+        into something unbreakable. Each test is a piece\\
+        of raw material --- and \textit{you} are the blacksmith.\\[6mm]
+        \textcolor{funOrange}{\faFire}~\textbf{Heat 1--2:} Warm the metal --- learn the form\\[2mm]
+        \textcolor{funOrange}{\faFire}~\textbf{Heat 3--5:} Shape with precision --- build power\\[2mm]
+        \textcolor{funOrange}{\faFire}~\textbf{Heat 6--7:} Temper and finish --- prove your craft\\[6mm]
+        \textit{\textcolor{funYellow!70}{Great skill isn't found. It's forged.}}
+    };
+
+    % --- Owl near the anvil (bottom right) ---
+    \node at ([xshift=-3cm, yshift=3.5cm]current page.south east)
+        {\iconOwl[2.5cm]};
+
+    % --- Speech bubble ---
+    \node[
+        draw=funOrange!40, fill=funGrayDark!50,
+        rounded corners=10pt, inner sep=4mm,
+        font=\sffamily\small\itshape\color{white!85},
+        text width=5.5cm, align=center,
+        anchor=south east,
+    ] at ([xshift=-5.8cm, yshift=5.5cm]current page.south east)
+    {
+        \faQuoteLeft~A sword isn't made with one strike.
+        Seven rounds of hammering --- that's how
+        you forge something strong.~\faQuoteRight
+    };
+
+    % --- Copyright ---
+    \node[font=\tiny\sffamily\color{white!25}, anchor=south]
+        at ([yshift=0.8cm]current page.south)
+        {\textcopyright~ViewMath.com --- All Rights Reserved};
+
+\end{tikzpicture}
+
+\newpage

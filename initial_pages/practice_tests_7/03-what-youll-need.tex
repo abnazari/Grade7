@@ -1,0 +1,144 @@
+% ============================================================================
+% Tools of the Trade (What You'll Need) — 7 Practice Tests: The Forge
+% Anvil/workbench layout with strong geometric tool cards
+% Grade 7
+% ============================================================================
+
+\thispagestyle{empty}
+
+{
+\sffamily
+
+% --- Title ---
+\begin{center}
+    \textcolor{funOrangeDark}{\fontsize{26}{30}\selectfont\bfseries
+    \faTools~Tools of the Trade~\faTools}
+
+    \smallskip
+    \textcolor{funGray}{\normalsize Prepare your workbench before every forging session}
+\end{center}
+
+\vspace{5mm}
+
+% --- Tool grid (bold, anvil-themed) ---
+\begin{center}
+\begin{tikzpicture}[
+    every node/.style={font=\sffamily, align=center},
+    forge/.style={
+        draw=funOrange!50, fill=#1, thick,
+        minimum width=4.8cm, minimum height=2.8cm,
+        rounded corners=6pt, inner sep=4mm,
+    },
+]
+    % Row 1
+    \node[forge=funRed!6] (a) at (0, 0) {
+        \textcolor{funRed}{\fontsize{24}{24}\selectfont\faPen}\\[3mm]
+        \textbf{Sharpened Pencils}\\
+        {\scriptsize Two \#2 pencils --- always ready}
+    };
+    \node[forge=funOrange!6] (b) at (5.5, 0) {
+        \textcolor{funOrange}{\fontsize{24}{24}\selectfont\faEraser}\\[3mm]
+        \textbf{Quality Eraser}\\
+        {\scriptsize Clean corrections matter}
+    };
+    \node[forge=funYellow!10] (c) at (11, 0) {
+        \textcolor{funYellowDark}{\fontsize{24}{24}\selectfont\faStickyNote}\\[3mm]
+        \textbf{Scratch Paper}\\
+        {\scriptsize The crafter's workbench}
+    };
+
+    % Row 2
+    \node[forge=funGreen!6] (d) at (0, -3.5) {
+        \textcolor{funGreen}{\fontsize{24}{24}\selectfont\faRuler}\\[3mm]
+        \textbf{Ruler / Protractor}\\
+        {\scriptsize Precision instruments}
+    };
+    \node[forge=funBlue!6] (e) at (5.5, -3.5) {
+        \textcolor{funBlue}{\fontsize{24}{24}\selectfont\faStopwatch}\\[3mm]
+        \textbf{Timer}\\
+        {\scriptsize Use from Heat II onward}
+    };
+    \node[forge=funPurple!6] (f) at (11, -3.5) {
+        \textcolor{funPurple}{\fontsize{24}{24}\selectfont\faVolumeOff}\\[3mm]
+        \textbf{Quiet Workshop}\\
+        {\scriptsize Distractions ruin the craft}
+    };
+\end{tikzpicture}
+\end{center}
+
+\vspace{4mm}
+
+% --- Permitted / Not Permitted ---
+\noindent
+\begin{minipage}[t]{0.47\linewidth}
+\begin{tcolorbox}[
+    enhanced,
+    colback=funGreen!5,
+    colframe=funGreen!40,
+    arc=6pt, boxrule=1.5pt,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    title={\small\textcolor{white}{\faCheckCircle~Approved by the Guild}},
+    colbacktitle=funGreen!60,
+    fonttitle=\bfseries\sffamily,
+]
+    \small
+    \begin{itemize}[leftmargin=*, itemsep=2pt]
+        \item[\textcolor{funGreen}{\faCheck}] Pencil and eraser
+        \item[\textcolor{funGreen}{\faCheck}] Scratch paper (provided on test day)
+        \item[\textcolor{funGreen}{\faCheck}] Ruler / protractor (if specified)
+    \end{itemize}
+\end{tcolorbox}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.47\linewidth}
+\begin{tcolorbox}[
+    enhanced,
+    colback=funRed!5,
+    colframe=funRed!40,
+    arc=6pt, boxrule=1.5pt,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    title={\small\textcolor{white}{\faBan~Banned from the Forge}},
+    colbacktitle=funRed!60,
+    fonttitle=\bfseries\sffamily,
+]
+    \small
+    \begin{itemize}[leftmargin=*, itemsep=2pt]
+        \item[\textcolor{funRed}{\faTimes}] Calculator (unless specified)
+        \item[\textcolor{funRed}{\faTimes}] Phone, tablet, or smartwatch
+        \item[\textcolor{funRed}{\faTimes}] Notes, textbooks, or cheat sheets
+    \end{itemize}
+\end{tcolorbox}
+\end{minipage}
+
+\vspace{4mm}
+
+% --- Parent / Guardian Note ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funOrange!4,
+    colframe=funOrange!25,
+    arc=10pt, boxrule=0.8pt,
+    left=5mm, right=5mm, top=4mm, bottom=4mm,
+    title={\textcolor{white}{\faHeart~Master Crafter's Guide (for Parents \& Guardians)}},
+    colbacktitle=funOrangeDark!55,
+    fonttitle=\bfseries\sffamily,
+]
+    \small\color{funGrayDark}
+    Seven tests create the ideal forging arc: warm-up, strength-building,
+    and final tempering. Each heat adds resilience.
+
+    \medskip
+    \textbf{Support your apprentice by:}
+    \begin{itemize}[leftmargin=*, itemsep=1pt]
+        \item Spacing tests 2--3 days apart for practice and review
+        \item Reviewing wrong answers together without judgment --- every mistake
+            is part of the forging process
+        \item Celebrating improvement in technique (showing steps, labeling units)
+            not just raw scores
+        \item Keeping sessions to 45--60 minutes to maintain focus
+    \end{itemize}
+\end{tcolorbox}
+
+}
+
+\newpage

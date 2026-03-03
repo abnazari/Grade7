@@ -1,0 +1,433 @@
+% ============================================================
+% Question Bank: ch09-07 Simulating Compound Events
+% Topic Title: Simulating Compound Events
+% CCSS: 7.SP.C.8
+% Questions: 30 (18 MC + 7 SA + 5 Graphical)
+% ============================================================
+
+% --- Multiple Choice Questions (18) ---
+
+\begin{practiceQuestion}{9-7-q01}{mc}
+\begin{questionText}
+What is a simulation?
+\end{questionText}
+\choiceA{A way to calculate exact probabilities}
+\choiceB{A model that uses random numbers or objects to imitate a real event}
+\choiceC{A method that always gives the same result}
+\choiceD{A graph that shows all possible outcomes}
+\correctAnswer{B}
+\explanation{A simulation uses random numbers, coins, dice, or spinners to model a real-world event and estimate probabilities.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q02}{mc}
+\begin{questionText}
+A coin flip is used to simulate an event with two equally likely outcomes. Which real-world event could it model?
+\end{questionText}
+\choiceA{The probability of rain ($30\%$ chance)}
+\choiceB{Whether a baby is a boy or girl (approximately $50\%$ each)}
+\choiceC{Rolling a $6$ on a die}
+\choiceD{Drawing a heart from a deck of cards}
+\correctAnswer{B}
+\explanation{A coin has two equally likely outcomes ($50\%$ each), which matches the approximately $50/50$ chance of a baby being a boy or girl.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q03}{mc}
+\begin{questionText}
+To simulate an event with a $\frac{1}{6}$ probability, which tool would be most appropriate?
+\end{questionText}
+\choiceA{A coin}
+\choiceB{A standard die}
+\choiceC{A spinner with $4$ sections}
+\choiceD{A bag with $2$ marbles}
+\correctAnswer{B}
+\explanation{A standard die has $6$ equally likely outcomes, each with probability $\frac{1}{6}$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q04}{mc}
+\begin{questionText}
+You want to simulate a $20\%$ chance of winning a prize. Using digits $0$--$9$, which digits could represent winning?
+\end{questionText}
+\choiceA{$0$ and $1$}
+\choiceB{$0$, $1$, $2$}
+\choiceC{$0$, $1$, $2$, $3$}
+\choiceD{$0$, $1$, $2$, $3$, $4$}
+\correctAnswer{A}
+\explanation{$20\% = \frac{2}{10}$. Using $2$ digits out of $10$ to represent winning gives $\frac{2}{10} = 20\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q05}{mc}
+\begin{questionText}
+A simulation of flipping a coin $50$ times shows $28$ heads. What is the experimental probability of heads?
+\end{questionText}
+\choiceA{$0.50$}
+\choiceB{$0.56$}
+\choiceC{$0.44$}
+\choiceD{$0.28$}
+\correctAnswer{B}
+\explanation{$P = \frac{28}{50} = 0.56$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q06}{mc}
+\begin{questionText}
+Why are simulations useful?
+\end{questionText}
+\choiceA{They always give exact answers}
+\choiceB{They can estimate probabilities when real experiments are too difficult or impractical}
+\choiceC{They replace all mathematical calculations}
+\choiceD{They only work for coin flips}
+\correctAnswer{B}
+\explanation{Simulations estimate probabilities for complex events that are hard to compute directly or where real experiments are impractical.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q07}{mc}
+\begin{questionText}
+A die is used to simulate an event. Rolling $1$ or $2$ represents "success." What is the probability of success in each trial?
+\end{questionText}
+\choiceA{$\frac{1}{6}$}
+\choiceB{$\frac{1}{3}$}
+\choiceC{$\frac{1}{2}$}
+\choiceD{$\frac{2}{3}$}
+\correctAnswer{B}
+\explanation{$2$ favorable outcomes ($1, 2$) out of $6$. $P = \frac{2}{6} = \frac{1}{3}$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q08}{mc}
+\begin{questionText}
+In a simulation, you roll a die $120$ times to model rolling a $5$. About how many times do you expect to roll a $5$?
+\end{questionText}
+\choiceA{$5$}
+\choiceB{$12$}
+\choiceC{$20$}
+\choiceD{$60$}
+\correctAnswer{C}
+\explanation{$P(5) = \frac{1}{6}$. Expected: $120 \times \frac{1}{6} = 20$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q09}{mc}
+\begin{questionText}
+To simulate a $70\%$ chance of rain, which setup with random digits $0$--$9$ is correct?
+\end{questionText}
+\choiceA{Digits $0$--$6$ represent rain}
+\choiceB{Digits $0$--$7$ represent rain}
+\choiceC{Digits $0$--$2$ represent rain}
+\choiceD{Digits $0$--$9$ represent rain}
+\correctAnswer{A}
+\explanation{$70\% = \frac{7}{10}$. Digits $0, 1, 2, 3, 4, 5, 6$ ($7$ digits) represent rain.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q10}{mc}
+\begin{questionText}
+A student simulates rolling two dice $36$ times to see how often the sum is $7$. They get a sum of $7$ a total of $8$ times. How does this compare to the expected number?
+\end{questionText}
+\choiceA{Expected: $6$; the simulation result ($8$) is slightly higher}
+\choiceB{Expected: $6$; the simulation result ($8$) is much higher}
+\choiceC{Expected: $12$; the simulation result ($8$) is lower}
+\choiceD{Expected: $7$; the simulation result ($8$) is exact}
+\correctAnswer{A}
+\explanation{$P(\text{sum} = 7) = \frac{6}{36} = \frac{1}{6}$. Expected: $36 \times \frac{1}{6} = 6$. The simulation gave $8$, slightly above expected.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q11}{mc}
+\begin{questionText}
+A bag has $3$ red and $7$ blue marbles. To simulate drawing one marble, you could use random digits $0$--$9$. Which digits would represent red?
+\end{questionText}
+\choiceA{$0, 1, 2$}
+\choiceB{$0, 1, 2, 3$}
+\choiceC{$0, 1, 2, 3, 4, 5, 6$}
+\choiceD{$7, 8, 9$}
+\correctAnswer{A}
+\explanation{Red has a $\frac{3}{10}$ probability. Using $3$ digits ($0, 1, 2$) out of $10$ gives $\frac{3}{10} = 30\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q12}{mc}
+\begin{questionText}
+How does increasing the number of trials in a simulation affect the results?
+\end{questionText}
+\choiceA{The results become less reliable}
+\choiceB{The experimental probability gets closer to the theoretical probability}
+\choiceC{The results stay exactly the same}
+\choiceD{The simulation takes less time}
+\correctAnswer{B}
+\explanation{More trials produce more reliable estimates. The experimental probability approaches the theoretical value as trials increase.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q13}{mc}
+\begin{questionText}
+A game has a $25\%$ chance of winning. Which simulation model correctly represents this?
+\end{questionText}
+\choiceA{Flip a coin — heads means win}
+\choiceB{Roll a die — roll a $1$ means win}
+\choiceC{Use a spinner with $4$ equal sections — one section means win}
+\choiceD{Use digits $0$--$9$ — digits $0$--$4$ mean win}
+\correctAnswer{C}
+\explanation{A spinner with $4$ equal sections has $\frac{1}{4} = 25\%$ chance for each section. Assigning one section as "win" gives $25\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q14}{mc}
+\begin{questionText}
+Mia uses a random number generator to produce digits $0$--$9$. She runs $20$ trials to simulate a $40\%$ chance of an event. In her simulation, the event happens $10$ times. What is the experimental probability?
+\end{questionText}
+\choiceA{$0.20$}
+\choiceB{$0.40$}
+\choiceC{$0.50$}
+\choiceD{$0.10$}
+\correctAnswer{C}
+\explanation{$P = \frac{10}{20} = 0.50$. This is higher than the theoretical $0.40$, but with only $20$ trials, variation is expected.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q15}{mc}
+\begin{questionText}
+You simulate flipping a coin $3$ times and counting how many times all $3$ are heads. In $40$ simulations, all $3$ heads occurs $6$ times. What is the experimental probability?
+\end{questionText}
+\choiceA{$\frac{6}{40} = 0.15$}
+\choiceB{$\frac{1}{8} = 0.125$}
+\choiceC{$\frac{3}{40} = 0.075$}
+\choiceD{$\frac{6}{120} = 0.05$}
+\correctAnswer{A}
+\explanation{$P = \frac{6}{40} = 0.15$. The theoretical probability is $\frac{1}{8} = 0.125$, close to the simulation result.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q16}{mc}
+\begin{questionText}
+Which of the following is the FIRST step in designing a simulation?
+\end{questionText}
+\choiceA{Record the results}
+\choiceB{Run many trials}
+\choiceC{Identify the event and its possible outcomes}
+\choiceD{Calculate the experimental probability}
+\correctAnswer{C}
+\explanation{Before choosing a model or running trials, you must first identify what event you're simulating and what the possible outcomes are.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q17}{mc}
+\begin{questionText}
+A student wants to simulate the probability that exactly $2$ out of $3$ students pass a test, where each student has a $50\%$ chance. Which model would work?
+\end{questionText}
+\choiceA{Roll one die: odd = pass, even = fail}
+\choiceB{Flip $3$ coins: heads = pass, tails = fail; count exactly $2$ heads}
+\choiceC{Draw $3$ marbles from a bag of $2$ red and $1$ blue}
+\choiceD{Flip $1$ coin $3$ times and count all tails}
+\correctAnswer{B}
+\explanation{Each coin flip has a $50\%$ chance of heads (pass). Flipping $3$ coins and counting exactly $2$ heads simulates exactly $2$ passes.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q18}{mc}
+\begin{questionText}
+In a simulation of $100$ free throws, a basketball player makes $78$. If the player's actual success rate is $75\%$, is the simulation result reasonable?
+\end{questionText}
+\choiceA{No, any difference means the simulation is wrong}
+\choiceB{Yes, $78\%$ is close to $75\%$, which is expected variation}
+\choiceC{No, because $78$ is not equal to $75$}
+\choiceD{Yes, but only if exactly $75$ are made}
+\correctAnswer{B}
+\explanation{$\frac{78}{100} = 0.78$ vs. theoretical $0.75$. A small difference in $100$ trials is normal and expected.}
+\end{practiceQuestion}
+
+% --- Short Answer Questions (7) ---
+
+\begin{practiceQuestion}{9-7-q19}{sa}
+\begin{questionText}
+A simulation uses a coin flip ($50\%$ chance) to model whether it rains on a given day. In $30$ trials, rain occurs $16$ times. What is the experimental probability of rain?
+\end{questionText}
+\correctAnswer{$\frac{16}{30}$}
+\explanation{$P = \frac{16}{30} \approx 0.533$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q20}{sa}
+\begin{questionText}
+You roll a die $90$ times to simulate a $\frac{1}{6}$ probability event. How many times do you expect the event to occur?
+\end{questionText}
+\correctAnswer{$15$}
+\explanation{$90 \times \frac{1}{6} = 15$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q21}{sa}
+\begin{questionText}
+A random-number generator produces digits $0$--$9$. You assign digits $0$--$3$ to represent "win" and $4$--$9$ to represent "lose." What is the theoretical probability of winning?
+\end{questionText}
+\correctAnswer{$0.4$}
+\explanation{$4$ winning digits ($0, 1, 2, 3$) out of $10$. $P = \frac{4}{10} = 0.4 = 40\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q22}{sa}
+\begin{questionText}
+A simulation of $50$ coin flips produces $22$ heads. Predict how many heads you would expect in $200$ flips based on this simulation.
+\end{questionText}
+\correctAnswer{$88$}
+\explanation{Experimental $P(\text{heads}) = \frac{22}{50} = 0.44$. In $200$ flips: $200 \times 0.44 = 88$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q23}{sa}
+\begin{questionText}
+A spinner has a $60\%$ chance of landing on blue. In a simulation of $80$ spins, how many times would you expect blue to appear?
+\end{questionText}
+\correctAnswer{$48$}
+\explanation{$80 \times 0.60 = 48$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q24}{sa}
+\begin{questionText}
+Describe how to use a standard die to simulate a $\frac{1}{3}$ probability event.
+\end{questionText}
+\correctAnswer{Roll the die; let $1$ and $2$ represent the event (or any $2$ numbers out of $6$)}
+\explanation{Choose $2$ of the $6$ faces to represent the event. $P = \frac{2}{6} = \frac{1}{3}$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q25}{sa}
+\begin{questionText}
+A student runs $200$ simulation trials for an event with theoretical probability $\frac{1}{4}$. They observe the event $54$ times. What is the experimental probability? Is it close to the theoretical value?
+\end{questionText}
+\correctAnswer{$0.27$; yes, it is close to $0.25$}
+\explanation{$P = \frac{54}{200} = 0.27$. Theoretical $= 0.25$. The difference of $0.02$ is small, especially with $200$ trials.}
+\end{practiceQuestion}
+
+% --- Graphical Questions (3 GMC + 2 GSA) ---
+
+\begin{practiceQuestion}{9-7-q26}{gmc}
+\begin{questionText}
+The frequency table below shows the results of a simulation where a die was rolled $60$ times. Based on the simulation, which number has the highest experimental probability?
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Number} & \textbf{Frequency} \\
+\hline
+$1$ & $8$ \\
+\hline
+$2$ & $12$ \\
+\hline
+$3$ & $9$ \\
+\hline
+$4$ & $11$ \\
+\hline
+$5$ & $7$ \\
+\hline
+$6$ & $13$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{questionText}
+\choiceA{$2$}
+\choiceB{$4$}
+\choiceC{$6$}
+\choiceD{$3$}
+\correctAnswer{C}
+\explanation{$6$ appeared $13$ times, the highest frequency. $P(6) = \frac{13}{60} \approx 0.217$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q27}{gmc}
+\begin{questionText}
+The bar graph shows the results of simulating a spinner $100$ times. The spinner is supposed to land on each color with equal probability. Based on the simulation, does the spinner appear fair?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+  \draw[thick,->] (0,0) -- (0,32) node[above,font=\small] {Frequency};
+  \draw[thick,->] (0,0) -- (7,0);
+  \foreach \y in {5,10,...,30} {
+    \draw[gray!30] (0,\y) -- (6.5,\y);
+    \node[left,font=\small] at (0,\y) {\y};
+  }
+  \fill[funRed!70] (0.5,0) rectangle (1.5,26);
+  \fill[funBlue!70] (2.5,0) rectangle (3.5,24);
+  \fill[funGreen!70] (4.5,0) rectangle (5.5,28);
+  \node[below,font=\small] at (1,0) {Red};
+  \node[below,font=\small] at (3,0) {Blue};
+  \node[below,font=\small] at (5,0) {Grn.};
+  \node[below,font=\small] at (3,-1) {Not shown: Yellow $= 22$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{No, because the bars are different heights}
+\choiceB{Yes, the frequencies ($26, 24, 28, 22$) are all roughly close to $25$}
+\choiceC{No, Green is clearly the most likely color}
+\choiceD{Cannot be determined from the graph}
+\correctAnswer{B}
+\explanation{With $4$ equal sections, each should appear about $25$ times in $100$ spins. The results ($26, 24, 28, 22$) are all close to $25$, suggesting the spinner is fair.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q28}{gmc}
+\begin{questionText}
+The table shows a simulation using random digits $0$--$9$ to model a $30\%$ chance of rain. Digits $0$, $1$, $2$ represent rain. Based on the $10$ trials below, what is the experimental probability of rain?
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Trial} & \textbf{Digit} & \textbf{Rain?} \\
+\hline
+$1$ & $5$ & No \\
+\hline
+$2$ & $1$ & Yes \\
+\hline
+$3$ & $8$ & No \\
+\hline
+$4$ & $0$ & Yes \\
+\hline
+$5$ & $3$ & No \\
+\hline
+$6$ & $7$ & No \\
+\hline
+$7$ & $2$ & Yes \\
+\hline
+$8$ & $9$ & No \\
+\hline
+$9$ & $4$ & No \\
+\hline
+$10$ & $6$ & No \\
+\hline
+\end{tabular}
+\end{center}
+\end{questionText}
+\choiceA{$\frac{2}{10} = 0.20$}
+\choiceB{$\frac{3}{10} = 0.30$}
+\choiceC{$\frac{4}{10} = 0.40$}
+\choiceD{$\frac{7}{10} = 0.70$}
+\correctAnswer{B}
+\explanation{Rain occurred in trials $2$, $4$, and $7$ — that is $3$ out of $10$. $P = \frac{3}{10} = 0.30$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q29}{gsa}
+\begin{questionText}
+The frequency table shows simulation results for flipping $3$ coins $40$ times and recording the number of heads. Based on this simulation, what is the experimental probability of getting exactly $3$ heads?
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Number of Heads} & \textbf{Frequency} \\
+\hline
+$0$ & $4$ \\
+\hline
+$1$ & $16$ \\
+\hline
+$2$ & $14$ \\
+\hline
+$3$ & $6$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{questionText}
+\correctAnswer{$\frac{6}{40} = 0.15$}
+\explanation{Exactly $3$ heads occurred $6$ times out of $40$ trials. $P = \frac{6}{40} = \frac{3}{20} = 0.15$. (Theoretical: $\frac{1}{8} = 0.125$.)}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q30}{gsa}
+\begin{questionText}
+A simulation uses random digits $0$--$9$. The table shows $20$ trials to simulate a $50\%$ chance event (digits $0$--$4$ = success). Count the successes and find the experimental probability. Write your answer as a decimal.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Trial} & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ \\
+\hline
+\textbf{Digit} & $3$ & $7$ & $1$ & $9$ & $4$ & $6$ & $0$ & $8$ & $2$ & $5$ \\
+\hline
+\hline
+\textbf{Trial} & $11$ & $12$ & $13$ & $14$ & $15$ & $16$ & $17$ & $18$ & $19$ & $20$ \\
+\hline
+\textbf{Digit} & $8$ & $3$ & $6$ & $1$ & $7$ & $4$ & $9$ & $0$ & $4$ & $2$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{questionText}
+\correctAnswer{$0.55$}
+\explanation{Digits $0$--$4$ are successes. Successes: T1($3$), T3($1$), T5($4$), T7($0$), T9($2$), T12($3$), T14($1$), T16($4$), T18($0$), T19($4$), T20($2$) — that is $11$ out of $20$. $P = \frac{11}{20} = 0.55$.}
+\end{practiceQuestion}

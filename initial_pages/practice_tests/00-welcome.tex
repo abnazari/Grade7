@@ -1,0 +1,124 @@
+% ============================================================================
+% Welcome Page — Grade 5 Practice Tests
+% A warm, encouraging introduction for young test-takers
+% ============================================================================
+
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+    % --- Background gradient ---
+    \fill[funGreenLight]
+        (current page.south west) rectangle (current page.north east);
+
+    % --- Top decorative band ---
+    \fill[funGreen!85]
+        (current page.north west) rectangle
+        ([yshift=-5.5cm]current page.north east);
+    \fill[funGreen!60]
+        ([yshift=-5.5cm]current page.north west) --
+        ([yshift=-5.5cm]current page.north east) --
+        ([yshift=-6.2cm]current page.north east) --
+        ([yshift=-5.8cm]current page.north west) -- cycle;
+
+    % --- Decorative circles ---
+    \fill[white, opacity=0.06]
+        ([xshift=-2cm, yshift=-1.5cm]current page.north east) circle (4cm);
+    \fill[white, opacity=0.04]
+        ([xshift=3cm, yshift=-3cm]current page.north west) circle (3cm);
+
+    % --- Stars across the top ---
+    \node[opacity=0.20] at ([xshift=2cm, yshift=-1.2cm]current page.north west)
+        {\textcolor{funYellow}{\fontsize{22}{24}\selectfont\faStar}};
+    \node[opacity=0.15] at ([xshift=-2cm, yshift=-1.5cm]current page.north east)
+        {\textcolor{funYellow}{\fontsize{18}{20}\selectfont\faStar}};
+    \node[opacity=0.12] at ([xshift=6cm, yshift=-0.8cm]current page.north west)
+        {\textcolor{funYellow}{\fontsize{14}{16}\selectfont\faStar}};
+
+    % --- "ARE YOU READY?" text ---
+    \node[font=\fontsize{16}{18}\selectfont\sffamily\color{white!80!funGreen}]
+        at ([yshift=-2cm]current page.north) {A\kern0.12em R\kern0.12em E\hspace{0.5em}Y\kern0.12em O\kern0.12em U\hspace{0.5em}R\kern0.12em E\kern0.12em A\kern0.12em D\kern0.12em Y\kern0.12em ?};
+
+    % --- Main title ---
+    \node[font=\fontsize{26}{32}\selectfont\sffamily\bfseries\color{white},
+          text width=0.8\paperwidth, align=center]
+        at ([yshift=-4cm]current page.north)
+        {Grade 5 Math Practice Tests!};
+
+    % --- Divider line ---
+    \draw[funYellow, line width=2.5pt]
+        ([xshift=3.5cm, yshift=-6.8cm]current page.north west) --
+        ([xshift=-3.5cm, yshift=-6.8cm]current page.north east);
+    \node at ([yshift=-6.8cm]current page.north)
+        {\textcolor{funYellow}{\large\faStar}};
+
+    % --- Welcome message box ---
+    \node[anchor=north, inner sep=0pt] at ([yshift=-8cm]current page.north) {%
+        \begin{minipage}{0.78\textwidth}
+        \begin{tcolorbox}[
+            enhanced,
+            colback=white,
+            colframe=funGreen!30,
+            arc=12pt,
+            outer arc=12pt,
+            boxrule=1.5pt,
+            top=8mm, bottom=8mm,
+            left=8mm, right=8mm,
+            shadow={2mm}{-2mm}{0mm}{funGreen!10},
+        ]
+            \centering
+            \sffamily\large\color{funGreenDark}
+
+            Hey there, math explorer! \textcolor{funYellow}{\faStar}
+
+            \bigskip
+
+            This book has \textbf{real practice tests} that look just like the
+            math tests you'll take at school. Each test covers everything
+            you've learned in Grade 5 --- decimals, fractions, multi-digit
+            multiplication \& division, expressions, volume, and more!
+
+            \bigskip
+
+            \textcolor{funGreen}{\faCheckCircle}~Practice makes \textbf{perfect}!
+
+            \smallskip
+
+            \textcolor{funGreen}{\faCheckCircle}~You \textbf{already} know so much!
+
+            \smallskip
+
+            \textcolor{funGreen}{\faCheckCircle}~Every test makes you \textbf{stronger}!
+
+            \bigskip
+
+            Take a deep breath, grab your pencil, and let's go!
+            \textcolor{funOrange}{\faRocket}
+        \end{tcolorbox}
+        \end{minipage}%
+    };
+
+    % --- Owl mascot ---
+    \node at ([xshift=-3cm, yshift=3.5cm]current page.south east)
+        {\iconOwl[2.8cm]};
+
+    % --- Speech bubble from mascot ---
+    \node[
+        draw=funPurple!40, fill=funPurple!8,
+        rounded corners=8pt, inner sep=5mm,
+        font=\sffamily\small\itshape\color{funPurpleDark},
+        text width=5.5cm, align=center,
+        anchor=south east,
+    ] at ([xshift=-5.8cm, yshift=5.5cm]current page.south east)
+    {
+        \faQuoteLeft~You've been learning all year.
+        These practice tests will show you just how much you know!~\faQuoteRight
+    };
+
+    % --- Copyright ---
+    \node[font=\tiny\sffamily\color{funGreen!40}, anchor=south]
+        at ([yshift=0.8cm]current page.south)
+        {\textcopyright~ViewMath.com --- All Rights Reserved};
+
+\end{tikzpicture}
+
+\newpage

@@ -25,7 +25,7 @@ Output structure:
 Each file contains raw \\begin{practiceQuestion}...\\end{practiceQuestion}
 blocks that can be \\input'd into a main.tex file later.
 
-Question bank format (in practice_questions_bank/topics/):
+Question bank format (in tests_questions_bank/topics/):
     \\begin{practiceQuestion}{ID}{TYPE}
     \\begin{questionText}
     ...
@@ -124,9 +124,9 @@ def load_all_question_banks(
     """Load all question banks from the workspace.
 
     Scans three question-bank directories:
-      - practice_questions_bank/topics/           (core CCSS)
-      - practice_questions_bank/topics_additional/ (supplementary)
-      - practice_questions_bank/topics_modifed/    (state-modified)
+      - tests_questions_bank/topics/           (core CCSS)
+      - tests_questions_bank/topics_additional/ (supplementary)
+      - tests_questions_bank/topics_modifed/    (state-modified)
 
     Modified banks are kept separate because they share topic IDs with core
     banks — they must only replace core questions for states that actually
@@ -137,7 +137,7 @@ def load_all_question_banks(
     """
     core_banks: Dict[str, List[RawQuestion]] = {}
     modified_banks: Dict[str, List[RawQuestion]] = {}
-    bank_root = workspace / "practice_questions_bank"
+    bank_root = workspace / "tests_questions_bank"
 
     # ── Core + additional (shared by all states) ────────────────────────
     for scan_dir in [bank_root / "topics", bank_root / "topics_additional"]:
@@ -849,7 +849,7 @@ def main():
 
     if not core_banks:
         print("ERROR: No question banks found. "
-              "Create .tex files in practice_questions_bank/topics/")
+              "Create .tex files in tests_questions_bank/topics/")
         sys.exit(1)
 
     # Generate tests for each state

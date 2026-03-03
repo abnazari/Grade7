@@ -1,0 +1,204 @@
+% ============================================================================
+% Construction Log (Test Tracker) — 10 Practice Tests: The Architect
+% Blueprint-styled 4-phase tracker with floor-by-floor progress
+% Grade 7
+% ============================================================================
+
+\thispagestyle{empty}
+
+{
+\sffamily
+
+% --- Title ---
+\begin{center}
+    \textcolor{funBlueDark}{\fontsize{26}{30}\selectfont\bfseries
+    \faBuilding~Construction Log~\faBuilding}
+
+    \smallskip
+    \textcolor{funGray}{\normalsize Record each floor and watch your tower rise}
+\end{center}
+
+\vspace{2mm}
+
+% --- Architect info ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funBlue!4,
+    colframe=funBlue!35,
+    arc=4pt, boxrule=1pt,
+    left=5mm, right=5mm, top=2mm, bottom=2mm,
+    borderline west={3pt}{0pt}{funBlue!50},
+]
+    \centering\normalsize
+    \textbf{Architect:} \rule{7cm}{0.4pt}
+    \hfill
+    \textbf{Project Start:} \rule{3.5cm}{0.4pt}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% --- Helper for each test entry line ---
+\newcommand{\floorEntry}[3]{%
+    % #1 = test number, #2 = icon color, #3 = floor icons
+    \noindent
+    \textcolor{#2}{\fontsize{12}{12}\selectfont\faDraftingCompass}~%
+    \textbf{Floor #1}\hfill
+    Date: \rule{1.8cm}{0.3pt}\hfill
+    Score: \rule{0.9cm}{0.3pt}\,/\,\rule{0.9cm}{0.3pt}\hfill
+    \%: \rule{0.9cm}{0.3pt}\hfill
+    #3%
+    \\[2pt]
+}
+
+% --- Phase I: Foundation (Tests 1-3) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funBlue!3,
+    colframe=funBlue!30,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{Phase I: Foundation --- Floors 1--3}},
+    colbacktitle=funBlue!55,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{funBlue!50},
+]
+    \small
+    \floorEntry{1}{funBlue}{\textcolor{funBlue!25}{\faStar\faStar\faStar\faStar\faStar}}
+    \floorEntry{2}{funBlue}{\textcolor{funBlue!25}{\faStar\faStar\faStar\faStar\faStar}}
+    \floorEntry{3}{funBlue}{\textcolor{funBlue!25}{\faStar\faStar\faStar\faStar\faStar}}
+\end{tcolorbox}
+
+\vspace{1mm}
+
+% --- Phase II: Framework (Tests 4-6) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funTeal!3,
+    colframe=funTeal!30,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{Phase II: Framework --- Floors 4--6}},
+    colbacktitle=funTeal!55,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{funTeal!50},
+]
+    \small
+    \floorEntry{4}{funTeal}{\textcolor{funTeal!25}{\faStar\faStar\faStar\faStar\faStar}}
+    \floorEntry{5}{funTeal}{\textcolor{funTeal!25}{\faStar\faStar\faStar\faStar\faStar}}
+    \floorEntry{6}{funTeal}{\textcolor{funTeal!25}{\faStar\faStar\faStar\faStar\faStar}}
+\end{tcolorbox}
+
+\vspace{1mm}
+
+% --- Phase III: Finishing (Tests 7-9) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funPurple!3,
+    colframe=funPurple!30,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{Phase III: Finishing --- Floors 7--9}},
+    colbacktitle=funPurple!55,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{funPurple!50},
+]
+    \small
+    \floorEntry{7}{funPurple}{\textcolor{funPurple!25}{\faStar\faStar\faStar\faStar\faStar}}
+    \floorEntry{8}{funPurple}{\textcolor{funPurple!25}{\faStar\faStar\faStar\faStar\faStar}}
+    \floorEntry{9}{funPurple}{\textcolor{funPurple!25}{\faStar\faStar\faStar\faStar\faStar}}
+\end{tcolorbox}
+
+\vspace{1mm}
+
+% --- Phase IV: Capstone (Test 10) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funGreen!4,
+    colframe=funGreen!40,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{Phase IV: Capstone --- Floor 10}},
+    colbacktitle=funGreen!60,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{funGreen!50},
+]
+    \small
+    \floorEntry{10}{funGreen}{\textcolor{funGreen!30}{\faStar\faStar\faStar\faStar\faStar}}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% --- Rating system ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funBlue!3,
+    colframe=funBlue!20,
+    arc=4pt, boxrule=0.8pt,
+    left=5mm, right=5mm, top=2mm, bottom=2mm,
+    borderline west={2pt}{0pt}{funBlue!40},
+]
+    \small\centering
+    \textbf{Certification Level:}\quad
+    \textcolor{funGray}{\faDraftingCompass}~Apprentice (0--39\%)
+    \quad
+    \textcolor{funBlue}{\faDraftingCompass}~Technician (40--59\%)
+    \quad
+    \textcolor{funPurple}{\faDraftingCompass}~Engineer (60--79\%)
+    \quad
+    \textcolor{funGreen}{\faDraftingCompass}~\textbf{Master Architect} (80--100\%)
+
+    \vspace{1mm}
+    \textcolor{funGray}{\itshape\scriptsize Color the stars after each test to track your certification level!}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% --- Topics to Build / Topics Completed ---
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+\begin{tcolorbox}[
+    enhanced,
+    colback=funOrange!4,
+    colframe=funOrange!30,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{\faWrench~Under Construction}},
+    colbacktitle=funOrange!55,
+    fonttitle=\bfseries\sffamily,
+    height=3cm,
+]
+    \small\color{funGrayDark}
+    \begin{itemize}[leftmargin=*, itemsep=4pt]
+        \item[\textcolor{funOrange}{\faDraftingCompass}] \rule{4.5cm}{0.3pt}
+        \item[\textcolor{funOrange}{\faDraftingCompass}] \rule{4.5cm}{0.3pt}
+        \item[\textcolor{funOrange}{\faDraftingCompass}] \rule{4.5cm}{0.3pt}
+        \item[\textcolor{funOrange}{\faDraftingCompass}] \rule{4.5cm}{0.3pt}
+    \end{itemize}
+\end{tcolorbox}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\begin{tcolorbox}[
+    enhanced,
+    colback=funGreen!4,
+    colframe=funGreen!30,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{\faCheckCircle~Construction Complete}},
+    colbacktitle=funGreen!55,
+    fonttitle=\bfseries\sffamily,
+    height=3cm,
+]
+    \small\color{funGrayDark}
+    \begin{itemize}[leftmargin=*, itemsep=4pt]
+        \item[\textcolor{funGreen}{\faStar}] \rule{4.5cm}{0.3pt}
+        \item[\textcolor{funGreen}{\faStar}] \rule{4.5cm}{0.3pt}
+        \item[\textcolor{funGreen}{\faStar}] \rule{4.5cm}{0.3pt}
+        \item[\textcolor{funGreen}{\faStar}] \rule{4.5cm}{0.3pt}
+    \end{itemize}
+\end{tcolorbox}
+\end{minipage}
+
+}
+
+\newpage

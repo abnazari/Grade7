@@ -1,0 +1,135 @@
+% ============================================================================
+% Welcome Page — 5 Practice Tests: The Explorer's Journal
+% Expedition theme — earthy teal/amber palette, compass & map motifs
+% Grade 7 · Parchment-style with topographic contour accents
+% ============================================================================
+
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+    % --- Warm parchment background ---
+    \fill[funCream]
+        (current page.south west) rectangle (current page.north east);
+
+    % --- Subtle topographic contour lines ---
+    \draw[funTeal!12, line width=0.4pt]
+        ([xshift=-2cm, yshift=3cm]current page.center) ellipse (8cm and 4cm);
+    \draw[funTeal!10, line width=0.3pt]
+        ([xshift=-2cm, yshift=3cm]current page.center) ellipse (9cm and 5cm);
+    \draw[funTeal!8, line width=0.3pt]
+        ([xshift=-2cm, yshift=3cm]current page.center) ellipse (10cm and 6cm);
+    \draw[funTeal!6, line width=0.3pt]
+        ([xshift=-2cm, yshift=3cm]current page.center) ellipse (11cm and 7cm);
+
+    % --- Top banner (earthy teal) ---
+    \fill[funTealDark!85]
+        (current page.north west) rectangle
+        ([yshift=-5cm]current page.north east);
+    % --- Slanted edge ---
+    \fill[funTealDark!85]
+        ([yshift=-5cm]current page.north west) --
+        ([yshift=-5cm]current page.north east) --
+        ([yshift=-6cm]current page.north east) --
+        ([yshift=-5.5cm]current page.north west) -- cycle;
+
+    % --- Compass rose watermark ---
+    \node[font=\fontsize{80}{80}\selectfont, text=funTeal!8, opacity=0.6]
+        at ([xshift=5cm, yshift=-5cm]current page.north west) {\faCompass};
+
+    % --- Decorative map pin accents ---
+    \node[opacity=0.2, font=\fontsize{16}{16}\selectfont, text=funOrange, rotate=-15]
+        at ([xshift=-3cm, yshift=-2cm]current page.north east) {\faMapMarkerAlt};
+    \node[opacity=0.15, font=\fontsize{12}{12}\selectfont, text=funYellowDark, rotate=10]
+        at ([xshift=2.5cm, yshift=-1.5cm]current page.north west) {\faMapMarkerAlt};
+
+    % --- "EXPLORER'S JOURNAL" spaced text ---
+    \node[font=\fontsize{11}{13}\selectfont\sffamily\color{white!70!funTealDark}]
+        at ([yshift=-1.8cm]current page.north)
+        {T\kern0.12em H\kern0.12em E\hspace{0.5em}E\kern0.12em X\kern0.12em P\kern0.12em L\kern0.12em O\kern0.12em R\kern0.12em E\kern0.12em R\kern0.12em '\kern0.12em S\hspace{0.5em}J\kern0.12em O\kern0.12em U\kern0.12em R\kern0.12em N\kern0.12em A\kern0.12em L};
+
+    % --- Main title ---
+    \node[font=\fontsize{32}{38}\selectfont\sffamily\bfseries, text=white,
+          text width=0.78\paperwidth, align=center]
+        at ([yshift=-3.6cm]current page.north)
+        {5 Practice Tests};
+
+    % --- Subtitle ---
+    \node[font=\fontsize{14}{18}\selectfont\sffamily, text=funYellowLight]
+        at ([yshift=-5.3cm]current page.north)
+        {\faCompass\hspace{3mm}Grade 7 Math --- Chart Your Path\hspace{3mm}\faCompass};
+
+    % --- Amber divider ---
+    \draw[funYellowDark!60, line width=1.5pt]
+        ([xshift=3cm, yshift=-6.5cm]current page.north west) --
+        ([xshift=-3cm, yshift=-6.5cm]current page.north east);
+    \node at ([yshift=-6.5cm]current page.north)
+        {\textcolor{funYellowDark}{\small\faMapMarkerAlt}};
+
+    % --- Welcome message in parchment card ---
+    \node[anchor=north, inner sep=0pt] at ([yshift=-7.5cm]current page.north) {%
+        \begin{minipage}{0.78\textwidth}
+        \begin{tcolorbox}[
+            enhanced,
+            colback=white,
+            colframe=funTeal!30,
+            arc=12pt,
+            outer arc=12pt,
+            boxrule=1.5pt,
+            top=7mm, bottom=7mm,
+            left=7mm, right=7mm,
+            shadow={2mm}{-2mm}{0mm}{funTeal!8},
+        ]
+            \centering
+            \sffamily\normalsize\color{funTealDark}
+
+            Welcome, math explorer!
+
+            \bigskip
+
+            This journal holds \textbf{5 full expeditions} across the
+            entire landscape of Grade 7 math. From the peaks of
+            proportional reasoning to the valleys of negative numbers,
+            every trail is mapped and waiting for you.
+
+            \bigskip
+
+            \textcolor{funTealDark}{\faCompass}~\textbf{Trail 1--2:} Scout the terrain at your own pace\\[2mm]
+            \textcolor{funTealDark}{\faCompass}~\textbf{Trail 3--4:} Push deeper with timed conditions\\[2mm]
+            \textcolor{funTealDark}{\faCompass}~\textbf{Trail 5:} Summit the mountain --- full test simulation
+
+            \bigskip
+
+            \textit{\textcolor{funYellowDark}{Every great explorer starts with a single step.\\
+            Yours starts on the next page.}}
+        \end{tcolorbox}
+        \end{minipage}%
+    };
+
+    % --- Owl with compass (bottom right) ---
+    \node at ([xshift=-3cm, yshift=3.5cm]current page.south east)
+        {\iconOwl[2.5cm]};
+
+    % --- Speech bubble ---
+    \node[
+        draw=funTeal!35, fill=white,
+        rounded corners=10pt, inner sep=4mm,
+        font=\sffamily\small\itshape\color{funTealDark},
+        text width=5.5cm, align=center,
+        anchor=south east,
+    ] at ([xshift=-5.8cm, yshift=5.5cm]current page.south east)
+    {
+        \faQuoteLeft~Five trails gives you the journey
+        every explorer needs: discover, practice,
+        and conquer. Pack your pencils ---
+        the expedition begins!~\faQuoteRight
+    };
+
+    % --- Copyright ---
+    \node[font=\tiny\sffamily\color{funTeal!40}, anchor=south]
+        at ([yshift=0.8cm]current page.south)
+        {\textcopyright~ViewMath.com --- All Rights Reserved};
+
+\end{tikzpicture}
+
+\newpage

@@ -1,0 +1,190 @@
+% ============================================================================
+% Expedition Log (Test Tracker) — 5 Practice Tests: Explorer's Journal
+% Field-journal styled tracker with elevation chart and trail notes
+% Grade 7
+% ============================================================================
+
+\thispagestyle{empty}
+
+{
+\sffamily
+
+% --- Title ---
+\begin{center}
+    \textcolor{funTealDark}{\fontsize{26}{30}\selectfont\bfseries
+    \faBookOpen~Expedition Log~\faBookOpen}
+
+    \smallskip
+    \textcolor{funGray}{\normalsize Chart your journey across 5 trails}
+\end{center}
+
+\vspace{3mm}
+
+% --- Explorer info ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funCream,
+    colframe=funTeal!35,
+    arc=10pt, boxrule=1pt,
+    left=5mm, right=5mm, top=3mm, bottom=3mm,
+]
+    \centering\normalsize
+    \textbf{Explorer:} \rule{7cm}{0.4pt}
+    \hfill
+    \textbf{Expedition Start:} \rule{4cm}{0.4pt}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% --- Helper for trail entries ---
+\newcommand{\trailEntry}[4]{%
+    % #1 = trail num, #2 = icon, #3 = color, #4 = label
+    \noindent
+    \textcolor{#3}{\fontsize{13}{13}\selectfont#2}~%
+    \textbf{Trail #1} --- \textit{#4}\hfill
+    Date: \rule{2cm}{0.3pt}\hfill
+    Score: \rule{1.2cm}{0.3pt}\,/\,\rule{1cm}{0.3pt}\hfill
+    \%: \rule{1.5cm}{0.3pt}%
+    \\[3pt]
+}
+
+% --- Scouting Stage (Trails 1-2) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funTeal!4,
+    colframe=funTeal!35,
+    arc=8pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{\faHiking~Scouting Stage --- Trails 1--2 (Untimed)}},
+    colbacktitle=funTeal!55,
+    fonttitle=\bfseries\sffamily,
+]
+    \small
+    \trailEntry{1}{\faMapMarkerAlt}{funTeal}{First steps on the trail}
+    \trailEntry{2}{\faMapMarkerAlt}{funTeal}{Gaining your bearings}
+\end{tcolorbox}
+
+\vspace{1.5mm}
+
+% --- Trekking Stage (Trails 3-4) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funYellowDark!4,
+    colframe=funYellowDark!30,
+    arc=8pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{\faMountain~Trekking Stage --- Trails 3--4 (Timed)}},
+    colbacktitle=funYellowDark!55,
+    fonttitle=\bfseries\sffamily,
+]
+    \small
+    \trailEntry{3}{\faCompass}{funYellowDark}{Navigating with purpose}
+    \trailEntry{4}{\faCompass}{funYellowDark}{Pushing toward the peak}
+\end{tcolorbox}
+
+\vspace{1.5mm}
+
+% --- Summit Stage (Trail 5) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funGreen!5,
+    colframe=funGreen!40,
+    arc=8pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{\faFlag~Summit --- Trail 5 (Full Conditions)}},
+    colbacktitle=funGreen!60,
+    fonttitle=\bfseries\sffamily,
+]
+    \small
+    \trailEntry{5}{\faFlag}{funGreen}{Reaching the summit!}
+\end{tcolorbox}
+
+\vspace{3mm}
+
+% --- Elevation chart ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=funCream,
+    colframe=funTeal!30,
+    arc=10pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    title={\textcolor{white}{\faMountain~Elevation Chart}},
+    colbacktitle=funTealDark!55,
+    fonttitle=\bfseries\sffamily,
+]
+\centering
+\begin{tikzpicture}[scale=0.82]
+    % Y-axis
+    \draw[funGray, thick, ->] (0,0) -- (0,5.5)
+        node[above, font=\small\sffamily] {Score (\%)};
+    \foreach \y in {0,1,...,5} {
+        \draw[funGray!25] (0,\y) -- (12,\y);
+        \node[left, font=\tiny\sffamily, funGray] at (0,\y)
+            {\pgfmathparse{int(\y*20)}\pgfmathresult};
+    }
+    % Mountain silhouette (decoration)
+    \fill[funTeal!8]
+        (0,0) -- (1,0.5) -- (2.5,1.2) -- (4,2) -- (6,3.2)
+        -- (8,3.8) -- (10,4.5) -- (12,5) -- (12,0) -- cycle;
+    % Bars (empty — student fills in)
+    \foreach \x/\label/\col in {
+        1.5/Trail 1/funTeal!50,
+        4/Trail 2/funTeal!60,
+        6.5/Trail 3/funYellowDark!60,
+        9/Trail 4/funYellowDark!70,
+        11/Trail 5/funGreen!60
+    } {
+        \draw[\col, thick, dashed] (\x-0.5,0) rectangle (\x+0.5,4.8);
+        \node[below, font=\tiny\sffamily, funGrayDark] at (\x,-0.2) {\label};
+    }
+\end{tikzpicture}
+
+\smallskip
+\textcolor{funGray}{\small\itshape Shade each bar to your score. Watch the mountain rise!}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% --- Trail notes ---
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+\begin{tcolorbox}[
+    enhanced,
+    colback=funOrange!4,
+    colframe=funOrange!30,
+    arc=8pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{\faExclamationTriangle~Rough Terrain}},
+    colbacktitle=funOrange!55,
+    fonttitle=\bfseries\sffamily,
+]
+    \small\color{funGrayDark}
+    \textcolor{funOrange}{\faMapMarkerAlt}~\rule{5.2cm}{0.3pt}\\[4pt]
+    \textcolor{funOrange}{\faMapMarkerAlt}~\rule{5.2cm}{0.3pt}\\[4pt]
+    \textcolor{funOrange}{\faMapMarkerAlt}~\rule{5.2cm}{0.3pt}\\[4pt]
+    \textcolor{funOrange}{\faMapMarkerAlt}~\rule{5.2cm}{0.3pt}
+\end{tcolorbox}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\begin{tcolorbox}[
+    enhanced,
+    colback=funGreen!4,
+    colframe=funGreen!30,
+    arc=8pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{\faFlag~Conquered Peaks}},
+    colbacktitle=funGreen!55,
+    fonttitle=\bfseries\sffamily,
+]
+    \small\color{funGrayDark}
+    \textcolor{funGreen}{\faFlag}~\rule{5.2cm}{0.3pt}\\[4pt]
+    \textcolor{funGreen}{\faFlag}~\rule{5.2cm}{0.3pt}\\[4pt]
+    \textcolor{funGreen}{\faFlag}~\rule{5.2cm}{0.3pt}\\[4pt]
+    \textcolor{funGreen}{\faFlag}~\rule{5.2cm}{0.3pt}
+\end{tcolorbox}
+\end{minipage}
+
+}
+
+\newpage

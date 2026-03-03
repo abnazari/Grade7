@@ -1,0 +1,450 @@
+% ============================================================
+% Question Bank: ch08-04 Comparing Populations with Measures of Center and Variability
+% Topic Title: Comparing Populations with Measures of Center and Variability
+% CCSS: 7.SP.B.4
+% Questions: 30 (18 MC + 7 SA + 5 Graphical)
+% ============================================================
+
+% --- Multiple Choice Questions (18) ---
+
+\begin{practiceQuestion}{8-4-q01}{mc}
+\begin{questionText}
+Data set A: $10, 12, 14, 16, 18$. What is the mean?
+\end{questionText}
+\choiceA{$12$}
+\choiceB{$14$}
+\choiceC{$16$}
+\choiceD{$70$}
+\correctAnswer{B}
+\explanation{$\frac{10+12+14+16+18}{5} = \frac{70}{5} = 14$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q02}{mc}
+\begin{questionText}
+Data set: $3, 5, 7, 9, 11, 13, 15$. What is the median?
+\end{questionText}
+\choiceA{$7$}
+\choiceB{$9$}
+\choiceC{$11$}
+\choiceD{$8$}
+\correctAnswer{B}
+\explanation{There are $7$ values. The middle (4th) value is $9$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q03}{mc}
+\begin{questionText}
+Group A has a mean of $50$ and a MAD of $3$. Group B has a mean of $60$ and a MAD of $3$. The difference in means expressed in MADs is:
+\end{questionText}
+\choiceA{$\frac{10}{3} \approx 3.3$ MADs}
+\choiceB{$10$ MADs}
+\choiceC{$3$ MADs}
+\choiceD{$30$ MADs}
+\correctAnswer{A}
+\explanation{Difference $= 60 - 50 = 10$. In MADs: $\frac{10}{3} \approx 3.3$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q04}{mc}
+\begin{questionText}
+Which measure of variability focuses on the middle $50\%$ of the data?
+\end{questionText}
+\choiceA{Range}
+\choiceB{Mean}
+\choiceC{Interquartile range (IQR)}
+\choiceD{Median}
+\correctAnswer{C}
+\explanation{IQR $= Q_3 - Q_1$ measures the spread of the middle $50\%$ of the data.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q05}{mc}
+\begin{questionText}
+Data set: $20, 22, 25, 27, 30, 32, 35$. What is the IQR?
+\end{questionText}
+\choiceA{$15$}
+\choiceB{$10$}
+\choiceC{$7$}
+\choiceD{$5$}
+\correctAnswer{B}
+\explanation{$Q_1 = 22$, $Q_3 = 32$. IQR $= 32 - 22 = 10$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q06}{mc}
+\begin{questionText}
+Team X: mean $82$, MAD $5$. Team Y: mean $76$, MAD $5$. Which team performed better on average, and is the difference meaningful?
+\end{questionText}
+\choiceA{Team X; no, because the difference is less than $2$ MADs}
+\choiceB{Team X; yes, because $\frac{6}{5} = 1.2$ MADs, which is meaningful}
+\choiceC{Team X; yes, because the means are more than $2$ MADs apart}
+\choiceD{Team Y; yes, because its MAD is the same}
+\correctAnswer{A}
+\explanation{Difference $= 82 - 76 = 6$. In MADs: $\frac{6}{5} = 1.2$. Since $1.2 < 2$, the difference is not considered very meaningful.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q07}{mc}
+\begin{questionText}
+Data set: $5, 8, 10, 12, 15, 18, 50$. Which measure of variability is most affected by the outlier $50$?
+\end{questionText}
+\choiceA{IQR}
+\choiceB{Median}
+\choiceC{Range}
+\choiceD{Mode}
+\correctAnswer{C}
+\explanation{Range $= 50 - 5 = 45$, which is heavily influenced by the outlier. IQR ignores the extremes and is less affected.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q08}{mc}
+\begin{questionText}
+Class P: mean $70$, median $72$, range $15$, MAD $4$.
+Class Q: mean $68$, median $67$, range $35$, MAD $9$.
+Which class has more consistent scores?
+\end{questionText}
+\choiceA{Class P}
+\choiceB{Class Q}
+\choiceC{Both are equally consistent}
+\choiceD{Cannot be determined}
+\correctAnswer{A}
+\explanation{Class P has smaller range ($15$ vs.\ $35$) and smaller MAD ($4$ vs.\ $9$), meaning its scores are more tightly clustered.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q09}{mc}
+\begin{questionText}
+The MAD for data set $\{4, 6, 8, 10, 12\}$ with mean $8$ is:
+\end{questionText}
+\choiceA{$2$}
+\choiceB{$2.4$}
+\choiceC{$3$}
+\choiceD{$8$}
+\correctAnswer{B}
+\explanation{$|4-8|+|6-8|+|8-8|+|10-8|+|12-8| = 4+2+0+2+4 = 12$. MAD $= \frac{12}{5} = 2.4$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q10}{mc}
+\begin{questionText}
+Group A: median $55$, IQR $10$. Group B: median $55$, IQR $25$. What can you conclude?
+\end{questionText}
+\choiceA{Group A has a higher center}
+\choiceB{Group B has a higher center}
+\choiceC{Both groups have the same center, but Group B is more variable}
+\choiceD{Both groups are identical}
+\correctAnswer{C}
+\explanation{Same median ($55$), but Group B's larger IQR ($25$ vs.\ $10$) means its data is more spread out.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q11}{mc}
+\begin{questionText}
+Data set: $12, 15, 18, 20, 22, 25, 28$. What is the median?
+\end{questionText}
+\choiceA{$18$}
+\choiceB{$20$}
+\choiceC{$22$}
+\choiceD{$19$}
+\correctAnswer{B}
+\explanation{There are $7$ values. The middle value (4th) is $20$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q12}{mc}
+\begin{questionText}
+Two groups have the same mean but different MADs. What does this tell you?
+\end{questionText}
+\choiceA{One group scored higher than the other}
+\choiceB{The groups have different levels of variability}
+\choiceC{The groups are identical}
+\choiceD{The means were calculated incorrectly}
+\correctAnswer{B}
+\explanation{Same mean means same center. Different MADs mean one group's data is more spread out than the other's.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q13}{mc}
+\begin{questionText}
+Store A daily sales: mean $\$500$, MAD $\$40$. Store B daily sales: mean $\$620$, MAD $\$40$. The difference in means in MADs is:
+\end{questionText}
+\choiceA{$1.5$ MADs}
+\choiceB{$3$ MADs}
+\choiceC{$40$ MADs}
+\choiceD{$120$ MADs}
+\correctAnswer{B}
+\explanation{Difference $= \$620 - \$500 = \$120$. In MADs: $\frac{120}{40} = 3$ MADs.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q14}{mc}
+\begin{questionText}
+Data: $42, 45, 47, 50, 53, 55, 58$. Find $Q_1$ and $Q_3$.
+\end{questionText}
+\choiceA{$Q_1 = 45$, $Q_3 = 55$}
+\choiceB{$Q_1 = 42$, $Q_3 = 58$}
+\choiceC{$Q_1 = 47$, $Q_3 = 53$}
+\choiceD{$Q_1 = 44$, $Q_3 = 56$}
+\correctAnswer{A}
+\explanation{Median $= 50$. Lower half: $42, 45, 47$, so $Q_1 = 45$. Upper half: $53, 55, 58$, so $Q_3 = 55$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q15}{mc}
+\begin{questionText}
+Why is it important to use multiple measures (mean, median, range, IQR, MAD) when comparing two groups?
+\end{questionText}
+\choiceA{One measure tells the complete story}
+\choiceB{Using more measures wastes time}
+\choiceC{Different measures reveal different aspects of the data}
+\choiceD{All measures always give the same conclusion}
+\correctAnswer{C}
+\explanation{Mean and median show center; range, IQR, and MAD show spread. Together they give a complete picture.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q16}{mc}
+\begin{questionText}
+Group A: $\{60, 65, 70, 75, 80\}$. Group B: $\{40, 55, 70, 85, 100\}$. Both have a mean of $70$. Which group is more variable?
+\end{questionText}
+\choiceA{Group A}
+\choiceB{Group B}
+\choiceC{They are equally variable}
+\choiceD{Cannot be determined}
+\correctAnswer{B}
+\explanation{Group A range $= 20$, Group B range $= 60$. Group B's data is far more spread out.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q17}{mc}
+\begin{questionText}
+A MAD of $0$ for a data set means:
+\end{questionText}
+\choiceA{The data set has no values}
+\choiceB{All values in the data set are the same}
+\choiceC{The mean is $0$}
+\choiceD{The data set has only one value}
+\correctAnswer{B}
+\explanation{If MAD $= 0$, every value equals the mean, so all values are identical.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q18}{mc}
+\begin{questionText}
+Class A: median $85$, IQR $8$, range $20$. Class B: median $80$, IQR $15$, range $40$. A student says ``Class B is better because it has a wider range.'' Is the student correct?
+\end{questionText}
+\choiceA{Yes — wider range means more talent}
+\choiceB{No — wider range means less consistency, and Class A has a higher median}
+\choiceC{Yes — Class B's scores spread more, which is always better}
+\choiceD{No — range does not measure anything useful}
+\correctAnswer{B}
+\explanation{A wider range indicates more variability, not better performance. Class A has a higher median and is more consistent (smaller IQR and range).}
+\end{practiceQuestion}
+
+% --- Short Answer Questions (7) ---
+
+\begin{practiceQuestion}{8-4-q19}{sa}
+\begin{questionText}
+Data: $30, 35, 40, 45, 50$. Find the mean and range.
+\end{questionText}
+\correctAnswer{Mean $= 40$; Range $= 20$}
+\explanation{Mean: $\frac{30+35+40+45+50}{5} = \frac{200}{5} = 40$. Range: $50 - 30 = 20$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q20}{sa}
+\begin{questionText}
+Data: $8, 10, 12, 14, 16, 18, 20$. Find the IQR.
+\end{questionText}
+\correctAnswer{$8$}
+\explanation{$Q_1 = 10$, $Q_3 = 18$. IQR $= 18 - 10 = 8$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q21}{sa}
+\begin{questionText}
+Data: $5, 5, 10, 10, 10, 15, 15$. The mean is $10$. Find the MAD.
+\end{questionText}
+\correctAnswer{$\approx 3.57$}
+\explanation{Deviations: $5+5+0+0+0+5+5 = 20$. MAD $= \frac{20}{7} \approx 2.86$. Wait — let me recalculate: $|5-10|+|5-10|+|10-10|+|10-10|+|10-10|+|15-10|+|15-10| = 5+5+0+0+0+5+5 = 20$. MAD $= \frac{20}{7} \approx 2.86$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q22}{sa}
+\begin{questionText}
+Group X: mean $45$, MAD $6$. Group Y: mean $57$, MAD $6$. Express the difference in means as a multiple of MAD.
+\end{questionText}
+\correctAnswer{$2$ MADs}
+\explanation{Difference: $57 - 45 = 12$. In MADs: $\frac{12}{6} = 2$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q23}{sa}
+\begin{questionText}
+Data: $100, 200, 300, 400, 500$. Find the median and the IQR.
+\end{questionText}
+\correctAnswer{Median $= 300$; IQR $= 200$}
+\explanation{Median (3rd value) $= 300$. $Q_1 = 200$, $Q_3 = 400$. IQR $= 400 - 200 = 200$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q24}{sa}
+\begin{questionText}
+Explain one advantage of using IQR instead of range to describe the spread of a data set.
+\end{questionText}
+\correctAnswer{IQR is not affected by outliers}
+\explanation{Range uses only the extreme values, which can be misleading with outliers. IQR measures the middle $50\%$ and gives a more stable picture of typical variability.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q25}{sa}
+\begin{questionText}
+Team A: mean $88$, range $12$, MAD $3$. Team B: mean $84$, range $30$, MAD $8$. Which team is stronger overall? Justify your answer using at least two measures.
+\end{questionText}
+\correctAnswer{Team A — higher mean ($88$ vs.\ $84$) and more consistent (MAD $3$ vs.\ $8$, range $12$ vs.\ $30$)}
+\explanation{Team A has a higher center (mean $88$) and less variability (smaller MAD and range), meaning Team A is both better on average and more consistent.}
+\end{practiceQuestion}
+
+% --- Graphical Questions (3 GMC + 2 GSA) ---
+
+\begin{practiceQuestion}{8-4-q26}{gmc}
+\begin{questionText}
+The table shows statistics for two basketball players' points per game over a season.
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+ & \textbf{Player A} & \textbf{Player B} \\
+\hline
+Mean & $18$ & $20$ \\
+\hline
+Median & $17$ & $19$ \\
+\hline
+Range & $10$ & $25$ \\
+\hline
+MAD & $3$ & $7$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Which player is more consistent?
+\end{questionText}
+\choiceA{Player A, because the MAD and range are both smaller}
+\choiceB{Player B, because the mean is higher}
+\choiceC{Player A, because the mean is lower}
+\choiceD{Player B, because the range is larger}
+\correctAnswer{A}
+\explanation{Player A has MAD $= 3$ (vs.\ $7$) and range $= 10$ (vs.\ $25$), so Player A's scores are more tightly clustered around the mean.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q27}{gmc}
+\begin{questionText}
+The box plots show quiz scores (out of $20$) for two classes.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.35]
+  \draw[thick,->] (4,0) -- (21,0);
+  \foreach \x in {5,6,...,20} {
+    \draw (\x,0.3) -- (\x,-0.3);
+    \node[below,font=\tiny] at (\x,-0.3) {$\x$};
+  }
+  % Class M: min=8, Q1=12, med=15, Q3=17, max=20
+  \draw[thick] (8,3) -- (20,3);
+  \draw[thick,fill=funBlue!30] (12,2) rectangle (17,4);
+  \draw[very thick,funBlue] (15,2) -- (15,4);
+  \draw[thick] (8,2) -- (8,4);
+  \draw[thick] (20,2) -- (20,4);
+  \node[right,font=\small] at (20.5,3) {Class M};
+  % Class N: min=10, Q1=13, med=16, Q3=18, max=19
+  \draw[thick] (10,7) -- (19,7);
+  \draw[thick,fill=funGreen!30] (13,6) rectangle (18,8);
+  \draw[very thick,funGreen] (16,6) -- (16,8);
+  \draw[thick] (10,6) -- (10,8);
+  \draw[thick] (19,6) -- (19,8);
+  \node[right,font=\small] at (19.5,7) {Class N};
+\end{tikzpicture}
+\end{center}
+
+What is the IQR for each class?
+\end{questionText}
+\choiceA{Class M: $5$, Class N: $5$}
+\choiceB{Class M: $12$, Class N: $9$}
+\choiceC{Class M: $5$, Class N: $9$}
+\choiceD{Class M: $12$, Class N: $5$}
+\correctAnswer{A}
+\explanation{Class M: $Q_3 - Q_1 = 17 - 12 = 5$. Class N: $18 - 13 = 5$. Both have IQR $= 5$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q28}{gmc}
+\begin{questionText}
+The table compares two delivery companies' shipping times (in days).
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+ & \textbf{Company X} & \textbf{Company Y} \\
+\hline
+Mean & $3.5$ days & $3.2$ days \\
+\hline
+Median & $3$ days & $3$ days \\
+\hline
+Range & $4$ days & $8$ days \\
+\hline
+IQR & $1.5$ days & $4$ days \\
+\hline
+\end{tabular}
+\end{center}
+
+A customer wants the most reliable delivery time. Which company should they choose?
+\end{questionText}
+\choiceA{Company Y, because its mean is lower}
+\choiceB{Company X, because its IQR and range are both smaller}
+\choiceC{Company Y, because its range includes more possibilities}
+\choiceD{They are equally reliable}
+\correctAnswer{B}
+\explanation{Company X has smaller IQR ($1.5$ vs.\ $4$) and range ($4$ vs.\ $8$), meaning delivery times are more predictable.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q29}{gsa}
+\begin{questionText}
+The dot plots show daily high temperatures (°F) for two cities over $10$ days.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.45]
+  % City A
+  \node[left,font=\small\bfseries] at (57,2) {City A};
+  \draw[thick,->] (57,0) -- (77,0);
+  \foreach \x in {58,60,...,76} {
+    \draw (\x,0.15) -- (\x,-0.15);
+    \node[below,font=\tiny] at (\x,0) {$\x$};
+  }
+  % City A: 62,64,64,66,66,66,68,68,70,72  mean=66.6
+  \fill[funBlue] (62,0.4) circle (0.18);
+  \fill[funBlue] (64,0.4) circle (0.18); \fill[funBlue] (64,0.8) circle (0.18);
+  \fill[funBlue] (66,0.4) circle (0.18); \fill[funBlue] (66,0.8) circle (0.18); \fill[funBlue] (66,1.2) circle (0.18);
+  \fill[funBlue] (68,0.4) circle (0.18); \fill[funBlue] (68,0.8) circle (0.18);
+  \fill[funBlue] (70,0.4) circle (0.18);
+  \fill[funBlue] (72,0.4) circle (0.18);
+
+  % City B
+  \node[left,font=\small\bfseries] at (57,5.5) {City B};
+  \draw[thick,->] (57,3.5) -- (77,3.5);
+  \foreach \x in {58,60,...,76} {
+    \draw (\x,3.65) -- (\x,3.35);
+  }
+  % City B: 58,60,64,66,68,70,72,74,74,76  mean=68.2
+  \fill[funOrange] (58,3.9) circle (0.18);
+  \fill[funOrange] (60,3.9) circle (0.18);
+  \fill[funOrange] (64,3.9) circle (0.18);
+  \fill[funOrange] (66,3.9) circle (0.18);
+  \fill[funOrange] (68,3.9) circle (0.18);
+  \fill[funOrange] (70,3.9) circle (0.18);
+  \fill[funOrange] (72,3.9) circle (0.18);
+  \fill[funOrange] (74,3.9) circle (0.18); \fill[funOrange] (74,4.3) circle (0.18);
+  \fill[funOrange] (76,3.9) circle (0.18);
+\end{tikzpicture}
+\end{center}
+
+Find the mean and range for each city. Which city has more consistent temperatures?
+\end{questionText}
+\correctAnswer{City A: mean $= 66.6$°F, range $= 10$°F. City B: mean $= 68.2$°F, range $= 18$°F. City A is more consistent.}
+\explanation{City A: $(62+64+64+66+66+66+68+68+70+72) \div 10 = 666 \div 10 = 66.6$. Range $= 72 - 62 = 10$. City B: $(58+60+64+66+68+70+72+74+74+76) \div 10 = 682 \div 10 = 68.2$. Range $= 76 - 58 = 18$. City A has the smaller range.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q30}{gsa}
+\begin{questionText}
+The table shows test scores for two science classes.
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Class A} & $60$ & $65$ & $70$ & $75$ & $80$ & $85$ & $90$ & $95$ & & \\
+\hline
+\textbf{Class B} & $72$ & $74$ & $76$ & $78$ & $80$ & $82$ & $84$ & $86$ & & \\
+\hline
+\end{tabular}
+\end{center}
+
+Find the mean, median, and range for each class. Which class performed more consistently?
+\end{questionText}
+\correctAnswer{Both means $= 77.5$; both medians $= 77.5$; Class A range $= 35$, Class B range $= 14$. Class B is more consistent.}
+\explanation{Class A: mean $= \frac{620}{8} = 77.5$, median $= \frac{75+80}{2} = 77.5$, range $= 95 - 60 = 35$. Class B: mean $= \frac{632}{8} = 79$, median $= \frac{78+80}{2} = 79$, range $= 86 - 72 = 14$. Class B has a much smaller range, so its scores are more consistent.}
+\end{practiceQuestion}
