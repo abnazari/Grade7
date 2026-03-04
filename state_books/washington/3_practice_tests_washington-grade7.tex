@@ -1,0 +1,79 @@
+% ============================================================================
+% Grade 7 Math — 3 Full-Length Practice Tests
+% Common Core State Standards (CCSS)
+% ============================================================================
+\documentclass[12pt, fleqn, openany]{studyGuide}
+
+\setstretch{1.4}
+
+\newcommand{\NumPracticeTests}{3}
+
+% Enable answer & explanation collection for practice test questions
+\enablePracticeTestAnswers
+
+\begin{document}
+
+% ============================================================================
+% COVER PAGE
+% ============================================================================
+\StateName{Washington}
+\CoverImage{images/covers/3_practice_tests.png}
+\StateNameXOffset{4.3in}
+\StateNameYOffset{4in}
+\StateNameRotation{0}
+\StateNameFontSize{41}
+\StateNameColor{NavyBlue}
+\makeCoverPage
+
+% ============================================================================
+% INITIAL PAGES — Welcome, Tips, References, Tracker
+% ============================================================================
+\pagenumbering{roman}
+
+\renewcommand{\VMBookTitle}{3 Washington Grade 7 Math Practice Tests}
+\renewcommand{\VMBookSubtitle}{Full-Length Test Prep with Detailed Answer Explanations}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\input{initial_pages/common/copyright_page}
+
+\input{initial_pages/practice_tests_3/00-welcome}
+\input{initial_pages/practice_tests_3/01-how-to-use}
+\input{initial_pages/practice_tests_3/02-test-taking-tips}
+\input{initial_pages/practice_tests_3/03-what-youll-need}
+\input{initial_pages/practice_tests/04-math-reference}
+\input{initial_pages/practice_tests/05-multiplication-table}
+\input{initial_pages/practice_tests_3/06-my-test-tracker}
+
+\friendlyTOC
+\pagenumbering{arabic}
+
+% ============================================================================
+% PRACTICE TEST 1
+% ============================================================================
+\practiceTestPage{1}{30}
+
+\input{practice_tests/washington/practice_test_01}
+
+\testScorePage{1}{30}
+
+% ============================================================================
+% PRACTICE TEST 2
+% ============================================================================
+\practiceTestPage{2}{30}
+
+\input{practice_tests/washington/practice_test_02}
+
+\testScorePage{2}{30}
+
+% ============================================================================
+% PRACTICE TEST 3
+% ============================================================================
+\practiceTestPage{3}{30}
+
+\input{practice_tests/washington/practice_test_03}
+
+\testScorePage{3}{30}
+
+\printAnswerKey
+
+\end{document}

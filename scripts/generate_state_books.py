@@ -301,7 +301,6 @@ def generate_from_template(
             # Choose directory
             if topic_id and topic_id in modified_set:
                 dir_to_use = modified_dir
-                filename = modified_dict.get(topic_id, filename)
             else:
                 dir_to_use = core_dir
 

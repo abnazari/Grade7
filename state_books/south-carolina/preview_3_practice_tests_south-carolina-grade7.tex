@@ -1,0 +1,43 @@
+% PREVIEW — Grade 7 Math — 3 Practice Tests
+\documentclass[12pt, fleqn, openany]{studyGuide}
+
+% Line spacing for young readers
+\setstretch{1.4}
+
+% PREVIEW watermark on every page
+\usepackage{VM_packages/VMfunPreview}
+
+\newcommand{\NumPracticeTests}{3}
+
+% Enable answer & explanation collection for practice test questions
+\enablePracticeTestAnswers
+
+\begin{document}
+
+\pagenumbering{roman}
+\renewcommand{\VMBookTitle}{3 South Carolina SC READY Grade 7 Math Practice Tests}
+\renewcommand{\VMBookSubtitle}{Full-Length Test Prep with Detailed Answer Explanations}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\input{initial_pages/common/copyright_page}
+\input{initial_pages/practice_tests_3/00-welcome}
+\input{initial_pages/practice_tests_3/01-how-to-use}
+\input{initial_pages/practice_tests_3/02-test-taking-tips}
+\input{initial_pages/practice_tests/04-math-reference}
+
+\tableofcontents
+\cleardoublepage
+\pagenumbering{arabic}
+
+% ============================================================================
+% SAMPLE PRACTICE TEST
+% ============================================================================
+\practiceTestPage{1}{30}
+
+\input{practice_tests/south-carolina/practice_test_01}
+
+\testScorePage{1}{30}
+
+\input{initial_pages/common/preview-cta-page}
+
+\end{document}

@@ -152,7 +152,7 @@ def _preview_preamble_in30days() -> List[str]:
 
 def _topic_input(
     topic_id: str,
-    modified_dict: Dict[str, str],
+    modified_ids,
     additional_set: Set[str],
     config: TopicsConfig,
     base_dir: str,
@@ -161,9 +161,8 @@ def _topic_input(
 ) -> str:
     """Return the \\input{...} line for a single topic, selecting the right directory."""
     filename = config.topic_filenames[topic_id]
-    if topic_id in modified_dict:
-        mod_filename = modified_dict[topic_id]
-        return f"\\input{{{modified_dir}/{mod_filename}}}"
+    if topic_id in modified_ids:
+        return f"\\input{{{modified_dir}/{filename}}}"
     elif topic_id in additional_set:
         return f"\\input{{{additional_dir}/{filename}}}"
     else:

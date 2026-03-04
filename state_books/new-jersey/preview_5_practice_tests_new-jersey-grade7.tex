@@ -1,0 +1,43 @@
+% PREVIEW — Grade 7 Math — 5 Practice Tests
+\documentclass[12pt, fleqn, openany]{studyGuide}
+
+% Line spacing for young readers
+\setstretch{1.4}
+
+% PREVIEW watermark on every page
+\usepackage{VM_packages/VMfunPreview}
+
+\newcommand{\NumPracticeTests}{5}
+
+% Enable answer & explanation collection for practice test questions
+\enablePracticeTestAnswers
+
+\begin{document}
+
+\pagenumbering{roman}
+\renewcommand{\VMBookTitle}{5 Full-Length New Jersey NJSLA Grade 7 Math Practice Tests}
+\renewcommand{\VMBookSubtitle}{Extra Practice for Test Day Success}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\input{initial_pages/common/copyright_page}
+\input{initial_pages/practice_tests_5/00-welcome}
+\input{initial_pages/practice_tests_5/01-how-to-use}
+\input{initial_pages/practice_tests_5/02-test-taking-tips}
+\input{initial_pages/practice_tests/04-math-reference}
+
+\tableofcontents
+\cleardoublepage
+\pagenumbering{arabic}
+
+% ============================================================================
+% SAMPLE PRACTICE TEST
+% ============================================================================
+\practiceTestPage{1}{30}
+
+\input{practice_tests/new-jersey/practice_test_04}
+
+\testScorePage{1}{30}
+
+\input{initial_pages/common/preview-cta-page}
+
+\end{document}

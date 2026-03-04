@@ -1,0 +1,34 @@
+% PREVIEW — Grade 7 Math Workbook
+\documentclass[12pt, fleqn, openany]{studyGuide}
+
+% Line spacing for young readers
+\setstretch{1.4}
+
+% PREVIEW watermark on every page
+\usepackage{VM_packages/VMfunPreview}
+
+\begin{document}
+
+\pagenumbering{roman}
+\renewcommand{\VMBookTitle}{Colorado CMAS Grade 7 Math Workbook}
+\renewcommand{\VMBookSubtitle}{Practice Problems \& Exercises with Answer Key}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\input{initial_pages/common/copyright_page}
+\input{initial_pages/workbook/00-welcome}
+\input{initial_pages/workbook/01-how-to-use}
+\input{initial_pages/workbook/03-math-reference}
+
+\tableofcontents
+\cleardoublepage
+\pagenumbering{arabic}
+
+\chapter{Ratios and Proportional Relationships}
+\input{topics_workbook/ch01-01-unit-rates-with-fractions}
+
+\chapter{Operations with Rational Numbers}
+\input{topics_workbook/ch03-01-integers-and-their-opposites}
+
+\input{initial_pages/common/preview-cta-page}
+
+\end{document}

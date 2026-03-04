@@ -1,0 +1,43 @@
+% PREVIEW — Grade 7 Math — 10 Practice Tests
+\documentclass[12pt, fleqn, openany]{studyGuide}
+
+% Line spacing for young readers
+\setstretch{1.4}
+
+% PREVIEW watermark on every page
+\usepackage{VM_packages/VMfunPreview}
+
+\newcommand{\NumPracticeTests}{10}
+
+% Enable answer & explanation collection for practice test questions
+\enablePracticeTestAnswers
+
+\begin{document}
+
+\pagenumbering{roman}
+\renewcommand{\VMBookTitle}{10 Nebraska NSCAS Grade 7 Math Practice Tests}
+\renewcommand{\VMBookSubtitle}{The Ultimate Test Prep Collection with Answer Explanations}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\input{initial_pages/common/copyright_page}
+\input{initial_pages/practice_tests_10/00-welcome}
+\input{initial_pages/practice_tests_10/01-how-to-use}
+\input{initial_pages/practice_tests_10/02-test-taking-tips}
+\input{initial_pages/practice_tests/04-math-reference}
+
+\tableofcontents
+\cleardoublepage
+\pagenumbering{arabic}
+
+% ============================================================================
+% SAMPLE PRACTICE TEST
+% ============================================================================
+\practiceTestPage{1}{30}
+
+\input{practice_tests/nebraska/practice_test_16}
+
+\testScorePage{1}{30}
+
+\input{initial_pages/common/preview-cta-page}
+
+\end{document}

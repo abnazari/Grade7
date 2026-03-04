@@ -1,0 +1,40 @@
+% PREVIEW — Grade 7 Math Quizzes
+\documentclass[12pt, fleqn, openany]{studyGuide}
+
+% Line spacing for young readers
+\setstretch{1.4}
+
+% PREVIEW watermark on every page
+\usepackage{VM_packages/VMfunPreview}
+
+% Enable quiz-specific answer key
+\enableQuizAnswers
+
+\begin{document}
+
+\pagenumbering{roman}
+\renewcommand{\VMBookTitle}{Missouri MAP Grade 7 Math Quizzes}
+\renewcommand{\VMBookSubtitle}{Quick Topic Assessments with Answer Key}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\input{initial_pages/common/copyright_page}
+\input{initial_pages/quiz/00-welcome}
+
+\cleardoublepage
+\friendlyTOC
+\cleardoublepage
+\pagenumbering{arabic}
+
+\chapter{Ratios and Proportional Relationships}
+\setcounter{quizChapter}{1}
+\input{topics_quiz/ch01-01-unit-rates-with-fractions}
+
+\chapter{Operations with Rational Numbers}
+\setcounter{quizChapter}{3}
+\input{topics_quiz/ch03-01-integers-and-their-opposites}
+
+\printAnswerKey
+
+\input{initial_pages/common/preview-cta-page}
+
+\end{document}
