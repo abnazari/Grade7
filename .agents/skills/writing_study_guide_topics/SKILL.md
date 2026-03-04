@@ -24,7 +24,7 @@ Topic files live in `topics/`. File naming: `ch01-01-slug-here.tex`
 
 ## Audience: 12–13 Year Olds (Grade 7)
 
-Write for a smart, curious 12-year-old. These students have Grade 6 foundations — make every explanation **dead simple** but don't talk down to them.
+Write for a smart, curious 12-year-old. These students have Grade 7 foundations — make every explanation **dead simple** but don't talk down to them.
 
 - **Use very short sentences.** Aim for **8–12 words per sentence**. One idea per sentence. If a sentence has a comma, consider splitting it.
 - **Use the simplest words possible.** Say "find" not "determine." Say "shows" not "demonstrates." Say "same" not "equivalent" (until you define it). Write how you would talk to a kid.
@@ -62,7 +62,7 @@ Follow **Common Core State Standards (CCSS)** for Grade 7. The five domains are:
 4. **Geometry (7.G)** — scale drawings, geometric figures with given conditions, constructing triangles, cross-sections of 3D figures, angle relationships, circles (circumference, area), composite shapes, surface area, volume of prisms
 5. **Statistics and Probability (7.SP)** — populations/samples, random sampling, comparing populations visually and with measures, probability concepts, theoretical/experimental probability, probability models, sample spaces, compound events, simulations
 
-Numbers at this level: all rational numbers (positive and negative integers, fractions, decimals), proportional reasoning, two-step and multi-step problems, probability (0 to 1). This builds on Grade 6 — students work with signed rationals, proportional relationships, and basic probability.
+Numbers at this level: all rational numbers (positive and negative integers, fractions, decimals), proportional reasoning, two-step and multi-step problems, probability (0 to 1). This builds on Grade 7 — students work with signed rationals, proportional relationships, and basic probability.
 
 ## Creative Freedom
 

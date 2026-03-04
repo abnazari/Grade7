@@ -146,8 +146,8 @@ class WCSettings(BaseSettings):
 
     # Grade info — makes the script reusable across grade projects
     grade_number: int = Field(description="Grade number (e.g. 3)")
-    grade_slug: str = Field(description="URL/filename slug (e.g. grade4)")
-    grade_display: str = Field(description="Human-readable name (e.g. Grade 4 Math)")
+    grade_slug: str = Field(description="URL/filename slug (e.g. grade7)")
+    grade_display: str = Field(description="Human-readable name (e.g. Grade 7 Math)")
 
     # WooCommerce REST API
     wc_site_url: str = Field(description="Site URL")
@@ -487,7 +487,7 @@ def _state_category_slug(state: str) -> str:
 
 
 def _state_category_name(state: str) -> str:
-    """Human-readable category title, e.g. 'Grade 4 Math Texas – STAAR & TEKS'."""
+    """Human-readable category title, e.g. 'Grade 7 Math Texas – STAAR & TEKS'."""
     s = get_settings()
     state_name = _state_name(state)
     exams = _load_state_exams()

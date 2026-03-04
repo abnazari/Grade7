@@ -37,10 +37,10 @@ Alabama, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, Georgia
 
 | State | Why it was considered | Why it stays CCSS |
 |-------|----------------------|-------------------|
-| Colorado | Grade 6 has PFL mandate | PFL requirement impacts Grade 6, not Grade 7 math content |
-| Georgia | Grade 6 divergence for probability | Grade 7 aligns well with CCSS; probability fully covered in ch09 |
-| Nebraska | Grade 6 divergence for probability/circles | Grade 7 CCSS covers probability (ch09) and circles (ch07) natively |
-| South Carolina | Grade 6 integer ops | By Grade 7 CCSS already covers all integer/rational operations in ch03 |
+| Colorado | Grade 7 has PFL mandate | PFL requirement impacts Grade 7, not Grade 7 math content |
+| Georgia | Grade 7 divergence for probability | Grade 7 aligns well with CCSS; probability fully covered in ch09 |
+| Nebraska | Grade 7 divergence for probability/circles | Grade 7 CCSS covers probability (ch09) and circles (ch07) natively |
+| South Carolina | Grade 7 integer ops | By Grade 7 CCSS already covers all integer/rational operations in ch03 |
 | New York | "Next Generation" branding | Content remains CCSS; pedagogical language changes only |
 | Pennsylvania | Domain reorganization | Same content reorganized; no topic additions |
 
@@ -297,7 +297,7 @@ States flagged by only one report for non-content differences (pedagogy, brandin
 | 2026-03-01 | Initial research and cross-referencing of 3 reports | Baseline state alignment |
 | 2026-03-02 | Finalized: 7 states with modifications, 43 pure CCSS | Consensus across reports + web verification |
 | 2026-03-02 | FL corrections: removed transformations, compound interest, PFL standalone | Verified against all 34 B.E.S.T. benchmarks |
-| 2026-03-02 | Added modified_topics section (11 entries) | Match Grade 6 format |
+| 2026-03-02 | Added modified_topics section (11 entries) | Match Grade 7 format |
 | 2026-03-02 | Renamed additional topic IDs from add-XX to chXX-YY format | Script compatibility — Python scripts need chapter placement info encoded in ID |
 
 ````

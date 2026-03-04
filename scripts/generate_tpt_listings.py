@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TPT Listing Description Generator — Grade 4 Math Books.
+TPT Listing Description Generator — Grade 7 Math Books.
 
 Generates HTML product descriptions for Teachers Pay Teachers (TPT) listings.
 Each description is tailored to a specific (book_type × state) combination,
@@ -32,7 +32,7 @@ Output (default):
     final_output/listings/tpt/<book_type>/<state>_tpt_<date>.html
 
 Output (--ai-rewrite):
-    final_output/listings/tpt/<state>/<book_type>_<state>-grade4_<date>_tpt.html
+    final_output/listings/tpt/<state>/<book_type>_<state>-grade7_<date>_tpt.html
 """
 
 from __future__ import annotations
@@ -132,28 +132,28 @@ SUPPORTED_BOOK_TYPES: List[str] = [
 
 TPT_TAGLINE_POOLS: Dict[str, List[str]] = {
     "all_in_one": [
-        "The complete Grade 4 math curriculum: teach it, practice it, master it",
+        "The complete Grade 7 math curriculum: teach it, practice it, master it",
         "Everything from place value to geometry — one cohesive, beautifully designed resource",
         "Stop juggling five different resources. This one book covers it all",
-        "Full lessons with worked examples and practice for all {num_topics} {state_name} Grade 4 topics",
-        "From the first day of school to the last — the Grade 4 math curriculum in one place",
+        "Full lessons with worked examples and practice for all {num_topics} {state_name} Grade 7 topics",
+        "From the first day of school to the last — the Grade 7 math curriculum in one place",
         "Teaches every concept, shows how to solve every problem type, and lets students practice immediately",
-        "The only Grade 4 math book you need: clear lessons, step-by-step examples, and hundreds of problems",
-        "Lessons, examples, and practice for every single Grade 4 math topic — in one book",
+        "The only Grade 7 math book you need: clear lessons, step-by-step examples, and hundreds of problems",
+        "Lessons, examples, and practice for every single Grade 7 math topic — in one book",
     ],
     "study_guide": [
         "Every key concept, explained simply — the ultimate review companion",
         "Concise, focused, and perfect for quick review sessions",
-        "All the important stuff, none of the fluff — Grade 4 math distilled",
+        "All the important stuff, none of the fluff — Grade 7 math distilled",
         "When students need to review fast, this is the book they reach for",
         "Core concepts, key examples, and focused practice in one compact guide",
-        "The quick-reference guide to Grade 4 math — clear, concise, and exactly what students need",
+        "The quick-reference guide to Grade 7 math — clear, concise, and exactly what students need",
         "Don't re-teach the whole curriculum — just review what matters most",
-        "A focused review of every {state_name} Grade 4 math standard — nothing extra, nothing missing",
+        "A focused review of every {state_name} Grade 7 math standard — nothing extra, nothing missing",
     ],
     "workbook": [
         "Practice, practice, practice — the proven path to math mastery",
-        "Hundreds of problems covering every {state_name} Grade 4 math standard",
+        "Hundreds of problems covering every {state_name} Grade 7 math standard",
         "The practice workbook that turns 'I don't get it' into 'I've got this!'",
         "Repetition builds mastery — and this workbook has problems to spare",
         "From easy warm-ups to challenging word problems — scaffolded practice for every skill",
@@ -162,7 +162,7 @@ TPT_TAGLINE_POOLS: Dict[str, List[str]] = {
         "The workbook {state_name} fourth graders need — problems for every standard, answers for every question",
     ],
     "step_by_step": [
-        "Math made simple: clear, numbered steps for every Grade 4 problem type",
+        "Math made simple: clear, numbered steps for every Grade 7 problem type",
         "When students get stuck, this book shows them exactly what to do — step by step",
         "The math tutor that never gets frustrated: patient, step-by-step instructions",
         "No more 'I don't know how to start' — every problem type has a clear road map",
@@ -173,17 +173,17 @@ TPT_TAGLINE_POOLS: Dict[str, List[str]] = {
     ],
     "in_30_days": [
         "30 days. Every topic. Total confidence. Let's go",
-        "Master the entire Grade 4 math curriculum in just one month",
+        "Master the entire Grade 7 math curriculum in just one month",
         "A day-by-day plan that transforms overwhelmed students into confident math learners",
         "Structure eliminates stress — 30 daily lessons with zero guesswork",
-        "One day at a time. One topic at a time. 30 days to Grade 4 math mastery",
+        "One day at a time. One topic at a time. 30 days to Grade 7 math mastery",
         "The most focused 30 days of math your students will ever experience",
         "For students who need to catch up, keep up, or get ahead — in 30 days flat",
         "Daily lessons with built-in practice — just follow the plan and watch students grow",
     ],
     "quiz": [
         "Quick, focused quizzes that tell you exactly where students stand",
-        "15 minutes per quiz, one per topic — the fastest way to assess Grade 4 math skills",
+        "15 minutes per quiz, one per topic — the fastest way to assess Grade 7 math skills",
         "Know what your students know (and don't know) — without giving up an entire class period",
         "Short, targeted assessments that drive real instructional decisions",
         "One quiz per topic = one clear picture of what each student has mastered",
@@ -199,17 +199,17 @@ TPT_TAGLINE_POOLS: Dict[str, List[str]] = {
         "For the student who says 'I hate math' — this book changes minds",
         "Engagement is the first step to mastery — and these puzzles deliver both",
         "When students ask 'Can we do the puzzle book today?' — you'll know it's working",
-        "Curriculum-aligned puzzles that make {state_name} Grade 4 math genuinely fun",
+        "Curriculum-aligned puzzles that make {state_name} Grade 7 math genuinely fun",
     ],
     "worksheet": [
         "One worksheet per topic — print exactly what you need, when you need it",
-        "The most flexible math resource in your toolkit: standalone worksheets for every Grade 4 skill",
+        "The most flexible math resource in your toolkit: standalone worksheets for every Grade 7 skill",
         "Need a worksheet for tomorrow? Pick a topic, print, done",
         "Targeted, topic-specific worksheets that reinforce exactly what you taught today",
         "Standalone activities that work for homework, classwork, assessment, or sub plans",
         "Every topic, one clean worksheet — organized, professional, and ready to go",
-        "Flexible, focused, and beautifully designed worksheets for every Grade 4 math standard",
-        "Print-and-go worksheets for every {state_name} Grade 4 math topic — no prep required",
+        "Flexible, focused, and beautifully designed worksheets for every Grade 7 math standard",
+        "Print-and-go worksheets for every {state_name} Grade 7 math topic — no prep required",
     ],
     "3_practice_tests": [
         "3 realistic practice tests that mirror exactly what students face on the {exam_acronym}",
@@ -218,7 +218,7 @@ TPT_TAGLINE_POOLS: Dict[str, List[str]] = {
         "Students who take 3 practice tests score higher. Give yours the advantage",
         "Not worksheets — 3 full-length, {exam_acronym}-format assessments with complete explanations",
         "Focused test prep that fits any schedule — 3 complete practice tests with full solutions",
-        "The starter test prep package: 3 realistic tests covering every Grade 4 math standard",
+        "The starter test prep package: 3 realistic tests covering every Grade 7 math standard",
         "3 practice tests built specifically for {state_name} — real format, real rigor, real results",
     ],
     "5_practice_tests": [
@@ -229,7 +229,7 @@ TPT_TAGLINE_POOLS: Dict[str, List[str]] = {
         "Not worksheets — 5 full-length, {exam_acronym}-format assessments with complete explanations",
         "The most popular test prep edition — 5 balanced practice tests for {state_name} students",
         "5 complete practice tests: the sweet spot between focused and comprehensive preparation",
-        "5 unique tests covering every {state_name} Grade 4 math standard — no two tests alike",
+        "5 unique tests covering every {state_name} Grade 7 math standard — no two tests alike",
     ],
     "7_practice_tests": [
         "7 realistic practice tests that mirror exactly what students face on the {exam_acronym}",
@@ -237,7 +237,7 @@ TPT_TAGLINE_POOLS: Dict[str, List[str]] = {
         "7 tests, 210 questions, every answer explained step by step",
         "From test anxiety to test confidence — 7 practice tests make the real one feel familiar",
         "Not worksheets — 7 full-length, {exam_acronym}-format assessments with complete explanations",
-        "Go deeper with 7 practice tests — thorough preparation for {state_name} Grade 4 students",
+        "Go deeper with 7 practice tests — thorough preparation for {state_name} Grade 7 students",
         "7 comprehensive practice tests: enough depth to see real, measurable growth",
         "Thorough test prep for {state_name} — 7 unique tests, 210 detailed answer explanations",
     ],
@@ -260,7 +260,7 @@ def _pick_tpt_tagline(
     format_vars: Dict[str, str] | None = None,
 ) -> str:
     """Pick a tagline from the TPT-specific pool, deterministic per product."""
-    pool = TPT_TAGLINE_POOLS.get(book_type, ["Grade 4 math — aligned to {state_name} standards"])
+    pool = TPT_TAGLINE_POOLS.get(book_type, ["Grade 7 math — aligned to {state_name} standards"])
     raw = f"{book_type}|{state_slug}|tpt|tagline"
     digest = hashlib.sha256(raw.encode()).hexdigest()
     idx = int(digest[:8], 16) % len(pool)
@@ -423,7 +423,7 @@ def build_template_context(
 
     # Title info from titles.json
     title_entry = titles_index.get((state_slug, book_type), {})
-    tpt_title = title_entry.get("tpt_title", f"{state_name} Grade 4 Math {content['display_name']}")
+    tpt_title = title_entry.get("tpt_title", f"{state_name} Grade 7 Math {content['display_name']}")
     subtitle = title_entry.get("subtitle", content.get("subtitle", ""))
     page_count = title_entry.get("page_count", "")
     price = title_entry.get("price", BOOK_PRICES.get(book_type, ""))
@@ -476,7 +476,7 @@ def build_template_context(
         "book_type": book_type,
         "state_slug": state_slug,
         "state_name": state_name,
-        "topic": "Grade 4 Math",
+        "topic": "Grade 7 Math",
 
         # Titles
         "tpt_title": tpt_title,
@@ -524,7 +524,7 @@ def build_template_context(
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Generate TPT listing descriptions for Grade 4 math books."
+        description="Generate TPT listing descriptions for Grade 7 math books."
     )
     parser.add_argument(
         "--states", type=str, default=None,
@@ -608,7 +608,7 @@ def main() -> None:
         else "final_output/listings/tpt/<book_type>/"
     )
     print("=" * 70)
-    print("TPT Listing Description Generator — Grade 4 Math")
+    print("TPT Listing Description Generator — Grade 7 Math")
     print("=" * 70)
     print(f"  States:     {len(state_slugs)}")
     print(f"  Book Types: {len(book_types)} ({', '.join(book_types)})")

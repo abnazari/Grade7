@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Generate state-specific .tex files for all Grade 4 book types.
+Generate state-specific .tex files for all Grade 7 book types.
 
 For each state × book type, this script:
   1. Reads topic and state configuration from topics_config.yaml
   2. Determines which topics apply (core CCSS + state-specific additions)
   3. Generates the .tex file with correct topic paths and ordering
-  4. Writes the result to state_books/<state>/<book_type>_<state>-grade4.tex
+  4. Writes the result to state_books/<state>/<book_type>_<state>-grade7.tex
 
 Book Types Supported:
   - all_in_one:         Comprehensive all-in-one with lessons, warmups & practice (~450 pages)
@@ -72,7 +72,7 @@ from config_loader import TopicsConfig, find_workspace, load_config
 # hard-coding the .tex structure in Python.
 #
 # Naming convention for output files:
-#   state_books/<state>/<book_type>_<state>-grade4.tex
+#   state_books/<state>/<book_type>_<state>-grade7.tex
 
 BOOK_TYPES: Dict[str, dict] = {
     "all_in_one": {
@@ -228,8 +228,8 @@ def generate_from_template(
     )
     # \StateName{...}
     state_name_re = re.compile(r"^(\s*)\\StateName\{[^}]*\}(.*)$")
-    # Header title (line that starts with "% Grade 4")
-    header_title_re = re.compile(r"^% Grade 4 ")
+    # Header title (line that starts with "% Grade 7")
+    header_title_re = re.compile(r"^% Grade 7 ")
 
     # ── State ──────────────────────────────────────────────────────────
     output_lines: List[str] = []
@@ -327,7 +327,7 @@ def generate_from_template(
     # Insert after the header subtitle (3rd line, which is a % comment),
     # right before the closing "% ===..." separator.
     for i, ol in enumerate(output_lines):
-        if ol.startswith("% Grade 4"):
+        if ol.startswith("% Grade 7"):
             # Next line is the subtitle; line after that is the separator
             insert_idx = i + 2
             if insert_idx < len(output_lines) and output_lines[insert_idx].startswith(
@@ -395,7 +395,7 @@ def generate_in_30_days_from_template(
         r"^(\s*)(%\s*)?\\input\{" + re.escape(core_dir) + r"/([^}]+)\}(.*)$"
     )
     state_name_re = re.compile(r"^(\s*)\\StateName\{[^}]*\}(.*)$")
-    header_title_re = re.compile(r"^% Grade 4 ")
+    header_title_re = re.compile(r"^% Grade 7 ")
 
     output_lines: List[str] = []
     header_title_seen = False
@@ -450,7 +450,7 @@ def generate_in_30_days_from_template(
 
     # ── Post-processing: inject standards line into header ─────────────
     for i, ol in enumerate(output_lines):
-        if ol.startswith("% Grade 4"):
+        if ol.startswith("% Grade 7"):
             insert_idx = i + 2
             if insert_idx < len(output_lines) and output_lines[insert_idx].startswith(
                 "% ==="
@@ -537,8 +537,8 @@ def generate_practice_tests_from_template(
 # ============================================================================
 
 def tex_filename(book_type: str, state_slug: str) -> str:
-    """e.g. study_guide_texas-grade4.tex"""
-    return f"{book_type}_{state_slug}-grade4.tex"
+    """e.g. study_guide_texas-grade7.tex"""
+    return f"{book_type}_{state_slug}-grade7.tex"
 
 
 def write_state_book(
@@ -591,7 +591,7 @@ def validate_topic_files(workspace: Path, config: TopicsConfig) -> List[str]:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate state-specific .tex files for Grade 4 math books.",
+        description="Generate state-specific .tex files for Grade 7 math books.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""\
 examples:

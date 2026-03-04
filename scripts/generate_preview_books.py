@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate preview .tex files for Grade 4 math books.
+Generate preview .tex files for Grade 7 math books.
 
 For each state × book type, this script generates a lightweight preview PDF
 that contains:
@@ -240,7 +240,7 @@ def generate_preview_all_in_one(
     lines: List[str] = []
 
     # Header
-    lines.append("% PREVIEW — Grade 4 Math Made Clear - All-in-One")
+    lines.append("% PREVIEW — Grade 7 Math Made Clear - All-in-One")
     lines.append("% This is a sample preview. Get the full book for all topics!")
     lines.extend(_preview_preamble_studyguide())
     lines.append(r"\begin{document}")
@@ -248,8 +248,10 @@ def generate_preview_all_in_one(
 
     # Initial pages
     lines.append(r"\pagenumbering{roman}")
-    lines.append(r"\renewcommand{\VMBookTitle}{Grade 4 Math Made Clear}")
+    lines.append(r"\renewcommand{\VMBookTitle}{Grade 7 Math Made Clear}")
     lines.append(r"\renewcommand{\VMBookSubtitle}{The Complete All-in-One Guide with Lessons,\\Examples, and Practice}")
+    lines.append(r"\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}")
+    lines.append(r"\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}")
     lines.append(r"\input{initial_pages/common/copyright_page}")
     lines.append(r"\input{initial_pages/all_in_one/00-welcome}")
     lines.append(r"\input{initial_pages/all_in_one/01-how-to-use}")
@@ -287,14 +289,16 @@ def generate_preview_study_guide(
     additional_set = set(config.state_additional.get(state_slug, []))
 
     lines: List[str] = []
-    lines.append("% PREVIEW \u2014 Grade 4 Math Made Easy - Study Guide")
+    lines.append("% PREVIEW \u2014 Grade 7 Math Made Easy - Study Guide")
     lines.extend(_preview_preamble_studyguide())
     lines.append(r"\begin{document}")
     lines.append("")
 
     lines.append(r"\pagenumbering{roman}")
-    lines.append(r"\renewcommand{\VMBookTitle}{Grade 4 Math Made Easy}")
+    lines.append(r"\renewcommand{\VMBookTitle}{Grade 7 Math Made Easy}")
     lines.append(r"\renewcommand{\VMBookSubtitle}{Study Guide with Key Concepts,\\Review \\& Practice}")
+    lines.append(r"\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}")
+    lines.append(r"\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}")
     lines.append(r"\input{initial_pages/common/copyright_page}")
     lines.append(r"\input{initial_pages/study_guide/00-welcome}")
     lines.append(r"\input{initial_pages/study_guide/01-how-to-use}")
@@ -329,14 +333,16 @@ def generate_preview_workbook(
     additional_set = set(config.state_additional.get(state_slug, []))
 
     lines: List[str] = []
-    lines.append("% PREVIEW \u2014 Grade 4 Math Workbook")
+    lines.append("% PREVIEW \u2014 Grade 7 Math Workbook")
     lines.extend(_preview_preamble_studyguide())
     lines.append(r"\begin{document}")
     lines.append("")
 
     lines.append(r"\pagenumbering{roman}")
-    lines.append(r"\renewcommand{\VMBookTitle}{Grade 4 Math Workbook}")
+    lines.append(r"\renewcommand{\VMBookTitle}{Grade 7 Math Workbook}")
     lines.append(r"\renewcommand{\VMBookSubtitle}{Practice Problems \\& Exercises\\with Answer Key}")
+    lines.append(r"\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}")
+    lines.append(r"\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}")
     lines.append(r"\input{initial_pages/common/copyright_page}")
     lines.append(r"\input{initial_pages/workbook/00-welcome}")
     lines.append(r"\input{initial_pages/workbook/01-how-to-use}")
@@ -371,14 +377,16 @@ def generate_preview_step_by_step(
     additional_set = set(config.state_additional.get(state_slug, []))
 
     lines: List[str] = []
-    lines.append("% PREVIEW \u2014 Grade 4 Math Step by Step")
+    lines.append("% PREVIEW \u2014 Grade 7 Math Step by Step")
     lines.extend(_preview_preamble_studyguide())
     lines.append(r"\begin{document}")
     lines.append("")
 
     lines.append(r"\pagenumbering{roman}")
-    lines.append(r"\renewcommand{\VMBookTitle}{Grade 4 Math Step by Step}")
+    lines.append(r"\renewcommand{\VMBookTitle}{Grade 7 Math Step by Step}")
     lines.append(r"\renewcommand{\VMBookSubtitle}{A Beginner Friendly Guide\\to Learning Math}")
+    lines.append(r"\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}")
+    lines.append(r"\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}")
     lines.append(r"\input{initial_pages/common/copyright_page}")
     lines.append(r"\input{initial_pages/step_by_step/00-welcome}")
     lines.append(r"\input{initial_pages/step_by_step/01-how-to-use}")
@@ -429,7 +437,7 @@ def generate_preview_practice_tests(
             break
 
     lines: List[str] = []
-    lines.append(f"% PREVIEW — Grade 4 Math — {num_tests} Practice Tests")
+    lines.append(f"% PREVIEW — Grade 7 Math — {num_tests} Practice Tests")
     lines.extend(_preview_preamble_studyguide())
 
     # Number of practice tests (used by tracker page)
@@ -443,8 +451,10 @@ def generate_preview_practice_tests(
 
     # Initial pages (subset)
     lines.append(r"\pagenumbering{roman}")
-    lines.append(rf"\renewcommand{{\VMBookTitle}}{{{num_tests} Full-Length Grade 4 Math Practice Tests}}")
+    lines.append(rf"\renewcommand{{\VMBookTitle}}{{{num_tests} Full-Length Grade 7 Math Practice Tests}}")
     lines.append(r"\renewcommand{\VMBookSubtitle}{Test Prep with Detailed\\Answer Explanations}")
+    lines.append(r"\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}")
+    lines.append(r"\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}")
     lines.append(r"\input{initial_pages/common/copyright_page}")
     lines.append(rf"\input{{initial_pages/practice_tests_{num_tests}/00-welcome}}")
     lines.append(rf"\input{{initial_pages/practice_tests_{num_tests}/01-how-to-use}}")
@@ -492,14 +502,16 @@ def generate_preview_in_30_days(
     days_config = config.in_30_days_config
 
     lines: List[str] = []
-    lines.append("% PREVIEW — Grade 4 Math in 30 Days")
+    lines.append("% PREVIEW — Grade 7 Math in 30 Days")
     lines.extend(_preview_preamble_in30days())
     lines.append(r"\begin{document}")
     lines.append("")
 
     lines.append(r"\pagenumbering{roman}")
-    lines.append(r"\renewcommand{\VMBookTitle}{Grade 4 Math in 30 Days}")
-    lines.append(r"\renewcommand{\VMBookSubtitle}{A Day-by-Day Study Plan\\to Master Grade 4 Math}")
+    lines.append(r"\renewcommand{\VMBookTitle}{Grade 7 Math in 30 Days}")
+    lines.append(r"\renewcommand{\VMBookSubtitle}{A Day-by-Day Study Plan\\to Master Grade 7 Math}")
+    lines.append(r"\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}")
+    lines.append(r"\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}")
     lines.append(r"\input{initial_pages/common/copyright_page}")
     lines.append(r"\input{initial_pages/in_30_days/00-welcome}")
     lines.append(r"\input{initial_pages/in_30_days/01-how-to-use}")
@@ -555,7 +567,7 @@ def generate_preview_quiz(
     additional_set = set(config.state_additional.get(state_slug, []))
 
     lines: List[str] = []
-    lines.append("% PREVIEW \u2014 Grade 4 Math Quizzes")
+    lines.append("% PREVIEW \u2014 Grade 7 Math Quizzes")
     lines.extend(_preview_preamble_studyguide())
     lines.append("% Enable quiz-specific answer key")
     lines.append(r"\enableQuizAnswers")
@@ -564,8 +576,10 @@ def generate_preview_quiz(
     lines.append("")
 
     lines.append(r"\pagenumbering{roman}")
-    lines.append(r"\renewcommand{\VMBookTitle}{Grade 4 Math Quizzes}")
+    lines.append(r"\renewcommand{\VMBookTitle}{Grade 7 Math Quizzes}")
     lines.append(r"\renewcommand{\VMBookSubtitle}{Quick Topic Assessments\\with Answer Key}")
+    lines.append(r"\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}")
+    lines.append(r"\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}")
     lines.append(r"\input{initial_pages/common/copyright_page}")
     lines.append(r"\input{initial_pages/quiz/00-welcome}")
     lines.append("")
@@ -606,14 +620,16 @@ def generate_preview_puzzles(
     additional_set = set(config.state_additional.get(state_slug, []))
 
     lines: List[str] = []
-    lines.append("% PREVIEW \u2014 Grade 4 Math Puzzles & Brain Teasers")
+    lines.append("% PREVIEW \u2014 Grade 7 Math Puzzles & Brain Teasers")
     lines.extend(_preview_preamble_studyguide())
     lines.append(r"\begin{document}")
     lines.append("")
 
     lines.append(r"\pagenumbering{roman}")
-    lines.append(r"\renewcommand{\VMBookTitle}{Grade 4 Math Puzzles \\& Brain Teasers}")
+    lines.append(r"\renewcommand{\VMBookTitle}{Grade 7 Math Puzzles \\& Brain Teasers}")
     lines.append(r"\renewcommand{\VMBookSubtitle}{Fun Math Games, Activities\\\\& Challenges}")
+    lines.append(r"\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}")
+    lines.append(r"\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}")
     lines.append(r"\input{initial_pages/common/copyright_page}")
     lines.append(r"\input{initial_pages/puzzles/00-welcome}")
     lines.append(r"\input{initial_pages/puzzles/01-how-to-use}")
@@ -648,14 +664,16 @@ def generate_preview_worksheet(
     additional_set = set(config.state_additional.get(state_slug, []))
 
     lines: List[str] = []
-    lines.append("% PREVIEW \u2014 Grade 4 Math Worksheets")
+    lines.append("% PREVIEW \u2014 Grade 7 Math Worksheets")
     lines.extend(_preview_preamble_studyguide())
     lines.append(r"\begin{document}")
     lines.append("")
 
     lines.append(r"\pagenumbering{roman}")
-    lines.append(r"\renewcommand{\VMBookTitle}{Grade 4 Math Worksheets}")
+    lines.append(r"\renewcommand{\VMBookTitle}{Grade 7 Math Worksheets}")
     lines.append(r"\renewcommand{\VMBookSubtitle}{Printable Practice Pages\\with Answer Key}")
+    lines.append(r"\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}")
+    lines.append(r"\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}")
     lines.append(r"\input{initial_pages/common/copyright_page}")
     lines.append(r"\input{initial_pages/worksheet/00-welcome}")
     lines.append(r"\input{initial_pages/worksheet/01-how-to-use}")
@@ -686,8 +704,8 @@ def generate_preview_worksheet(
 # ============================================================================
 
 def preview_tex_filename(book_type: str, state_slug: str) -> str:
-    """e.g. preview_study_guide_texas-grade4.tex"""
-    return f"preview_{book_type}_{state_slug}-grade4.tex"
+    """e.g. preview_study_guide_texas-grade7.tex"""
+    return f"preview_{book_type}_{state_slug}-grade7.tex"
 
 
 def write_preview(
@@ -715,7 +733,7 @@ def write_preview(
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate preview .tex files for Grade 4 math books.",
+        description="Generate preview .tex files for Grade 7 math books.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""\
 examples:

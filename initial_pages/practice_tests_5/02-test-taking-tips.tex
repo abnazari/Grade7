@@ -33,6 +33,7 @@
 ]
 \small
 \begin{center}
+\resizebox{\linewidth}{!}{%
 \begin{tikzpicture}[
     every node/.style={font=\sffamily\small, align=center},
     point/.style={
@@ -57,13 +58,14 @@
         Write equations. Show every operation.
     };
     % West
-    \node[point] (W) at (-5.5, 0) {
+    \node[point] (W) at (-5.8, 0) {
         \textcolor{funPurple}{\bfseries\faArrowLeft~W --- Weigh your answer}\\
         Does it match the question and estimate?
     };
     % Center compass icon
     \node[font=\fontsize{20}{20}\selectfont, funTealDark] at (0,0) {\faCompass};
-\end{tikzpicture}
+\end{tikzpicture}%
+}
 \end{center}
 \end{tcolorbox}
 

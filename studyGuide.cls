@@ -1,9 +1,9 @@
 %----------------------------------------------------------------------------------------
-%   studyGuide.cls - Grade 4 Math (Fun & Colorful Edition)
+%   studyGuide.cls - Grade 7 Math (Fun & Colorful Edition)
 %   Adapted from the college-level Study Guide class for young learners.
 %----------------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{studyGuide}[2025/02/07 Grade 4 Math - Fun & Colorful Edition]
+\ProvidesClass{studyGuide}[2025/02/07 Grade 7 Math - Fun & Colorful Edition]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
@@ -29,7 +29,7 @@
 \usepackage[most]{tcolorbox}
 
 %----------------------------------------------------------------------------------------
-%   COLORS - Grade 4 Fun Color Palette
+%   COLORS - Grade 7 Fun Color Palette
 %----------------------------------------------------------------------------------------
 \RequirePackage{VM_packages/VMfunColors}
 
@@ -51,7 +51,7 @@
 }
 
 %----------------------------------------------------------------------------------------
-%   FONTS - Fun, rounded, kid-friendly for Grade 4  (XeLaTeX + fontspec)
+%   FONTS - Fun, rounded, kid-friendly for Grade 7  (XeLaTeX + fontspec)
 %----------------------------------------------------------------------------------------
 % We use Comic Neue (OTF via fontspec) as the main body font — polished,
 % friendly, rounded.  All fonts are loaded as OpenType/TrueType so edges
@@ -113,24 +113,31 @@
 \fancyhead[LO]{\rightmark}
 \fancyhead[RE]{\leftmark}
 
+% --- Footer parameters (override with \renewcommand in main .tex) ---
+\providecommand{\VMFooterURL}{https://viewmath.com/grade7}
+\providecommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\providecommand{\VMFooterGetOnlineImg}{get_online.pdf}
+\providecommand{\VMFooterHandImg}{hand-point-cartoon-left.png}
+\providecommand{\VMFooterLogoImg}{ViewMath.com.pdf}
+
 % --- Footer design: VMfooter-style (Get Online + QR + hand + ViewMath logo) ---
 \newcommand{\vmFooterLeft}{%
     \raisebox{0.5cm}{%
     \begin{minipage}[b]{0.55\textwidth}
         \begin{tabular}{@{}l@{}l@{}l@{}}
-            \raisebox{-0.45cm}{\IfFileExists{get_online.pdf}{\includegraphics[height=1.1cm]{get_online.pdf}}{\makebox[1.1cm][c]{\textcolor{funBlue}{\fontsize{30}{30}\selectfont\faTablet}}}} \hspace*{0.1cm}&
-            \raisebox{0cm}{\qrcode*[height=1.1cm]{https://viewmath.com/grade4}} & \hspace{5pt}
+            \raisebox{-0.45cm}{\includegraphics[height=1.1cm]{\VMFooterGetOnlineImg}} \hspace*{0.1cm}&
+            \raisebox{0cm}{\qrcode*[height=1.1cm]{\VMFooterURL}} & \hspace{5pt}
             \begin{tabular}{@{}l@{}}
                 \raisebox{-0.1cm}[0pt][0pt]{\footnotesize\sffamily Find more at} \\
-                \raisebox{0cm}[0pt][0pt]{\href{https://viewmath.com/grade4}{\footnotesize\sffamily\bfseries ViewMath.com/Grade4}} \\[0cm]
-                \raisebox{0cm}{\IfFileExists{hand-point-cartoon-left.png}{\includegraphics[height=0.5cm]{hand-point-cartoon-left.png}}{\textcolor{funBlue}{\faHandPointLeft}}}
+                \raisebox{0cm}[0pt][0pt]{\href{\VMFooterURL}{\footnotesize\sffamily\bfseries \VMFooterURLDisplay}} \\[0cm]
+                \raisebox{0cm}{\includegraphics[height=0.5cm]{\VMFooterHandImg}}
             \end{tabular}
         \end{tabular}
     \end{minipage}%
     }%
 }
 \newcommand{\vmFooterRight}{%
-    \raisebox{0.4cm}{\IfFileExists{ViewMath.com.pdf}{\includegraphics[height=0.9cm]{ViewMath.com.pdf}}{\textbf{\textsf{\textcolor{funBlue}{\footnotesize ViewMath.com}}}}}%
+    \raisebox{0.4cm}{\includegraphics[height=0.9cm]{\VMFooterLogoImg}}%
 }
 
 \fancyfoot[L]{\vmFooterLeft}
@@ -146,7 +153,7 @@
 \usepackage{emptypage}
 
 %----------------------------------------------------------------------------------------
-%   SECTION STYLING - Fun and colorful for Grade 4
+%   SECTION STYLING - Fun and colorful for Grade 7
 %----------------------------------------------------------------------------------------
 \setcounter{secnumdepth}{3}
 
@@ -897,7 +904,7 @@
 %----------------------------------------------------------------------------------------
 %   TITLE PAGE MACROS (for copyright_page.tex)
 %----------------------------------------------------------------------------------------
-\providecommand{\VMBookTitle}{Grade 4 Math Made Easy}
+\providecommand{\VMBookTitle}{Grade 7 Math Made Easy}
 \providecommand{\VMBookSubtitle}{}
 
 %----------------------------------------------------------------------------------------

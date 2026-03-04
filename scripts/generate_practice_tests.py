@@ -773,7 +773,7 @@ def format_test_file(
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate practice test files for US state Grade 4 math editions.",
+        description="Generate practice test files for US state Grade 7 math editions.",
     )
     parser.add_argument(
         "--states",

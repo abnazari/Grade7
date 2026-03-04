@@ -1,5 +1,5 @@
 """
-Shared configuration loader for Grade 6 book generation scripts.
+Shared configuration loader for Grade 7 book generation scripts.
 
 Reads topics_config.yaml and provides structured data that both
 generate_state_books.py and generate_practice_tests.py consume.
