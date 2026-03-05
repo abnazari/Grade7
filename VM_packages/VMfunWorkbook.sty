@@ -1,0 +1,133 @@
+% ============================================================================
+% VMfunWorkbook.sty — Custom environments for the Grade 7 Math Workbook
+% Modern angular design: squared badges, top-stripe tiles, dashed callouts.
+% Completely different from Grade 3–6 workbook styles.
+% ============================================================================
+\ProvidesPackage{VMfunWorkbook}[2026/03/05 Grade 7 Workbook Environments]
+
+% ── Tile ───────────────────────────────────────────────────────────────────
+% Full-width card with a colored TOP stripe, subtle shadow, icon + title on
+% one line, description below.
+% Distinct from Grade 6's left-border wbFeatureCard.
+% Usage: \wbTile{color}{icon-cmd}{title}{description}
+\newcommand{\wbTile}[4]{%
+    \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=black!8,
+        arc=3pt,
+        boxrule=0.4pt,
+        left=5mm, right=5mm, top=4mm, bottom=4mm,
+        borderline north={2.5pt}{0pt}{#1},
+        shadow={1mm}{-1mm}{0mm}{black!6},
+    ]
+        {\color{#1}\Large #2}\hspace{4mm}%
+        {\bfseries\sffamily\color{black!85}#3}\par\vspace{2pt}%
+        {\sffamily\small\color{black!60}#4}
+    \end{tcolorbox}
+    \vspace{2.5mm}%
+}
+
+% ── Step Badge ─────────────────────────────────────────────────────────────
+% Rounded-SQUARE numbered badge with title and description.
+% Distinct from Grade 6's circular wbPathStep.
+% Usage: \wbStepBadge{number}{color}{title}{description}
+\newcommand{\wbStepBadge}[4]{%
+    \noindent
+    \begin{minipage}[t]{0.10\textwidth}
+        \centering\vspace{2pt}%
+        \tikz\node[
+            fill=#2!12, draw=#2!40,
+            rounded corners=2.5pt,
+            line width=0.7pt,
+            font=\bfseries\sffamily\Large,
+            text=#2!80!black,
+            minimum width=11mm, minimum height=11mm, inner sep=0pt
+        ] {#1};
+    \end{minipage}%
+    \begin{minipage}[t]{0.87\textwidth}
+        \vspace{0pt}%
+        {\large\bfseries\sffamily\color{black!85}#3}\par\vspace{2pt}%
+        {\sffamily\color{black!60}#4}
+    \end{minipage}%
+    \par\vspace{6mm}%
+}
+
+% ── Chapter Stripe ─────────────────────────────────────────────────────────
+% Card with a thick LEFT colored bar for chapter overviews.
+% Distinct from Grade 6's top-border wbChapterPreview.
+% Usage: \begin{wbChapterStripe}{color} ... \end{wbChapterStripe}
+\newtcolorbox{wbChapterStripe}[1]{
+    enhanced,
+    colback=#1!3,
+    colframe=#1!12,
+    arc=3pt,
+    boxrule=0.4pt,
+    left=5mm, right=4mm, top=3mm, bottom=2mm,
+    borderline west={3pt}{0pt}{#1!55},
+}
+
+% ── Callout Box ────────────────────────────────────────────────────────────
+% DASHED-border panel for tips and notes.
+% Distinct from Grade 6's solid-border wbInfoPanel.
+% Usage: \begin{wbCallout}{color} ... \end{wbCallout}
+\newtcolorbox{wbCallout}[1]{
+    enhanced,
+    colback=#1!4,
+    colframe=#1!30,
+    arc=4pt,
+    boxrule=0pt,
+    borderline={0.8pt}{0pt}{#1!30, dashed},
+    left=5mm, right=5mm, top=4mm, bottom=4mm,
+}
+
+% ── Section Head ───────────────────────────────────────────────────────────
+% Centered heading with thick colored underline.
+% Distinct from Grade 6's wbPageTitle (which uses a thin teal rule).
+% Here: thicker rule in funBlue.
+% Usage: \wbSectionHead{title}{subtitle}
+\newcommand{\wbSectionHead}[2]{%
+    \begin{center}
+    {\fontsize{22}{26}\selectfont\bfseries\sffamily\color{black!85}#1}%
+    \par\smallskip
+    {\normalsize\sffamily\color{black!50}#2}%
+    \par\vspace{2mm}%
+    {\color{funBlue!35}\rule{0.5\textwidth}{1.5pt}}%
+    \end{center}
+    \vspace{5mm}%
+}
+
+% ── Milestone Row ──────────────────────────────────────────────────────────
+% Progress row with ROUNDED-SQUARE badge for chapter tracking.
+% Distinct from Grade 6's circular wbProgressRow.
+% Usage: \wbMilestoneRow{color}{chapter-num}{chapter-title}{topic-count}
+\newcommand{\wbMilestoneRow}[4]{%
+    \noindent
+    \begin{minipage}[c]{0.07\textwidth}
+        \centering
+        \tikz\node[
+            fill=#1!10, draw=#1!30,
+            rounded corners=2pt,
+            line width=0.5pt,
+            font=\bfseries\sffamily\small,
+            text=black!70,
+            minimum width=7.5mm, minimum height=7.5mm, inner sep=0pt
+        ] {#2};
+    \end{minipage}%
+    \begin{minipage}[c]{0.48\textwidth}
+        {\sffamily\bfseries\color{black!80}#3}
+    \end{minipage}%
+    \begin{minipage}[c]{0.13\textwidth}
+        \centering
+        {\sffamily\small\color{black!55}#4 topics}
+    \end{minipage}%
+    \begin{minipage}[c]{0.27\textwidth}
+        \centering
+        \rule[-1pt]{2.5cm}{0.4pt}\;/\;\rule[-1pt]{1cm}{0.4pt}
+    \end{minipage}%
+    \par\vspace{1pt}%
+    {\color{black!10}\hrule height 0.4pt}%
+    \vspace{4pt}%
+}
+
+\endinput

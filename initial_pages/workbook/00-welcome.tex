@@ -1,0 +1,133 @@
+% ============================================================================
+% Welcome Page — Grade 7 Math Workbook
+% Full-page angular design with blue chevron header and diamond decorations.
+% UNIQUE to Grade 7: chevron header shape, scattered diamond motifs,
+% top-stripe tile feature cards. No mascot, no stars, no dot clusters.
+% ============================================================================
+
+\thispagestyle{empty}
+
+% ── TikZ background decorations ──────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+    % Light background wash
+    \fill[funBlue!3]
+        (current page.south west) rectangle (current page.north east);
+
+    % Thin border frame
+    \draw[black!10, line width=0.5pt]
+        ([xshift=1.2cm, yshift=-1.2cm]current page.north west) rectangle
+        ([xshift=-1.2cm, yshift=1.2cm]current page.south east);
+
+    % ── Angular header — chevron shape pointing down ──
+    \fill[funBlue!10]
+        ([xshift=1.2cm, yshift=-1.2cm]current page.north west) --
+        ([xshift=-1.2cm, yshift=-1.2cm]current page.north east) --
+        ([xshift=-1.2cm, yshift=-5.8cm]current page.north east) --
+        ([yshift=-7cm]current page.north) --
+        ([xshift=1.2cm, yshift=-5.8cm]current page.north west) -- cycle;
+
+    % Second chevron layer
+    \fill[funBlue!6]
+        ([xshift=1.2cm, yshift=-5.8cm]current page.north west) --
+        ([xshift=-1.2cm, yshift=-5.8cm]current page.north east) --
+        ([xshift=-1.2cm, yshift=-6.5cm]current page.north east) --
+        ([yshift=-7.6cm]current page.north) --
+        ([xshift=1.2cm, yshift=-6.5cm]current page.north west) -- cycle;
+
+    % ── Decorative diamonds — top area ──
+    \node[rotate=45, fill=funBlue!10, draw=funBlue!20, line width=0.3pt,
+          minimum size=4mm, inner sep=0pt]
+        at ([xshift=2.5cm, yshift=-2cm]current page.north west) {};
+    \node[rotate=45, fill=funPurple!7, draw=funPurple!15, line width=0.3pt,
+          minimum size=3mm, inner sep=0pt]
+        at ([xshift=-2.5cm, yshift=-2.5cm]current page.north east) {};
+    \node[rotate=45, fill=funBlue!7, draw=funBlue!15, line width=0.3pt,
+          minimum size=3.5mm, inner sep=0pt]
+        at ([xshift=5.5cm, yshift=-1.6cm]current page.north west) {};
+    \node[rotate=45, fill=funPurple!5, minimum size=2.5mm, inner sep=0pt]
+        at ([xshift=-5cm, yshift=-1.8cm]current page.north east) {};
+
+    % ── Decorative diamonds — bottom area ──
+    \node[rotate=45, fill=funPurple!5, minimum size=3mm, inner sep=0pt]
+        at ([xshift=2.8cm, yshift=2.5cm]current page.south west) {};
+    \node[rotate=45, fill=funBlue!5, minimum size=3.5mm, inner sep=0pt]
+        at ([xshift=-3.5cm, yshift=3cm]current page.south east) {};
+    \node[rotate=45, fill=funBlue!4, minimum size=2.5mm, inner sep=0pt]
+        at ([xshift=6cm, yshift=1.8cm]current page.south west) {};
+
+    % ── Spaced tagline ──
+    \node[font=\fontsize{10}{12}\selectfont\sffamily\color{funBlueDark!60}]
+        at ([yshift=-2.3cm]current page.north)
+        {READY\hspace{0.6em}\textbullet\hspace{0.6em}SET%
+        \hspace{0.6em}\textbullet\hspace{0.6em}SOLVE};
+
+    % ── Main title ──
+    \node[font=\fontsize{30}{36}\selectfont\sffamily\bfseries\color{black!88},
+          text width=0.85\paperwidth, align=center]
+        at ([yshift=-4.2cm]current page.north)
+        {Grade 7 Math Workbook};
+
+    % ── Subtitle ──
+    \node[font=\normalsize\sffamily\color{black!50}]
+        at ([yshift=-5.6cm]current page.north)
+        {Practice Problems \;\textbullet\; Word Problems \;\textbullet\;
+        Complete Answer Key};
+
+    % ── Thin rule with central diamond ──
+    \draw[funBlue!30, line width=0.8pt]
+        ([xshift=3.5cm, yshift=-6.4cm]current page.north west) --
+        ([xshift=-3.5cm, yshift=-6.4cm]current page.north east);
+    \node[rotate=45, fill=funBlue!12, draw=funBlue!25, line width=0.3pt,
+          minimum size=3mm, inner sep=0pt]
+        at ([yshift=-6.4cm]current page.north) {};
+
+    % ── Copyright ──
+    \node[font=\sffamily\tiny\color{black!40}, anchor=south]
+        at ([yshift=0.8cm]current page.south)
+        {\textcopyright~2026 Dr.\ A.\ Nazari \;\textbullet\; ViewMath.com};
+
+\end{tikzpicture}
+
+% ── Welcome Text ──────────────────────────────────────────────────────────
+\vspace*{7.2cm}
+
+\begin{center}
+\begin{minipage}{0.80\textwidth}
+    \sffamily\large\color{black!75}
+    \setlength{\parskip}{7pt}
+
+    This workbook is your personal training ground for Grade~7 math.
+    Every section opens with a quick concept reminder, then gives you
+    a focused set of problems that build from straightforward to
+    challenging. Work at your own pace, write out your steps on
+    scratch paper, and check answers in the back.
+
+    Each problem you solve makes the next one easier.
+\end{minipage}
+\end{center}
+
+% ── Feature Tiles ─────────────────────────────────────────────────────────
+\vspace{8mm}
+
+\begin{center}
+\begin{minipage}{0.80\textwidth}
+
+\wbTile{funBlue}{\faBookOpen}{56 Topics Across 9 Chapters}{%
+    From proportional relationships and percents to probability ---
+    every Grade~7 standard is covered.}
+
+\wbTile{funPurple}{\faLayerGroup}{Progressive Difficulty}{%
+    Each section builds from basic recall to multi-step challenges,
+    so your confidence grows with every page.}
+
+\wbTile{funOrange}{\faGlobeAmericas}{Real-World Applications}{%
+    Apply math to shopping, sports, science, and everyday decisions.}
+
+\wbTile{funGreen}{\faCheckDouble}{Complete Answer Key}{%
+    Every problem has an answer in the back. Check your work,
+    learn from mistakes, and try again.}
+
+\end{minipage}
+\end{center}
+
+\clearpage
