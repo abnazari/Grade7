@@ -1,0 +1,301 @@
+\ansChap{1}
+\ansSec{1.1}
+\ansItem{1}{$15$ m}
+\ansExplain{1}{Multiply drawing length by the scale factor: $5 \times 3 = 15$ m.}
+\ansItem{2}{$70$ ft}
+\ansExplain{2}{Multiply drawing length by the scale factor: $7 \times 10 = 70$ ft.}
+\ansItem{3}{$100$ km}
+\ansExplain{3}{Multiply drawing length by the scale factor: $2 \times 50 = 100$ km.}
+\ansItem{4}{$14$ ft}
+\ansExplain{4}{Multiply drawing length by the scale factor: $3.5 \times 4 = 14$ ft.}
+\ansItem{5}{$150$ m}
+\ansExplain{5}{Multiply drawing length by the scale factor: $6 \times 25 = 150$ m.}
+\ansItem{6}{$40$ mi}
+\ansExplain{6}{Multiply drawing length by the scale factor: $8 \times 5 = 40$ mi.}
+\ansItem{7}{$20$}
+\ansExplain{7}{The scale factor is the number of real units per drawing unit. Here, $1$ cm represents $20$ km, so the scale factor is $20$.}
+\ansItem{8}{$15$}
+\ansExplain{8}{Each inch on the drawing represents $15$ ft, so the scale factor is $15$.}
+\ansItem{9}{$20$}
+\ansExplain{9}{Divide to find the unit rate: $40 \div 2 = 20$ m per cm. The scale factor is $20$.}
+\ansItem{10}{$4$}
+\ansExplain{10}{Divide to find the unit rate: $12 \div 3 = 4$ ft per in. The scale factor is $4$.}
+\ansItem{11}{$40$}
+\ansExplain{11}{Divide to find the unit rate: $200 \div 5 = 40$ km per cm. The scale factor is $40$.}
+\ansItem{12}{$25$}
+\ansExplain{12}{Divide to find the unit rate: $100 \div 4 = 25$ mi per in. The scale factor is $25$.}
+\ansItem{13}{$6$ in}
+\ansExplain{13}{Divide the actual length by the scale factor: $48 \div 8 = 6$ in.}
+\ansItem{14}{$6$ cm}
+\ansExplain{14}{Divide the actual width by the scale factor: $300 \div 50 = 6$ cm.}
+\ansItem{15}{$6$ cm}
+\ansExplain{15}{Divide the actual distance by the scale factor: $180 \div 30 = 6$ cm.}
+\ansItem{16}{$5$ in}
+\ansExplain{16}{Divide the actual height by the scale factor: $60 \div 12 = 5$ in.}
+\ansItem{17}{$300$ m$^2$}
+\ansExplain{17}{Actual dimensions: $3 \times 5 = 15$ m and $4 \times 5 = 20$ m. Actual area: $15 \times 20 = 300$ m$^2$.}
+\ansItem{18}{$1{,}200$ m$^2$}
+\ansExplain{18}{Actual dimensions: $2 \times 10 = 20$ m and $6 \times 10 = 60$ m. Actual area: $20 \times 60 = 1{,}200$ m$^2$.}
+\ansItem{19}{$576$ cm$^2$}
+\ansExplain{19}{Area scales by $k^2 = 8^2 = 64$. Actual area: $9 \times 64 = 576$ cm$^2$.}
+\ansItem{20}{$20$ m$^2$}
+\ansExplain{20}{Drawing area $= \text {actual area} \div k^2 = 320 \div 16 = 20$ m$^2$.}
+\ansItem{21}{False}
+\ansExplain{21}{A scale drawing changes all lengths by the same factor, but angles remain exactly the same. Only lengths and areas change.}
+\ansItem{22}{True}
+\ansExplain{22}{Multiply drawing length by the scale factor: $2 \times 10 = 20$. The units depend on the scale, and here the answer is $20$ m.}
+\ansItem{23}{False}
+\ansExplain{23}{Doubling the scale factor doubles lengths in the real object. The relationship between scale factor and area means $k^2$ changes. If the original scale factor was $k$ and you double it to $2k$, the new area factor is $(2k)^2 = 4k^2$, which is $4$ times the old $k^2$, so actual areas quadruple — but the drawing area stays the same; it is the actual area interpretation that changes.}
+\ansItem{24}{$1.25$ hours (or $1$ hour $15$ minutes)}
+\ansExplain{24}{Actual distance: $7.5 \times 15 = 112.5$ km. Time $= \text {distance} \div \text {speed} = 112.5 \div 90 = 1.25$ hours, which is $1$ hour and $15$ minutes.}
+\ansItem{25}{$480$ m$^3$}
+\ansExplain{25}{Actual dimensions: $5 \times 4 = 20$ m by $3 \times 4 = 12$ m. Volume $= 20 \times 12 \times 2 = 480$ m$^3$.}
+\ansSec{1.2}
+\ansItem{1}{$2$}
+\ansExplain{1}{Divide: $\frac {20}{10} = 2$. Every old measurement is multiplied by $2$ on the new drawing.}
+\ansItem{2}{$2$}
+\ansExplain{2}{Divide: $\frac {50}{25} = 2$. The new drawing is twice as large.}
+\ansItem{3}{$\frac {1}{3}$}
+\ansExplain{3}{Divide: $\frac {4}{12} = \frac {1}{3}$. The new drawing is one-third as large.}
+\ansItem{4}{$2$}
+\ansExplain{4}{Divide: $\frac {6}{3} = 2$. Every old measurement is doubled.}
+\ansItem{5}{$2$}
+\ansExplain{5}{Divide: $\frac {100}{50} = 2$. The new drawing is twice as large.}
+\ansItem{6}{$\frac {1}{3}$}
+\ansExplain{6}{Divide: $\frac {8}{24} = \frac {1}{3}$. The new drawing is one-third as large because the new scale covers more real distance per inch.}
+\ansItem{7}{$4$ cm}
+\ansExplain{7}{Scale ratio: $\frac {5}{10} = \frac {1}{2}$. New length: $8 \times \frac {1}{2} = 4$ cm. The new scale covers more real distance per cm, so the drawing shrinks.}
+\ansItem{8}{$12$ cm}
+\ansExplain{8}{Scale ratio: $\frac {30}{15} = 2$. New length: $6 \times 2 = 12$ cm.}
+\ansItem{9}{$10$ in}
+\ansExplain{9}{Scale ratio: $\frac {4}{2} = 2$. New length: $5 \times 2 = 10$ in.}
+\ansItem{10}{$15$ cm}
+\ansExplain{10}{Scale ratio: $\frac {40}{8} = 5$. New length: $3 \times 5 = 15$ cm.}
+\ansItem{11}{$14$ cm}
+\ansExplain{11}{Scale ratio: $\frac {200}{100} = 2$. New length: $7 \times 2 = 14$ cm.}
+\ansItem{12}{$4$ cm}
+\ansExplain{12}{Scale ratio: $\frac {50}{150} = \frac {1}{3}$. New length: $12 \times \frac {1}{3} = 4$ cm.}
+\ansItem{13}{$8$ cm by $12$ cm; area $= 96$ cm$^2$}
+\ansExplain{13}{Scale ratio: $\frac {10}{5} = 2$. New: $4 \times 2 = 8$ cm by $6 \times 2 = 12$ cm. Area: $8 \times 12 = 96$ cm$^2$.}
+\ansItem{14}{$3$ cm by $2$ cm; area $= 6$ cm$^2$}
+\ansExplain{14}{Scale ratio: $\frac {3}{9} = \frac {1}{3}$. New: $9 \times \frac {1}{3} = 3$ cm by $6 \times \frac {1}{3} = 2$ cm. Area: $3 \times 2 = 6$ cm$^2$.}
+\ansItem{15}{$10$ cm by $10$ cm; area $= 100$ cm$^2$}
+\ansExplain{15}{Scale ratio: $\frac {20}{10} = 2$. New side: $5 \times 2 = 10$ cm. Area: $10 \times 10 = 100$ cm$^2$.}
+\ansItem{16}{False}
+\ansExplain{16}{Changing the scale changes only the lengths. All angles remain exactly the same because the shapes stay proportional.}
+\ansItem{17}{True}
+\ansExplain{17}{The new scale represents fewer real meters per cm, so each real-world length needs more cm on the drawing, making the drawing larger.}
+\ansItem{18}{False}
+\ansExplain{18}{If lengths are multiplied by $3$, areas are multiplied by $3^2 = 9$. Areas always scale by the square of the length scale ratio.}
+\ansItem{19}{True}
+\ansExplain{19}{Scale ratio: $\frac {5}{15} = \frac {1}{3}$. Every length on the new drawing is $\frac {1}{3}$ of the old length, so the drawing shrinks to one-third its original size.}
+\ansItem{20}{$8$ cm by $6$ cm}
+\ansExplain{20}{Scale ratio: $\frac {2}{1} = 2$. Multiply each dimension: $4 \times 2 = 8$ cm and $3 \times 2 = 6$ cm.}
+\ansItem{21}{$6$ cm}
+\ansExplain{21}{Scale ratio: $\frac {500}{250} = 2$. New length: $3 \times 2 = 6$ cm. The tourist map is more detailed, so the street appears longer.}
+\ansItem{22}{$30$ cm}
+\ansExplain{22}{Scale ratio: $\frac {72}{36} = 2$. New wingspan: $15 \times 2 = 30$ cm.}
+\ansItem{23}{Map B area: $6$ cm$^2$; Actual area: $240{,}000$ m$^2$}
+\ansExplain{23}{Scale ratio: $\frac {100}{200} = \frac {1}{2}$. Map B dimensions: $6 \times \frac {1}{2} = 3$ cm by $4 \times \frac {1}{2} = 2$ cm. Map B area: $3 \times 2 = 6$ cm$^2$. Actual dimensions: $6 \times 100 = 600$ m by $4 \times 100 = 400$ m. Actual area: $600 \times 400 = 240{,}000$ m$^2$.}
+\ansSec{1.3}
+\ansItem{1}{Yes}
+\ansExplain{1}{$3 + 4 = 7 > 5$ \checkmark , $3 + 5 = 8 > 4$ \checkmark , $4 + 5 = 9 > 3$ \checkmark . All three checks pass, so a triangle can be formed.}
+\ansItem{2}{No}
+\ansExplain{2}{$1 + 2 = 3$, but $3 < 8$. The two shorter sides cannot reach each other, so no triangle is possible.}
+\ansItem{3}{Yes}
+\ansExplain{3}{$6 + 6 = 12 > 6$ \checkmark . All three checks pass (the triangle is equilateral).}
+\ansItem{4}{No}
+\ansExplain{4}{$2 + 3 = 5$, which equals the third side. The sum must be \emph {greater than}, not equal to, the third side. The ``triangle'' would be a flat line segment.}
+\ansItem{5}{Yes}
+\ansExplain{5}{$7 + 10 = 17 > 12$ \checkmark , $7 + 12 = 19 > 10$ \checkmark , $10 + 12 = 22 > 7$ \checkmark . All pass.}
+\ansItem{6}{No}
+\ansExplain{6}{$4 + 4 = 8$, but $8 < 9$. The two shorter sides cannot connect around the longest side.}
+\ansItem{7}{Exactly one}
+\ansExplain{7}{Three specific side lengths (SSS) that satisfy the triangle inequality determine exactly one triangle.}
+\ansItem{8}{More than one}
+\ansExplain{8}{The sides must add to $12$ (half the perimeter). Many pairs work: $1 \times 11$, $2 \times 10$, $3 \times 9$, $4 \times 8$, $5 \times 7$, $6 \times 6$, etc.}
+\ansItem{9}{No shape}
+\ansExplain{9}{$1 + 3 = 4 < 7$. The triangle inequality fails, so no triangle is possible.}
+\ansItem{10}{More than one}
+\ansExplain{10}{Four side lengths do not determine a unique quadrilateral. You can change the angles and get many different shapes with the same sides.}
+\ansItem{11}{More than one}
+\ansExplain{11}{Three angles (AAA) do not fix the size. You can draw equilateral triangles of any size — they all have the same shape but different dimensions.}
+\ansItem{12}{Exactly one}
+\ansExplain{12}{Two sides and the included angle (SAS) fully determine a unique triangle.}
+\ansItem{13}{False}
+\ansExplain{13}{Knowing all three angles (AAA) tells you the shape but not the size. You can draw infinitely many similar triangles with those angles.}
+\ansItem{14}{True}
+\ansExplain{14}{$5 + 12 = 17 > 13$ \checkmark , $5 + 13 = 18 > 12$ \checkmark , $12 + 13 = 25 > 5$ \checkmark . This is actually a right triangle ($5^2 + 12^2 = 13^2$).}
+\ansItem{15}{False}
+\ansExplain{15}{Four sides do not determine all the angles. A quadrilateral can flex at its corners, creating many different shapes with the same four side lengths.}
+\ansItem{16}{False}
+\ansExplain{16}{$10 + 15 = 25$, which is not greater than $25$. The sum must be strictly greater, so $25$ is not a valid third side.}
+\ansItem{17}{Between $4$ and $14$ (exclusive)}
+\ansExplain{17}{The third side must be greater than $|9 - 5| = 4$ and less than $9 + 5 = 14$. So the third side is between $4$ and $14$, not including $4$ or $14$.}
+\ansItem{18}{Between $0$ and $14$ (exclusive)}
+\ansExplain{18}{The third side must be greater than $|7 - 7| = 0$ and less than $7 + 7 = 14$. Any positive length less than $14$ works.}
+\ansItem{19}{Between $7$ and $13$ (exclusive)}
+\ansExplain{19}{The third side must be greater than $|10 - 3| = 7$ and less than $10 + 3 = 13$.}
+\ansItem{20}{Between $7$ and $23$ (exclusive)}
+\ansExplain{20}{The third side must be greater than $|15 - 8| = 7$ and less than $15 + 8 = 23$.}
+\ansItem{21}{Not possible}
+\ansExplain{21}{Check the triangle inequality: $4 + 6 = 10$, but $10 < 11$. The two shorter sides are not long enough to connect around the longest side.}
+\ansItem{22}{$6$ inches by $12$ inches}
+\ansExplain{22}{Let width $= w$, length $= 2w$. Perimeter: $2(w + 2w) = 6w = 36$. So $w = 6$ and length $= 12$ inches.}
+\ansItem{23}{$11, 12, 13, \ldots , 49$ ft}
+\ansExplain{23}{The third side must be greater than $|30 - 20| = 10$ and less than $30 + 20 = 50$. Whole-number values range from $11$ to $49$.}
+\ansItem{24}{$12, 13, 14$ cm}
+\ansExplain{24}{The middle stick $m$ must satisfy both: $4 + m > 15$ (so $m > 11$) and $4 + 15 > m$ (so $m < 19$). Also $m \leq 15$ since $15$ is the longest. Whole numbers: $12, 13, 14$.}
+\ansSec{1.4}
+\ansItem{1}{$70°$}
+\ansExplain{1}{$180° - 50° - 60° = 70°$. The three angles must sum to $180°$.}
+\ansItem{2}{$45°$}
+\ansExplain{2}{$180° - 90° - 45° = 45°$. This is an isosceles right triangle.}
+\ansItem{3}{$120°$}
+\ansExplain{3}{$180° - 30° - 30° = 120°$. The triangle has two equal angles and one obtuse angle.}
+\ansItem{4}{$54°$}
+\ansExplain{4}{$180° - 72° - 54° = 54°$. Two angles are equal, making it isosceles.}
+\ansItem{5}{$60°$}
+\ansExplain{5}{$180° - 60° - 60° = 60°$. All three angles are equal — equilateral triangle.}
+\ansItem{6}{Yes, many triangles}
+\ansExplain{6}{$40 + 60 + 80 = 180°$ \checkmark . But three angles (AAA) allow many triangles of different sizes with the same shape.}
+\ansItem{7}{No}
+\ansExplain{7}{$50 + 60 + 80 = 190°$. The angles sum to more than $180°$, which is impossible for a triangle.}
+\ansItem{8}{No}
+\ansExplain{8}{Check: $8 + 6 = 14$, but $14 < 15$. The triangle inequality fails because the two shorter sides cannot reach around the longest side.}
+\ansItem{9}{Yes, unique}
+\ansExplain{9}{Check: $8 + 10 = 18 > 15$ \checkmark , $8 + 15 = 23 > 10$ \checkmark , $10 + 15 = 25 > 8$ \checkmark . Three valid sides (SSS) give exactly one triangle.}
+\ansItem{10}{Yes, unique}
+\ansExplain{10}{Two sides and the included angle (SAS) always produce exactly one triangle.}
+\ansItem{11}{No}
+\ansExplain{11}{An angle cannot be negative. Every angle of a triangle must be greater than $0°$. Also, $90 + 100 = 190° > 180°$.}
+\ansItem{12}{SSS}
+\ansExplain{12}{All three sides are given — this is Side-Side-Side (SSS).}
+\ansItem{13}{SAS}
+\ansExplain{13}{Two sides and the angle between them — this is Side-Angle-Side (SAS).}
+\ansItem{14}{ASA}
+\ansExplain{14}{Two angles and the side between them — this is Angle-Side-Angle (ASA).}
+\ansItem{15}{AAA}
+\ansExplain{15}{All three angles are given — this is Angle-Angle-Angle (AAA).}
+\ansItem{16}{AAS}
+\ansExplain{16}{Two angles and a side not between them — this is Angle-Angle-Side (AAS).}
+\ansItem{17}{False}
+\ansExplain{17}{The angles sum correctly, but AAA does not determine the size. You can draw infinitely many triangles with those same angles but different side lengths.}
+\ansItem{18}{False}
+\ansExplain{18}{SSS produces a unique triangle \emph {only if} the triangle inequality holds. If the sides don't satisfy the inequality, no triangle exists at all.}
+\ansItem{19}{True}
+\ansExplain{19}{$180° - 45° - 65° = 70°$. There is exactly one value for the third angle.}
+\ansItem{20}{True}
+\ansExplain{20}{Two sides and the angle between them fix all remaining measurements. Only one triangle can be drawn.}
+\ansItem{21}{Exactly $1$}
+\ansExplain{21}{Two sides and the included angle (SAS) always produce one unique triangle. This is a right triangle with legs $12$ and $16$.}
+\ansItem{22}{Yes}
+\ansExplain{22}{$48 + 62 + 70 = 180°$ \checkmark . The angles sum to exactly $180°$, so triangles with these angles exist (but AAA means many sizes are possible).}
+\ansItem{23}{No}
+\ansExplain{23}{$3 + 4 = 7$, and $7 < 8$. The triangle inequality fails because the two shorter sides cannot reach around the longest side.}
+\ansItem{24}{$52°$, $78°$, $50°$; many triangles}
+\ansExplain{24}{The first two angles sum to $180° - 50° = 130°$. In ratio $2:3$: $2x + 3x = 130$, so $5x = 130$ and $x = 26$. Angles: $52°$, $78°$, $50°$. Since we only know angles (AAA), many triangles of different sizes are possible.}
+\ansItem{25}{No}
+\ansExplain{25}{If all three angles are $60°$, the triangle is equilateral, which means all three sides must be equal. It is impossible to have three different sides with three equal angles.}
+\ansSec{1.5}
+\ansItem{1}{Rectangle}
+\ansExplain{1}{A horizontal cut parallel to the base of a rectangular prism always produces a rectangle identical to the base.}
+\ansItem{2}{Circle}
+\ansExplain{2}{Every cross-section of a sphere is a circle. The size depends on how close the cut is to the center.}
+\ansItem{3}{Circle}
+\ansExplain{3}{A horizontal cut parallel to the circular base of a cone produces a smaller circle.}
+\ansItem{4}{Circle}
+\ansExplain{4}{A horizontal cut through a cylinder parallel to its circular base creates a circle with the same radius.}
+\ansItem{5}{Rectangle}
+\ansExplain{5}{A cut through two opposite edges of a cube creates a rectangular cross-section.}
+\ansItem{6}{Rectangle}
+\ansExplain{6}{A horizontal cut parallel to the base gives a rectangle with the same length and width as the base.}
+\ansItem{7}{Rectangle}
+\ansExplain{7}{A vertical cut parallel to a side face produces a rectangle with the same height and depth as that face.}
+\ansItem{8}{Rectangle}
+\ansExplain{8}{A diagonal cut connecting opposite edges of a rectangular prism typically produces a rectangle (larger than any face).}
+\ansItem{9}{Rectangle}
+\ansExplain{9}{A vertical diagonal cut through a rectangular prism creates a rectangular cross-section whose width is the diagonal of the base.}
+\ansItem{10}{Triangle}
+\ansExplain{10}{Cutting off a corner by slicing through three edges that meet at one vertex creates a triangular cross-section.}
+\ansItem{11}{A smaller rectangle}
+\ansExplain{11}{A cut parallel to the rectangular base of a pyramid gives a smaller rectangle. The higher the cut, the smaller the rectangle.}
+\ansItem{12}{Triangle}
+\ansExplain{12}{A vertical cut through the apex of a pyramid and down through the base creates a triangular cross-section.}
+\ansItem{13}{Trapezoid}
+\ansExplain{13}{A vertical cut parallel to a base edge but not passing through the apex slices through two slanted faces, forming a trapezoid.}
+\ansItem{14}{Rectangle}
+\ansExplain{14}{At the base, the cross-section is the base itself — a rectangle.}
+\ansItem{15}{C}
+\ansExplain{15}{A rectangular prism has flat faces and straight edges. You can get rectangles, squares, and triangles, but never a circle, because a circle requires a curved surface.}
+\ansItem{16}{C}
+\ansExplain{16}{A vertical cut through the apex of a cone passes through the tip and the base diameter, creating a triangular cross-section (an isosceles triangle).}
+\ansItem{17}{C}
+\ansExplain{17}{A cylinder has circular bases. Any horizontal cut parallel to the base creates a circle with the same radius.}
+\ansItem{18}{B}
+\ansExplain{18}{A horizontal cut parallel to the rectangular base of a pyramid produces a smaller rectangle that is similar to the base.}
+\ansItem{19}{False}
+\ansExplain{19}{Horizontal cuts parallel to a face give squares, but diagonal or angled cuts can give rectangles, triangles, or even hexagons.}
+\ansItem{20}{True}
+\ansExplain{20}{No matter where or at what angle you cut a sphere, the cross-section is always a circle.}
+\ansItem{21}{True}
+\ansExplain{21}{A horizontal cut parallel to the base of a prism always produces a shape identical to the base — same dimensions, same shape.}
+\ansItem{22}{False}
+\ansExplain{22}{A vertical cut through a cylinder (perpendicular to the base) produces a rectangle, not a circle. The rectangle's height equals the cylinder's height and its width equals the diameter.}
+\ansItem{23}{Equilateral triangle; area is $\frac {\sqrt {3}}{4} \cdot \frac {s^2}{2}$, which is about $43\%$ of a face}
+\ansExplain{23}{The plane cuts through three midpoints of edges meeting at one vertex, creating an equilateral triangle with side length $\frac {s\sqrt {2}}{2}$. Its area is $\frac {\sqrt {3}}{4}\left (\frac {s\sqrt {2}}{2}\right )^2 = \frac {s^2\sqrt {3}}{8}$. A face has area $s^2$, so the cross-section is about $\frac {\sqrt {3}}{8} \approx 21.7\%$ of a face.}
+\ansItem{24}{Sphere}
+\ansExplain{24}{A sphere is the only common 3D figure where every possible plane cross-section is a circle, regardless of where or at what angle you cut.}
+\ansSec{1.6}
+\ansItem{1}{$65°$}
+\ansExplain{1}{Complementary angles sum to $90°$: $90° - 25° = 65°$.}
+\ansItem{2}{$70°$}
+\ansExplain{2}{Supplementary angles sum to $180°$: $180° - 110° = 70°$.}
+\ansItem{3}{$42°$}
+\ansExplain{3}{$90° - 48° = 42°$.}
+\ansItem{4}{$107°$}
+\ansExplain{4}{$180° - 73° = 107°$.}
+\ansItem{5}{$28°$}
+\ansExplain{5}{$90° - 62° = 28°$.}
+\ansItem{6}{$25°$}
+\ansExplain{6}{$180° - 155° = 25°$.}
+\ansItem{7}{Complementary}
+\ansExplain{7}{$30° + 60° = 90°$. Angles that sum to $90°$ are complementary.}
+\ansItem{8}{Supplementary}
+\ansExplain{8}{$95° + 85° = 180°$. Angles that sum to $180°$ are supplementary.}
+\ansItem{9}{Vertical}
+\ansExplain{9}{When two lines intersect, opposite angles are vertical angles and are always equal.}
+\ansItem{10}{Complementary}
+\ansExplain{10}{$72° + 18° = 90°$. These are complementary angles.}
+\ansItem{11}{Supplementary}
+\ansExplain{11}{$135° + 45° = 180°$. These are supplementary angles.}
+\ansItem{12}{Complementary}
+\ansExplain{12}{$53° + 37° = 90°$. These are complementary angles.}
+\ansItem{13}{$30°$ and $60°$}
+\ansExplain{13}{$x + 2x = 90°$. Combine: $3x = 90$. Divide: $x = 30$. The angles are $30°$ and $2(30) = 60°$. Check: $30 + 60 = 90°$ \checkmark .}
+\ansItem{14}{$60°$ and $120°$}
+\ansExplain{14}{$x + 20 + 3x = 180$. Combine: $4x + 20 = 180$. Subtract $20$: $4x = 160$. Divide: $x = 40$. Angles: $40 + 20 = 60°$ and $3(40) = 120°$. Check: $60 + 120 = 180°$ \checkmark .}
+\ansItem{15}{$x = 15$; angles are $65°$}
+\ansExplain{15}{Vertical angles are equal: $5x - 10 = 3x + 20$. Subtract $3x$: $2x - 10 = 20$. Add $10$: $2x = 30$. Divide: $x = 15$. Angle: $5(15) - 10 = 65°$. Check: $3(15) + 20 = 65°$ \checkmark .}
+\ansItem{16}{$54°$ and $126°$}
+\ansExplain{16}{Let the angles be $3x$ and $7x$. Sum: $3x + 7x = 180$, so $10x = 180$ and $x = 18$. Angles: $3(18) = 54°$ and $7(18) = 126°$. Check: $54 + 126 = 180°$ \checkmark .}
+\ansItem{17}{$65°$ and $25°$}
+\ansExplain{17}{$4x + 5 + x + 10 = 90$. Combine: $5x + 15 = 90$. Subtract $15$: $5x = 75$. Divide: $x = 15$. Angles: $4(15) + 5 = 65°$ and $15 + 10 = 25°$. Check: $65 + 25 = 90°$ \checkmark .}
+\ansItem{18}{True}
+\ansExplain{18}{Vertical angles are equal. If both equal $90°$, they are also supplementary ($90° + 90° = 180°$). This happens when two lines are perpendicular.}
+\ansItem{19}{False}
+\ansExplain{19}{Complementary angles sum to $90°$. If one angle is obtuse (greater than $90°$), the other would need to be negative, which is impossible.}
+\ansItem{20}{True}
+\ansExplain{20}{$180° - 90° = 90°$. Both angles are right angles.}
+\ansItem{21}{True}
+\ansExplain{21}{Vertical angles are formed by two intersecting lines, and the opposite angles are always equal (congruent).}
+\ansItem{22}{$65°$, $115°$, $115°$}
+\ansExplain{22}{The vertical angle is also $65°$. Each of the two supplementary angles is $180° - 65° = 115°$.}
+\ansItem{23}{$37.5°$ and $52.5°$}
+\ansExplain{23}{Let the smaller angle be $x$. Then $x + (x + 15) = 90$. Combine: $2x + 15 = 90$. Subtract $15$: $2x = 75$. Divide: $x = 37.5$. The angles are $37.5°$ and $52.5°$.}
+\ansItem{24}{$135°$}
+\ansExplain{24}{Let the angle be $x$ and its supplement be $180 - x$. Then $x = 3(180 - x)$. Distribute: $x = 540 - 3x$. Add $3x$: $4x = 540$. Divide: $x = 135°$. Its supplement is $180 - 135 = 45°$. Check: $135 = 3 \times 45$ \checkmark .}
+\ansItem{25}{$94°$, $86°$, $94°$, $86°$}
+\ansExplain{25}{Adjacent angles at intersecting lines are supplementary: $(2x + 30) + (3x - 10) = 180$. Combine: $5x + 20 = 180$. Subtract $20$: $5x = 160$. Divide: $x = 32$. Angles: $2(32) + 30 = 94°$ and $3(32) - 10 = 86°$. The four angles are $94°$, $86°$, $94°$, $86°$ (vertical pairs). Check: $94 + 86 = 180$ \checkmark .}
+\ansItem{26}{$45°$}
+\ansExplain{26}{Let the angle be $x$. Its complement is $90 - x$. Set equal: $x = 90 - x$. Add $x$: $2x = 90$. Divide: $x = 45°$. Check: the complement of $45°$ is $90 - 45 = 45°$ \checkmark .}

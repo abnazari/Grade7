@@ -1,0 +1,139 @@
+% ============================================================================
+% WORKBOOK — Section 9.4: Probability Models
+% CCSS 7.SP.C.7
+% Practice-focused reinforcement for the study guide topic
+% ============================================================================
+\section{Probability Models}
+\topicTitle{Probability Models}
+
+\begin{quickReview}{Probability Models}
+A \textbf{probability model} lists every possible outcome and its probability.
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Uniform model}: All outcomes are equally likely. Example: a fair die — each face has $P = \frac{1}{6}$.
+    \item \textbf{Non-uniform model}: Outcomes have different probabilities. Example: a spinner with sections of different sizes.
+    \item In any valid model, the probabilities of \textbf{all outcomes must sum to $1$}.
+    \item Compare your model's \textbf{predicted} probabilities to \textbf{observed frequencies} to check accuracy.
+\end{itemize}
+
+\medskip
+\textbf{Example:} A spinner has $\frac{1}{2}$ red, $\frac{1}{4}$ blue, $\frac{1}{4}$ green. This is a non-uniform model because the probabilities are not all equal: $\frac{1}{2} + \frac{1}{4} + \frac{1}{4} = 1$ \checkmark
+\end{quickReview}
+
+% ── Warm-Up ──────────────────────────────────────────────────────────────────
+\begin{practiceBox}[funGreen]{\faSun~Warm-Up}
+
+\practiceHeader[funGreen]{Uniform or Non-Uniform?}
+Write \textbf{uniform} or \textbf{non-uniform} for each probability model.
+
+\prob A fair coin with $P(\text{heads}) = 0.5$ and $P(\text{tails}) = 0.5$. \answerBlank[3cm]
+\answerExplain{Uniform}{Both outcomes have equal probability ($0.5$ each), so this is a uniform model.}
+
+\prob A spinner with $P(\text{red}) = 0.6$, $P(\text{blue}) = 0.3$, $P(\text{green}) = 0.1$. \answerBlank[3cm]
+\answerExplain{Non-uniform}{The probabilities are different for each outcome ($0.6 \neq 0.3 \neq 0.1$), so this is non-uniform.}
+
+\prob A bag with $5$ red, $5$ blue, and $5$ green marbles. \answerBlank[3cm]
+\answerExplain{Uniform}{Each color has the same count ($5$ out of $15$), so each has $P = \frac{1}{3}$. All equal — uniform.}
+
+\prob A loaded die where $P(6) = 0.4$ and each other face has $P = 0.12$. \answerBlank[3cm]
+\answerExplain{Non-uniform}{$P(6) = 0.4$ is different from $P(\text{other faces}) = 0.12$. Not all outcomes are equally likely.}
+
+\prob Drawing a letter from a bag containing each of the $26$ alphabet letters exactly once. \answerBlank[3cm]
+\answerExplain{Uniform}{Each letter has an equal chance: $P = \frac{1}{26}$. All outcomes are equally likely.}
+
+\end{practiceBox}
+
+% ── Practice A: Do the Probabilities Add to 1? ──────────────────────────────
+\begin{practiceBox}{Valid Probability Models}
+
+\practiceHeader{Determine whether each set of probabilities forms a valid probability model.}
+
+\prob Outcomes: A, B, C. \quad $P(A) = 0.3$, $P(B) = 0.5$, $P(C) = 0.2$ \answerBlank[3cm]
+\answerExplain{Valid}{$0.3 + 0.5 + 0.2 = 1.0$. The probabilities sum to $1$, so this is a valid model.}
+
+\prob Outcomes: X, Y, Z. \quad $P(X) = 0.4$, $P(Y) = 0.4$, $P(Z) = 0.3$ \answerBlank[3cm]
+\answerExplain{Not valid}{$0.4 + 0.4 + 0.3 = 1.1$. The sum exceeds $1$, so this is not a valid probability model.}
+
+\prob Outcomes: $1, 2, 3, 4$. \quad $P(1) = \frac{1}{4}$, $P(2) = \frac{1}{4}$, $P(3) = \frac{1}{4}$, $P(4) = \frac{1}{4}$ \answerBlank[3cm]
+\answerExplain{Valid}{$\frac{1}{4} + \frac{1}{4} + \frac{1}{4} + \frac{1}{4} = 1$. All probabilities are equal and sum to $1$. Also a uniform model.}
+
+\prob Outcomes: Win, Lose. \quad $P(\text{Win}) = 0.6$, $P(\text{Lose}) = 0.3$ \answerBlank[3cm]
+\answerExplain{Not valid}{$0.6 + 0.3 = 0.9 \neq 1$. The probabilities do not sum to $1$, so the model is incomplete or incorrect.}
+
+\prob Outcomes: Red, Blue. \quad $P(\text{Red}) = \frac{5}{8}$, $P(\text{Blue}) = \frac{3}{8}$ \answerBlank[3cm]
+\answerExplain{Valid}{$\frac{5}{8} + \frac{3}{8} = \frac{8}{8} = 1$. The probabilities sum to $1$, so this is valid.}
+
+\end{practiceBox}
+
+% ── Practice B: Build a Model ────────────────────────────────────────────────
+\begin{practiceBox}[funTeal]{Build the Probability Model}
+
+\practiceHeader[funTeal]{Find the missing probability so the model is valid.}
+
+\prob $P(A) = 0.25$, $P(B) = 0.35$, $P(C) = \;?$ \answerBlank[3cm]
+\answerExplain{$0.40$}{All probabilities must sum to $1$: $P(C) = 1 - 0.25 - 0.35 = 0.40$.}
+
+\prob $P(\text{Red}) = \frac{1}{3}$, $P(\text{Blue}) = \frac{1}{6}$, $P(\text{Green}) = \;?$ \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{2}$}{$P(\text{Green}) = 1 - \frac{1}{3} - \frac{1}{6} = \frac{6}{6} - \frac{2}{6} - \frac{1}{6} = \frac{3}{6} = \frac{1}{2}$.}
+
+\prob $P(1) = 0.15$, $P(2) = 0.25$, $P(3) = 0.30$, $P(4) = \;?$ \answerBlank[3cm]
+\answerExplain{$0.30$}{$P(4) = 1 - 0.15 - 0.25 - 0.30 = 0.30$.}
+
+\prob A bag has red, blue, and yellow marbles. $P(\text{Red}) = \frac{2}{5}$ and $P(\text{Blue}) = \frac{2}{5}$. What is $P(\text{Yellow})$? \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{5}$}{$P(\text{Yellow}) = 1 - \frac{2}{5} - \frac{2}{5} = \frac{5}{5} - \frac{4}{5} = \frac{1}{5}$.}
+
+\end{practiceBox}
+
+% ── Practice C: Compare Predicted vs. Observed ───────────────────────────────
+\begin{practiceBox}[funOrange]{Predicted vs.\ Observed}
+
+\practiceHeader[funOrange]{A spinner has $4$ equal sections: red, blue, green, and yellow. It was spun $80$ times.}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Color} & Red & Blue & Green & Yellow \\
+\hline
+\textbf{Observed} & 24 & 18 & 22 & 16 \\
+\hline
+\end{tabular}
+\end{center}
+
+\prob What is the theoretical (predicted) probability of each color? \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{4} = 0.25$ each}{The spinner has $4$ equal sections, so each color has theoretical $P = \frac{1}{4} = 0.25$.}
+
+\prob How many times would you \emph{predict} each color in $80$ spins? \answerBlank[3cm]
+\answerExplain{$20$ times each}{$0.25 \times 80 = 20$. In a uniform model, each outcome should appear about $20$ times.}
+
+\prob Which color had the largest difference between observed and predicted? \answerBlank[3cm]
+\answerExplain{Red (or Yellow)}{Red: $|24 - 20| = 4$. Blue: $|18 - 20| = 2$. Green: $|22 - 20| = 2$. Yellow: $|16 - 20| = 4$. Red and Yellow are tied with the largest difference of $4$.}
+
+\prob Does this data prove the spinner is unfair? Why or why not? \answerBlank[5cm]
+\answerExplain{No}{Small differences between observed and predicted frequencies are normal due to random variation. With only $80$ spins, the differences are small enough to be explained by chance.}
+
+\end{practiceBox}
+
+% ── True or False ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funPurple]{True or False?}
+
+\trueOrFalse{In a valid probability model, the probabilities of all outcomes add to $1$.}
+\answerExplain{True}{This is a requirement. If the probabilities do not sum to $1$, the model is not valid.}
+
+\trueOrFalse{A non-uniform probability model is always unfair or broken.}
+\answerExplain{False}{Non-uniform simply means outcomes have different probabilities. Many real-world situations are naturally non-uniform, like weather forecasts or spinner designs.}
+
+\trueOrFalse{If observed frequencies match predicted frequencies exactly, the model is certainly correct.}
+\answerExplain{False}{Even a wrong model can appear to match data by coincidence. Also, exact matches are rare — close but not exact is normal.}
+
+\end{practiceBox}
+
+% ── Challenge ────────────────────────────────────────────────────────────────
+\begin{challengeBox}
+\prob A bag has red, blue, and green marbles. In $60$ draws (with replacement), red appeared $30$ times, blue $18$ times, and green $12$ times. Write a non-uniform probability model for this bag. \answerBlank[5cm]
+\answerExplain{$P(\text{Red}) = \frac{1}{2}$, $P(\text{Blue}) = \frac{3}{10}$, $P(\text{Green}) = \frac{1}{5}$}{Use experimental frequencies: $P(\text{Red}) = \frac{30}{60} = \frac{1}{2}$, $P(\text{Blue}) = \frac{18}{60} = \frac{3}{10}$, $P(\text{Green}) = \frac{12}{60} = \frac{1}{5}$. Check: $\frac{1}{2} + \frac{3}{10} + \frac{1}{5} = \frac{5}{10} + \frac{3}{10} + \frac{2}{10} = 1$ \checkmark}
+
+\prob A game designer wants a spinner with exactly $3$ sections. Red should be twice as likely as blue, and green should be half as likely as blue. What probability should each color have? \answerBlank[5cm]
+\answerExplain{$P(\text{R}) = \frac{4}{7}$, $P(\text{B}) = \frac{2}{7}$, $P(\text{G}) = \frac{1}{7}$}{Let $P(\text{Blue}) = x$. Then Red $= 2x$ and Green $= \frac{x}{2}$. Sum: $2x + x + \frac{x}{2} = 1 \Rightarrow \frac{7x}{2} = 1 \Rightarrow x = \frac{2}{7}$. So $P(\text{Red}) = \frac{4}{7}$, $P(\text{Blue}) = \frac{2}{7}$, $P(\text{Green}) = \frac{1}{7}$.}
+\end{challengeBox}
+
+\encouragement{Well done! You can now build and evaluate probability models — a powerful tool for understanding chance!}

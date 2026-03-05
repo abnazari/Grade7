@@ -1,0 +1,168 @@
+% ============================================================================
+% WORKBOOK — Section 8.5: Stem-and-Leaf Plots (Additional)
+% State-specific (FL, OK, TX, VA)
+% Practice-focused reinforcement for the study guide topic
+% ============================================================================
+\section{Stem-and-Leaf Plots}
+\topicTitle{Stem-and-Leaf Plots}
+
+\begin{quickReview}{Stem-and-Leaf Plots}
+A \textbf{stem-and-leaf plot} organizes numbers by splitting each value into a \textbf{stem} (all digits except the last) and a \textbf{leaf} (the last digit).
+
+\begin{itemize}[leftmargin=*]
+    \item Leaves are always written in order from least to greatest.
+    \item A \textbf{key} shows how to read the plot (e.g., $3 \mid 5$ means $35$).
+    \item You can find the \textbf{median}, \textbf{mode}, and \textbf{range} directly from the plot.
+    \item Count all the leaves to find the total number of data values.
+\end{itemize}
+
+\medskip
+\textbf{Example:} Data: $41, 43, 47, 52, 55, 58, 63$.
+
+\begin{center}
+\begin{tabular}{r|l}
+    \textbf{Stem} & \textbf{Leaf} \\
+    \hline
+    $4$ & $1\;\;3\;\;7$ \\
+    $5$ & $2\;\;5\;\;8$ \\
+    $6$ & $3$
+\end{tabular}
+\quad Key: $5 \mid 2$ means $52$.
+\end{center}
+Median $= 52$ (the 4th of $7$ values).
+\end{quickReview}
+
+% ── Warm-Up ──────────────────────────────────────────────────────────────────
+\begin{practiceBox}[funGreen]{\faSun~Warm-Up}
+
+\practiceHeader[funGreen]{Read the Stem-and-Leaf Plot}
+
+Use this plot to answer Problems 1--5.
+
+\begin{center}
+\begin{tabular}{r|l}
+    \textbf{Stem} & \textbf{Leaf} \\
+    \hline
+    $2$ & $1\;\;4\;\;6$ \\
+    $3$ & $0\;\;3\;\;3\;\;7$ \\
+    $4$ & $2\;\;5$ \\
+    $5$ & $1$
+\end{tabular}
+\quad Key: $3 \mid 0$ means $30$.
+\end{center}
+
+\prob How many data values are in the plot? \answerBlank[3cm]
+\answerExplain{$10$}{Count the leaves: $3 + 4 + 2 + 1 = 10$ data values.}
+
+\prob What is the smallest value? \answerBlank[3cm]
+\answerExplain{$21$}{The first stem is $2$ and the first leaf is $1$, so the smallest value is $21$.}
+
+\prob What is the largest value? \answerBlank[3cm]
+\answerExplain{$51$}{The last stem is $5$ and the only leaf is $1$, so the largest value is $51$.}
+
+\prob What is the range? \answerBlank[3cm]
+\answerExplain{$30$}{Range $= 51 - 21 = 30$. Subtract the smallest value from the largest.}
+
+\prob What is the mode? \answerBlank[3cm]
+\answerExplain{$33$}{The value $33$ appears twice (stem $3$, leaf $3$ appears twice). No other value repeats.}
+
+\end{practiceBox}
+
+% ── Practice A: Creating Stem-and-Leaf Plots ─────────────────────────────────
+\begin{practiceBox}{Create a Stem-and-Leaf Plot}
+
+\prob Organize this data into a stem-and-leaf plot: $18, 22, 25, 27, 31, 34, 38, 42, 45$.
+\answerExplain{Stem $1$: $8$; Stem $2$: $2\;5\;7$; Stem $3$: $1\;4\;8$; Stem $4$: $2\;5$}{Split each number into stem and leaf. Stems are the tens digits ($1, 2, 3, 4$) and leaves are the ones digits, written in order.}
+
+\prob Organize this data into a stem-and-leaf plot: $56, 61, 63, 65, 68, 72, 74, 79, 80, 85$.
+\answerExplain{Stem $5$: $6$; Stem $6$: $1\;3\;5\;8$; Stem $7$: $2\;4\;9$; Stem $8$: $0\;5$}{Stems are $5, 6, 7, 8$. List the ones digits as leaves in order under each stem.}
+
+\prob Create a stem-and-leaf plot for: $104, 108, 112, 115, 118, 121, 125$.
+\answerExplain{Stem $10$: $4\;8$; Stem $11$: $2\;5\;8$; Stem $12$: $1\;5$}{For three-digit numbers, the stem is the hundreds and tens digits together, and the leaf is the ones digit.}
+
+\prob Create a stem-and-leaf plot for: $7, 12, 15, 19, 22, 24, 28, 31$.
+\answerExplain{Stem $0$: $7$; Stem $1$: $2\;5\;9$; Stem $2$: $2\;4\;8$; Stem $3$: $1$}{The single-digit value $7$ uses stem $0$ with leaf $7$.}
+
+\end{practiceBox}
+
+% ── Practice B: Finding Measures from Plots ──────────────────────────────────
+\begin{practiceBox}[funTeal]{Finding Measures from Stem-and-Leaf Plots}
+
+Use this plot for Problems 10--14.
+
+\begin{center}
+\begin{tabular}{r|l}
+    \textbf{Stem} & \textbf{Leaf} \\
+    \hline
+    $6$ & $2\;\;5\;\;8$ \\
+    $7$ & $0\;\;3\;\;3\;\;6\;\;9$ \\
+    $8$ & $1\;\;4\;\;7$ \\
+    $9$ & $0$
+\end{tabular}
+\quad Key: $7 \mid 3$ means $73$.
+\end{center}
+
+\prob List all the data values in order.
+\answerExplain{$62, 65, 68, 70, 73, 73, 76, 79, 81, 84, 87, 90$}{Read each stem-leaf pair: $6|2=62$, $6|5=65$, $6|8=68$, $7|0=70$, $7|3=73$, $7|3=73$, $7|6=76$, $7|9=79$, $8|1=81$, $8|4=84$, $8|7=87$, $9|0=90$.}
+
+\prob How many values are there? \answerBlank[3cm]
+\answerExplain{$12$}{Count the leaves: $3 + 5 + 3 + 1 = 12$.}
+
+\prob Find the median. \answerBlank[3cm]
+\answerExplain{$74.5$}{With $12$ values, the median is the average of the $6$th and $7$th values. The $6$th value is $73$ and the $7$th is $76$. Median $= \frac{73 + 76}{2} = 74.5$.}
+
+\prob Find the range. \answerBlank[3cm]
+\answerExplain{$28$}{Range $= 90 - 62 = 28$.}
+
+\prob Find the mean, rounded to one decimal. \answerBlank[3cm]
+\answerExplain{$75.7$}{Sum $= 62+65+68+70+73+73+76+79+81+84+87+90 = 908$. Mean $= \frac{908}{12} \approx 75.7$.}
+
+\end{practiceBox}
+
+% ── True or False ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funPurple]{True or False?}
+
+\trueOrFalse{In a stem-and-leaf plot, the leaves must be listed in order from least to greatest.}
+\answerExplain{True}{Leaves are always arranged in increasing order within each stem row. This makes it easy to find the median and see the distribution shape.}
+
+\trueOrFalse{The key $4 \mid 7$ in a stem-and-leaf plot means $47$.}
+\answerExplain{True}{The stem is $4$ (tens digit) and the leaf is $7$ (ones digit), so the value is $47$.}
+
+\trueOrFalse{A stem-and-leaf plot can only display two-digit numbers.}
+\answerExplain{False}{A stem-and-leaf plot can display any numbers. For one-digit numbers, the stem is $0$. For three-digit numbers, the stem uses two digits (hundreds and tens).}
+
+\trueOrFalse{You can determine the exact data values from a stem-and-leaf plot.}
+\answerExplain{True}{Unlike histograms or box plots, stem-and-leaf plots preserve every individual data value. Each leaf represents one exact value.}
+
+\end{practiceBox}
+
+% ── Word Problems ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funBlue]{\faGlobe~Word Problems}
+
+\wordProblem{A teacher recorded quiz scores: $78, 82, 85, 85, 88, 90, 92, 95, 97$. Create a stem-and-leaf plot and find the median score.}{score}
+\answerExplain{Stem $7$: $8$; Stem $8$: $2\;5\;5\;8$; Stem $9$: $0\;2\;5\;7$. Median $= 88$.}{There are $9$ values, so the median is the $5$th value. Counting in order: $78, 82, 85, 85, 88$. The median is $88$.}
+
+\wordProblem{Twenty students' heights (in cm) are shown in the plot below. How many students are taller than $160$ cm?
+
+\begin{center}
+\begin{tabular}{r|l}
+\textbf{Stem} & \textbf{Leaf} \\
+\hline
+$14$ & $5\;\;8$ \\
+$15$ & $0\;\;2\;\;3\;\;5\;\;7\;\;8\;\;9$ \\
+$16$ & $0\;\;1\;\;3\;\;4\;\;7\;\;8$ \\
+$17$ & $0\;\;2\;\;3\;\;5\;\;8$
+\end{tabular}
+\quad Key: $15 \mid 3$ means $153$ cm.
+\end{center}}{students}
+\answerExplain{$11$ students}{Values greater than $160$: stem $16$ leaves $1, 3, 4, 7, 8$ ($5$ values) plus all of stem $17$ ($5$ values) $= 10$. The value $160$ itself is not ``taller than $160$.'' So $5 + 5 = 10$ students. Wait --- stem $16$ has leaves $0, 1, 3, 4, 7, 8$. Values $> 160$: $161, 163, 164, 167, 168$ ($5$ values). Plus stem $17$: $170, 172, 173, 175, 178$ ($5$ values). Total $= 10$ students taller than $160$ cm.}
+
+\end{practiceBox}
+
+% ── Challenge ────────────────────────────────────────────────────────────────
+\begin{challengeBox}
+\prob Mr.\ Garcia's class scored: $62, 68, 71, 73, 75, 78, 80, 82, 85, 88, 90, 95$. Ms.\ Lee's class scored: $55, 60, 65, 70, 72, 75, 78, 80, 84, 88, 92, 98$. Create a stem-and-leaf plot for each class and compare the medians and ranges.
+\answerExplain{Garcia: median $= 79$, range $= 33$. Lee: median $= 76.5$, range $= 43$}{Garcia: $12$ values, median $= \frac{78+80}{2} = 79$, range $= 95-62 = 33$. Lee: $12$ values, median $= \frac{75+78}{2} = 76.5$, range $= 98-55 = 43$. Mr.\ Garcia's class has a higher median and smaller range, indicating higher and more consistent scores.}
+\end{challengeBox}
+
+\encouragement{Fantastic work with stem-and-leaf plots! You can organize and read data like a pro!}

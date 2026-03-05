@@ -1,0 +1,140 @@
+% ============================================================================
+% WORKBOOK — Section 6.4: Constructing Triangles from Three Measurements
+% CCSS 7.G.A.2
+% Practice-focused reinforcement for the study guide topic
+% ============================================================================
+\section{Constructing Triangles from Three Measurements}
+\topicTitle{Constructing Triangles from Three Measurements}
+
+\begin{quickReview}{Triangle Conditions}
+Three measurements can produce a \textbf{unique} triangle, \textbf{many} triangles, or \textbf{none}:
+
+\begin{center}
+\begin{tabular}{l l}
+    \textbf{Given} & \textbf{Result} \\
+    \hline
+    Three sides (SSS) & Unique (if triangle inequality holds) \\
+    Two sides + included angle (SAS) & Unique \\
+    Two angles + included side (ASA) & Unique \\
+    Two angles + non-included side (AAS) & Unique \\
+    Three angles (AAA) & Many (same shape, different sizes) \\
+\end{tabular}
+\end{center}
+
+\textbf{Key facts:}
+\begin{itemize}[leftmargin=*]
+    \item Triangle inequality: each side $<$ sum of the other two.
+    \item Angle sum: the three angles of a triangle always add to $180°$.
+\end{itemize}
+\end{quickReview}
+
+% ── Warm-Up ──────────────────────────────────────────────────────────────────
+\begin{practiceBox}[funGreen]{\faSun~Warm-Up}
+
+\practiceHeader[funGreen]{Find the Missing Angle}
+The three angles of a triangle sum to $180°$. Find the missing angle.
+
+\begin{multicols}{2}
+\prob Angles: $50°$, $60°$, \answerBlank[2cm]
+\answerExplain{$70°$}{$180° - 50° - 60° = 70°$. The three angles must sum to $180°$.}
+
+\prob Angles: $90°$, $45°$, \answerBlank[2cm]
+\answerExplain{$45°$}{$180° - 90° - 45° = 45°$. This is an isosceles right triangle.}
+
+\prob Angles: $30°$, $30°$, \answerBlank[2cm]
+\answerExplain{$120°$}{$180° - 30° - 30° = 120°$. The triangle has two equal angles and one obtuse angle.}
+
+\prob Angles: $72°$, $54°$, \answerBlank[2cm]
+\answerExplain{$54°$}{$180° - 72° - 54° = 54°$. Two angles are equal, making it isosceles.}
+
+\prob Angles: $60°$, $60°$, \answerBlank[2cm]
+\answerExplain{$60°$}{$180° - 60° - 60° = 60°$. All three angles are equal — equilateral triangle.}
+\end{multicols}
+\end{practiceBox}
+
+% ── Practice A: Possible or Impossible? ──────────────────────────────────────
+\begin{practiceBox}{Can This Triangle Exist?}
+
+\practiceHeader{Write Yes or No. If yes, state whether the triangle is unique, or if many are possible.}
+
+\prob Angles $40°$, $60°$, $80°$. \answerBlank[3cm]
+\answerExplain{Yes, many triangles}{$40 + 60 + 80 = 180°$ \checkmark. But three angles (AAA) allow many triangles of different sizes with the same shape.}
+
+\prob Angles $50°$, $60°$, $80°$. \answerBlank[3cm]
+\answerExplain{No}{$50 + 60 + 80 = 190°$. The angles sum to more than $180°$, which is impossible for a triangle.}
+
+\prob Sides $8$, $15$, $6$. \answerBlank[3cm]
+\answerExplain{No}{Check: $8 + 6 = 14$, but $14 < 15$. The triangle inequality fails because the two shorter sides cannot reach around the longest side.}
+
+\prob Sides $8$, $15$, $10$. \answerBlank[3cm]
+\answerExplain{Yes, unique}{Check: $8 + 10 = 18 > 15$ \checkmark, $8 + 15 = 23 > 10$ \checkmark, $10 + 15 = 25 > 8$ \checkmark. Three valid sides (SSS) give exactly one triangle.}
+
+\prob Two sides $7$ and $11$, included angle $65°$. \answerBlank[3cm]
+\answerExplain{Yes, unique}{Two sides and the included angle (SAS) always produce exactly one triangle.}
+
+\prob Angles $90°$, $100°$, $-10°$. \answerBlank[3cm]
+\answerExplain{No}{An angle cannot be negative. Every angle of a triangle must be greater than $0°$. Also, $90 + 100 = 190° > 180°$.}
+\end{practiceBox}
+
+% ── Practice B: Classify the Condition ───────────────────────────────────────
+\begin{practiceBox}[funTeal]{Name the Condition}
+
+\practiceHeader[funTeal]{Identify each set of given information as SSS, SAS, ASA, AAS, or AAA.}
+
+\begin{multicols}{2}
+\prob Sides: $5$, $7$, $9$. \answerBlank[2cm]
+\answerExplain{SSS}{All three sides are given — this is Side-Side-Side (SSS).}
+
+\prob Sides: $6$, $10$; included angle: $50°$. \answerBlank[2cm]
+\answerExplain{SAS}{Two sides and the angle between them — this is Side-Angle-Side (SAS).}
+
+\prob Angles: $40°$, $70°$; included side: $8$. \answerBlank[2cm]
+\answerExplain{ASA}{Two angles and the side between them — this is Angle-Side-Angle (ASA).}
+
+\prob Angles: $35°$, $55°$, $90°$. \answerBlank[2cm]
+\answerExplain{AAA}{All three angles are given — this is Angle-Angle-Angle (AAA).}
+
+\prob Angles: $30°$, $80°$; non-included side: $12$. \answerBlank[2cm]
+\answerExplain{AAS}{Two angles and a side not between them — this is Angle-Angle-Side (AAS).}
+\end{multicols}
+\end{practiceBox}
+
+% ── Practice C: True or False ────────────────────────────────────────────────
+\begin{practiceBox}[funPurple]{True or False?}
+
+\trueOrFalse{If three angles of a triangle add up to $180°$, you can draw exactly one triangle.}
+\answerExplain{False}{The angles sum correctly, but AAA does not determine the size. You can draw infinitely many triangles with those same angles but different side lengths.}
+
+\trueOrFalse{SSS (three sides) always produces a unique triangle.}
+\answerExplain{False}{SSS produces a unique triangle \emph{only if} the triangle inequality holds. If the sides don't satisfy the inequality, no triangle exists at all.}
+
+\trueOrFalse{If two angles of a triangle are $45°$ and $65°$, the third angle is $70°$.}
+\answerExplain{True}{$180° - 45° - 65° = 70°$. There is exactly one value for the third angle.}
+
+\trueOrFalse{SAS (two sides and the included angle) always determines a unique triangle.}
+\answerExplain{True}{Two sides and the angle between them fix all remaining measurements. Only one triangle can be drawn.}
+\end{practiceBox}
+
+% ── Word Problems ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funBlue]{\faGlobe~Word Problems}
+
+\wordProblem{An engineer knows two beams are $12$ ft and $16$ ft, and the angle between them must be $90°$. How many different triangle shapes are possible?}{triangles}
+\answerExplain{Exactly $1$}{Two sides and the included angle (SAS) always produce one unique triangle. This is a right triangle with legs $12$ and $16$.}
+
+\wordProblem{A surveyor measures three angles of a triangular plot: $48°$, $62°$, and $70°$. Can this be a real triangle?}{Yes or No}
+\answerExplain{Yes}{$48 + 62 + 70 = 180°$ \checkmark. The angles sum to exactly $180°$, so triangles with these angles exist (but AAA means many sizes are possible).}
+
+\wordProblem{Mia says she can draw a triangle with sides $3$ cm, $4$ cm, and $8$ cm. Is she correct? Why or why not?}{}
+\answerExplain{No}{$3 + 4 = 7$, and $7 < 8$. The triangle inequality fails because the two shorter sides cannot reach around the longest side.}
+\end{practiceBox}
+
+% ── Challenge ────────────────────────────────────────────────────────────────
+\begin{challengeBox}
+\prob Two angles of a triangle are in the ratio $2:3$. The third angle is $50°$. Find all three angles, and explain whether this gives a unique triangle or many.
+\answerExplain{$52°$, $78°$, $50°$; many triangles}{The first two angles sum to $180° - 50° = 130°$. In ratio $2:3$: $2x + 3x = 130$, so $5x = 130$ and $x = 26$. Angles: $52°$, $78°$, $50°$. Since we only know angles (AAA), many triangles of different sizes are possible.}
+
+\prob Can you have a triangle where all three sides are different and all three angles are $60°$? Explain.
+\answerExplain{No}{If all three angles are $60°$, the triangle is equilateral, which means all three sides must be equal. It is impossible to have three different sides with three equal angles.}
+\end{challengeBox}
+
+\encouragement{You are a triangle construction expert! Keep building your geometry skills!}

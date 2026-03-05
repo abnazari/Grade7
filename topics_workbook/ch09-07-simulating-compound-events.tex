@@ -1,0 +1,152 @@
+% ============================================================================
+% WORKBOOK — Section 9.7: Simulating Compound Events
+% CCSS 7.SP.C.8c
+% Practice-focused reinforcement for the study guide topic
+% ============================================================================
+\section{Simulating Compound Events}
+\topicTitle{Simulating Compound Events}
+
+\begin{quickReview}{Simulating Compound Events}
+A \textbf{simulation} uses a random device (coins, dice, spinners, random-number tables) to model a real-world situation.
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Step 1 — Design}: Choose a device whose outcomes match the real event's probabilities.
+    \item \textbf{Step 2 — Run trials}: Repeat the simulation many times.
+    \item \textbf{Step 3 — Collect data}: Record frequencies of each outcome.
+    \item \textbf{Step 4 — Estimate}: Use $P \approx \dfrac{\text{favorable trials}}{\text{total trials}}$.
+\end{itemize}
+
+\medskip
+\textbf{Example:} To simulate a $30\%$ chance of rain each day for $2$ days, use the digits $0$--$9$. Let $0, 1, 2$ mean rain ($3$ out of $10 = 30\%$). Pick two random digits per trial — both $\leq 2$ means rain both days.
+\end{quickReview}
+
+% ── Warm-Up ──────────────────────────────────────────────────────────────────
+\begin{practiceBox}[funGreen]{\faSun~Warm-Up}
+
+\practiceHeader[funGreen]{Expected Values}
+Use the given probability to predict the expected number of occurrences.
+
+\begin{multicols}{2}
+\prob $P = 0.5$, $100$ trials. Expected occurrences? \answerBlank[2cm]
+\answerExplain{$50$}{Multiply probability by trials: $0.5 \times 100 = 50$.}
+
+\prob $P = \frac{1}{6}$, $60$ trials. Expected occurrences? \answerBlank[2cm]
+\answerExplain{$10$}{$\frac{1}{6} \times 60 = 10$.}
+
+\prob $P = 0.3$, $200$ trials. Expected occurrences? \answerBlank[2cm]
+\answerExplain{$60$}{$0.3 \times 200 = 60$.}
+
+\prob $P = 0.25$, $80$ trials. Expected occurrences? \answerBlank[2cm]
+\answerExplain{$20$}{$0.25 \times 80 = 20$.}
+
+\prob $P = \frac{1}{4}$, $120$ trials. Expected occurrences? \answerBlank[2cm]
+\answerExplain{$30$}{$\frac{1}{4} \times 120 = 30$.}
+
+\prob $P = 0.1$, $500$ trials. Expected occurrences? \answerBlank[2cm]
+\answerExplain{$50$}{$0.1 \times 500 = 50$.}
+\end{multicols}
+\end{practiceBox}
+
+% ── Practice A: Choosing the Right Simulation Device ─────────────────────────
+\begin{practiceBox}{Choosing a Simulation Device}
+
+\practiceHeader{For each real-world event, choose the best simulation device.}
+
+\prob A $50\%$ chance of rain. Which device models this? \answerBlank[4cm]
+\answerExplain{A fair coin}{A fair coin has $P(\text{heads}) = 0.50$, which matches the $50\%$ probability. Let heads $=$ rain and tails $=$ no rain.}
+
+\prob A basketball player makes $70\%$ of free throws. Which random digits ($0$--$9$) represent a made shot? \answerBlank[4cm]
+\answerExplain{Digits $0$--$6$}{$7$ out of $10$ digits gives $\frac{7}{10} = 70\%$. Let $0$--$6$ $=$ make, $7$--$9$ $=$ miss.}
+
+\prob A spinner is divided into $3$ equal sections. Which device simulates one spin? \answerBlank[4cm]
+\answerExplain{A die, using pairs of faces}{A die has $6$ faces. Group them: $1$--$2$ $=$ section A, $3$--$4$ $=$ section B, $5$--$6$ $=$ section C. Each section has $P = \frac{2}{6} = \frac{1}{3}$.}
+
+\prob A $20\%$ chance of winning a prize. Which random digits ($0$--$9$) represent winning? \answerBlank[4cm]
+\answerExplain{Digits $0$--$1$}{$2$ out of $10$ digits gives $\frac{2}{10} = 20\%$. Let $0$--$1$ $=$ win, $2$--$9$ $=$ lose.}
+
+\prob An event has $P = \frac{1}{6}$. Name a device that naturally models this. \answerBlank[4cm]
+\answerExplain{A standard die}{A die has $6$ equally likely outcomes. Pick one number (e.g., $3$) to represent the event. $P = \frac{1}{6}$.}
+
+\end{practiceBox}
+
+% ── Practice B: Running a Simulation ─────────────────────────────────────────
+\begin{practiceBox}[funTeal]{Analyzing Simulation Results}
+
+\practiceHeader[funTeal]{A student simulates flipping a coin $3$ times. She uses random digits $0$--$9$: odd $=$ heads, even $=$ tails. Here are $10$ trials:}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Trial} & \textbf{Digits} & \textbf{Result (H/T)} & \textbf{All Heads?} \\
+\hline
+1 & 3, 7, 1 & H, H, H & Yes \\
+2 & 4, 9, 2 & T, H, T & No \\
+3 & 5, 5, 3 & H, H, H & Yes \\
+4 & 8, 6, 0 & T, T, T & No \\
+5 & 1, 3, 7 & H, H, H & Yes \\
+6 & 2, 4, 8 & T, T, T & No \\
+7 & 9, 1, 6 & H, H, T & No \\
+8 & 7, 2, 5 & H, T, H & No \\
+9 & 0, 8, 4 & T, T, T & No \\
+10 & 3, 5, 9 & H, H, H & Yes \\
+\hline
+\end{tabular}
+\end{center}
+
+\prob Based on this simulation, what is the experimental $P(\text{all heads in 3 flips})$? \answerBlank[3cm]
+\answerExplain{$\dfrac{4}{10} = 0.4$}{All-heads occurred in trials $1, 3, 5, 10$ — that is $4$ out of $10$ trials. $P \approx 0.4$.}
+
+\prob What is the theoretical $P(\text{all heads in 3 flips})$? \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{8} = 0.125$}{$P = \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} = \frac{1}{8} = 0.125$.}
+
+\prob The simulation result ($0.4$) is much higher than the theoretical value ($0.125$). Give one reason why. \answerBlank[5cm]
+\answerExplain{Only $10$ trials — too few}{With only $10$ trials, random variation is large. The experimental probability would get closer to $0.125$ with many more trials (e.g., $100$ or $1{,}000$).}
+
+\prob Also, the simulation used odd/even digits. Is that a fair model for a coin flip? \answerBlank[5cm]
+\answerExplain{Yes, it is fair}{Digits $0$--$9$ have $5$ odd and $5$ even, so $P(\text{odd}) = P(\text{even}) = 0.5$, which correctly models a fair coin flip.}
+
+\end{practiceBox}
+
+% ── Practice C: Design Your Own Simulation ───────────────────────────────────
+\begin{practiceBox}[funOrange]{Design a Simulation}
+
+\practiceHeader[funOrange]{Describe how you would set up a simulation for each scenario.}
+
+\prob A doctor says a surgery has a $90\%$ success rate. Simulate $2$ surgeries. How would you use digits $0$--$9$? \answerBlank[5cm]
+\answerExplain{$0$--$8$ $=$ success, $9$ $=$ failure}{$9$ out of $10$ digits represent success ($90\%$). Pick $2$ random digits per trial. Both $\leq 8$ means both surgeries succeed.}
+
+\prob A baseball player has a $\frac{1}{3}$ chance of getting a hit. How would you use a die to simulate $3$ at-bats? \answerBlank[5cm]
+\answerExplain{Roll $1$ or $2$ $=$ hit; $3$--$6$ $=$ no hit}{$\frac{2}{6} = \frac{1}{3}$. Roll the die $3$ times per trial. Count how many rolls are $1$ or $2$.}
+
+\prob A game show has $4$ doors, and the prize is behind exactly $1$ door. Simulate choosing a door. What device would you use? \answerBlank[5cm]
+\answerExplain{A spinner with $4$ equal sections (or random digits $1$--$4$)}{Each section represents a door with $P = \frac{1}{4}$. Spin once per trial; landing on the prize section $=$ win.}
+
+\prob You want to simulate rolling a sum of $7$ on two dice over $50$ trials. Describe the simulation steps. \answerBlank[5cm]
+\answerExplain{Roll $2$ dice $50$ times; count sums of $7$}{For each trial, roll two dice and record the sum. After $50$ trials, count how many gave a sum of $7$. Divide by $50$ to estimate $P$.}
+
+\end{practiceBox}
+
+% ── True or False ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funPurple]{True or False?}
+
+\trueOrFalse{A simulation always gives the exact theoretical probability.}
+\answerExplain{False}{Simulations give estimates based on actual trials. With more trials the estimate improves, but it rarely equals the theoretical value exactly.}
+
+\trueOrFalse{Using more trials in a simulation generally gives a more accurate estimate.}
+\answerExplain{True}{More trials reduce the effect of random variation, so the experimental probability gets closer to the theoretical probability (Law of Large Numbers).}
+
+\trueOrFalse{You can use a coin to simulate any event with probability $\frac{1}{2}$.}
+\answerExplain{True}{A fair coin has $P(\text{heads}) = \frac{1}{2}$, so it naturally models any event with a $50\%$ chance.}
+
+\end{practiceBox}
+
+% ── Challenge ────────────────────────────────────────────────────────────────
+\begin{challengeBox}
+\prob About $45\%$ of the population has type O blood. Describe a simulation to estimate the probability that out of $3$ random donors, \emph{at least one} has type O blood. \answerBlank[5cm]
+\answerExplain{Use digits $0$--$9$; let $0$--$4$ $=$ type O ($5/10 \approx 45\%$); pick $3$ digits per trial}{Assign digits $0$--$4$ as type O and $5$--$9$ as not type O (this models $50\%$ rather than exactly $45\%$, but it is a reasonable approximation). Each trial uses $3$ digits. If at least one digit is $0$--$4$, the event occurred. Repeat many trials and find the fraction where at least one was type O. (Theoretically: $P(\text{at least one}) = 1 - 0.55^3 \approx 0.834$.) For a closer model, use $00$--$44$ out of $00$--$99$ for exactly $45\%$.}
+
+\prob A cereal box contains $1$ of $5$ different toy figures, chosen at random. Design a simulation to estimate how many boxes you need to buy to collect all $5$ figures. What device would you use, and what counts as one trial? \answerBlank[5cm]
+\answerExplain{Use a die (ignore $6$); each roll $=$ one box purchase}{Let faces $1$--$5$ each represent a toy figure (re-roll any $6$). One trial: keep rolling until all $5$ numbers ($1$--$5$) have appeared. Record the number of rolls. Repeat many trials and average the results to estimate the expected number of boxes.}
+\end{challengeBox}
+
+\encouragement{You have finished all of Chapter 9 --- congratulations! You are now a probability pro, ready for any challenge!}

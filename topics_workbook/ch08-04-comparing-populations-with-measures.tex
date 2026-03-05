@@ -1,0 +1,164 @@
+% ============================================================================
+% WORKBOOK — Section 8.4: Comparing Populations with Measures of Center and Variability
+% CCSS 7.SP.B.4
+% Practice-focused reinforcement for the study guide topic
+% ============================================================================
+\section{Comparing Populations with Measures of Center and Variability}
+\topicTitle{Comparing Populations with Measures of Center and Variability}
+
+\begin{quickReview}{Measures of Center and Variability}
+\textbf{Measures of center} tell you where the ``middle'' of a data set is. \textbf{Measures of variability} tell you how spread out the data is.
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Mean:} Add all values and divide by how many there are.
+    \item \textbf{Median:} The middle value when data is ordered. For an even number of values, average the two middle values.
+    \item \textbf{Range:} Highest value $-$ lowest value.
+    \item \textbf{Interquartile Range (IQR):} $Q3 - Q1$. Measures the spread of the middle $50\%$.
+    \item \textbf{Mean Absolute Deviation (MAD):} Average distance of each value from the mean.
+\end{itemize}
+
+\medskip
+\textbf{Example:} Data: $4, 6, 7, 9, 14$.
+Mean $= \frac{4+6+7+9+14}{5} = \frac{40}{5} = 8$.
+Median $= 7$. Range $= 14 - 4 = 10$.
+\end{quickReview}
+
+% ── Warm-Up ──────────────────────────────────────────────────────────────────
+\begin{practiceBox}[funGreen]{\faSun~Warm-Up}
+
+\practiceHeader[funGreen]{Find the Mean and Median}
+
+\prob Data: $10, 12, 14, 16, 18$. Mean $=$ \answerBlank[2cm] \quad Median $=$ \answerBlank[2cm]
+\answerExplain{Mean $= 14$; Median $= 14$}{Mean: $\frac{10+12+14+16+18}{5} = \frac{70}{5} = 14$. Median: the middle value of the ordered set is $14$.}
+
+\prob Data: $5, 8, 11, 14$. Mean $=$ \answerBlank[2cm] \quad Median $=$ \answerBlank[2cm]
+\answerExplain{Mean $= 9.5$; Median $= 9.5$}{Mean: $\frac{5+8+11+14}{4} = \frac{38}{4} = 9.5$. Median: average of the two middle values $\frac{8+11}{2} = 9.5$.}
+
+\prob Data: $20, 25, 30, 35, 40, 45$. Mean $=$ \answerBlank[2cm] \quad Median $=$ \answerBlank[2cm]
+\answerExplain{Mean $= 32.5$; Median $= 32.5$}{Mean: $\frac{20+25+30+35+40+45}{6} = \frac{195}{6} = 32.5$. Median: $\frac{30+35}{2} = 32.5$.}
+
+\prob Data: $3, 7, 7, 10, 13$. Mean $=$ \answerBlank[2cm] \quad Median $=$ \answerBlank[2cm]
+\answerExplain{Mean $= 8$; Median $= 7$}{Mean: $\frac{3+7+7+10+13}{5} = \frac{40}{5} = 8$. Median: the 3rd value is $7$.}
+
+\prob Data: $100, 200, 300, 400$. Range $=$ \answerBlank[2cm]
+\answerExplain{$300$}{Range $= 400 - 100 = 300$. The range is the difference between the highest and lowest values.}
+
+\prob Data: $2, 5, 5, 8, 10, 12, 15$. Find $Q1$, $Q3$, and the IQR. \answerBlank[3cm]
+\answerExplain{$Q1 = 5$, $Q3 = 12$, IQR $= 7$}{Lower half: $2, 5, 5$ so $Q1 = 5$. Upper half: $12, 12, 15$ so $Q3 = 12$. IQR $= 12 - 5 = 7$.}
+
+\end{practiceBox}
+
+% ── Practice A: Computing MAD ────────────────────────────────────────────────
+\begin{practiceBox}{Computing Mean Absolute Deviation}
+
+\practiceHeader{Find the MAD for each data set.}
+
+\prob Data: $10, 12, 14, 16, 18$. Mean $= 14$.
+
+\begin{center}
+\begin{tabular}{ccc}
+    \textbf{Value} & \textbf{Distance from mean} \\
+    \hline
+    $10$ & $|10 - 14| = $ \answerBlank[1cm] \\
+    $12$ & $|12 - 14| = $ \answerBlank[1cm] \\
+    $14$ & $|14 - 14| = $ \answerBlank[1cm] \\
+    $16$ & $|16 - 14| = $ \answerBlank[1cm] \\
+    $18$ & $|18 - 14| = $ \answerBlank[1cm] \\
+\end{tabular}
+\end{center}
+MAD $=$ \answerBlank[2cm]
+\answerExplain{MAD $= 2.4$}{Distances: $4, 2, 0, 2, 4$. Sum $= 12$. MAD $= \frac{12}{5} = 2.4$. Each value is, on average, $2.4$ units from the mean.}
+
+\prob Data: $5, 5, 10, 15, 15$. Mean $= 10$. Find the MAD. \answerBlank[3cm]
+\answerExplain{MAD $= 4$}{Distances from $10$: $5, 5, 0, 5, 5$. Sum $= 20$. MAD $= \frac{20}{5} = 4$.}
+
+\prob Data: $20, 22, 24, 26, 28$. Mean $= 24$. Find the MAD. \answerBlank[3cm]
+\answerExplain{MAD $= 2.4$}{Distances from $24$: $4, 2, 0, 2, 4$. Sum $= 12$. MAD $= \frac{12}{5} = 2.4$.}
+
+\end{practiceBox}
+
+% ── Practice B: Comparing Two Groups ─────────────────────────────────────────
+\begin{practiceBox}[funTeal]{Comparing Two Groups}
+
+\practiceHeader[funTeal]{Use the statistics to compare the populations.}
+
+Two soccer teams recorded goals per game over $5$ games:
+
+Team A: $1, 2, 3, 2, 2$ \qquad Team B: $0, 1, 4, 5, 5$
+
+\prob Find the mean for each team. \answerBlank[4cm]
+\answerExplain{Team A: $2$; Team B: $3$}{Team A: $\frac{1+2+3+2+2}{5} = \frac{10}{5} = 2$. Team B: $\frac{0+1+4+5+5}{5} = \frac{15}{5} = 3$.}
+
+\prob Find the median for each team. \answerBlank[4cm]
+\answerExplain{Team A: $2$; Team B: $4$}{Team A ordered: $1, 2, 2, 2, 3$. Median $= 2$. Team B ordered: $0, 1, 4, 5, 5$. Median $= 4$.}
+
+\prob Find the range for each team. \answerBlank[4cm]
+\answerExplain{Team A: $2$; Team B: $5$}{Team A: $3 - 1 = 2$. Team B: $5 - 0 = 5$. Team B's scores vary much more.}
+
+\prob Find the MAD for each team. \answerBlank[4cm]
+\answerExplain{Team A: $0.4$; Team B: $2$}{Team A distances from mean $2$: $|1-2|=1$, $|2-2|=0$, $|3-2|=1$, $|2-2|=0$, $|2-2|=0$. Sum $= 2$. MAD $= \frac{2}{5} = 0.4$. Team B distances from mean $3$: $|0-3|=3$, $|1-3|=2$, $|4-3|=1$, $|5-3|=2$, $|5-3|=2$. Sum $= 10$. MAD $= \frac{10}{5} = 2$.}
+
+\prob Which team is more consistent? Explain using the measures. \answerBlank[4cm]
+\answerExplain{Team A}{Team A has a smaller range ($2$ vs.\ $5$) and a much smaller MAD ($0.4$ vs.\ $2$), meaning their scores are more consistent from game to game.}
+
+\end{practiceBox}
+
+% ── Practice C: IQR Comparisons ──────────────────────────────────────────────
+\begin{practiceBox}[funOrange]{Comparing with IQR}
+
+\practiceHeader[funOrange]{Find the IQR and use it to compare the groups.}
+
+Group A: $12, 15, 18, 20, 22, 25, 30$ \qquad Group B: $10, 14, 16, 20, 28, 32, 35$
+
+\prob Find $Q1$, $Q3$, and IQR for Group A. \answerBlank[4cm]
+\answerExplain{$Q1 = 15$, $Q3 = 25$, IQR $= 10$}{Lower half: $12, 15, 18$. $Q1 = 15$. Upper half: $22, 25, 30$. $Q3 = 25$. IQR $= 25 - 15 = 10$.}
+
+\prob Find $Q1$, $Q3$, and IQR for Group B. \answerBlank[4cm]
+\answerExplain{$Q1 = 14$, $Q3 = 32$, IQR $= 18$}{Lower half: $10, 14, 16$. $Q1 = 14$. Upper half: $28, 32, 35$. $Q3 = 32$. IQR $= 32 - 14 = 18$.}
+
+\prob Which group has more variability in the middle $50\%$ of its data? \answerBlank[3cm]
+\answerExplain{Group B}{Group B's IQR is $18$, compared to Group A's IQR of $10$. The middle half of Group B's data is more spread out.}
+
+\prob Find the median for each group and compare. \answerBlank[4cm]
+\answerExplain{Group A: $20$; Group B: $20$; same center}{Both groups have $7$ values, so the median is the $4$th value. Group A: $20$. Group B: $20$. The centers are the same, but the groups differ in variability.}
+
+\end{practiceBox}
+
+% ── True or False ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funPurple]{True or False?}
+
+\trueOrFalse{The mean and median of a data set are always the same number.}
+\answerExplain{False}{The mean and median can differ, especially when data is skewed or has outliers. For example, $1, 2, 3, 4, 100$ has mean $= 22$ but median $= 3$.}
+
+\trueOrFalse{IQR is less affected by outliers than the range.}
+\answerExplain{True}{IQR only measures the spread of the middle $50\%$ of data, so extreme values (outliers) do not affect it. The range uses the highest and lowest values, which can be outliers.}
+
+\trueOrFalse{If two groups have the same mean, they must have the same MAD.}
+\answerExplain{False}{Groups can have the same mean but very different spreads. For example, $\{5, 5, 5\}$ and $\{1, 5, 9\}$ both have mean $5$, but very different MADs.}
+
+\end{practiceBox}
+
+% ── Word Problems ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funBlue]{\faGlobe~Word Problems}
+
+\wordProblem{Store A's daily sales for a week (in hundreds): $12, 15, 14, 13, 16$. Store B's daily sales: $8, 20, 10, 18, 14$. Which store has more predictable sales?}{store}
+\answerExplain{Store A}{Store A mean $= 14$, distances: $2, 1, 0, 1, 2$, MAD $= 1.2$. Store B mean $= 14$, distances: $6, 6, 4, 4, 0$, MAD $= 4$. Store A's smaller MAD means its sales are more predictable.}
+
+\wordProblem{Class 1 quiz scores: mean $= 88$, MAD $= 3$. Class 2 quiz scores: mean $= 82$, MAD $= 3$. Express the difference in means as a multiple of the MAD. Do the classes perform similarly?}{MADs}
+\answerExplain{$2$ MADs; no, there is a meaningful difference}{Difference $= 88 - 82 = 6$. In MADs: $\frac{6}{3} = 2$. A difference of $2$ MADs suggests Class 1 scored noticeably higher.}
+
+\end{practiceBox}
+
+% ── Challenge ────────────────────────────────────────────────────────────────
+\begin{challengeBox}
+\prob Two runners recorded their $100$-meter times (in seconds):
+
+Runner A: $12.1, 12.3, 12.0, 12.2, 12.4$
+
+Runner B: $11.5, 13.0, 12.0, 12.5, 11.0$
+
+Find the mean and MAD for each runner. Which runner is faster on average? Which is more consistent? \answerBlank[3cm]
+\answerExplain{Runner A: mean $= 12.2$, MAD $= 0.12$; Runner B: mean $= 12.0$, MAD $= 0.6$; Runner B is slightly faster, Runner A is much more consistent}{Runner A: mean $= \frac{12.1+12.3+12.0+12.2+12.4}{5} = \frac{61.0}{5}=12.2$. Distances: $0.1, 0.1, 0.2, 0, 0.2$. MAD $= \frac{0.6}{5} = 0.12$. Runner B: mean $= \frac{11.5+13.0+12.0+12.5+11.0}{5} = \frac{60.0}{5} = 12.0$. Distances: $0.5, 1.0, 0, 0.5, 1.0$. MAD $= \frac{3.0}{5} = 0.6$. Runner B averages $0.2$ seconds faster, but Runner A is far more consistent (MAD $0.12$ vs.\ $0.6$).}
+\end{challengeBox}
+
+\encouragement{You are mastering statistical comparisons! Numbers tell a story — and you are learning to read it!}

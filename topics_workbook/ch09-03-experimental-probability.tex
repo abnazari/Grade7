@@ -1,0 +1,127 @@
+% ============================================================================
+% WORKBOOK — Section 9.3: Experimental Probability
+% CCSS 7.SP.C.6
+% Practice-focused reinforcement for the study guide topic
+% ============================================================================
+\section{Experimental Probability}
+\topicTitle{Experimental Probability}
+
+\begin{quickReview}{Experimental Probability}
+\textbf{Experimental probability} (also called \textbf{relative frequency}) is found by conducting an experiment and recording results:
+$$P(\text{event}) = \frac{\text{number of times the event occurs}}{\text{total number of trials}}$$
+
+\begin{itemize}[leftmargin=*]
+    \item Experimental probability is based on \textbf{actual data}, not counting equally likely outcomes.
+    \item With \textbf{more trials}, experimental probability gets closer to theoretical probability. This is the \textbf{Law of Large Numbers}.
+    \item Experimental and theoretical probabilities may \textbf{differ}, especially with few trials.
+\end{itemize}
+
+\medskip
+\textbf{Example:} A coin is flipped $200$ times and lands on heads $108$ times. Experimental $P(\text{heads}) = \dfrac{108}{200} = 0.54$. The theoretical probability is $0.5$.
+\end{quickReview}
+
+% ── Warm-Up ──────────────────────────────────────────────────────────────────
+\begin{practiceBox}[funGreen]{\faSun~Warm-Up}
+
+\practiceHeader[funGreen]{Find the Experimental Probability}
+Write each probability as a decimal. Round to the nearest hundredth if needed.
+
+\begin{multicols}{2}
+\prob A die is rolled $50$ times. A $6$ comes up $9$ times. $P(6) =$ \answerBlank[2cm]
+\answerExplain{$0.18$}{Divide the number of times the event occurred by total trials: $9 \div 50 = 0.18$.}
+
+\prob A coin is flipped $80$ times. Heads appears $36$ times. $P(\text{heads}) =$ \answerBlank[2cm]
+\answerExplain{$0.45$}{$36 \div 80 = 0.45$. The experimental probability is based on actual results, not the theoretical $0.5$.}
+
+\prob A spinner is spun $40$ times. It lands on red $14$ times. $P(\text{red}) =$ \answerBlank[2cm]
+\answerExplain{$0.35$}{$14 \div 40 = 0.35$.}
+
+\prob A basketball player takes $60$ free throws and makes $45$. $P(\text{make}) =$ \answerBlank[2cm]
+\answerExplain{$0.75$}{$45 \div 60 = 0.75$. The player makes $75\%$ of free throws.}
+
+\prob A bag is drawn from $100$ times. Red appears $22$ times. $P(\text{red}) =$ \answerBlank[2cm]
+\answerExplain{$0.22$}{$22 \div 100 = 0.22$.}
+
+\prob A card is drawn and replaced $30$ times. A heart appears $6$ times. $P(\text{heart}) =$ \answerBlank[2cm]
+\answerExplain{$0.20$}{$6 \div 30 = 0.20$.}
+\end{multicols}
+\end{practiceBox}
+
+% ── Practice A: Using a Data Table ───────────────────────────────────────────
+\begin{practiceBox}{Reading Experimental Data}
+
+\practiceHeader{A die was rolled $120$ times. The results are shown below.}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{Outcome} & 1 & 2 & 3 & 4 & 5 & 6 \\
+\hline
+\textbf{Frequency} & 18 & 22 & 19 & 21 & 25 & 15 \\
+\hline
+\end{tabular}
+\end{center}
+
+\prob What is the experimental probability of rolling a $5$? \answerBlank[3cm]
+\answerExplain{$\dfrac{25}{120} \approx 0.21$}{A $5$ appeared $25$ times out of $120$ rolls: $P = \frac{25}{120} \approx 0.208 \approx 0.21$.}
+
+\prob What is the experimental probability of rolling a $2$ or $3$? \answerBlank[3cm]
+\answerExplain{$\dfrac{41}{120} \approx 0.34$}{$2$ appeared $22$ times and $3$ appeared $19$ times. Total: $22 + 19 = 41$ out of $120$: $P = \frac{41}{120} \approx 0.34$.}
+
+\prob What is the experimental probability of rolling an even number? \answerBlank[3cm]
+\answerExplain{$\dfrac{58}{120} \approx 0.48$}{Even numbers: $2$ ($22$), $4$ ($21$), $6$ ($15$). Total: $22 + 21 + 15 = 58$ out of $120$: $P = \frac{58}{120} \approx 0.48$.}
+
+\prob The theoretical probability of rolling a $6$ is $\frac{1}{6} \approx 0.167$. How does the experimental probability compare? \answerBlank[4cm]
+\answerExplain{$\dfrac{15}{120} = 0.125$; lower than theoretical}{Experimental: $15 \div 120 = 0.125$. Theoretical: $\frac{1}{6} \approx 0.167$. The experimental value is lower, likely due to random variation.}
+
+\prob Which outcome occurred most often? Is this expected theoretically? \answerBlank[4cm]
+\answerExplain{$5$ occurred most ($25$ times); not expected}{In a fair die, each outcome should appear about $20$ times ($120 \div 6$). Outcome $5$ appeared $25$ times — a bit more than expected, but normal variation in $120$ trials.}
+
+\end{practiceBox}
+
+% ── Practice B: Predictions ──────────────────────────────────────────────────
+\begin{practiceBox}[funTeal]{Making Predictions}
+
+\practiceHeader[funTeal]{Use experimental probability to predict future results.}
+
+\prob A spinner lands on blue $18$ times out of $60$ spins. If you spin $200$ more times, about how many times do you expect blue? \answerBlank[3cm]
+\answerExplain{$60$ times}{Experimental $P(\text{blue}) = \frac{18}{60} = 0.3$. Prediction: $0.3 \times 200 = 60$ spins.}
+
+\prob In $50$ coin flips, tails appeared $28$ times. Predict how many tails in $300$ flips. \answerBlank[3cm]
+\answerExplain{$168$ tails}{Experimental $P(\text{tails}) = \frac{28}{50} = 0.56$. Prediction: $0.56 \times 300 = 168$.}
+
+\prob A factory tests $500$ light bulbs and finds $15$ defective. Out of $10{,}000$ bulbs, about how many would you expect to be defective? \answerBlank[3cm]
+\answerExplain{$300$ bulbs}{Experimental $P(\text{defective}) = \frac{15}{500} = 0.03$. Prediction: $0.03 \times 10{,}000 = 300$.}
+
+\prob A student rolls a die $30$ times and gets a $1$ exactly $7$ times. If she rolls $90$ more times, about how many $1$s should she expect? \answerBlank[3cm]
+\answerExplain{$21$}{Experimental $P(1) = \frac{7}{30}$. Prediction: $\frac{7}{30} \times 90 = 21$.}
+
+\end{practiceBox}
+
+% ── Practice C: True or False ────────────────────────────────────────────────
+\begin{practiceBox}[funPurple]{True or False?}
+
+\trueOrFalse{Experimental probability always equals theoretical probability.}
+\answerExplain{False}{Experimental probability is based on actual trials and may differ from theoretical, especially with few trials. With more trials, they tend to get closer.}
+
+\trueOrFalse{If you flip a coin $10$ times and get $7$ heads, the experimental probability of heads is $0.7$.}
+\answerExplain{True}{Experimental probability is calculated from data: $\frac{7}{10} = 0.70$. This differs from the theoretical $0.5$, but that is normal with only $10$ trials.}
+
+\trueOrFalse{Conducting more trials generally makes experimental probability closer to theoretical probability.}
+\answerExplain{True}{This is the Law of Large Numbers. As the number of trials increases, experimental probability tends to approach the theoretical value.}
+
+\trueOrFalse{If a spinner lands on yellow $0$ times in $10$ spins, it is impossible to land on yellow.}
+\answerExplain{False}{It may be unlikely, but $10$ trials is a small sample. The spinner could still land on yellow with more spins. We would need to know the spinner's design to determine if yellow is truly impossible.}
+
+\end{practiceBox}
+
+% ── Challenge ────────────────────────────────────────────────────────────────
+\begin{challengeBox}
+\prob Two students each flip a coin. Student A flips $20$ times and gets $12$ heads. Student B flips $500$ times and gets $253$ heads. Whose experimental probability is likely closer to the true theoretical probability, and why? \answerBlank[5cm]
+\answerExplain{Student B}{Student A: $P = \frac{12}{20} = 0.60$. Student B: $P = \frac{253}{500} = 0.506$. Student B had more trials, so their result ($0.506$) is closer to the theoretical $0.5$. More trials give a more reliable estimate.}
+
+\prob A baseball player gets a hit $32$ times in $120$ at-bats. What is his experimental batting probability (as a fraction and a decimal)? If he has $30$ more at-bats, about how many hits should he expect? \answerBlank[4cm]
+\answerExplain{$\dfrac{32}{120} \approx 0.267$; about $8$ hits}{$P(\text{hit}) = \frac{32}{120} = \frac{4}{15} \approx 0.267$. Prediction: $0.267 \times 30 \approx 8$ hits.}
+\end{challengeBox}
+
+\encouragement{Great job with experimental probability! The more data you collect, the more reliable your predictions become!}

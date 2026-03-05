@@ -1,0 +1,147 @@
+% ============================================================================
+% WORKBOOK — Section 8.3: Comparing Two Populations Visually
+% CCSS 7.SP.B.3
+% Practice-focused reinforcement for the study guide topic
+% ============================================================================
+\section{Comparing Two Populations Visually}
+\topicTitle{Comparing Two Populations Visually}
+
+\begin{quickReview}{Comparing Two Populations Visually}
+To compare two groups, look at their data displays (dot plots, histograms, box plots) and ask:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Center:} Which group has a higher mean or median?
+    \item \textbf{Spread:} Which group is more spread out (larger range or MAD)?
+    \item \textbf{Overlap:} Do the distributions overlap a lot or a little?
+    \item \textbf{Shape:} Are the distributions symmetric, skewed, or clustered?
+\end{itemize}
+
+\medskip
+\textbf{Key idea:} Express the difference between centers as a multiple of a measure of variability.
+
+\smallskip
+\textbf{Example:} Group A mean $= 70$, Group B mean $= 80$, MAD for both $\approx 5$. Difference $= 80 - 70 = 10 = 2 \times \text{MAD}$. The difference is about $2$ MADs — this suggests a meaningful difference.
+\end{quickReview}
+
+% ── Warm-Up ──────────────────────────────────────────────────────────────────
+\begin{practiceBox}[funGreen]{\faSun~Warm-Up}
+
+\practiceHeader[funGreen]{Quick Comparisons}
+
+\prob Group A has a mean of $60$. Group B has a mean of $72$. Which group has the higher center? \answerBlank[3cm]
+\answerExplain{Group B}{$72 > 60$, so Group B has the higher mean.}
+
+\prob Group X has a range of $15$. Group Y has a range of $30$. Which is more spread out? \answerBlank[3cm]
+\answerExplain{Group Y}{A larger range ($30 > 15$) means the data values are more spread out.}
+
+\prob Two dot plots overlap completely. What does this tell you?
+\answerExplain{The groups are very similar}{Complete overlap means the data values from both groups fall in the same range, suggesting little difference between them.}
+
+\prob Group P has a median of $85$ and Group Q has a median of $85$. Does this mean the groups are identical?
+\answerExplain{No}{Equal medians only mean the middle values are the same. The groups could have different spreads, shapes, or individual data values.}
+
+\prob If the difference between two group means is $0$, what can you conclude?
+\answerExplain{The groups have the same average}{A difference of $0$ means the means are equal, but the groups could still differ in spread, shape, or individual values.}
+
+\end{practiceBox}
+
+% ── Practice A: Comparing Centers and Spreads ────────────────────────────────
+\begin{practiceBox}{Comparing Centers and Spreads}
+
+\practiceHeader{Use the given statistics to compare the two groups.}
+
+Two classes took the same test:
+
+\begin{center}
+\begin{tabular}{lccc}
+    & \textbf{Mean} & \textbf{Median} & \textbf{Range} \\
+    \hline
+    Class A & $78$ & $80$ & $25$ \\
+    Class B & $84$ & $83$ & $18$ \\
+\end{tabular}
+\end{center}
+
+\prob Which class scored higher on average? \answerBlank[3cm]
+\answerExplain{Class B}{Class B has a higher mean ($84$ vs.\ $78$) and a higher median ($83$ vs.\ $80$).}
+
+\prob Which class had more consistent scores? \answerBlank[3cm]
+\answerExplain{Class B}{Class B has a smaller range ($18$ vs.\ $25$), meaning scores were closer together and more consistent.}
+
+\prob By how many points do the means differ? \answerBlank[3cm]
+\answerExplain{$6$ points}{$84 - 78 = 6$. The means differ by $6$ points.}
+
+\prob If both classes have a MAD of about $4$, express the difference in means as a multiple of the MAD. \answerBlank[3cm]
+\answerExplain{$1.5$ MADs}{Difference $= 6$. $\frac{6}{4} = 1.5$. The means differ by about $1.5$ MADs, suggesting a noticeable difference.}
+
+\end{practiceBox}
+
+% ── Practice B: Interpreting Overlap ─────────────────────────────────────────
+\begin{practiceBox}[funTeal]{Interpreting Visual Overlap}
+
+\practiceHeader[funTeal]{Answer based on the descriptions of data displays.}
+
+\prob Team A's scores range from $55$ to $90$. Team B's scores range from $70$ to $100$. Describe the overlap.
+\answerExplain{They overlap from $70$ to $90$}{Team A goes up to $90$ and Team B starts at $70$, so scores from $70$ to $90$ are shared. Some Team A members score higher than some Team B members in this region.}
+
+\prob In the scenario from Problem 9, a Team A student scored $88$ and a Team B student scored $72$. Is Team B always higher?
+\answerExplain{No}{The Team A student outscored the Team B student. Overlap means individual members can score above or below members of the other group, even if one group is higher on average.}
+
+\prob Two box plots show: Group 1 median $= 50$, Q1 $= 40$, Q3 $= 60$. Group 2 median $= 65$, Q1 $= 55$, Q3 $= 75$. Do the middle halves overlap?
+\answerExplain{Yes, from $55$ to $60$}{Group 1's middle half is $40$--$60$. Group 2's middle half is $55$--$75$. They share the region $55$--$60$.}
+
+\prob In Problem 11, is the overlap large or small relative to the IQRs?
+\answerExplain{Small}{Group 1's IQR is $20$ and Group 2's IQR is $20$. The overlap is only $5$ units, which is $\frac{5}{20} = 25\%$ of each IQR. This is a small overlap, suggesting meaningful differences.}
+
+\end{practiceBox}
+
+% ── Practice C: Difference in MADs ───────────────────────────────────────────
+\begin{practiceBox}[funOrange]{Expressing Differences in MADs}
+
+\practiceHeader[funOrange]{Calculate the difference between means as a multiple of the MAD.}
+
+\prob Mean A $= 45$, Mean B $= 55$, MAD $= 5$. \answerBlank[3cm]
+\answerExplain{$2$ MADs}{Difference $= 55 - 45 = 10$. $\frac{10}{5} = 2$ MADs. A difference of $2$ or more MADs suggests a meaningful gap.}
+
+\prob Mean A $= 100$, Mean B $= 106$, MAD $= 4$. \answerBlank[3cm]
+\answerExplain{$1.5$ MADs}{Difference $= 106 - 100 = 6$. $\frac{6}{4} = 1.5$ MADs.}
+
+\prob Mean A $= 30$, Mean B $= 33$, MAD $= 6$. \answerBlank[3cm]
+\answerExplain{$0.5$ MADs}{Difference $= 33 - 30 = 3$. $\frac{3}{6} = 0.5$ MADs. A small difference relative to the MAD means the groups are quite similar.}
+
+\prob Mean A $= 210$, Mean B $= 190$, MAD $= 8$. \answerBlank[3cm]
+\answerExplain{$2.5$ MADs}{Difference $= 210 - 190 = 20$. $\frac{20}{8} = 2.5$ MADs. This large separation suggests a clear difference between the groups.}
+
+\end{practiceBox}
+
+% ── True or False ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funPurple]{True or False?}
+
+\trueOrFalse{If two dot plots have no overlap, the groups are clearly different.}
+\answerExplain{True}{No overlap means every value in one group is higher (or lower) than every value in the other group. This is strong evidence of a real difference.}
+
+\trueOrFalse{You only need to compare means to decide which group is ``better.''}
+\answerExplain{False}{You should also compare spread (range, MAD, IQR) and look at overlap. Two groups with similar means can have very different variability.}
+
+\trueOrFalse{A difference of $3$ MADs between two group means suggests the groups are very similar.}
+\answerExplain{False}{A difference of $3$ MADs is large. It suggests a meaningful, clear difference between the two groups.}
+
+\end{practiceBox}
+
+% ── Word Problems ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funBlue]{\faGlobe~Word Problems}
+
+\wordProblem{Basketball Team A has a mean height of $170$ cm with a MAD of $5$ cm. Team B has a mean height of $178$ cm with a MAD of $5$ cm. Express the difference in means as a multiple of the MAD. Is the height difference meaningful?}{MADs}
+\answerExplain{$1.6$ MADs; yes, the difference is meaningful}{Difference: $178 - 170 = 8$ cm. In MADs: $\frac{8}{5} = 1.6$. A difference greater than $1$ MAD suggests a noticeable difference between the teams' heights.}
+
+\wordProblem{Two factories produce bolts. Factory X: mean length $5.0$ cm, MAD $= 0.2$ cm. Factory Y: mean length $5.1$ cm, MAD $= 0.2$ cm. Should a buyer treat these factories as producing the same size bolts?}{explanation}
+\answerExplain{Likely yes}{Difference $= 5.1 - 5.0 = 0.1$ cm. In MADs: $\frac{0.1}{0.2} = 0.5$ MADs. A difference of only $0.5$ MADs is small, suggesting the factories produce bolts of very similar length.}
+
+\end{practiceBox}
+
+% ── Challenge ────────────────────────────────────────────────────────────────
+\begin{challengeBox}
+\prob Grade 7 students' test scores have a mean of $75$ with MAD $= 6$. Grade 8 students' scores have a mean of $82$ with MAD $= 4$. Use the average MAD to express the difference in means as a multiple of the MAD, and interpret your result. \answerBlank[3cm]
+\answerExplain{$1.4$ MADs; noticeable difference}{Average MAD $= \frac{6+4}{2} = 5$. Difference $= 82 - 75 = 7$. Multiples: $\frac{7}{5} = 1.4$ MADs. This is more than $1$ MAD, suggesting Grade 8 students scored noticeably higher on average.}
+\end{challengeBox}
+
+\encouragement{Excellent work comparing data sets! Seeing differences and similarities in data is a powerful skill!}

@@ -1,0 +1,287 @@
+\ansChap{1}
+\ansSec{1.1}
+\ansItem{1}{$n + 7$}
+\ansExplain{1}{``More than'' means addition. Add $7$ to the number $n$: $n + 7$.}
+\ansItem{2}{$x - 4$}
+\ansExplain{2}{``Decreased by'' means subtraction. Subtract $4$ from $x$: $x - 4$.}
+\ansItem{3}{$2y$}
+\ansExplain{3}{``Twice'' means two times. Multiply the number by $2$: $2y$.}
+\ansItem{4}{$\frac {m}{5}$}
+\ansExplain{4}{``Divided by $5$'' means $m \div 5$, which we write as the fraction $\frac {m}{5}$.}
+\ansItem{5}{$6p - 10$}
+\ansExplain{5}{``$6$ times a number'' is $6p$. ``$10$ less than'' means subtract $10$ from that: $6p - 10$.}
+\ansItem{6}{$\frac {k}{2} + 3$}
+\ansExplain{6}{``Half of $k$'' is $\frac {k}{2}$. ``Plus $3$'' means add $3$: $\frac {k}{2} + 3$.}
+\ansItem{7}{$17$}
+\ansExplain{7}{Substitute $x = 4$: $3(4) + 5 = 12 + 5 = 17$.}
+\ansItem{8}{$-15$}
+\ansExplain{8}{Substitute $a = -3$: $2(-3) - 9 = -6 - 9 = -15$.}
+\ansItem{9}{$-19$}
+\ansExplain{9}{Substitute $n = 5$: $-4(5) + 1 = -20 + 1 = -19$.}
+\ansItem{10}{$3$}
+\ansExplain{10}{Substitute $x = -8$: $\frac {-8}{2} + 7 = -4 + 7 = 3$.}
+\ansItem{11}{$16$}
+\ansExplain{11}{Substitute $y = -2$: $10 - 3(-2) = 10 + 6 = 16$. A negative times a negative gives a positive.}
+\ansItem{12}{$-7$}
+\ansExplain{12}{Substitute $x = -6$: $5 + 2(-6) = 5 + (-12) = -7$.}
+\ansItem{13}{$1.5$}
+\ansExplain{13}{Substitute $x = 0.5$: $6(0.5) - 1.5 = 3 - 1.5 = 1.5$.}
+\ansItem{14}{$8$}
+\ansExplain{14}{Substitute $n = 8$: $\frac {3}{4}(8) + 2 = 6 + 2 = 8$.}
+\ansItem{15}{$9$}
+\ansExplain{15}{Substitute $a = -2$: $-2.5(-2) + 4 = 5 + 4 = 9$.}
+\ansItem{16}{$\frac {5}{2}$ or $2\frac {1}{2}$}
+\ansExplain{16}{Substitute $x = 9$: $\frac {9}{3} - \frac {1}{2} = 3 - \frac {1}{2} = \frac {6}{2} - \frac {1}{2} = \frac {5}{2} = 2\frac {1}{2}$.}
+\ansItem{17}{$3n + 5$; \quad $\$29$}
+\ansExplain{17}{Each item costs $\$3$, so $n$ items cost $3n$. Add shipping: $3n + 5$. For $n = 8$: $3(8) + 5 = 24 + 5 = 29$.}
+\ansItem{18}{$500 - 12m$; \quad $320$ gallons}
+\ansExplain{18}{The pool loses $12$ gallons each minute, so after $m$ minutes: $500 - 12m$. For $m = 15$: $500 - 12(15) = 500 - 180 = 320$.}
+\ansItem{19}{$1.75d + 2.50$; \quad $\$13.00$}
+\ansExplain{19}{The per-mile charge is $1.75d$. Add the base fare: $1.75d + 2.50$. For $d = 6$: $1.75(6) + 2.50 = 10.50 + 2.50 = 13.00$.}
+\ansItem{20}{False}
+\ansExplain{20}{``$5$ less than $x$'' means start with $x$ and subtract $5$: $x - 5$. Writing $5 - x$ reverses the order and gives a different value.}
+\ansItem{21}{True}
+\ansExplain{21}{Substitute: $(-3)^{2} = (-3) \times (-3) = 9$. Squaring a negative number gives a positive result.}
+\ansItem{22}{False}
+\ansExplain{22}{Substitute $x = 3$: $2(3) + 3 = 6 + 3 = 9$, not $10$.}
+\ansItem{23}{$4t + 20 + 4(8) = 4t + 52$; \quad $\$192$}
+\ansExplain{23}{Ticket cost: $4t$. Parking: $20$. Food: $4 \times 8 = 32$. Total expression: $4t + 52$. For $t = 35$: $4(35) + 52 = 140 + 52 = 192$.}
+\ansItem{24}{$\frac {13}{4}$ when $x = 5$; \quad $x = 3$ gives $\frac {9}{2}$, $x = 2$ gives $7$}
+\ansExplain{24}{For $x = 5$: $\frac {2(5) + 3}{5 - 1} = \frac {13}{4}$. For $x = 2$: $\frac {2(2) + 3}{2 - 1} = \frac {7}{1} = 7$, a whole number.}
+\ansSec{1.2}
+\ansItem{1}{$5x$ and $2x$}
+\ansExplain{1}{Both terms have the variable $x$ raised to the first power, so $5x$ and $2x$ are like terms.}
+\ansItem{2}{$-4$ and $9$}
+\ansExplain{2}{The constants $-4$ and $9$ are like terms. $7a$ and $3b$ have different variables, so they are not like terms.}
+\ansItem{3}{$6y$ and $-y$}
+\ansExplain{3}{Both have the variable $y$ to the first power. $2y^{2}$ has a different exponent, so it is not a like term with $6y$.}
+\ansItem{4}{$-3m$ and $m$; $8$ and $-5$}
+\ansExplain{4}{$-3m$ and $m$ share the variable $m$. The constants $8$ and $-5$ are also like terms with each other.}
+\ansItem{5}{$2n$ and $7n$}
+\ansExplain{5}{Both terms have the variable $n$ to the first power. The constant $4$ stands alone.}
+\ansItem{6}{$-3p$ and $6p$; $10$ and $-1$}
+\ansExplain{6}{The variable terms $-3p$ and $6p$ are like terms. The constants $10$ and $-1$ are like terms.}
+\ansItem{7}{$11x$}
+\ansExplain{7}{Both terms are like terms with variable $x$. Add the coefficients: $8 + 3 = 11$. Result: $11x$.}
+\ansItem{8}{$-4a$}
+\ansExplain{8}{Combine coefficients: $5 - 9 = -4$. Result: $-4a$.}
+\ansItem{9}{$4y + 4$}
+\ansExplain{9}{Combine the $y$-terms: $7y - 3y = 4y$. The constant $4$ stays. Result: $4y + 4$.}
+\ansItem{10}{$3n + 5$}
+\ansExplain{10}{Variable terms: $-2n + 5n = 3n$. Constants: $6 - 1 = 5$. Result: $3n + 5$.}
+\ansItem{11}{$-2b + 6$}
+\ansExplain{11}{Variable terms: $-4b + 2b = -2b$. Constants: $9 - 3 = 6$. Result: $-2b + 6$.}
+\ansItem{12}{$10$}
+\ansExplain{12}{Variable terms: $6x - 6x = 0$. Constants: $2 + 8 = 10$. The variable terms cancel out, leaving just $10$.}
+\ansItem{13}{$x - 5$}
+\ansExplain{13}{Add the coefficients: $\frac {1}{3} + \frac {2}{3} = \frac {3}{3} = 1$. Result: $1x - 5 = x - 5$.}
+\ansItem{14}{$-0.2n + 3.2$}
+\ansExplain{14}{Combine the $n$-terms: $0.4 - 0.6 = -0.2$. Result: $-0.2n + 3.2$.}
+\ansItem{15}{$\frac {1}{4}y + 7$}
+\ansExplain{15}{Find a common denominator: $\frac {3}{4}y - \frac {2}{4}y = \frac {1}{4}y$. Result: $\frac {1}{4}y + 7$.}
+\ansItem{16}{$2a + 2.5$}
+\ansExplain{16}{Variable terms: $1.5a + 0.5a = 2a$. Constants: $-2 + 4.5 = 2.5$. Result: $2a + 2.5$.}
+\ansItem{17}{False}
+\ansExplain{17}{$4x$ and $4y$ are not like terms because they have different variables. You cannot combine them. The expression $4x + 4y$ is already simplified.}
+\ansItem{18}{True}
+\ansExplain{18}{Combine the $a$-terms: $3a - a = 2a$. The constant $5$ stays. Result: $2a + 5$.}
+\ansItem{19}{True}
+\ansExplain{19}{The terms are identical but opposite. Combining: $7m - 7m = 0$. When like terms cancel completely, the result is $0$.}
+\ansItem{20}{Sam combined unlike terms}
+\ansExplain{20}{Sam incorrectly combined $5x$, $3$, $-2x$, and $7$ all together. The variable terms give $5x - 2x = 3x$ and the constants give $3 + 7 = 10$. The correct answer is $3x + 10$.}
+\ansItem{21}{No — they are not like terms}
+\ansExplain{21}{$3y$ has exponent $1$ and $2y^{2}$ has exponent $2$. Different exponents mean they are not like terms. Also, combining like terms adds coefficients, not exponents. The expression $3y + 2y^{2}$ is already simplified.}
+\ansItem{22}{$6x - 5y + 7$}
+\ansExplain{22}{Group by variable: $x$-terms: $3x + 4x - x = 6x$. $y$-terms: $2y - 7y = -5y$. Constants: $-5 + 12 = 7$. Result: $6x - 5y + 7$.}
+\ansItem{23}{$5$}
+\ansExplain{23}{Since $2x + 3y$ appears on both sides, they cancel out. This leaves $5 = k$, so $k = 5$.}
+\ansSec{1.3}
+\ansItem{1}{$2x + 6$}
+\ansExplain{1}{Multiply $2$ by each term: $2 \times x = 2x$ and $2 \times 3 = 6$. Result: $2x + 6$.}
+\ansItem{2}{$5y - 20$}
+\ansExplain{2}{Multiply $5$ by each term: $5 \times y = 5y$ and $5 \times (-4) = -20$. Result: $5y - 20$.}
+\ansItem{3}{$6a + 3$}
+\ansExplain{3}{Multiply $3$ by each term: $3 \times 2a = 6a$ and $3 \times 1 = 3$. Result: $6a + 3$.}
+\ansItem{4}{$4n - 20$}
+\ansExplain{4}{Multiply $4$ by each term: $4 \times n = 4n$ and $4 \times (-5) = -20$. Result: $4n - 20$.}
+\ansItem{5}{$18 + 12b$}
+\ansExplain{5}{Multiply $6$ by each term: $6 \times 3 = 18$ and $6 \times 2b = 12b$. Result: $18 + 12b$.}
+\ansItem{6}{$7x + 7$}
+\ansExplain{6}{Multiply $7$ by each term: $7 \times x = 7x$ and $7 \times 1 = 7$. Result: $7x + 7$.}
+\ansItem{7}{$-3x - 15$}
+\ansExplain{7}{Multiply $-3$ by each term: $-3 \times x = -3x$ and $-3 \times 5 = -15$. Result: $-3x - 15$.}
+\ansItem{8}{$-8a + 14$}
+\ansExplain{8}{Multiply $-2$ by each term: $-2 \times 4a = -8a$ and $-2 \times (-7) = +14$. A negative times a negative is positive.}
+\ansItem{9}{$-10n - 15$}
+\ansExplain{9}{Multiply $-5$ by each term: $-5 \times 2n = -10n$ and $-5 \times 3 = -15$. Result: $-10n - 15$.}
+\ansItem{10}{$-6x + 1$}
+\ansExplain{10}{The negative sign in front means $-1$ times each term: $-1 \times 6x = -6x$ and $-1 \times (-1) = +1$. Result: $-6x + 1$.}
+\ansItem{11}{$8y - 12$}
+\ansExplain{11}{Multiply $-4$ by each term: $-4 \times (-2y) = 8y$ and $-4 \times 3 = -12$. Result: $8y - 12$.}
+\ansItem{12}{$-3m + 8$}
+\ansExplain{12}{Multiply $-1$ by each term: $-1 \times 3m = -3m$ and $-1 \times (-8) = +8$. Multiplying by $-1$ flips every sign.}
+\ansItem{13}{$3x - 5$}
+\ansExplain{13}{Multiply $\frac {1}{2}$ by each term: $\frac {1}{2} \times 6x = 3x$ and $\frac {1}{2} \times (-10) = -5$. Result: $3x - 5$.}
+\ansItem{14}{$3a + 4$}
+\ansExplain{14}{Multiply $\frac {1}{3}$ by each term: $\frac {1}{3} \times 9a = 3a$ and $\frac {1}{3} \times 12 = 4$. Result: $3a + 4$.}
+\ansItem{15}{$2y - 4$}
+\ansExplain{15}{Multiply $0.5$ by each term: $0.5 \times 4y = 2y$ and $0.5 \times (-8) = -4$. Result: $2y - 4$.}
+\ansItem{16}{$-4n + 6$}
+\ansExplain{16}{Multiply $-\frac {2}{3}$ by each term: $-\frac {2}{3} \times 6n = -4n$ and $-\frac {2}{3} \times (-9) = +6$. Result: $-4n + 6$.}
+\ansItem{17}{$8x + 6$}
+\ansExplain{17}{Expand: $3x + 6 + 5x$. Combine like terms: $(3x + 5x) + 6 = 8x + 6$.}
+\ansItem{18}{$5a - 2$}
+\ansExplain{18}{Expand: $8a - 2 - 3a$. Combine like terms: $(8a - 3a) - 2 = 5a - 2$.}
+\ansItem{19}{$4x + 13$}
+\ansExplain{19}{Expand each part: $-2x + 10 + 6x + 3$. Combine: $(-2x + 6x) + (10 + 3) = 4x + 13$.}
+\ansItem{20}{$2y + 14$}
+\ansExplain{20}{Expand: $4y + 12 - 2y + 2$. Combine: $(4y - 2y) + (12 + 2) = 2y + 14$.}
+\ansItem{21}{False}
+\ansExplain{21}{The distributive property says you must multiply $3$ by \emph {every} term inside: $3(x + 4) = 3x + 12$, not $3x + 4$.}
+\ansItem{22}{True}
+\ansExplain{22}{Multiply $-2$ by each term: $-2 \times a = -2a$ and $-2 \times (-5) = +10$. Result: $-2a + 10$.}
+\ansItem{23}{$-2x - 10$}
+\ansExplain{23}{Expand: $10x - 15 - 12x + 3 + 2$. Combine $x$-terms: $10x - 12x = -2x$. Combine constants: $-15 + 3 + 2 = -10$. Result: $-2x - 10$.}
+\ansItem{24}{$6x + 12$ feet}
+\ansExplain{24}{Perimeter $= 2 \times \text {length} + 2 \times \text {width} = 2(3x + 2) + 2(4) = 6x + 4 + 8 = 6x + 12$ feet.}
+\ansSec{1.4}
+\ansItem{1}{$4$}
+\ansExplain{1}{Factors of $8$: $1, 2, 4, 8$. Factors of $12$: $1, 2, 3, 4, 6, 12$. The greatest common factor is $4$.}
+\ansItem{2}{$5$}
+\ansExplain{2}{Factors of $15$: $1, 3, 5, 15$. Factors of $25$: $1, 5, 25$. The greatest common factor is $5$.}
+\ansItem{3}{$9$}
+\ansExplain{3}{Factors of $9$: $1, 3, 9$. Factors of $27$: $1, 3, 9, 27$. The greatest common factor is $9$.}
+\ansItem{4}{$7$}
+\ansExplain{4}{Factors of $14$: $1, 2, 7, 14$. Factors of $21$: $1, 3, 7, 21$. The greatest common factor is $7$.}
+\ansItem{5}{$6$}
+\ansExplain{5}{Factors of $6$: $1, 2, 3, 6$. Factors of $18$: $1, 2, 3, 6, 9, 18$. The greatest common factor is $6$.}
+\ansItem{6}{$5$}
+\ansExplain{6}{Factors of $10$: $1, 2, 5, 10$. Factors of $35$: $1, 5, 7, 35$. The greatest common factor is $5$.}
+\ansItem{7}{$10(x + 2)$}
+\ansExplain{7}{GCF of $10$ and $20$ is $10$. Divide: $10x \div 10 = x$, $20 \div 10 = 2$. Write: $10(x + 2)$.}
+\ansItem{8}{$4(2a - 3)$}
+\ansExplain{8}{GCF of $8$ and $12$ is $4$. Divide: $8a \div 4 = 2a$, $-12 \div 4 = -3$. Write: $4(2a - 3)$.}
+\ansItem{9}{$5(3n + 5)$}
+\ansExplain{9}{GCF of $15$ and $25$ is $5$. Divide: $15n \div 5 = 3n$, $25 \div 5 = 5$. Write: $5(3n + 5)$.}
+\ansItem{10}{$3(2y - 3)$}
+\ansExplain{10}{GCF of $6$ and $9$ is $3$. Divide: $6y \div 3 = 2y$, $-9 \div 3 = -3$. Write: $3(2y - 3)$.}
+\ansItem{11}{$6(3m + 4)$}
+\ansExplain{11}{GCF of $18$ and $24$ is $6$. Divide: $18m \div 6 = 3m$, $24 \div 6 = 4$. Write: $6(3m + 4)$.}
+\ansItem{12}{$7(3x - 2)$}
+\ansExplain{12}{GCF of $21$ and $14$ is $7$. Divide: $21x \div 7 = 3x$, $-14 \div 7 = -2$. Write: $7(3x - 2)$.}
+\ansItem{13}{$6(2a + 3b)$}
+\ansExplain{13}{GCF of $12$ and $18$ is $6$. Divide: $12a \div 6 = 2a$, $18b \div 6 = 3b$. Write: $6(2a + 3b)$.}
+\ansItem{14}{$10(2x - 3y)$}
+\ansExplain{14}{GCF of $20$ and $30$ is $10$. Divide: $20x \div 10 = 2x$, $-30y \div 10 = -3y$. Write: $10(2x - 3y)$.}
+\ansItem{15}{$3(3p + 5q)$}
+\ansExplain{15}{GCF of $9$ and $15$ is $3$. Divide: $9p \div 3 = 3p$, $15q \div 3 = 5q$. Write: $3(3p + 5q)$.}
+\ansItem{16}{$8(2m - 3n)$}
+\ansExplain{16}{GCF of $16$ and $24$ is $8$. Divide: $16m \div 8 = 2m$, $-24n \div 8 = -3n$. Write: $8(2m - 3n)$.}
+\ansItem{17}{$-2(3x + 5)$}
+\ansExplain{17}{GCF is $2$; factor out $-2$: $-6x \div (-2) = 3x$ and $-10 \div (-2) = 5$. Write: $-2(3x + 5)$. Check: $-2(3x + 5) = -6x - 10$ \checkmark .}
+\ansItem{18}{$-4(3a - 2)$}
+\ansExplain{18}{GCF is $4$; factor out $-4$: $-12a \div (-4) = 3a$ and $8 \div (-4) = -2$. Write: $-4(3a - 2)$. Check: $-4(3a - 2) = -12a + 8$ \checkmark .}
+\ansItem{19}{$-5(3n + 4)$}
+\ansExplain{19}{GCF is $5$; factor out $-5$: $-15n \div (-5) = 3n$ and $-20 \div (-5) = 4$. Write: $-5(3n + 4)$. Check: $-5(3n + 4) = -15n - 20$ \checkmark .}
+\ansItem{20}{False}
+\ansExplain{20}{The GCF of $4$ and $9$ is $1$. Factoring out $1$ does not simplify the expression, so $4x + 9$ cannot be factored further.}
+\ansItem{21}{True}
+\ansExplain{21}{Expand to check: $3 \times 5x = 15x$ and $3 \times (-2) = -6$. So $3(5x - 2) = 15x - 6$.}
+\ansItem{22}{True}
+\ansExplain{22}{GCF of $8$ and $6$ is $2$. Divide: $8y \div 2 = 4y$, $6 \div 2 = 3$. Write: $2(4y + 3)$. This is correct.}
+\ansItem{23}{$12(3x + 4y - 5)$}
+\ansExplain{23}{GCF of $36$, $48$, and $60$ is $12$. Divide each: $36x \div 12 = 3x$, $48y \div 12 = 4y$, $-60 \div 12 = -5$. Write: $12(3x + 4y - 5)$.}
+\ansItem{24}{$3x + 2$}
+\ansExplain{24}{Area $=$ length $\times $ width. Factor: $24x + 16 = 8(3x + 2)$. Since one side is $8$, the other side is $3x + 2$.}
+\ansSec{1.5}
+\ansItem{1}{$8x + 6$}
+\ansExplain{1}{Remove parentheses: $3x + 2 + 5x + 4$. Combine like terms: $(3x + 5x) + (2 + 4) = 8x + 6$.}
+\ansItem{2}{$9a + 5$}
+\ansExplain{2}{Remove parentheses: $7a - 1 + 2a + 6$. Combine: $(7a + 2a) + (-1 + 6) = 9a + 5$.}
+\ansItem{3}{$5n - 5$}
+\ansExplain{3}{Remove parentheses: $4n + 3 + n - 8$. Combine: $(4n + n) + (3 - 8) = 5n - 5$.}
+\ansItem{4}{$4y + 8$}
+\ansExplain{4}{Remove parentheses: $-2y + 7 + 6y + 1$. Combine: $(-2y + 6y) + (7 + 1) = 4y + 8$.}
+\ansItem{5}{$2x$}
+\ansExplain{5}{Remove parentheses: $x - 5 + x + 5$. Combine: $(x + x) + (-5 + 5) = 2x + 0 = 2x$.}
+\ansItem{6}{$4x + 2$}
+\ansExplain{6}{Distribute the negative: $6x + 5 - 2x - 3$. Combine: $(6x - 2x) + (5 - 3) = 4x + 2$.}
+\ansItem{7}{$4a - 3$}
+\ansExplain{7}{Distribute the negative: $9a - 4 - 5a + 1$. Combine: $(9a - 5a) + (-4 + 1) = 4a - 3$.}
+\ansItem{8}{$-4n + 6$}
+\ansExplain{8}{Distribute the negative: $3n + 8 - 7n - 2$. Combine: $(3n - 7n) + (8 - 2) = -4n + 6$.}
+\ansItem{9}{$-7$}
+\ansExplain{9}{Distribute the negative: $5y - 3 - 5y - 4$. Combine: $(5y - 5y) + (-3 - 4) = 0 - 7 = -7$.}
+\ansItem{10}{$4b + 6$}
+\ansExplain{10}{Distribute the negative: $-2b + 9 + 6b - 3$. Combine: $(-2b + 6b) + (9 - 3) = 4b + 6$.}
+\ansItem{11}{$7x + 4$}
+\ansExplain{11}{Distribute the negative: $4x - 1 + 3x + 5$. Combine: $(4x + 3x) + (-1 + 5) = 7x + 4$.}
+\ansItem{12}{$5x + 1$}
+\ansExplain{12}{Remove the first set of parentheses and distribute the negative on the third group: $2x + 5 + 4x - 3 - x - 1$. Combine: $(2x + 4x - x) + (5 - 3 - 1) = 5x + 1$.}
+\ansItem{13}{$6a - 12$}
+\ansExplain{13}{Distribute the negative on the second group: $8a - 2 - 3a - 4 + a - 6$. Combine: $(8a - 3a + a) + (-2 - 4 - 6) = 6a - 12$.}
+\ansItem{14}{$\frac {5}{4}n - 2$}
+\ansExplain{14}{Combine the $n$-terms: $\frac {1}{2}n + \frac {3}{4}n = \frac {2}{4}n + \frac {3}{4}n = \frac {5}{4}n$. Combine constants: $3 - 5 = -2$. Result: $\frac {5}{4}n - 2$.}
+\ansItem{15}{$0.2y - 2$}
+\ansExplain{15}{Distribute the negative: $0.6y - 1.2 - 0.4y - 0.8$. Combine: $(0.6y - 0.4y) + (-1.2 - 0.8) = 0.2y - 2$.}
+\ansItem{16}{$6x + 4$}
+\ansExplain{16}{Add all three sides: $(3x + 1) + (2x - 4) + (x + 7) = (3x + 2x + x) + (1 - 4 + 7) = 6x + 4$.}
+\ansItem{17}{$16a + 2$}
+\ansExplain{17}{Perimeter $= 2(\text {length}) + 2(\text {width}) = 2(5a + 2) + 2(3a - 1) = 10a + 4 + 6a - 2 = 16a + 2$.}
+\ansItem{18}{$x + 15$ dollars}
+\ansExplain{18}{Subtract last week from this week: $(4x + 10) - (3x - 5) = 4x + 10 - 3x + 5 = x + 15$.}
+\ansItem{19}{Alex did not flip the sign of $-1$}
+\ansExplain{19}{When subtracting, the negative sign must flip \emph {both} signs: $-3x$ and $+1$. The correct work is $5x + 2 - 3x + 1 = 2x + 3$, not $2x + 1$.}
+\ansItem{20}{True}
+\ansExplain{20}{Combine: $4x + 3 + 2x - 3 = (4x + 2x) + (3 - 3) = 6x + 0 = 6x$.}
+\ansItem{21}{False}
+\ansExplain{21}{Distribute the negative: $a + 5 - a - 5 = 0$. Subtracting an expression from itself always gives $0$, not $2a + 10$.}
+\ansItem{22}{$5x - 6y + 9$}
+\ansExplain{22}{Distribute the negative on the second group: $7x - 2y + 3 - 4x - 3y + 5 + 2x - y + 1$. Combine $x$: $7x - 4x + 2x = 5x$. Combine $y$: $-2y - 3y - y = -6y$. Constants: $3 + 5 + 1 = 9$. Result: $5x - 6y + 9$.}
+\ansItem{23}{$x = 6$}
+\ansExplain{23}{Perimeter: $(2x + 3) + (x - 1) + (3x + 4) + (x + 2) = 7x + 8$. Set equal to $50$: $7x + 8 = 50$. Subtract $8$: $7x = 42$. Divide: $x = 6$.}
+\ansSec{1.6}
+\ansItem{1}{$1.10x$}
+\ansExplain{1}{Factor out $x$: $x(1 + 0.10) = 1.10x$. This represents a $10\%$ increase.}
+\ansItem{2}{$0.75p$}
+\ansExplain{2}{Factor out $p$: $p(1 - 0.25) = 0.75p$. This represents a $25\%$ decrease.}
+\ansItem{3}{$1.50n$}
+\ansExplain{3}{Factor out $n$: $n(1 + 0.50) = 1.50n$. This represents a $50\%$ increase.}
+\ansItem{4}{$0.85c$}
+\ansExplain{4}{Factor out $c$: $c(1 - 0.15) = 0.85c$. This represents a $15\%$ decrease.}
+\ansItem{5}{$1.06y$}
+\ansExplain{5}{Factor out $y$: $y(1 + 0.06) = 1.06y$. This represents a $6\%$ increase, like adding sales tax.}
+\ansItem{6}{$0.60d$}
+\ansExplain{6}{Factor out $d$: $d(1 - 0.40) = 0.60d$. This represents a $40\%$ discount — you pay $60\%$.}
+\ansItem{7}{$s + 0.08s$ and $1.08s$}
+\ansExplain{7}{The tax amount is $0.08s$. Add it to the price: $s + 0.08s$. Factor: $s(1 + 0.08) = 1.08s$. Both represent the total cost including tax.}
+\ansItem{8}{$1.30c$}
+\ansExplain{8}{Markup is $0.30c$. Selling price: $c + 0.30c = 1.30c$. The store sells the item for $130\%$ of its cost.}
+\ansItem{9}{$0.90(p - 5)$ or $0.9p - 4.5$}
+\ansExplain{9}{First subtract $\$5$: $p - 5$. Then take $10\%$ off the result: $0.90(p - 5)$. Expanding: $0.9p - 4.5$.}
+\ansItem{10}{$5x + 8$}
+\ansExplain{10}{Expand: $6x + 8 - x$. Combine like terms: $(6x - x) + 8 = 5x + 8$.}
+\ansItem{11}{$a + 0.20a = a(1 + 0.20) = 1.20a$}
+\ansExplain{11}{Start with $a$, add $20\%$: $a + 0.20a$. Factor out $a$: $a(1 + 0.20) = 1.20a$. Both are equivalent, confirming the statement.}
+\ansItem{12}{$2x + 14$}
+\ansExplain{12}{Expand: $4x + 12 - 2x + 2$. Combine: $(4x - 2x) + (12 + 2) = 2x + 14$. The expression simplifies to a linear expression with a positive constant.}
+\ansItem{13}{$24h + 34$}
+\ansExplain{13}{Friday: $12h + 5$. Saturday: $12(h + 2) + 5 = 12h + 24 + 5 = 12h + 29$. Total: $(12h + 5) + (12h + 29) = 24h + 34$.}
+\ansItem{14}{$15 - 0.10t$}
+\ansExplain{14}{Plan 1: $40 + 0.05t$. Plan 2: $25 + 0.15t$. Difference: $(40 + 0.05t) - (25 + 0.15t) = 40 + 0.05t - 25 - 0.15t = 15 - 0.10t$. Plan 1 costs more when $t < 150$ texts.}
+\ansItem{15}{True}
+\ansExplain{15}{Factor out $x$: $x(1 + 0.07) = 1.07x$. The two expressions always have the same value for every value of $x$.}
+\ansItem{16}{False}
+\ansExplain{16}{Start with price $p$. After a $30\%$ discount: $0.70p$. After a $30\%$ increase: $1.30(0.70p) = 0.91p$. The final price is only $91\%$ of the original — not $100\%$.}
+\ansItem{17}{True}
+\ansExplain{17}{Expand using the distributive property: $5(x - 2) = 5x - 10$. They are equivalent expressions.}
+\ansItem{18}{$\$52$}
+\ansExplain{18}{A $35\%$ discount means you pay $100\% - 35\% = 65\%$ of the price. Multiply: $0.65 \times 80 = 52$.}
+\ansItem{19}{$0.88v$}
+\ansExplain{19}{Depreciates $12\%$ means the car keeps $100\% - 12\% = 88\%$ of its value. Expression: $v - 0.12v = 0.88v$.}
+\ansItem{20}{$0.53p$}
+\ansExplain{20}{Total with tax: $p + 0.06p = 1.06p$. Split equally: $\frac {1.06p}{2} = 0.53p$. Each person pays $\$0.53p$.}
+\ansItem{21}{The customer is wrong; final price is $0.99p$}
+\ansExplain{21}{Start with price $p$. Increase by $10\%$: $1.10p$. Decrease by $10\%$: $0.90(1.10p) = 0.99p$. The final price is $99\%$ of the original — $1\%$ less, not the same.}
+\ansItem{22}{True — price per item is $0.75d$}
+\ansExplain{22}{You pay for $3$ items but receive $4$: total cost $= 3d$ for $4$ items. Cost per item $= \frac {3d}{4} = 0.75d$. Since $0.75d = d - 0.25d$, this is a $25\%$ discount on each item.}

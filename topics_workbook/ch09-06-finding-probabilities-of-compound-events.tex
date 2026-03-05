@@ -1,0 +1,134 @@
+% ============================================================================
+% WORKBOOK — Section 9.6: Finding Probabilities of Compound Events
+% CCSS 7.SP.C.8b
+% Practice-focused reinforcement for the study guide topic
+% ============================================================================
+\section{Finding Probabilities of Compound Events}
+\topicTitle{Finding Probabilities of Compound Events}
+
+\begin{quickReview}{Finding Probabilities of Compound Events}
+To find the probability of a compound event:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{List or count} all outcomes in the sample space.
+    \item \textbf{Count} the outcomes that match the event (favorable outcomes).
+    \item \textbf{Divide}: $P(\text{event}) = \dfrac{\text{favorable outcomes}}{\text{total outcomes}}$.
+\end{enumerate}
+
+\begin{itemize}[leftmargin=*]
+    \item Use a \textbf{table}, \textbf{tree diagram}, or \textbf{organized list} to find all outcomes.
+    \item For \textbf{independent events}: $P(A \text{ and } B) = P(A) \times P(B)$.
+\end{itemize}
+
+\medskip
+\textbf{Example:} Rolling two dice — what is $P(\text{sum} = 9)$? Total outcomes: $36$. Favorable: $(3,6), (4,5), (5,4), (6,3)$ — that is $4$. So $P = \dfrac{4}{36} = \dfrac{1}{9}$.
+\end{quickReview}
+
+% ── Warm-Up ──────────────────────────────────────────────────────────────────
+\begin{practiceBox}[funGreen]{\faSun~Warm-Up}
+
+\practiceHeader[funGreen]{Two Coin Flips}
+Two fair coins are flipped. The sample space is: HH, HT, TH, TT.
+
+\prob $P(\text{both heads})$ \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{4}$}{Only HH is favorable. $1$ out of $4$ outcomes: $P = \frac{1}{4}$.}
+
+\prob $P(\text{both tails})$ \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{4}$}{Only TT is favorable. $1$ out of $4$ outcomes: $P = \frac{1}{4}$.}
+
+\prob $P(\text{exactly one head})$ \answerBlank[3cm]
+\answerExplain{$\dfrac{2}{4} = \dfrac{1}{2}$}{HT and TH both have exactly one head. $2$ out of $4$: $P = \frac{2}{4} = \frac{1}{2}$.}
+
+\prob $P(\text{at least one head})$ \answerBlank[3cm]
+\answerExplain{$\dfrac{3}{4}$}{HH, HT, and TH all have at least one head. $3$ out of $4$: $P = \frac{3}{4}$.}
+
+\prob $P(\text{no heads})$ \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{4}$}{Only TT has no heads. $1$ out of $4$: $P = \frac{1}{4}$. This is the same as $P(\text{both tails})$.}
+
+\end{practiceBox}
+
+% ── Practice A: Rolling Two Dice ─────────────────────────────────────────────
+\begin{practiceBox}{Rolling Two Dice}
+
+\practiceHeader{Two standard dice are rolled. The sample space has $36$ outcomes. Find each probability as a simplified fraction.}
+
+\prob $P(\text{sum} = 7)$ \answerBlank[3cm]
+\answerExplain{$\dfrac{6}{36} = \dfrac{1}{6}$}{Favorable: $(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)$ — that is $6$ outcomes. $P = \frac{6}{36} = \frac{1}{6}$.}
+
+\prob $P(\text{sum} = 2)$ \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{36}$}{Only $(1,1)$ gives a sum of $2$. $P = \frac{1}{36}$.}
+
+\prob $P(\text{sum} = 12)$ \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{36}$}{Only $(6,6)$ gives a sum of $12$. $P = \frac{1}{36}$.}
+
+\prob $P(\text{sum} > 10)$ \answerBlank[3cm]
+\answerExplain{$\dfrac{3}{36} = \dfrac{1}{12}$}{Sums $> 10$: sum $11$ has $(5,6), (6,5)$ and sum $12$ has $(6,6)$. That is $3$ outcomes. $P = \frac{3}{36} = \frac{1}{12}$.}
+
+\prob $P(\text{doubles, i.e., both dice show the same number})$ \answerBlank[3cm]
+\answerExplain{$\dfrac{6}{36} = \dfrac{1}{6}$}{Doubles: $(1,1), (2,2), (3,3), (4,4), (5,5), (6,6)$ — that is $6$ outcomes. $P = \frac{6}{36} = \frac{1}{6}$.}
+
+\prob $P(\text{sum is even})$ \answerBlank[3cm]
+\answerExplain{$\dfrac{18}{36} = \dfrac{1}{2}$}{Even sums: $2, 4, 6, 8, 10, 12$. Counting all pairs: $1 + 3 + 5 + 5 + 3 + 1 = 18$ out of $36$. $P = \frac{18}{36} = \frac{1}{2}$.}
+
+\end{practiceBox}
+
+% ── Practice B: Mixed Compound Events ────────────────────────────────────────
+\begin{practiceBox}[funTeal]{Mixed Compound Events}
+
+\prob You flip a coin and spin a spinner with sections $1$, $2$, $3$. What is $P(\text{heads and } 3)$? \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{6}$}{Total outcomes: $2 \times 3 = 6$. Only one outcome is (H, 3). $P = \frac{1}{6}$.}
+
+\prob You flip a coin and spin a spinner with sections $1$, $2$, $3$. What is $P(\text{tails and even number})$? \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{6}$}{Even numbers on spinner: only $2$. So the favorable outcome is (T, 2). That is $1$ out of $6$: $P = \frac{1}{6}$.}
+
+\prob A bag has $3$ red and $2$ blue marbles. You draw one, replace it, and draw again. What is $P(\text{red both times})$? \answerBlank[3cm]
+\answerExplain{$\dfrac{9}{25}$}{With replacement, each draw is independent. $P(\text{red}) = \frac{3}{5}$ each time. $P = \frac{3}{5} \times \frac{3}{5} = \frac{9}{25}$.}
+
+\prob Using the same bag, what is $P(\text{blue then red})$? \answerBlank[3cm]
+\answerExplain{$\dfrac{6}{25}$}{$P(\text{blue}) = \frac{2}{5}$ and $P(\text{red}) = \frac{3}{5}$. With replacement: $P = \frac{2}{5} \times \frac{3}{5} = \frac{6}{25}$.}
+
+\prob A coin is flipped $3$ times. What is $P(\text{all heads})$? \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{8}$}{Each flip: $P(\text{H}) = \frac{1}{2}$. Three flips: $P = \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} = \frac{1}{8}$. Only $1$ out of $8$ outcomes is HHH.}
+
+\end{practiceBox}
+
+% ── Practice C: True or False ────────────────────────────────────────────────
+\begin{practiceBox}[funPurple]{True or False?}
+
+\trueOrFalse{The probability of rolling a sum of $7$ on two dice is $\dfrac{1}{7}$.}
+\answerExplain{False}{There are $6$ ways to make $7$ out of $36$ total outcomes: $P = \frac{6}{36} = \frac{1}{6}$, not $\frac{1}{7}$.}
+
+\trueOrFalse{When flipping $3$ coins, $P(\text{at least one heads})$ is greater than $P(\text{all tails})$.}
+\answerExplain{True}{$P(\text{all tails}) = \frac{1}{8}$, so $P(\text{at least one heads}) = 1 - \frac{1}{8} = \frac{7}{8}$, which is much larger.}
+
+\trueOrFalse{If two events are independent, you multiply their probabilities to find $P(\text{both})$.}
+\answerExplain{True}{For independent events, $P(A \text{ and } B) = P(A) \times P(B)$. Neither event affects the other's probability.}
+
+\trueOrFalse{Rolling a sum of $1$ on two standard dice is possible.}
+\answerExplain{False}{The smallest possible sum is $1 + 1 = 2$. There is no way to get a sum of $1$, so $P = 0$.}
+
+\end{practiceBox}
+
+% ── Word Problems ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funBlue]{\faGlobe~Word Problems}
+
+\wordProblem{A restaurant offers $3$ appetizers and $5$ main courses. If a customer picks one of each at random, what is the probability of choosing the soup appetizer and the pasta main course?}{}
+\answerExplain{$\dfrac{1}{15}$}{Total meals: $3 \times 5 = 15$. Only $1$ combination is soup-and-pasta. $P = \frac{1}{15}$.}
+
+\wordProblem{Two students each randomly pick a number from $1$ to $4$. What is the probability they pick the same number?}{}
+\answerExplain{$\dfrac{4}{16} = \dfrac{1}{4}$}{Total outcomes: $4 \times 4 = 16$. Same-number outcomes: $(1,1), (2,2), (3,3), (4,4)$ — that is $4$. $P = \frac{4}{16} = \frac{1}{4}$.}
+
+\wordProblem{A bag contains $4$ red and $6$ blue marbles. You draw one marble, replace it, and draw again. What is the probability that both marbles are blue?}{}
+\answerExplain{$\dfrac{36}{100} = \dfrac{9}{25}$}{$P(\text{blue}) = \frac{6}{10} = \frac{3}{5}$ each draw. $P(\text{both blue}) = \frac{3}{5} \times \frac{3}{5} = \frac{9}{25}$.}
+
+\end{practiceBox}
+
+% ── Challenge ────────────────────────────────────────────────────────────────
+\begin{challengeBox}
+\prob Two standard dice are rolled. What is the probability that the sum is a prime number? (Hint: the possible sums are $2$–$12$. The prime numbers in that range are $2, 3, 5, 7, 11$.) \answerBlank[4cm]
+\answerExplain{$\dfrac{15}{36} = \dfrac{5}{12}$}{Count favorable: sum $2$: $1$; sum $3$: $2$; sum $5$: $4$; sum $7$: $6$; sum $11$: $2$. Total: $1+2+4+6+2 = 15$ out of $36$. $P = \frac{15}{36} = \frac{5}{12}$.}
+
+\prob You roll a die and flip a coin. What is the probability of getting an even number \emph{and} tails? \answerBlank[3cm]
+\answerExplain{$\dfrac{3}{12} = \dfrac{1}{4}$}{Even numbers on a die: $2, 4, 6$ ($3$ options). Tails: $1$ option. Favorable: $3 \times 1 = 3$ out of $6 \times 2 = 12$ total outcomes. $P = \frac{3}{12} = \frac{1}{4}$.}
+\end{challengeBox}
+
+\encouragement{Amazing progress! You can now calculate the probability of any compound event by counting outcomes!}

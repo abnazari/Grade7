@@ -1,0 +1,151 @@
+% ============================================================================
+% WORKBOOK — Section 9.5: Sample Spaces for Compound Events
+% CCSS 7.SP.C.8a
+% Practice-focused reinforcement for the study guide topic
+% ============================================================================
+\section{Sample Spaces for Compound Events}
+\topicTitle{Sample Spaces for Compound Events}
+
+\begin{quickReview}{Sample Spaces for Compound Events}
+A \textbf{compound event} consists of two or more simple events happening together. The \textbf{sample space} is the set of all possible outcomes.
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Organized list}: Write every outcome in a logical order.
+    \item \textbf{Table}: Rows for one event, columns for the other.
+    \item \textbf{Tree diagram}: Branch out from each outcome of the first event to every outcome of the second.
+    \item \textbf{Counting principle}: If event A has $m$ outcomes and event B has $n$ outcomes, the total number of outcomes is $m \times n$.
+\end{itemize}
+
+\medskip
+\textbf{Example:} Flip a coin and roll a die. Coin: $2$ outcomes. Die: $6$ outcomes. Total: $2 \times 6 = 12$ outcomes (H1, H2, H3, H4, H5, H6, T1, T2, T3, T4, T5, T6).
+\end{quickReview}
+
+% ── Warm-Up ──────────────────────────────────────────────────────────────────
+\begin{practiceBox}[funGreen]{\faSun~Warm-Up}
+
+\practiceHeader[funGreen]{Count the Outcomes}
+Use the counting principle: total outcomes $= m \times n$.
+
+\begin{multicols}{2}
+\prob Flip a coin and roll a die. How many outcomes? \answerBlank[2cm]
+\answerExplain{$12$}{Coin: $2$ outcomes. Die: $6$ outcomes. Total: $2 \times 6 = 12$.}
+
+\prob Roll two dice. How many outcomes? \answerBlank[2cm]
+\answerExplain{$36$}{Die 1: $6$ outcomes. Die 2: $6$ outcomes. Total: $6 \times 6 = 36$.}
+
+\prob Flip three coins. How many outcomes? \answerBlank[2cm]
+\answerExplain{$8$}{Each coin: $2$ outcomes. Total: $2 \times 2 \times 2 = 8$.}
+
+\prob Choose a shirt (red, blue, white) and pants (jeans, khakis). How many outfits? \answerBlank[2cm]
+\answerExplain{$6$}{Shirts: $3$ choices. Pants: $2$ choices. Total: $3 \times 2 = 6$ outfits.}
+
+\prob Pick a marble (red, blue) then flip a coin. How many outcomes? \answerBlank[2cm]
+\answerExplain{$4$}{Marbles: $2$ options. Coin: $2$ outcomes. Total: $2 \times 2 = 4$.}
+
+\prob Choose an appetizer ($3$ options) and a main course ($4$ options). How many meals? \answerBlank[2cm]
+\answerExplain{$12$}{Appetizers: $3$. Main courses: $4$. Total: $3 \times 4 = 12$ meals.}
+\end{multicols}
+\end{practiceBox}
+
+% ── Practice A: List All Outcomes ────────────────────────────────────────────
+\begin{practiceBox}{Listing Sample Spaces}
+
+\practiceHeader{List all outcomes for each compound event.}
+
+\prob Flip two coins. List all outcomes. \answerBlank[5cm]
+\answerExplain{HH, HT, TH, TT}{Each coin can land H or T. Use organized listing: HH, HT, TH, TT. That is $2 \times 2 = 4$ outcomes.}
+
+\prob A bag has a red (R) and a blue (B) marble. You draw one, replace it, and draw again. List all outcomes. \answerBlank[5cm]
+\answerExplain{RR, RB, BR, BB}{First draw: R or B. Second draw: R or B. Outcomes: RR, RB, BR, BB ($4$ total).}
+
+\prob A spinner has sections labeled $1$, $2$, $3$. You spin and then flip a coin. List all outcomes. \answerBlank[5cm]
+\answerExplain{1H, 1T, 2H, 2T, 3H, 3T}{Spinner: $3$ sections. Coin: $2$ outcomes. Total: $3 \times 2 = 6$. Outcomes: 1H, 1T, 2H, 2T, 3H, 3T.}
+
+\prob You pick a card (Ace, King) and roll a die (even or odd result). List all outcomes. \answerBlank[5cm]
+\answerExplain{A-Even, A-Odd, K-Even, K-Odd}{Cards: $2$ options (A, K). Die result: even or odd. Total: $2 \times 2 = 4$ outcomes.}
+
+\end{practiceBox}
+
+% ── Practice B: Tables ───────────────────────────────────────────────────────
+\begin{practiceBox}[funTeal]{Using Tables}
+
+\practiceHeader[funTeal]{Use the table to answer the questions. The table shows outcomes of rolling two dice.}
+
+\prob Complete the table by writing the \textbf{sum} for each pair.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$+$ & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\
+\hline
+\textbf{1} & 2 & 3 & 4 & 5 & 6 & 7 \\
+\hline
+\textbf{2} & 3 & 4 & 5 & 6 & 7 & 8 \\
+\hline
+\textbf{3} & 4 & 5 & 6 & 7 & 8 & 9 \\
+\hline
+\textbf{4} & 5 & 6 & 7 & 8 & 9 & 10 \\
+\hline
+\textbf{5} & 6 & 7 & 8 & 9 & 10 & 11 \\
+\hline
+\textbf{6} & 7 & 8 & 9 & 10 & 11 & 12 \\
+\hline
+\end{tabular}
+\end{center}
+
+\answerExplain{Table completed above}{Each cell contains the sum of the row and column numbers. The smallest sum is $2$ (from $1+1$) and the largest is $12$ (from $6+6$).}
+
+\prob How many total outcomes are in the sample space? \answerBlank[3cm]
+\answerExplain{$36$}{The table has $6$ rows $\times$ $6$ columns $= 36$ cells. Each cell is one outcome.}
+
+\prob How many outcomes give a sum of $7$? List them. \answerBlank[5cm]
+\answerExplain{$6$ outcomes: $(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)$}{Count the cells with sum $7$ in the table. They appear along a diagonal: $(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)$.}
+
+\prob How many outcomes give a sum of $2$? \answerBlank[3cm]
+\answerExplain{$1$ outcome: $(1,1)$}{The only way to get a sum of $2$ is $1 + 1$. There is exactly $1$ such cell in the table.}
+
+\prob What is the most common sum? How many ways can it occur? \answerBlank[4cm]
+\answerExplain{$7$; it occurs $6$ ways}{Sum $7$ has the most outcomes ($6$), making it the most common. Sums near the middle ($6, 7, 8$) have more combinations than extreme sums ($2, 12$).}
+
+\end{practiceBox}
+
+% ── Practice C: Tree Diagrams ────────────────────────────────────────────────
+\begin{practiceBox}[funOrange]{Tree Diagram Thinking}
+
+\practiceHeader[funOrange]{Answer each question about tree diagrams.}
+
+\prob You flip a coin, then spin a spinner with sections A, B, C. How many branches does the full tree have at the end? \answerBlank[3cm]
+\answerExplain{$6$ branches}{First level: $2$ branches (H, T). Each splits into $3$ (A, B, C). Total end branches: $2 \times 3 = 6$.}
+
+\prob A lunch menu offers $2$ sandwiches (ham, turkey) and $3$ drinks (water, juice, milk). How many end branches does a tree diagram have? \answerBlank[3cm]
+\answerExplain{$6$ branches}{Sandwiches: $2$ choices. Drinks: $3$ choices. Total: $2 \times 3 = 6$ possible lunches.}
+
+\prob A tree diagram shows $4$ branches at level 1 and $3$ branches from each at level 2. How many outcomes total? \answerBlank[3cm]
+\answerExplain{$12$}{Each of the $4$ first-level branches splits into $3$: $4 \times 3 = 12$ total outcomes.}
+
+\end{practiceBox}
+
+% ── True or False ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funPurple]{True or False?}
+
+\trueOrFalse{If you flip $4$ coins, the sample space has $16$ outcomes.}
+\answerExplain{True}{Each coin has $2$ outcomes. Total: $2^4 = 16$ outcomes. Using the counting principle, $2 \times 2 \times 2 \times 2 = 16$.}
+
+\trueOrFalse{Rolling a $3$ then a $5$ is the same outcome as rolling a $5$ then a $3$.}
+\answerExplain{False}{Order matters when listing outcomes. $(3, 5)$ and $(5, 3)$ are two different outcomes in the sample space.}
+
+\trueOrFalse{A table is always the best way to represent a sample space.}
+\answerExplain{False}{Tables work well for two events, but tree diagrams or organized lists may be better for three or more events. Choose the method that best fits the problem.}
+
+\end{practiceBox}
+
+% ── Challenge ────────────────────────────────────────────────────────────────
+\begin{challengeBox}
+\prob A pizza shop offers $3$ sizes (small, medium, large), $2$ crusts (thin, thick), and $4$ toppings. How many different single-topping pizzas are possible? \answerBlank[3cm]
+\answerExplain{$24$ pizzas}{Use the counting principle: $3 \times 2 \times 4 = 24$ different pizzas.}
+
+\prob You roll a die three times. How many outcomes are in the sample space? \answerBlank[3cm]
+\answerExplain{$216$}{Each roll has $6$ outcomes. Total: $6 \times 6 \times 6 = 6^3 = 216$.}
+\end{challengeBox}
+
+\encouragement{Excellent work mapping out sample spaces! You can now organize any compound event like a pro!}

@@ -1,0 +1,132 @@
+% ============================================================================
+% WORKBOOK — Section 9.2: Theoretical Probability
+% CCSS 7.SP.C.7a
+% Practice-focused reinforcement for the study guide topic
+% ============================================================================
+\section{Theoretical Probability}
+\topicTitle{Theoretical Probability}
+
+\begin{quickReview}{Theoretical Probability}
+\textbf{Theoretical probability} uses the formula:
+$$P(\text{event}) = \frac{\text{number of favorable outcomes}}{\text{total number of outcomes}}$$
+
+\begin{itemize}[leftmargin=*]
+    \item All outcomes must be \textbf{equally likely} for this formula to work.
+    \item A \textbf{uniform probability model} assigns equal probability to every outcome.
+    \item The sum of the probabilities of all outcomes always equals $1$.
+\end{itemize}
+
+\medskip
+\textbf{Example:} A standard die has $6$ equally likely outcomes. The probability of rolling an even number is $P = \dfrac{3}{6} = \dfrac{1}{2}$ because $3$ of the $6$ outcomes ($2, 4, 6$) are even.
+\end{quickReview}
+
+% ── Warm-Up ──────────────────────────────────────────────────────────────────
+\begin{practiceBox}[funGreen]{\faSun~Warm-Up}
+
+\practiceHeader[funGreen]{Standard Die Probabilities}
+A standard die has faces numbered $1$–$6$. Find each probability as a fraction.
+
+\begin{multicols}{2}
+\prob $P(\text{rolling a } 3)$ \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{6}$}{There is $1$ favorable outcome (rolling $3$) out of $6$ total outcomes: $P = \frac{1}{6}$.}
+
+\prob $P(\text{rolling an odd number})$ \answerBlank[3cm]
+\answerExplain{$\dfrac{3}{6} = \dfrac{1}{2}$}{Odd numbers on a die: $1, 3, 5$. That is $3$ out of $6$: $P = \frac{3}{6} = \frac{1}{2}$.}
+
+\prob $P(\text{rolling a number} \leq 4)$ \answerBlank[3cm]
+\answerExplain{$\dfrac{4}{6} = \dfrac{2}{3}$}{Numbers $\leq 4$: $1, 2, 3, 4$. That is $4$ out of $6$: $P = \frac{4}{6} = \frac{2}{3}$.}
+
+\prob $P(\text{rolling a } 1 \text{ or } 6)$ \answerBlank[3cm]
+\answerExplain{$\dfrac{2}{6} = \dfrac{1}{3}$}{Two favorable outcomes ($1$ or $6$) out of $6$: $P = \frac{2}{6} = \frac{1}{3}$.}
+
+\prob $P(\text{rolling a number} > 0)$ \answerBlank[3cm]
+\answerExplain{$\dfrac{6}{6} = 1$}{Every face ($1$–$6$) is greater than $0$, so all $6$ outcomes are favorable: $P = \frac{6}{6} = 1$.}
+
+\prob $P(\text{rolling an } 8)$ \answerBlank[3cm]
+\answerExplain{$0$}{A standard die has no $8$, so there are $0$ favorable outcomes: $P = \frac{0}{6} = 0$.}
+\end{multicols}
+\end{practiceBox}
+
+% ── Practice A: Deck of Cards ────────────────────────────────────────────────
+\begin{practiceBox}{Drawing from a Deck of Cards}
+
+\practiceHeader{A standard deck has $52$ cards: $4$ suits (hearts, diamonds, clubs, spades), each with $13$ cards (Ace–$10$, Jack, Queen, King). Find each probability as a simplified fraction.}
+
+\prob $P(\text{drawing a heart})$ \answerBlank[3cm]
+\answerExplain{$\dfrac{13}{52} = \dfrac{1}{4}$}{There are $13$ hearts in $52$ cards: $P = \frac{13}{52} = \frac{1}{4}$.}
+
+\prob $P(\text{drawing a King})$ \answerBlank[3cm]
+\answerExplain{$\dfrac{4}{52} = \dfrac{1}{13}$}{There are $4$ Kings (one per suit) in $52$ cards: $P = \frac{4}{52} = \frac{1}{13}$.}
+
+\prob $P(\text{drawing a red card})$ \answerBlank[3cm]
+\answerExplain{$\dfrac{26}{52} = \dfrac{1}{2}$}{Hearts and diamonds are red: $13 + 13 = 26$ red cards out of $52$: $P = \frac{26}{52} = \frac{1}{2}$.}
+
+\prob $P(\text{drawing a number card } 2\text{--}10)$ \answerBlank[3cm]
+\answerExplain{$\dfrac{36}{52} = \dfrac{9}{13}$}{Each suit has $9$ number cards ($2$–$10$). Total: $9 \times 4 = 36$. $P = \frac{36}{52} = \frac{9}{13}$.}
+
+\prob $P(\text{drawing a face card: J, Q, or K})$ \answerBlank[3cm]
+\answerExplain{$\dfrac{12}{52} = \dfrac{3}{13}$}{Each suit has $3$ face cards. Total: $3 \times 4 = 12$. $P = \frac{12}{52} = \frac{3}{13}$.}
+
+\prob $P(\text{drawing a club or a diamond})$ \answerBlank[3cm]
+\answerExplain{$\dfrac{26}{52} = \dfrac{1}{2}$}{Clubs: $13$, Diamonds: $13$. Total: $26$ out of $52$: $P = \frac{26}{52} = \frac{1}{2}$.}
+
+\end{practiceBox}
+
+% ── Practice B: Marbles and Spinners ─────────────────────────────────────────
+\begin{practiceBox}[funTeal]{Marbles and Spinners}
+
+\prob A bag has $4$ red, $6$ blue, and $10$ white marbles. What is $P(\text{blue})$? \answerBlank[3cm]
+\answerExplain{$\dfrac{6}{20} = \dfrac{3}{10}$}{Total marbles: $4 + 6 + 10 = 20$. Blue: $6$ out of $20$: $P = \frac{6}{20} = \frac{3}{10}$.}
+
+\prob Using the same bag, what is $P(\text{not white})$? \answerBlank[3cm]
+\answerExplain{$\dfrac{10}{20} = \dfrac{1}{2}$}{Not white means red or blue: $4 + 6 = 10$ out of $20$: $P = \frac{10}{20} = \frac{1}{2}$.}
+
+\prob A spinner has $5$ equal sections: red, blue, green, yellow, and purple. What is $P(\text{green})$? \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{5}$}{All $5$ sections are equally likely. Green is $1$ section: $P = \frac{1}{5}$.}
+
+\prob Using the same spinner, what is $P(\text{red or yellow})$? \answerBlank[3cm]
+\answerExplain{$\dfrac{2}{5}$}{Two favorable sections (red or yellow) out of $5$ equally likely: $P = \frac{2}{5}$.}
+
+\prob A jar has $8$ green and $2$ orange gumballs. What is $P(\text{orange})$? \answerBlank[3cm]
+\answerExplain{$\dfrac{2}{10} = \dfrac{1}{5}$}{Total gumballs: $8 + 2 = 10$. Orange: $2$ out of $10$: $P = \frac{2}{10} = \frac{1}{5}$.}
+
+\end{practiceBox}
+
+% ── Practice C: True or False ────────────────────────────────────────────────
+\begin{practiceBox}[funPurple]{True or False?}
+
+\trueOrFalse{In a uniform probability model, every outcome has the same probability.}
+\answerExplain{True}{A uniform model assigns equal probability to all outcomes. For example, each face of a fair die has probability $\frac{1}{6}$.}
+
+\trueOrFalse{The probability of rolling an even number on a standard die is $\dfrac{1}{3}$.}
+\answerExplain{False}{Even numbers: $2, 4, 6$, that is $3$ out of $6$ outcomes. $P = \frac{3}{6} = \frac{1}{2}$, not $\frac{1}{3}$.}
+
+\trueOrFalse{If a bag has $7$ red marbles and $3$ blue marbles, $P(\text{red}) + P(\text{blue}) = 1$.}
+\answerExplain{True}{$P(\text{red}) = \frac{7}{10}$ and $P(\text{blue}) = \frac{3}{10}$. Together: $\frac{7}{10} + \frac{3}{10} = 1$. The probabilities of all outcomes always sum to $1$.}
+
+\trueOrFalse{You can use the theoretical probability formula even when outcomes are not equally likely.}
+\answerExplain{False}{The formula $P = \frac{\text{favorable}}{\text{total}}$ only works when all outcomes are equally likely. For unequal outcomes, you need a different approach.}
+
+\end{practiceBox}
+
+% ── Word Problems ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funBlue]{\faGlobe~Word Problems}
+
+\wordProblem{A class has $14$ boys and $16$ girls. If the teacher picks one student at random, what is the probability of picking a girl?}{}
+\answerExplain{$\dfrac{16}{30} = \dfrac{8}{15}$}{Total students: $14 + 16 = 30$. Girls: $16$ out of $30$: $P = \frac{16}{30} = \frac{8}{15}$.}
+
+\wordProblem{A gumball machine has $25$ gumballs: $10$ red, $8$ blue, and $7$ yellow. What is the probability of getting a red or yellow gumball?}{}
+\answerExplain{$\dfrac{17}{25}$}{Red or yellow: $10 + 7 = 17$ favorable outcomes out of $25$: $P = \frac{17}{25}$.}
+
+\end{practiceBox}
+
+% ── Challenge ────────────────────────────────────────────────────────────────
+\begin{challengeBox}
+\prob The letters of the word PROBABILITY are placed in a bag. What is the probability of drawing the letter B? \answerBlank[3cm]
+\answerExplain{$\dfrac{2}{11}$}{PROBABILITY has $11$ letters. The letter B appears $2$ times. $P = \frac{2}{11}$.}
+
+\prob A box holds all $26$ letters of the alphabet. You draw one letter. What is the probability that it is a vowel (A, E, I, O, U)? \answerBlank[3cm]
+\answerExplain{$\dfrac{5}{26}$}{There are $5$ vowels (A, E, I, O, U) out of $26$ letters: $P = \frac{5}{26}$.}
+\end{challengeBox}
+
+\encouragement{Fantastic work with theoretical probability! You can now predict the chances of any equally likely event!}

@@ -1,0 +1,117 @@
+% ============================================================================
+% WORKBOOK — Section 9.1: What Is Probability?
+% CCSS 7.SP.C.5
+% Practice-focused reinforcement for the study guide topic
+% ============================================================================
+\section{What Is Probability?}
+\topicTitle{What Is Probability?}
+
+\begin{quickReview}{What Is Probability?}
+\textbf{Probability} measures how likely an event is to happen. It is always a number from $0$ to $1$ (or $0\%$ to $100\%$).
+
+\begin{itemize}[leftmargin=*]
+    \item $P = 0$ means the event is \textbf{impossible} (it can never happen).
+    \item $P = 1$ means the event is \textbf{certain} (it will always happen).
+    \item $P = 0.5$ means the event is \textbf{equally likely} to happen or not happen.
+    \item The closer $P$ is to $1$, the \textbf{more likely} the event; the closer to $0$, the \textbf{less likely}.
+\end{itemize}
+
+\medskip
+\textbf{Example:} A bag has $3$ red and $7$ blue marbles. The probability of picking red is $\dfrac{3}{10} = 0.3$, which is \emph{unlikely} but not impossible.
+\end{quickReview}
+
+% ── Warm-Up ──────────────────────────────────────────────────────────────────
+\begin{practiceBox}[funGreen]{\faSun~Warm-Up}
+
+\practiceHeader[funGreen]{Classify Each Probability}
+Write whether the probability describes an \textbf{impossible}, \textbf{unlikely}, \textbf{equally likely}, \textbf{likely}, or \textbf{certain} event.
+
+\prob $P = 0$ \answerBlank[3cm]
+\answerExplain{Impossible}{A probability of $0$ means the event can never happen — it is impossible.}
+
+\prob $P = 1$ \answerBlank[3cm]
+\answerExplain{Certain}{A probability of $1$ means the event will always happen — it is certain.}
+
+\prob $P = 0.5$ \answerBlank[3cm]
+\answerExplain{Equally likely}{A probability of $0.5$ means the event is just as likely to happen as not.}
+
+\prob $P = 0.9$ \answerBlank[3cm]
+\answerExplain{Likely}{A probability of $0.9$ is close to $1$, so the event is very likely to happen.}
+
+\prob $P = 0.15$ \answerBlank[3cm]
+\answerExplain{Unlikely}{A probability of $0.15$ is close to $0$, so the event is unlikely to happen.}
+
+\prob $P = 0.75$ \answerBlank[3cm]
+\answerExplain{Likely}{A probability of $0.75$ means the event happens about $3$ out of $4$ times, so it is likely.}
+
+\end{practiceBox}
+
+% ── Practice A: Assigning Probabilities ──────────────────────────────────────
+\begin{practiceBox}{Assigning Probabilities}
+
+\practiceHeader{Write a probability (as a fraction or decimal) for each event.}
+
+\prob What is the probability of flipping heads on a fair coin? \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{2}$ or $0.5$}{A fair coin has $2$ equally likely outcomes. One is heads, so $P = \frac{1}{2} = 0.5$.}
+
+\prob What is the probability of rolling a $4$ on a standard die? \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{6}$}{A standard die has $6$ equally likely outcomes. One of them is $4$, so $P = \frac{1}{6}$.}
+
+\prob A bag has $5$ green and $5$ yellow marbles. What is the probability of picking green? \answerBlank[3cm]
+\answerExplain{$\dfrac{1}{2}$ or $0.5$}{There are $5$ green out of $10$ total marbles: $P = \frac{5}{10} = \frac{1}{2} = 0.5$.}
+
+\prob What is the probability of rolling a $7$ on a standard die? \answerBlank[3cm]
+\answerExplain{$0$}{A standard die only shows $1$–$6$. Rolling a $7$ is impossible, so $P = 0$.}
+
+\prob A bag contains only red marbles. What is the probability of picking a red marble? \answerBlank[3cm]
+\answerExplain{$1$}{Every marble in the bag is red, so picking a red marble is certain: $P = 1$.}
+
+\prob A spinner has $8$ equal sections numbered $1$–$8$. What is the probability of landing on $5$ or $6$? \answerBlank[3cm]
+\answerExplain{$\dfrac{2}{8} = \dfrac{1}{4}$}{Two favorable outcomes ($5$ or $6$) out of $8$ equally likely sections: $P = \frac{2}{8} = \frac{1}{4}$.}
+
+\end{practiceBox}
+
+% ── Practice B: True or False ────────────────────────────────────────────────
+\begin{practiceBox}[funPurple]{True or False?}
+
+\trueOrFalse{A probability can be $1.5$.}
+\answerExplain{False}{Probability is always between $0$ and $1$, inclusive. A value of $1.5$ is greater than $1$, so it cannot be a probability.}
+
+\trueOrFalse{An event with probability $0.01$ is unlikely but not impossible.}
+\answerExplain{True}{A probability of $0.01$ is very close to $0$ but not equal to $0$, so the event is unlikely yet still possible.}
+
+\trueOrFalse{If you flip a fair coin, the probability of tails is $0.5$.}
+\answerExplain{True}{A fair coin has two equally likely outcomes. The probability of tails is $\frac{1}{2} = 0.5$.}
+
+\trueOrFalse{An event with probability $0$ might still happen.}
+\answerExplain{False}{A probability of $0$ means the event is impossible — it can never occur.}
+
+\end{practiceBox}
+
+% ── Practice C: Word Problems ────────────────────────────────────────────────
+\begin{practiceBox}[funBlue]{\faGlobe~Word Problems}
+
+\wordProblem{A weather report says there is an $80\%$ chance of rain tomorrow. Express this probability as a decimal and describe the likelihood.}{}
+\answerExplain{$0.8$; likely}{$80\% = 0.80$. Since $0.8$ is close to $1$, rain is likely to occur.}
+
+\wordProblem{A jar contains $2$ red, $3$ blue, and $5$ white marbles. You pick one marble without looking. What is the probability of picking a blue marble?}{}
+\answerExplain{$\dfrac{3}{10}$ or $0.3$}{There are $3$ blue marbles out of $2 + 3 + 5 = 10$ total. $P = \frac{3}{10} = 0.3$.}
+
+\wordProblem{A game show wheel has $20$ equal sections. One section is labeled ``Grand Prize.'' What is the probability of landing on the Grand Prize?}{}
+\answerExplain{$\dfrac{1}{20}$ or $0.05$}{There is $1$ Grand Prize section out of $20$ equally likely sections: $P = \frac{1}{20} = 0.05$.}
+
+\wordProblem{A box has $12$ chocolates: $4$ dark, $4$ milk, and $4$ white. What is the probability of picking a milk or a white chocolate?}{}
+\answerExplain{$\dfrac{8}{12} = \dfrac{2}{3}$}{Milk or white: $4 + 4 = 8$ favorable outcomes out of $12$ total. $P = \frac{8}{12} = \frac{2}{3}$.}
+
+\end{practiceBox}
+
+% ── Challenge ────────────────────────────────────────────────────────────────
+\begin{challengeBox}
+\prob A bag has some red and some blue marbles. The probability of picking red is $\dfrac{3}{8}$. If there are $24$ marbles total, how many are red and how many are blue? \answerBlank[4cm]
+\answerExplain{$9$ red, $15$ blue}{If $P(\text{red}) = \frac{3}{8}$, then the number of red marbles is $\frac{3}{8} \times 24 = 9$. Blue: $24 - 9 = 15$.}
+
+\prob An event has a probability of $\dfrac{2}{5}$. What is the probability that the event does \emph{not} happen? \answerBlank[3cm]
+\answerExplain{$\dfrac{3}{5}$}{The probability of an event not happening is $1 - P(\text{event}) = 1 - \frac{2}{5} = \frac{3}{5}$. The probabilities of an event and its complement always add to $1$.}
+\end{challengeBox}
+
+\encouragement{Awesome work! You now understand the language of probability — the foundation for everything in this chapter!}

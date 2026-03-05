@@ -1,0 +1,411 @@
+\ansChap{1}
+\ansSec{1.1}
+\ansItem{1}{$-6$}
+\ansExplain{1}{The opposite of a positive number is negative. Since $6$ is $6$ units right of $0$, its opposite is $6$ units left of $0$, which is $-6$.}
+\ansItem{2}{$10$}
+\ansExplain{2}{The opposite of a negative number is positive. $-10$ is $10$ units left of $0$, so its opposite is $10$ units right of $0$, which is $10$.}
+\ansItem{3}{$0$}
+\ansExplain{3}{Zero is its own opposite. It sits at the center of the number line and is the same distance ($0$ units) from itself on both sides.}
+\ansItem{4}{$14$}
+\ansExplain{4}{Absolute value measures distance from $0$. Since $-14$ is $14$ units from $0$, $|{-14}| = 14$.}
+\ansItem{5}{$23$}
+\ansExplain{5}{Absolute value measures distance from $0$. Since $23$ is $23$ units from $0$, $|23| = 23$.}
+\ansItem{6}{$0$}
+\ansExplain{6}{A number plus its opposite always equals $0$. Since $8$ and $-8$ are opposites, $8 + (-8) = 0$.}
+\ansItem{7}{$25$}
+\ansExplain{7}{The opposite of $-25$ is the number the same distance from $0$ on the positive side, which is $25$.}
+\ansItem{8}{$-17$}
+\ansExplain{8}{The opposite of $17$ is the number the same distance from $0$ on the negative side, which is $-17$.}
+\ansItem{9}{$100$}
+\ansExplain{9}{The opposite of $-100$ is $100$. Both are $100$ units from $0$ on opposite sides of the number line.}
+\ansItem{10}{$33$}
+\ansExplain{10}{Absolute value is distance from $0$. Since $-33$ is $33$ units from $0$, $|{-33}| = 33$.}
+\ansItem{11}{$0$}
+\ansExplain{11}{Zero is $0$ units from itself on the number line, so $|0| = 0$.}
+\ansItem{12}{$71$}
+\ansExplain{12}{Since $-71$ is $71$ units from $0$ on the number line, $|{-71}| = 71$.}
+\ansItem{13}{$<$}
+\ansExplain{13}{On the number line, $-5$ is to the left of $3$, so $-5 < 3$. Negative numbers are always less than positive numbers.}
+\ansItem{14}{$>$}
+\ansExplain{14}{$|{-8}| = 8$ and $|6| = 6$. Since $8 > 6$, we have $|{-8}| > |6|$.}
+\ansItem{15}{$<$}
+\ansExplain{15}{On the number line, $-12$ is farther left than $-4$, so $-12 < -4$. A more negative number is always less.}
+\ansItem{16}{$-7, \; -2, \; 0, \; 1, \; 3$}
+\ansExplain{16}{Place each number on a number line. From left to right: $-7$ is farthest left, then $-2$, then $0$, then $1$, then $3$.}
+\ansItem{17}{$-15, \; -8, \; -3, \; 8, \; 12$}
+\ansExplain{17}{Order negatives first (more negative = smaller): $-15 < -8 < -3$. Then the positives: $8 < 12$.}
+\ansItem{18}{$-10, \; -5, \; -1, \; 0, \; 5, \; 10$}
+\ansExplain{18}{Negatives from most negative to least: $-10, -5, -1$. Then $0$, and positives in order: $5, 10$.}
+\ansItem{19}{False}
+\ansExplain{19}{Absolute value measures distance, which is always zero or positive. It can never be negative.}
+\ansItem{20}{True}
+\ansExplain{20}{$|{-3}| = 3$ and $|2| = 2$. Since $3 > 2$, the number $-3$ is farther from $0$.}
+\ansItem{21}{True}
+\ansExplain{21}{By definition, the opposite of a positive integer $n$ is $-n$, which is negative.}
+\ansItem{22}{True}
+\ansExplain{22}{Both $-5$ and $5$ are $5$ units from $0$, so their absolute values are equal: $|{-5}| = 5 = |5|$.}
+\ansItem{23}{$0$ feet (sea level)}
+\ansExplain{23}{Rising $200$ feet from $-200$: $-200 + 200 = 0$. The submarine is at sea level because $-200$ and $200$ are opposites.}
+\ansItem{24}{Change of $8°$C; resulting temperature $0°$C}
+\ansExplain{24}{The opposite of $-8$ is $8$, so the temperature rose $8°$C. New temperature: $-8 + 8 = 0°$C.}
+\ansItem{25}{$8{,}849$ m and $-10{,}994$ m; Mariana Trench has greater absolute value}
+\ansExplain{25}{Everest: $+8{,}849$. Mariana Trench: $-10{,}994$. Compare: $|{-10{,}994}| = 10{,}994 > 8{,}849 = |8{,}849|$. The trench is farther from sea level.}
+\ansItem{26}{$x = 7$ or $x = -7$}
+\ansExplain{26}{Absolute value equals $7$ means the number is $7$ units from $0$. Two numbers are $7$ units from $0$: $7$ (to the right) and $-7$ (to the left).}
+\ansItem{27}{$a$ and $b$ are opposites ($a = -b$)}
+\ansExplain{27}{If two different numbers have the same absolute value, they are the same distance from $0$ but on opposite sides. That means one is the opposite of the other.}
+\ansSec{1.2}
+\ansItem{1}{$8$}
+\ansExplain{1}{Same signs (both positive), so add the absolute values: $5 + 3 = 8$. The result is positive.}
+\ansItem{2}{$-10$}
+\ansExplain{2}{Same signs (both negative), so add: $4 + 6 = 10$. Keep the negative sign: $-10$.}
+\ansItem{3}{$0$}
+\ansExplain{3}{These are additive inverses (opposites). A number plus its opposite always equals $0$.}
+\ansItem{4}{$5$}
+\ansExplain{4}{Different signs, so subtract: $8 - 3 = 5$. The larger absolute value ($8$) is positive, so the answer is $5$.}
+\ansItem{5}{$-3$}
+\ansExplain{5}{Different signs, so subtract: $10 - 7 = 3$. The larger absolute value ($10$) is negative, so the answer is $-3$.}
+\ansItem{6}{$-2$}
+\ansExplain{6}{Same signs (both negative), so add: $1 + 1 = 2$. Keep the negative sign: $-2$.}
+\ansItem{7}{$-20$}
+\ansExplain{7}{Same signs (both negative), so add absolute values: $12 + 8 = 20$. Keep the negative sign: $-20$.}
+\ansItem{8}{$38$}
+\ansExplain{8}{Same signs (both positive), so add: $15 + 23 = 38$. The result is positive.}
+\ansItem{9}{$-21$}
+\ansExplain{9}{Same signs (both negative), so add absolute values: $7 + 14 = 21$. Keep the negative sign: $-21$.}
+\ansItem{10}{$-55$}
+\ansExplain{10}{Same signs (both negative), so add: $25 + 30 = 55$. Keep the negative sign: $-55$.}
+\ansItem{11}{$-6$}
+\ansExplain{11}{Different signs, so subtract: $15 - 9 = 6$. The larger absolute value ($15$) is negative, so the answer is $-6$.}
+\ansItem{12}{$7$}
+\ansExplain{12}{Different signs, so subtract: $20 - 13 = 7$. The larger absolute value ($20$) is positive, so the answer is $7$.}
+\ansItem{13}{$-15$}
+\ansExplain{13}{Different signs, so subtract: $50 - 35 = 15$. The larger absolute value ($50$) is negative, so the answer is $-15$.}
+\ansItem{14}{$-7$}
+\ansExplain{14}{Different signs, so subtract: $18 - 11 = 7$. The larger absolute value ($18$) is negative, so the answer is $-7$.}
+\ansItem{15}{$0$}
+\ansExplain{15}{These are opposites (additive inverses), so their sum is $0$.}
+\ansItem{16}{$-55$}
+\ansExplain{16}{Different signs, so subtract: $100 - 45 = 55$. The larger absolute value ($100$) is negative, so the answer is $-55$.}
+\ansItem{17}{$0$}
+\ansExplain{17}{Add left to right: $(-4) + 7 = 3$. Then $3 + (-3) = 0$.}
+\ansItem{18}{$5$}
+\ansExplain{18}{Group positives: $5 + 10 = 15$. Group negatives: $(-8) + (-2) = -10$. Combine: $15 + (-10) = 5$.}
+\ansItem{19}{$-8$}
+\ansExplain{19}{Group negatives: $(-11) + (-3) + (-1) = -15$. Add the positive: $-15 + 7 = -8$.}
+\ansItem{20}{$0$}
+\ansExplain{20}{Notice the pairs of opposites: $6 + (-6) = 0$ and $(-9) + 9 = 0$. Total: $0 + 0 = 0$.}
+\ansItem{21}{True}
+\ansExplain{21}{When both integers are negative, you add their absolute values and keep the negative sign. The result is always negative.}
+\ansItem{22}{False}
+\ansExplain{22}{The sign of the sum depends on which number has the larger absolute value. For example, $10 + (-3) = 7$ is positive.}
+\ansItem{23}{True}
+\ansExplain{23}{$-4$ and $4$ are opposites (additive inverses). A number plus its opposite always equals $0$.}
+\ansItem{24}{$7°$C}
+\ansExplain{24}{Add the rise to the starting temperature: $(-5) + 12 = 7$. Different signs, subtract: $12 - 5 = 7$, positive because $12$ has the larger absolute value.}
+\ansItem{25}{$-3$ yards (a net loss of $3$ yards)}
+\ansExplain{25}{Gain = $+8$, loss = $-11$. Add: $8 + (-11) = -3$. Different signs, subtract: $11 - 8 = 3$. Negative because $11$ has the larger absolute value.}
+\ansItem{26}{Floor $0$ (ground level)}
+\ansExplain{26}{Start at $-2$. Go up $5$: $(-2) + 5 = 3$. Go down $3$: $3 + (-3) = 0$. The elevator is at ground level.}
+\ansItem{27}{$4$ and $-7$ (or $-7$ and $4$)}
+\ansExplain{27}{If $a + b = -3$ and $|a| + |b| = 11$, and the signs are different (since the sum is close to $0$), try $a = 4, b = -7$: $4 + (-7) = -3$ and $|4| + |{-7}| = 4 + 7 = 11$. \checkmark }
+\ansItem{28}{$-5, \; -4, \; -3$}
+\ansExplain{28}{Consecutive integers: $n, n+1, n+2$. Their sum: $3n + 3 = -12$, so $3n = -15$, $n = -5$. The integers are $-5, -4, -3$. Check: $(-5) + (-4) + (-3) = -12$. \checkmark }
+\ansSec{1.3}
+\ansItem{1}{$5$}
+\ansExplain{1}{Rewrite: $9 + (-4)$. Different signs, subtract: $9 - 4 = 5$. Positive because $9$ has the larger absolute value.}
+\ansItem{2}{$-4$}
+\ansExplain{2}{Rewrite: $3 + (-7)$. Different signs, subtract: $7 - 3 = 4$. Negative because $7$ has the larger absolute value.}
+\ansItem{3}{$-7$}
+\ansExplain{3}{Rewrite: $(-5) + (-2)$. Same signs (both negative), add: $5 + 2 = 7$. Keep negative: $-7$.}
+\ansItem{4}{$-5$}
+\ansExplain{4}{Rewrite: $(-8) + 3$. Different signs, subtract: $8 - 3 = 5$. Negative because $8$ has the larger absolute value: $-5$.}
+\ansItem{5}{$6$}
+\ansExplain{5}{Rewrite: $0 + 6 = 6$. Subtracting a negative is the same as adding its opposite.}
+\ansItem{6}{$0$}
+\ansExplain{6}{Rewrite: $(-10) + 10 = 0$. A number minus itself always equals $0$.}
+\ansItem{7}{$-8$}
+\ansExplain{7}{Rewrite: $12 + (-20)$. Different signs, subtract: $20 - 12 = 8$. Negative because $20$ is larger: $-8$.}
+\ansItem{8}{$-20$}
+\ansExplain{8}{Rewrite: $(-14) + (-6)$. Same signs, add: $14 + 6 = 20$. Keep negative: $-20$.}
+\ansItem{9}{$6$}
+\ansExplain{9}{Rewrite: $(-9) + 15$. Different signs, subtract: $15 - 9 = 6$. Positive because $15$ is larger.}
+\ansItem{10}{$33$}
+\ansExplain{10}{Rewrite: $25 + 8 = 33$. Subtracting a negative adds the positive value.}
+\ansItem{11}{$0$}
+\ansExplain{11}{Rewrite: $(-30) + 30 = 0$. Any number minus itself is $0$.}
+\ansItem{12}{$-12$}
+\ansExplain{12}{Rewrite: $7 + (-19)$. Different signs, subtract: $19 - 7 = 12$. Negative because $19$ is larger: $-12$.}
+\ansItem{13}{$13$ units}
+\ansExplain{13}{Distance $= |{-8} - 5| = |{-13}| = 13$. From $-8$ to $0$ is $8$ units, and $0$ to $5$ is $5$ units: $8 + 5 = 13$.}
+\ansItem{14}{$8$ units}
+\ansExplain{14}{Distance $= |{-3} - (-11)| = |{-3} + 11| = |8| = 8$ units.}
+\ansItem{15}{$20$ units}
+\ansExplain{15}{Distance $= |14 - (-6)| = |14 + 6| = |20| = 20$ units.}
+\ansItem{16}{$17$ units}
+\ansExplain{16}{Distance $= |0 - (-17)| = |17| = 17$ units. The number $-17$ is $17$ units from $0$.}
+\ansItem{17}{$0$}
+\ansExplain{17}{Rewrite: $5 + (-8) + 3$. Add: $5 + 3 = 8$, then $8 + (-8) = 0$.}
+\ansItem{18}{$1$}
+\ansExplain{18}{Rewrite: $(-4) + (-7) + 12$. Add negatives: $(-4) + (-7) = -11$. Then $-11 + 12 = 1$.}
+\ansItem{19}{$3$}
+\ansExplain{19}{Rewrite: $(-2) + 9 + (-5) + 1$. Positives: $9 + 1 = 10$. Negatives: $(-2) + (-5) = -7$. Combine: $10 + (-7) = 3$.}
+\ansItem{20}{False}
+\ansExplain{20}{Subtraction is not commutative. For example, $5 - 3 = 2$ but $3 - 5 = -2$. In general, $a - b = -(b - a)$.}
+\ansItem{21}{True}
+\ansExplain{21}{$a - (-b) = a + b$. Flipping the sign of a negative makes it positive, so you add.}
+\ansItem{22}{False}
+\ansExplain{22}{Distance $= |{-4} - 4| = |{-8}| = 8$ units. The numbers are opposites, each $4$ units from $0$, so they are $8$ units apart.}
+\ansItem{23}{$1{,}755$ meters}
+\ansExplain{23}{Below sea level is $-86$ m. Difference: $1{,}669 - (-86) = 1{,}669 + 86 = 1{,}755$ meters.}
+\ansItem{24}{$14°$C increase}
+\ansExplain{24}{Change $= 11 - (-3) = 11 + 3 = 14°$C. The temperature rose $14$ degrees.}
+\ansItem{25}{$x = 8$}
+\ansExplain{25}{Simplify: $x - (-x) = x + x = 2x$. Set $2x = 16$, so $x = 8$. Check: $8 - (-8) = 8 + 8 = 16$. \checkmark }
+\ansItem{26}{$-5.5°$C}
+\ansExplain{26}{Average $= \frac {-18 + 7}{2} = \frac {-11}{2} = -5.5°$C. The halfway temperature is $-5.5°$C.}
+\ansSec{1.4}
+\ansItem{1}{$2.3$}
+\ansExplain{1}{Different signs, subtract: $3.5 - 1.2 = 2.3$. Positive because $3.5$ has the larger absolute value.}
+\ansItem{2}{$-7$}
+\ansExplain{2}{Same signs (both negative), add: $4.7 + 2.3 = 7$. Keep negative: $-7$.}
+\ansItem{3}{$0$}
+\ansExplain{3}{These are opposites, so their sum is $0$.}
+\ansItem{4}{$-3.5$}
+\ansExplain{4}{Rewrite: $5.4 + (-8.9)$. Different signs, subtract: $8.9 - 5.4 = 3.5$. Negative because $8.9$ is larger: $-3.5$.}
+\ansItem{5}{$1.5$}
+\ansExplain{5}{Rewrite: $(-2.6) + 4.1$. Different signs, subtract: $4.1 - 2.6 = 1.5$. Positive because $4.1$ is larger.}
+\ansItem{6}{$-1.5$}
+\ansExplain{6}{Different signs, subtract: $3.3 - 1.8 = 1.5$. Negative because $3.3$ is larger: $-1.5$.}
+\ansItem{7}{$\dfrac {1}{2}$}
+\ansExplain{7}{Same denominator. Different signs, subtract numerators: $3 - 1 = 2$. Positive because $3 > 1$. Result: $\frac {2}{4} = \frac {1}{2}$.}
+\ansItem{8}{$-1$}
+\ansExplain{8}{Same denominator, same signs. Add numerators: $5 + 1 = 6$. Keep negative: $-\frac {6}{6} = -1$.}
+\ansItem{9}{$-\dfrac {1}{6}$}
+\ansExplain{9}{Rewrite: $\frac {2}{3} + (-\frac {5}{6})$. Common denominator $6$: $\frac {4}{6} + (-\frac {5}{6})$. Different signs, subtract: $5 - 4 = 1$. Negative because $5 > 4$: $-\frac {1}{6}$.}
+\ansItem{10}{$\dfrac {1}{10}$}
+\ansExplain{10}{Common denominator $10$: $-\frac {6}{10} + \frac {7}{10}$. Different signs, subtract: $7 - 6 = 1$. Positive because $7 > 6$: $\frac {1}{10}$.}
+\ansItem{11}{$-\dfrac {7}{8}$}
+\ansExplain{11}{Rewrite: $-\frac {1}{2} + (-\frac {3}{8})$. Common denominator $8$: $-\frac {4}{8} + (-\frac {3}{8})$. Same signs, add: $4 + 3 = 7$. Keep negative: $-\frac {7}{8}$.}
+\ansItem{12}{$\dfrac {7}{8}$}
+\ansExplain{12}{Rewrite: $\frac {5}{8} + \frac {1}{4}$. Common denominator $8$: $\frac {5}{8} + \frac {2}{8} = \frac {7}{8}$.}
+\ansItem{13}{$-3.75$}
+\ansExplain{13}{Different signs, subtract: $7.25 - 3.5 = 3.75$. Negative because $7.25$ is larger: $-3.75$.}
+\ansItem{14}{$7.4$}
+\ansExplain{14}{Rewrite: $4.6 + 2.8 = 7.4$. Subtracting a negative adds the positive.}
+\ansItem{15}{$-1\dfrac {1}{9}$}
+\ansExplain{15}{Rewrite: $-\frac {2}{3} + (-\frac {4}{9})$. Common denominator $9$: $-\frac {6}{9} + (-\frac {4}{9})$. Same signs, add: $6 + 4 = 10$. Keep negative: $-\frac {10}{9} = -1\frac {1}{9}$.}
+\ansItem{16}{$-3$}
+\ansExplain{16}{Step by step: $-1.5 + 0.75 = -0.75$. Then $-0.75 + (-2.25) = -3$. Both negative, add: $0.75 + 2.25 = 3$.}
+\ansItem{17}{False}
+\ansExplain{17}{$-0.5$ and $0.5$ are opposites, so their sum is $0$, not $1$.}
+\ansItem{18}{True}
+\ansExplain{18}{You must have a common denominator to compare and combine the numerators, just like with positive fractions. Then apply the sign rules.}
+\ansItem{19}{True}
+\ansExplain{19}{$\frac {3}{4} - 1 = \frac {3}{4} - \frac {4}{4} = -\frac {1}{4}$. Since $1 > \frac {3}{4}$, the result is negative.}
+\ansItem{20}{$-10.9$ m}
+\ansExplain{20}{Start at $-12.5$. Swim up: $-12.5 + 4.8 = -7.7$. Swim down: $-7.7 + (-3.2) = -10.9$ m.}
+\ansItem{21}{$1\frac {7}{12}$ cups}
+\ansExplain{21}{Subtract: $2\frac {1}{3} - \frac {3}{4} = \frac {7}{3} - \frac {3}{4}$. Common denominator $12$: $\frac {28}{12} - \frac {9}{12} = \frac {19}{12} = 1\frac {7}{12}$ cups.}
+\ansItem{22}{$-\$1.25$}
+\ansExplain{22}{Add the changes: $(-2.75) + 1.50 = -1.25$. Different signs, subtract: $2.75 - 1.50 = 1.25$. Negative because $2.75$ is larger.}
+\ansItem{23}{$-\dfrac {1}{6}$}
+\ansExplain{23}{Common denominator $12$: $-\frac {9}{12} + \frac {10}{12} - \frac {4}{12} + \frac {1}{12}$. Combine: $(-9 + 10 - 4 + 1)/12 = -2/12 = -\frac {1}{6}$.}
+\ansItem{24}{$0°$C}
+\ansExplain{24}{Midnight: $-4.8$. Drop: $-4.8 + (-2.5) = -7.3$. Rise: $-7.3 + 7.3 = 0°$C.}
+\ansSec{1.5}
+\ansItem{1}{$-15$}
+\ansExplain{1}{Multiply absolute values: $3 \times 5 = 15$. Different signs $\to $ negative: $-15$.}
+\ansItem{2}{$24$}
+\ansExplain{2}{Multiply absolute values: $6 \times 4 = 24$. Same signs (both negative) $\to $ positive: $24$.}
+\ansItem{3}{$-14$}
+\ansExplain{3}{Multiply absolute values: $7 \times 2 = 14$. Different signs $\to $ negative: $-14$.}
+\ansItem{4}{$0$}
+\ansExplain{4}{Any number multiplied by $0$ equals $0$, regardless of sign.}
+\ansItem{5}{$9$}
+\ansExplain{5}{Multiply absolute values: $1 \times 9 = 9$. Same signs $\to $ positive: $9$.}
+\ansItem{6}{$32$}
+\ansExplain{6}{Both positive, so the product is positive: $4 \times 8 = 32$.}
+\ansItem{7}{$-60$}
+\ansExplain{7}{Multiply absolute values: $12 \times 5 = 60$. Different signs $\to $ negative: $-60$.}
+\ansItem{8}{$56$}
+\ansExplain{8}{Multiply absolute values: $7 \times 8 = 56$. Same signs $\to $ positive: $56$.}
+\ansItem{9}{$-45$}
+\ansExplain{9}{Multiply absolute values: $15 \times 3 = 45$. Different signs $\to $ negative: $-45$.}
+\ansItem{10}{$99$}
+\ansExplain{10}{Multiply absolute values: $9 \times 11 = 99$. Same signs $\to $ positive: $99$.}
+\ansItem{11}{$24$}
+\ansExplain{11}{$(-2)(-3) = 6$ (same signs $\to $ positive). Then $6 \times 4 = 24$. Two negatives (even) $\to $ positive.}
+\ansItem{12}{$-10$}
+\ansExplain{12}{$(-1)(-5) = 5$. Then $5 \times (-2) = -10$. Three negatives (odd) $\to $ negative.}
+\ansItem{13}{$-\dfrac {2}{5}$}
+\ansExplain{13}{Multiply numerators: $2 \times 3 = 6$. Multiply denominators: $3 \times 5 = 15$. Different signs $\to $ negative: $-\frac {6}{15} = -\frac {2}{5}$.}
+\ansItem{14}{$\dfrac {3}{10}$}
+\ansExplain{14}{Multiply: $\frac {3 \times 2}{4 \times 5} = \frac {6}{20} = \frac {3}{10}$. Same signs $\to $ positive.}
+\ansItem{15}{$-\dfrac {5}{6}$}
+\ansExplain{15}{Multiply: $\frac {5 \times 4}{8 \times 3} = \frac {20}{24} = \frac {5}{6}$. Different signs $\to $ negative: $-\frac {5}{6}$.}
+\ansItem{16}{$-0.6$}
+\ansExplain{16}{Multiply absolute values: $1.5 \times 0.4 = 0.6$. Different signs $\to $ negative: $-0.6$.}
+\ansItem{17}{$0.21$}
+\ansExplain{17}{Multiply absolute values: $0.3 \times 0.7 = 0.21$. Same signs $\to $ positive: $0.21$.}
+\ansItem{18}{$10$}
+\ansExplain{18}{Multiply absolute values: $2.5 \times 4 = 10$. Same signs $\to $ positive: $10$.}
+\ansItem{19}{True}
+\ansExplain{19}{Same signs rule: negative times negative gives a positive result. This is always true.}
+\ansItem{20}{False}
+\ansExplain{20}{Four negative factors (even count) $\to $ positive. $(-1)^4 = 1$, not $-1$.}
+\ansItem{21}{True}
+\ansExplain{21}{For two factors, a negative product means the factors have different signs, so exactly one is negative and the other is positive.}
+\ansItem{22}{$-\$7.50$}
+\ansExplain{22}{A drop of $\$1.25$ per hour is $-1.25$. Multiply: $(-1.25) \times 6 = -7.50$. The stock fell a total of $\$7.50$.}
+\ansItem{23}{$-10$ meters}
+\ansExplain{23}{Multiply: $(-15) \times \frac {2}{3} = \frac {-30}{3} = -10$. The submarine is $10$ meters below its starting point.}
+\ansItem{24}{$-4$ cm}
+\ansExplain{24}{Each day: $-0.8$ cm. For $5$ days: $(-0.8) \times 5 = -4$ cm. The water level fell $4$ cm total.}
+\ansItem{25}{Positive}
+\ansExplain{25}{Count the negative factors: there are $4$ (an even number). An even number of negative factors gives a positive product. ($= 360$)}
+\ansItem{26}{$-\dfrac {1}{8}$}
+\ansExplain{26}{$\left (-\frac {1}{2}\right )^3 = \left (-\frac {1}{2}\right )\left (-\frac {1}{2}\right )\left (-\frac {1}{2}\right )$. First two: $\frac {1}{4}$ (positive). Then $\frac {1}{4} \times (-\frac {1}{2}) = -\frac {1}{8}$. Three negatives (odd) $\to $ negative.}
+\ansSec{1.6}
+\ansItem{1}{$-6$}
+\ansExplain{1}{Divide absolute values: $18 \div 3 = 6$. Different signs $\to $ negative: $-6$.}
+\ansItem{2}{$4$}
+\ansExplain{2}{Divide absolute values: $24 \div 6 = 4$. Same signs $\to $ positive: $4$.}
+\ansItem{3}{$-4$}
+\ansExplain{3}{Divide absolute values: $36 \div 9 = 4$. Different signs $\to $ negative: $-4$.}
+\ansItem{4}{$9$}
+\ansExplain{4}{Divide absolute values: $45 \div 5 = 9$. Same signs $\to $ positive: $9$.}
+\ansItem{5}{$0$}
+\ansExplain{5}{Zero divided by any nonzero number is $0$.}
+\ansItem{6}{$-6$}
+\ansExplain{6}{Divide absolute values: $42 \div 7 = 6$. Different signs $\to $ negative: $-6$.}
+\ansItem{7}{$-7$}
+\ansExplain{7}{Divide absolute values: $56 \div 8 = 7$. Different signs $\to $ negative: $-7$.}
+\ansItem{8}{$9$}
+\ansExplain{8}{Divide absolute values: $81 \div 9 = 9$. Same signs $\to $ positive: $9$.}
+\ansItem{9}{$-6$}
+\ansExplain{9}{Divide absolute values: $72 \div 12 = 6$. Different signs $\to $ negative: $-6$.}
+\ansItem{10}{$4$}
+\ansExplain{10}{Divide absolute values: $100 \div 25 = 4$. Same signs $\to $ positive: $4$.}
+\ansItem{11}{$-\dfrac {5}{2}$ or $-2\dfrac {1}{2}$}
+\ansExplain{11}{Flip and multiply: $\frac {5}{6} \times \frac {3}{1} = \frac {15}{6} = \frac {5}{2}$. Different signs $\to $ negative: $-\frac {5}{2}$.}
+\ansItem{12}{$\dfrac {6}{5}$ or $1\dfrac {1}{5}$}
+\ansExplain{12}{Flip and multiply: $\frac {4}{5} \times \frac {3}{2} = \frac {12}{10} = \frac {6}{5}$. Same signs $\to $ positive.}
+\ansItem{13}{$-\dfrac {1}{2}$}
+\ansExplain{13}{Flip and multiply: $\frac {3}{8} \times \frac {4}{3} = \frac {12}{24} = \frac {1}{2}$. Different signs $\to $ negative: $-\frac {1}{2}$.}
+\ansItem{14}{$-3$}
+\ansExplain{14}{Divide absolute values: $4.8 \div 1.6 = 3$. Different signs $\to $ negative: $-3$.}
+\ansItem{15}{$7$}
+\ansExplain{15}{Divide absolute values: $6.3 \div 0.9 = 7$. Same signs $\to $ positive: $7$.}
+\ansItem{16}{$-\dfrac {1}{2}$}
+\ansExplain{16}{Flip and multiply: $\frac {7}{10} \times \frac {5}{7} = \frac {35}{70} = \frac {1}{2}$. Different signs $\to $ negative: $-\frac {1}{2}$.}
+\ansItem{17}{False}
+\ansExplain{17}{Division by zero is undefined. You can never divide any number by $0$.}
+\ansItem{18}{True}
+\ansExplain{18}{A negative sign can be placed in front of the fraction, on the numerator, or on the denominator — all three are equivalent.}
+\ansItem{19}{False}
+\ansExplain{19}{Same signs (both negative) give a \emph {positive} result. For example, $(-12) \div (-3) = 4$.}
+\ansItem{20}{$-30$ meters per minute}
+\ansExplain{20}{Descending means negative: $-240 \div 8 = -30$. The submarine goes down $30$ meters each minute.}
+\ansItem{21}{$-4.5°$C per hour}
+\ansExplain{21}{A drop is negative: $-13.5 \div 3 = -4.5$. The temperature fell an average of $4.5°$C each hour.}
+\ansItem{22}{$\dfrac {1}{8}$ of a bag}
+\ansExplain{22}{Divide: $\frac {3}{4} \div 6 = \frac {3}{4} \times \frac {1}{6} = \frac {3}{24} = \frac {1}{8}$ of the bag per loaf.}
+\ansItem{23}{$-4$}
+\ansExplain{23}{Numerator: $(-8)(-3) = 24$ (same signs $\to $ positive). Divide: $24 \div (-6) = -4$ (different signs $\to $ negative).}
+\ansItem{24}{$-60$}
+\ansExplain{24}{Multiply both sides by $-5$: $x = 12 \times (-5) = -60$. Check: $\frac {-60}{-5} = 12$. \checkmark }
+\ansSec{1.7}
+\ansItem{1}{$0.5$}
+\ansExplain{1}{Divide $1 \div 2 = 0.5$. The denominator is $2$ (a factor of $2$ only), so this terminates.}
+\ansItem{2}{$0.75$}
+\ansExplain{2}{Divide $3 \div 4 = 0.75$. The denominator $4 = 2^2$ has only the factor $2$, so it terminates.}
+\ansItem{3}{$0.2$}
+\ansExplain{3}{Divide $1 \div 5 = 0.2$. The denominator is $5$, so this terminates.}
+\ansItem{4}{$0.\overline {3}$}
+\ansExplain{4}{Divide $1 \div 3 = 0.333\ldots $ The digit $3$ repeats forever: $0.\overline {3}$.}
+\ansItem{5}{$0.4$}
+\ansExplain{5}{Divide $2 \div 5 = 0.4$. The denominator is $5$, so it terminates.}
+\ansItem{6}{$0.7$}
+\ansExplain{6}{Divide $7 \div 10 = 0.7$. The denominator $10 = 2 \times 5$, so it terminates.}
+\ansItem{7}{$0.875$}
+\ansExplain{7}{Divide $7 \div 8$: $8$ into $70$ is $8$ R$6$; $8$ into $60$ is $7$ R$4$; $8$ into $40$ is $5$ R$0$. So $\frac {7}{8} = 0.875$.}
+\ansItem{8}{$0.1875$}
+\ansExplain{8}{Divide $3 \div 16 = 0.1875$. The denominator $16 = 2^4$ has only factor $2$, so it terminates.}
+\ansItem{9}{$0.45$}
+\ansExplain{9}{Divide $9 \div 20 = 0.45$. The denominator $20 = 2^2 \times 5$ has only factors $2$ and $5$.}
+\ansItem{10}{$-0.44$}
+\ansExplain{10}{Divide $11 \div 25 = 0.44$. The denominator $25 = 5^2$. Add the negative sign: $-0.44$.}
+\ansItem{11}{$0.\overline {4}$}
+\ansExplain{11}{Divide $4 \div 9 = 0.444\ldots $ The remainder keeps being $4$, so the digit $4$ repeats: $0.\overline {4}$.}
+\ansItem{12}{$0.\overline {45}$}
+\ansExplain{12}{Divide $5 \div 11 = 0.454545\ldots $ The two-digit pattern $45$ repeats: $0.\overline {45}$.}
+\ansItem{13}{$0.\overline {6}$}
+\ansExplain{13}{Divide $2 \div 3 = 0.666\ldots $ The digit $6$ repeats: $0.\overline {6}$.}
+\ansItem{14}{$-0.58\overline {3}$}
+\ansExplain{14}{Divide $7 \div 12 = 0.5833\ldots $ The digit $3$ repeats after $58$. With the negative sign: $-0.58\overline {3}$.}
+\ansItem{15}{$0.1\overline {6}$}
+\ansExplain{15}{Divide $1 \div 6 = 0.1666\ldots $ The digit $6$ repeats after the initial $1$: $0.1\overline {6}$.}
+\ansItem{16}{$0.8\overline {3}$}
+\ansExplain{16}{Divide $5 \div 6 = 0.8333\ldots $ The digit $3$ repeats after the initial $8$: $0.8\overline {3}$.}
+\ansItem{17}{Terminating: $\frac {3}{8}, \frac {7}{20}, \frac {1}{25}$. Repeating: $\frac {5}{9}, \frac {4}{15}, \frac {11}{30}$.}
+\ansExplain{17}{$8 = 2^3$ (only $2$s $\to $ terminates). $9 = 3^2$ (has $3$ $\to $ repeats). $20 = 2^2 \times 5$ (only $2$s and $5$s $\to $ terminates). $15 = 3 \times 5$ (has $3$ $\to $ repeats). $25 = 5^2$ (only $5$s $\to $ terminates). $30 = 2 \times 3 \times 5$ (has $3$ $\to $ repeats).}
+\ansItem{18}{True}
+\ansExplain{18}{This is a fundamental property of rational numbers. Long division always eventually terminates or produces a repeating remainder.}
+\ansItem{19}{True}
+\ansExplain{19}{Dividing $1 \div 7 = 0.142857142857\ldots $ The six-digit block $142857$ repeats.}
+\ansItem{20}{False}
+\ansExplain{20}{$\frac {3}{10} = 0.3$, which terminates. The denominator $10 = 2 \times 5$ has only factors $2$ and $5$.}
+\ansItem{21}{$\$3.\overline {3}$ (or approximately $\$3.33$)}
+\ansExplain{21}{$10 \div 3 = 3.333\ldots = 3.\overline {3}$. Each person gets $\$3.\overline {3}$, which is a repeating decimal.}
+\ansItem{22}{$0.3125$ inches}
+\ansExplain{22}{Divide $5 \div 16 = 0.3125$. Since $16 = 2^4$, the decimal terminates.}
+\ansItem{23}{$0.\overline {17}$}
+\ansExplain{23}{$17 \div 99 = 0.171717\ldots = 0.\overline {17}$. Pattern: dividing by $99$ makes the numerator itself become the repeating block.}
+\ansItem{24}{Only the $6$ repeats, not the $1$}
+\ansExplain{24}{In $0.1\overline {6} = 0.1666\ldots $, the digit $1$ appears only once (in the tenths place) and does not repeat. Only the $6$ in the hundredths place onward repeats. Writing $0.\overline {16}$ would mean $0.161616\ldots $, which equals $\frac {16}{99}$, not $\frac {1}{6}$.}
+\ansSec{1.8}
+\ansItem{1}{$305$ m}
+\ansExplain{1}{Add all changes: $350 + (-125) + 80 = 350 - 125 + 80 = 305$ meters gained.}
+\ansItem{2}{$\$37.25$}
+\ansExplain{2}{Subtract: $50 - 12.75 = 37.25$.}
+\ansItem{3}{$4$ cups}
+\ansExplain{3}{Multiply: $\frac {2}{3} \times 6 = \frac {12}{3} = 4$ cups.}
+\ansItem{4}{$\$6.90$}
+\ansExplain{4}{Divide: $27.60 \div 4 = 6.90$. Each friend gets $\$6.90$.}
+\ansItem{5}{$2.8°$C}
+\ansExplain{5}{Add: $-5.5 + 8.3 = 2.8°$C. Different signs, subtract: $8.3 - 5.5 = 2.8$. Positive because $8.3$ is larger.}
+\ansItem{6}{$\$182.50$}
+\ansExplain{6}{$230.50 - 85.25 + 42.00 - 4.75 = 145.25 + 42.00 - 4.75 = 187.25 - 4.75 = 182.50$.}
+\ansItem{7}{$\$54.50$}
+\ansExplain{7}{Markup: $\frac {1}{4} \times 48 = 12$. After markup: $48 + 12 = 60$. After discount: $60 - 5.50 = 54.50$.}
+\ansItem{8}{$-\$0.40$}
+\ansExplain{8}{Sum all changes: $3.20 + (-1.50) + (-4.80) + 2.10 + 0.60$. Positives: $3.20 + 2.10 + 0.60 = 5.90$. Negatives: $(-1.50) + (-4.80) = -6.30$. Total: $5.90 + (-6.30) = -0.40$.}
+\ansItem{9}{$0.5°$C}
+\ansExplain{9}{$-8.4 + (-3.6) = -12$. Then $-12 + 12.5 = 0.5°$C.}
+\ansItem{10}{$-15$ meters}
+\ansExplain{10}{Multiply: $(-2\frac {1}{2}) \times 6 = (-\frac {5}{2}) \times 6 = -\frac {30}{2} = -15$ meters.}
+\ansItem{11}{$-74.2$ m}
+\ansExplain{11}{$\frac {2}{5} \times (-185.5) = \frac {-371}{5} = -74.2$. The hiker is $74.2$ m below the rim.}
+\ansItem{12}{$-17$}
+\ansExplain{12}{Multiply first: $(-3) \times 4 = -12$. Divide: $10 \div (-2) = -5$. Add: $-12 + (-5) = -17$.}
+\ansItem{13}{$-5\dfrac {1}{2}$}
+\ansExplain{13}{Multiply: $-\frac {1}{2} \times 8 = -4$. Divide: $\frac {3}{4} \times (-2) = -\frac {3}{2}$. Add: $-4 + (-\frac {3}{2}) = -\frac {8}{2} + (-\frac {3}{2}) = -\frac {11}{2} = -5\frac {1}{2}$.}
+\ansItem{14}{$-8$}
+\ansExplain{14}{Multiply: $(-2.4) \times 5 = -12$. Divide: $(-3.6) \div 0.9 = -4$. Subtract: $-12 - (-4) = -12 + 4 = -8$.}
+\ansItem{15}{$-2$}
+\ansExplain{15}{Numerator: $(-6) + 10 = 4$. Divide: $4 \div (-2) = -2$.}
+\ansItem{16}{$2\frac {1}{4}$ or $2.25$ cups}
+\ansExplain{16}{Convert: $\frac {3}{4} = 0.75$. Add: $0.75 + 1.5 = 2.25 = 2\frac {1}{4}$ cups.}
+\ansItem{17}{$4\frac {1}{12}$ miles (or approximately $4.08$ mi)}
+\ansExplain{17}{Convert: $1\frac {1}{3} = \frac {4}{3}$ and $2.75 = \frac {11}{4}$. Common denominator $12$: $\frac {16}{12} + \frac {33}{12} = \frac {49}{12} = 4\frac {1}{12}$.}
+\ansItem{18}{$-1\dfrac {3}{8}$ or $-1.375$}
+\ansExplain{18}{Convert all to decimals: $-0.5 + 0.375 - 1.25 = -0.125 - 1.25 = -1.375 = -1\frac {3}{8}$.}
+\ansItem{19}{False}
+\ansExplain{19}{A drop means a decrease, which is negative. You should use $-5$. ``Dropped,'' ``fell,'' and ``lost'' all indicate negative values.}
+\ansItem{20}{True}
+\ansExplain{20}{Estimation is a great way to check. For example, $-8.4 + 12.5 \approx -8 + 13 = 5$, which is close to the exact answer of $4.1$.}
+\ansItem{21}{$-3$ m}
+\ansExplain{21}{Descent: $-\frac {3}{4} \times 8 = -6$ m. Ascent: $0.25 \times 12 = 3$ m. Final: $-6 + 3 = -3$ m (still $3$ m below sea level).}
+\ansItem{22}{$30$-yard line}
+\ansExplain{22}{Change: $4.5 + (-2.75) + 8.25 = 10$ yards gained. New position: $20 + 10 = 30$-yard line.}
