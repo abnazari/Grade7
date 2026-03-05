@@ -113,6 +113,9 @@ SAMPLE_TOPIC_PICKS = [
 # For in_30_days: which day numbers to include
 SAMPLE_DAY_PICKS = [1, 9]  # Day 1 (Ch1) and Day 9 (Ch2)
 
+# Number of practice-test questions to include in preview
+PREVIEW_TEST_QUESTION_COUNT = 10
+
 
 # ============================================================================
 # PREVIEW PREAMBLE — common across all studyGuide-based books
@@ -152,7 +155,7 @@ def _preview_preamble_in30days() -> List[str]:
 
 def _topic_input(
     topic_id: str,
-    modified_ids,
+    modified_dict: Dict[str, str],
     additional_set: Set[str],
     config: TopicsConfig,
     base_dir: str,
@@ -161,8 +164,9 @@ def _topic_input(
 ) -> str:
     """Return the \\input{...} line for a single topic, selecting the right directory."""
     filename = config.topic_filenames[topic_id]
-    if topic_id in modified_ids:
-        return f"\\input{{{modified_dir}/{filename}}}"
+    if topic_id in modified_dict:
+        mod_filename = modified_dict[topic_id]
+        return f"\\input{{{modified_dir}/{mod_filename}}}"
     elif topic_id in additional_set:
         return f"\\input{{{additional_dir}/{filename}}}"
     else:
@@ -189,6 +193,35 @@ def _puzzles_input(tid, mod, add, cfg):
 
 def _worksheet_input(tid, mod, add, cfg):
     return _topic_input(tid, mod, add, cfg, "topics_worksheet", "topics_worksheet_modifed", "topics_worksheet_additional")
+
+
+# ============================================================================
+# PRACTICE TEST QUESTION EXTRACTOR
+# ============================================================================
+
+import re as _re
+
+_QUESTION_RE = _re.compile(
+    r"(\\begin\{practiceQuestion\}.*?\\end\{practiceQuestion\})",
+    _re.DOTALL,
+)
+
+
+def _extract_first_n_questions(filepath: Path, n: int = PREVIEW_TEST_QUESTION_COUNT) -> Optional[str]:
+    """Read *filepath* and return the first *n* ``practiceQuestion`` blocks.
+
+    Returns the concatenated LaTeX source of those blocks (with blank-line
+    separators) or ``None`` if the file does not exist or contains no
+    questions.
+    """
+    if not filepath.exists():
+        return None
+    text = filepath.read_text(encoding="utf-8")
+    matches = _QUESTION_RE.findall(text)
+    if not matches:
+        return None
+    selected = matches[:n]
+    return "\n\n".join(selected) + "\n"
 
 
 # ============================================================================
@@ -423,20 +456,28 @@ def generate_preview_practice_tests(
 ) -> str:
     """Generate preview .tex for Practice Tests.
 
-    Includes the first practice test's cover page + first 10 questions only.
-    We truncate by using \\previewTestEnd after including the test file.
+    Includes the first practice test's cover page + the first
+    PREVIEW_TEST_QUESTION_COUNT questions (inlined) + their answer key.
+    The remaining questions are *not* included — this avoids giving away
+    a full test while still showing the look-and-feel of the book.
     """
-    # Find the first available test
+    # Find the first available test and extract limited questions
     practice_dir = workspace / "practice_tests" / state_slug
     first_test_num = None
+    questions_tex: Optional[str] = None
     for i in range(test_start, test_end + 1):
         test_file = practice_dir / f"practice_test_{i:02d}.tex"
-        if test_file.exists():
+        extracted = _extract_first_n_questions(test_file, PREVIEW_TEST_QUESTION_COUNT)
+        if extracted is not None:
             first_test_num = i
+            questions_tex = extracted
             break
+
+    n_preview = PREVIEW_TEST_QUESTION_COUNT
 
     lines: List[str] = []
     lines.append(f"% PREVIEW — Grade 7 Math — {num_tests} Practice Tests")
+    lines.append(f"% Only the first {n_preview} questions of one test are included.")
     lines.extend(_preview_preamble_studyguide())
 
     # Number of practice tests (used by tracker page)
@@ -465,16 +506,22 @@ def generate_preview_practice_tests(
     lines.append(r"\pagenumbering{arabic}")
     lines.append("")
 
-    # Include the first practice test (full — the watermark deters copying)
-    if first_test_num is not None:
+    # Include only the first N questions of the first practice test
+    if questions_tex is not None:
         lines.append("% ============================================================================")
-        lines.append("% SAMPLE PRACTICE TEST")
+        lines.append(f"% SAMPLE PRACTICE TEST — first {n_preview} questions only")
         lines.append("% ============================================================================")
-        lines.append(f"\\practiceTestPage{{1}}{{{30}}}")
+        lines.append(f"\\practiceTestPage{{1}}{{{n_preview}}}")
         lines.append("")
-        lines.append(f"\\input{{practice_tests/{state_slug}/practice_test_{first_test_num:02d}}}")
+        lines.append(questions_tex)
         lines.append("")
-        lines.append(f"\\testScorePage{{1}}{{{30}}}")
+        lines.append(f"\\testScorePage{{1}}{{{n_preview}}}")
+        lines.append("")
+        # Answer key for the sample questions
+        lines.append("% ============================================================================")
+        lines.append("% ANSWER KEY — covers the sample questions above")
+        lines.append("% ============================================================================")
+        lines.append(r"\printAnswerKey")
         lines.append("")
     else:
         lines.append("% No practice test files found for preview")

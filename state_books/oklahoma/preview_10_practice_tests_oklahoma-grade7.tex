@@ -1,4 +1,5 @@
 % PREVIEW — Grade 7 Math — 10 Practice Tests
+% Only the first 10 questions of one test are included.
 \documentclass[12pt, fleqn, openany]{studyGuide}
 
 % Line spacing for young readers
@@ -30,13 +31,192 @@
 \pagenumbering{arabic}
 
 % ============================================================================
-% SAMPLE PRACTICE TEST
+% SAMPLE PRACTICE TEST — first 10 questions only
 % ============================================================================
-\practiceTestPage{1}{30}
+\practiceTestPage{1}{10}
 
-\input{practice_tests/oklahoma/practice_test_16}
+\begin{practiceQuestion}{1-3-q24}{sa}
+\begin{questionText}
+The table shows a proportional relationship. Find $k$ and the missing value.
 
-\testScorePage{1}{30}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline $x$ & $y$ \\ \hline $3$ & $7.5$ \\ $?$ & $15$ \\ $10$ & $25$ \\ \hline
+\end{tabular}
+\end{center}
+\end{questionText}
+\correctAnswer{$k = 2.5$; missing $x = 6$}
+\explanation{$k = \frac{7.5}{3} = 2.5$. For the missing row: $15 = 2.5x$ so $x = 15 \div 2.5 = 6$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{1-6-q27}{gmc}
+\begin{questionText}
+A map uses the scale shown below. If two cities are $6.5$ cm apart on the map, what is the actual distance?
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[thick] (0,0) -- (4,0);
+  \draw[thick] (0,-0.15) -- (0,0.15);
+  \draw[thick] (2,-0.15) -- (2,0.15);
+  \draw[thick] (4,-0.15) -- (4,0.15);
+  \node[below] at (0,-0.2) {\small $0$ cm};
+  \node[below] at (2,-0.2) {\small $2$ cm};
+  \node[below] at (4,-0.2) {\small $4$ cm};
+  \node[above] at (0,0.2) {\small $0$ km};
+  \node[above] at (2,0.2) {\small $30$ km};
+  \node[above] at (4,0.2) {\small $60$ km};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{$90$ km}
+\choiceB{$95$ km}
+\choiceC{$97.5$ km}
+\choiceD{$100$ km}
+\correctAnswer{C}
+\explanation{Scale: $2$ cm $= 30$ km, so $1$ cm $= 15$ km. For $6.5$ cm: $15 \times 6.5 = 97.5$ km.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{1-7-q28}{gmc}
+\begin{questionText}
+The table below shows the model and actual measurements of different objects. Which object has the largest scale factor?
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Object} & \textbf{Model} & \textbf{Actual} \\
+\hline
+Car & $10$ cm & $5$ m \\
+\hline
+Boat & $8$ cm & $24$ m \\
+\hline
+House & $12$ cm & $6$ m \\
+\hline
+\end{tabular}
+\end{center}
+\end{questionText}
+\choiceA{Car}
+\choiceB{Boat}
+\choiceC{House}
+\choiceD{Car and House (tied)}
+\correctAnswer{B}
+\explanation{Car: $500 \div 10 = 50$. Boat: $2{,}400 \div 8 = 300$. House: $600 \div 12 = 50$. The boat has the largest scale factor ($1 : 300$).}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-1-q07}{mc}
+\begin{questionText}
+A store has $300$ items in stock. If $60\%$ are on sale, how many items are on sale?
+\end{questionText}
+\choiceA{$120$}
+\choiceB{$150$}
+\choiceC{$180$}
+\choiceD{$200$}
+\correctAnswer{C}
+\explanation{$60\% = 0.60$. Multiply: $0.60 \times 300 = 180$ items.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-4-q28}{gmc}
+\begin{questionText}
+The bar model below shows the breakdown of a customer's total payment. What was the original price of the item before the sales tax?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+  \fill[funBlue!40] (0,0) rectangle (9,1);
+  \fill[funRed!40] (9,0) rectangle (10,1);
+  \draw[thick] (0,0) rectangle (10,1);
+  \draw[thick] (9,0) -- (9,1);
+  \node[font=\small] at (4.5,0.5) {Original price};
+  \node[font=\small] at (9.5,0.5) {Tax};
+  \draw[thick,<->] (0,-0.4) -- (10,-0.4) node[midway,below,font=\small] {Total $= \$53.50$};
+  \node[above,font=\small] at (9.5,1) {$7\%$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{$\$46.76$}
+\choiceB{$\$49.76$}
+\choiceC{$\$50.00$}
+\choiceD{$\$52.00$}
+\correctAnswer{C}
+\explanation{The total is $1.07$ times the original. Original $= 53.50 \div 1.07 = \$50.00$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-7-q25}{sa}
+\begin{questionText}
+A jogger estimated running $5$ miles but actually ran $4.8$ miles. What is the percent error (rounded to the nearest tenth)?
+\end{questionText}
+\correctAnswer{$\approx 4.2\%$}
+\explanation{$\frac{|5 - 4.8|}{4.8} \times 100 = \frac{0.2}{4.8} \times 100 \approx 4.17 \approx 4.2\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-8-q27}{gmc}
+\begin{questionText}
+The table below shows the monthly fees at four financial institutions. Which institution has the lowest annual fee?
+
+\begin{center}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Institution} & \textbf{Monthly Fee} \\
+\hline
+Big Bank & $\$8$ \\
+\hline
+Town Credit Union & $\$2$ \\
+\hline
+City Bank & $\$5$ \\
+\hline
+Online Bank & $\$0$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{questionText}
+\choiceA{Big Bank}
+\choiceB{Town Credit Union}
+\choiceC{City Bank}
+\choiceD{Online Bank}
+\correctAnswer{D}
+\explanation{Online Bank charges $\$0$/month, so the annual fee is $\$0$. That is the lowest.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{3-1-q10}{mc}
+\begin{questionText}
+A football team gains $8$ yards on one play and loses $8$ yards on the next play. What is the net result?
+\end{questionText}
+\choiceA{$16$ yards gained}
+\choiceB{$8$ yards gained}
+\choiceC{$8$ yards lost}
+\choiceD{$0$ yards}
+\correctAnswer{D}
+\explanation{$8 + (-8) = 0$. Gaining and losing the same amount are opposite actions that cancel out.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{4-1-q22}{sa}
+\begin{questionText}
+Evaluate $\frac{x^2 - 1}{4}$ when $x = 5$.
+\end{questionText}
+\correctAnswer{$6$}
+\explanation{Substitute: $\frac{5^2 - 1}{4} = \frac{25 - 1}{4} = \frac{24}{4} = 6$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{4-2-q20}{sa}
+\begin{questionText}
+Simplify $\frac{1}{2}x + \frac{3}{4}x - 2$.
+
+
+\begin{center}
+\fractionCircle{1}{2}
+\hspace{1cm}
+\fractionCircle{3}{4}
+\end{center}
+\end{questionText}
+\correctAnswer{$\frac{5}{4}x - 2$ or $1\frac{1}{4}x - 2$}
+\explanation{Find a common denominator: $\frac{2}{4}x + \frac{3}{4}x = \frac{5}{4}x$. The constant stays: $\frac{5}{4}x - 2$.}
+\end{practiceQuestion}
+
+
+\testScorePage{1}{10}
+
+% ============================================================================
+% ANSWER KEY — covers the sample questions above
+% ============================================================================
+\printAnswerKey
 
 \input{initial_pages/common/preview-cta-page}
 

@@ -1,4 +1,5 @@
 % PREVIEW — Grade 7 Math — 10 Practice Tests
+% Only the first 10 questions of one test are included.
 \documentclass[12pt, fleqn, openany]{studyGuide}
 
 % Line spacing for young readers
@@ -30,13 +31,201 @@
 \pagenumbering{arabic}
 
 % ============================================================================
-% SAMPLE PRACTICE TEST
+% SAMPLE PRACTICE TEST — first 10 questions only
 % ============================================================================
-\practiceTestPage{1}{30}
+\practiceTestPage{1}{10}
 
-\input{practice_tests/florida/practice_test_16}
+\begin{practiceQuestion}{1-3-q24}{sa}
+\begin{questionText}
+The table shows a proportional relationship. Find $k$ and the missing value.
 
-\testScorePage{1}{30}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline $x$ & $y$ \\ \hline $3$ & $7.5$ \\ $?$ & $15$ \\ $10$ & $25$ \\ \hline
+\end{tabular}
+\end{center}
+\end{questionText}
+\correctAnswer{$k = 2.5$; missing $x = 6$}
+\explanation{$k = \frac{7.5}{3} = 2.5$. For the missing row: $15 = 2.5x$ so $x = 15 \div 2.5 = 6$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{1-6-q27}{gmc}
+\begin{questionText}
+A map uses the scale shown below. If two cities are $6.5$ cm apart on the map, what is the actual distance?
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[thick] (0,0) -- (4,0);
+  \draw[thick] (0,-0.15) -- (0,0.15);
+  \draw[thick] (2,-0.15) -- (2,0.15);
+  \draw[thick] (4,-0.15) -- (4,0.15);
+  \node[below] at (0,-0.2) {\small $0$ cm};
+  \node[below] at (2,-0.2) {\small $2$ cm};
+  \node[below] at (4,-0.2) {\small $4$ cm};
+  \node[above] at (0,0.2) {\small $0$ km};
+  \node[above] at (2,0.2) {\small $30$ km};
+  \node[above] at (4,0.2) {\small $60$ km};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{$90$ km}
+\choiceB{$95$ km}
+\choiceC{$97.5$ km}
+\choiceD{$100$ km}
+\correctAnswer{C}
+\explanation{Scale: $2$ cm $= 30$ km, so $1$ cm $= 15$ km. For $6.5$ cm: $15 \times 6.5 = 97.5$ km.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-1-q28}{gmc}
+\begin{questionText}
+The tape diagram below represents a whole quantity. What percent of the total is the shaded portion?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+  % Draw 5 equal sections
+  \foreach \i in {0,...,4} {
+    \draw[thick] (\i*1.6,0) rectangle (\i*1.6+1.6,0.8);
+  }
+  % Shade 3 of 5 sections
+  \fill[funGreen!40] (0,0) rectangle (1.6,0.8);
+  \fill[funGreen!40] (1.6,0) rectangle (3.2,0.8);
+  \fill[funGreen!40] (3.2,0) rectangle (4.8,0.8);
+  \foreach \i in {0,...,4} {
+    \draw[thick] (\i*1.6,0) rectangle (\i*1.6+1.6,0.8);
+  }
+  % Labels
+  \node[below,font=\small] at (0.8,0) {$15$};
+  \node[below,font=\small] at (2.4,0) {$15$};
+  \node[below,font=\small] at (4.0,0) {$15$};
+  \node[below,font=\small] at (5.6,0) {$15$};
+  \node[below,font=\small] at (7.2,0) {$15$};
+  \draw[thick,<->] (0,-0.8) -- (8,-0.8) node[midway,below,font=\small] {Total $= 75$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{$40\%$}
+\choiceB{$45\%$}
+\choiceC{$50\%$}
+\choiceD{$60\%$}
+\correctAnswer{D}
+\explanation{The shaded portion is $3 \times 15 = 45$. The total is $75$. Percent: $45 \div 75 = 0.60 = 60\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-2-q07}{mc}
+\begin{questionText}
+A school has $500$ students. If $68\%$ eat in the cafeteria, how many eat there? Use a proportion.
+\end{questionText}
+\choiceA{$320$}
+\choiceB{$340$}
+\choiceC{$350$}
+\choiceD{$368$}
+\correctAnswer{B}
+\explanation{$\frac{n}{500} = \frac{68}{100}$. Cross-multiply: $100n = 34{,}000$. Divide: $n = 340$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-6-q28}{gmc}
+\begin{questionText}
+The bar graph shows the interest earned on three different deposits over $2$ years. Which deposit had the highest interest rate?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+  \draw[thick,->] (0,0) -- (0,5.5) node[above]{\small Interest (\$)};
+  \draw[thick,->] (0,0) -- (7,0);
+  \fill[funBlue!60] (0.5,0) rectangle (1.5,2);
+  \fill[funGreen!60] (2.5,0) rectangle (3.5,3);
+  \fill[funOrange!60] (4.5,0) rectangle (5.5,4);
+  \node[below,font=\scriptsize] at (1,0) {$\$500$};
+  \node[below,font=\scriptsize] at (3,0) {$\$1{,}000$};
+  \node[below,font=\scriptsize] at (5,0) {$\$800$};
+  \node[below=12pt,font=\small] at (3,0) {Principal};
+  \foreach \y/\lab in {1/25,2/50,3/75,4/100} {
+    \draw (-0.1,\y) -- (0.1,\y) node[left,font=\small,xshift=-2pt] {\lab};
+  }
+  \node[above,font=\small] at (1,2) {$\$50$};
+  \node[above,font=\small] at (3,3) {$\$75$};
+  \node[above,font=\small] at (5,4) {$\$100$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{Deposit of $\$500$ (earned $\$50$)}
+\choiceB{Deposit of $\$1{,}000$ (earned $\$75$)}
+\choiceC{Deposit of $\$800$ (earned $\$100$)}
+\choiceD{All have the same rate}
+\correctAnswer{C}
+\explanation{Rates over $2$ years: $\$500$: $50/(500 \times 2) = 5\%$. $\$1{,}000$: $75/(1{,}000 \times 2) = 3.75\%$. $\$800$: $100/(800 \times 2) = 6.25\%$. The $\$800$ deposit had the highest rate.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-7-q25}{sa}
+\begin{questionText}
+A jogger estimated running $5$ miles but actually ran $4.8$ miles. What is the percent error (rounded to the nearest tenth)?
+\end{questionText}
+\correctAnswer{$\approx 4.2\%$}
+\explanation{$\frac{|5 - 4.8|}{4.8} \times 100 = \frac{0.2}{4.8} \times 100 \approx 4.17 \approx 4.2\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{3-2-q27}{gmc}
+\begin{questionText}
+Which number line correctly models $(-4) + (-3)$?
+
+\begin{center}
+\begin{tikzpicture}
+  % Model A
+  \node[left] at (-7.5,2) {\textbf{A:}};
+  \draw[thick,->] (-7,2) -- (3,2);
+  \foreach \x in {-6,...,2} \draw (\x,2.1) -- (\x,1.9) node[below] {\footnotesize $\x$};
+  \draw[thick,->,funRed] (-4,2.4) -- (-7,2.4);
+
+  % Model B
+  \node[left] at (-7.5,0) {\textbf{B:}};
+  \draw[thick,->] (-7,0) -- (3,0);
+  \foreach \x in {-6,...,2} \draw (\x,0.1) -- (\x,-0.1) node[below] {\footnotesize $\x$};
+  \draw[thick,->,funBlue] (-4,0.4) -- (-1,0.4);
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{Model A}
+\choiceB{Model B}
+\choiceC{Both are correct}
+\choiceD{Neither is correct}
+\correctAnswer{A}
+\explanation{$(-4) + (-3)$ means start at $-4$ and move $3$ units left (adding a negative). Model A shows the arrow going from $-4$ to $-7$, which is correct.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{3-3-q10}{mc}
+\begin{questionText}
+What is $0 - (-6)$?
+\end{questionText}
+\choiceA{$-6$}
+\choiceB{$6$}
+\choiceC{$0$}
+\choiceD{$-12$}
+\correctAnswer{B}
+\explanation{$0 - (-6) = 0 + 6 = 6$. Subtracting a negative is the same as adding.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{4-4-q22}{sa}
+\begin{questionText}
+Factor $-8x + 12y - 4$.
+\end{questionText}
+\correctAnswer{$-4(2x - 3y + 1)$}
+\explanation{GCF of $8$, $12$, and $4$ is $4$. Factor out $-4$: $-8x \div (-4) = 2x$, $12y \div (-4) = -3y$, $-4 \div (-4) = 1$. Result: $-4(2x - 3y + 1)$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{4-5-q20}{sa}
+\begin{questionText}
+Simplify $(-3x + 5) + (8x - 12)$.
+\end{questionText}
+\correctAnswer{$5x - 7$}
+\explanation{Combine: $(-3x + 8x) + (5 - 12) = 5x - 7$.}
+\end{practiceQuestion}
+
+
+\testScorePage{1}{10}
+
+% ============================================================================
+% ANSWER KEY — covers the sample questions above
+% ============================================================================
+\printAnswerKey
 
 \input{initial_pages/common/preview-cta-page}
 

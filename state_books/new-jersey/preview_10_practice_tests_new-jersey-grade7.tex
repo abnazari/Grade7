@@ -1,4 +1,5 @@
 % PREVIEW — Grade 7 Math — 10 Practice Tests
+% Only the first 10 questions of one test are included.
 \documentclass[12pt, fleqn, openany]{studyGuide}
 
 % Line spacing for young readers
@@ -30,13 +31,192 @@
 \pagenumbering{arabic}
 
 % ============================================================================
-% SAMPLE PRACTICE TEST
+% SAMPLE PRACTICE TEST — first 10 questions only
 % ============================================================================
-\practiceTestPage{1}{30}
+\practiceTestPage{1}{10}
 
-\input{practice_tests/new-jersey/practice_test_16}
+\begin{practiceQuestion}{1-3-q24}{sa}
+\begin{questionText}
+The table shows a proportional relationship. Find $k$ and the missing value.
 
-\testScorePage{1}{30}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline $x$ & $y$ \\ \hline $3$ & $7.5$ \\ $?$ & $15$ \\ $10$ & $25$ \\ \hline
+\end{tabular}
+\end{center}
+\end{questionText}
+\correctAnswer{$k = 2.5$; missing $x = 6$}
+\explanation{$k = \frac{7.5}{3} = 2.5$. For the missing row: $15 = 2.5x$ so $x = 15 \div 2.5 = 6$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{1-5-q27}{gmc}
+\begin{questionText}
+Two proportional lines are graphed below. Which statement is correct?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+  \draw[step=1,gray!20,thin] (0,0) grid (6,7);
+  \draw[thick,->] (0,0) -- (6.5,0) node[right]{\small $x$};
+  \draw[thick,->] (0,0) -- (0,7.5) node[above]{\small $y$};
+  \foreach \x in {1,...,6} \draw (\x,0.07) -- (\x,-0.07) node[below]{\tiny \x};
+  \foreach \y in {1,...,7} \draw (0.07,\y) -- (-0.07,\y) node[left]{\tiny \y};
+  \draw[thick,funBlue] (0,0) -- (5,7);
+  \node[above,funBlue] at (4,5.6) {\small Line P};
+  \fill[funBlue] (0,0) circle (2pt);
+  \fill[funBlue] (5,7) circle (2.5pt) node[right]{\small $(5,7)$};
+  \draw[thick,funRed] (0,0) -- (6,6);
+  \node[below right,funRed] at (5.5,5.5) {\small Line Q};
+  \fill[funRed] (0,0) circle (2pt);
+  \fill[funRed] (6,6) circle (2.5pt) node[right]{\small $(6,6)$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{Line Q has the greater unit rate because it is longer}
+\choiceB{Line P has the greater unit rate because it is steeper}
+\choiceC{Both lines have the same unit rate}
+\choiceD{Line Q has the greater unit rate because $6 > 5$}
+\correctAnswer{B}
+\explanation{Line P: $k = \frac{7}{5} = 1.4$. Line Q: $k = \frac{6}{6} = 1$. Line P is steeper and has the greater unit rate.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{1-6-q28}{gmc}
+\begin{questionText}
+The graph below compares the rates of two workers packaging boxes. Which worker is faster, and by how many boxes per hour?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+  \draw[step=1,gray!20,thin] (0,0) grid (7,8);
+  \draw[thick,->] (0,0) -- (7.5,0) node[right]{\small Hours};
+  \draw[thick,->] (0,0) -- (0,8.5) node[above]{\small Boxes};
+  \foreach \x in {1,...,7} \draw (\x,0.07) -- (\x,-0.07) node[below]{\tiny \x};
+  \foreach \y/\lab in {1/10,2/20,3/30,4/40,5/50,6/60,7/70,8/80}
+    \draw (0.07,\y) -- (-0.07,\y) node[left]{\tiny \lab};
+  \draw[thick,funBlue] (0,0) -- (6,7.2);
+  \fill[funBlue] (0,0) circle (2pt);
+  \fill[funBlue] (5,6) circle (2.5pt) node[above left]{\small $(5, 60)$};
+  \node[above,funBlue] at (6,7.2) {\small Worker A};
+  \draw[thick,funRed] (0,0) -- (6,5.4);
+  \fill[funRed] (0,0) circle (2pt);
+  \fill[funRed] (5,4.5) circle (2.5pt) node[below right]{\small $(5, 45)$};
+  \node[below right,funRed] at (6,5.4) {\small Worker B};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{Worker A, by $3$ boxes/hr}
+\choiceB{Worker B, by $3$ boxes/hr}
+\choiceC{Worker A, by $15$ boxes/hr}
+\choiceD{They work at the same rate}
+\correctAnswer{A}
+\explanation{Worker A: $60 \div 5 = 12$ boxes/hr. Worker B: $45 \div 5 = 9$ boxes/hr. Worker A is faster by $12 - 9 = 3$ boxes/hr.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-1-q07}{mc}
+\begin{questionText}
+A store has $300$ items in stock. If $60\%$ are on sale, how many items are on sale?
+\end{questionText}
+\choiceA{$120$}
+\choiceB{$150$}
+\choiceC{$180$}
+\choiceD{$200$}
+\correctAnswer{C}
+\explanation{$60\% = 0.60$. Multiply: $0.60 \times 300 = 180$ items.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-5-q28}{gmc}
+\begin{questionText}
+The diagram shows how a salesperson's earnings are calculated. What are the total earnings?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8, every node/.style={font=\small}]
+  \node[draw,rounded corners,fill=funBlue!20,minimum width=2.5cm,text width=2.3cm,align=center] (base) at (0,0) {Base Salary\\$\$400$/week};
+  \node[draw,rounded corners,fill=funGreen!20,minimum width=2.5cm,text width=2.3cm,align=center] (sales) at (5,0) {Weekly Sales\\$\$6{,}000$};
+  \node[draw,rounded corners,fill=funOrange!20,minimum width=2.5cm,text width=2.3cm,align=center] (rate) at (5,-1.5) {Commission\\Rate: $5\%$};
+  \node[draw,rounded corners,fill=funRed!20,minimum width=2.5cm,text width=2.3cm,align=center] (total) at (2.5,-3) {Total Earnings\\= ?};
+  \draw[thick,->] (base) -- (total);
+  \draw[thick,->] (sales) -- (rate);
+  \draw[thick,->] (rate) -- (total);
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{$\$430$}
+\choiceB{$\$700$}
+\choiceC{$\$6{,}400$}
+\choiceD{$\$6{,}700$}
+\correctAnswer{B}
+\explanation{Commission: $6{,}000 \times 0.05 = \$300$. Total: $400 + 300 = \$700$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-7-q25}{sa}
+\begin{questionText}
+A jogger estimated running $5$ miles but actually ran $4.8$ miles. What is the percent error (rounded to the nearest tenth)?
+\end{questionText}
+\correctAnswer{$\approx 4.2\%$}
+\explanation{$\frac{|5 - 4.8|}{4.8} \times 100 = \frac{0.2}{4.8} \times 100 \approx 4.17 \approx 4.2\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{3-1-q27}{gmc}
+\begin{questionText}
+The number line below shows two points. Which statement is correct?
+
+\begin{center}
+\begin{tikzpicture}
+  \draw[thick,->] (-6.5,0) -- (6.5,0);
+  \foreach \x in {-6,...,6} \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+  \fill[funBlue] (-4,0) circle (4pt) node[above=6pt] {P};
+  \fill[funBlue] (4,0) circle (4pt) node[above=6pt] {Q};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{P and Q are the same number}
+\choiceB{P and Q are opposites}
+\choiceC{$|P| > |Q|$}
+\choiceD{$P > Q$}
+\correctAnswer{B}
+\explanation{Point P is at $-4$ and Q is at $4$. They are the same distance from $0$ on opposite sides, so they are opposites.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{3-2-q10}{mc}
+\begin{questionText}
+What is $0 + (-7)$?
+\end{questionText}
+\choiceA{$7$}
+\choiceB{$0$}
+\choiceC{$-7$}
+\choiceD{$-14$}
+\correctAnswer{C}
+\explanation{Adding $0$ to any number gives that number. $0 + (-7) = -7$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{4-1-q22}{sa}
+\begin{questionText}
+Evaluate $\frac{x^2 - 1}{4}$ when $x = 5$.
+\end{questionText}
+\correctAnswer{$6$}
+\explanation{Substitute: $\frac{5^2 - 1}{4} = \frac{25 - 1}{4} = \frac{24}{4} = 6$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{4-2-q20}{sa}
+\begin{questionText}
+Simplify $\frac{1}{2}x + \frac{3}{4}x - 2$.
+
+
+\begin{center}
+\fractionCircle{1}{2}
+\hspace{1cm}
+\fractionCircle{3}{4}
+\end{center}
+\end{questionText}
+\correctAnswer{$\frac{5}{4}x - 2$ or $1\frac{1}{4}x - 2$}
+\explanation{Find a common denominator: $\frac{2}{4}x + \frac{3}{4}x = \frac{5}{4}x$. The constant stays: $\frac{5}{4}x - 2$.}
+\end{practiceQuestion}
+
+
+\testScorePage{1}{10}
+
+% ============================================================================
+% ANSWER KEY — covers the sample questions above
+% ============================================================================
+\printAnswerKey
 
 \input{initial_pages/common/preview-cta-page}
 

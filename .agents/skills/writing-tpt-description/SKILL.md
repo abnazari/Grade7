@@ -57,7 +57,6 @@ Example: `final_output/study_guide/texas_tpt_2026-03-03.html`
 - `<b>` for bold text (section headings, key phrases, book title, state names, CTAs)
 - `<i>` for occasional emphasis
 - `<ul>` and `<li>` for bullet lists
-- `<table>`, `<tbody>`, `<tr>`, `<td>` for chapter tables
 - `<a href="..." target="_blank">` for links (footer only)
 - The star separator line (footer only): `★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★`
 
@@ -98,7 +97,6 @@ State what the book is. Be direct.
 
 ### 2. Chapter Coverage
 Show what the book covers. Use either:
-- A `<table>` with Chapter number, Title, and topic count per row, OR
 - A `<ul>` compact list (e.g., `<li><b>Ch. 1: Ratios, Rates, and Percents</b> — 13 topics</li>`)
 
 Must include the total topic count. Chapter data must match the script output exactly.
