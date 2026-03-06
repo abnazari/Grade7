@@ -1,7 +1,8 @@
 % ============================================================================
 % Math Reference Sheet — Grade 7 Math Workbook
-% Angular design with top-stripe cards and dashed callouts matching the
-% workbook's modern style. Content aligned to Grade 7 CCSS topics.
+% Formula infographic with colored dash-box sections.
+% Content aligned to Grade 7 CCSS topics: proportions, percents, rational
+% numbers, expressions/equations, geometry, probability.
 % ============================================================================
 
 \thispagestyle{empty}
@@ -9,12 +10,12 @@
 {
 \sffamily
 
-% --- Title with angular underline ---
-\wbSectionHead{\faRulerCombined\quad Math Reference Sheet}{Use this page any time you need a quick refresher!}
+% ── Header ────────────────────────────────────────────────────────────────
+\wbPageHeader{\faRulerCombined\quad Math Reference Sheet}{Use this page any time you need a quick refresher!}
 
-% --- Symbols & Notation ---
+% ── Symbols & Notation ───────────────────────────────────────────────────
 \begin{center}
-\renewcommand{\arraystretch}{1.6}
+\renewcommand{\arraystretch}{1.55}
 \begin{tabular}{
     >{\centering\arraybackslash}m{2cm}
     >{\raggedright\arraybackslash}m{3cm}
@@ -31,24 +32,24 @@ Ratio / Fraction &
 Compares $a$ to $b$; also means $a \div b$. \\
 
 {\fontsize{18}{20}\selectfont\textcolor{funGreen}{$k$}} &
-Constant of Proportionality &
-In $y = kx$, the unit rate that links two proportional quantities. \\
+Constant of Prop. &
+In $y = kx$, the unit rate linking two proportional quantities. \\
 
-{\fontsize{18}{20}\selectfont\textcolor{funPurple}{$|{-}5| = 5$}} &
+{\fontsize{18}{20}\selectfont\textcolor{funPurple}{$|{-}5|=5$}} &
 Absolute Value &
-The distance from $0$ on a number line — always non-negative. \\
+Distance from $0$ on a number line — always non-negative. \\
 
 {\fontsize{18}{20}\selectfont\textcolor{funOrange}{$\geq\;\leq$}} &
-Inequality Symbols &
-$\geq$ means \emph{greater than or equal to}, $\leq$ means \emph{less than or equal to}. \\
+Inequality &
+$\geq$ means \emph{greater than or equal to};\; $\leq$ is the reverse. \\
 
 {\fontsize{18}{20}\selectfont\textcolor{funTeal}{$3x + 7$}} &
 Expression &
-Numbers, variables, and operations — no equals sign. \\
+Numbers, variables, operations — no equals sign. \\
 
-{\fontsize{18}{20}\selectfont\textcolor{funRed}{$2x - 4 = 10$}} &
+{\fontsize{18}{20}\selectfont\textcolor{funRed}{$2x\!-\!4\!=\!10$}} &
 Equation &
-A math sentence stating two expressions are \emph{equal}. \\
+A statement that two expressions are \emph{equal}. \\
 
 {\fontsize{18}{20}\selectfont\textcolor{funPink}{$P(\text{event})$}} &
 Probability &
@@ -60,8 +61,8 @@ A number from $0$ to $1$ measuring how likely an event is. \\
 
 \vspace{3mm}
 
-% --- Key Formulas ---
-\begin{wbCallout}{funGreen}
+% ── Key Formulas ─────────────────────────────────────────────────────────
+\begin{wbDashBox}{funGreen}
     {\color{funGreen}\faCalculator}\;\;{\bfseries\color{black!80}Key Formulas}
     \par\vspace{3pt}
     \small
@@ -77,24 +78,24 @@ A number from $0$ to $1$ measuring how likely an event is. \\
             $I = Prt$
         \item \textbf{Area of a circle:}\\
             $A = \pi r^{2}$
-        \item \textbf{Circumference of a circle:}\\
+        \item \textbf{Circumference:}\\
             $C = 2\pi r = \pi d$
         \item \textbf{Area of a triangle:}\\
             $A = \dfrac{1}{2}\,b\,h$
         \item \textbf{Volume of a prism:}\\
             $V = B \times h$ \; ($B$ = area of base)
         \item \textbf{Probability:}\\
-            $P(\text{event}) = \dfrac{\text{favorable outcomes}}{\text{total outcomes}}$
+            $P = \dfrac{\text{favorable outcomes}}{\text{total outcomes}}$
         \item \textbf{Scale factor:}\\
             $\dfrac{\text{drawing length}}{\text{actual length}}$
     \end{itemize}
     \end{multicols}
-\end{wbCallout}
+\end{wbDashBox}
 
 \vspace{3mm}
 
-% --- Rational Number Rules ---
-\begin{wbCallout}{funPurple}
+% ── Rational Number Rules ────────────────────────────────────────────────
+\begin{wbDashBox}{funPurple}
     {\color{funPurple}\faBalanceScale}\;\;{\bfseries\color{black!80}Rational Number Rules}
     \par\vspace{3pt}
     \small
@@ -102,58 +103,34 @@ A number from $0$ to $1$ measuring how likely an event is. \\
     \begin{itemize}[leftmargin=*, itemsep=2pt]
         \item \textbf{Same signs} $\to$ add, keep the sign\\
             $(-3)+(-5) = -8$
-        \item \textbf{Different signs} $\to$ subtract, keep the sign of the larger absolute value\\
+        \item \textbf{Different signs} $\to$ subtract, keep the sign
+            of the larger absolute value\\
             $(-9)+4 = -5$
         \item \textbf{Subtracting} = adding the opposite\\
             $6-(-2)=6+2=8$
         \item \textbf{Multiply / Divide:}\\
-            Same signs $\to$ positive result\\
-            Different signs $\to$ negative result
+            Same signs $\to$ positive\\
+            Different signs $\to$ negative
     \end{itemize}
     \end{multicols}
-\end{wbCallout}
+\end{wbDashBox}
 
 \vspace{3mm}
 
-% --- Key Math Vocabulary ---
-\begin{wbCallout}{funTeal}
-    {\color{funTeal}\faBook}\;\;{\bfseries\color{black!80}Key Math Vocabulary}
-    \par\vspace{3pt}
-    \small
-    \begin{multicols}{2}
-    \begin{itemize}[leftmargin=*, itemsep=2pt]
-        \item \textbf{Unit rate} — rate per \emph{one} unit
-        \item \textbf{Proportion} — an equation stating two ratios are equal
-        \item \textbf{Rational number} — any number that can be written as $\frac{a}{b}$ ($b \neq 0$)
-        \item \textbf{Opposite} — same distance from $0$, other side
-        \item \textbf{Like terms} — terms with the same variable and exponent
-        \item \textbf{Coefficient} — the number multiplied by a variable
-        \item \textbf{Inequality} — a statement using $<, >, \leq, \geq$
-        \item \textbf{Complementary angles} — two angles summing to~$90\degree$
-        \item \textbf{Supplementary angles} — two angles summing to~$180\degree$
-        \item \textbf{Cross-section} — the face you see when slicing a 3D shape
-        \item \textbf{Sample space} — all possible outcomes
-        \item \textbf{Compound event} — two or more simple events combined
-    \end{itemize}
-    \end{multicols}
-\end{wbCallout}
-
-\vspace{3mm}
-
-% --- Word Problem Clue Words ---
-\begin{wbCallout}{funOrange}
+% ── Word Problem Clue Words ──────────────────────────────────────────────
+\begin{wbDashBox}{funOrange}
     {\color{funOrange}\faSearch}\;\;{\bfseries\color{black!80}Word Problem Clue Words}
     \par\vspace{3pt}
     \small
     \begin{multicols}{2}
     \begin{itemize}[leftmargin=*, itemsep=2pt]
         \item \textbf{Add} ($+$): total, altogether, combined, sum, increase, more than
-        \item \textbf{Subtract} ($-$): difference, how many more, fewer, remain, decrease, left
+        \item \textbf{Subtract} ($-$): difference, fewer, remain, decrease, how many more
         \item \textbf{Multiply} ($\times$): each, every, groups of, times, product, per, of
-        \item \textbf{Divide} ($\div$): share equally, split, each group, how many groups, quotient
+        \item \textbf{Divide} ($\div$): share equally, split, each group, how many groups
     \end{itemize}
     \end{multicols}
-\end{wbCallout}
+\end{wbDashBox}
 
 }
 

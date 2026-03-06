@@ -1,0 +1,10 @@
+\ttl@change@i {\@ne }{chapter}{0cm}{\addvspace {8pt}\large \sffamily \bfseries \hypersetup {linkcolor=funBlue}}{\color {funBlue}\makebox [1.6cm][l]{\raisebox {-1pt}{\textcolor {funYellow}{\faStar }}~\Large \thecontentslabel }}{\color {funBlue}\raisebox {-1pt}{\textcolor {funYellow}{\faStar }}~}{\color {funBlue!50}\normalsize \;\titlerule *[6pt]{.}\;\color {funBlue}\thecontentspage }\relax 
+\ttl@change@v {chapter}{}{}{}\relax 
+\contentsline {chapter}{\numberline {1}Ratios and Proportional Relationships}{2}{chapter.1}%
+\ttl@starttoc {chapters@1}
+\contentsline {section}{\numberline {1.1}Unit Rates with Fractions}{3}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Operations with Rational Numbers}{7}{chapter.2}%
+\ttl@stoptoc {chapters@1}
+\ttl@starttoc {chapters@2}
+\contentsline {section}{\numberline {2.1}Integers and Their Opposites}{8}{section.2.1}%
+\contentsfinish 

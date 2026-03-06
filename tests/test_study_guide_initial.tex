@@ -1,0 +1,38 @@
+% Test file: compile only the initial pages of the study guide
+\documentclass[12pt, fleqn, openany]{studyGuide}
+\usepackage{VM_packages/VMfunStudyGuide}
+
+\setstretch{1.4}
+
+\begin{document}
+
+% ============================================================================
+% COVER PAGE
+% ============================================================================
+\StateName{Texas}
+\CoverImage{images/covers/study_guide.png}
+\StateNameXOffset{4.1in}
+\StateNameYOffset{6.2in}
+\StateNameRotation{3}
+\StateNameFontSize{40}
+\StateNameColor{NavyBlue}
+\makeCoverPage
+
+% ============================================================================
+% INITIAL PAGES
+% ============================================================================
+\pagenumbering{roman}
+
+\renewcommand{\VMBookTitle}{Grade 7 Math Made Easy}
+\renewcommand{\VMBookSubtitle}{Study Guide with Key Concepts,\\Review \& Practice}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\input{initial_pages/common/copyright_page}
+
+\input{initial_pages/study_guide/00-welcome}
+\input{initial_pages/study_guide/01-how-to-use}
+\input{initial_pages/study_guide/02-math-quick-reference}
+
+\friendlyTOC
+
+\end{document}

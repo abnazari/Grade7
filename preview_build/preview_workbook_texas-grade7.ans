@@ -1,0 +1,106 @@
+\ansChap{1}
+\ansSec{1.1}
+\ansItem{1}{$30$ miles per hour}
+\ansExplain{1}{To find the unit rate, divide the total distance by the total time: $120 \div 4 = 30$ miles per hour.}
+\ansItem{2}{$\$9$ per shirt}
+\ansExplain{2}{Divide total cost by the number of shirts: $45 \div 5 = 9$. Each shirt costs $\$9$.}
+\ansItem{3}{$12$ pages per day}
+\ansExplain{3}{Divide total pages by the number of days: $84 \div 7 = 12$ pages per day.}
+\ansItem{4}{$5$ apples per bag}
+\ansExplain{4}{Divide the total by the number of groups: $60 \div 12 = 5$ apples per bag.}
+\ansItem{5}{$\$4$ per gallon}
+\ansExplain{5}{Divide total cost by gallons: $32 \div 8 = 4$. Each gallon costs $\$4$.}
+\ansItem{6}{$40$ words per minute}
+\ansExplain{6}{Divide total words by minutes: $200 \div 5 = 40$ words per minute.}
+\ansItem{7}{$2$ cups per batch}
+\ansExplain{7}{Divide cups by batches: $\frac {2}{3} \div \frac {1}{3} = \frac {2}{3} \times \frac {3}{1} = \frac {6}{3} = 2$ cups per batch.}
+\ansItem{8}{$1\frac {1}{2}$ buckets per minute}
+\ansExplain{8}{Divide buckets by minutes: $\frac {3}{4} \div \frac {1}{2} = \frac {3}{4} \times \frac {2}{1} = \frac {6}{4} = \frac {3}{2} = 1\frac {1}{2}$ buckets per minute.}
+\ansItem{9}{$1\frac {1}{4}$ miles per minute}
+\ansExplain{9}{Divide distance by time: $\frac {5}{6} \div \frac {2}{3} = \frac {5}{6} \times \frac {3}{2} = \frac {15}{12} = \frac {5}{4} = 1\frac {1}{4}$ miles per minute.}
+\ansItem{10}{$2$ kg per hour}
+\ansExplain{10}{Divide kg by hours: $\frac {4}{5} \div \frac {2}{5} = \frac {4}{5} \times \frac {5}{2} = \frac {20}{10} = 2$ kg per hour.}
+\ansItem{11}{$1\frac {1}{6}$ rows per hour}
+\ansExplain{11}{Divide rows by hours: $\frac {7}{8} \div \frac {3}{4} = \frac {7}{8} \times \frac {4}{3} = \frac {28}{24} = \frac {7}{6} = 1\frac {1}{6}$ rows per hour.}
+\ansItem{12}{$\frac {2}{5}$ cup per batch}
+\ansExplain{12}{Divide cups by batches: $\frac {1}{3} \div \frac {5}{6} = \frac {1}{3} \times \frac {6}{5} = \frac {6}{15} = \frac {2}{5}$ cup per batch.}
+\ansItem{13}{Runner B ($2\frac {1}{2}$ mph $>$ $2\frac {2}{5}$ mph)}
+\ansExplain{13}{Runner A: $\frac {3}{5} \div \frac {1}{4} = \frac {3}{5} \times 4 = \frac {12}{5} = 2\frac {2}{5}$ mph. Runner B: $\frac {5}{6} \div \frac {1}{3} = \frac {5}{6} \times 3 = \frac {15}{6} = 2\frac {1}{2}$ mph. Since $2\frac {1}{2} = 2.5 > 2\frac {2}{5} = 2.4$, Runner B is faster.}
+\ansItem{14}{Brand Y ($\$3$/lb $<$ $\$3\frac {1}{3}$/lb)}
+\ansExplain{14}{Brand X: $\frac {5}{2} \div \frac {3}{4} = \frac {5}{2} \times \frac {4}{3} = \frac {20}{6} = \$3\frac {1}{3}$ per lb. Brand Y: $2 \div \frac {2}{3} = 2 \times \frac {3}{2} = \$3$ per lb. Brand Y is cheaper.}
+\ansItem{15}{Pipe B ($1\frac {1}{2}$ tanks/hr $>$ $1\frac {1}{4}$ tanks/hr)}
+\ansExplain{15}{Pipe A: $\frac {1}{2} \div \frac {2}{5} = \frac {1}{2} \times \frac {5}{2} = \frac {5}{4} = 1\frac {1}{4}$ tanks/hr. Pipe B: $\frac {3}{4} \div \frac {1}{2} = \frac {3}{4} \times 2 = \frac {3}{2} = 1\frac {1}{2}$ tanks/hr. Pipe B fills faster.}
+\ansItem{16}{Cyclist A ($3\frac {1}{2}$ mph $>$ $3\frac {1}{5}$ mph)}
+\ansExplain{16}{Cyclist A: $\frac {7}{10} \div \frac {1}{5} = \frac {7}{10} \times 5 = \frac {35}{10} = 3\frac {1}{2}$ mph. Cyclist B: $\frac {4}{5} \div \frac {1}{4} = \frac {4}{5} \times 4 = \frac {16}{5} = 3\frac {1}{5}$ mph. Cyclist A is faster.}
+\ansItem{17}{False}
+\ansExplain{17}{To find a unit rate, you \emph {divide} the first quantity by the second. Dividing fractions uses Keep--Change--Flip (multiply by the reciprocal), but the operation is division, not just multiplication.}
+\ansItem{18}{True}
+\ansExplain{18}{Keep--Change--Flip: $\frac {2}{3} \times \frac {6}{1} = \frac {12}{3} = 4$. The statement is correct.}
+\ansItem{19}{False}
+\ansExplain{19}{Divide distance by time: $\frac {1}{2} \div \frac {1}{4} = \frac {1}{2} \times 4 = 2$ miles per hour, not $\frac {1}{8}$. Multiplying $\frac {1}{2} \times \frac {1}{4} = \frac {1}{8}$ is the wrong operation.}
+\ansItem{20}{$\frac {8}{15}$ of the fence}
+\ansExplain{20}{Find the unit rate: $\frac {2}{5} \div \frac {3}{4} = \frac {2}{5} \times \frac {4}{3} = \frac {8}{15}$ of the fence per hour.}
+\ansItem{21}{$1\frac {1}{4}$ bottles per second}
+\ansExplain{21}{Divide bottles by seconds: $\frac {5}{6} \div \frac {2}{3} = \frac {5}{6} \times \frac {3}{2} = \frac {15}{12} = \frac {5}{4} = 1\frac {1}{4}$ bottles per second.}
+\ansItem{22}{Emma is faster by $\frac {1}{2}$ chapter per hour}
+\ansExplain{22}{Sam: $\frac {3}{4} \div \frac {1}{2} = \frac {3}{4} \times 2 = \frac {3}{2} = 1\frac {1}{2}$ ch/hr. Emma: $\frac {2}{3} \div \frac {1}{3} = \frac {2}{3} \times 3 = 2$ ch/hr. Difference: $2 - 1\frac {1}{2} = \frac {1}{2}$ chapter per hour.}
+\ansItem{23}{Snail: $\frac {9}{20}$ m/hr $=$ Turtle: $\frac {7}{15}$ m/hr; Turtle is faster by $\frac {1}{60}$ m/hr}
+\ansExplain{23}{Snail: $\frac {3}{8} \div \frac {5}{6} = \frac {3}{8} \times \frac {6}{5} = \frac {18}{40} = \frac {9}{20}$ m/hr. Turtle: $\frac {7}{12} \div \frac {5}{4} = \frac {7}{12} \times \frac {4}{5} = \frac {28}{60} = \frac {7}{15}$ m/hr. Compare: $\frac {9}{20} = \frac {27}{60}$ and $\frac {7}{15} = \frac {28}{60}$. The turtle is faster by $\frac {1}{60}$ m/hr.}
+\ansItem{24}{Machine A ($2\frac {2}{9}$ widgets/hr $>$ $2$ widgets/hr)}
+\ansExplain{24}{Machine A: $\frac {5}{6} \div \frac {3}{8} = \frac {5}{6} \times \frac {8}{3} = \frac {40}{18} = \frac {20}{9} = 2\frac {2}{9}$ widgets/hr. Machine B: $\frac {4}{3} \div \frac {2}{3} = \frac {4}{3} \times \frac {3}{2} = \frac {12}{6} = 2$ widgets/hr. Machine A is more productive.}
+\ansChap{2}
+\ansSec{2.1}
+\ansItem{1}{$-6$}
+\ansExplain{1}{The opposite of a positive number is negative. Since $6$ is $6$ units right of $0$, its opposite is $6$ units left of $0$, which is $-6$.}
+\ansItem{2}{$10$}
+\ansExplain{2}{The opposite of a negative number is positive. $-10$ is $10$ units left of $0$, so its opposite is $10$ units right of $0$, which is $10$.}
+\ansItem{3}{$0$}
+\ansExplain{3}{Zero is its own opposite. It sits at the center of the number line and is the same distance ($0$ units) from itself on both sides.}
+\ansItem{4}{$14$}
+\ansExplain{4}{Absolute value measures distance from $0$. Since $-14$ is $14$ units from $0$, $|{-14}| = 14$.}
+\ansItem{5}{$23$}
+\ansExplain{5}{Absolute value measures distance from $0$. Since $23$ is $23$ units from $0$, $|23| = 23$.}
+\ansItem{6}{$0$}
+\ansExplain{6}{A number plus its opposite always equals $0$. Since $8$ and $-8$ are opposites, $8 + (-8) = 0$.}
+\ansItem{7}{$25$}
+\ansExplain{7}{The opposite of $-25$ is the number the same distance from $0$ on the positive side, which is $25$.}
+\ansItem{8}{$-17$}
+\ansExplain{8}{The opposite of $17$ is the number the same distance from $0$ on the negative side, which is $-17$.}
+\ansItem{9}{$100$}
+\ansExplain{9}{The opposite of $-100$ is $100$. Both are $100$ units from $0$ on opposite sides of the number line.}
+\ansItem{10}{$33$}
+\ansExplain{10}{Absolute value is distance from $0$. Since $-33$ is $33$ units from $0$, $|{-33}| = 33$.}
+\ansItem{11}{$0$}
+\ansExplain{11}{Zero is $0$ units from itself on the number line, so $|0| = 0$.}
+\ansItem{12}{$71$}
+\ansExplain{12}{Since $-71$ is $71$ units from $0$ on the number line, $|{-71}| = 71$.}
+\ansItem{13}{$<$}
+\ansExplain{13}{On the number line, $-5$ is to the left of $3$, so $-5 < 3$. Negative numbers are always less than positive numbers.}
+\ansItem{14}{$>$}
+\ansExplain{14}{$|{-8}| = 8$ and $|6| = 6$. Since $8 > 6$, we have $|{-8}| > |6|$.}
+\ansItem{15}{$<$}
+\ansExplain{15}{On the number line, $-12$ is farther left than $-4$, so $-12 < -4$. A more negative number is always less.}
+\ansItem{16}{$-7, \; -2, \; 0, \; 1, \; 3$}
+\ansExplain{16}{Place each number on a number line. From left to right: $-7$ is farthest left, then $-2$, then $0$, then $1$, then $3$.}
+\ansItem{17}{$-15, \; -8, \; -3, \; 8, \; 12$}
+\ansExplain{17}{Order negatives first (more negative = smaller): $-15 < -8 < -3$. Then the positives: $8 < 12$.}
+\ansItem{18}{$-10, \; -5, \; -1, \; 0, \; 5, \; 10$}
+\ansExplain{18}{Negatives from most negative to least: $-10, -5, -1$. Then $0$, and positives in order: $5, 10$.}
+\ansItem{19}{False}
+\ansExplain{19}{Absolute value measures distance, which is always zero or positive. It can never be negative.}
+\ansItem{20}{True}
+\ansExplain{20}{$|{-3}| = 3$ and $|2| = 2$. Since $3 > 2$, the number $-3$ is farther from $0$.}
+\ansItem{21}{True}
+\ansExplain{21}{By definition, the opposite of a positive integer $n$ is $-n$, which is negative.}
+\ansItem{22}{True}
+\ansExplain{22}{Both $-5$ and $5$ are $5$ units from $0$, so their absolute values are equal: $|{-5}| = 5 = |5|$.}
+\ansItem{23}{$0$ feet (sea level)}
+\ansExplain{23}{Rising $200$ feet from $-200$: $-200 + 200 = 0$. The submarine is at sea level because $-200$ and $200$ are opposites.}
+\ansItem{24}{Change of $8°$C; resulting temperature $0°$C}
+\ansExplain{24}{The opposite of $-8$ is $8$, so the temperature rose $8°$C. New temperature: $-8 + 8 = 0°$C.}
+\ansItem{25}{$8{,}849$ m and $-10{,}994$ m; Mariana Trench has greater absolute value}
+\ansExplain{25}{Everest: $+8{,}849$. Mariana Trench: $-10{,}994$. Compare: $|{-10{,}994}| = 10{,}994 > 8{,}849 = |8{,}849|$. The trench is farther from sea level.}
+\ansItem{26}{$x = 7$ or $x = -7$}
+\ansExplain{26}{Absolute value equals $7$ means the number is $7$ units from $0$. Two numbers are $7$ units from $0$: $7$ (to the right) and $-7$ (to the left).}
+\ansItem{27}{$a$ and $b$ are opposites ($a = -b$)}
+\ansExplain{27}{If two different numbers have the same absolute value, they are the same distance from $0$ but on opposite sides. That means one is the opposite of the other.}

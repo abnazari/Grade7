@@ -1,0 +1,129 @@
+% ============================================================================
+% WORKBOOK (MODIFIED) — Section 8.3: Comparing Two Populations Visually
+% CCSS 7.SP.B.3 (FL/IN/MN/VA: multiple display emphasis)
+% Practice-focused reinforcement with multiple display types
+% ============================================================================
+\section{Comparing Two Populations Visually}
+\topicTitle{Comparing Two Populations Visually}
+
+\begin{quickReview}{Tools for Visual Comparison}
+Use these displays to compare two populations:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Dot plots} --- show every data point; great for small data sets.
+    \item \textbf{Histograms} --- group data into intervals; show distribution shape.
+    \item \textbf{Box plots} --- show median, quartiles, and range at a glance.
+    \item \textbf{Stem-and-leaf plots} --- keep exact values while showing shape.
+    \item \textbf{Circle graphs} --- compare proportions (parts of a whole).
+    \item \textbf{Frequency tables} --- organize counts by category or interval.
+\end{itemize}
+
+When comparing, look at both the \textbf{center} (mean/median) and the \textbf{spread} (range, IQR).
+\end{quickReview}
+
+% ── Warm-Up ──────────────────────────────────────────────────────────────────
+\begin{practiceBox}[funGreen]{\faSun~Warm-Up}
+
+\practiceHeader[funGreen]{Choose the best display type.}
+
+\prob You want to compare test scores of two classes and see every individual score. Which display?
+\answerBlank[3cm]
+\answerExplain{Dot plot}{Dot plots show every data point, making them ideal for small data sets where you want to see individual values.}
+
+\prob You want to compare how two groups spend their free time (sports, reading, gaming, etc.). Which display?
+\answerBlank[3cm]
+\answerExplain{Circle graph or frequency table}{Categorical data is best shown with circle graphs (proportions) or frequency tables (counts).}
+
+\prob You want to quickly compare the medians and spreads of two data sets with $50$ values each. Which display?
+\answerBlank[3cm]
+\answerExplain{Box plot}{Box plots summarize median, quartiles, and range without showing each point, making them efficient for larger data sets.}
+
+\prob You have two groups' heights and want to compare the shape of each distribution. Which display?
+\answerBlank[3cm]
+\answerExplain{Histogram}{Histograms show the overall shape (symmetric, skewed, etc.) by grouping data into intervals.}
+
+\prob You want to compare two groups' scores and keep all exact values while seeing the shape. Which display?
+\answerBlank[3cm]
+\answerExplain{Back-to-back stem-and-leaf plot}{Stem-and-leaf plots preserve exact values and show distribution shape simultaneously.}
+
+\end{practiceBox}
+
+% ── Practice A: Interpreting Displays ────────────────────────────────────────
+\begin{practiceBox}{Interpreting Displays}
+
+\practiceHeader{Use the given information to compare.}
+
+\prob Team~X: mean $= 80$, range $= 15$. Team~Y: mean $= 85$, range $= 30$. Compare.
+\answerExplain{Y averages higher but is more spread out}{Team Y's higher mean shows better average performance, but its larger range shows more inconsistency.}
+
+\prob Class~A's box plot: min $= 60$, $Q_1 = 70$, median $= 78$, $Q_3 = 85$, max $= 95$. Class~B: min $= 55$, $Q_1 = 68$, median $= 82$, $Q_3 = 90$, max $= 100$. Compare medians and IQRs.
+\answerExplain{B has higher median ($82$ vs.\ $78$); B has larger IQR ($22$ vs.\ $15$)}{IQR A: $85 - 70 = 15$. IQR B: $90 - 68 = 22$. Class B scores higher on average but with more variation.}
+
+\prob A circle graph shows Class~A spends $40\%$ of free time on sports; Class~B spends $25\%$. What can you conclude?
+\answerExplain{Class A devotes a larger share to sports}{Circle graphs compare proportions. A larger sector means a bigger fraction of the whole.}
+
+\prob A histogram for Group~A is symmetric. Group~B's histogram is skewed right. What does this tell you about outliers?
+\answerExplain{Group B likely has high outliers}{Right-skewed data has a long tail of higher values, suggesting some unusually high scores pull the distribution to the right.}
+
+\end{practiceBox}
+
+% ── Practice B: Comparing with Box Plots ─────────────────────────────────────
+\begin{practiceBox}[funTeal]{Comparing with Box Plots}
+
+\practiceHeader[funTeal]{Answer based on two box plots.}
+
+\prob Both box plots overlap heavily. Does this mean the groups are the same?
+\answerExplain{Not necessarily}{Overlap means some members are similar, but the centers and spreads may still differ. Compare medians and IQRs for a clearer picture.}
+
+\prob Group~A: median $= 72$, IQR $= 10$. Group~B: median $= 68$, IQR $= 20$. Which group is more consistent? Which scores higher overall?
+\answerExplain{A is more consistent ($\text{IQR} = 10$); A scores higher (median $72$)}{Smaller IQR means scores are more tightly grouped. Higher median means the typical score is higher.}
+
+\prob The median of Group~A is above $Q_3$ of Group~B. What does this tell you?
+\answerExplain{Group A's typical score exceeds $75\%$ of Group B's scores}{If A's median is above B's $Q_3$, more than half of A outperforms at least $75\%$ of B.}
+
+\prob A box plot shows Group~A has no outliers and Group~B has two outliers above the maximum whisker. What should you use to compare center --- mean or median?
+\answerExplain{Median}{Outliers pull the mean toward extreme values. Median is resistant to outliers and gives a more reliable comparison.}
+
+\end{practiceBox}
+
+% ── Practice C: True or False ────────────────────────────────────────────────
+\begin{practiceBox}[funPurple]{True or False?}
+
+\trueOrFalse{A dot plot is always better than a box plot.}
+\answerExplain{False}{Dot plots show individual values but become cluttered with large data sets. Box plots are better for summarizing large data sets.}
+
+\trueOrFalse{Circle graphs can compare counts directly between two groups of different sizes.}
+\answerExplain{False}{Circle graphs show proportions, not counts. If groups have different sizes, the same proportion represents different counts.}
+
+\trueOrFalse{Two data sets can have the same median but very different spreads.}
+\answerExplain{True}{Example: $\{48, 49, 50, 51, 52\}$ and $\{10, 30, 50, 70, 90\}$ both have median $50$ but very different ranges.}
+
+\trueOrFalse{A histogram groups data into intervals, so you lose individual data points.}
+\answerExplain{True}{Histograms count how many values fall in each interval but do not show exact values.}
+
+\end{practiceBox}
+
+% ── Word Problems ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funBlue]{\faGlobe~Word Problems}
+
+\wordProblem{Two classes take a quiz. Class~A: median $= 76$, IQR $= 12$, range $= 30$. Class~B: median $= 80$, IQR $= 8$, range $= 20$. Write $2$--$3$ sentences comparing them.}{comparison}
+\answerExplain{Class B has a higher median and is more consistent}{Class B scored higher on average (median $80$ vs.\ $76$). Class B is also more consistent, with a smaller IQR ($8$ vs.\ $12$) and range ($20$ vs.\ $30$). Class A's scores are more spread out.}
+
+\wordProblem{A researcher collects data on hours of sleep for $7$th and $8$th graders. She wants to compare centers and spreads. Name two displays she should use and explain why each is helpful.}{displays and reasons}
+\answerExplain{Box plots (quick median/IQR comparison) and histograms (shape of distribution)}{Box plots let her compare medians and IQRs side by side. Histograms reveal whether data is symmetric, skewed, or has clusters, giving a richer picture of each group's sleep patterns.}
+
+\wordProblem{A survey shows $60\%$ of boys and $45\%$ of girls choose video games as their favorite hobby. There are $80$ boys and $100$ girls surveyed. How many students total chose video games?}{students}
+\answerExplain{$93$ students}{Boys: $0.60 \times 80 = 48$. Girls: $0.45 \times 100 = 45$. Total: $48 + 45 = 93$.}
+
+\end{practiceBox}
+
+% ── Challenge ────────────────────────────────────────────────────────────────
+\begin{challengeBox}
+\prob Two groups have median $75$. Group~A: IQR $= 6$. Group~B: IQR $= 24$. A student says: ``Both groups are basically the same since their medians match.'' Explain why this is wrong. \answerBlank[5cm]
+\answerExplain{Same median $\neq$ same distribution; Group B's much larger IQR shows far more variability}{Median tells you the center, but IQR tells you how spread out the data is. Group B's scores range far wider, meaning individual scores vary much more. Comparing center \emph{and} spread is necessary.}
+
+\prob Name a situation where using two \emph{different} types of displays for the same data gives you more insight than using just one. Explain what each display shows that the other does not.
+\answerExplain{Example: test scores shown as box plot + dot plot}{The box plot quickly shows median, quartiles, and spread. The dot plot reveals clusters, gaps, and exact values the box plot hides. Together they give both a summary and full detail.}
+\end{challengeBox}
+
+\encouragement{Excellent! You can read and compare data from every type of display --- that's a powerful skill!}

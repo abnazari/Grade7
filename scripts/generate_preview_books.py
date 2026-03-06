@@ -165,8 +165,7 @@ def _topic_input(
     """Return the \\input{...} line for a single topic, selecting the right directory."""
     filename = config.topic_filenames[topic_id]
     if topic_id in modified_dict:
-        mod_filename = modified_dict[topic_id]
-        return f"\\input{{{modified_dir}/{mod_filename}}}"
+        return f"\\input{{{modified_dir}/{filename}}}"
     elif topic_id in additional_set:
         return f"\\input{{{additional_dir}/{filename}}}"
     else:
@@ -174,25 +173,25 @@ def _topic_input(
 
 
 def _all_in_one_input(tid, mod, add, cfg):
-    return _topic_input(tid, mod, add, cfg, "topics", "topics_modifed", "topics_additional")
+    return _topic_input(tid, mod, add, cfg, "topics", "topics_modified", "topics_additional")
 
 def _study_guide_input(tid, mod, add, cfg):
-    return _topic_input(tid, mod, add, cfg, "topics_study_guide", "topics_study_guide_modifed", "topics_study_guide_additional")
+    return _topic_input(tid, mod, add, cfg, "topics", "topics_modified", "topics_additional")
 
 def _workbook_input(tid, mod, add, cfg):
-    return _topic_input(tid, mod, add, cfg, "topics_workbook", "topics_workbook_modifed", "topics_workbook_additional")
+    return _topic_input(tid, mod, add, cfg, "topics_workbook", "topics_workbook_modified", "topics_workbook_additional")
 
 def _steps_input(tid, mod, add, cfg):
-    return _topic_input(tid, mod, add, cfg, "steps_topics", "steps_topics_modifed", "steps_topics_additional")
+    return _topic_input(tid, mod, add, cfg, "steps_topics", "steps_topics_modified", "steps_topics_additional")
 
 def _quiz_input(tid, mod, add, cfg):
-    return _topic_input(tid, mod, add, cfg, "topics_quiz", "topics_quiz_modifed", "topics_quiz_additional")
+    return _topic_input(tid, mod, add, cfg, "topics_quiz", "topics_quiz_modified", "topics_quiz_additional")
 
 def _puzzles_input(tid, mod, add, cfg):
-    return _topic_input(tid, mod, add, cfg, "topics_puzzles", "topics_puzzles_modifed", "topics_puzzles_additional")
+    return _topic_input(tid, mod, add, cfg, "topics_puzzles", "topics_puzzles_modified", "topics_puzzles_additional")
 
 def _worksheet_input(tid, mod, add, cfg):
-    return _topic_input(tid, mod, add, cfg, "topics_worksheet", "topics_worksheet_modifed", "topics_worksheet_additional")
+    return _topic_input(tid, mod, add, cfg, "topics_worksheet", "topics_worksheet_modified", "topics_worksheet_additional")
 
 
 # ============================================================================
@@ -323,6 +322,7 @@ def generate_preview_study_guide(
     lines: List[str] = []
     lines.append("% PREVIEW \u2014 Grade 7 Math Made Easy - Study Guide")
     lines.extend(_preview_preamble_studyguide())
+    lines.append(r"\usepackage{VM_packages/VMfunStudyGuide}")
     lines.append(r"\begin{document}")
     lines.append("")
 
@@ -334,7 +334,7 @@ def generate_preview_study_guide(
     lines.append(r"\input{initial_pages/common/copyright_page}")
     lines.append(r"\input{initial_pages/study_guide/00-welcome}")
     lines.append(r"\input{initial_pages/study_guide/01-how-to-use}")
-    lines.append(r"\input{initial_pages/study_guide/02-math-symbols-words}")
+    lines.append(r"\input{initial_pages/study_guide/02-math-quick-reference}")
     lines.append("")
     lines.append(r"\tableofcontents")
     lines.append(r"\cleardoublepage")
@@ -367,7 +367,21 @@ def generate_preview_workbook(
     lines: List[str] = []
     lines.append("% PREVIEW \u2014 Grade 7 Math Workbook")
     lines.extend(_preview_preamble_studyguide())
+    lines.append(r"\usepackage{VM_packages/VMfunWorkbook}")
     lines.append(r"\begin{document}")
+    lines.append("")
+
+    lines.append("% ============================================================================")
+    lines.append("% COVER PAGE")
+    lines.append("% ============================================================================")
+    lines.append(f"\\StateName{{{state_name}}}")
+    lines.append(r"\CoverImage{images/covers/workbook.png}")
+    lines.append(r"\StateNameXOffset{4.2in}")
+    lines.append(r"\StateNameYOffset{10in}")
+    lines.append(r"\StateNameRotation{0}")
+    lines.append(r"\StateNameFontSize{32}")
+    lines.append(r"\StateNameColor{NavyBlue}")
+    lines.append(r"\makeCoverPage")
     lines.append("")
 
     lines.append(r"\pagenumbering{roman}")
@@ -378,10 +392,13 @@ def generate_preview_workbook(
     lines.append(r"\input{initial_pages/common/copyright_page}")
     lines.append(r"\input{initial_pages/workbook/00-welcome}")
     lines.append(r"\input{initial_pages/workbook/01-how-to-use}")
-    lines.append(r"\input{initial_pages/workbook/03-math-reference}")
+    lines.append(r"\input{initial_pages/workbook/03-what-youll-need}")
+    lines.append(r"\input{initial_pages/workbook/04-math-reference}")
+    lines.append(r"\input{initial_pages/workbook/05-key-vocabulary}")
+    lines.append(r"\input{initial_pages/workbook/06-multiplication-table}")
+    lines.append(r"\input{initial_pages/workbook/07-my-progress}")
     lines.append("")
-    lines.append(r"\tableofcontents")
-    lines.append(r"\cleardoublepage")
+    lines.append(r"\friendlyTOC")
     lines.append(r"\pagenumbering{arabic}")
     lines.append("")
 
@@ -591,7 +608,7 @@ def generate_preview_in_30_days(
                 # Decide directory
                 modified_in_day = [t for t in day_entry.topics if t in modified_set]
                 if modified_in_day:
-                    lines.append(f"\\input{{topics_in30days_modifed/{day_entry.file}}}")
+                    lines.append(f"\\input{{topics_in30days_modified/{day_entry.file}}}")
                 else:
                     lines.append(f"\\input{{topics_in30days/{day_entry.file}}}")
                 lines.append("")

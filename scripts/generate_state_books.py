@@ -21,7 +21,7 @@ Book Types Supported:
 
 State Customization:
   - 36 "CCSS-only" states use the base topic list unchanged
-  - 14 states have modified topics (topics_modifed/) and/or additional
+  - 14 states have modified topics (topics_modified/) and/or additional
     state-specific topics (topics_additional/) inserted at the correct
     chapter positions
 
@@ -136,14 +136,14 @@ BOOK_TYPES: Dict[str, dict] = {
 # For each book type: (core_dir, modified_dir, additional_dir)
 
 TOPIC_DIR_MAP: Dict[str, tuple] = {
-    "all_in_one":   ("topics",             "topics_modifed",              "topics_additional"),
-    "study_guide":  ("topics_study_guide",  "topics_study_guide_modifed",  "topics_study_guide_additional"),
-    "workbook":     ("topics_workbook",     "topics_workbook_modifed",     "topics_workbook_additional"),
-    "step_by_step": ("steps_topics",        "steps_topics_modifed",        "steps_topics_additional"),
-    "quiz":         ("topics_quiz",         "topics_quiz_modifed",         "topics_quiz_additional"),
-    "puzzles":      ("topics_puzzles",      "topics_puzzles_modifed",      "topics_puzzles_additional"),
-    "worksheet":    ("topics_worksheet",    "topics_worksheet_modifed",    "topics_worksheet_additional"),
-    "in_30_days":   ("topics_in30days",     "topics_in30days_modifed",     "topics_in30days_additional"),
+    "all_in_one":   ("topics",             "topics_modified",              "topics_additional"),
+    "study_guide":  ("topics",             "topics_modified",              "topics_additional"),
+    "workbook":     ("topics_workbook",     "topics_workbook_modified",     "topics_workbook_additional"),
+    "step_by_step": ("steps_topics",        "steps_topics_modified",        "steps_topics_additional"),
+    "quiz":         ("topics_quiz",         "topics_quiz_modified",         "topics_quiz_additional"),
+    "puzzles":      ("topics_puzzles",      "topics_puzzles_modified",      "topics_puzzles_additional"),
+    "worksheet":    ("topics_worksheet",    "topics_worksheet_modified",    "topics_worksheet_additional"),
+    "in_30_days":   ("topics_in30days",     "topics_in30days_modified",     "topics_in30days_additional"),
 }
 
 
@@ -354,7 +354,7 @@ def generate_in_30_days_from_template(
     files.  State customization works differently:
 
     - **Modified days**: If any topic covered by a day is in the state's
-      modified set, the day file is loaded from ``topics_in30days_modifed/``.
+      modified set, the day file is loaded from ``topics_in30days_modified/``.
     - **Bonus lessons**: After certain days, additional lessons are inserted
       from ``topics_in30days_additional/bonus-...``.
 
@@ -576,7 +576,7 @@ def validate_topic_files(workspace: Path, config: TopicsConfig) -> List[str]:
     for topic_id, filename in config.topic_filenames.items():
         core_path = workspace / "topics" / f"{filename}.tex"
         additional_path = workspace / "topics_additional" / f"{filename}.tex"
-        modified_path = workspace / "topics_modifed" / f"{filename}.tex"
+        modified_path = workspace / "topics_modified" / f"{filename}.tex"
 
         if not (core_path.exists() or additional_path.exists() or modified_path.exists()):
             warnings.append(f"  ⚠️  Topic file not found for {topic_id}: {filename}.tex")

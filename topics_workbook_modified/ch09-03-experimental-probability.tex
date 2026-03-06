@@ -1,0 +1,153 @@
+% ============================================================================
+% WORKBOOK (MODIFIED) — Section 9.3: Experimental Probability
+% CCSS 7.SP.C.7 (FL/TX: simulation emphasis)
+% Practice-focused reinforcement with simulation design
+% ============================================================================
+\section{Experimental Probability}
+\topicTitle{Experimental Probability}
+
+\begin{quickReview}{Experimental Probability and Simulations}
+\textbf{Experimental probability} uses real data:
+$$P(\text{event}) = \frac{\text{number of times event occurs}}{\text{total trials}}$$
+
+A \textbf{simulation} models a real situation using coins, dice, spinners, or random-number generators. Simulations estimate probabilities when real experiments are impractical.
+
+\textbf{Steps to design a simulation:}
+\begin{enumerate}[leftmargin=*]
+    \item Identify the event and its possible outcomes.
+    \item Choose a model that matches the probabilities (coin, die, digits $0$--$9$).
+    \item Run many trials and record results.
+    \item Calculate experimental probability and compare to theoretical.
+\end{enumerate}
+
+More trials $\rightarrow$ better estimates (\textbf{Law of Large Numbers}).
+\end{quickReview}
+
+% ── Warm-Up ──────────────────────────────────────────────────────────────────
+\begin{practiceBox}[funGreen]{\faSun~Warm-Up}
+
+\practiceHeader[funGreen]{Find the experimental probability as a decimal.}
+
+\begin{multicols}{2}
+\prob A die is rolled $50$ times. A $6$ appears $9$ times. $P(6) =$ \answerBlank[2cm]
+\answerExplain{$0.18$}{$9 \div 50 = 0.18$.}
+
+\prob A coin is flipped $80$ times. Heads appears $36$ times. $P(\text{heads}) =$ \answerBlank[2cm]
+\answerExplain{$0.45$}{$36 \div 80 = 0.45$.}
+
+\prob A spinner lands on red $14$ out of $40$ spins. $P(\text{red}) =$ \answerBlank[2cm]
+\answerExplain{$0.35$}{$14 \div 40 = 0.35$.}
+
+\prob A free-throw shooter makes $45$ of $60$ attempts. $P(\text{make}) =$ \answerBlank[2cm]
+\answerExplain{$0.75$}{$45 \div 60 = 0.75$.}
+
+\prob A bag is drawn from $100$ times. Red appears $22$ times. $P(\text{red}) =$ \answerBlank[2cm]
+\answerExplain{$0.22$}{$22 \div 100 = 0.22$.}
+
+\prob A card is drawn and replaced $30$ times. A heart appears $6$ times. $P(\text{heart}) =$ \answerBlank[2cm]
+\answerExplain{$0.20$}{$6 \div 30 = 0.20$.}
+\end{multicols}
+\end{practiceBox}
+
+% ── Practice A: Reading Experimental Data ────────────────────────────────────
+\begin{practiceBox}{Reading Experimental Data}
+
+\practiceHeader{A die was rolled $120$ times. Results:}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{Outcome} & 1 & 2 & 3 & 4 & 5 & 6 \\
+\hline
+\textbf{Frequency} & 18 & 22 & 19 & 21 & 25 & 15 \\
+\hline
+\end{tabular}
+\end{center}
+
+\prob What is the experimental probability of rolling a $5$? \answerBlank[3cm]
+\answerExplain{$\frac{25}{120} \approx 0.21$}{$P(5) = 25 \div 120 \approx 0.208$.}
+
+\prob What is the experimental probability of rolling an even number? \answerBlank[3cm]
+\answerExplain{$\frac{58}{120} \approx 0.48$}{Even: $22 + 21 + 15 = 58$. $P = 58 \div 120 \approx 0.483$.}
+
+\prob The theoretical probability of each outcome is $\frac{1}{6} \approx 0.167$. Which outcome differed the most from theoretical?
+\answerExplain{$5$ (appeared $25$ times; expected $20$)}{Expected frequency: $120 \div 6 = 20$. Outcome $5$ appeared $25$ times, which is $5$ above expected --- the largest difference.}
+
+\prob Do you think the die is fair? Explain.
+\answerExplain{Probably fair; differences are small}{The differences between observed and expected are small (at most $5$ out of $120$). This is normal random variation. More rolls would give a clearer answer.}
+
+\end{practiceBox}
+
+% ── Practice B: Designing Simulations ────────────────────────────────────────
+\begin{practiceBox}[funTeal]{Designing Simulations}
+
+\practiceHeader[funTeal]{Design a simulation for each situation. State the model, what represents the event, and how many trials to run.}
+
+\prob Estimate the probability that a family with $3$ children has all girls.
+\answerExplain{Model: flip $3$ coins per trial (H $=$ boy, T $=$ girl). Record all-tails trials. Run $50$+ trials.}{Each child is equally likely boy or girl, matching a fair coin. Count the fraction of trials where all $3$ flips are tails.}
+
+\prob A cereal box has $1$ of $6$ prizes (equally likely). Estimate how many boxes you need to buy to collect all $6$.
+\answerExplain{Model: roll a die per ``box.'' Keep rolling until all $6$ numbers appear. Record how many rolls. Repeat $50$+ times.}{Each die face represents a prize. Average the number of rolls across trials to estimate boxes needed.}
+
+\prob A weather forecast says $30\%$ chance of rain each day. Estimate the probability it rains at least $3$ of the next $5$ days.
+\answerExplain{Model: digits $0$--$9$ ($0,1,2$ $=$ rain). Pick $5$ random digits per trial. Count trials with $\geq 3$ rain digits. Run $50$+ trials.}{$3$ out of $10$ digits represent $30\%$. Each trial of $5$ digits simulates $5$ days.}
+
+\prob About $40\%$ of students pass a certain test on the first try. Estimate the probability that all $3$ students in a study group pass.
+\answerExplain{Model: digits $0$--$9$ ($0$--$3$ $=$ pass). Pick $3$ digits per trial. Count all-pass trials. Run $50$+ trials.}{$4$ out of $10$ digits $= 40\%$. Record the fraction of trials where all $3$ digits are $0$--$3$.}
+
+\end{practiceBox}
+
+% ── Practice C: Running a Simulation ─────────────────────────────────────────
+\begin{practiceBox}[funOrange]{Running a Simulation}
+
+\practiceHeader[funOrange]{Use the random digits to run the given simulation.}
+
+\prob Simulation: $40\%$ chance of rain. Digits $0$--$3$ $=$ rain. Random digits for $10$ days: $3, 7, 1, 0, 9, 4, 2, 8, 5, 6$. How many rainy days? What is the experimental probability?
+\answerExplain{$4$ rainy days; $P = 0.40$}{Rain digits: $3, 1, 0, 2$. That is $4$ out of $10$. $P = 4 \div 10 = 0.40$.}
+
+\prob Simulation: $50\%$ chance of heads. Random digits for $12$ flips (even $=$ heads, odd $=$ tails): $4, 7, 2, 9, 0, 3, 8, 1, 6, 5, 2, 7$. How many heads?
+\answerExplain{$6$ heads; $P = 0.50$}{Heads (even): $4, 2, 0, 8, 6, 2$. That's $6$ out of $12$. $P = 0.50$.}
+
+\prob Simulation: $\frac{1}{6}$ chance per die face. Digits $0$--$5$ represent faces $1$--$6$. Ignore $6$--$9$. Random digits: $3, 8, 1, 6, 5, 0, 9, 2, 7, 4, 1, 3$. How many valid rolls? How many times did face~$1$ appear (digit $0$)?
+\answerExplain{$8$ valid rolls; face~$1$ appeared once; $P = 0.125$}{Valid digits (0--5): $3, 1, 5, 0, 2, 4, 1, 3$. That's $8$ rolls. Digit $0$ appears once. $P = 1 \div 8 = 0.125$.}
+
+\end{practiceBox}
+
+% ── Practice D: True or False ────────────────────────────────────────────────
+\begin{practiceBox}[funPurple]{True or False?}
+
+\trueOrFalse{Experimental probability always equals theoretical probability.}
+\answerExplain{False}{Experimental results vary due to chance. They approach theoretical probability as the number of trials increases.}
+
+\trueOrFalse{More trials in a simulation give a more reliable estimate.}
+\answerExplain{True}{The Law of Large Numbers: as trials increase, experimental probability converges toward the true probability.}
+
+\trueOrFalse{A simulation must use the exact same tool as the real event (e.g., real coins for coin flips).}
+\answerExplain{False}{Any model that matches the probabilities works: random digits, spinners, dice, or computer generators.}
+
+\trueOrFalse{If a coin lands on heads $7$ out of $10$ times, the coin must be unfair.}
+\answerExplain{False}{Small samples can produce misleading results. $70\%$ heads in $10$ flips is unusual but possible with a fair coin. More trials are needed.}
+
+\end{practiceBox}
+
+% ── Word Problems ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funBlue]{\faGlobe~Word Problems}
+
+\wordProblem{A spinner has $4$ equal sections: red, blue, green, yellow. After $80$ spins, red appeared $24$ times. Find the experimental probability. Is the spinner fair?}{probability and conclusion}
+\answerExplain{$P(\text{red}) = 0.30$; probably fair}{$24 \div 80 = 0.30$. Theoretical $= 0.25$. The difference is small and could be due to chance. More spins would clarify.}
+
+\wordProblem{About $30\%$ of blood donors have type~A blood. Design a simulation using random digits to estimate how many donors you must test to find the first type~A. Run $5$ trials with digits: $7, 4, 1; 0; 8, 5, 6, 2; 3, 1; 9, 7, 0$.}{average donors needed}
+\answerExplain{Average $\approx 2.6$ donors}{Let $0, 1, 2$ $=$ type A. Trials: $7,4,\mathbf{1}$ (3); $\mathbf{0}$ (1); $8,5,6,\mathbf{2}$ (4); $3,\mathbf{1}$ (2); $9,7,\mathbf{0}$ (3). Average: $(3+1+4+2+3) \div 5 = 2.6$.}
+
+\end{practiceBox}
+
+% ── Challenge ────────────────────────────────────────────────────────────────
+\begin{challengeBox}
+\prob A basketball player has a $60\%$ free-throw rate. Design a simulation to estimate the probability of making at least $4$ out of $5$ free throws. Describe your model, run $10$ trials using these random digits (read left to right in groups of $5$): $3,8,1,4,2 \;|\; 7,0,5,3,9 \;|\; 1,2,6,4,0 \;|\; 5,8,3,1,7 \;|\; 0,4,2,9,6 \;|\; 3,1,0,8,5 \;|\; 2,7,4,1,3 \;|\; 6,0,9,5,2 \;|\; 1,3,4,0,8 \;|\; 7,2,5,6,1$. What is the experimental probability? \answerBlank[5cm]
+\answerExplain{Model: digits $0$--$5$ $=$ make ($60\%$). $P(\geq 4) = 0.40$}{Trials (make $=$ 0--5): (3,\sout{8},1,4,2)$=$4 \checkmark; (\sout{7},0,5,3,\sout{9})$=$3; (1,2,\sout{6},4,0)$=$4 \checkmark; (5,\sout{8},3,1,\sout{7})$=$3; (0,4,2,\sout{9},\sout{6})$=$3; (3,1,0,\sout{8},5)$=$4 \checkmark; (2,\sout{7},4,1,3)$=$4 \checkmark; (\sout{6},0,\sout{9},5,2)$=$3; (1,3,4,0,\sout{8})$=$4 \checkmark; (\sout{7},2,5,\sout{6},1)$=$3. Success: $5/10 = 0.50$.}
+
+\prob Explain why a simulation with $10$ trials gives only a rough estimate, and how you could improve the precision.
+\answerExplain{$10$ trials have high variability; run $100$+ trials for a reliable estimate}{With few trials, random fluctuations have a large effect. Increasing to $100$ or more trials averages out the randomness and brings the estimate closer to the true probability.}
+\end{challengeBox}
+
+\encouragement{You've mastered experimental probability and simulations --- you can estimate any probability with data!}

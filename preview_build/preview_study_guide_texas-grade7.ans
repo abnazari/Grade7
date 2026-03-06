@@ -1,0 +1,23 @@
+\ansChap{1}
+\ansSec{1.1}
+\ansItem{1}{$2$ walls per hour}
+\ansExplain{1}{Divide the wall covered by the time: $\frac {2}{3} \div \frac {1}{3}$. Flip the second fraction and multiply: $\frac {2}{3} \times \frac {3}{1} = \frac {6}{3} = 2$ walls per hour.}
+\ansItem{2}{$\frac {2}{3}$ cup per minute}
+\ansExplain{2}{Divide cups by minutes: $\frac {1}{2} \div \frac {3}{4}$. Flip and multiply: $\frac {1}{2} \times \frac {4}{3} = \frac {4}{6} = \frac {2}{3}$ cup per minute.}
+\ansItem{3}{$1\frac {1}{4}$ gallons per mile}
+\ansExplain{3}{Divide gallons by miles: $\frac {5}{6} \div \frac {2}{3}$. Flip and multiply: $\frac {5}{6} \times \frac {3}{2} = \frac {15}{12} = \frac {5}{4} = 1\frac {1}{4}$ gallons per mile.}
+\ansItem{4}{Equal --- both $2$ cups per cup}
+\ansExplain{4}{Find each unit rate. Mix A: $\frac {1}{2} \div \frac {1}{4} = \frac {1}{2} \times 4 = 2$. Mix B: $\frac {2}{3} \div \frac {1}{3} = \frac {2}{3} \times 3 = 2$. Both give $2$ cups of nuts per cup of raisins, so they are equal.}
+\ansItem{5}{Beetle: $\frac {7}{8}$ m/hr $>$ $\frac {5}{6}$ m/hr}
+\ansExplain{5}{Find each unit rate. Snail: $\frac {5}{8} \div \frac {3}{4} = \frac {5}{8} \times \frac {4}{3} = \frac {20}{24} = \frac {5}{6}$ m/hr. Beetle: $\frac {7}{10} \div \frac {4}{5} = \frac {7}{10} \times \frac {5}{4} = \frac {35}{40} = \frac {7}{8}$ m/hr. Since $\frac {7}{8} > \frac {5}{6}$, the beetle is faster.}
+\ansChap{2}
+\ansSec{2.1}
+\ansItem{1}{$8$}
+\ansExplain{1}{The opposite of a negative number is positive. $-8$ is $8$ units left of $0$, so its opposite is $8$ units right of $0$.}
+\ansItem{2}{$12$ and $7$}
+\ansExplain{2}{Absolute value measures distance from $0$. $-12$ is $12$ units from $0$, so $|-12| = 12$. $7$ is $7$ units from $0$, so $|7| = 7$.}
+\ansItem{3}{$0$ yards}
+\ansExplain{3}{Gain $= +6$, loss $= -6$. Add: $6 + (-6) = 0$. The team is back where it started because the gain and loss are opposites.}
+\ansItem{4}{False}
+\ansItem{5}{$-7, \; -4, \; 0, \; 2, \; 5$}
+\ansExplain{5}{On a number line, numbers increase from left to right. $-7$ is farthest left, then $-4$, then $0$, then $2$, then $5$.}

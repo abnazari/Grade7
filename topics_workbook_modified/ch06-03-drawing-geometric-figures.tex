@@ -1,0 +1,128 @@
+% ============================================================================
+% WORKBOOK (MODIFIED) — Section 6.3: Drawing Geometric Figures
+% CCSS 7.G.A.2 (IN: IAS 2023 construction emphasis with justification)
+% Practice-focused reinforcement with compass/straightedge and step justification
+% ============================================================================
+\section{Drawing Geometric Figures with Given Conditions}
+\topicTitle{Drawing Geometric Figures with Given Conditions}
+
+\begin{quickReview}{Construct and Justify}
+Given conditions may produce \textbf{exactly one shape}, \textbf{more than one shape}, or \textbf{no shape}.
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Triangle Inequality:} Any two sides must add to more than the third side.
+    \item \textbf{SAS / ASA / SSS} conditions usually give exactly one triangle.
+    \item \textbf{AAA} (angles only) allows infinitely many triangles (different sizes).
+    \item For every construction step, explain \textbf{why} it works, not just \textbf{what} you did.
+\end{itemize}
+
+\medskip
+\textbf{Example:} Construct a triangle with sides $5$~cm, $7$~cm, and $3$~cm.
+
+Step 1: Draw a $7$~cm base. Step 2: Arc $5$~cm from one end. Step 3: Arc $3$~cm from the other end. Step 4: Connect the intersection. Justify: The intersection is exactly $5$~cm and $3$~cm from the endpoints.
+\end{quickReview}
+
+% ── Warm-Up ──────────────────────────────────────────────────────────────────
+\begin{practiceBox}[funGreen]{\faSun~Warm-Up}
+
+\practiceHeader[funGreen]{Can the triangle be drawn? Use the Triangle Inequality.}
+
+\prob Sides: $4$~cm, $6$~cm, $9$~cm. \answerBlank[3cm]
+\answerExplain{Yes}{$4 + 6 = 10 > 9$ \checkmark, $4 + 9 = 13 > 6$ \checkmark, $6 + 9 = 15 > 4$ \checkmark. All three inequalities hold.}
+
+\prob Sides: $3$~cm, $5$~cm, $10$~cm. \answerBlank[3cm]
+\answerExplain{No}{$3 + 5 = 8$, but $8 < 10$. The two shorter sides cannot reach each other.}
+
+\prob Sides: $7$~cm, $7$~cm, $7$~cm. \answerBlank[3cm]
+\answerExplain{Yes --- equilateral}{$7 + 7 = 14 > 7$ \checkmark. An equilateral triangle always satisfies the inequality.}
+
+\prob Sides: $2$~cm, $3$~cm, $5$~cm. \answerBlank[3cm]
+\answerExplain{No}{$2 + 3 = 5$, which is \emph{equal} to (not greater than) $5$. The three points would be collinear.}
+
+\prob Sides: $6$~cm, $8$~cm, $10$~cm. \answerBlank[3cm]
+\answerExplain{Yes --- a right triangle}{$6 + 8 = 14 > 10$ \checkmark. In fact, $6^2 + 8^2 = 100 = 10^2$, so it is a right triangle.}
+
+\end{practiceBox}
+
+% ── Practice A: Construction Steps with Justification ────────────────────────
+\begin{practiceBox}{Construction Steps with Justification}
+
+\practiceHeader{Describe the construction steps \emph{and} justify each one.}
+
+\prob Construct an equilateral triangle with side $6$~cm. Justify each step.
+\answerExplain{Draw $6$~cm base; arc $6$~cm from each endpoint; connect intersection}{Step 1: Draw a $6$~cm segment (one side). Justification: establishes the base length. Step 2: Arc $6$~cm from the left endpoint. Justification: all points on this arc are $6$~cm from that vertex. Step 3: Arc $6$~cm from the right endpoint. Justification: the intersection is $6$~cm from both vertices. Step 4: Connect to form the triangle. All sides are $6$~cm by construction.}
+
+\prob Construct a triangle with sides $4$~cm and $5$~cm and an included angle of $60°$. Justify.
+\answerExplain{Draw $5$~cm base; measure $60°$ at one end; mark $4$~cm on the ray; connect}{Step 1: Draw a $5$~cm base. Step 2: Use a protractor to draw a $60°$ angle at one endpoint. Justification: SAS --- two sides and the included angle uniquely determine a triangle. Step 3: Mark $4$~cm on the angle ray. Step 4: Connect to the other endpoint. Exactly one triangle is possible.}
+
+\prob Can you draw a triangle with angles $40°$, $60°$, and $90°$? Justify.
+\answerExplain{No}{$40 + 60 + 90 = 190°$, which exceeds $180°$. Triangle angles must sum to exactly $180°$, so no triangle is possible.}
+
+\prob A triangle has angles $50°$, $60°$, and $70°$. How many different triangles can be drawn? Justify.
+\answerExplain{Infinitely many}{Knowing all three angles (AAA) fixes the shape but not the size. You can scale the triangle to any size. Each different side length gives a new triangle.}
+
+\end{practiceBox}
+
+% ── Practice B: How Many Shapes? ─────────────────────────────────────────────
+\begin{practiceBox}[funTeal]{How Many Shapes Are Possible?}
+
+\practiceHeader[funTeal]{Determine whether the conditions produce one, more than one, or no shape.}
+
+\prob A rectangle with perimeter $20$~cm. \answerBlank[4cm]
+\answerExplain{More than one}{Sides must add to $10$: $1 \times 9$, $2 \times 8$, $3 \times 7$, etc. Perimeter alone does not fix the shape.}
+
+\prob A triangle with sides $3$~cm, $4$~cm, and $5$~cm. \answerBlank[4cm]
+\answerExplain{Exactly one}{SSS: three fixed side lengths produce exactly one triangle (up to congruence).}
+
+\prob Two sides of $6$~cm and $8$~cm with a $90°$ angle between them. \answerBlank[4cm]
+\answerExplain{Exactly one}{SAS: two sides and the included angle uniquely determine the triangle. Only one right triangle with legs $6$ and $8$ exists.}
+
+\prob A quadrilateral with sides $3$, $4$, $5$, and $6$~cm. \answerBlank[4cm]
+\answerExplain{More than one}{Four side lengths do not fix a quadrilateral. The angles can vary, producing different shapes.}
+
+\prob A triangle with angles $30°$ and $60°$ and a side of $10$~cm between them. \answerBlank[4cm]
+\answerExplain{Exactly one}{ASA: two angles and the included side uniquely determine a triangle.}
+
+\end{practiceBox}
+
+% ── Practice C: True or False ────────────────────────────────────────────────
+\begin{practiceBox}[funPurple]{True or False?}
+
+\trueOrFalse{If you know all three angles of a triangle, there is exactly one triangle you can draw.}
+\answerExplain{False}{AAA fixes the shape, not the size. Infinitely many similar triangles share the same angles.}
+
+\trueOrFalse{Two triangles with the same three side lengths are always congruent.}
+\answerExplain{True}{SSS congruence: three matching side lengths guarantee the triangles are identical.}
+
+\trueOrFalse{A triangle with sides $5$, $5$, and $10$ can be drawn.}
+\answerExplain{False}{$5 + 5 = 10$, which is equal to (not greater than) the third side. The points would be collinear.}
+
+\trueOrFalse{Every step in a geometric construction should include a justification.}
+\answerExplain{True}{Justifications explain \emph{why} each step works, making the construction a logical argument rather than just a set of directions.}
+
+\end{practiceBox}
+
+% ── Word Problems ────────────────────────────────────────────────────────────
+\begin{practiceBox}[funBlue]{\faGlobe~Word Problems}
+
+\wordProblem{A park designer wants to create a triangular garden with sides $8$~m, $15$~m, and $20$~m. Is this possible? If so, how many different triangles can be made? Justify.}{answer and justification}
+\answerExplain{Yes; exactly one triangle}{Check: $8 + 15 = 23 > 20$ \checkmark, $8 + 20 = 28 > 15$ \checkmark, $15 + 20 = 35 > 8$ \checkmark. SSS gives exactly one triangle.}
+
+\wordProblem{A student claims they drew two \emph{different} triangles, each with sides $5$~cm, $7$~cm, and $9$~cm. Is that possible? Explain.}{yes or no with justification}
+\answerExplain{No}{SSS guarantees a unique triangle. Two triangles with the same three side lengths must be congruent (identical in shape and size).}
+
+\wordProblem{A fence company is told to build a triangular enclosure with one side $12$~m, an adjacent angle of $45°$, and the opposite side $8$~m. How many different fences are possible? (Hint: this is SSA.)}{number of triangles}
+\answerExplain{Two or zero (ambiguous case)}{SSA does not guarantee a unique triangle. Depending on the measurements, there could be two different triangles, one, or none. This is called the \emph{ambiguous case}.}
+
+\end{practiceBox}
+
+% ── Challenge ────────────────────────────────────────────────────────────────
+\begin{challengeBox}
+\prob Describe the complete construction of a triangle with $\angle A = 45°$, $AB = 8$~cm, and $\angle B = 60°$. Justify each step and state how many triangles are possible. \answerBlank[5cm]
+\answerExplain{Exactly one triangle (ASA)}{Step 1: Draw segment $AB = 8$~cm. Justification: establishes the known side. Step 2: At $A$, draw a ray at $45°$. Justification: fixes angle $A$. Step 3: At $B$, draw a ray at $60°$. Justification: fixes angle $B$. Step 4: The rays intersect at exactly one point $C$. Justification: ASA --- two angles and the included side uniquely determine a triangle.}
+
+\prob What is the minimum number of measurements needed to uniquely determine a triangle? Explain your reasoning.
+\answerExplain{Three measurements (not all angles)}{You need at least $3$ measurements, and at least one must be a side length. SSS, SAS, and ASA each use $3$ measurements. AAA (three angles) is not enough because it allows different sizes.}
+\end{challengeBox}
+
+\encouragement{You're thinking like a mathematician --- constructing shapes and justifying every step!}

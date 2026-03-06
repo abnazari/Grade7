@@ -1,0 +1,174 @@
+% ============================================================================
+% Welcome Page — Grade 7 Math Study Guide
+% Hexagon-motif header with layered teal bands, centred welcome prose,
+% and a 2×2 left-bordered showcard grid. THE TPT thumbnail page.
+% UNIQUE to Study Guide: hexagon motifs, teal brand colour, left-bar cards.
+% ============================================================================
+
+\thispagestyle{empty}
+
+% ── TikZ full-page background ────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+    % Soft warm wash
+    \fill[funTeal!2]
+        (current page.south west) rectangle (current page.north east);
+
+    % ── Layered header — three soft overlapping bands ──
+    % Outermost: wide teal band with angled bottom
+    \fill[funTeal!7]
+        (current page.north west) --
+        (current page.north east) --
+        ([yshift=-9.8cm]current page.north east) --
+        ([yshift=-10.6cm]current page.north west) -- cycle;
+
+    % Middle: slightly inset green tint for depth
+    \fill[funGreen!5]
+        ([xshift=0.6cm, yshift=-0.6cm]current page.north west) --
+        ([xshift=-0.6cm, yshift=-0.6cm]current page.north east) --
+        ([xshift=-0.6cm, yshift=-9.4cm]current page.north east) --
+        ([xshift=0.6cm, yshift=-10.1cm]current page.north west) -- cycle;
+
+    % Inner: lighter lift
+    \fill[white, opacity=0.35]
+        ([xshift=1.6cm, yshift=-1.6cm]current page.north west) --
+        ([xshift=-1.6cm, yshift=-1.6cm]current page.north east) --
+        ([xshift=-1.6cm, yshift=-8.8cm]current page.north east) --
+        ([xshift=1.6cm, yshift=-9.4cm]current page.north west) -- cycle;
+
+    % ── Hexagon cluster — top left ──
+    \node[regular polygon, regular polygon sides=6, fill=funTeal!12,
+          minimum size=8mm, inner sep=0pt]
+        at ([xshift=2.4cm, yshift=-1.6cm]current page.north west) {};
+    \node[regular polygon, regular polygon sides=6, fill=funGreen!8,
+          minimum size=5mm, inner sep=0pt]
+        at ([xshift=3.8cm, yshift=-2.7cm]current page.north west) {};
+    \node[regular polygon, regular polygon sides=6, fill=funTeal!7,
+          minimum size=3.5mm, inner sep=0pt]
+        at ([xshift=5.4cm, yshift=-1.3cm]current page.north west) {};
+
+    % ── Hexagon cluster — top right ──
+    \node[regular polygon, regular polygon sides=6, fill=funGreen!9,
+          minimum size=6.5mm, inner sep=0pt]
+        at ([xshift=-2.6cm, yshift=-1.9cm]current page.north east) {};
+    \node[regular polygon, regular polygon sides=6, fill=funTeal!10,
+          minimum size=4mm, inner sep=0pt]
+        at ([xshift=-4.4cm, yshift=-2.9cm]current page.north east) {};
+    \node[regular polygon, regular polygon sides=6, fill=funTeal!6,
+          minimum size=2.8mm, inner sep=0pt]
+        at ([xshift=-6.2cm, yshift=-1.5cm]current page.north east) {};
+
+    % ── Hexagon cluster — bottom corners ──
+    \node[regular polygon, regular polygon sides=6, fill=funGreen!5,
+          minimum size=5mm, inner sep=0pt]
+        at ([xshift=2.6cm, yshift=2.3cm]current page.south west) {};
+    \node[regular polygon, regular polygon sides=6, fill=funTeal!5,
+          minimum size=3.5mm, inner sep=0pt]
+        at ([xshift=5.2cm, yshift=1.7cm]current page.south west) {};
+    \node[regular polygon, regular polygon sides=6, fill=funTeal!6,
+          minimum size=4.5mm, inner sep=0pt]
+        at ([xshift=-3cm, yshift=2.6cm]current page.south east) {};
+    \node[regular polygon, regular polygon sides=6, fill=funGreen!4,
+          minimum size=2.5mm, inner sep=0pt]
+        at ([xshift=-5.4cm, yshift=1.5cm]current page.south east) {};
+
+    % ── Tracking text ──
+    \node[font=\fontsize{9}{11}\selectfont\sffamily\color{funTealDark!50}]
+        at ([yshift=-2.4cm]current page.north)
+        {\textls[180]{YOUR GRADE 7 STUDY GUIDE}};
+
+    % ── Main title ──
+    \node[font=\fontsize{34}{40}\selectfont\sffamily\bfseries\color{black!88},
+          text width=0.82\paperwidth, align=center]
+        at ([yshift=-4.6cm]current page.north)
+        {Math Made Easy};
+
+    % ── Subtitle ──
+    \node[font=\normalsize\sffamily\color{black!45},
+          text width=0.7\paperwidth, align=center]
+        at ([yshift=-6.2cm]current page.north)
+        {Key Concepts \;\textbullet\; Worked Examples \;\textbullet\;
+        Review \& Practice};
+
+    % ── Elegant separator: triple-hexagon motif ──
+    \draw[funTeal!22, line width=0.9pt]
+        ([xshift=3.5cm, yshift=-7.5cm]current page.north west) --
+        ([xshift=-3.5cm, yshift=-7.5cm]current page.north east);
+    % Central hexagon
+    \node[regular polygon, regular polygon sides=6, fill=funTeal!15,
+          draw=funTeal!28, line width=0.4pt, minimum size=5.5mm,
+          inner sep=0pt]
+        at ([yshift=-7.5cm]current page.north) {};
+    % Flanking hexagons
+    \node[regular polygon, regular polygon sides=6, fill=funGreen!8,
+          minimum size=3.5mm, inner sep=0pt]
+        at ([xshift=-1.2cm, yshift=-7.5cm]current page.north) {};
+    \node[regular polygon, regular polygon sides=6, fill=funGreen!8,
+          minimum size=3.5mm, inner sep=0pt]
+        at ([xshift=1.2cm, yshift=-7.5cm]current page.north) {};
+
+    % ── Thin outer frame ──
+    \draw[black!6, line width=0.3pt]
+        ([xshift=8mm, yshift=-8mm]current page.north west) rectangle
+        ([xshift=-8mm, yshift=8mm]current page.south east);
+
+    % ── Copyright footer ──
+    \node[font=\sffamily\tiny\color{black!32}, anchor=south]
+        at ([yshift=0.5cm]current page.south)
+        {\textcopyright~2026 Dr.\ A.\ Nazari \;\textbullet\; ViewMath.com};
+
+\end{tikzpicture}
+
+% ── Welcome Text ──────────────────────────────────────────────────────────
+\vspace*{7.6cm}
+
+\begin{center}
+\begin{minipage}{0.76\textwidth}
+    \centering\sffamily\large\color{black!68}
+    \setlength{\parskip}{6pt}
+
+    This study guide breaks down every Grade~7 math topic into
+    clear explanations, worked examples, and practice problems.
+    Read the concept, follow the examples step by step,
+    then test yourself. The answer key in the back lets you
+    check your work and learn from every mistake.
+\end{minipage}
+\end{center}
+
+% ── Feature Showcards — 2×2 grid ─────────────────────────────────────────
+\vspace{7mm}
+
+\begin{center}
+\begin{minipage}{0.86\textwidth}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\sgShowcard{funTeal}{\faBookOpen}{9 Chapters}{%
+    From ratios and percents to probability ---
+    every Grade~7 standard explained clearly.}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\sgShowcard{funGreen}{\faLightbulb}{Key Concepts First}{%
+    Each topic starts with the core idea, so you always
+    know \emph{what} you're learning and \emph{why}.}
+\end{minipage}
+
+\vspace{1mm}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\sgShowcard{funOrange}{\faPen}{Worked Examples}{%
+    Step-by-step solutions show you exactly how to solve
+    each type of problem before you try on your own.}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\sgShowcard{funPurple}{\faCheckDouble}{Practice with Answers}{%
+    Every section ends with practice problems.
+    Full answer key included in the back.}
+\end{minipage}
+
+\end{minipage}
+\end{center}
+
+\clearpage

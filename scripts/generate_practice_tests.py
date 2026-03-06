@@ -126,7 +126,7 @@ def load_all_question_banks(
     Scans three question-bank directories:
       - tests_questions_bank/topics/           (core CCSS)
       - tests_questions_bank/topics_additional/ (supplementary)
-      - tests_questions_bank/topics_modifed/    (state-modified)
+      - tests_questions_bank/topics_modified/    (state-modified)
 
     Modified banks are kept separate because they share topic IDs with core
     banks — they must only replace core questions for states that actually
@@ -161,7 +161,7 @@ def load_all_question_banks(
                 print(f"  WARNING: No questions parsed from {filepath.name}")
 
     # ── Modified banks (state-specific replacements) ────────────────────
-    mod_dir = bank_root / "topics_modifed"
+    mod_dir = bank_root / "topics_modified"
     if mod_dir.exists():
         for filepath in sorted(mod_dir.glob("*.tex")):
             m = re.match(r'(ch\d{2}-\d{2})', filepath.stem)

@@ -1,0 +1,102 @@
+% ============================================================================
+% VMfunStudyGuide.sty — Grade 7 Math Study Guide Environments
+% Design language: hexagon badges, teal brand color, clean card layouts,
+% shield-shaped accents, double-rule headers with teal highlights.
+% UNIQUE to Study Guide. Different from Workbook (diamonds, blue).
+% ============================================================================
+\ProvidesPackage{VMfunStudyGuide}[2026/03/07 Grade 7 Study Guide Environments]
+
+% ── Page Header ────────────────────────────────────────────────────────────
+% Bold centered title + subtitle separated by a teal double rule.
+% Usage: \sgPageHeader{title}{subtitle}
+\newcommand{\sgPageHeader}[2]{%
+    \begin{center}
+    {\fontsize{24}{28}\selectfont\bfseries\sffamily\color{funTealDark}#1}%
+    \par\vspace{3mm}%
+    {\color{funTeal!30}\rule{0.55\textwidth}{1.2pt}}%
+    \par\vspace{1.5pt}%
+    {\color{funTeal!18}\rule{0.42\textwidth}{0.5pt}}%
+    \par\vspace{3mm}%
+    {\normalsize\sffamily\color{funGray}#2}%
+    \end{center}
+    \vspace{5mm}%
+}
+
+% ── Showcard ───────────────────────────────────────────────────────────────
+% Feature card with colored LEFT accent bar + subtle shadow.
+% Distinct from Workbook's top-bar wbShowcard.
+% Usage: \sgShowcard{color}{icon-cmd}{title}{description}
+\newcommand{\sgShowcard}[4]{%
+    \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=black!6,
+        arc=3pt,
+        boxrule=0.3pt,
+        left=6mm, right=5mm, top=4mm, bottom=3mm,
+        borderline west={3.5pt}{0pt}{#1},
+        shadow={1mm}{-1mm}{0mm}{#1!8},
+    ]
+        {\color{#1}\Large #2}\hspace{4mm}%
+        {\bfseries\sffamily\color{black!85}#3}\par\vspace{2pt}%
+        {\sffamily\small\color{black!55}#4}
+    \end{tcolorbox}
+    \vspace{3mm}%
+}
+
+% ── Hex Step ───────────────────────────────────────────────────────────────
+% Regular hexagon badge with number + title + description.
+% Distinct from Workbook's diamond (rotated-square) wbDiamondStep.
+% Usage: \sgHexStep{number}{color}{title}{description}
+\newcommand{\sgHexStep}[4]{%
+    \noindent
+    \begin{minipage}[t]{0.12\textwidth}
+        \centering\vspace{4pt}%
+        \begin{tikzpicture}[baseline=-0.3ex]
+            \node[regular polygon, regular polygon sides=6, fill=#2!10,
+                  draw=#2!35, line width=0.8pt, minimum size=12mm,
+                  inner sep=0pt] (bg) {};
+            \node[font=\bfseries\sffamily\Large, text=#2!75!black]
+                at (bg.center) {#1};
+        \end{tikzpicture}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.85\textwidth}
+        \vspace{0pt}%
+        {\large\bfseries\sffamily\color{black!85}#3}\par\vspace{2pt}%
+        {\sffamily\color{black!55}#4}
+    \end{minipage}%
+    \par\vspace{7mm}%
+}
+
+% ── Info Panel ─────────────────────────────────────────────────────────────
+% Clean panel with solid border and light fill.
+% Usage: \begin{sgInfoPanel}{color} ... \end{sgInfoPanel}
+\newtcolorbox{sgInfoPanel}[1]{
+    enhanced,
+    colback=#1!4,
+    colframe=#1!25,
+    arc=5pt,
+    boxrule=0.6pt,
+    left=7mm, right=7mm, top=5mm, bottom=5mm,
+}
+
+% ── Formula Card ───────────────────────────────────────────────────────────
+% Compact card for formula/fact reference. Left-colored border, white fill.
+% Usage: \sgFormulaCard{color}{title}{content}
+\newcommand{\sgFormulaCard}[3]{%
+    \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=#1!15,
+        arc=3pt,
+        boxrule=0.4pt,
+        borderline west={3pt}{0pt}{#1},
+        left=5mm, right=4mm, top=2mm, bottom=1.5mm,
+    ]
+        {\small\bfseries\sffamily\color{#1!80!black}#2}\par\vspace{1pt}%
+        {\small\sffamily\color{black!60}#3}
+    \end{tcolorbox}
+    \vspace{1.5mm}%
+}
+
+\endinput
