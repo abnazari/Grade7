@@ -440,10 +440,8 @@ def generate_preview_step_by_step(
     lines.append(r"\input{initial_pages/step_by_step/00-welcome}")
     lines.append(r"\input{initial_pages/step_by_step/01-how-to-use}")
     lines.append(r"\input{initial_pages/step_by_step/02-how-every-topic-works}")
-    lines.append(r"\input{initial_pages/all_in_one/03-math-symbols-words}")
     lines.append("")
-    lines.append(r"\tableofcontents")
-    lines.append(r"\cleardoublepage")
+    lines.append(r"\friendlyTOC")
     lines.append(r"\pagenumbering{arabic}")
     lines.append("")
 

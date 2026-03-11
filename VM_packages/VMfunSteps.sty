@@ -380,3 +380,88 @@
     {\bfseries\sffamily\color{funPinkDark}Remember:}\hspace{3mm}{\sffamily #1}%
     \par\vspace{2mm}
 }
+
+%========================================================================================
+% INITIAL-PAGE HELPERS — Step-by-Step brand: orange, chevron/arrow motif
+%========================================================================================
+
+% ── Page Header ────────────────────────────────────────────────────────────
+% Usage: \stPageHeader{title}{subtitle}
+\newcommand{\stPageHeader}[2]{%
+    \begin{center}
+    {\fontsize{24}{28}\selectfont\bfseries\sffamily\color{funOrangeDark}#1}%
+    \par\vspace{3mm}%
+    {\color{funOrange!30}\rule{0.55\textwidth}{1.2pt}}%
+    \par\vspace{1.5pt}%
+    {\color{funOrange!18}\rule{0.42\textwidth}{0.5pt}}%
+    \par\vspace{3mm}%
+    {\normalsize\sffamily\color{funGray}#2}%
+    \end{center}
+    \vspace{5mm}%
+}
+
+% ── Showcard ───────────────────────────────────────────────────────────────
+% Feature card with colored LEFT accent bar + subtle shadow.
+% Usage: \stShowcard{color}{icon-cmd}{title}{description}
+\newcommand{\stShowcard}[4]{%
+    \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=black!6,
+        arc=3pt,
+        boxrule=0.3pt,
+        left=6mm, right=5mm, top=4mm, bottom=3mm,
+        borderline west={3.5pt}{0pt}{#1},
+        shadow={1mm}{-1mm}{0mm}{#1!8},
+    ]
+        {\color{#1}\Large #2}\hspace{4mm}%
+        {\bfseries\sffamily\color{black!85}#3}\par\vspace{2pt}%
+        {\sffamily\small\color{black!55}#4}
+    \end{tcolorbox}
+    \vspace{3mm}%
+}
+
+% ── Arrow Step ─────────────────────────────────────────────────────────────
+% Right-arrow badge with number + title + description.
+% Unique to Step-by-Step (study guide = hexagons, workbook = diamonds).
+% Usage: \stArrowStep{number}{color}{title}{description}
+\newcommand{\stArrowStep}[4]{%
+    \noindent
+    \begin{minipage}[t]{0.12\textwidth}
+        \centering\vspace{4pt}%
+        \begin{tikzpicture}[baseline=-0.3ex]
+            \node[rounded corners=3pt, fill=#2!10,
+                  draw=#2!35, line width=0.8pt, minimum width=11mm,
+                  minimum height=10mm, inner sep=0pt] (bg) {};
+            \node[font=\bfseries\sffamily\Large, text=#2!75!black]
+                at (bg.center) {#1};
+        \end{tikzpicture}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.85\textwidth}
+        \vspace{0pt}%
+        {\large\bfseries\sffamily\color{black!85}#3}\par\vspace{2pt}%
+        {\sffamily\color{black!55}#4}
+    \end{minipage}%
+    \par\vspace{7mm}%
+}
+
+% ── Info Panel ─────────────────────────────────────────────────────────────
+% Usage: \begin{stInfoPanel}{color} ... \end{stInfoPanel}
+\newtcolorbox{stInfoPanel}[1]{
+    enhanced,
+    colback=#1!4,
+    colframe=#1!25,
+    arc=5pt,
+    boxrule=0.6pt,
+    left=7mm, right=7mm, top=5mm, bottom=5mm,
+}
+
+% ── Check Item ─────────────────────────────────────────────────────────────
+% Usage: \stCheckItem{color}{title}{description}
+\newcommand{\stCheckItem}[3]{%
+    \par\noindent
+    {\color{#1}\faCheckSquare}\hspace{3mm}%
+    {\bfseries\sffamily\color{black!80}#2}\hspace{2mm}---\hspace{2mm}%
+    {\sffamily\color{black!55}#3}%
+    \par\vspace{4mm}%
+}

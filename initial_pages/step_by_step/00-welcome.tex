@@ -1,0 +1,174 @@
+% ============================================================================
+% Welcome Page — Grade 7 Math Step by Step
+% Layered header with soft gradient-like fills, arrow/chevron motifs,
+% centred welcome prose, and a 2×2 showcard grid. THE TPT thumbnail page.
+% UNIQUE to Step-by-Step: arrow/chevron motifs, orange brand colour.
+% ============================================================================
+
+\thispagestyle{empty}
+
+% ── TikZ full-page background ────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+    % Soft warm wash
+    \fill[funOrange!2]
+        (current page.south west) rectangle (current page.north east);
+
+    % ── Layered header — three soft overlapping bands ──
+    % Outermost: wide orange band with angled bottom
+    \fill[funOrange!7]
+        (current page.north west) --
+        (current page.north east) --
+        ([yshift=-9.8cm]current page.north east) --
+        ([yshift=-10.6cm]current page.north west) -- cycle;
+
+    % Middle: slightly inset teal tint for depth
+    \fill[funTeal!5]
+        ([xshift=0.6cm, yshift=-0.6cm]current page.north west) --
+        ([xshift=-0.6cm, yshift=-0.6cm]current page.north east) --
+        ([xshift=-0.6cm, yshift=-9.4cm]current page.north east) --
+        ([xshift=0.6cm, yshift=-10.1cm]current page.north west) -- cycle;
+
+    % Inner: lighter lift
+    \fill[white, opacity=0.35]
+        ([xshift=1.6cm, yshift=-1.6cm]current page.north west) --
+        ([xshift=-1.6cm, yshift=-1.6cm]current page.north east) --
+        ([xshift=-1.6cm, yshift=-8.8cm]current page.north east) --
+        ([xshift=1.6cm, yshift=-9.4cm]current page.north west) -- cycle;
+
+    % ── Chevron cluster — top left ──
+    \node[isosceles triangle, isosceles triangle apex angle=60,
+          fill=funOrange!12, minimum size=8mm, inner sep=0pt, rotate=-30]
+        at ([xshift=2.4cm, yshift=-1.6cm]current page.north west) {};
+    \node[isosceles triangle, isosceles triangle apex angle=60,
+          fill=funTeal!8, minimum size=5mm, inner sep=0pt, rotate=-30]
+        at ([xshift=3.8cm, yshift=-2.7cm]current page.north west) {};
+    \node[isosceles triangle, isosceles triangle apex angle=60,
+          fill=funOrange!7, minimum size=3.5mm, inner sep=0pt, rotate=-30]
+        at ([xshift=5.4cm, yshift=-1.3cm]current page.north west) {};
+
+    % ── Chevron cluster — top right ──
+    \node[isosceles triangle, isosceles triangle apex angle=60,
+          fill=funTeal!9, minimum size=6.5mm, inner sep=0pt, rotate=-30]
+        at ([xshift=-2.6cm, yshift=-1.9cm]current page.north east) {};
+    \node[isosceles triangle, isosceles triangle apex angle=60,
+          fill=funOrange!10, minimum size=4mm, inner sep=0pt, rotate=-30]
+        at ([xshift=-4.4cm, yshift=-2.9cm]current page.north east) {};
+    \node[isosceles triangle, isosceles triangle apex angle=60,
+          fill=funOrange!6, minimum size=2.8mm, inner sep=0pt, rotate=-30]
+        at ([xshift=-6.2cm, yshift=-1.5cm]current page.north east) {};
+
+    % ── Chevron cluster — bottom corners ──
+    \node[isosceles triangle, isosceles triangle apex angle=60,
+          fill=funTeal!5, minimum size=5mm, inner sep=0pt, rotate=-30]
+        at ([xshift=2.6cm, yshift=2.3cm]current page.south west) {};
+    \node[isosceles triangle, isosceles triangle apex angle=60,
+          fill=funOrange!5, minimum size=3.5mm, inner sep=0pt, rotate=-30]
+        at ([xshift=5.2cm, yshift=1.7cm]current page.south west) {};
+    \node[isosceles triangle, isosceles triangle apex angle=60,
+          fill=funOrange!6, minimum size=4.5mm, inner sep=0pt, rotate=-30]
+        at ([xshift=-3cm, yshift=2.6cm]current page.south east) {};
+    \node[isosceles triangle, isosceles triangle apex angle=60,
+          fill=funTeal!4, minimum size=2.5mm, inner sep=0pt, rotate=-30]
+        at ([xshift=-5.4cm, yshift=1.5cm]current page.south east) {};
+
+    % ── Tracking text ──
+    \node[font=\fontsize{9}{11}\selectfont\sffamily\color{funOrangeDark!50}]
+        at ([yshift=-2.4cm]current page.north)
+        {\textls[180]{YOUR STEP-BY-STEP MATH GUIDE}};
+
+    % ── Main title ──
+    \node[font=\fontsize{34}{40}\selectfont\sffamily\bfseries\color{black!88},
+          text width=0.82\paperwidth, align=center]
+        at ([yshift=-4.6cm]current page.north)
+        {Math Step by Step};
+
+    % ── Subtitle ──
+    \node[font=\normalsize\sffamily\color{black!45},
+          text width=0.7\paperwidth, align=center]
+        at ([yshift=-6.2cm]current page.north)
+        {Clear Steps \;\textbullet\; Worked Examples \;\textbullet\;
+        Guided Practice};
+
+    % ── Elegant separator: triple-arrow motif ──
+    \draw[funOrange!22, line width=0.9pt]
+        ([xshift=3.5cm, yshift=-7.5cm]current page.north west) --
+        ([xshift=-3.5cm, yshift=-7.5cm]current page.north east);
+    % Central chevron
+    \node[isosceles triangle, isosceles triangle apex angle=60,
+          fill=funOrange!15, draw=funOrange!28, line width=0.4pt,
+          minimum size=5.5mm, inner sep=0pt, rotate=-30]
+        at ([yshift=-7.5cm]current page.north) {};
+    % Flanking chevrons
+    \node[isosceles triangle, isosceles triangle apex angle=60,
+          fill=funTeal!8, minimum size=3.5mm, inner sep=0pt, rotate=-30]
+        at ([xshift=-1.2cm, yshift=-7.5cm]current page.north) {};
+    \node[isosceles triangle, isosceles triangle apex angle=60,
+          fill=funTeal!8, minimum size=3.5mm, inner sep=0pt, rotate=-30]
+        at ([xshift=1.2cm, yshift=-7.5cm]current page.north) {};
+
+    % ── Thin outer frame ──
+    \draw[black!6, line width=0.3pt]
+        ([xshift=8mm, yshift=-8mm]current page.north west) rectangle
+        ([xshift=-8mm, yshift=8mm]current page.south east);
+
+    % ── Copyright footer ──
+    \node[font=\sffamily\tiny\color{black!32}, anchor=south]
+        at ([yshift=0.5cm]current page.south)
+        {\textcopyright~2026 Dr.\ A.\ Nazari \;\textbullet\; ViewMath.com};
+
+\end{tikzpicture}
+
+% ── Welcome Text ──────────────────────────────────────────────────────────
+\vspace*{7.6cm}
+
+\begin{center}
+\begin{minipage}{0.76\textwidth}
+    \centering\sffamily\large\color{black!68}
+    \setlength{\parskip}{6pt}
+
+    This book breaks every Grade~7 math topic into clear,
+    numbered steps. Read the steps, follow the worked examples,
+    try the guided practice, then solve problems on your own.
+    The answer key in the back lets you check your work
+    and learn from every mistake.
+\end{minipage}
+\end{center}
+
+% ── Feature Showcards — 2×2 grid ─────────────────────────────────────────
+\vspace{7mm}
+
+\begin{center}
+\begin{minipage}{0.86\textwidth}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\stShowcard{funOrange}{\faRoute}{Step-by-Step Method}{%
+    Every topic is taught as a numbered procedure ---
+    follow the steps and you'll get the answer.}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\stShowcard{funTeal}{\faBookOpen}{9 Chapters, 56 Topics}{%
+    From ratios and percents to probability ---
+    every Grade~7 standard covered.}
+\end{minipage}
+
+\vspace{1mm}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\stShowcard{funBlue}{\faIcon{pencil-alt}}{Guided Practice}{%
+    Try-it-yourself problems with blanks that walk you
+    through each step before you go solo.}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\stShowcard{funGreen}{\faCheckDouble}{Complete Answer Key}{%
+    Every problem has an answer in the back. Check your work,
+    learn from mistakes, and try again.}
+\end{minipage}
+
+\end{minipage}
+\end{center}
+
+\clearpage
