@@ -1,0 +1,49 @@
+% ============================================================================
+% Bundle Thumbnail: Classroom Bundle
+%
+% Compile:  xelatex -output-directory=build/bundle_thumbnails \
+%                    bundle_thumbnails/classroom_bundle.tex
+%
+% Contains: Step-by-Step, Workbook, Quiz, Worksheet, 3/5/7/10 Practice Tests
+%           (8 covers — show first 8 in 2 rows of 4)
+% Background image must exist at the path below.
+% Cover JPGs from final_output/covers_jpg/<book_type>/<state_slug>.jpg
+% ============================================================================
+\documentclass[12pt]{article}
+\usepackage{VM_packages/VMfunBundleThumbnail}
+
+% --- Background ---
+\BundleBackground{images/bundle_covers/bundle-background_activities_grade3.png}
+
+% --- State name ---
+\BundleStateName{INSERT-STATE-NAME-HERE}
+\BundleStateNameXOffset{3.5in}
+\BundleStateNameYOffset{5in}
+\BundleStateNameRotation{0}
+\BundleStateNameFontSize{55}
+\BundleStateNameBaselineSkip{43}
+\BundleStateNameColor{white}
+\BundleStateNameFontStyle{bold-sans}
+
+\begin{document}
+\begin{bundlethumbnailpage}
+    % 1) Full-bleed background
+    \makeBundleBackground
+
+    % 2) Book covers — 4 top row, 4 bottom row (smaller to fit 8)
+    %    First number: horizontal position. Second number: vertical position. Third number: cover height.
+    %    Top row
+    \placeCover{final_output/covers_jpg/step_by_step/INSERT-STATE-SLUG-HERE.jpg}{0.10in}{3.0in}{1.6in}
+    \placeCover{final_output/covers_jpg/workbook/INSERT-STATE-SLUG-HERE.jpg}{1.80in}{3.0in}{1.6in}
+    \placeCover{final_output/covers_jpg/quiz/INSERT-STATE-SLUG-HERE.jpg}{3.50in}{3.0in}{1.6in}
+    \placeCover{final_output/covers_jpg/worksheet/INSERT-STATE-SLUG-HERE.jpg}{5.20in}{3.0in}{1.6in}
+    %    Bottom row
+    \placeCover{final_output/covers_jpg/3_practice_tests/INSERT-STATE-SLUG-HERE.jpg}{0.10in}{0.6in}{1.6in}
+    \placeCover{final_output/covers_jpg/5_practice_tests/INSERT-STATE-SLUG-HERE.jpg}{1.80in}{0.6in}{1.6in}
+    \placeCover{final_output/covers_jpg/7_practice_tests/INSERT-STATE-SLUG-HERE.jpg}{3.50in}{0.6in}{1.6in}
+    \placeCover{final_output/covers_jpg/10_practice_tests/INSERT-STATE-SLUG-HERE.jpg}{5.20in}{0.6in}{1.6in}
+
+    % 3) State name overlay (on top of everything)
+    \makeBundleStateName
+\end{bundlethumbnailpage}
+\end{document}

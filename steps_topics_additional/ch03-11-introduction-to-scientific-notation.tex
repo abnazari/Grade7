@@ -1,0 +1,76 @@
+% ============================================================================
+% Section 3.11 — Introduction to Scientific Notation (Virginia)
+% State-specific additional topic
+% ============================================================================
+\section{Introduction to Scientific Notation}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Write large and small numbers in scientific notation
+    \item Compare numbers in scientific notation
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Scientific Notation}{A way to write a number as $a \times 10^n$, where $1 \leq a < 10$.}
+    \vocabItem{Exponent}{The power of $10$ that tells how many places the decimal moved.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Write a Number in Scientific Notation]
+    \stepItem{Move the decimal point so you have a number from $1$ to less than $10$.}
+    \stepItem{Count how many places you moved the decimal — that is the \textbf{exponent}.}
+    \stepItem{If the original number is \textbf{large} ($\geq 10$), the exponent is \textbf{positive}. If \textbf{small} ($< 1$), the exponent is \textbf{negative}.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{Write $7{,}200{,}000$ in scientific notation.}
+    \stepShow{1} Move the decimal to get $7.2$ (between $1$ and $10$).
+
+    \stepShow{2} The decimal moved $6$ places to the left.
+
+    \stepShow{3} The original number is large $\to$ positive exponent: $7.2 \times 10^6$.
+    \stepResult{$7.2 \times 10^6$}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{Write $0.00056$ in scientific notation.}
+    \stepShow{1} Move the decimal to get $5.6$.
+
+    \stepShow{2} The decimal moved $4$ places to the right.
+
+    \stepShow{3} The original number is small $\to$ negative exponent: $5.6 \times 10^{-4}$.
+    \stepResult{$5.6 \times 10^{-4}$}
+\end{stepExample}
+
+\mascotStepTip{Count the hops! The exponent equals how many places you moved the decimal point.}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Scientific Notation Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Move the Decimal}
+    \begin{multicols}{2}
+    \prob $93{,}000{,}000 \to$ \answerBlank[2cm] $\times 10^?$
+    \answer{$9.3$}
+    \prob $0.0072 \to$ \answerBlank[2cm] $\times 10^?$
+    \answer{$7.2$}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Write in Scientific Notation}
+    \begin{multicols}{2}
+    \prob $93{,}000{,}000 =$ \answerBlank[3cm]
+    \answer{$9.3 \times 10^7$}
+    \prob $0.00056 =$ \answerBlank[3cm]
+    \answer{$5.6 \times 10^{-4}$}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Convert and Compare}
+    \prob Convert $3.07 \times 10^5$ to standard form. \answerBlank[3cm]
+    \answer{$307{,}000$}
+
+    \wordProblem{Which is larger: $6.1 \times 10^8$ or $9.2 \times 10^7$? Explain.}{}
+    \answer{$6.1 \times 10^8$ is larger because $10^8 > 10^7$.}
+\end{stepPractice}

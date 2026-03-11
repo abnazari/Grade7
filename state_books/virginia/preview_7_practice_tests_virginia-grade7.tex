@@ -1,4 +1,5 @@
 % PREVIEW — Grade 7 Math — 7 Practice Tests
+% Only the first 10 questions of one test are included.
 \documentclass[12pt, fleqn, openany]{studyGuide}
 
 % Line spacing for young readers
@@ -30,13 +31,134 @@
 \pagenumbering{arabic}
 
 % ============================================================================
-% SAMPLE PRACTICE TEST
+% SAMPLE PRACTICE TEST — first 10 questions only
 % ============================================================================
-\practiceTestPage{1}{30}
+\practiceTestPage{1}{10}
 
-\input{practice_tests/virginia/practice_test_09}
+\begin{practiceQuestion}{1-4-q14}{mc}
+\begin{questionText}
+A proportional relationship has the equation $y = \frac{2}{5}x$. What is $y$ when $x = 20$?
+\end{questionText}
+\choiceA{$4$}
+\choiceB{$8$}
+\choiceC{$10$}
+\choiceD{$50$}
+\correctAnswer{B}
+\explanation{$y = \frac{2}{5} \times 20 = \frac{40}{5} = 8$.}
+\end{practiceQuestion}
 
-\testScorePage{1}{30}
+\begin{practiceQuestion}{2-1-q10}{mc}
+\begin{questionText}
+What is $8\%$ of $250$?
+\end{questionText}
+\choiceA{$2$}
+\choiceB{$16$}
+\choiceC{$20$}
+\choiceD{$32$}
+\correctAnswer{C}
+\explanation{$8\% = 0.08$. Multiply: $0.08 \times 250 = 20$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-2-q23}{sa}
+\begin{questionText}
+In a survey, $51$ out of $300$ people chose vanilla ice cream. What percent chose vanilla?
+\end{questionText}
+\correctAnswer{$17\%$}
+\explanation{$\frac{51}{300} = \frac{p}{100}$. Cross-multiply: $300p = 5100$. Divide: $p = 17\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-3-q02}{mc}
+\begin{questionText}
+A population grew from $5{,}000$ to $5{,}750$. What is the percent increase?
+\end{questionText}
+\choiceA{$12\%$}
+\choiceB{$13\%$}
+\choiceC{$15\%$}
+\choiceD{$17.5\%$}
+\correctAnswer{C}
+\explanation{Change: $5{,}750 - 5{,}000 = 750$. Percent change: $750 \div 5{,}000 = 0.15 = 15\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-7-q15}{mc}
+\begin{questionText}
+A chemist expected to collect $75$ mL of solution but collected $80$ mL. What is the percent error (rounded to the nearest tenth)?
+\end{questionText}
+\choiceA{$5\%$}
+\choiceB{$6.3\%$}
+\choiceC{$6.7\%$}
+\choiceD{$7.5\%$}
+\correctAnswer{B}
+\explanation{$\frac{|75 - 80|}{80} \times 100 = \frac{5}{80} \times 100 = 6.25 \approx 6.3\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{3-2-q06}{mc}
+\begin{questionText}
+The temperature is $-4°$C at dawn. By noon it rises $10°$C. What is the noon temperature?
+\end{questionText}
+\choiceA{$-14°$C}
+\choiceB{$14°$C}
+\choiceC{$-6°$C}
+\choiceD{$6°$C}
+\correctAnswer{D}
+\explanation{$(-4) + 10 = 6$. Different signs: $10 - 4 = 6$. The larger absolute value is positive.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{3-3-q21}{sa}
+\begin{questionText}
+Find the distance between $-11$ and $-3$ on a number line.
+\end{questionText}
+\correctAnswer{$8$ units}
+\explanation{Distance $= |{-11} - (-3)| = |{-11} + 3| = |{-8}| = 8$ units.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{3-4-q07}{mc}
+\begin{questionText}
+What is $-\dfrac{3}{5} + \dfrac{3}{5}$?
+\end{questionText}
+\choiceA{$\dfrac{6}{5}$}
+\choiceB{$-\dfrac{6}{5}$}
+\choiceC{$0$}
+\choiceD{$\dfrac{6}{10}$}
+\correctAnswer{C}
+\explanation{A number plus its opposite equals $0$: $-\frac{3}{5} + \frac{3}{5} = 0$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{4-3-q19}{sa}
+\begin{questionText}
+Expand $-6(2m - 5)$.
+\end{questionText}
+\correctAnswer{$-12m + 30$}
+\explanation{$-6 \times 2m = -12m$ and $-6 \times (-5) = +30$. Result: $-12m + 30$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{4-4-q28}{gmc}
+\begin{questionText}
+The rectangle below has the given area. Which pair of dimensions is correct?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+  \draw[thick, fill=funBlue!10] (0,0) rectangle (6,2.5);
+  \node at (3,1.25) {Area $= 10x + 35$};
+  \node[left] at (0,1.25) {?};
+  \node[below] at (3,0) {?};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{Width $= 5$, Length $= 2x + 7$}
+\choiceB{Width $= 10$, Length $= x + 35$}
+\choiceC{Width $= 5$, Length $= 2x + 35$}
+\choiceD{Width $= 2$, Length $= 5x + 35$}
+\correctAnswer{A}
+\explanation{Factor: $10x + 35 = 5(2x + 7)$. So the width is $5$ and the length is $2x + 7$.}
+\end{practiceQuestion}
+
+
+\testScorePage{1}{10}
+
+% ============================================================================
+% ANSWER KEY — covers the sample questions above
+% ============================================================================
+\printAnswerKey
 
 \input{initial_pages/common/preview-cta-page}
 

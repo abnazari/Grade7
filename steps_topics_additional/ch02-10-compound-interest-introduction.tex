@@ -1,0 +1,65 @@
+% ============================================================================
+% Section 2.10 — Compound Interest Introduction
+% State-specific: Texas
+% ============================================================================
+\section{Compound Interest Introduction}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Understand the difference between simple and compound interest
+    \item Calculate compound interest for short periods
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Simple Interest}{Interest calculated on the \textbf{original principal} only.}
+    \vocabItem{Compound Interest}{Interest calculated on the principal \textbf{plus} previously earned interest.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Calculate Compound Interest (Yearly)]
+    \stepItem{Start with the \textbf{principal} $P$ and the annual rate $r$ (as a decimal).}
+    \stepItem{For each year, multiply the \textbf{current balance} by $(1 + r)$.}
+    \stepItem{After $t$ years, the total is $A = P(1 + r)^t$. Subtract $P$ to find the interest earned.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{Deposit $\$500$ at $10\%$ for $3$ years. Compare simple and compound interest.}
+    \stepShow{1} $P = 500$, $r = 0.10$, $t = 3$.
+
+    \stepShow{2} Compound — multiply year by year:\\
+    Year 1: $500 \times 1.10 = \$550$.\\
+    Year 2: $550 \times 1.10 = \$605$.\\
+    Year 3: $605 \times 1.10 = \$665.50$.
+
+    \stepShow{3} Compound total: $\$665.50$. Simple total: $500 + (500 \times 0.10 \times 3) = \$650$.
+    \stepResult{Compound earns $\$15.50$ more than simple ($\$665.50$ vs.\ $\$650$).}
+\end{stepExample}
+
+\mascotStepTip{Compound interest is like a snowball — it starts small but grows faster and faster because your interest earns interest!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Compound Interest Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Set Up the Problem}
+    \prob You deposit $\$1{,}000$ at $5\%$ compounded yearly. Find the total after $2$ years. \answerBlank[2.5cm]
+    \answer{$\$1{,}102.50$}
+
+    \stepPracticeHeader[step2Color]{Year-by-Year Calculation}
+    \prob $\$200$ at $10\%$ for $2$ years. Find both the simple and compound totals. \answerBlank[3cm]
+    \answer{Simple: $\$240$; Compound: $\$242$}
+
+    \stepPracticeHeader[step3Color]{Use the Formula}
+    \begin{multicols}{2}
+    \prob Use $A = P(1+r)^t$ to find the value of $\$800$ at $4\%$ for $3$ years. \answerBlank[2.5cm]
+    \answer{$\$899.89$}
+    \prob A $\$600$ loan at $8\%$ compounds yearly for $2$ years. How much is owed? \answerBlank[2.5cm]
+    \answer{$\$699.84$}
+    \end{multicols}
+
+    \wordProblem{Why does compound interest grow faster than simple interest? Explain in one sentence.}{~}
+    \answer{You earn interest on your interest, so the balance grows faster each year.}
+\end{stepPractice}

@@ -1,0 +1,81 @@
+% ============================================================================
+% Section 1.5 — Graphing Proportional Relationships
+% CCSS 7.RP.A.2.D
+% ============================================================================
+\section{Graphing Proportional Relationships}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Graph a proportional relationship from a table or equation
+    \item Explain what $(0, 0)$ and $(1, r)$ mean on the graph
+    \item Connect steepness to the unit rate
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Slope}{The steepness of a line. In $y = kx$, the slope equals $k$.}
+    \vocabItem{Origin}{The point $(0, 0)$ — every proportional graph passes through it.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Graph a Proportional Relationship]
+    \stepItem{Find $k$ (the unit rate) from the table, equation, or description.}
+    \stepItem{Plot $(0, 0)$ — every proportional graph starts here.}
+    \stepItem{Plot $(1, k)$ — this point shows the \textbf{unit rate}.}
+    \stepItem{Plot one or two more points and draw a \textbf{straight line} through them.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{A car gets $30$ miles per gallon. Graph the relationship and interpret $(1, 30)$.}
+    \stepShow{1} $k = 30$ miles per gallon.
+
+    \stepShow{2} Plot $(0, 0)$.
+
+    \stepShow{3} Plot $(1, 30)$ — this means $1$ gallon gives $30$ miles.
+
+    \stepShow{4} Plot $(2, 60)$ and $(4, 120)$. Draw a straight line through all points.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+    \draw[step=1,gray!20,thin] (0,0) grid (5,5);
+    \draw[thick,->] (0,0) -- (5.3,0) node[right] {\small Gallons};
+    \draw[thick,->] (0,0) -- (0,5.3) node[above] {\small Miles};
+    \foreach \x in {1,...,5} \draw (\x,0.07) -- (\x,-0.07) node[below]{\tiny \x};
+    \foreach \y/\lab in {1/30,2/60,3/90,4/120,5/150} \draw (0.07,\y) -- (-0.07,\y) node[left]{\tiny \lab};
+    \draw[thick,funBlue] (0,0) -- (5,5);
+    \fill[funBlue] (0,0) circle (2.5pt);
+    \fill[funBlue] (1,1) circle (2.5pt) node[above left]{\tiny $(1,30)$};
+    \fill[funBlue] (2,2) circle (2.5pt);
+    \fill[funBlue] (4,4) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+
+    \stepResult{Straight line through $(0,0)$; $(1, 30)$ means $30$ miles per gallon.}
+\end{stepExample}
+
+\watchOut{A steeper line means a \textbf{greater} unit rate, not a smaller one. To compare two rates, graph both lines — the steeper one wins!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Graphing Proportional Relationships Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Find the Unit Rate}
+    \prob A proportional graph passes through $(3, 18)$. Find the unit rate. \answerBlank[2.5cm]
+    \answer{$k = 6$}
+
+    \stepPracticeHeader[step2Color]{Interpret Key Points}
+    \prob The equation $y = 5x$ gives the cost of movie tickets. What does the point $(1, 5)$ mean? \answerBlank[3cm]
+    \answer{One ticket costs $\$5$.}
+
+    \prob True or false: A steeper line on a proportional graph means a smaller unit rate. \answerBlank[2cm]
+    \answerTF{False}
+
+    \stepPracticeHeader[step3Color]{Graph and Solve}
+    \prob Runner A: $(2, 10)$. Runner B: $(2, 8)$. Both start at $(0, 0)$. Who is faster and why? \answerBlank[3cm]
+    \answer{Runner A — unit rate $5 > 4$; steeper line.}
+
+    \wordProblem{A graph passes through $(5, 12.5)$. Write the equation. Then find $x$ when $y = 40$.}{units}
+    \answer{$y = 2.5x$; \; $x = 40 \div 2.5 = 16$}
+\end{stepPractice}

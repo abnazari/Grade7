@@ -1,0 +1,76 @@
+% ============================================================================
+% Section 6.8 — Similar Figures and Proportions
+% State-specific: Texas, Virginia
+% ============================================================================
+\section{Similar Figures and Proportions}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Identify similar figures and find missing side lengths
+    \item Use scale factors and proportions to solve real-world problems
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Similar Figures}{Figures with the same shape but not necessarily the same size --- equal angles, proportional sides.}
+    \vocabItem{Scale Factor}{The ratio of corresponding sides between two similar figures.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Find a Missing Side in Similar Figures]
+    \stepItem{Match \textbf{corresponding sides} (sides in the same position in each figure).}
+    \stepItem{Find the \textbf{scale factor}: $\dfrac{\text{side of figure B}}{\text{corresponding side of figure A}}$.}
+    \stepItem{\textbf{Multiply} (or set up a proportion) to find the missing side.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{$\triangle ABC \sim \triangle DEF$. $AB = 6$, $DE = 9$, $BC = 8$. Find $EF$.}
+    \stepShow{1} Corresponding sides: $AB \leftrightarrow DE$ and $BC \leftrightarrow EF$.
+
+    \stepShow{2} Scale factor: $\dfrac{DE}{AB} = \dfrac{9}{6} = 1.5$.
+
+    \stepShow{3} $EF = BC \times 1.5 = 8 \times 1.5 = 12$.
+    \stepResult{$EF = 12$}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{A tree casts a $12$-ft shadow. A $5$-ft person casts a $3$-ft shadow. How tall is the tree?}
+    \stepShow{1} The person and the tree form two similar right triangles.\par
+    Corresponding sides: height $\leftrightarrow$ height, shadow $\leftrightarrow$ shadow.
+
+    \stepShow{2} Set up proportion: $\dfrac{5}{3} = \dfrac{h}{12}$.
+
+    \stepShow{3} Cross-multiply: $3h = 60$, so $h = 20$.
+    \stepResult{The tree is $20$ ft tall.}
+\end{stepExample}
+
+\watchOut{Make sure you match the \textbf{correct} corresponding sides. Labeling helps --- $AB$ corresponds to $DE$, not $DF$!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Similar Figures Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Match Corresponding Sides}
+    \prob $\triangle PQR \sim \triangle STU$. Which side corresponds to $PQ$? \answerBlank[2cm]
+    \answer{$ST$}
+
+    \stepPracticeHeader[step2Color]{Find the Scale Factor}
+    \begin{multicols}{2}
+    \prob Sides $5$ and $15$. Scale factor? \answerBlank[2cm]
+    \answer{$3$}
+    \prob $AB = 4$, $EF = 10$. Scale factor? \answerBlank[2cm]
+    \answer{$2.5$}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Find Missing Sides}
+    \prob Rectangle $ABCD \sim$ Rectangle $EFGH$. $AB = 4$, $EF = 10$, $BC = 6$. Find $FG$. \answerBlank[2.5cm]
+    \answer{$15$}
+
+    \prob $\triangle PQR \sim \triangle STU$. $PQ = 10$, $ST = 4$, $QR = 15$. Find $TU$. \answerBlank[2.5cm]
+    \answer{$6$}
+
+    \wordProblem{A photo is $4$ in.\ by $6$ in. It is enlarged so the short side is $10$ in. What is the long side?}{~}
+    \answer{$15$ in. Scale factor: $\frac{10}{4} = 2.5$. Long side: $6 \times 2.5 = 15$ in.}
+\end{stepPractice}

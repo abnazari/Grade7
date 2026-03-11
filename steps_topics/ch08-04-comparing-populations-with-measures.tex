@@ -1,0 +1,66 @@
+% ============================================================================
+% Section 8.4 — Comparing Populations with Measures of Center and Variability
+% CCSS 7.SP.B.4
+% ============================================================================
+\section{Comparing Populations with Measures of Center and Variability}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Calculate mean, median, range, IQR, and MAD for two data sets
+    \item Use multiple measures to draw comparative conclusions
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Mean}{The sum of all values divided by the number of values.}
+    \vocabItem{Median}{The middle value when data is in order.}
+    \vocabItem{Interquartile Range (IQR)}{$Q_3 - Q_1$ — the spread of the middle $50\%$.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Compare Two Populations with Measures]
+    \stepItem{Find the \textbf{center} of each group: calculate the mean and median.}
+    \stepItem{Find the \textbf{spread} of each group: calculate the range, IQR, or MAD.}
+    \stepItem{\textbf{Compare}: Which group has a higher center? Which is more variable?}
+    \stepItem{Write a \textbf{conclusion} using the data to support your claim.}
+\end{stepsCard}
+
+% --- Worked Example ---
+\begin{stepExample}{Quiz scores — Class A: $70, 75, 78, 80, 82$ \quad Class B: $60, 72, 80, 88, 95$. Compare.}
+    \stepShow{1} Class A mean $= \frac{70+75+78+80+82}{5} = \frac{385}{5} = 77$, median $= 78$.\\
+    Class B mean $= \frac{60+72+80+88+95}{5} = \frac{395}{5} = 79$, median $= 80$.
+
+    \stepShow{2} Class A range $= 82 - 70 = 12$, IQR $= 80 - 75 = 5$.\\
+    Class B range $= 95 - 60 = 35$, IQR $= 88 - 72 = 16$.
+
+    \stepShow{3} Class B has a slightly higher center ($79$ vs.\ $77$), but is \textbf{much more spread out} (IQR $16$ vs.\ $5$).
+
+    \stepShow{4} Conclusion: Class B averages slightly higher, but Class A is far more consistent.
+    \stepResult{Class B has a higher center; Class A has less variability (IQR $5$ vs.\ $16$).}
+\end{stepExample}
+
+\mascotStepTip{Always look at \textbf{both} center and spread. A higher average doesn't tell the whole story!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Comparing Populations Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Find the Center}
+    \prob Find the mean: $12, 15, 18, 20, 25$. \answerBlank[2.5cm]
+    \answer{$\frac{90}{5} = 18$}
+    \prob Find the median: $4, 9, 13, 17, 22, 28$. \answerBlank[2.5cm]
+    \answer{$\frac{13+17}{2} = 15$}
+
+    \stepPracticeHeader[step2Color]{Find the Spread}
+    \prob Find the range and IQR: $10, 14, 18, 22, 30$. \answerBlank[3cm]
+    \answer{Range $= 20$; $Q_1 = 14$, $Q_3 = 22$, IQR $= 8$}
+
+    \stepPracticeHeader[step3Color]{Compare Two Groups}
+    \prob Group A: mean $65$, IQR $= 10$. Group B: mean $70$, IQR $= 25$. Which is more consistent? \answerBlank[3cm]
+    \answer{Group A — smaller IQR means data is more tightly clustered}
+
+    \wordProblem{Swim team times (seconds) — Team X: $28, 30, 31, 32, 34$. Team Y: $25, 29, 35, 38, 43$. Compare the teams using mean and range.}{~}
+    \answer{Team X: mean $= 31$, range $= 6$. Team Y: mean $= 34$, range $= 18$. Team X is faster on average and much more consistent.}
+\end{stepPractice}

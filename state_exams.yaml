@@ -1,0 +1,265 @@
+# ============================================================================
+# Grade 3 Math — State Exam Information
+# Maps each US state to its official Grade 3 math assessment program.
+# Used by scripts/generate_tpt_listings.py to create state-specific
+# TPT product listing descriptions.
+#
+# Fields:
+#   exam_name:    Full official assessment program name
+#   exam_acronym: Common abbreviation used by educators
+#   exam_months:  Typical administration period
+#
+# Sources: State education agency pages, official testing calendars,
+#          and administration manuals (compiled February 2026).
+# ============================================================================
+
+states:
+  alabama:
+    exam_name: "Alabama Comprehensive Assessment Program"
+    exam_acronym: "ACAP"
+    exam_months: "March–April"
+
+  alaska:
+    exam_name: "Alaska System of Academic Readiness"
+    exam_acronym: "AK STAR"
+    exam_months: "March–May"
+
+  arizona:
+    exam_name: "Arizona's Academic Standards Assessment"
+    exam_acronym: "AASA"
+    exam_months: "March–April"
+
+  arkansas:
+    exam_name: "Arkansas Teaching & Learning Assessment System"
+    exam_acronym: "ATLAS"
+    exam_months: "April–May"
+
+  california:
+    exam_name: "California Assessment of Student Performance and Progress"
+    exam_acronym: "CAASPP"
+    exam_months: "January–June"
+
+  colorado:
+    exam_name: "Colorado Measures of Academic Success"
+    exam_acronym: "CMAS"
+    exam_months: "April"
+
+  connecticut:
+    exam_name: "Connecticut Smarter Balanced Assessment"
+    exam_acronym: "SBAC"
+    exam_months: "March–May"
+
+  delaware:
+    exam_name: "Delaware System of Student Assessment"
+    exam_acronym: "DeSSA"
+    exam_months: "February–May"
+
+  florida:
+    exam_name: "Florida Assessment of Student Thinking"
+    exam_acronym: "FAST"
+    exam_months: "multiple windows throughout the year"
+
+  georgia:
+    exam_name: "Georgia Milestones Assessment System"
+    exam_acronym: "Georgia Milestones"
+    exam_months: "April–May"
+
+  hawaii:
+    exam_name: "Smarter Balanced Assessment"
+    exam_acronym: "SBA"
+    exam_months: "February–May"
+
+  idaho:
+    exam_name: "Idaho Standards Achievement Test"
+    exam_acronym: "ISAT"
+    exam_months: "March–May"
+
+  illinois:
+    exam_name: "Illinois Assessment of Readiness"
+    exam_acronym: "IAR"
+    exam_months: "March–April"
+
+  indiana:
+    exam_name: "Indiana's Learning Evaluation Assessment Readiness Network"
+    exam_acronym: "ILEARN"
+    exam_months: "spring"
+
+  iowa:
+    exam_name: "Iowa Statewide Assessment of Student Progress"
+    exam_acronym: "ISASP"
+    exam_months: "March–May"
+
+  kansas:
+    exam_name: "Kansas Assessment Program"
+    exam_acronym: "KAP"
+    exam_months: "March–May"
+
+  kentucky:
+    exam_name: "Kentucky Summative Assessment"
+    exam_acronym: "KSA"
+    exam_months: "April–May"
+
+  louisiana:
+    exam_name: "Louisiana Educational Assessment Program"
+    exam_acronym: "LEAP 2025"
+    exam_months: "April–May"
+
+  maine:
+    exam_name: "Maine Through Year Assessment"
+    exam_acronym: "MTYA"
+    exam_months: "fall and spring"
+
+  maryland:
+    exam_name: "Maryland Comprehensive Assessment Program"
+    exam_acronym: "MCAP"
+    exam_months: "April–May"
+
+  massachusetts:
+    exam_name: "Massachusetts Comprehensive Assessment System"
+    exam_acronym: "MCAS"
+    exam_months: "spring"
+
+  michigan:
+    exam_name: "Michigan Student Test of Educational Progress"
+    exam_acronym: "M-STEP"
+    exam_months: "April–May"
+
+  minnesota:
+    exam_name: "Minnesota Comprehensive Assessments"
+    exam_acronym: "MCA"
+    exam_months: "March–May"
+
+  mississippi:
+    exam_name: "Mississippi Academic Assessment Program"
+    exam_acronym: "MAAP"
+    exam_months: "April–May"
+
+  missouri:
+    exam_name: "Missouri Assessment Program"
+    exam_acronym: "MAP"
+    exam_months: "April–May"
+
+  montana:
+    exam_name: "Montana Comprehensive Assessment System"
+    exam_acronym: "MontCAS"
+    exam_months: "throughout the year"
+
+  nebraska:
+    exam_name: "Nebraska Student-Centered Assessment System"
+    exam_acronym: "NSCAS"
+    exam_months: "spring"
+
+  nevada:
+    exam_name: "Smarter Balanced Assessment"
+    exam_acronym: "SBAC"
+    exam_months: "March–June"
+
+  new-hampshire:
+    exam_name: "New Hampshire Statewide Assessment System"
+    exam_acronym: "NH SAS"
+    exam_months: "March–May"
+
+  new-jersey:
+    exam_name: "New Jersey Student Learning Assessments"
+    exam_acronym: "NJSLA"
+    exam_months: "April–May"
+
+  new-mexico:
+    exam_name: "New Mexico Measures of Student Success and Achievement"
+    exam_acronym: "NM-MSSA"
+    exam_months: "March–May"
+
+  new-york:
+    exam_name: "New York State Grades 3–8 Mathematics Test"
+    exam_acronym: "NYS Math Test"
+    exam_months: "April–May"
+
+  north-carolina:
+    exam_name: "North Carolina End-of-Grade Tests"
+    exam_acronym: "NC EOG"
+    exam_months: "May–June"
+
+  north-dakota:
+    exam_name: "North Dakota State Assessment"
+    exam_acronym: "NDSA"
+    exam_months: "March–April"
+
+  ohio:
+    exam_name: "Ohio's State Tests"
+    exam_acronym: "OST"
+    exam_months: "March–May"
+
+  oklahoma:
+    exam_name: "Oklahoma School Testing Program"
+    exam_acronym: "OSTP"
+    exam_months: "March–May"
+
+  oregon:
+    exam_name: "Oregon Statewide Assessment System"
+    exam_acronym: "OSAS"
+    exam_months: "March–June"
+
+  pennsylvania:
+    exam_name: "Pennsylvania System of School Assessment"
+    exam_acronym: "PSSA"
+    exam_months: "April–May"
+
+  rhode-island:
+    exam_name: "Rhode Island Comprehensive Assessment System"
+    exam_acronym: "RICAS"
+    exam_months: "March–May"
+
+  south-carolina:
+    exam_name: "South Carolina College-and Career-Ready Assessments"
+    exam_acronym: "SC READY"
+    exam_months: "May"
+
+  south-dakota:
+    exam_name: "Smarter Balanced Assessment"
+    exam_acronym: "SBA"
+    exam_months: "March–May"
+
+  tennessee:
+    exam_name: "Tennessee Comprehensive Assessment Program"
+    exam_acronym: "TCAP"
+    exam_months: "April–May"
+
+  texas:
+    exam_name: "State of Texas Assessments of Academic Readiness"
+    exam_acronym: "STAAR"
+    exam_months: "April–May"
+
+  utah:
+    exam_name: "Readiness Improvement Success Empowerment"
+    exam_acronym: "RISE"
+    exam_months: "March–May"
+
+  vermont:
+    exam_name: "Vermont Smarter Balanced Assessment"
+    exam_acronym: "SBAC"
+    exam_months: "March–June"
+
+  virginia:
+    exam_name: "Virginia Standards of Learning Assessments"
+    exam_acronym: "SOL"
+    exam_months: "March–June"
+
+  washington:
+    exam_name: "Smarter Balanced Assessment"
+    exam_acronym: "SBA"
+    exam_months: "March–June"
+
+  west-virginia:
+    exam_name: "West Virginia General Summative Assessment"
+    exam_acronym: "WVGSA"
+    exam_months: "March–May"
+
+  wisconsin:
+    exam_name: "Wisconsin Forward Exam"
+    exam_acronym: "Forward Exam"
+    exam_months: "March–May"
+
+  wyoming:
+    exam_name: "Wyoming Test of Proficiency and Progress"
+    exam_acronym: "WY-TOPP"
+    exam_months: "March–May"

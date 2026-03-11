@@ -1,0 +1,80 @@
+% ============================================================================
+% Section 9.4 — Probability Models
+% CCSS 7.SP.C.7
+% ============================================================================
+\section{Probability Models}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Develop uniform and non-uniform probability models
+    \item Compare predicted probabilities to observed frequencies
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Probability Model}{A list of every outcome and its probability.}
+    \vocabItem{Uniform Model}{All outcomes have the \textbf{same} probability.}
+    \vocabItem{Non-Uniform Model}{Outcomes have \textbf{different} probabilities.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Build and Check a Probability Model]
+    \stepItem{List \textbf{every possible outcome}.}
+    \stepItem{Assign a probability to each outcome --- check that they \textbf{add up to $1$}.}
+    \stepItem{Decide if the model is \textbf{uniform} (all equal) or \textbf{non-uniform} (not all equal).}
+    \stepItem{Compare \textbf{predicted frequencies} to \textbf{observed data} --- if they don't match, investigate why.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{A spinner has $4$ equal sections colored red, blue, green, and yellow. Build a probability model.}
+    \stepShow{1} Outcomes: red, blue, green, yellow.
+
+    \stepShow{2} Each section is equal, so $P = \dfrac{1}{4} = 0.25$ for each.\par
+    Check: $0.25 + 0.25 + 0.25 + 0.25 = 1$ \checkmark
+
+    \stepShow{3} Every outcome has the same probability, so this is a \textbf{uniform model}.
+
+    \stepShow{4} In $100$ spins you would predict $25$ of each color. If you got red $35$ times, the spinner might not be perfectly balanced.
+    \stepResult{Uniform model: $P(\text{each color}) = \dfrac{1}{4}$}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{A bag has $5$ red, $3$ blue, and $2$ green marbles. Build a probability model and predict how many reds you would get in $40$ draws (with replacement).}
+    \stepShow{1} Outcomes: red, blue, green. Total: $5 + 3 + 2 = 10$.
+
+    \stepShow{2} $P(\text{red}) = \frac{5}{10} = 0.5$, \; $P(\text{blue}) = \frac{3}{10} = 0.3$, \; $P(\text{green}) = \frac{2}{10} = 0.2$.\par
+    Check: $0.5 + 0.3 + 0.2 = 1$ \checkmark
+
+    \stepShow{3} Probabilities are different, so this is a \textbf{non-uniform model}.
+
+    \stepShow{4} Predicted reds in $40$ draws: $40 \times 0.5 = 20$.
+    \stepResult{Non-uniform model; expect about $20$ reds in $40$ draws.}
+\end{stepExample}
+
+\mascotStepTip{If your observed results are very different from your model's predictions, ask yourself: is the model wrong, or did I just not run enough trials?}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Probability Models Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Identify Outcomes}
+    \prob A coin is flipped. List all outcomes and their probabilities. \answerBlank[3cm]
+    \answer{Heads: $0.5$, Tails: $0.5$}
+
+    \stepPracticeHeader[step2Color]{Uniform or Non-Uniform?}
+    \begin{multicols}{2}
+    \prob A standard die is rolled. Is this a uniform model? \answerBlank[2cm]
+    \answer{Yes --- each face has $P = \frac{1}{6}$}
+    \prob A bag has $1$ red and $9$ blue marbles. Is this uniform? \answerBlank[2cm]
+    \answer{No --- $P(\text{red}) = 0.1$, $P(\text{blue}) = 0.9$}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Build a Model and Predict}
+    \prob A spinner has sections: $50\%$ blue, $30\%$ red, $20\%$ yellow. Predict how many times you land on red in $60$ spins. \answerBlank[2cm]
+    \answer{$60 \times 0.3 = 18$ times}
+
+    \wordProblem{A die is rolled $120$ times. The model predicts each number appears $20$ times. In the experiment, $6$ appeared $28$ times. Should you conclude the die is unfair? Explain.}{~}
+    \answer{Not necessarily --- $28$ is somewhat higher than $20$, but some variation is normal. You would need many more rolls to be sure the die is unfair.}
+\end{stepPractice}

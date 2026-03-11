@@ -1,0 +1,80 @@
+% ============================================================================
+% Section 6.3 — Drawing Geometric Figures with Given Conditions
+% CCSS 7.G.A.2 (IN: IAS 2023 construction emphasis)
+% ============================================================================
+\section{Drawing Geometric Figures with Given Conditions}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Draw and construct shapes that meet specific conditions
+    \item Justify each step in a geometric construction
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Triangle Inequality}{The sum of any two sides must be greater than the third side.}
+    \vocabItem{Justify}{Explain \textbf{why} each construction step works, not just what you did.}
+    \vocabItem{Conditions}{The given measurements (sides, angles) used to build a shape.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Construct a Figure and Justify Each Step]
+    \stepItem{List every \textbf{given measurement} (sides and/or angles).}
+    \stepItem{For triangles, check the \textbf{triangle inequality}: does each pair of sides add to more than the third?}
+    \stepItem{\textbf{Construct} the figure step by step (compass, ruler, protractor, or software).}
+    \stepItem{\textbf{Justify} each step --- explain \textbf{why} it guarantees the correct measurement.}
+    \stepItem{State the result: \textbf{one shape}, \textbf{many shapes}, or \textbf{no shape}.}
+\end{stepsCard}
+
+% --- Worked Example ---
+\begin{stepExample}{Construct a triangle with sides $5$ cm, $7$ cm, and $3$ cm. Justify each step.}
+    \stepShow{1} Given sides: $5$, $7$, $3$.
+
+    \stepShow{2} Triangle inequality: $5 + 3 = 8 > 7$ \checkmark \quad $5 + 7 = 12 > 3$ \checkmark \quad $7 + 3 = 10 > 5$ \checkmark
+
+    \stepShow{3} Construction:\par
+    Draw a $7$ cm segment (base).\par
+    Arc $5$ cm from the left endpoint.\par
+    Arc $3$ cm from the right endpoint.\par
+    Mark the intersection point and connect.
+
+    \stepShow{4} Justifications:\par
+    The base gives one known side.\par
+    The $5$ cm arc ensures the correct distance from the left vertex.\par
+    The $3$ cm arc ensures the correct distance from the right vertex.\par
+    The intersection is the only point at both distances.
+
+    \stepShow{5} SSS with valid sides $\to$ one unique triangle.
+    \stepResult{One unique triangle is formed.}
+\end{stepExample}
+
+\watchOut{Always explain \textbf{why} each step works. ``I drew a $5$ cm arc because every point on that arc is exactly $5$ cm from the vertex.''}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Drawing Geometric Figures Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Check the Triangle Inequality}
+    \begin{multicols}{2}
+    \prob Sides $4$, $6$, $11$. Triangle? \answerBlank[2cm]
+    \answer{No ($4 + 6 = 10 < 11$)}
+    \prob Sides $5$, $5$, $5$. Triangle? \answerBlank[2cm]
+    \answer{Yes (equilateral)}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Describe and Justify a Construction}
+    \prob Describe the steps to construct an equilateral triangle with side $5$ cm. Justify each step. \answerBlank[5cm]
+    \answer{Draw $5$ cm base (one side). Arc $5$ cm from each endpoint (every point on each arc is $5$ cm from its vertex). Connect the intersection --- all three sides are $5$ cm.}
+
+    \stepPracticeHeader[step3Color]{One, Many, or None?}
+    \prob A rectangle has perimeter $20$ cm. How many different rectangles? \answerBlank[2.5cm]
+    \answer{Many (e.g.\ $1 \times 9$, $2 \times 8$, $3 \times 7$)}
+
+    \prob Two sides are $6$ cm and $8$ cm with a $90°$ angle between them. How many triangles? \answerBlank[2cm]
+    \answer{Exactly one (SAS)}
+
+    \wordProblem{Knowing all three angles of a triangle ($60°$, $70°$, $50°$) gives how many possible triangles? Justify.}{~}
+    \answer{Many. AAA fixes the shape but not the size. You can scale the triangle up or down and all angles stay the same.}
+\end{stepPractice}

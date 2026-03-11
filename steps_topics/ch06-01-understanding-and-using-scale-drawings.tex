@@ -1,0 +1,74 @@
+% ============================================================================
+% Section 6.1 — Understanding and Using Scale Drawings
+% CCSS 7.G.A.1
+% ============================================================================
+\section{Understanding and Using Scale Drawings}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Use a scale factor to find actual lengths from a scale drawing
+    \item Understand how scaling affects area
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Scale Drawing}{A proportional copy of a real object --- every length is multiplied by the same factor.}
+    \vocabItem{Scale Factor}{The number you multiply a drawing length by to get the actual length.}
+    \vocabItem{Scale}{A ratio such as ``$1$ cm $= 5$ m'' that tells how the drawing relates to real life.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Find Actual Lengths from a Scale Drawing]
+    \stepItem{Read the \textbf{scale} and identify the \textbf{scale factor} (real units per drawing unit).}
+    \stepItem{\textbf{Multiply} the drawing length by the scale factor: $\text{actual} = \text{drawing} \times \text{scale factor}$.}
+    \stepItem{For \textbf{area}, square the scale factor: $\text{actual area} = \text{drawing area} \times k^{2}$.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{A map uses the scale $1$ cm $= 20$ km. Two cities are $4.5$ cm apart on the map. What is the actual distance?}
+    \stepShow{1} The scale is $1$ cm $= 20$ km, so the scale factor is $20$.
+
+    \stepShow{2} Multiply: $4.5 \times 20 = 90$ km.
+    \stepResult{The actual distance is $90$ km.}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{A blueprint uses $1$ in $= 4$ ft. A room is $3$ in by $5$ in on the blueprint. Find the actual area.}
+    \stepShow{1} Scale factor: $4$.
+
+    \stepShow{2} Actual dimensions: $3 \times 4 = 12$ ft and $5 \times 4 = 20$ ft.
+
+    \stepShow{3} Actual area: $12 \times 20 = 240$ ft$^{2}$. (Or: drawing area $= 15$ in$^{2}$, $k^{2} = 16$, so $15 \times 16 = 240$ ft$^{2}$.)
+    \stepResult{The actual area is $240$ ft$^{2}$.}
+\end{stepExample}
+
+\watchOut{Area does \textbf{not} scale by $k$ --- it scales by $k^{2}$. If lengths double, area quadruples!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Scale Drawings Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Identify the Scale Factor}
+    \begin{multicols}{2}
+    \prob A map says $3$ cm $= 45$ km. What is the scale factor? \answerBlank[2.5cm]
+    \answer{$15$ km per cm}
+    \prob A model car uses scale $1{:}24$. What is the scale factor? \answerBlank[2.5cm]
+    \answer{$24$}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Find Actual Lengths}
+    \prob A blueprint uses $1$ in $= 8$ ft. A room is $2.5$ in wide. What is the actual width? \answerBlank[2.5cm]
+    \answer{$20$ ft}
+
+    \prob A model car is $6$ inches long at scale $1{:}24$. How long is the real car in feet? \answerBlank[2.5cm]
+    \answer{$12$ ft}
+
+    \stepPracticeHeader[step3Color]{Find Actual Areas}
+    \prob A rectangle on a blueprint is $2$ cm by $3$ cm. The scale is $1$ cm $= 4$ m. Find the actual area. \answerBlank[2.5cm]
+    \answer{$96$ m$^{2}$}
+
+    \wordProblem{If a scale factor doubles all lengths, does the area also double? Explain.}{~}
+    \answer{No. If lengths double ($k = 2$), area scales by $k^{2} = 4$. Area quadruples.}
+\end{stepPractice}

@@ -1,0 +1,80 @@
+% ============================================================================
+% Section 9.2 — Theoretical Probability
+% CCSS 7.SP.C.7a
+% ============================================================================
+\section{Theoretical Probability}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Calculate theoretical probability using the formula
+    \item Build uniform probability models for equally likely outcomes
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Theoretical Probability}{The expected probability found by reasoning, not by experimenting.}
+    \vocabItem{Favorable Outcomes}{The outcomes that match the event you want.}
+    \vocabItem{Uniform Model}{A model where every outcome has the \textbf{same} probability.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Find the Theoretical Probability of an Event]
+    \stepItem{Count the \textbf{total number of equally likely outcomes}.}
+    \stepItem{Count the \textbf{favorable outcomes} --- the ones that match the event.}
+    \stepItem{Divide: $P(\text{event}) = \dfrac{\text{favorable outcomes}}{\text{total outcomes}}$.}
+    \stepItem{Simplify the fraction (or write as a decimal or percent).}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{What is the probability of rolling an even number on a standard die?}
+    \stepShow{1} Total outcomes: $1, 2, 3, 4, 5, 6$ --- that is $6$ outcomes.
+
+    \stepShow{2} Favorable (even): $2, 4, 6$ --- that is $3$ outcomes.
+
+    \stepShow{3} $P(\text{even}) = \dfrac{3}{6}$
+
+    \stepShow{4} Simplify: $\dfrac{3}{6} = \dfrac{1}{2} = 0.5$
+    \stepResult{$P(\text{even}) = \dfrac{1}{2}$}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{A bag has $5$ green, $3$ yellow, and $2$ orange marbles. What is the probability of drawing a yellow marble?}
+    \stepShow{1} Total outcomes: $5 + 3 + 2 = 10$ marbles.
+
+    \stepShow{2} Favorable (yellow): $3$ marbles.
+
+    \stepShow{3} $P(\text{yellow}) = \dfrac{3}{10}$
+
+    \stepShow{4} $\dfrac{3}{10} = 0.3 = 30\%$
+    \stepResult{$P(\text{yellow}) = \dfrac{3}{10} = 0.3$}
+\end{stepExample}
+
+\mascotStepTip{The probabilities of ALL outcomes must add up to $1$. Use this to check your work!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Theoretical Probability Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Count Outcomes}
+    \begin{multicols}{2}
+    \prob A standard deck has $52$ cards. How many total outcomes when drawing one card? \answerBlank[2cm]
+    \answer{$52$}
+    \prob A spinner has $8$ equal sections. How many total outcomes? \answerBlank[2cm]
+    \answer{$8$}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Find Favorable Outcomes and Calculate}
+    \prob What is the probability of drawing a heart from a standard $52$-card deck? \answerBlank[2cm]
+    \answer{$\frac{13}{52} = \frac{1}{4}$}
+    \prob A bag has $4$ red, $6$ blue, and $10$ white marbles. What is the probability of picking a blue marble? \answerBlank[2cm]
+    \answer{$\frac{6}{20} = \frac{3}{10}$}
+
+    \stepPracticeHeader[step3Color]{Put It All Together}
+    \prob What is the probability of rolling a number greater than $4$ on a standard die? \answerBlank[2cm]
+    \answer{$\frac{2}{6} = \frac{1}{3}$}
+
+    \wordProblem{A bowl has $12$ pieces of fruit: $5$ apples, $4$ bananas, and $3$ oranges. You grab one without looking. What is the probability that you get a banana or an orange?}{~}
+    \answer{$\frac{4 + 3}{12} = \frac{7}{12}$}
+\end{stepPractice}

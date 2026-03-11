@@ -1,0 +1,79 @@
+% ============================================================================
+% Section 5.3 — Solving Equations with the Distributive Property
+% CCSS 7.EE.B.4.A
+% ============================================================================
+\section{Solving Equations with the Distributive Property}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Solve equations of the form $p(x + q) = r$
+    \item Choose between distributing first or dividing first
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Distributive Property}{Multiply the outside number by each term inside: $a(b + c) = ab + ac$.}
+    \vocabItem{Equivalent Equations}{Equations that have the same solution.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Solve Equations with Parentheses]
+    \stepItem{Check: does the number in front \textbf{divide evenly} into the other side? If yes, \textbf{divide both sides} first.}
+    \stepItem{If not, \textbf{distribute} --- multiply the outside number by each term inside the parentheses.}
+    \stepItem{\textbf{Solve} the resulting equation using two-step methods (undo add/subtract, then multiply/divide).}
+    \stepItem{\textbf{Check} by substituting back into the original equation.}
+\end{stepsCard}
+
+% --- Worked Example 1 (divide first) ---
+\begin{stepExample}{Solve $4(x - 2) = 20$.}
+    \stepShow{1} Does $4$ divide evenly into $20$? Yes! Divide both sides by $4$: $x - 2 = 5$.
+
+    \stepShow{3} Add $2$: $x = 7$.
+
+    \stepShow{4} Check: $4(7 - 2) = 4(5) = 20$ \checkmark
+    \stepResult{$x = 7$}
+\end{stepExample}
+
+% --- Worked Example 2 (distribute first) ---
+\begin{stepExample}{Solve $3(2n + 5) = 39$.}
+    \stepShow{1} Does $3$ divide evenly into $39$? Yes, but let's practice distributing.
+
+    \stepShow{2} Distribute: $6n + 15 = 39$.
+
+    \stepShow{3} Subtract $15$: $6n = 24$. Divide by $6$: $n = 4$.
+
+    \stepShow{4} Check: $3(2 \cdot 4 + 5) = 3(13) = 39$ \checkmark
+    \stepResult{$n = 4$}
+\end{stepExample}
+
+\mascotStepTip{If the number outside divides evenly into the other side, dividing first saves you a step!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Distributive Property Equations Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Divide First (if possible)}
+    \begin{multicols}{2}
+    \prob Solve $2(x + 5) = 18$. \answerBlank[2cm]
+    \answer{$x = 4$}
+    \prob Solve $5(n - 3) = -10$. \answerBlank[2cm]
+    \answer{$n = 1$}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Distribute First}
+    \begin{multicols}{2}
+    \prob Solve $6(2x - 1) = 42$. \answerBlank[2cm]
+    \answer{$x = 4$}
+    \prob Solve $-3(y + 4) = 15$. \answerBlank[2cm]
+    \answer{$y = -9$}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Put It All Together}
+    \prob Solve $4(3x + 2) = 44$. \answerBlank[2cm]
+    \answer{$x = 3$}
+
+    \wordProblem{Each side of a square is $(x + 3)$ cm. The perimeter is $52$ cm. Find $x$.}{cm}
+    \answer{$x = 10$}
+\end{stepPractice}

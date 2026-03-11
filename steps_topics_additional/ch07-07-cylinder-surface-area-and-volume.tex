@@ -1,0 +1,76 @@
+% ============================================================================
+% Section 7.7 — Cylinder Surface Area and Volume
+% State-specific: Florida, Virginia
+% ============================================================================
+\section{Cylinder Surface Area and Volume}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Use $V = \pi r^{2} h$ to find the volume of a cylinder
+    \item Use $SA = 2\pi r^{2} + 2\pi r h$ to find the surface area of a cylinder
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Cylinder}{A 3D shape with two circular bases and a curved side.}
+    \vocabItem{Lateral Area}{The area of the curved side; like a label wrapped around a can.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Find the Volume and Surface Area of a Cylinder]
+    \stepItem{Identify the \textbf{radius} ($r$) and \textbf{height} ($h$). If given the diameter, divide by $2$.}
+    \stepItem{For \textbf{volume}: $V = \pi r^{2} h$ (area of base $\times$ height).}
+    \stepItem{For \textbf{surface area}: $SA = 2\pi r^{2} + 2\pi r h$ (two circles + curved side).}
+\end{stepsCard}
+
+% --- Worked Example 1 (Volume) ---
+\begin{stepExample}{A can has radius $3$ cm and height $10$ cm. Find its volume. ($\pi \approx 3.14$)}
+    \stepShow{1} $r = 3$ cm, $h = 10$ cm.
+
+    \stepShow{2} $V = \pi r^{2} h = 3.14 \times 3^{2} \times 10 = 3.14 \times 9 \times 10 = 282.6$ cm$^{3}$.
+
+    \stepResult{$V \approx 282.6$ cm$^{3}$}
+\end{stepExample}
+
+% --- Worked Example 2 (Surface Area) ---
+\begin{stepExample}{Find the surface area of the same can ($r = 3$ cm, $h = 10$ cm, $\pi \approx 3.14$).}
+    \stepShow{1} $r = 3$ cm, $h = 10$ cm.
+
+    \stepShow{3} Two bases: $2\pi r^{2} = 2 \times 3.14 \times 9 = 56.52$ cm$^{2}$. \quad
+    Curved side: $2\pi r h = 2 \times 3.14 \times 3 \times 10 = 188.4$ cm$^{2}$.
+
+    $SA = 56.52 + 188.4 = 244.92$ cm$^{2}$.
+    \stepResult{$SA \approx 244.92$ cm$^{2}$}
+\end{stepExample}
+
+\mascotStepTip{Think of a cylinder as two circles plus a rectangle rolled into a tube. The rectangle's width is the circumference ($2\pi r$) and its height is $h$.}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Cylinder Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Identify $r$ and $h$}
+    \begin{multicols}{2}
+    \prob Diameter $= 8$ cm, height $= 12$ cm. $r =$ \answerBlank[2cm]
+    \answer{$4$ cm}
+    \prob Radius $= 5$ in, height $= 7$ in. Already have $r =$ \answerBlank[2cm]
+    \answer{$5$ in}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Find the Volume ($\pi \approx 3.14$)}
+    \begin{multicols}{2}
+    \prob $r = 5$ cm, $h = 8$ cm. $V =$ \answerBlank[2.5cm]
+    \answer{$628$ cm$^{3}$}
+    \prob $r = 2$ m, $h = 5$ m. $V =$ \answerBlank[2.5cm]
+    \answer{$62.8$ m$^{3}$}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Find the Surface Area ($\pi \approx 3.14$)}
+    \prob $r = 4$ in, $h = 6$ in. $SA =$ \answerBlank[2.5cm]
+    \answer{$\approx 251.2$ in$^{2}$}
+
+    \wordProblem{A soup can has diameter $8$ cm and height $12$ cm. How much metal is needed to make the can (surface area)?}{cm$^{2}$}
+    \answer{$\approx 401.92$ cm$^{2}$}
+\end{stepPractice}

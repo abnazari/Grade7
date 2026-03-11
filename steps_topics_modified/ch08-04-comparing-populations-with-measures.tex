@@ -1,0 +1,72 @@
+% ============================================================================
+% Section 8.4 — Comparing Populations with Measures (AK/OK/TX: extended measures emphasis)
+% CCSS 7.SP.B.4
+% ============================================================================
+\section{Comparing Populations with Measures of Center and Variability}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Use mean, median, range, and IQR to compare two data sets
+    \item Explain why IQR is often better than range for comparison
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Mean}{Sum of all values divided by the count.}
+    \vocabItem{Median}{The middle value when data is in order.}
+    \vocabItem{Range}{Highest $-$ lowest — shows the total spread.}
+    \vocabItem{Interquartile Range (IQR)}{$Q_3 - Q_1$ — the spread of the \textbf{middle $50\%$} of the data.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Compare Two Populations with Extended Measures]
+    \stepItem{Order each data set and find the \textbf{mean} and \textbf{median}.}
+    \stepItem{Find the \textbf{range} (highest $-$ lowest).}
+    \stepItem{Find $Q_1$, $Q_3$, and the \textbf{IQR} ($Q_3 - Q_1$).}
+    \stepItem{\textbf{Compare}: Which group has a higher center? Which has less spread?}
+    \stepItem{Write a \textbf{conclusion} supported by at least two measures.}
+\end{stepsCard}
+
+% --- Worked Example ---
+\begin{stepExample}{Crew A daily catch (lb): $120, 135, 140, 150, 155$. Crew B: $90, 130, 145, 160, 200$. Compare.}
+    \stepShow{1} Crew A mean $= \frac{700}{5} = 140$, median $= 140$.\\
+    Crew B mean $= \frac{725}{5} = 145$, median $= 145$.
+
+    \stepShow{2} Crew A range $= 155 - 120 = 35$. Crew B range $= 200 - 90 = 110$.
+
+    \stepShow{3} Crew A: $Q_1 = 135$, $Q_3 = 150$, IQR $= 15$.\\
+    Crew B: $Q_1 = 130$, $Q_3 = 160$, IQR $= 30$.
+
+    \stepShow{4} Crew B averages slightly more ($145$ vs.\ $140$), but Crew A is far more consistent (IQR $15$ vs.\ $30$).
+
+    \stepShow{5} Crew B's range ($110$) is inflated by one large catch. IQR gives a more reliable picture.
+    \stepResult{Crew B averages more, but Crew A is much more consistent (IQR $15$ vs.\ $30$).}
+\end{stepExample}
+
+\watchOut{Range can be thrown off by a single extreme value. Always check IQR for a more stable comparison!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Comparing Populations with Measures Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Find Center}
+    \prob Find the mean and median: $5, 8, 10, 12, 15$. \answerBlank[3cm]
+    \answer{Mean $= 10$, median $= 10$}
+
+    \stepPracticeHeader[step2Color]{Find Spread}
+    \prob Find the range and IQR of $5, 8, 10, 12, 15$. \answerBlank[3cm]
+    \answer{Range $= 10$; $Q_1 = 8$, $Q_3 = 12$, IQR $= 4$}
+
+    \stepPracticeHeader[step3Color]{Why IQR?}
+    \prob Data: $5, 8, 10, 12, 15, 50$. Range $= 45$ and IQR $= 7$. Which better shows typical spread? \answerBlank[3cm]
+    \answer{IQR — the outlier $50$ inflates the range; IQR ignores it}
+
+    \stepPracticeHeader[step4Color]{Compare Two Groups}
+    \prob Group A: mean $72$, IQR $= 6$. Group B: mean $78$, IQR $= 20$. Which is more consistent? \answerBlank[3cm]
+    \answer{Group A — smaller IQR means less variability}
+
+    \wordProblem{Student X daily steps: $7{,}000$; $8{,}000$; $8{,}500$; $9{,}000$; $9{,}500$. Student Y: $3{,}000$; $7{,}500$; $8{,}000$; $10{,}000$; $13{,}500$. Compare using mean, range, and IQR.}{~}
+    \answer{X: mean $= 8{,}400$, range $= 2{,}500$, IQR $= 1{,}000$. Y: mean $= 8{,}400$, range $= 10{,}500$, IQR $= 2{,}500$. Same average, but X is far more consistent.}
+\end{stepPractice}

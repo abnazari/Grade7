@@ -1,0 +1,85 @@
+% ============================================================================
+% Section 6.6 — Angle Relationships (VA: SOL extended angle emphasis)
+% CCSS 7.G.B.5
+% ============================================================================
+\section{Angle Relationships}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Identify complementary, supplementary, vertical, and adjacent angle pairs
+    \item Solve multi-step algebraic equations to find unknown angles
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Complementary}{Two angles that add to $90°$.}
+    \vocabItem{Supplementary}{Two angles that add to $180°$.}
+    \vocabItem{Vertical Angles}{Opposite angles formed by two intersecting lines --- always equal.}
+    \vocabItem{Adjacent Angles}{Angles that share a side and a vertex.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Find Unknown Angles in Multi-Step Problems]
+    \stepItem{Identify \textbf{all angle relationships} in the diagram (complementary, supplementary, vertical, adjacent).}
+    \stepItem{Write an \textbf{equation} for each relationship.}
+    \stepItem{\textbf{Solve} for the variable, then find every angle.}
+    \stepItem{\textbf{Check}: substitute back and verify each relationship holds.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{Two lines intersect. One pair of vertical angles is $(4x - 10)°$ and $(2x + 30)°$. Find all four angles.}
+    \stepShow{1} The two given angles are \textbf{vertical} (equal). Each is supplementary to the angles beside it.
+
+    \stepShow{2} Equation: $4x - 10 = 2x + 30$.
+
+    \stepShow{3} Solve: $2x = 40$, so $x = 20$.\par
+    Vertical angles: $4(20) - 10 = 70°$.\par
+    Supplementary angles: $180° - 70° = 110°$.
+
+    \stepShow{4} Check: $70 + 110 = 180°$ \checkmark \quad Vertical pair: $70° = 70°$ \checkmark
+    \stepResult{$70°$, $110°$, $70°$, $110°$}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{Three angles meet at a point on a line: $(x + 20)°$, $(2x)°$, and $40°$. Find $x$.}
+    \stepShow{1} Angles on a straight line are \textbf{supplementary} --- they sum to $180°$.
+
+    \stepShow{2} Equation: $(x + 20) + 2x + 40 = 180$.
+
+    \stepShow{3} Combine: $3x + 60 = 180 \to 3x = 120 \to x = 40$.\par
+    Angles: $60°$, $80°$, $40°$.
+
+    \stepShow{4} Check: $60 + 80 + 40 = 180°$ \checkmark
+    \stepResult{$x = 40$; angles are $60°$, $80°$, and $40°$.}
+\end{stepExample}
+
+\watchOut{Don't mix up complementary ($90°$) and supplementary ($180°$). \textbf{C} comes before \textbf{S}, and $90 < 180$.}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Angle Relationships Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Name the Relationship}
+    \begin{multicols}{2}
+    \prob Two angles sum to $90°$. They are \answerBlank[2.5cm].
+    \answer{complementary}
+    \prob Opposite angles from two crossing lines are \answerBlank[2.5cm].
+    \answer{vertical (equal)}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Write and Solve Equations}
+    \prob Two complementary angles: one is $35°$. Find the other. \answerBlank[2cm]
+    \answer{$55°$}
+
+    \prob Supplementary angles $(3x + 15)°$ and $(2x + 5)°$. Find both. \answerBlank[3cm]
+    \answer{$111°$ and $69°$}
+
+    \stepPracticeHeader[step3Color]{Multi-Step Problems}
+    \prob Vertical angles $4x + 5$ and $6x - 15$. Find $x$ and the angle. \answerBlank[3cm]
+    \answer{$x = 10$; angle $= 45°$}
+
+    \wordProblem{An angle is $20°$ more than $3$ times its complement. Find both angles.}{~}
+    \answer{$72.5°$ and $17.5°$. Let complement $= x$: $x + (3x + 20) = 90$, $4x = 70$, $x = 17.5°$, angle $= 72.5°$.}
+\end{stepPractice}

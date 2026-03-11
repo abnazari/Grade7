@@ -1,0 +1,76 @@
+% ============================================================================
+% Section 6.3 — Drawing Geometric Figures with Given Conditions
+% CCSS 7.G.A.2
+% ============================================================================
+\section{Drawing Geometric Figures with Given Conditions}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Decide if given conditions produce one shape, many shapes, or none
+    \item Apply the triangle inequality to test whether a triangle is possible
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Triangle Inequality}{The sum of any two sides of a triangle must be greater than the third side.}
+    \vocabItem{Conditions}{The measurements (sides, angles) you are given to build a shape.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Decide if a Shape Can Be Drawn]
+    \stepItem{List every \textbf{given measurement} (sides and/or angles).}
+    \stepItem{For triangles, check the \textbf{triangle inequality}: does each pair of sides add to more than the third?}
+    \stepItem{Decide the result: \textbf{one shape} (fully determined), \textbf{many shapes} (room to vary), or \textbf{no shape} (impossible).}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{Can you draw a triangle with sides $5$ cm, $7$ cm, and $3$ cm?}
+    \stepShow{1} Given sides: $5$, $7$, $3$.
+
+    \stepShow{2} Triangle inequality:\par
+    $5 + 7 = 12 > 3$ \checkmark \quad $5 + 3 = 8 > 7$ \checkmark \quad $7 + 3 = 10 > 5$ \checkmark
+
+    \stepShow{3} All three checks pass and three sides (SSS) fully determine the triangle.
+    \stepResult{Yes --- exactly one triangle can be drawn.}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{Can you draw a triangle with sides $4$ cm, $6$ cm, and $11$ cm?}
+    \stepShow{1} Given sides: $4$, $6$, $11$.
+
+    \stepShow{2} Check: $4 + 6 = 10$, but $10 < 11$. The inequality fails.
+
+    \stepShow{3} No triangle is possible --- the two shorter sides cannot reach each other.
+    \stepResult{No triangle can be drawn.}
+\end{stepExample}
+
+\watchOut{The triangle inequality must pass for \textbf{all three} pairs. If even one pair fails, no triangle exists.}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Drawing Geometric Figures Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{List the Measurements}
+    \prob A triangle has sides $5$, $5$, and $5$. What kind of triangle is this? \answerBlank[2.5cm]
+    \answer{Equilateral}
+
+    \stepPracticeHeader[step2Color]{Check the Triangle Inequality}
+    \begin{multicols}{2}
+    \prob Sides $3$, $4$, $8$. Triangle? \answerBlank[2cm]
+    \answer{No ($3 + 4 = 7 < 8$)}
+    \prob Sides $7$, $10$, $15$. Triangle? \answerBlank[2cm]
+    \answer{Yes ($7 + 10 = 17 > 15$)}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{One, Many, or None?}
+    \prob A rectangle has perimeter $20$ cm. How many different rectangles? \answerBlank[2.5cm]
+    \answer{Many (e.g.\ $1 \times 9$, $2 \times 8$, $3 \times 7$)}
+
+    \prob Two sides are $6$ cm and $8$ cm with a $90°$ angle between them. How many triangles? \answerBlank[2cm]
+    \answer{Exactly one (SAS)}
+
+    \wordProblem{Knowing all three angles of a triangle ($60°$, $70°$, $50°$) gives how many possible triangles?}{~}
+    \answer{Many. Three angles (AAA) fix the shape but not the size, so infinitely many similar triangles are possible.}
+\end{stepPractice}

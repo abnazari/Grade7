@@ -1,0 +1,81 @@
+% ============================================================================
+% Section 5.5 — Writing and Solving Inequalities
+% CCSS 7.EE.B.4.B
+% ============================================================================
+\section{Writing and Solving Inequalities}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Translate word problems into inequalities
+    \item Solve two-step inequalities, including flipping the sign
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Inequality}{A math sentence that uses $<$, $>$, $\leq$, or $\geq$ instead of $=$.}
+    \vocabItem{Solution Set}{All the values that make the inequality true.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Write and Solve an Inequality]
+    \stepItem{Identify the unknown and choose a variable. Look for keywords: \textbf{at least} ($\geq$), \textbf{at most} ($\leq$), \textbf{more than} ($>$), \textbf{less than} ($<$).}
+    \stepItem{\textbf{Write} the inequality using the same setup as an equation, but with an inequality symbol.}
+    \stepItem{\textbf{Solve} by undoing operations, just like an equation. \textbf{Flip the sign} if you multiply or divide by a negative number.}
+    \stepItem{\textbf{Check} by testing a number from the solution set in the original inequality.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{Solve $3x - 7 \leq 14$.}
+    \stepShow{1} The variable is $x$. The symbol $\leq$ means ``less than or equal to.''
+
+    \stepShow{2} The inequality is already written: $3x - 7 \leq 14$.
+
+    \stepShow{3} Add $7$: $3x \leq 21$. Divide by $3$: $x \leq 7$.
+
+    \stepShow{4} Check with $x = 5$: $3(5) - 7 = 8 \leq 14$ \checkmark
+    \stepResult{$x \leq 7$}
+\end{stepExample}
+
+% --- Worked Example 2 (flip the sign) ---
+\begin{stepExample}{You have $\$50$ and spend $\$6$ per day. After how many days will you have less than $\$14$?}
+    \stepShow{1} Unknown: $d =$ number of days. ``Less than'' means use $<$.
+
+    \stepShow{2} Write the inequality: $50 - 6d < 14$.
+
+    \stepShow{3} Subtract $50$: $-6d < -36$. Divide by $-6$ and \textbf{flip}: $d > 6$.
+
+    \stepShow{4} Check with $d = 7$: $50 - 6(7) = 50 - 42 = 8 < 14$ \checkmark
+    \stepResult{After more than $6$ days ($d > 6$)}
+\end{stepExample}
+
+\watchOut{When you multiply or divide both sides by a \textbf{negative} number, you \textbf{must flip} the inequality sign. This is the most common mistake!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Inequalities Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Pick the Symbol}
+    \begin{multicols}{2}
+    \prob ``At least $80$ points'' \answerBlank[1.5cm]
+    \answer{$\geq 80$}
+    \prob ``Fewer than $12$ items'' \answerBlank[1.5cm]
+    \answer{$< 12$}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Solve the Inequality}
+    \begin{multicols}{2}
+    \prob Solve $2x + 5 > 17$. \answerBlank[2cm]
+    \answer{$x > 6$}
+    \prob Solve $-3n + 9 \leq 0$. \answerBlank[2cm]
+    \answer{$n \geq 3$}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Write and Solve}
+    \prob Solve $\dfrac{x}{4} - 2 \geq 3$. \answerBlank[2cm]
+    \answer{$x \geq 20$}
+
+    \wordProblem{A student earns $5$ points per question and starts with $15$ bonus points. She needs at least $80$ points. How many questions must she answer correctly?}{questions}
+    \answer{At least $13$ questions ($q \geq 13$)}
+\end{stepPractice}

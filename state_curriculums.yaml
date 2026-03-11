@@ -1,0 +1,217 @@
+# ============================================================================
+# Grade 3 Math — State Curriculum Standards
+# Maps each US state to its official K-12 math curriculum framework.
+# Used by scripts/wc_uploader.py to create SEO-friendly WooCommerce
+# categories with state-specific curriculum and exam references.
+#
+# Fields:
+#   curriculum_name:    Full official name of the state's math standards
+#   curriculum_acronym: Common abbreviation used by educators
+#
+# Note: Many states adopted Common Core State Standards (CCSS) verbatim
+#       or with minor modifications — those are listed as "CCSS" with
+#       the state-branded name where applicable.
+#
+# Sources: State department of education websites (compiled February 2026).
+# ============================================================================
+
+states:
+  alabama:
+    curriculum_name: "Alabama Course of Study: Mathematics"
+    curriculum_acronym: "ACOS"
+
+  alaska:
+    curriculum_name: "Alaska Mathematics Standards"
+    curriculum_acronym: "AK Standards"
+
+  arizona:
+    curriculum_name: "Arizona Mathematics Standards"
+    curriculum_acronym: "AZ Standards"
+
+  arkansas:
+    curriculum_name: "Arkansas Mathematics Standards"
+    curriculum_acronym: "AR Standards"
+
+  california:
+    curriculum_name: "California Common Core State Standards for Mathematics"
+    curriculum_acronym: "CA CCSS"
+
+  colorado:
+    curriculum_name: "Colorado Academic Standards: Mathematics"
+    curriculum_acronym: "CAS"
+
+  connecticut:
+    curriculum_name: "Connecticut Core Standards for Mathematics"
+    curriculum_acronym: "CT Core"
+
+  delaware:
+    curriculum_name: "Delaware Content Standards for Mathematics"
+    curriculum_acronym: "DE Standards"
+
+  florida:
+    curriculum_name: "Benchmarks for Excellent Student Thinking: Mathematics"
+    curriculum_acronym: "B.E.S.T."
+
+  georgia:
+    curriculum_name: "Georgia Mathematics Standards of Excellence"
+    curriculum_acronym: "GSE"
+
+  hawaii:
+    curriculum_name: "Hawaii Common Core Standards for Mathematics"
+    curriculum_acronym: "HI CCSS"
+
+  idaho:
+    curriculum_name: "Idaho Content Standards: Mathematics"
+    curriculum_acronym: "ICS"
+
+  illinois:
+    curriculum_name: "Illinois Learning Standards for Mathematics"
+    curriculum_acronym: "ILS"
+
+  indiana:
+    curriculum_name: "Indiana Academic Standards: Mathematics"
+    curriculum_acronym: "IAS"
+
+  iowa:
+    curriculum_name: "Iowa Core Mathematics Standards"
+    curriculum_acronym: "Iowa Core"
+
+  kansas:
+    curriculum_name: "Kansas Mathematics Standards"
+    curriculum_acronym: "KS Standards"
+
+  kentucky:
+    curriculum_name: "Kentucky Academic Standards: Mathematics"
+    curriculum_acronym: "KAS"
+
+  louisiana:
+    curriculum_name: "Louisiana Student Standards for Mathematics"
+    curriculum_acronym: "LSSM"
+
+  maine:
+    curriculum_name: "Maine Learning Results: Mathematics"
+    curriculum_acronym: "MLR"
+
+  maryland:
+    curriculum_name: "Maryland College and Career-Ready Standards: Mathematics"
+    curriculum_acronym: "MD CCRS"
+
+  massachusetts:
+    curriculum_name: "Massachusetts Curriculum Framework for Mathematics"
+    curriculum_acronym: "MA Framework"
+
+  michigan:
+    curriculum_name: "Michigan Mathematics Standards"
+    curriculum_acronym: "MI Standards"
+
+  minnesota:
+    curriculum_name: "Minnesota K-12 Academic Standards in Mathematics"
+    curriculum_acronym: "MN Standards"
+
+  mississippi:
+    curriculum_name: "Mississippi College- and Career-Readiness Standards: Mathematics"
+    curriculum_acronym: "MS CCRS"
+
+  missouri:
+    curriculum_name: "Missouri Learning Standards: Mathematics"
+    curriculum_acronym: "MLS"
+
+  montana:
+    curriculum_name: "Montana Mathematics Content Standards"
+    curriculum_acronym: "MT Standards"
+
+  nebraska:
+    curriculum_name: "Nebraska College and Career Ready Standards for Mathematics"
+    curriculum_acronym: "NE CCRS"
+
+  nevada:
+    curriculum_name: "Nevada Academic Content Standards for Mathematics"
+    curriculum_acronym: "NVACS"
+
+  new-hampshire:
+    curriculum_name: "New Hampshire College and Career Ready Standards: Mathematics"
+    curriculum_acronym: "NH CCRS"
+
+  new-jersey:
+    curriculum_name: "New Jersey Student Learning Standards: Mathematics"
+    curriculum_acronym: "NJSLS"
+
+  new-mexico:
+    curriculum_name: "New Mexico Common Core State Standards: Mathematics"
+    curriculum_acronym: "NM CCSS"
+
+  new-york:
+    curriculum_name: "New York State Next Generation Mathematics Learning Standards"
+    curriculum_acronym: "NY NGMLS"
+
+  north-carolina:
+    curriculum_name: "North Carolina Standard Course of Study: Mathematics"
+    curriculum_acronym: "NC SCOS"
+
+  north-dakota:
+    curriculum_name: "North Dakota Mathematics Content Standards"
+    curriculum_acronym: "ND Standards"
+
+  ohio:
+    curriculum_name: "Ohio's Learning Standards: Mathematics"
+    curriculum_acronym: "OLS"
+
+  oklahoma:
+    curriculum_name: "Oklahoma Academic Standards for Mathematics"
+    curriculum_acronym: "OAS"
+
+  oregon:
+    curriculum_name: "Oregon Mathematics Standards"
+    curriculum_acronym: "OR Standards"
+
+  pennsylvania:
+    curriculum_name: "Pennsylvania Core Standards: Mathematics"
+    curriculum_acronym: "PA Core"
+
+  rhode-island:
+    curriculum_name: "Rhode Island Core Standards: Mathematics"
+    curriculum_acronym: "RI Core"
+
+  south-carolina:
+    curriculum_name: "South Carolina College- and Career-Ready Standards: Mathematics"
+    curriculum_acronym: "SC CCR"
+
+  south-dakota:
+    curriculum_name: "South Dakota Mathematics Standards"
+    curriculum_acronym: "SD Standards"
+
+  tennessee:
+    curriculum_name: "Tennessee Mathematics Standards"
+    curriculum_acronym: "TN Standards"
+
+  texas:
+    curriculum_name: "Texas Essential Knowledge and Skills for Mathematics"
+    curriculum_acronym: "TEKS"
+
+  utah:
+    curriculum_name: "Utah Core Standards for Mathematics"
+    curriculum_acronym: "UT Core"
+
+  vermont:
+    curriculum_name: "Vermont Common Core State Standards: Mathematics"
+    curriculum_acronym: "VT CCSS"
+
+  virginia:
+    curriculum_name: "Virginia Standards of Learning: Mathematics"
+    curriculum_acronym: "VA SOL"
+
+  washington:
+    curriculum_name: "Washington K-12 Learning Standards: Mathematics"
+    curriculum_acronym: "WA Standards"
+
+  west-virginia:
+    curriculum_name: "West Virginia College and Career Readiness Standards: Mathematics"
+    curriculum_acronym: "WV CCRS"
+
+  wisconsin:
+    curriculum_name: "Wisconsin Standards for Mathematics"
+    curriculum_acronym: "WI Standards"
+
+  wyoming:
+    curriculum_name: "Wyoming Content and Performance Standards: Mathematics"
+    curriculum_acronym: "WY Standards"

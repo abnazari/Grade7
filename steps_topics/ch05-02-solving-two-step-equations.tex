@@ -1,0 +1,76 @@
+% ============================================================================
+% Section 5.2 — Solving Two-Step Equations
+% CCSS 7.EE.B.4.A
+% ============================================================================
+\section{Solving Two-Step Equations}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Solve equations of the form $px + q = r$ by undoing operations
+    \item Check answers by substituting back into the original equation
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Inverse Operations}{Operations that undo each other --- addition undoes subtraction, multiplication undoes division.}
+    \vocabItem{Isolate}{Get the variable alone on one side of the equation.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Solve a Two-Step Equation]
+    \stepItem{\textbf{Undo addition or subtraction} first --- add or subtract the constant from both sides.}
+    \stepItem{\textbf{Undo multiplication or division} --- multiply or divide both sides to isolate the variable.}
+    \stepItem{\textbf{Check} your answer by substituting it back into the original equation.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{Solve $3x + 7 = 22$.}
+    \stepShow{1} Subtract $7$ from both sides: $3x + 7 - 7 = 22 - 7$, so $3x = 15$.
+
+    \stepShow{2} Divide both sides by $3$: $x = 5$.
+
+    \stepShow{3} Check: $3(5) + 7 = 15 + 7 = 22$ \checkmark
+    \stepResult{$x = 5$}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{Solve $\dfrac{x}{4} - 3 = 5$.}
+    \stepShow{1} Add $3$ to both sides: $\dfrac{x}{4} = 8$.
+
+    \stepShow{2} Multiply both sides by $4$: $x = 32$.
+
+    \stepShow{3} Check: $\dfrac{32}{4} - 3 = 8 - 3 = 5$ \checkmark
+    \stepResult{$x = 32$}
+\end{stepExample}
+
+\watchOut{Always undo addition or subtraction \textbf{before} multiplication or division. If you divide first, you will make a mistake!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Solving Two-Step Equations Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Undo the Constant}
+    \begin{multicols}{2}
+    \prob Solve $2x + 9 = 25$. \answerBlank[2cm]
+    \answer{$x = 8$}
+    \prob Solve $5n - 12 = 33$. \answerBlank[2cm]
+    \answer{$n = 9$}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Isolate the Variable}
+    \begin{multicols}{2}
+    \prob Solve $\dfrac{y}{3} + 7 = 15$. \answerBlank[2cm]
+    \answer{$y = 24$}
+    \prob Solve $-4x + 10 = -6$. \answerBlank[2cm]
+    \answer{$x = 4$}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Solve and Check}
+    \prob Solve $7m - 5 = 30$. Show your check. \answerBlank[2cm]
+    \answer{$m = 5$}
+
+    \wordProblem{A gym charges $\$10$ per month plus $\$25$ to join. You spent $\$85$. How many months have you been a member?}{months}
+    \answer{$6$ months}
+\end{stepPractice}

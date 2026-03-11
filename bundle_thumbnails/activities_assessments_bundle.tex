@@ -1,0 +1,44 @@
+% ============================================================================
+% Bundle Thumbnail: Activities & Assessments Bundle
+%
+% Compile:  xelatex -output-directory=build/bundle_thumbnails \
+%                    bundle_thumbnails/activities_assessments_bundle.tex
+%
+% Contains: Puzzles & Brain Teasers, Worksheets, Quizzes (3 covers)
+% Background image must exist at the path below.
+% Cover JPGs from final_output/covers_jpg/<book_type>/<state_slug>.jpg
+% ============================================================================
+\documentclass[12pt]{article}
+\usepackage{VM_packages/VMfunBundleThumbnail}
+
+% --- Background ---
+\BundleBackground{images/bundle_covers/bundle-background_activities_grade3.png}
+
+% --- State name ---
+\BundleStateName{INSERT-STATE-NAME-HERE}
+\BundleStateNameXOffset{3.5in}
+\BundleStateNameYOffset{5in}
+\BundleStateNameRotation{0}
+\BundleStateNameFontSize{55}
+\BundleStateNameBaselineSkip{43}
+\BundleStateNameColor{white}
+\BundleStateNameFontStyle{bold-sans}
+
+\begin{document}
+\begin{bundlethumbnailpage}
+    % 1) Full-bleed background
+    \makeBundleBackground
+
+    % 2) Book covers — three across, centered
+    %    Page is 7in wide.  Each cover ~1.7in wide with gaps.
+    %    Covers are 2:3 aspect ratio (w:h), so 1.7in wide → 2.55in tall
+    %    Y position centres the row vertically in the middle zone of the design.
+    % First number: horizontal position (0.1in, 2.4in, 4.7in). Second number: vertical position (1.65in). Third number: cover height (2.3in).
+    \placeCover{final_output/covers_jpg/puzzles/INSERT-STATE-SLUG-HERE.jpg}{0.03in}{1.2in}{2.3in}
+    \placeCover{final_output/covers_jpg/worksheet/INSERT-STATE-SLUG-HERE.jpg}{2.36in}{1.2in}{2.3in}
+    \placeCover{final_output/covers_jpg/quiz/INSERT-STATE-SLUG-HERE.jpg}{4.69in}{1.2in}{2.3in}
+
+    % 3) State name overlay (on top of everything)
+    \makeBundleStateName
+\end{bundlethumbnailpage}
+\end{document}

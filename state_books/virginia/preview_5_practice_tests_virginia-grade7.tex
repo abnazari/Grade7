@@ -1,4 +1,5 @@
 % PREVIEW — Grade 7 Math — 5 Practice Tests
+% Only the first 10 questions of one test are included.
 \documentclass[12pt, fleqn, openany]{studyGuide}
 
 % Line spacing for young readers
@@ -30,13 +31,176 @@
 \pagenumbering{arabic}
 
 % ============================================================================
-% SAMPLE PRACTICE TEST
+% SAMPLE PRACTICE TEST — first 10 questions only
 % ============================================================================
-\practiceTestPage{1}{30}
+\practiceTestPage{1}{10}
 
-\input{practice_tests/virginia/practice_test_04}
+\begin{practiceQuestion}{1-4-q06}{mc}
+\begin{questionText}
+A car travels $55$ miles per hour. Which equation gives the distance $d$ for $t$ hours?
+\end{questionText}
+\choiceA{$d = t + 55$}
+\choiceB{$d = 55t$}
+\choiceC{$t = 55d$}
+\choiceD{$d = \frac{55}{t}$}
+\correctAnswer{B}
+\explanation{Distance $=$ rate $\times$ time, so $d = 55t$.}
+\end{practiceQuestion}
 
-\testScorePage{1}{30}
+\begin{practiceQuestion}{2-1-q06}{mc}
+\begin{questionText}
+$14$ is what percent of $56$?
+\end{questionText}
+\choiceA{$14\%$}
+\choiceB{$20\%$}
+\choiceC{$25\%$}
+\choiceD{$28\%$}
+\correctAnswer{C}
+\explanation{Divide the part by the whole: $14 \div 56 = 0.25 = 25\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-2-q04}{mc}
+\begin{questionText}
+Which proportion shows that $42$ is $60\%$ of some number $w$?
+\end{questionText}
+\choiceA{$\dfrac{42}{w} = \dfrac{60}{100}$}
+\choiceB{$\dfrac{w}{42} = \dfrac{60}{100}$}
+\choiceC{$\dfrac{60}{42} = \dfrac{w}{100}$}
+\choiceD{$\dfrac{42}{60} = \dfrac{w}{100}$}
+\correctAnswer{A}
+\explanation{Part ($42$) over whole ($w$) equals percent ($60$) over $100$: $\frac{42}{w} = \frac{60}{100}$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-3-q11}{mc}
+\begin{questionText}
+Miranda says that a $50\%$ increase followed by a $50\%$ decrease gives back the original price. Is she correct?
+\end{questionText}
+\choiceA{Yes, because the two changes cancel out}
+\choiceB{No, the result is less than the original}
+\choiceC{No, the result is more than the original}
+\choiceD{It depends on the starting price}
+\correctAnswer{B}
+\explanation{Start with $\$100$. Increase $50\%$: $\$150$. Decrease $50\%$: $150 \times 0.50 = \$75$. That is less than $\$100$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{2-7-q13}{mc}
+\begin{questionText}
+A student estimated a hallway was $60$ meters long. The actual length was $50$ meters. What is the percent error?
+\end{questionText}
+\choiceA{$10\%$}
+\choiceB{$16.7\%$}
+\choiceC{$20\%$}
+\choiceD{$25\%$}
+\correctAnswer{C}
+\explanation{$\frac{|60-50|}{50} \times 100 = \frac{10}{50} \times 100 = 20\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{3-2-q24}{sa}
+\begin{questionText}
+A football team has the following plays: gain $7$ yards, lose $3$ yards, lose $5$ yards, gain $2$ yards. What is the net yardage?
+\end{questionText}
+\correctAnswer{$1$ yard}
+\explanation{$7 + (-3) + (-5) + 2 = 1$. Gains: $7 + 2 = 9$. Losses: $3 + 5 = 8$. Net: $9 - 8 = 1$ yard gained.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{3-3-q28}{gmc}
+\begin{questionText}
+The table shows daily high temperatures for a city.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Day} & \textbf{High Temp (°F)} \\
+\hline
+Monday & $-3$ \\
+\hline
+Tuesday & $8$ \\
+\hline
+Wednesday & $-5$ \\
+\hline
+\end{tabular}
+\end{center}
+
+What is the difference between Tuesday's and Wednesday's temperatures?
+\end{questionText}
+\choiceA{$3°$F}
+\choiceB{$-3°$F}
+\choiceC{$13°$F}
+\choiceD{$-13°$F}
+\correctAnswer{C}
+\explanation{$8 - (-5) = 8 + 5 = 13°$F.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{3-4-q25}{sa}
+\begin{questionText}
+A recipe calls for $1\dfrac{3}{4}$ cups of flour. You already added $\dfrac{5}{8}$ cup. How much more flour do you need?
+\end{questionText}
+\correctAnswer{$1\dfrac{1}{8}$ cups}
+\explanation{$1\frac{3}{4} - \frac{5}{8} = \frac{7}{4} - \frac{5}{8} = \frac{14}{8} - \frac{5}{8} = \frac{9}{8} = 1\frac{1}{8}$ cups.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{4-3-q02}{mc}
+\begin{questionText}
+Expand $5(2a - 3)$.
+\end{questionText}
+\choiceA{$10a - 3$}
+\choiceB{$7a - 3$}
+\choiceC{$10a - 15$}
+\choiceD{$10a + 15$}
+\correctAnswer{C}
+\explanation{$5 \times 2a = 10a$ and $5 \times (-3) = -15$. Result: $10a - 15$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{4-4-q27}{gmc}
+\begin{questionText}
+The arrays below show how $12$ tiles can be arranged. Which arrangement shows that $12 = 4 \times 3$?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+  % Arrangement A: 2 x 6
+  \node[font=\bfseries] at (3, 3.5) {A: $2 \times 6$};
+  \foreach \x in {0,...,5} {
+    \foreach \y in {0,...,1} {
+      \fill[funBlue!40] (\x+0.1, \y+0.1) rectangle (\x+0.9, \y+0.9);
+      \draw[thick] (\x+0.1, \y+0.1) rectangle (\x+0.9, \y+0.9);
+    }
+  }
+  % Arrangement B: 4 x 3
+  \begin{scope}[xshift=8cm]
+  \node[font=\bfseries] at (1.5, 5) {B: $4 \times 3$};
+  \foreach \x in {0,...,2} {
+    \foreach \y in {0,...,3} {
+      \fill[funGreen!40] (\x+0.1, \y+0.1) rectangle (\x+0.9, \y+0.9);
+      \draw[thick] (\x+0.1, \y+0.1) rectangle (\x+0.9, \y+0.9);
+    }
+  }
+  \end{scope}
+  % Arrangement C: 1 x 12
+  \begin{scope}[xshift=13cm]
+  \node[font=\bfseries] at (6, 1.5) {C: $1 \times 12$};
+  \foreach \x in {0,...,11} {
+    \fill[funOrange!40] (\x+0.1, 0.1) rectangle (\x+0.9, 0.9);
+    \draw[thick] (\x+0.1, 0.1) rectangle (\x+0.9, 0.9);
+  }
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{Arrangement A}
+\choiceB{Arrangement B}
+\choiceC{Arrangement C}
+\choiceD{All three arrangements}
+\correctAnswer{B}
+\explanation{Arrangement B shows $4$ rows and $3$ columns, illustrating $12 = 4 \times 3$. This connects to factoring: $12$ can be written as the product $4(3)$.}
+\end{practiceQuestion}
+
+
+\testScorePage{1}{10}
+
+% ============================================================================
+% ANSWER KEY — covers the sample questions above
+% ============================================================================
+\printAnswerKey
 
 \input{initial_pages/common/preview-cta-page}
 

@@ -1,0 +1,68 @@
+% ============================================================================
+% Section 8.3 — Comparing Two Populations Visually
+% CCSS 7.SP.B.3
+% ============================================================================
+\section{Comparing Two Populations Visually}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Compare two data sets using dot plots or box plots
+    \item Measure the difference between centers as a multiple of variability
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Dot Plot}{A graph that shows each data value as a dot above a number line.}
+    \vocabItem{Box Plot}{A graph showing the median, quartiles, and range of a data set.}
+    \vocabItem{Mean Absolute Deviation (MAD)}{The average distance of each data point from the mean.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Compare Two Populations Visually]
+    \stepItem{Display both data sets on the \textbf{same type of graph} (dot plot, box plot, etc.).}
+    \stepItem{Find the \textbf{center} of each group (mean or median).}
+    \stepItem{Find the \textbf{difference between the centers}.}
+    \stepItem{Express the difference as a \textbf{multiple of the MAD}: $\dfrac{\text{difference in means}}{\text{MAD}}$.}
+    \stepItem{Interpret: a ratio $\geq 2$ suggests a \textbf{meaningful} difference; $< 2$ suggests \textbf{overlap}.}
+\end{stepsCard}
+
+% --- Worked Example ---
+\begin{stepExample}{Team A scores: $10, 12, 14, 16, 18$ (mean $= 14$, MAD $= 2.4$). Team B scores: $18, 20, 22, 24, 26$ (mean $= 22$, MAD $= 2.4$). Compare the teams.}
+    \stepShow{1} Both data sets are small — use dot plots on the same number line.
+
+    \stepShow{2} Team A mean $= 14$. \quad Team B mean $= 22$.
+
+    \stepShow{3} Difference $= 22 - 14 = 8$.
+
+    \stepShow{4} Ratio $= \dfrac{8}{2.4} \approx 3.3$ MADs apart.
+
+    \stepShow{5} Since $3.3 \geq 2$, the difference is meaningful — Team B clearly scores higher.
+    \stepResult{Team B scores about $3.3$ MADs higher than Team A — a significant difference.}
+\end{stepExample}
+
+\watchOut{If the data sets overlap a lot on the graph, the difference between the groups may not be meaningful — always check the ratio!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Comparing Two Populations Visually Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Find the Centers}
+    \prob Class A test scores have a mean of $78$. Class B has a mean of $85$. What is the difference in means? \answerBlank[2.5cm]
+    \answer{$85 - 78 = 7$}
+
+    \stepPracticeHeader[step2Color]{Express as a Multiple of MAD}
+    \prob Both classes have a MAD of $3.5$. How many MADs apart are the means? \answerBlank[2.5cm]
+    \answer{$\frac{7}{3.5} = 2$ MADs}
+
+    \prob Is the difference meaningful? \answerBlank[3cm]
+    \answer{Yes — $2$ MADs apart suggests a real difference}
+
+    \stepPracticeHeader[step3Color]{Interpret the Comparison}
+    \prob Group X: mean $50$, MAD $= 6$. Group Y: mean $56$, MAD $= 6$. Are the groups meaningfully different? \answerBlank[3cm]
+    \answer{$\frac{56-50}{6} = 1$ MAD — not a clear difference; the groups overlap}
+
+    \wordProblem{Two basketball players' points per game: Player 1 has a mean of $15$ with MAD $= 4$. Player 2 has a mean of $23$ with MAD $= 4$. Compare their performance.}{~}
+    \answer{Difference $= 8$, ratio $= \frac{8}{4} = 2$ MADs. Player 2 reliably scores more — $2$ MADs apart is a meaningful gap.}
+\end{stepPractice}

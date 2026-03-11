@@ -1,0 +1,85 @@
+% ============================================================================
+% Section 8.5 — Stem-and-Leaf Plots (Additional: FL, OK, TX, VA)
+% ============================================================================
+\section{Stem-and-Leaf Plots}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Organize data in a stem-and-leaf plot
+    \item Read the plot to find the median, range, and mode
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Stem}{All digits \textbf{except} the last digit of a number.}
+    \vocabItem{Leaf}{The \textbf{last digit} of a number.}
+    \vocabItem{Key}{Shows how to read the plot (e.g., $3 \mid 5$ means $35$).}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Make and Read a Stem-and-Leaf Plot]
+    \stepItem{Split each number into a \textbf{stem} (all digits except the last) and a \textbf{leaf} (last digit).}
+    \stepItem{List the stems in order from \textbf{least to greatest} in a column.}
+    \stepItem{Write each leaf next to its stem, in order from \textbf{least to greatest}.}
+    \stepItem{Add a \textbf{key} (e.g., $4 \mid 7$ means $47$). Count leaves to find the total.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{Make a stem-and-leaf plot for: $32, 45, 38, 41, 47, 35, 50, 42, 38$.}
+    \stepShow{1} Stems and leaves: $32 \to 3 \mid 2$, $45 \to 4 \mid 5$, $38 \to 3 \mid 8$, $41 \to 4 \mid 1$, $47 \to 4 \mid 7$, $35 \to 3 \mid 5$, $50 \to 5 \mid 0$, $42 \to 4 \mid 2$, $38 \to 3 \mid 8$.
+
+    \stepShow{2} Stems in order: $3, 4, 5$.
+
+    \stepShow{3} Leaves in order:
+
+    \begin{center}
+    \begin{tabular}{r|l}
+        \textbf{Stem} & \textbf{Leaf} \\
+        \hline
+        $3$ & $2\;\;5\;\;8\;\;8$ \\
+        $4$ & $1\;\;2\;\;5\;\;7$ \\
+        $5$ & $0$
+    \end{tabular}
+    \end{center}
+
+    \stepShow{4} Key: $3 \mid 2$ means $32$. Total leaves $= 9$ values.
+    \stepResult{The median (5th value) $= 41$. Range $= 50 - 32 = 18$.}
+\end{stepExample}
+
+\watchOut{Always write the leaves in order from least to greatest — not in the order the data was given!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Stem-and-Leaf Plots Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Split into Stems and Leaves}
+    \begin{multicols}{2}
+    \prob The stem and leaf for $63$: \answerBlank[2cm]
+    \answer{$6 \mid 3$}
+    \prob The stem and leaf for $108$: \answerBlank[2cm]
+    \answer{$10 \mid 8$}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Read a Plot}
+    \prob Use this plot. Key: $5 \mid 3$ means $53$.
+
+    \begin{center}
+    \begin{tabular}{r|l}
+        $5$ & $3\;\;5\;\;8$ \\
+        $6$ & $0\;\;2\;\;7\;\;7$ \\
+        $7$ & $1\;\;4$
+    \end{tabular}
+    \end{center}
+
+    How many data values are there? \answerBlank[2cm]
+    \answer{$9$ values}
+
+    \prob What is the median of the data in the plot above? \answerBlank[2cm]
+    \answer{$62$ (the 5th value)}
+
+    \stepPracticeHeader[step3Color]{Make a Plot}
+    \wordProblem{Make a stem-and-leaf plot for these test scores: $72, 85, 78, 91, 83, 76, 88, 90$. Then find the range.}{~}
+    \answer{Stems $7, 8, 9$. Leaves: $2\;6\;8$, $3\;5\;8$, $0\;1$. Range $= 91 - 72 = 19$.}
+\end{stepPractice}

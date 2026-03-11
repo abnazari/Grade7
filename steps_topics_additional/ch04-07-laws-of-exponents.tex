@@ -1,0 +1,74 @@
+% ============================================================================
+% Section 4.7 — Laws of Exponents (State-specific: Florida, Virginia)
+% ============================================================================
+\section{Laws of Exponents}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Apply the product, quotient, and power-of-a-power rules
+    \item Evaluate expressions using exponent laws
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Exponent}{The small number that tells you how many times to multiply the base by itself. In $2^3$, the exponent is $3$.}
+    \vocabItem{Base}{The number being multiplied. In $2^3$, the base is $2$.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Simplify Using Exponent Laws]
+    \stepItem{Check that the expressions have the \textbf{same base}.}
+    \stepItem{Choose the correct rule: \textbf{Product Rule} ($a^m \cdot a^n = a^{m+n}$), \textbf{Quotient Rule} ($\frac{a^m}{a^n} = a^{m-n}$), or \textbf{Power of a Power} ($(a^m)^n = a^{mn}$).}
+    \stepItem{\textbf{Apply} the rule to get a single power, then evaluate if needed.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{Simplify $4^3 \cdot 4^2$.}
+    \stepShow{1} Both terms have the same base: $4$.
+
+    \stepShow{2} Product Rule: when multiplying same bases, \textbf{add} exponents.
+
+    \stepShow{3} $4^{3+2} = 4^5 = 1{,}024$.
+    \stepResult{$4^5 = 1{,}024$}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{Simplify $(2^3)^4$.}
+    \stepShow{1} The base is $2$ with a power raised to another power.
+
+    \stepShow{2} Power of a Power Rule: \textbf{multiply} the exponents.
+
+    \stepShow{3} $2^{3 \times 4} = 2^{12} = 4{,}096$.
+    \stepResult{$2^{12} = 4{,}096$}
+\end{stepExample}
+
+\watchOut{Exponent rules only work when the bases are the \textbf{same}. You cannot use the product rule on $2^3 \cdot 3^2$.}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Laws of Exponents Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Check the Base}
+    \prob Can you use an exponent rule to simplify $5^3 \cdot 5^4$? Why or why not? \answerBlank[3cm]
+    \answer{Yes --- same base ($5$), use the product rule.}
+
+    \stepPracticeHeader[step2Color]{Apply the Rules}
+    \begin{multicols}{2}
+    \prob Simplify $6^2 \cdot 6^3$. \answerBlank[2.5cm]
+    \answer{$6^5 = 7{,}776$}
+    \prob Simplify $\dfrac{10^7}{10^4}$. \answerBlank[2.5cm]
+    \answer{$10^3 = 1{,}000$}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Evaluate}
+    \prob What is $(-3)^0$? \answerBlank[2cm]
+    \answer{$1$}
+
+    \prob Simplify $\left(\frac{1}{2}\right)^2 \cdot \left(\frac{1}{2}\right)^3$. \answerBlank[3cm]
+    \answer{$\left(\frac{1}{2}\right)^5 = \frac{1}{32}$}
+
+    \wordProblem{A bacteria colony doubles every hour. If there are $2^4$ bacteria now, how many will there be in $3$ hours? Write as a power of $2$ and evaluate.}{bacteria}
+    \answer{$2^4 \cdot 2^3 = 2^7 = 128$ bacteria}
+\end{stepPractice}

@@ -1,0 +1,78 @@
+% ============================================================================
+% Section 8.3 — Comparing Two Populations Visually (FL/IN/MN/VA: multiple display emphasis)
+% CCSS 7.SP.B.3
+% ============================================================================
+\section{Comparing Two Populations Visually}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Compare two data sets using multiple display types
+    \item Draw informal conclusions about differences between populations
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Dot Plot}{Shows every data point as a dot above a number line.}
+    \vocabItem{Box Plot}{Shows the median, quartiles, and range of a data set.}
+    \vocabItem{Back-to-Back Stem-and-Leaf Plot}{Two data sets share the same stems, with leaves going in opposite directions.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Compare Two Populations Using Multiple Displays]
+    \stepItem{Choose one or more \textbf{display types} (dot plot, box plot, stem-and-leaf, circle graph, histogram, or frequency table).}
+    \stepItem{Find the \textbf{center} of each group (mean or median).}
+    \stepItem{Find the \textbf{spread} of each group (range, IQR, or MAD).}
+    \stepItem{Look at \textbf{overlap} — do the data sets share many values?}
+    \stepItem{Write a \textbf{conclusion}: compare centers, spreads, and describe any meaningful differences.}
+\end{stepsCard}
+
+% --- Worked Example ---
+\begin{stepExample}{Two classes recorded quiz scores. Class A: $65, 68, 70, 73, 76, 79, 85$ (mean $= 73.7$, range $= 20$). Class B: $62, 67, 72, 80, 83, 85, 89$ (mean $= 76.9$, range $= 27$). Compare using a back-to-back stem-and-leaf plot.}
+    \stepShow{1} Use a back-to-back stem-and-leaf plot:
+    \begin{center}
+    \begin{tabular}{r|c|l}
+        \textbf{Class A} & \textbf{Stem} & \textbf{Class B} \\
+        \hline
+        $8\;\;5$ & $6$ & $2\;\;7$ \\
+        $9\;\;6\;\;3\;\;0$ & $7$ & $2$ \\
+        $5$ & $8$ & $0\;\;3\;\;5\;\;9$ \\
+         & $9$ &
+    \end{tabular}
+    \end{center}
+
+    \stepShow{2} Centers: Class A mean $\approx 73.7$, median $= 73$. Class B mean $\approx 76.9$, median $= 80$.
+
+    \stepShow{3} Spread: Class A range $= 20$, Class B range $= 27$.
+
+    \stepShow{4} There is overlap in the $70$s and $80$s, but Class B's scores extend higher.
+
+    \stepShow{5} Class B has a higher center and slightly more spread. The overlap means some Class A students outscored some in Class B.
+    \stepResult{Class B averages higher, but Class A is more tightly clustered.}
+\end{stepExample}
+
+\mascotStepTip{No single graph tells the whole story. Try two different displays to spot patterns you might miss!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Comparing Two Populations Visually Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Choose the Display}
+    \prob You have two groups of $5$ students each. Which display works best: dot plot or histogram? \answerBlank[3cm]
+    \answer{Dot plot — better for small data sets}
+
+    \stepPracticeHeader[step2Color]{Find and Compare Centers}
+    \prob Team X: mean $= 72$, median $= 70$. Team Y: mean $= 78$, median $= 80$. Which team scores higher on average? \answerBlank[2.5cm]
+    \answer{Team Y (higher mean and median)}
+
+    \stepPracticeHeader[step3Color]{Interpret Overlap}
+    \prob Two box plots overlap from $60$ to $80$. Group A's median is $68$, Group B's median is $74$, and both have an IQR of $12$. Is the difference meaningful? \answerBlank[3cm]
+    \answer{$\frac{74-68}{12} = 0.5$ — not clearly meaningful; there is a lot of overlap}
+
+    \prob A circle graph shows Class A spends $45\%$ of free time on sports; Class B spends $20\%$. What can you conclude? \answerBlank[3.5cm]
+    \answer{Class A devotes a much larger share of their free time to sports than Class B}
+
+    \wordProblem{Two groups' test scores: Group A has a mean of $82$ and MAD of $5$. Group B has a mean of $90$ and MAD of $5$. Are the groups meaningfully different? Explain.}{~}
+    \answer{Difference $= 8$, ratio $= \frac{8}{5} = 1.6$ MADs. Borderline — close to $2$ MADs, so there is likely a meaningful difference, but there is still some overlap.}
+\end{stepPractice}

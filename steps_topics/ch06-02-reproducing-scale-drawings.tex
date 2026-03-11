@@ -1,0 +1,75 @@
+% ============================================================================
+% Section 6.2 — Reproducing Scale Drawings at a Different Scale
+% CCSS 7.G.A.1
+% ============================================================================
+\section{Reproducing Scale Drawings at a Different Scale}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Convert a scale drawing from one scale to another
+    \item Calculate how changing the scale affects lengths and areas
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Scale Ratio}{The multiplier that converts old drawing lengths to new drawing lengths.}
+    \vocabItem{Rescale}{To redraw a figure using a different scale.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Redraw at a Different Scale]
+    \stepItem{Write both scales and find the \textbf{scale ratio}: $\dfrac{\text{old scale factor}}{\text{new scale factor}}$.}
+    \stepItem{\textbf{Multiply} every old drawing length by the scale ratio to get the new drawing length.}
+    \stepItem{Check: a \textbf{larger} scale (fewer real units per cm) makes the drawing bigger; a \textbf{smaller} scale makes it smaller.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{A floor plan uses $1$ cm $= 8$ ft. You redraw it at $1$ cm $= 4$ ft. A wall is $5$ cm on the original. How long is it on the new drawing?}
+    \stepShow{1} Scale ratio: $\dfrac{8}{4} = 2$.
+
+    \stepShow{2} New length: $5 \times 2 = 10$ cm.
+
+    \stepShow{3} The new scale uses fewer real feet per cm, so the drawing gets bigger. \checkmark
+    \stepResult{$10$ cm on the new drawing.}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{A drawing uses $1$ cm $= 2$ m. Redraw at $1$ cm $= 6$ m. A room is $9$ cm on the original. Find the new length.}
+    \stepShow{1} Scale ratio: $\dfrac{2}{6} = \dfrac{1}{3}$.
+
+    \stepShow{2} New length: $9 \times \dfrac{1}{3} = 3$ cm.
+
+    \stepShow{3} More real meters per cm means the drawing shrinks. \checkmark
+    \stepResult{$3$ cm on the new drawing.}
+\end{stepExample}
+
+\mascotStepTip{If the new scale uses more real units per cm, the drawing gets \textbf{smaller}. Fewer real units per cm makes it \textbf{bigger}.}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Reproducing Scale Drawings Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Find the Scale Ratio}
+    \begin{multicols}{2}
+    \prob Old: $1$ cm $= 50$ km. New: $1$ cm $= 25$ km. Scale ratio? \answerBlank[2cm]
+    \answer{$2$}
+    \prob Old: $1{:}100$. New: $1{:}50$. Scale ratio? \answerBlank[2cm]
+    \answer{$2$}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Calculate New Lengths}
+    \prob Using the map above ($50 \to 25$ km), a $4$ cm road becomes how long? \answerBlank[2.5cm]
+    \answer{$8$ cm}
+
+    \prob A model at $1{:}100$ has a $3$ cm wall. Redraw at $1{:}50$. New length? \answerBlank[2.5cm]
+    \answer{$6$ cm}
+
+    \stepPracticeHeader[step3Color]{Bigger or Smaller?}
+    \prob A rectangle is $4$ cm by $6$ cm at scale $1$ cm $= 10$ m. Redraw at $1$ cm $= 5$ m. Find the new area on the drawing. \answerBlank[2.5cm]
+    \answer{$96$ cm$^{2}$}
+
+    \wordProblem{A park map at $1$ cm $= 200$ m is redrawn at $1$ cm $= 100$ m. Does the new map take up more or less paper? Explain.}{~}
+    \answer{More paper. The scale ratio is $\frac{200}{100} = 2$, so every length doubles and the drawing area quadruples.}
+\end{stepPractice}

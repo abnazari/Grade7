@@ -1,0 +1,87 @@
+% ============================================================================
+% Section 9.3 — Experimental Probability (FL/TX: simulation emphasis)
+% CCSS 7.SP.C.6 + B.E.S.T. MA.7.DP.2.4 / TEKS probability strand
+% ============================================================================
+\section{Experimental Probability}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Calculate experimental probability from collected data
+    \item Design simulations to estimate probabilities when real experiments are impractical
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Experimental Probability}{Probability based on \textbf{actual data}: $P = \frac{\text{event occurrences}}{\text{total trials}}$.}
+    \vocabItem{Simulation}{A model that uses coins, dice, or \textbf{random digits} to imitate a real situation.}
+    \vocabItem{Relative Frequency}{Another name for experimental probability --- how often an event occurs relative to all trials.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Find Experimental Probability and Design Simulations]
+    \stepItem{Run the experiment (or simulation) and \textbf{record} how many times the event happens.}
+    \stepItem{Count the \textbf{total number of trials}.}
+    \stepItem{Divide: $P(\text{event}) = \dfrac{\text{times event happened}}{\text{total trials}}$.}
+    \stepItem{To \textbf{design a simulation}: choose a model (coin, die, random digits $0$--$9$) that matches the real probability, define one trial, and run many trials.}
+    \stepItem{Compare experimental results to \textbf{theoretical predictions} --- more trials give better estimates.}
+\end{stepsCard}
+
+% --- Worked Example 1 (Experimental Probability) ---
+\begin{stepExample}{A coin is tossed $80$ times. Heads appears $36$ times. Find the experimental probability and compare to theoretical.}
+    \stepShow{1} Event happened: heads appeared $36$ times.
+
+    \stepShow{2} Total trials: $80$.
+
+    \stepShow{3} $P(\text{heads}) = \dfrac{36}{80} = \dfrac{9}{20} = 0.45$
+
+    \stepShow{4} (No simulation needed --- this is real data.)
+
+    \stepShow{5} Theoretical: $0.50$. Experimental: $0.45$. Close --- with more tosses the values would converge.
+    \stepResult{$P(\text{heads}) = 0.45$; theoretical $= 0.50$}
+\end{stepExample}
+
+% --- Worked Example 2 (Simulation Design) ---
+\begin{stepExample}{About $30\%$ of blood donors have type~A blood. Use random digits to simulate finding the first type~A donor. Let digits $0, 1, 2$ = type~A. Random digits for $5$ trials:
+$7, 4, \mathbf{1}$ \; | \; $\mathbf{0}$ \; | \; $8, 5, 6, \mathbf{2}$ \; | \; $3, \mathbf{1}$ \; | \; $9, 7, \mathbf{0}$}
+    \stepShow{1} Event: finding a type~A donor. Real probability: $30\%$.
+
+    \stepShow{2} Total trials: $5$ (each trial ends when a type~A digit appears).
+
+    \stepShow{3} Donors needed per trial: $3, 1, 4, 2, 3$.
+
+    \stepShow{4} Model: digits $0$--$2$ = type~A ($3$ out of $10 = 30\%$); digits $3$--$9$ = not type~A.
+
+    \stepShow{5} Average: $(3 + 1 + 4 + 2 + 3) \div 5 = 2.6$ donors. With $P = 0.3$, the expected number is about $3.3$. The simulation gives a rough estimate --- more trials would improve accuracy.
+    \stepResult{About $2$--$3$ donors needed; more trials give a better estimate.}
+\end{stepExample}
+
+\mascotStepTip{$10$ trials give a rough idea. $100$+ trials give reliable results. Always run as many trials as you can!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Experimental Probability \& Simulations Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Calculate Experimental Probability}
+    \begin{multicols}{2}
+    \prob A spinner is spun $100$ times. Blue appears $38$ times. What is $P(\text{blue})$? \answerBlank[2cm]
+    \answer{$\frac{38}{100} = 0.38$}
+    \prob A die is rolled $60$ times. A $6$ appears $15$ times. What is $P(6)$? \answerBlank[2cm]
+    \answer{$\frac{15}{60} = 0.25$}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Design a Simulation}
+    \prob You want to simulate a $40\%$ chance of rain using digits $0$--$9$. Which digits represent rain? \answerBlank[3cm]
+    \answer{Any $4$ digits, e.g., $0, 1, 2, 3$}
+
+    \prob Describe how to simulate a family with $3$ children where each child is equally likely to be a boy or girl. What tool would you use and what is one trial?
+    \answer{Use a coin ($H$ = boy, $T$ = girl). One trial = $3$ flips. Record the sequence.}
+
+    \stepPracticeHeader[step3Color]{Run and Compare}
+    \prob Using the $40\%$ rain model, here are $10$ random digits: $3, 7, 1, 0, 9, 4, 2, 8, 5, 6$. How many rain events? What is the experimental probability? \answerBlank[3cm]
+    \answer{Rain: $3, 1, 0, 2$ = $4$ events. $P = \frac{4}{10} = 0.40$}
+
+    \wordProblem{A basketball player makes $60\%$ of her free throws. Design a simulation using random digits to estimate the probability she makes $3$ shots in a row. Explain your model, what one trial looks like, and the theoretical probability.}{~}
+    \answer{Digits $0$--$5$ = make ($6$ out of $10 = 60\%$); $6$--$9$ = miss. One trial = $3$ consecutive digits. ``Success'' if all $3$ are $\leq 5$. Theoretical: $0.6^3 = 0.216$.}
+\end{stepPractice}

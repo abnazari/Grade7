@@ -1,0 +1,73 @@
+% ============================================================================
+% Section 2.4 — Markups, Discounts, and Sales Tax
+% CCSS 7.RP.A.3
+% ============================================================================
+\section{Markups, Discounts, and Sales Tax}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Calculate markups, discounts, and sales tax
+    \item Find the final price after multiple percent changes
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Markup}{The extra amount a store adds to its cost to set the selling price.}
+    \vocabItem{Discount}{The amount subtracted from the price during a sale.}
+    \vocabItem{Sales Tax}{A percent the government adds to the purchase price at checkout.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Find the Final Price]
+    \stepItem{Apply the \textbf{markup}: multiply the cost by $(1 + \text{markup rate})$.}
+    \stepItem{Apply the \textbf{discount}: multiply the selling price by $(1 - \text{discount rate})$.}
+    \stepItem{Apply \textbf{sales tax last}: multiply the sale price by $(1 + \text{tax rate})$.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{A store buys a shirt for $\$15$ and marks it up $60\%$. A customer buys it at $25\%$ off with $7\%$ tax. What is the final price?}
+    \stepShow{1} Markup: $15 \times 1.60 = \$24$.
+
+    \stepShow{2} Discount: $24 \times 0.75 = \$18$.
+
+    \stepShow{3} Tax: $18 \times 1.07 = \$19.26$.
+    \stepResult{The final price is $\$19.26$.}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{A store buys headphones for $\$12$ and marks them up $75\%$. What is the selling price?}
+    \stepShow{1} Markup rate: $75\% = 0.75$. Multiplier: $1 + 0.75 = 1.75$.
+
+    \stepShow{2} No discount in this problem — skip this step.
+
+    \stepShow{3} No tax mentioned — the selling price is $12 \times 1.75 = \$21$.
+    \stepResult{The selling price is $\$21$.}
+\end{stepExample}
+
+\mascotStepTip{Always apply tax \textbf{last}. Tax is calculated on the price you actually pay, not the original price.}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Markups, Discounts, and Tax Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Apply a Markup}
+    \prob A store buys a game for $\$25$ and sells it for $\$40$. What is the percent markup? \answerBlank[2cm]
+    \answer{$60\%$}
+
+    \stepPracticeHeader[step2Color]{Apply a Discount}
+    \begin{multicols}{2}
+    \prob A $\$65$ jacket is $30\%$ off. What is the sale price? \answerBlank[2cm]
+    \answer{$\$45.50$}
+    \prob Shoes cost $\$80$ with a $15\%$ discount. What do you pay before tax? \answerBlank[2cm]
+    \answer{$\$68$}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Add Sales Tax}
+    \prob A meal costs $\$22$. Sales tax is $6\%$. What is the total? \answerBlank[2cm]
+    \answer{$\$23.32$}
+
+    \wordProblem{Shoes cost $\$80$, discount $15\%$, tax $8\%$. Find the final price.}{\$}
+    \answer{$\$73.44$}
+\end{stepPractice}

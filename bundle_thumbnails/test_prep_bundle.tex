@@ -1,0 +1,46 @@
+% ============================================================================
+% Bundle Thumbnail: Test Prep Bundle
+%
+% Compile:  xelatex -output-directory=build/bundle_thumbnails \
+%                    bundle_thumbnails/test_prep_bundle.tex
+%
+% Contains: In 30 Days, Quiz, 3/5/7/10 Practice Tests (6 covers)
+% Background image must exist at the path below.
+% Cover JPGs from final_output/covers_jpg/<book_type>/<state_slug>.jpg
+% ============================================================================
+\documentclass[12pt]{article}
+\usepackage{VM_packages/VMfunBundleThumbnail}
+
+% --- Background ---
+\BundleBackground{images/bundle_covers/bundle-background_activities_grade3.png}
+
+% --- State name ---
+\BundleStateName{INSERT-STATE-NAME-HERE}
+\BundleStateNameXOffset{3.5in}
+\BundleStateNameYOffset{5in}
+\BundleStateNameRotation{0}
+\BundleStateNameFontSize{55}
+\BundleStateNameBaselineSkip{43}
+\BundleStateNameColor{white}
+\BundleStateNameFontStyle{bold-sans}
+
+\begin{document}
+\begin{bundlethumbnailpage}
+    % 1) Full-bleed background
+    \makeBundleBackground
+
+    % 2) Book covers — 3 top row, 3 bottom row
+    %    First number: horizontal position. Second number: vertical position. Third number: cover height.
+    %    Top row
+    \placeCover{final_output/covers_jpg/in_30_days/INSERT-STATE-SLUG-HERE.jpg}{0.03in}{3.0in}{1.8in}
+    \placeCover{final_output/covers_jpg/quiz/INSERT-STATE-SLUG-HERE.jpg}{2.36in}{3.0in}{1.8in}
+    \placeCover{final_output/covers_jpg/3_practice_tests/INSERT-STATE-SLUG-HERE.jpg}{4.69in}{3.0in}{1.8in}
+    %    Bottom row
+    \placeCover{final_output/covers_jpg/5_practice_tests/INSERT-STATE-SLUG-HERE.jpg}{0.03in}{0.6in}{1.8in}
+    \placeCover{final_output/covers_jpg/7_practice_tests/INSERT-STATE-SLUG-HERE.jpg}{2.36in}{0.6in}{1.8in}
+    \placeCover{final_output/covers_jpg/10_practice_tests/INSERT-STATE-SLUG-HERE.jpg}{4.69in}{0.6in}{1.8in}
+
+    % 3) State name overlay (on top of everything)
+    \makeBundleStateName
+\end{bundlethumbnailpage}
+\end{document}

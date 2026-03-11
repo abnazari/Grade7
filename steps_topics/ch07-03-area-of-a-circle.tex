@@ -1,0 +1,76 @@
+% ============================================================================
+% Section 7.3 — Area of a Circle
+% CCSS 7.G.B.4
+% ============================================================================
+\section{Area of a Circle}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Use $A = \pi r^{2}$ to find the area of a circle
+    \item Find the area when given the diameter instead of the radius
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Area}{The amount of space inside a flat shape, measured in square units.}
+    \vocabItem{Radius Squared}{$r^{2}$ means $r \times r$.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Find the Area of a Circle]
+    \stepItem{Find the \textbf{radius}. If given the diameter, divide by $2$.}
+    \stepItem{\textbf{Square} the radius: $r^{2} = r \times r$.}
+    \stepItem{Multiply: $A = \pi \times r^{2}$ (use $\pi \approx 3.14$).}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{Find the area of a circle with radius $5$ cm. Use $\pi \approx 3.14$.}
+    \stepShow{1} The radius is $r = 5$ cm.
+
+    \stepShow{2} Square it: $5^{2} = 25$.
+
+    \stepShow{3} $A = 3.14 \times 25 = 78.5$ cm$^{2}$.
+    \stepResult{$A \approx 78.5$ cm$^{2}$}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{A pizza has a diameter of $14$ inches. What is its area?}
+    \stepShow{1} Diameter $= 14$ in, so radius $= 14 \div 2 = 7$ in.
+
+    \stepShow{2} Square it: $7^{2} = 49$.
+
+    \stepShow{3} $A = 3.14 \times 49 = 153.86$ in$^{2}$.
+    \stepResult{$A \approx 153.86$ in$^{2}$}
+\end{stepExample}
+
+\mascotStepTip{Always use the \textbf{radius}, not the diameter, in $A = \pi r^{2}$. If you are given the diameter, halve it first!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Area of a Circle Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Find the Radius}
+    \begin{multicols}{2}
+    \prob Diameter $= 16$ m. Radius $=$ \answerBlank[2cm]
+    \answer{$8$ m}
+    \prob Diameter $= 9$ ft. Radius $=$ \answerBlank[2cm]
+    \answer{$4.5$ ft}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Find the Area ($\pi \approx 3.14$)}
+    \begin{multicols}{2}
+    \prob $r = 3$ in. $A =$ \answerBlank[2.5cm]
+    \answer{$28.26$ in$^{2}$}
+    \prob $r = 10$ cm. $A =$ \answerBlank[2.5cm]
+    \answer{$314$ cm$^{2}$}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Diameter Given}
+    \prob A circular rug has diameter $8$ ft. Find its area. \answerBlank[2.5cm]
+    \answer{$50.24$ ft$^{2}$}
+
+    \wordProblem{A sprinkler waters a circular area with a radius of $6$ m. How many square meters does it cover?}{m$^{2}$}
+    \answer{$113.04$ m$^{2}$}
+\end{stepPractice}

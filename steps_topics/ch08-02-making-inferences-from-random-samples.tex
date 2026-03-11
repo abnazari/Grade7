@@ -1,0 +1,76 @@
+% ============================================================================
+% Section 8.2 — Making Inferences from Random Samples
+% CCSS 7.SP.A.2
+% ============================================================================
+\section{Making Inferences from Random Samples}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Use sample data to make predictions about a population
+    \item Understand that different samples give slightly different estimates
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Inference}{A conclusion or prediction about a \textbf{population} based on \textbf{sample} data.}
+    \vocabItem{Variability}{The idea that different random samples can give \textbf{different} results.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Make an Inference from a Random Sample]
+    \stepItem{Collect data from a \textbf{random sample} of the population.}
+    \stepItem{Find a \textbf{statistic} from the sample (mean, proportion, etc.).}
+    \stepItem{\textbf{Scale up}: use the sample statistic to predict the population value.}
+    \stepItem{Consider \textbf{variability} — your prediction is an estimate, not exact.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{A random sample of $40$ students shows $15$ prefer pizza for lunch. There are $600$ students in the school. Predict how many prefer pizza.}
+    \stepShow{1} The sample is random: $40$ students out of $600$.
+
+    \stepShow{2} Sample proportion: $\dfrac{15}{40} = 0.375$ (or $37.5\%$).
+
+    \stepShow{3} Scale up: $0.375 \times 600 = 225$.
+
+    \stepShow{4} This is an estimate — another sample might give a slightly different number.
+    \stepResult{About $225$ students in the school likely prefer pizza.}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{Two random samples of $25$ fish from a lake have mean lengths $18$ cm and $20$ cm. What can you conclude?}
+    \stepShow{1} Both samples are random from the same lake.
+
+    \stepShow{2} Sample means: $18$ cm and $20$ cm.
+
+    \stepShow{3} The population mean is likely between $18$ and $20$ cm (around $19$ cm).
+
+    \stepShow{4} The samples differ by $2$ cm — this shows normal variability. More or larger samples would give a more precise estimate.
+    \stepResult{The average fish length is about $18$--$20$ cm; variability is expected.}
+\end{stepExample}
+
+\mascotStepTip{Larger samples give more reliable estimates. If you can, survey more people!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Making Inferences Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Find the Sample Statistic}
+    \prob In a sample of $50$ apples, $8$ are bruised. What fraction is bruised? \answerBlank[2.5cm]
+    \answer{$\frac{8}{50} = \frac{4}{25} = 0.16$}
+
+    \stepPracticeHeader[step2Color]{Scale Up to the Population}
+    \prob There are $500$ apples in the shipment. Predict how many are bruised. \answerBlank[2.5cm]
+    \answer{$0.16 \times 500 = 80$ apples}
+
+    \prob A sample of $30$ students has a mean reading score of $76$. Predict the school-wide average for $900$ students. \answerBlank[2.5cm]
+    \answer{About $76$ (the sample mean estimates the population mean)}
+
+    \stepPracticeHeader[step3Color]{Consider Variability}
+    \prob Two samples of $20$ students show mean scores of $85$ and $89$. Why are they different? \answerBlank[3.5cm]
+    \answer{Different students were randomly selected, causing natural variation}
+
+    \wordProblem{In a random sample of $60$ voters, $36$ support a new park. There are $5{,}000$ voters in the town. About how many support the park?}{voters}
+    \answer{$\frac{36}{60} \times 5{,}000 = 0.6 \times 5{,}000 = 3{,}000$ voters}
+\end{stepPractice}

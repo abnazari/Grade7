@@ -1,0 +1,75 @@
+% ============================================================================
+% Section 4.6 — Rewriting Expressions to Solve Problems
+% CCSS 7.EE.A.2
+% ============================================================================
+\section{Rewriting Expressions to Solve Problems}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Rewrite expressions in different forms to reveal useful information
+    \item Connect equivalent expressions to real-world meaning
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Equivalent Expressions}{Two expressions that have the \textbf{same value} for every number you plug in.}
+    \vocabItem{Rewrite}{Change the form of an expression without changing its value.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Rewrite Expressions to Solve Problems]
+    \stepItem{Write the expression that \textbf{matches the situation} (even if it looks long).}
+    \stepItem{Use the distributive property, combining like terms, or factoring to \textbf{simplify} to a shorter form.}
+    \stepItem{Read the new form to find the \textbf{hidden meaning} (e.g.\ a single multiplier, a percent, a total).}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{A store marks up a price $p$ by $8\%$. Write two equivalent expressions for the new price.}
+    \stepShow{1} Start price is $p$. The markup is $8\%$ of $p$: new price $= p + 0.08p$.
+
+    \stepShow{2} Factor out $p$: $p(1 + 0.08) = 1.08p$.
+
+    \stepShow{3} The form $1.08p$ shows the new price is $108\%$ of the original --- one multiplication instead of two steps.
+    \stepResult{$p + 0.08p = 1.08p$}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{Simplify $3(x + 4) - 2x$. What does the result tell you?}
+    \stepShow{1} The expression is $3(x + 4) - 2x$.
+
+    \stepShow{2} Expand: $3x + 12 - 2x$. Combine like terms: $x + 12$.
+
+    \stepShow{3} The simpler form $x + 12$ shows the result is always $12$ more than $x$.
+    \stepResult{$x + 12$}
+\end{stepExample}
+
+\mascotStepTip{``Increase by $5\%$'' means multiply by $1.05$. ``Decrease by $20\%$'' means multiply by $0.80$. One number does it all!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Rewriting Expressions Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Write the Starting Expression}
+    \prob A price $p$ is discounted $15\%$. Write an expression for the discount and the sale price. \answerBlank[3cm]
+    \answer{Discount: $0.15p$; sale price: $p - 0.15p$}
+
+    \stepPracticeHeader[step2Color]{Simplify to a Single Term}
+    \begin{multicols}{2}
+    \prob Rewrite $x + 0.08x$. \answerBlank[2.5cm]
+    \answer{$1.08x$}
+    \prob Rewrite $p - 0.15p$. \answerBlank[2.5cm]
+    \answer{$0.85p$}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Interpret the Meaning}
+    \prob Rewrite $3(x + 4) - 2x$ in simplest form. \answerBlank[2.5cm]
+    \answer{$x + 12$}
+
+    \prob A worker earns $\$h$ per hour for $40$ hours plus a $\$50$ bonus. Write a simplified expression for weekly pay. \answerBlank[3cm]
+    \answer{$40h + 50$}
+
+    \wordProblem{Show that ``increase by $25\%$ then decrease by $20\%$'' returns the original price $p$.}{~}
+    \answer{$1.25p \times 0.80 = 1.00p = p$}
+\end{stepPractice}

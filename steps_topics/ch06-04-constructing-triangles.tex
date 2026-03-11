@@ -1,0 +1,79 @@
+% ============================================================================
+% Section 6.4 — Constructing Triangles from Three Measurements
+% CCSS 7.G.A.2
+% ============================================================================
+\section{Constructing Triangles from Three Measurements}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Determine when three measurements give a unique triangle, many, or none
+    \item Apply the triangle inequality and the $180°$ angle-sum rule
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{SSS / SAS / ASA / AAS}{Shorthand for the given measurements --- S = side, A = angle.}
+    \vocabItem{Angle Sum}{The three interior angles of every triangle add to $180°$.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Decide if Three Measurements Make a Triangle]
+    \stepItem{Identify \textbf{what} is given: sides only (SSS), sides + angles (SAS, ASA, AAS), or angles only (AAA).}
+    \stepItem{Check the \textbf{rules}: triangle inequality for sides; angle sum $= 180°$ for angles.}
+    \stepItem{Use the table: SSS, SAS, ASA, AAS $\to$ \textbf{unique}; AAA $\to$ \textbf{many} (same shape, different sizes); rule fails $\to$ \textbf{none}.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{Can you draw a triangle with angles $50°$, $60°$, and $80°$?}
+    \stepShow{1} All three measurements are angles (AAA).
+
+    \stepShow{2} Angle sum: $50 + 60 + 80 = 190°$. This does not equal $180°$.
+
+    \stepShow{3} The angle-sum rule fails.
+    \stepResult{No triangle is possible.}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{Sides $7$, $10$, $15$. Can a triangle be formed? Is it unique?}
+    \stepShow{1} Three sides given (SSS).
+
+    \stepShow{2} Triangle inequality:\par
+    $7 + 10 = 17 > 15$ \checkmark \quad $7 + 15 = 22 > 10$ \checkmark \quad $10 + 15 = 25 > 7$ \checkmark
+
+    \stepShow{3} SSS with valid sides $\to$ exactly one triangle.
+    \stepResult{Yes --- a unique triangle.}
+\end{stepExample}
+
+\mascotStepTip{If you know two angles of a triangle, you can always find the third: $180° - \text{angle 1} - \text{angle 2}$.}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Constructing Triangles Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Identify the Type}
+    \begin{multicols}{2}
+    \prob Sides $3$, $4$, and angle $90°$ between them. Type? \answerBlank[2cm]
+    \answer{SAS}
+    \prob Angles $35°$, $65°$, $80°$. Type? \answerBlank[2cm]
+    \answer{AAA}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Check the Rules}
+    \prob Do angles $35°$, $65°$, and $80°$ satisfy the angle-sum rule? \answerBlank[2cm]
+    \answer{Yes ($35 + 65 + 80 = 180°$)}
+
+    \prob Two angles of a triangle are $40°$ and $70°$. What is the third? \answerBlank[2cm]
+    \answer{$70°$}
+
+    \stepPracticeHeader[step3Color]{Unique, Many, or None?}
+    \prob Sides $3$, $4$, included angle $90°$. Result? \answerBlank[2.5cm]
+    \answer{Unique triangle (SAS)}
+
+    \prob Angles $35°$, $65°$, $80°$. Result? \answerBlank[2.5cm]
+    \answer{Many triangles (AAA --- same shape, different sizes)}
+
+    \wordProblem{Can a triangle have angles $90°$, $90°$, and $0°$? Explain.}{~}
+    \answer{No. Although $90 + 90 + 0 = 180°$, an angle of $0°$ collapses a side to nothing. Every angle must be greater than $0°$.}
+\end{stepPractice}

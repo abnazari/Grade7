@@ -1,0 +1,83 @@
+% ============================================================================
+% Section 9.3 — Experimental Probability
+% CCSS 7.SP.C.6
+% ============================================================================
+\section{Experimental Probability}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Calculate experimental probability from collected data
+    \item Understand that more trials give results closer to theoretical probability
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Experimental Probability}{Probability based on \textbf{actual data} from trials or experiments.}
+    \vocabItem{Trial}{One run of an experiment (one coin flip, one die roll, etc.).}
+    \vocabItem{Relative Frequency}{Another name for experimental probability --- how often an event occurs compared to total trials.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Find the Experimental Probability]
+    \stepItem{Run the experiment and \textbf{record} how many times the event happens.}
+    \stepItem{Count the \textbf{total number of trials}.}
+    \stepItem{Divide: $P(\text{event}) = \dfrac{\text{times event happened}}{\text{total trials}}$.}
+    \stepItem{Compare to the \textbf{theoretical probability} (if known) to see how close they are.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{A coin is tossed $80$ times. Heads appears $36$ times. What is the experimental probability of heads?}
+    \stepShow{1} Event happened: heads appeared $36$ times.
+
+    \stepShow{2} Total trials: $80$.
+
+    \stepShow{3} $P(\text{heads}) = \dfrac{36}{80} = \dfrac{9}{20} = 0.45$
+
+    \stepShow{4} Theoretical probability is $0.50$. The result $0.45$ is close --- with more tosses it would get even closer.
+    \stepResult{$P(\text{heads}) = 0.45$}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{A die is rolled $60$ times. Here are the results: \newline
+\begin{tabular}{c|c|c|c|c|c|c}
+\textbf{Number} & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ \hline
+\textbf{Frequency} & $8$ & $12$ & $11$ & $9$ & $10$ & $10$
+\end{tabular} \newline
+Find the experimental probability of rolling a $2$.}
+    \stepShow{1} Event happened: $2$ appeared $12$ times.
+
+    \stepShow{2} Total trials: $60$.
+
+    \stepShow{3} $P(2) = \dfrac{12}{60} = \dfrac{1}{5} = 0.2$
+
+    \stepShow{4} Theoretical: $\dfrac{1}{6} \approx 0.167$. Experimental $0.2$ is slightly higher but reasonable for $60$ rolls.
+    \stepResult{$P(2) = \dfrac{1}{5} = 0.2$}
+\end{stepExample}
+
+\watchOut{A small number of trials can give misleading results. Always run many trials before drawing conclusions!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Experimental Probability Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Record the Data}
+    \prob A spinner is spun $50$ times. Red appears $18$ times. What is the number of favorable outcomes? \answerBlank[2cm]
+    \answer{$18$}
+
+    \stepPracticeHeader[step2Color]{Calculate Experimental Probability}
+    \begin{multicols}{2}
+    \prob A spinner is spun $50$ times. Red appears $18$ times. What is $P(\text{red})$? \answerBlank[2cm]
+    \answer{$\frac{18}{50} = 0.36$}
+    \prob A basketball player makes $21$ out of $30$ free throws. What is $P(\text{make})$? \answerBlank[2cm]
+    \answer{$\frac{21}{30} = 0.7$}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Compare to Theoretical}
+    \prob A coin is flipped $200$ times. Tails comes up $112$ times. Find the experimental probability and compare it to the theoretical probability. \answerBlank[3cm]
+    \answer{$P = \frac{112}{200} = 0.56$; theoretical is $0.5$ --- close but slightly high}
+
+    \wordProblem{In a bag of $50$ candies, you draw one, note the color, and replace it. After $40$ draws, you get green $14$ times. What is the experimental probability of green? If the bag has $15$ green candies, what is the theoretical probability? Are they close?}{~}
+    \answer{Experimental: $\frac{14}{40} = 0.35$. Theoretical: $\frac{15}{50} = 0.3$. They are fairly close.}
+\end{stepPractice}

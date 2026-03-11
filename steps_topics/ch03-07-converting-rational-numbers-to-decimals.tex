@@ -1,0 +1,77 @@
+% ============================================================================
+% Section 3.7 — Converting Rational Numbers to Decimals
+% CCSS 7.NS.A.2.D
+% ============================================================================
+\section{Converting Rational Numbers to Decimals}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Convert fractions to decimals using long division
+    \item Recognize terminating and repeating decimals
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Terminating Decimal}{A decimal that ends (e.g., $0.375$).}
+    \vocabItem{Repeating Decimal}{A decimal with a digit pattern that repeats forever (e.g., $0.\overline{3}$).}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Convert a Fraction to a Decimal]
+    \stepItem{\textbf{Divide} the numerator by the denominator using long division.}
+    \stepItem{If the remainder becomes $0$, the decimal \textbf{terminates}.}
+    \stepItem{If a remainder \textbf{repeats}, the decimal repeats — write a bar over the repeating digits.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{Convert $\frac{7}{8}$ to a decimal.}
+    \stepShow{1} Divide: $7 \div 8$.
+    $8$ into $70$ is $8$ (remainder $6$). $8$ into $60$ is $7$ (remainder $4$). $8$ into $40$ is $5$ (remainder $0$).
+
+    \stepShow{2} Remainder is $0$ $\to$ the decimal \textbf{terminates}.
+
+    \stepShow{3} (No repeating pattern.)
+    \stepResult{$\dfrac{7}{8} = 0.875$}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{Convert $\frac{5}{6}$ to a decimal.}
+    \stepShow{1} Divide: $5 \div 6 = 0.8333\ldots$
+
+    \stepShow{2} The remainder does not reach $0$.
+
+    \stepShow{3} The digit $3$ keeps repeating $\to$ write $0.8\overline{3}$.
+    \stepResult{$\dfrac{5}{6} = 0.8\overline{3}$}
+\end{stepExample}
+
+\mascotStepTip{Quick check: if the denominator's only prime factors are $2$ and $5$, the decimal terminates. Any other prime factor means it repeats!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Converting Rational Numbers to Decimals Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Divide}
+    \begin{multicols}{2}
+    \prob Convert $\dfrac{3}{8}$ to a decimal. \answerBlank[2cm]
+    \answer{$0.375$}
+    \prob Convert $\dfrac{4}{9}$ to a decimal. \answerBlank[2cm]
+    \answer{$0.\overline{4}$}
+    \end{multicols}
+
+    \stepPracticeHeader[step2Color]{Terminating or Repeating?}
+    \begin{multicols}{2}
+    \prob Is $\dfrac{3}{5}$ terminating or repeating? \answerBlank[2.5cm]
+    \answer{Terminating ($0.6$)}
+    \prob Is $\dfrac{5}{11}$ terminating or repeating? \answerBlank[2.5cm]
+    \answer{Repeating ($0.\overline{45}$)}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Write the Decimal}
+    \prob Convert $-\dfrac{7}{12}$ to a decimal. \answerBlank[2.5cm]
+    \answer{$-0.58\overline{3}$}
+
+    \wordProblem{You and two friends split a \$10 bill equally. Write each person's share as a decimal.}{dollars}
+    \answer{$\$3.\overline{3}$ (repeating)}
+\end{stepPractice}

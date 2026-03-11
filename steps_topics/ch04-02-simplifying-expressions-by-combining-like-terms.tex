@@ -1,0 +1,75 @@
+% ============================================================================
+% Section 4.2 — Simplifying Expressions by Combining Like Terms
+% CCSS 7.EE.A.1
+% ============================================================================
+\section{Combining Like Terms}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Identify like terms in an expression
+    \item Simplify expressions by combining like terms
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Like Terms}{Terms with the \textbf{same variable} raised to the same power (e.g.\ $3x$ and $7x$).}
+    \vocabItem{Coefficient}{The number in front of a variable. In $7x$, the coefficient is $7$.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Combine Like Terms]
+    \stepItem{\textbf{Identify} like terms --- same variable, same exponent. Constants are like terms with each other.}
+    \stepItem{\textbf{Group} like terms together (rewrite if needed).}
+    \stepItem{\textbf{Add or subtract} the coefficients of each group. Keep the variable the same.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{Simplify $4x + 3 - 2x + 8$.}
+    \stepShow{1} Like terms: $4x$ and $-2x$ (both have $x$); $3$ and $8$ (both constants).
+
+    \stepShow{2} Group: $(4x - 2x) + (3 + 8)$.
+
+    \stepShow{3} Combine coefficients: $4 - 2 = 2$, so $2x$. Constants: $3 + 8 = 11$.
+    \stepResult{$2x + 11$}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{Simplify $\frac{1}{2}n + \frac{3}{4}n - 2$.}
+    \stepShow{1} Like terms: $\frac{1}{2}n$ and $\frac{3}{4}n$ (both have $n$). The $-2$ has no like term.
+
+    \stepShow{2} Group: $\left(\frac{1}{2}n + \frac{3}{4}n\right) - 2$.
+
+    \stepShow{3} Common denominator: $\frac{2}{4}n + \frac{3}{4}n = \frac{5}{4}n$.
+    \stepResult{$\frac{5}{4}n - 2$}
+\end{stepExample}
+
+\watchOut{$3x + 5$ cannot be simplified further --- $3x$ is a variable term and $5$ is a constant. They are NOT like terms!}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Combining Like Terms Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Identify Like Terms}
+    \prob Circle the like terms in $6a + 3b - 2a + 7$. \answerBlank[3cm]
+    \answer{$6a$ and $-2a$ are like terms}
+
+    \stepPracticeHeader[step2Color]{Group and Combine}
+    \begin{multicols}{2}
+    \prob Simplify $6a + 2a - 3$. \answerBlank[2.5cm]
+    \answer{$8a - 3$}
+    \prob Simplify $5x - 9 + 3x + 4$. \answerBlank[2.5cm]
+    \answer{$8x - 5$}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Combine with Negatives and Fractions}
+    \prob Simplify $-2y + 7 + 6y - 10$. \answerBlank[2.5cm]
+    \answer{$4y - 3$}
+
+    \prob Simplify $\frac{2}{3}m - 5 + \frac{1}{3}m + 2$. \answerBlank[2.5cm]
+    \answer{$m - 3$}
+
+    \wordProblem{Sam has $3x + 8$ baseball cards and gives away $x + 2$ cards. Write a simplified expression for how many cards Sam has now.}{cards}
+    \answer{$2x + 6$}
+\end{stepPractice}

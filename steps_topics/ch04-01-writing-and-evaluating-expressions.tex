@@ -1,0 +1,76 @@
+% ============================================================================
+% Section 4.1 — Writing and Evaluating Expressions
+% CCSS 7.EE.A.1
+% ============================================================================
+\section{Writing and Evaluating Expressions}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Translate word phrases into algebraic expressions
+    \item Evaluate expressions by substituting rational numbers for variables
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Algebraic Expression}{A math phrase with numbers, variables, and operations (e.g.\ $3x + 5$).}
+    \vocabItem{Variable}{A letter that stands for an unknown number.}
+    \vocabItem{Evaluate}{Replace each variable with a given number and compute the result.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Write and Evaluate an Algebraic Expression]
+    \stepItem{Identify the \textbf{unknown quantity} and assign it a variable.}
+    \stepItem{Translate each word or phrase into a \textbf{math operation} ($+$, $-$, $\times$, $\div$).}
+    \stepItem{To evaluate, \textbf{substitute} the given value for the variable and compute using order of operations.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{Write an expression for ``$8$ less than $3$ times a number $n$.'' Then evaluate for $n = -2$.}
+    \stepShow{1} The unknown is the number --- call it $n$.
+
+    \stepShow{2} ``$3$ times a number'' gives $3n$. ``$8$ less than'' means subtract $8$: $3n - 8$.
+
+    \stepShow{3} Substitute $n = -2$: $3(-2) - 8 = -6 - 8 = -14$.
+    \stepResult{Expression: $3n - 8$; value: $-14$}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{Evaluate $\frac{x}{4} + 2.5$ when $x = -6$.}
+    \stepShow{1} The variable is $x$.
+
+    \stepShow{2} The expression is already written: $\frac{x}{4} + 2.5$.
+
+    \stepShow{3} Substitute $x = -6$: $\frac{-6}{4} + 2.5 = -1.5 + 2.5 = 1$.
+    \stepResult{$1$}
+\end{stepExample}
+
+\watchOut{Always use parentheses when substituting a negative number. Write $3(-2)$, not $3 \cdot -2$, to avoid sign errors.}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Writing and Evaluating Expressions Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Identify the Variable}
+    \prob A movie ticket costs $\$d$. Write an expression for the cost of $4$ tickets plus a $\$5$ snack. \answerBlank[2.5cm]
+    \answer{$4d + 5$}
+
+    \stepPracticeHeader[step2Color]{Translate Words to Algebra}
+    \begin{multicols}{2}
+    \prob ``$7$ more than twice a number $n$'' \answerBlank[2.5cm]
+    \answer{$2n + 7$}
+    \prob ``a number $y$ divided by $3$, minus $4$'' \answerBlank[2.5cm]
+    \answer{$\frac{y}{3} - 4$}
+    \end{multicols}
+
+    \stepPracticeHeader[step3Color]{Evaluate the Expression}
+    \prob Evaluate $4a + 7$ when $a = -2$. \answerBlank[2cm]
+    \answer{$-1$}
+
+    \prob Evaluate $\frac{x}{3} - 5$ when $x = 12$. \answerBlank[2cm]
+    \answer{$-1$}
+
+    \wordProblem{A phone plan charges $\$0.10$ per text plus a $\$15$ monthly fee. Write an expression for the total cost of $t$ texts, then find the cost for $85$ texts.}{dollars}
+    \answer{$0.10t + 15$; cost $= \$23.50$}
+\end{stepPractice}

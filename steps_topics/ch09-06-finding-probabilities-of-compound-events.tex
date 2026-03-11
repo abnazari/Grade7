@@ -1,0 +1,92 @@
+% ============================================================================
+% Section 9.6 — Finding Probabilities of Compound Events
+% CCSS 7.SP.C.8b
+% ============================================================================
+\section{Finding Probabilities of Compound Events}
+
+\begin{stepGoal}
+\begin{itemize}
+    \item Calculate the probability of a compound event from a sample space
+    \item Apply compound probability to everyday situations
+\end{itemize}
+\end{stepGoal}
+
+\begin{stepVocabBox}
+    \vocabItem{Compound Probability}{The probability that \textbf{two or more events} happen together.}
+    \vocabItem{Favorable Outcomes}{Outcomes in the sample space that match your event.}
+\end{stepVocabBox}
+
+\begin{stepsCard}[How to Find the Probability of a Compound Event]
+    \stepItem{Build the \textbf{sample space} (list, table, or tree diagram).}
+    \stepItem{Count the \textbf{total outcomes} in the sample space.}
+    \stepItem{Count the \textbf{favorable outcomes} that match the event.}
+    \stepItem{Divide: $P = \dfrac{\text{favorable outcomes}}{\text{total outcomes}}$ and simplify.}
+\end{stepsCard}
+
+% --- Worked Example 1 ---
+\begin{stepExample}{You roll two dice. What is the probability that the sum is $7$?}
+    \stepShow{1} Sample space (table of sums):
+
+    \begin{center}
+    \small
+    \begin{tabular}{c|cccccc}
+    $+$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ \hline
+    $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ \\
+    $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ \\
+    $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ \\
+    $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ \\
+    $5$ & $6$ & $7$ & $8$ & $9$ & $10$ & $11$ \\
+    $6$ & $7$ & $8$ & $9$ & $10$ & $11$ & $12$ \\
+    \end{tabular}
+    \end{center}
+
+    \stepShow{2} Total outcomes: $6 \times 6 = 36$.
+
+    \stepShow{3} Sums of $7$: $(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)$ --- that is $6$ favorable.
+
+    \stepShow{4} $P(\text{sum} = 7) = \dfrac{6}{36} = \dfrac{1}{6}$
+    \stepResult{$P(\text{sum} = 7) = \dfrac{1}{6}$}
+\end{stepExample}
+
+% --- Worked Example 2 ---
+\begin{stepExample}{You flip two coins. What is the probability of getting at least one head?}
+    \stepShow{1} Sample space: $HH, HT, TH, TT$.
+
+    \stepShow{2} Total outcomes: $4$.
+
+    \stepShow{3} Favorable (at least one $H$): $HH, HT, TH$ --- that is $3$.
+
+    \stepShow{4} $P(\text{at least one } H) = \dfrac{3}{4}$
+    \stepResult{$P(\text{at least one head}) = \dfrac{3}{4}$}
+\end{stepExample}
+
+\mascotStepTip{``At least one'' means one or more. It's often easier to count the outcomes that do NOT match and subtract from the total.}
+
+% ============================================================================
+% PRACTICE
+% ============================================================================
+\newpage
+\begin{stepPractice}{Compound Probability Practice}
+    \resetProblems
+
+    \stepPracticeHeader[step1Color]{Build and Count the Sample Space}
+    \prob You spin a spinner ($1, 2, 3$) and flip a coin. How many total outcomes? \answerBlank[2cm]
+    \answer{$3 \times 2 = 6$}
+
+    \stepPracticeHeader[step2Color]{Find Favorable Outcomes}
+    \prob Using the spinner and coin above, how many outcomes have an even number \textbf{and} heads? \answerBlank[2cm]
+    \answer{$1$ (only $2H$)}
+
+    \stepPracticeHeader[step3Color]{Calculate the Probability}
+    \prob What is $P(\text{even and heads})$ from the problem above? \answerBlank[2cm]
+    \answer{$\frac{1}{6}$}
+
+    \prob You roll two dice. What is the probability of getting a sum of $2$? \answerBlank[2cm]
+    \answer{$\frac{1}{36}$ (only $(1,1)$)}
+
+    \prob You roll two dice. What is the probability that both show the same number (doubles)? \answerBlank[2cm]
+    \answer{$\frac{6}{36} = \frac{1}{6}$}
+
+    \wordProblem{A bag has $2$ red and $3$ blue marbles. You pick one marble, put it back, and pick again. What is the probability of picking red both times?}{~}
+    \answer{$P = \frac{2}{5} \times \frac{2}{5} = \frac{4}{25}$}
+\end{stepPractice}

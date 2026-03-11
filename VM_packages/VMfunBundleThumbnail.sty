@@ -1,0 +1,155 @@
+%----------------------------------------------------------------------------------------
+% VMfunBundleThumbnail.sty — Bundle Thumbnail with Cover Overlays
+%
+% Produces a square 7in×7in single-page document.
+% At 100 DPI → 700×700 px (matches existing JPEG thumbnail canvas).
+%
+% Architecture mirrors VMfunCover.sty:
+%   - Full-bleed background image
+%   - System fonts via fontspec \newfontface
+%   - Configurable state-name overlay (position, font, colour, rotation)
+%   - \placeCover helper for positioning book cover JPGs
+%----------------------------------------------------------------------------------------
+\ProvidesPackage{VMfunBundleThumbnail}[2026/03/08 Bundle Thumbnail Page]
+
+%----------------------------------------------------------------------------------------
+% REQUIRED PACKAGES
+%----------------------------------------------------------------------------------------
+\RequirePackage{tikz}
+\RequirePackage{graphicx}
+\RequirePackage[paperwidth=7in, paperheight=7in, margin=0pt]{geometry}
+\RequirePackage{fontspec}
+\RequirePackage{etoolbox}   % \ifdefstring
+
+% No headers / footers / page numbers
+\pagestyle{empty}
+
+%----------------------------------------------------------------------------------------
+% BACKGROUND IMAGE  — \BundleBackground{path}
+%----------------------------------------------------------------------------------------
+\newcommand{\theBundleBackground}{images/bundle-background.png}
+\newcommand{\BundleBackground}[1]{\renewcommand{\theBundleBackground}{#1}}
+
+%----------------------------------------------------------------------------------------
+% STATE NAME — text & layout (same pattern as VMfunCover.sty)
+%----------------------------------------------------------------------------------------
+\newcommand{\theBundleStateName}{}
+\newcommand{\BundleStateName}[1]{\renewcommand{\theBundleStateName}{#1}}
+
+\newcommand{\theBundleStateNameXOffset}{3.5in}
+\newcommand{\BundleStateNameXOffset}[1]{\renewcommand{\theBundleStateNameXOffset}{#1}}
+
+\newcommand{\theBundleStateNameYOffset}{0.55in}
+\newcommand{\BundleStateNameYOffset}[1]{\renewcommand{\theBundleStateNameYOffset}{#1}}
+
+\newcommand{\theBundleStateNameRotation}{0}
+\newcommand{\BundleStateNameRotation}[1]{\renewcommand{\theBundleStateNameRotation}{#1}}
+
+\newcommand{\theBundleStateNameFontSize}{36}
+\newcommand{\BundleStateNameFontSize}[1]{\renewcommand{\theBundleStateNameFontSize}{#1}}
+
+\newcommand{\theBundleStateNameBaselineSkip}{43}
+\newcommand{\BundleStateNameBaselineSkip}[1]{\renewcommand{\theBundleStateNameBaselineSkip}{#1}}
+
+\newcommand{\theBundleStateNameColor}{white}
+\newcommand{\BundleStateNameColor}[1]{\renewcommand{\theBundleStateNameColor}{#1}}
+
+\newcommand{\theBundleStateNameFontStyle}{bold-sans}
+\newcommand{\BundleStateNameFontStyle}[1]{\renewcommand{\theBundleStateNameFontStyle}{#1}}
+
+\newcommand{\theBundleStateNameCustomFont}{}
+\newcommand{\BundleStateNameCustomFont}[1]{\renewcommand{\theBundleStateNameCustomFont}{#1}}
+
+%----------------------------------------------------------------------------------------
+% FONT FACES  (loaded once — same as VMfunCover.sty)
+%----------------------------------------------------------------------------------------
+\newfontface\@btFontNunitoBlack{Nunito-Black.otf}[
+    Path=/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/nunito/]
+\newfontface\@btFontNunitoXBold{Nunito-ExtraBold.otf}[
+    Path=/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/nunito/]
+\newfontface\@btFontHelvetica{HelveticaNeue-Bold}
+\newfontface\@btFontArialRounded{ArialRoundedMTBold}
+\newfontface\@btFontChalkboard{ChalkboardSE-Bold}
+\newfontface\@btFontComicNeue{ComicNeue-Bold.otf}[
+    Path=/usr/local/texlive/2025/texmf-dist/fonts/opentype/rozynski/comicneue/]
+
+% --- Resolve font style token → font switch ---
+\newcommand{\@resolveBTFont}{%
+    \def\@btstyle{\theBundleStateNameFontStyle}%
+    \ifdefstring{\@btstyle}{bold-sans}{\@btFontNunitoBlack}{%
+    \ifdefstring{\@btstyle}{helvetica}{\@btFontHelvetica}{%
+    \ifdefstring{\@btstyle}{arial-rounded}{\@btFontArialRounded}{%
+    \ifdefstring{\@btstyle}{chalkboard}{\@btFontChalkboard}{%
+    \ifdefstring{\@btstyle}{nunito-xbold}{\@btFontNunitoXBold}{%
+    \ifdefstring{\@btstyle}{comic-neue}{\@btFontComicNeue}{%
+    \ifdefstring{\@btstyle}{custom}{\theBundleStateNameCustomFont}{%
+        \@btFontNunitoBlack
+    }}}}}}}%
+}
+
+%----------------------------------------------------------------------------------------
+% \placeCover{image-path}{x-offset}{y-offset}{width}
+%
+% Place a book cover image at an arbitrary position on the page.
+% Coordinates are measured from the south-west corner of the page.
+% The image is anchored at its south-west corner.
+%----------------------------------------------------------------------------------------
+\newcommand{\placeCover}[4]{%
+    \node[anchor=south west, inner sep=0] at
+        ([xshift=#2, yshift=#3]current page.south west)
+        {\includegraphics[width=#4]{#1}};%
+}
+
+%----------------------------------------------------------------------------------------
+% \makeBundlePage  — compose background + covers + state name
+%
+% Call this AFTER setting \BundleBackground, \BundleStateName,
+% all position/font overrides, and \placeCover calls are ready.
+%
+% Usage pattern in document body:
+%   \begin{tikzpicture}[remember picture, overlay]
+%     \makeBundleBackground
+%     \placeCover{...}{...}{...}{...}
+%     \placeCover{...}{...}{...}{...}
+%     \makeBundleStateName
+%   \end{tikzpicture}
+%----------------------------------------------------------------------------------------
+
+% Sub-command: draw the full-bleed background
+\newcommand{\makeBundleBackground}{%
+    \node[anchor=south west, inner sep=0] at (current page.south west) {%
+        \includegraphics[width=\paperwidth, height=\paperheight]{\theBundleBackground}%
+    };%
+}
+
+% Sub-command: draw the state name overlay
+\newcommand{\makeBundleStateName}{%
+    \node[
+        anchor=center,
+        color=\theBundleStateNameColor,
+        rotate=\theBundleStateNameRotation
+    ] at ([xshift=\theBundleStateNameXOffset,
+           yshift=\theBundleStateNameYOffset]current page.south west) {%
+        {\fontsize{\theBundleStateNameFontSize}{\theBundleStateNameBaselineSkip}\selectfont
+         \@resolveBTFont \theBundleStateName}%
+    };%
+}
+
+%----------------------------------------------------------------------------------------
+% Full-page environment for reliable shipout placement.
+%
+% Using TikZ overlays directly in normal document flow can render unpredictably
+% on an otherwise empty page. This environment matches the cover-page pattern:
+% establish a real page, draw overlays relative to current page, then clear.
+%----------------------------------------------------------------------------------------
+\newenvironment{bundlethumbnailpage}{%
+    \thispagestyle{empty}%
+    \null%
+    \begin{tikzpicture}[remember picture, overlay]
+        % Keep the overlay picture pinned to the physical page so extra
+        % cover nodes cannot shrink the visible background to a top strip.
+        \path[use as bounding box] (current page.south west) rectangle (current page.north east);
+}{%
+    \end{tikzpicture}%
+    \clearpage
+}
