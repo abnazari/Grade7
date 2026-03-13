@@ -88,6 +88,21 @@ BOOK_TYPES: Dict[str, dict] = {
         "description": "10 Practice Tests preview (cover + initial pages + 1 partial test)",
         "test_range": (16, 25),
     },
+    "6_practice_tests": {
+        "description": "6 Practice Tests preview (cover + initial pages + 1 partial test, bank 2)",
+        "test_range": (1, 6),
+        "practice_dir": "practice_tests_2",
+    },
+    "9_practice_tests": {
+        "description": "9 Practice Tests preview (cover + initial pages + 1 partial test, bank 2)",
+        "test_range": (7, 15),
+        "practice_dir": "practice_tests_2",
+    },
+    "12_practice_tests": {
+        "description": "12 Practice Tests preview (cover + initial pages + 1 partial test, bank 2)",
+        "test_range": (16, 27),
+        "practice_dir": "practice_tests_2",
+    },
     "in_30_days": {
         "description": "30-Day preview (cover + initial pages + 2 sample days)",
     },
@@ -468,6 +483,7 @@ def generate_preview_practice_tests(
     test_end: int,
     workspace: Path,
     config: TopicsConfig,
+    practice_dir_name: str = "practice_tests",
 ) -> str:
     """Generate preview .tex for Practice Tests.
 
@@ -477,7 +493,7 @@ def generate_preview_practice_tests(
     a full test while still showing the look-and-feel of the book.
     """
     # Find the first available test and extract limited questions
-    practice_dir = workspace / "practice_tests" / state_slug
+    practice_dir = workspace / practice_dir_name / state_slug
     first_test_num = None
     questions_tex: Optional[str] = None
     for i in range(test_start, test_end + 1):
@@ -940,9 +956,11 @@ def main() -> None:
             elif bt_key.endswith("_practice_tests"):
                 num_tests = int(bt_key.split("_")[0])
                 test_start, test_end = bt_cfg["test_range"]
+                practice_dir_name = bt_cfg.get("practice_dir", "practice_tests")
                 content = generate_preview_practice_tests(
                     slug, state_name, num_tests, test_start, test_end,
                     workspace, config,
+                    practice_dir_name=practice_dir_name,
                 )
             elif bt_key == "in_30_days":
                 content = generate_preview_in_30_days(slug, state_name, config)

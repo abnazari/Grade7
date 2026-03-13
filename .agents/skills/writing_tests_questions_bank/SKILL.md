@@ -1,18 +1,29 @@
 ---
 name: writing_tests_questions_bank
-description: How to write standard test question bank files for Grade 7 math topics used in state standard tests
+description: How to write standard test question bank files for math topics used in state standard tests
 ---
 
 # Writing Tests Question Bank Files
 
 ## Overview
 
-For every topic in the study guide, we need a corresponding **question bank file** containing 30 standard test questions (18 multiple choice + 7 short answer + 5 graphical). These question banks feed into `scripts/generate_practice_tests.py`, which selects questions randomly to build unique per-state standard tests.
+For every topic in the study guide, we need a corresponding **question bank file** containing 27 **realistic standard test questions** (15 multiple choice + 6 short answer + 6 graphical). These questions must read and feel like questions students would encounter on an actual state standardized math test (e.g., SBAC, PARCC, STAAR, FSA). The question banks feed into `scripts/generate_practice_tests.py`, which selects questions randomly to build unique per-state standard tests.
+
+There are **two independent question bank sets**:
+
+| Bank | Directory | Practice tests output | Books that use it |
+|---|---|---|---|
+| Bank 1 (existing) | `tests_questions_bank/` | `practice_tests/` | 3, 5, 7, 10 practice tests |
+| Bank 2 (new) | `tests_questions_bank_2/` | `practice_tests_2/` | 6, 9, 12 practice tests |
+
+The two banks are completely independent — different questions, different tests, different books. A student who buys books from both sets gets entirely unique questions.
 
 ## Directory Structure
 
+New question bank files go in `tests_questions_bank_2/`:
+
 ```
-tests_questions_bank/
+tests_questions_bank_2/
     topics/              # Questions for core CCSS topics (mirrors topics/)
     topics_additional/   # Questions for additional state-specific topics (mirrors topics_additional/)
     topics_modified/     # Questions for modified topics (mirrors topics_modified/)
@@ -22,13 +33,32 @@ Each question bank file corresponds **one-to-one** to a topic file:
 
 | Topic file location | Question bank file location |
 |---|---|
-| `topics/ch01-01-unit-rates-with-fractions.tex` | `tests_questions_bank/topics/ch01-01-unit-rates-with-fractions.tex` |
-| `topics_additional/ch02-08-personal-financial-literacy.tex` | `tests_questions_bank/topics_additional/ch02-08-personal-financial-literacy.tex` |
-| `topics_modified/ch02-06-simple-interest.tex` | `tests_questions_bank/topics_modified/ch02-06-simple-interest.tex` |
+| `topics/ch01-01-unit-rates-with-fractions.tex` | `tests_questions_bank_2/topics/ch01-01-unit-rates-with-fractions.tex` |
+| `topics_additional/ch02-08-personal-financial-literacy.tex` | `tests_questions_bank_2/topics_additional/ch02-08-personal-financial-literacy.tex` |
+| `topics_modified/ch02-06-simple-interest.tex` | `tests_questions_bank_2/topics_modified/ch02-06-simple-interest.tex` |
 
 **Use the exact same filename** as the topic file it corresponds to.
 
 ## Workflow: How to Write Question Banks
+
+### Step 0: Discover Topics with the Script
+
+Before writing any question bank files, run `scripts/get_chapter_topic_facts.py` to get the list of topics for the chapter you are working on:
+
+```bash
+python3 scripts/get_chapter_topic_facts.py --chapter <N>
+```
+
+This returns a structured report listing all **core topics**, **additional topics**, and **modified topics** for that chapter, along with:
+- Topic IDs, names, and file paths
+- Which states use additional/modified topics
+
+Use this output to determine which question bank files need to be created. You must write question banks for **every** topic returned by the script — core, additional, and modified.
+
+To see all available chapters:
+```bash
+python3 scripts/get_chapter_topic_facts.py --list-chapters
+```
 
 ### Step 1: Read the Topic File
 
@@ -43,16 +73,18 @@ Your questions must test the content taught in that specific topic — not conte
 
 ### Step 2: Create the Question Bank File
 
+Write questions that are **realistic and test-like** — they should mirror the tone, structure, and rigor of actual state standardized math assessments. Avoid overly simplistic "drill" questions that just swap numbers. Instead, use the kinds of multi-step reasoning, real-world contexts, and precise academic language that students encounter on real tests.
+
 Use the exact format shown below. Every file has:
 - A header comment block with metadata
-- 18 multiple choice questions (IDs: `X-Y-q01` through `X-Y-q18`)
-- 7 short answer questions (IDs: `X-Y-q19` through `X-Y-q25`)
-- 5 graphical questions (IDs: `X-Y-q26` through `X-Y-q30`) — 3 graphical MC + 2 graphical SA
+- 15 multiple choice questions (IDs: `X-Y-q01` through `X-Y-q15`)
+- 6 short answer questions (IDs: `X-Y-q16` through `X-Y-q21`)
+- 6 graphical questions (IDs: `X-Y-q22` through `X-Y-q27`) — 3 graphical MC + 3 graphical SA
 - For modified files, the ID should reflect the modified topic (e.g., `m-X-Y-q01` instead of `X-Y-q01`)
 
 ### Step 3: Verify Correctness
 
-Double-check every answer. An incorrect answer in a standard test destroys student trust. Compute each answer carefully.
+Double-check every answer. An incorrect answer in a realistic test destroys student trust and undermines the book's credibility. Compute each answer carefully.
 
 ## File Format
 
@@ -63,17 +95,17 @@ Double-check every answer. An incorrect answer in a standard test destroys stude
 % Question Bank: chXX-YY Topic Title
 % Topic Title: Full Topic Title
 % CCSS: 7.XX.X.X (or "Supplementary" for non-CCSS topics)
-% Questions: 30 (18 MC + 7 SA + 5 Graphical)
+% Questions: 27 (15 MC + 6 SA + 6 Graphical)
 % ============================================================
 ```
 
 ### Question ID Convention
 
 IDs follow the pattern `{chapter}-{section}-q{number}`:
-- `ch01-01` → IDs are `1-1-q01` through `1-1-q30` (q01–q18 MC, q19–q25 SA, q26–q30 Graphical)
-- `ch03-05` → IDs are `3-5-q01` through `3-5-q30`
-- `ch09-07` → IDs are `9-7-q01` through `9-7-q30`
-- For additional topics, use the same chapter-section pattern (e.g., `ch02-08` → IDs are `2-8-q01` through `2-8-q30`)
+- `ch01-01` → IDs are `1-1-q01` through `1-1-q27` (q01–q15 MC, q16–q21 SA, q22–q27 Graphical)
+- `ch03-05` → IDs are `3-5-q01` through `3-5-q27`
+- `ch09-07` → IDs are `9-7-q01` through `9-7-q27`
+- For additional topics, use the same chapter-section pattern (e.g., `ch02-08` → IDs are `2-8-q01` through `2-8-q27`)
 - For modified topics, prefix with `m-` to indicate modified content (e.g., `m-2-6-q01` for a question in the modified version of chapter 2, section 6)
 
 Strip the leading zero from the chapter number. Keep the section number as-is (including leading zeros for single digits, but without the `ch` prefix).
@@ -91,19 +123,19 @@ Supports any LaTeX content: math, tables, TikZ, etc.
 \choiceC{Third option}
 \choiceD{Fourth option}
 \correctAnswer{B}
-\explanation{Brief explanation of why B is correct.}
+\explanation{A negative times a positive gives a negative: $(-4) \times 7 = -28$.}
 \end{practiceQuestion}
 ```
 
 ### Short Answer Question Format
 
 ```latex
-\begin{practiceQuestion}{X-Y-q19}{sa}
+\begin{practiceQuestion}{X-Y-q16}{sa}
 \begin{questionText}
 Question text goes here.
 \end{questionText}
 \correctAnswer{$42$}
-\explanation{Brief explanation of how to get the answer. You should end up with the correct answer}
+\explanation{Multiply the base by the height: $6 \times 7 = 42$.}
 \end{practiceQuestion}
 ```
 
@@ -112,7 +144,7 @@ Question text goes here.
 Graphical questions include a TikZ figure or visual command as a core part of the question. The graphic is essential — students must interpret it to answer.
 
 ```latex
-\begin{practiceQuestion}{X-Y-q26}{gmc}
+\begin{practiceQuestion}{X-Y-q22}{gmc}
 \begin{questionText}
 Look at the number line below. Which point represents $-\frac{3}{2}$?
 
@@ -132,7 +164,7 @@ Look at the number line below. Which point represents $-\frac{3}{2}$?
 ### Graphical Short Answer Question Format (`gsa`)
 
 ```latex
-\begin{practiceQuestion}{X-Y-q29}{gsa}
+\begin{practiceQuestion}{X-Y-q25}{gsa}
 \begin{questionText}
 What is the area of the composite figure shown below?
 
@@ -210,8 +242,8 @@ These are convenience commands from `VMfunMath.sty`. Use them when they fit natu
 2. **Type is `mc`, `sa`, `gmc`, or `gsa`** — the second argument to `practiceQuestion`.
 3. **MC/GMC questions have exactly 4 choices**: `\choiceA{}` through `\choiceD{}`.
 4. **SA/GSA questions have NO choices** — only `\correctAnswer{}` and `\explanation{}`.
-5. **`\correctAnswer{}`** for MC/GMC is the letter (A, B, C, or D). For SA/GSA it is the actual answer.
-6. **`\explanation{}`** is required for every question. Keep it to 1–2 sentences.
+5. **`\correctAnswer{}`** for MC/GMC is the letter (A, B, C, or D). For SA/GSA it is the actual answer which must be very short (usually one or two words or numbers).
+6. **`\explanation{}`** is required for every question. Write **2–3 sentences** that (a) name the concept, rule, or formula being used, (b) show the key computation, and (c) arrive at the correct answer. Students have just learned these topics — a bare equation is not enough. Always name the mathematical concept so the student connects the problem to what they studied.
 7. **All math must be in `$...$`**. Use `\times` for multiplication, `\div` for division.
 8. **No blank lines** between `\choiceA` through `\choiceD` lines.
 9. **Separate questions** with a blank line between `\end{practiceQuestion}` and the next `\begin{practiceQuestion}`.
@@ -219,59 +251,61 @@ These are convenience commands from `VMfunMath.sty`. Use them when they fit natu
 
 ## Complete Example File
 
+Note how the examples below use **real-world contexts** and **test-like phrasing** rather than bare computation. This is the standard to follow.
+
 ```latex
 % ============================================================
 % Question Bank: ch03-05 Multiplying Integers and Rational Numbers
 % Topic Title: Multiplying Integers and Rational Numbers
 % CCSS: 7.NS.A.2
-% Questions: 30 (18 MC + 7 SA + 5 Graphical)
+% Questions: 27 (15 MC + 6 SA + 6 Graphical)
 % ============================================================
 
-% --- Multiple Choice Questions (18) ---
+% --- Multiple Choice Questions (15) ---
 
 \begin{practiceQuestion}{3-5-q01}{mc}
 \begin{questionText}
-What is $(-4) \times 7$?
+A scuba diver descends at a rate of $4$ feet per second. Which expression represents the diver's change in depth after $7$ seconds?
 \end{questionText}
-\choiceA{$28$}
-\choiceB{$-28$}
-\choiceC{$-11$}
-\choiceD{$11$}
+\choiceA{$4 \times 7 = 28$ feet}
+\choiceB{$(-4) \times 7 = -28$ feet}
+\choiceC{$4 + 7 = 11$ feet}
+\choiceD{$(-4) + 7 = 3$ feet}
 \correctAnswer{B}
-\explanation{A negative times a positive gives a negative: $(-4) \times 7 = -28$.}
+\explanation{Descending means a negative rate: $(-4) \times 7 = -28$ feet (28 feet below the starting point).}
 \end{practiceQuestion}
 
 \begin{practiceQuestion}{3-5-q02}{mc}
 \begin{questionText}
-What is $(-3) \times (-5)$?
+The temperature dropped $3^\circ$F each hour for $5$ hours. A student says the total change is $-8^\circ$F. Which statement best describes the student's error?
 \end{questionText}
-\choiceA{$-15$}
-\choiceB{$-8$}
-\choiceC{$15$}
-\choiceD{$8$}
-\correctAnswer{C}
-\explanation{A negative times a negative gives a positive: $(-3) \times (-5) = 15$.}
+\choiceA{The student added instead of multiplied.}
+\choiceB{The student forgot to make the product negative.}
+\choiceC{The student multiplied correctly but dropped the negative sign.}
+\choiceD{The student divided instead of multiplied.}
+\correctAnswer{A}
+\explanation{The correct change is $(-3) \times 5 = -15^\circ$F. The student computed $(-3) + (-5) = -8$, adding instead of multiplying.}
 \end{practiceQuestion}
 
-% ... (q03 through q18 follow the same pattern) ...
+% ... (q03 through q15 follow the same pattern) ...
 
-% --- Short Answer Questions (7) ---
+% --- Short Answer Questions (6) ---
 
-\begin{practiceQuestion}{3-5-q19}{sa}
+\begin{practiceQuestion}{3-5-q16}{sa}
 \begin{questionText}
-What is $\left(-\frac{2}{3}\right) \times \frac{3}{4}$?
+A recipe calls for $\frac{3}{4}$ cup of sugar, but Maria wants to make only $\frac{2}{3}$ of the recipe. How many cups of sugar does Maria need?
 \end{questionText}
-\correctAnswer{$-\frac{1}{2}$}
-\explanation{Multiply numerators: $(-2)(3) = -6$. Multiply denominators: $(3)(4) = 12$. Simplify: $-\frac{6}{12} = -\frac{1}{2}$.}
+\correctAnswer{$\frac{1}{2}$}
+\explanation{Multiply: $\frac{2}{3} \times \frac{3}{4} = \frac{6}{12} = \frac{1}{2}$ cup.}
 \end{practiceQuestion}
 
-% ... (q20 through q25 follow the same pattern) ...
+% ... (q17 through q21 follow the same pattern) ...
 
-% --- Graphical Questions (3 GMC + 2 GSA) ---
+% --- Graphical Questions (3 GMC + 3 GSA) ---
 
-\begin{practiceQuestion}{3-5-q26}{gmc}
+\begin{practiceQuestion}{3-5-q22}{gmc}
 \begin{questionText}
-The number line shows the product of two integers. Which multiplication does the arrow represent?
+The number line below models a multiplication of two integers. Based on the diagram, which equation is represented?
 
 \begin{center}
 \begin{tikzpicture}
@@ -290,30 +324,35 @@ The number line shows the product of two integers. Which multiplication does the
 \explanation{The arrow shows $3$ groups of $-1$, moving left on the number line to $-3$.}
 \end{practiceQuestion}
 
-% ... (q27–q28 are gmc, q29–q30 are gsa) ...
+% ... (q23-q24 are gmc, q25-q27 are gsa) ...
 ```
 
 ## Question Writing Guidelines
 
+### Realistic Test Question Standards
+
+Every question must feel like it belongs on a real state standardized math test. We need a variety of questions.
+
 ### Difficulty Distribution
 
-Aim for a mix across the 30 questions:
-- **10–11 basic** — straightforward recall or single-step computation
-- **9–10 applied** — word problems, multi-step, or conceptual understanding
+Aim for a mix across the 27 questions that mirrors real standardized tests:
+- **8–9 standard** — grade-level items testing core skills in context (not bare computation)
+- **8–9 applied** — word problems, multi-step reasoning, or conceptual understanding
 - **4–5 challenging** — requires deeper thinking, combines sub-skills, or uses less obvious numbers
-- **5 graphical** — questions where students interpret a diagram, chart, graph, or visual model
+- **6 graphical** — questions where students interpret a diagram, chart, graph, or visual model
 
 ### Question Quality Checklist
 
+- [ ] **Realistic**: Each question reads like an actual state standardized test item
 - [ ] **On-topic**: Every question tests content from THIS topic file only
-- [ ] **Grade-appropriate**: Numbers and language suitable for 12–13 year olds
+- [ ] **Grade-appropriate**: Numbers and language suitable for the target audience (see Grade Info from the script output)
 - [ ] **Unique**: No two questions test the exact same thing with different numbers
 - [ ] **Plausible distractors**: MC wrong answers should be common mistakes (not random numbers)
 - [ ] **Correct answers**: Triple-check every answer is mathematically correct
-- [ ] **Clear wording**: Short sentences, everyday language, no ambiguity
+- [ ] **Clear wording**: Precise academic language, no ambiguity — match the tone of real standardized tests
 - [ ] **Math in `$...$`**: All numbers in equations use math mode
-- [ ] **Explanation provided**: Every question has a brief, helpful explanation
-- [ ] **Graphical clarity** (for `gmc`/`gsa`): The graphic shows ALL relevant info, is labeled, and a 12-year-old can instantly understand what it represents and how it connects to the question
+- [ ] **Explanation provided**: Every question has a 2–3 sentence explanation that (1) names the concept/rule/formula, (2) shows the key computation, and (3) arrives at the correct answer. No bare equations without naming the concept. No paragraphs either.
+- [ ] **Graphical clarity** (for `gmc`/`gsa`): The graphic shows ALL relevant info, is labeled, and students of the target age can instantly understand what it represents and how it connects to the question
 
 ### Writing Good Distractors (multiple choice wrong answers)
 
@@ -327,29 +366,46 @@ Wrong answers should reflect real student mistakes:
 - **Percent errors**: e.g., confusing percent increase with percent of original, computing on the wrong base
 - **Geometry errors**: e.g., confusing area and perimeter, wrong formula for circles, surface area vs volume
 
-**Never** use obviously absurd distractors. Every option should look plausible to a student who has a specific misconception.
+**Never** use obviously absurd distractors. Every option should look plausible to a student who has a specific misconception. On real standardized tests, distractors are carefully engineered — yours should be too.
 
 ### Writing Good Short Answer Questions
 
-SA questions should require the student to produce an answer, usually a very short one (a number, expression, or short phrase).
+SA questions should mirror the constructed-response or gridded-response items found on real standardized tests. The student produces an answer — usually a number, expression, or short phrase.
 
-Keep `\correctAnswer{}` brief — a number, expression, or short phrase.
+Keep `\correctAnswer{}` brief — a number, expression, or short phrase. Frame SA questions with the same real-world contexts and academic language used in the MC section.
+
+### Writing Good Explanations
+
+Explanations appear in the answer key and help students learn from their mistakes. Remember: these students have **just learned the topic** — they need explanations that name the concept or rule being used, show the key steps, and connect the reasoning to the answer. A bare computation like `$360 - 65 - 135 - 88 = 72$` is not an explanation — it's just arithmetic that the student could have done themselves.
+
+Follow these rules:
+
+1. **Length**: 2–3 sentences. Two sentences is ideal for most problems. Three sentences maximum for multi-step problems. Never write just a bare equation — and never write a full paragraph either.
+2. **Name the concept or rule**: Always start by naming the mathematical concept, property, or formula being applied (e.g., "The interior angles of a quadrilateral always sum to $360°$", "Use the quotient rule for exponents", "Apply the Pythagorean theorem"). This is the most important teaching moment.
+3. **Show the work**: After naming the concept, include the key computation or reasoning step that leads to the answer.
+4. **Be direct**: Start with the concept/rule, not with filler like "The correct answer is B because...".
+5. **End at the answer**: The explanation should naturally arrive at the correct answer so the student can follow the logic.
+
+**GOOD** explanations:
+- `Descending means a negative rate of change. Multiply the rate by the time: $(-4) \times 7 = -28$ feet, meaning 28 feet below the starting point.`
+- `Use cross-multiplication to solve a proportion: $3 \times 8 = 4x$, so $24 = 4x$ and $x = 6$.`
+- `The slope formula is $m = \frac{y_2 - y_1}{x_2 - x_1}$. Substituting the points: $m = \frac{6-2}{4-1} = \frac{4}{3}$. Using point-slope form with $(1,2)$: $y = \frac{4}{3}x + \frac{2}{3}$.`
+- `The interior angles of any quadrilateral sum to $360°$. Subtract the three known angles: $x = 360 - 65 - 135 - 88 = 72°$.`
+- `Use the product rule for exponents: when multiplying powers with the same base, add the exponents. $4p^3 \times 3p^5 = 12p^{3+5} = 12p^8$.`
+
+**BAD** explanations (too short / just computation, no concept named):
+- `$360 - 65 - 135 - 88 = 72°$.` ← no concept named, just arithmetic
+- `$12p^8$.` ← no reasoning at all
+- `The answer is $-28$.` ← no reasoning shown
+- `B` ← useless
+- `$\frac{15}{5} = 3$ and $y^{7-3} = y^4$. Answer: $3y^4$.` ← just shows computation without naming the quotient rule
+
+**BAD** explanations (too long):
+- `First, we need to recall that when multiplying a negative number by a positive number, the result is always negative. This is because the signs are different. So we take the absolute values, which are 4 and 7, and multiply them to get 28. Then we apply the negative sign to get -28. Therefore the answer is -28.` ← way too wordy for a simple sign rule
 
 ### Numbers and Scope by Chapter
 
-Follow these constraints to stay aligned with Grade 7 standards:
-
-| Chapter | Number Range | Key Constraints |
-|---|---|---|
-| Ch 1 (Ratios and Proportional Relationships) | Fractions, decimals, unit rates with fraction quantities | Unit rates with fractions; proportional relationships via tables, graphs, equations; constant of proportionality; graphing proportions; multi-step ratio problems |
-| Ch 2 (Percents in Everyday Life) | Percents, decimals, fractions; money amounts | Percent problems (part, whole, percent); percent-proportion connection; percent increase/decrease (1.05a pattern); markups/discounts/tax; tips/commissions; simple interest (I = Prt); percent error |
-| Ch 3 (Operations with Rational Numbers) | All rational numbers: integers, fractions, decimals (positive and negative) | Opposites and absolute value; adding/subtracting integers and rationals; multiplying/dividing signed numbers; converting rationals to decimals (terminating/repeating); multi-step rational number problems |
-| Ch 4 (Algebraic Expressions) | Rational coefficients (fractions and decimals); single variable | Writing and evaluating expressions; combining like terms; distributive property; factoring; adding/subtracting linear expressions; rewriting expressions for insight |
-| Ch 5 (Equations and Inequalities) | Rational number coefficients; two-step and multi-step | Two-step equations (px + q = r); equations with distributive property p(x + q) = r; multi-step problems with rationals; writing/solving/graphing inequalities (px + q > r) |
-| Ch 6 (Scale Drawings, Geometry, Angles) | Lengths may be fractions/decimals; angle measures in degrees | Scale drawings and scale factors; reproducing at different scales; drawing figures with given conditions; constructing triangles (uniqueness); cross-sections of 3D figures; supplementary/complementary/vertical angles |
-| Ch 7 (Circles, Area, Surface Area, Volume) | Decimals and fractions for lengths; π ≈ 3.14 or 22/7 | Circle parts, circumference (C = πd), area (A = πr²); composite shapes; surface area of prisms; volume (V = Bh) with various bases |
-| Ch 8 (Statistics: Sampling and Comparing Populations) | Data sets of 10–25 values; means, medians, MAD, IQR | Populations vs samples; random sampling; comparative inferences; visual overlap as multiples of MAD; comparing two populations using measures of center and variability |
-| Ch 9 (Probability and Compound Events) | Probabilities as fractions, decimals, percents (0 to 1) | Probability concepts (0–1 scale); theoretical probability (favorable/total); experimental probability (relative frequency); probability models (uniform/non-uniform); sample spaces (lists, tables, tree diagrams); compound event probabilities; simulations |
+Run `python3 scripts/get_chapter_topic_facts.py --chapter <N>` to get the chapter title, topic names, and content summaries. Use that output to understand the scope, number ranges, and key constraints for the chapter you are writing. Stay within the scope described by each topic's summary — do not introduce content from other chapters or topics.
 
 ### Using Complex Content in `questionText`
 
@@ -359,13 +415,13 @@ The `\begin{questionText}...\end{questionText}` environment supports any LaTeX c
 
 Graphical questions use a visual element (TikZ diagram, chart, coordinate plane, number line, etc.) as the **core** of the question. The student must interpret the visual to answer — the graphic is not decoration.
 
-**Structure**: 5 graphical questions per file (IDs q26–q30), placed after the SA questions:
-- **q26, q27, q28** → graphical multiple choice (`gmc`) — same structure as `mc` but with a visual in `questionText`
-- **q29, q30** → graphical short answer (`gsa`) — same structure as `sa` but with a visual in `questionText`
+**Structure**: 6 graphical questions per file (IDs q22-q27), placed after the SA questions:
+- **q22, q23, q24** → graphical multiple choice (`gmc`) — same structure as `mc` but with a visual in `questionText`
+- **q25, q26, q27** → graphical short answer (`gsa`) — same structure as `sa` but with a visual in `questionText`
 
 #### Clarity is Everything
 
-The #1 rule for graphical questions: **a 12-year-old must instantly understand what the graphic shows and how it relates to the question.** If there is any ambiguity, rewrite the question or redesign the graphic.
+The #1 rule for graphical questions: **a student of the target age (see script output) must instantly understand what the graphic shows and how it relates to the question.** If there is any ambiguity, rewrite the question or redesign the graphic.
 
 Before writing each graphical question, ask yourself:
 1. Can a student answer this question ONLY by looking at the graphic? (If yes, good.)
@@ -432,118 +488,33 @@ Why it works: The student must read both coordinates and find the distance.
 | Probability (Ch 9) | Tree diagrams, sample space tables, spinner/dice diagrams, frequency tables, simulation results |
 
 
-## Full Topic List — Files to Create
+## Discovering Topics — Use `get_chapter_topic_facts.py`
 
-### Core Topics → `tests_questions_bank/topics/`
+run the lookup script for each chapter to get the authoritative list of topics:
 
-Create one question bank file for each of the 56 core topic files in `topics/`. These are derived directly from `topics_config.yaml`:
+```bash
+python3 scripts/get_chapter_topic_facts.py --chapter <N>
+```
 
-| File | Topic |
-|---|---|
-| `ch01-01-unit-rates-with-fractions.tex` | Unit Rates with Fractions |
-| `ch01-02-recognizing-proportional-relationships.tex` | Recognizing Proportional Relationships |
-| `ch01-03-finding-the-constant-of-proportionality.tex` | Finding the Constant of Proportionality |
-| `ch01-04-writing-equations-for-proportional-relationships.tex` | Writing Equations for Proportional Relationships |
-| `ch01-05-graphing-proportional-relationships.tex` | Graphing Proportional Relationships |
-| `ch01-06-applying-proportional-reasoning.tex` | Applying Proportional Reasoning to Real-World Problems |
-| `ch02-01-solving-percent-problems.tex` | Solving Percent Problems |
-| `ch02-02-connecting-percents-and-proportions.tex` | Connecting Percents and Proportions |
-| `ch02-03-percent-increase-and-decrease.tex` | Percent Increase and Decrease |
-| `ch02-04-markups-discounts-and-sales-tax.tex` | Markups, Discounts, and Sales Tax |
-| `ch02-05-tips-commissions-and-fees.tex` | Tips, Commissions, and Fees |
-| `ch02-06-simple-interest.tex` | Simple Interest: Earning and Paying Interest |
-| `ch02-07-percent-error.tex` | Percent Error: How Close Are Your Estimates? |
-| `ch03-01-integers-and-their-opposites.tex` | Integers and Their Opposites |
-| `ch03-02-adding-integers.tex` | Adding Integers |
-| `ch03-03-subtracting-integers.tex` | Subtracting Integers |
-| `ch03-04-adding-and-subtracting-rational-numbers.tex` | Adding and Subtracting Rational Numbers |
-| `ch03-05-multiplying-integers-and-rational-numbers.tex` | Multiplying Integers and Rational Numbers |
-| `ch03-06-dividing-integers-and-rational-numbers.tex` | Dividing Integers and Rational Numbers |
-| `ch03-07-converting-rational-numbers-to-decimals.tex` | Converting Rational Numbers to Decimals |
-| `ch03-08-solving-real-world-problems-with-rational-numbers.tex` | Solving Real-World Problems with Rational Numbers |
-| `ch04-01-writing-and-evaluating-expressions.tex` | Writing and Evaluating Expressions |
-| `ch04-02-simplifying-expressions-by-combining-like-terms.tex` | Simplifying Expressions by Combining Like Terms |
-| `ch04-03-expanding-expressions-with-the-distributive-property.tex` | Expanding Expressions with the Distributive Property |
-| `ch04-04-factoring-expressions.tex` | Factoring Expressions |
-| `ch04-05-adding-and-subtracting-linear-expressions.tex` | Adding and Subtracting Linear Expressions |
-| `ch04-06-rewriting-expressions-to-solve-problems.tex` | Rewriting Expressions to Solve Problems |
-| `ch05-01-writing-two-step-equations.tex` | Writing Two-Step Equations from Word Problems |
-| `ch05-02-solving-two-step-equations.tex` | Solving Two-Step Equations |
-| `ch05-03-solving-equations-with-distributive-property.tex` | Solving Equations with the Distributive Property |
-| `ch05-04-solving-multi-step-problems-with-rational-numbers.tex` | Solving Multi-Step Problems with Rational Numbers |
-| `ch05-05-writing-and-solving-inequalities.tex` | Writing and Solving Inequalities |
-| `ch05-06-graphing-solutions-to-inequalities.tex` | Graphing Solutions to Inequalities on a Number Line |
-| `ch06-01-understanding-and-using-scale-drawings.tex` | Understanding and Using Scale Drawings |
-| `ch06-02-reproducing-scale-drawings.tex` | Reproducing Scale Drawings at a Different Scale |
-| `ch06-03-drawing-geometric-figures.tex` | Drawing Geometric Figures with Given Conditions |
-| `ch06-04-constructing-triangles.tex` | Constructing Triangles from Three Measurements |
-| `ch06-05-cross-sections-of-3d-figures.tex` | Cross-Sections of Three-Dimensional Figures |
-| `ch06-06-angle-relationships.tex` | Angle Relationships: Supplementary, Complementary, and Vertical Angles |
-| `ch07-01-parts-of-a-circle.tex` | Parts of a Circle |
-| `ch07-02-circumference-of-a-circle.tex` | Circumference of a Circle |
-| `ch07-03-area-of-a-circle.tex` | Area of a Circle |
-| `ch07-04-area-of-composite-shapes.tex` | Area of Composite Shapes |
-| `ch07-05-surface-area-of-3d-objects.tex` | Surface Area of Three-Dimensional Objects |
-| `ch07-06-volume-of-prisms.tex` | Volume of Prisms |
-| `ch08-01-populations-and-samples.tex` | Populations and Samples |
-| `ch08-02-making-inferences-from-random-samples.tex` | Making Inferences from Random Samples |
-| `ch08-03-comparing-two-populations-visually.tex` | Comparing Two Populations Visually |
-| `ch08-04-comparing-populations-with-measures.tex` | Comparing Populations with Measures of Center and Variability |
-| `ch09-01-what-is-probability.tex` | What Is Probability? |
-| `ch09-02-theoretical-probability.tex` | Theoretical Probability |
-| `ch09-03-experimental-probability.tex` | Experimental Probability |
-| `ch09-04-probability-models.tex` | Probability Models |
-| `ch09-05-sample-spaces-for-compound-events.tex` | Sample Spaces for Compound Events |
-| `ch09-06-finding-probabilities-of-compound-events.tex` | Finding Probabilities of Compound Events |
-| `ch09-07-simulating-compound-events.tex` | Simulating Compound Events |
+The script prints a structured report containing:
+- **TOPICS** — core topics → question bank files go in `tests_questions_bank_2/topics/`
+- **ADDITIONAL TOPICS** — state-specific topics → files go in `tests_questions_bank_2/topics_additional/`
+- **MODIFIED TOPICS** — state-specific variants of core topics → files go in `tests_questions_bank_2/topics_modified/`
 
-### Additional Topics → `tests_questions_bank/topics_additional/`
+For each topic the script outputs: topic ID, name, file path (relative to workspace root), summary, and (for additional/modified) which states use it.
 
-Create one question bank file for each of the 14 additional topic files in `topics_additional/`. These map to the `additional_topics` list in `topics_config.yaml`:
-
-| File | Topic | States That Use It |
-|---|---|---|
-| `ch01-07-proportional-reasoning-with-scale-models.tex` | Proportional Reasoning with Scale Models | OK |
-| `ch02-08-personal-financial-literacy.tex` | Personal Financial Literacy | MN, OK, TX |
-| `ch02-09-financial-literacy-budgeting-saving-and-investing.tex` | Financial Literacy — Budgeting, Saving, and Investing | TX |
-| `ch02-10-compound-interest-introduction.tex` | Compound Interest Introduction | TX |
-| `ch03-09-introduction-to-square-roots.tex` | Introduction to Square Roots | VA |
-| `ch03-10-rational-number-operations-in-extended-contexts.tex` | Rational Number Operations in Extended Contexts | AK |
-| `ch03-11-introduction-to-scientific-notation.tex` | Introduction to Scientific Notation | VA |
-| `ch04-07-laws-of-exponents.tex` | Laws of Exponents | FL, VA |
-| `ch06-07-transformations-on-the-coordinate-plane.tex` | Transformations on the Coordinate Plane | IN, VA |
-| `ch06-08-similar-figures-and-proportions.tex` | Similar Figures and Proportions | TX, VA |
-| `ch07-07-cylinder-surface-area-and-volume.tex` | Cylinder Surface Area and Volume | FL, VA |
-| `ch08-05-stem-and-leaf-plots.tex` | Stem-and-Leaf Plots | FL, OK, TX, VA |
-| `ch08-06-circle-graphs.tex` | Circle Graphs | FL, MN, TX, VA |
-| `ch08-07-data-displays-extended.tex` | Data Displays Extended | AK, IN, OK |
-
-### Modified Topics → `tests_questions_bank/topics_modified/`
-
-Create one question bank file for each modified topic file in `topics_modified/`. These are state-specific variants of core topics; each file replaces the standard version for the states listed. Read the **modified** file (not the original in `topics/`) before writing questions:
-
-| File | Topic | States | What Changed |
-|---|---|---|---|
-| `ch01-06-applying-proportional-reasoning.tex` | Applying Proportional Reasoning | OK | OAS-M estimation emphasis — adds estimation as 5th strategy; estimate-first + reasonableness check |
-| `ch02-01-solving-percent-problems.tex` | Solving Percent Problems | MN | MN percent-application emphasis — adds financial contexts (discount, markup, tax, tip) |
-| `ch02-06-simple-interest.tex` | Simple Interest | FL, TX | Financial literacy emphasis — expands I = Prt with savings/loan comparisons, real-world financial decisions |
-| `ch03-01-integers-and-their-opposites.tex` | Integers and Their Opposites | VA | VA SOL rational number emphasis — ordering, comparison, number-line contexts with inequality symbols |
-| `ch03-08-solving-real-world-problems-with-rational-numbers.tex` | Solving Real-World Problems with Rational Numbers | AK | Culturally responsive Alaskan contexts — temperatures, fisheries, elevation, subsistence economy |
-| `ch06-03-drawing-geometric-figures.tex` | Drawing Geometric Figures | IN | IAS 2023 construction emphasis — justifying construction steps; technology-based methods |
-| `ch06-06-angle-relationships.tex` | Angle Relationships | VA | Extended angle emphasis — congruence/similarity connections, multi-step algebraic angle problems |
-| `ch08-01-populations-and-samples.tex` | Populations and Samples | OK, TX | Experimental design emphasis — designing experiments and collecting data as precursors |
-| `ch08-03-comparing-two-populations-visually.tex` | Comparing Two Populations Visually | FL, IN, MN, VA | Multiple display emphasis — stem-and-leaf, circle graphs, frequency tables alongside standard displays |
-| `ch08-04-comparing-populations-with-measures.tex` | Comparing Populations with Measures | AK, OK, TX | Extended measures emphasis — IQR/range over MAD; localised/financial data contexts |
-| `ch09-03-experimental-probability.tex` | Experimental Probability | FL, TX | Simulation emphasis — random-number generators, frequency tables, experimental vs theoretical comparison |
+You must create a question bank file for **every** topic the script returns — core, additional, and modified.
 
 **Important for modified topics**: Read the **modified** version of the topic file (in `topics_modified/`), not the original in `topics/`. The questions should test the enhanced content that was added for state-specific standards.
 
 ## Execution Plan
 
-When asked to write the question banks, follow this order:
+When asked to write question banks, process **one chapter at a time**:
 
-1. **Read the topic file** from the source directory (`topics/`, `topics_additional/`, or `topics_modified/`)
-2. **Write the question bank file** in the corresponding `tests_questions_bank/` subdirectory
+1. **Run the script**: `python3 scripts/get_chapter_topic_facts.py --chapter <N>` to discover all topics for the chapter
+2. **For each topic** returned (core, additional, modified):
+   a. **Read the topic file** from the path shown in the script output
+   b. **Write the question bank file** in the corresponding `tests_questions_bank_2/` subdirectory
 3. **Work in chapter order** (Ch 1 → Ch 2 → ... → Ch 9), core topics first, then additional, then modified
 4. **Verify** that all IDs are sequential and unique within each file
 5. **Verify** all answers are mathematically correct
@@ -552,16 +523,12 @@ When asked to write the question banks, follow this order:
 
 Write question banks in batches of 5–8 topics at a time to maintain quality. After each batch:
 - Confirm all files were created
-- Run `python3 scripts/generate_practice_tests.py --states california --num-tests 3` to verify the parser picks up the new files
+- Run `python3 scripts/generate_practice_tests.py --bank 2 --states california --num-tests 3` to verify the parser picks up the new files
 - Check that the question count matches expectations
 
 ### Progress Tracking
 
-Track which topics have been completed. The full count is:
-- 56 core topic files
-- 14 additional topic files
-- 11 modified topic files (state-specific variants)
-- **Total: 81 question bank files** (81 × 30 = 2,430 questions)
+Track which topics have been completed per chapter. Use the script's COUNTS section to know how many files each chapter needs.
 
 ## LaTeX Environment Definitions
 
@@ -575,7 +542,29 @@ The following environments and commands are defined in `VM_packages/VMfunPractic
 
 Types `sa` and `gsa` automatically render an answer box for students. Types `gmc` and `gsa` are identical to `mc` and `sa` in rendering — the type distinction exists only so the generation script can identify graphical questions.
 
-### Important notes ####
-- Just write the standard test questions. You don't need to compile or create a book. We will do this later.
-- As summary, just give me a list of files created.
+## Final Step: Create Practice Test-Style Review LaTeX File
+After writing question bank files for a chapter, create a LaTeX file in `tests/` named `grade[number]_test_questions_bank_2_ch<N>.tex`.
 
+The file must follow the **practice tests book pattern**, not a plain chapter handout:
+- Enable practice-test answer collection with `\enablePracticeTestAnswers`
+- Start the document with `\practiceTestPage{1}{<total question count>}` so the answer system groups the content as a real practice test
+- Show the grade, chapter number, and chapter title near the front so the PDF clearly identifies what chapter review it is
+- Include all new question bank files for that chapter from `tests_questions_bank_2/`
+- Add `\testScorePage{1}{<total question count>}` before the answer key so the review feels like the practice test books
+- End with `\printAnswerKey`
+
+Important: the compiled PDF must print **both answers and detailed explanations** at the end, in the same grouped format used by the practice test books. Using only `\enablePracticeTestAnswers` without `\practiceTestPage` is not enough.
+
+## Checklist
+
+- [ ] Ran `python3 scripts/get_chapter_topic_facts.py --chapter <N>` to discover topics, grade, and audience
+- [ ] Read every topic source file listed by the script (core + additional + modified)
+- [ ] File placed in correct folder (`tests_questions_bank_2/topics/`, `tests_questions_bank_2/topics_additional/`, or `tests_questions_bank_2/topics_modified/`) and the header comment block present with topic title and question count
+- [ ] Contains **exactly 27 questions**: 15 MC (`q01`-`q15`) + 6 SA (`q16`-`q21`) + 6 Graphical (`q22`-`q27`: 3 `gmc` + 3 `gsa`)
+- [ ] Graphical questions (`gmc`/`gsa`) include a TikZ figure or visual command that IS the question — not decoration and graphical visuals show ALL relevant information and are clearly labeled and graphical questions use **varied visual types**
+- [ ] All answers are **mathematically correct** (verified by hand)
+- [ ] Content exactly stays within scope of THIS topic only
+- [ ] Grade-appropriate language and numbers for the target audience (from script output)
+- [ ] Every question reads like a **realistic state standardized test item** 
+- [ ] Questions are **completely different** from any questions in `tests_questions_bank/` (bank 1) — no duplicate or near-duplicate questions across banks
+- [ ] Create a practice-test-style review file in `tests/` named `grade[number]_test_questions_bank_2_ch<N>.tex` that uses `\practiceTestPage{1}{<total question count>}`, clearly shows the grade/chapter/title, `\input`s all new question bank files from `tests_questions_bank_2/`, adds `\testScorePage{1}{<total question count>}`, compiles successfully, and prints both answers and detailed explanations in the PDF

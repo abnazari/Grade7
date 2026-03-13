@@ -111,6 +111,24 @@ BOOK_TYPES: Dict[str, dict] = {
         "description": "10 full-length practice tests",
         "test_range": (16, 25),    # practice_test_16 through 25
     },
+    "6_practice_tests": {
+        "template": "6_practice_tests_main.tex",
+        "description": "6 full-length practice tests (bank 2)",
+        "test_range": (1, 6),      # practice_test_01 through 06
+        "practice_dir": "practice_tests_2",
+    },
+    "9_practice_tests": {
+        "template": "9_practice_tests_main.tex",
+        "description": "9 full-length practice tests (bank 2)",
+        "test_range": (7, 15),     # practice_test_07 through 15
+        "practice_dir": "practice_tests_2",
+    },
+    "12_practice_tests": {
+        "template": "12_practice_tests_main.tex",
+        "description": "12 full-length practice tests (bank 2)",
+        "test_range": (16, 27),    # practice_test_16 through 27
+        "practice_dir": "practice_tests_2",
+    },
     "in_30_days": {
         "template": "in30days_main.tex",
         "description": "30-day calendar-based study guide",
@@ -476,6 +494,7 @@ def generate_practice_tests_from_template(
     test_end: int,
     workspace: Path,
     config: TopicsConfig,
+    practice_dir_name: str = "practice_tests",
 ) -> str:
     r"""Generate a state-specific practice test book by transforming a template.
 
@@ -494,13 +513,11 @@ def generate_practice_tests_from_template(
     Test ranges are non-overlapping across book types so a student who
     buys multiple books always gets unique tests:
 
-        3_practice_tests  → tests  1–3
-        5_practice_tests  → tests  4–8
-        7_practice_tests  → tests  9–15
-        10_practice_tests → tests 16–25
+        Bank 1: 3→1–3, 5→4–8, 7→9–15, 10→16–25
+        Bank 2: 6→1–6, 9→7–15, 12→16–27
     """
     # ── Verify that practice test files exist for this state ─────────
-    practice_dir = workspace / "practice_tests" / state_slug
+    practice_dir = workspace / practice_dir_name / state_slug
     available_count = 0
     for i in range(test_start, test_end + 1):
         test_file = practice_dir / f"practice_test_{i:02d}.tex"
@@ -759,10 +776,12 @@ def main() -> None:
                 # ── Practice tests (template-based) ─────────────────────
                 num_tests = int(bt_key.split("_")[0])  # 3, 5, 7, etc.
                 test_start, test_end = bt_cfg["test_range"]
+                practice_dir_name = bt_cfg.get("practice_dir", "practice_tests")
                 content = generate_practice_tests_from_template(
                     template_path, slug, state_name,
                     num_tests, test_start, test_end,
                     workspace, config,
+                    practice_dir_name=practice_dir_name,
                 )
             else:
                 print(f"  🚫 Unknown book type: {bt_key}")

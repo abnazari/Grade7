@@ -6,26 +6,31 @@ For each state, this script:
   1. Determines which topics apply (core CCSS + state-specific additions)
   2. Loads raw question blocks from question bank files
   3. When a state has more than 30 topics, randomly selects 30
-  4. Generates 25 practice tests (3+5+7+10), each with 30 questions
+  4. Generates practice tests, each with 30 questions
   5. Ensures every question is unique across ALL tests for the same state
   6. Outputs one .tex file per test containing ONLY the question blocks
 
-Book types use non-overlapping test ranges:
+Two independent question banks are supported via --bank:
+
+  Bank 1 (default):  tests_questions_bank/  → practice_tests/
     3_practice_tests  → tests  1–3
     5_practice_tests  → tests  4–8
     7_practice_tests  → tests  9–15
-    10_practice_tests → tests 16–25
+    10_practice_tests → tests 16–25   (25 tests total)
+
+  Bank 2:            tests_questions_bank_2/ → practice_tests_2/
+    6_practice_tests  → tests  1–6
+    9_practice_tests  → tests  7–15
+    12_practice_tests → tests 16–27   (27 tests total)
 
 Output structure:
-    practice_tests/<state>/practice_test_01.tex
-    practice_tests/<state>/practice_test_02.tex
-    ...
-    practice_tests/<state>/practice_test_25.tex
+    practice_tests/<state>/practice_test_01.tex   (bank 1)
+    practice_tests_2/<state>/practice_test_01.tex  (bank 2)
 
 Each file contains raw \\begin{practiceQuestion}...\\end{practiceQuestion}
 blocks that can be \\input'd into a main.tex file later.
 
-Question bank format (in tests_questions_bank/topics/):
+Question bank format (in tests_questions_bank[_2]/topics/):
     \\begin{practiceQuestion}{ID}{TYPE}
     \\begin{questionText}
     ...
@@ -39,8 +44,11 @@ Question bank format (in tests_questions_bank/topics/):
     \\end{practiceQuestion}
 
 Usage:
-    # Generate 25 practice tests for all 50 states
+    # Generate tests from bank 1 (default) for all states
     python3 scripts/generate_practice_tests.py
+
+    # Generate tests from bank 2
+    python3 scripts/generate_practice_tests.py --bank 2
 
     # Specific states
     python3 scripts/generate_practice_tests.py --states texas,california
@@ -120,24 +128,30 @@ def parse_raw_questions(filepath: Path, topic_id: str) -> List[RawQuestion]:
 
 def load_all_question_banks(
     workspace: Path,
+    bank: int = 1,
 ) -> tuple[Dict[str, List[RawQuestion]], Dict[str, List[RawQuestion]]]:
     """Load all question banks from the workspace.
 
-    Scans three question-bank directories:
-      - tests_questions_bank/topics/           (core CCSS)
-      - tests_questions_bank/topics_additional/ (supplementary)
-      - tests_questions_bank/topics_modified/    (state-modified)
+    Scans three question-bank directories under the selected bank root:
+      - tests_questions_bank[_2]/topics/           (core CCSS)
+      - tests_questions_bank[_2]/topics_additional/ (supplementary)
+      - tests_questions_bank[_2]/topics_modified/    (state-modified)
 
     Modified banks are kept separate because they share topic IDs with core
     banks — they must only replace core questions for states that actually
     require the modification (listed in the YAML config).
+
+    Args:
+        workspace: Path to the workspace root.
+        bank: Which question bank set to use (1 or 2).
 
     Returns:
         (core_banks, modified_banks) — each mapping topic_id → list of RawQuestion
     """
     core_banks: Dict[str, List[RawQuestion]] = {}
     modified_banks: Dict[str, List[RawQuestion]] = {}
-    bank_root = workspace / "tests_questions_bank"
+    bank_dir_name = "tests_questions_bank" if bank == 1 else "tests_questions_bank_2"
+    bank_root = workspace / bank_dir_name
 
     # ── Core + additional (shared by all states) ────────────────────────
     for scan_dir in [bank_root / "topics", bank_root / "topics_additional"]:
@@ -811,6 +825,13 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Override workspace root path (default: auto-detect)",
     )
+    parser.add_argument(
+        "--bank",
+        type=int,
+        default=1,
+        choices=[1, 2],
+        help="Which question bank set to use: 1 (tests_questions_bank/) or 2 (tests_questions_bank_2/). Default: 1",
+    )
     return parser.parse_args()
 
 
@@ -842,14 +863,17 @@ def main():
             state_slugs = [s.strip().lower() for s in states_input.split(",")]
 
     # Load question banks
-    print(f"\nLoading question banks...")
-    core_banks, modified_banks = load_all_question_banks(workspace)
+    bank_label = f"bank {args.bank}"
+    bank_dir_name = "tests_questions_bank" if args.bank == 1 else "tests_questions_bank_2"
+    output_dir_name = "practice_tests" if args.bank == 1 else "practice_tests_2"
+    print(f"\nLoading question banks ({bank_label}: {bank_dir_name}/)...")
+    core_banks, modified_banks = load_all_question_banks(workspace, bank=args.bank)
     print(f"  Total: {len(core_banks)} core/additional + "
           f"{len(modified_banks)} modified topic banks loaded")
 
     if not core_banks:
-        print("ERROR: No question banks found. "
-              "Create .tex files in tests_questions_bank/topics/")
+        print(f"ERROR: No question banks found. "
+              f"Create .tex files in {bank_dir_name}/topics/")
         sys.exit(1)
 
     # Generate tests for each state
@@ -914,7 +938,7 @@ def main():
         )
 
         # Write one file per test (clean old files first)
-        output_dir = workspace / "practice_tests" / state_slug
+        output_dir = workspace / output_dir_name / state_slug
         output_dir.mkdir(parents=True, exist_ok=True)
         for old_file in output_dir.glob("practice_test_*.tex"):
             old_file.unlink()
@@ -928,7 +952,7 @@ def main():
             output_path.write_text(content, encoding="utf-8")
             total_files += 1
 
-        print(f"    Written {len(tests)} files to practice_tests/{state_slug}/")
+        print(f"    Written {len(tests)} files to {output_dir_name}/{state_slug}/")
 
     print(f"\nDone! Generated {total_files} practice test file(s).")
 

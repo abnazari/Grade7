@@ -125,6 +125,27 @@ BOOK_TYPES: Dict[str, dict] = {
         "description": "10 full-length practice tests",
         "test_range": (16, 25),
     },
+    "6_practice_tests": {
+        "template": "6_practice_tests_main.tex",
+        "output_subdir": "6_practice_tests",
+        "description": "6 full-length practice tests (bank 2)",
+        "test_range": (1, 6),
+        "practice_dir": "practice_tests_2",
+    },
+    "9_practice_tests": {
+        "template": "9_practice_tests_main.tex",
+        "output_subdir": "9_practice_tests",
+        "description": "9 full-length practice tests (bank 2)",
+        "test_range": (7, 15),
+        "practice_dir": "practice_tests_2",
+    },
+    "12_practice_tests": {
+        "template": "12_practice_tests_main.tex",
+        "output_subdir": "12_practice_tests",
+        "description": "12 full-length practice tests (bank 2)",
+        "test_range": (16, 27),
+        "practice_dir": "practice_tests_2",
+    },
     "in_30_days": {
         "template": "in30days_main.tex",
         "output_subdir": "in_30_days",
@@ -460,6 +481,9 @@ BOOK_DISPLAY_NAMES: Dict[str, str] = {
     "5_practice_tests": "5 Practice Tests",
     "7_practice_tests": "7 Practice Tests",
     "10_practice_tests": "10 Practice Tests",
+    "6_practice_tests": "6 Practice Tests",
+    "9_practice_tests": "9 Practice Tests",
+    "12_practice_tests": "12 Practice Tests",
     "in_30_days": "Math in 30 Days",
     "quiz": "Quizzes",
     "puzzles": "Puzzles & Brain Teasers",
@@ -511,6 +535,18 @@ GENERIC_BOOK_TITLES: Dict[str, Tuple[str, str]] = {
     "10_practice_tests": (
         "10 Full-Length Grade 7 Math Practice Tests",
         "The Ultimate Test Prep Collection with Answer Explanations",
+    ),
+    "6_practice_tests": (
+        "6 Full-Length Grade 7 Math Practice Tests",
+        "Targeted Test Prep with Step-by-Step Answer Explanations",
+    ),
+    "9_practice_tests": (
+        "9 Full-Length Grade 7 Math Practice Tests",
+        "In-Depth Practice for Exam Day Confidence",
+    ),
+    "12_practice_tests": (
+        "12 Full-Length Grade 7 Math Practice Tests",
+        "The Complete Test Prep Library with Detailed Answer Keys",
     ),
     "in_30_days": (
         "Grade 7 Math in 30 Days",
@@ -689,6 +725,18 @@ _TITLE_TEMPLATES: Dict[str, Tuple[str, str]] = {
         "10 {state} {exam} Grade {grade_n} Math Practice Tests",
         "The Ultimate Test Prep Collection with Answer Explanations",
     ),
+    "6_practice_tests": (
+        "6 {state} {exam} Grade {grade_n} Math Practice Tests",
+        "Targeted Test Prep with Step-by-Step Answer Explanations",
+    ),
+    "9_practice_tests": (
+        "9 Full-Length {state} {exam} Grade {grade_n} Math Practice Tests",
+        "In-Depth Practice for Exam Day Confidence",
+    ),
+    "12_practice_tests": (
+        "12 {state} {exam} Grade {grade_n} Math Practice Tests",
+        "The Complete Test Prep Library with Detailed Answer Keys",
+    ),
     "in_30_days": (
         "{state} {exam} Grade {grade_n} Math in 30 Days",
         "Day by Day Study Plan for Test Prep",
@@ -821,6 +869,44 @@ _TPT_TIERS: Dict[str, Dict[str, list]] = {
             "Complete Test Prep with Answers",                            # 31
             "Answers & Explanations",                                     # 22
             "Answer Key Included",                                        # 19
+        ],
+    },
+    "6_practice_tests": {
+        "titles": [
+            "6 {state} {exam} Grade {grade_n} Math Practice Tests",
+        ],
+        "subtitles": [
+            "Targeted Test Prep with Step-by-Step Answer Explanations",  # 55
+            "Targeted Test Prep with Answer Explanations",               # 44
+            "Test Prep with Step-by-Step Answers",                       # 34
+            "Test Prep & Answer Explanations",                           # 30
+            "Answers & Explanations",                                    # 22
+        ],
+    },
+    "9_practice_tests": {
+        "titles": [
+            "9 Full-Length {state} {exam} Grade {grade_n} Math Practice Tests",
+            "9 {state} {exam} Grade {grade_n} Math Practice Tests",
+        ],
+        "subtitles": [
+            "In-Depth Practice for Exam Day Confidence",            # 41
+            "In-Depth Practice for Test Day",                       # 30
+            "Extra Practice & Test Prep",                           # 26
+            "Answers & Explanations",                               # 22
+            "Answer Key Included",                                  # 19
+        ],
+    },
+    "12_practice_tests": {
+        "titles": [
+            "12 {state} {exam} Grade {grade_n} Math Practice Tests",
+        ],
+        "subtitles": [
+            "The Complete Test Prep Library with Detailed Answer Keys",  # 55
+            "Complete Test Prep with Detailed Answer Keys",              # 44
+            "Test Prep with Detailed Answer Keys",                       # 34
+            "Test Prep & Detailed Answers",                              # 28
+            "Answers & Explanations",                                    # 22
+            "Answer Key Included",                                       # 19
         ],
     },
     "in_30_days": {
