@@ -1,0 +1,114 @@
+\documentclass[12pt, fleqn, openany]{studyGuide}
+\setstretch{1.4}
+\enableInlineReview
+\renewcommand{\VMBookTitle}{Audit Review}
+\renewcommand{\VMBookSubtitle}{Grade 7 --- Ch Graphic Review --- Changed Questions}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\begin{document}
+
+\begin{center}
+\begin{tcolorbox}[
+	enhanced,
+	colback=white,
+	colframe=funTeal!60,
+	boxrule=1.5pt,
+	arc=10pt,
+	outer arc=10pt,
+	width=0.9\linewidth,
+	halign=center,
+	top=5mm, bottom=5mm,
+]
+	{\Large\bfseries\sffamily\color{funTealDark}Audit Review}\\[2mm]
+	{\large\sffamily\color{funGrayDark}Grade 7 --- Ch Graphic Review --- Changed Questions}\\[2mm]
+	{\normalsize\sffamily\color{funGrayDark}Verify corrections below}
+\end{tcolorbox}
+\end{center}
+
+\newpage
+\section*{2-1-q26 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch02-01-solving-percent-problems.tex}}
+\begin{practiceQuestion}{2-1-q26}{gsa}
+\begin{questionText}
+The circle graph below shows how a student spends $20$ hours each week on activities. How many hours does the student spend on homework?
+
+\begin{center}
+\begin{tikzpicture}[scale=1.7]
+  % Pie chart: Sports 30%, Homework 25%, Video games 20%, Reading 25%
+  \fill[funBlue!50] (0,0) -- (90:1) arc (90:198:1) -- cycle;
+  \fill[funGreen!50] (0,0) -- (198:1) arc (198:270:1) -- cycle;
+  \fill[funOrange!50] (0,0) -- (270:1) arc (270:360:1) -- cycle;
+  \fill[funRed!50] (0,0) -- (0:1) arc (0:90:1) -- cycle;
+  \draw (0,0) circle (1);
+  \draw (0,0) -- (90:1); \draw (0,0) -- (198:1);
+  \draw (0,0) -- (270:1); \draw (0,0) -- (0:1);
+  \node[font=\small, align=center] at (144:0.6) {Sports\\$30\%$};
+  \node[font=\small, align=center] at (234:0.6) {Games\\$20\%$};
+  \node[font=\small, align=center] at (315:0.6) {Reading\\$25\%$};
+  \node[font=\small, align=center] at (45:0.6) {HW\\$25\%$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\correctAnswer{$5$ hours}
+\explanation{Homework is $25\%$ of the $20$ hours. Multiply: $0.25 \times 20 = 5$ hours on homework.}
+\end{practiceQuestion}
+
+\newpage
+\section*{m-2-1-q23 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics\_modified/ch02-01-solving-percent-problems.tex}}
+\begin{practiceQuestion}{m-2-1-q23}{gmc}
+\begin{questionText}
+The bar graph shows a family's monthly spending. What percent of their total spending goes to food?
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.85, yscale=0.5]
+  \draw[thick,->] (0,0) -- (0,6) node[above]{\small Amount (\$)};
+  \draw[thick,->] (0,0) -- (10,0);
+  \fill[funBlue!60] (0.5,0) rectangle (2,5);
+  \fill[funGreen!60] (2.5,0) rectangle (4,3);
+  \fill[funOrange!60] (4.5,0) rectangle (6,1);
+  \fill[funRed!60] (6.5,0) rectangle (8,1);
+  \node[below,font=\small] at (1.25,0) {Housing};
+  \node[below,font=\small] at (3.25,0) {Food};
+  \node[below,font=\small] at (5.25,0) {Trans.};
+  \node[below,font=\small] at (7.25,0) {Other};
+  \foreach \y/\lab in {1/400,2/800,3/1200,4/1600,5/2000} {
+    \draw (-0.1,\y) -- (0.1,\y) node[left,font=\small,xshift=-2pt] {\lab};
+  }
+  \node[above,font=\small] at (1.25,5) {$\$2{,}000$};
+  \node[above,font=\small] at (3.25,3) {$\$1{,}200$};
+  \node[above,font=\small] at (5.25,1) {$\$400$};
+  \node[above,font=\small] at (7.25,1) {$\$400$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{$20\%$}
+\choiceB{$25\%$}
+\choiceC{$30\%$}
+\choiceD{$50\%$}
+\correctAnswer{C}
+\explanation{Total: $2{,}000 + 1{,}200 + 400 + 400 = \$4{,}000$. Food: $1{,}200 \div 4{,}000 = 0.30 = 30\%$.}
+\end{practiceQuestion}
+
+\newpage
+\section*{m-2-1-q26 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics\_modified/ch02-01-solving-percent-problems.tex}}
+\begin{practiceQuestion}{m-2-1-q26}{gsa}
+\begin{questionText}
+The circle graph shows how $200$ students chose their favorite sport. How many more chose basketball than soccer?
+
+\begin{center}
+\begin{tikzpicture}[scale=1.7]
+  \fill[funBlue!50] (0,0) -- (90:1) arc (90:198:1) -- cycle;
+  \fill[funGreen!50] (0,0) -- (198:1) arc (198:306:1) -- cycle;
+  \fill[funOrange!50] (0,0) -- (306:1) arc (306:450:1) -- cycle;
+  \draw (0,0) circle (1);
+  \draw (0,0) -- (90:1); \draw (0,0) -- (198:1); \draw (0,0) -- (306:1);
+  \node[font=\small, align=center] at (144:0.6) {Basketball\\$30\%$};
+  \node[font=\small, align=center] at (252:0.6) {Soccer\\$30\%$};
+  \node[font=\small, align=center] at (18:0.6) {Football\\$40\%$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\correctAnswer{$0$ (they are equal)}
+\explanation{Basketball: $200 \times 0.30 = 60$. Soccer: $200 \times 0.30 = 60$. Difference: $60 - 60 = 0$. They are equal.}
+\end{practiceQuestion}
+
+\end{document}

@@ -271,24 +271,28 @@ What is the probability that the sum is $8$?
 The tree diagram below shows the outcomes for choosing a sandwich type and a side dish.
 
 \begin{center}
-\begin{tikzpicture}[level distance=2.5cm, sibling distance=3cm,
-  edge from parent/.style={draw,-latex}]
-  \node {Start}
-    child { node {Ham}
-      child { node {Chips} edge from parent node[left] {} }
-      child { node {Fruit} edge from parent node[right] {} }
-      edge from parent node[left] {}
-    }
-    child { node {Turkey}
-      child { node {Chips} edge from parent node[left] {} }
-      child { node {Fruit} edge from parent node[right] {} }
-      edge from parent node[right] {}
-    }
-    child { node {Veggie}
-      child { node {Chips} edge from parent node[left] {} }
-      child { node {Fruit} edge from parent node[right] {} }
-      edge from parent node[right] {}
-    };
+\begin{tikzpicture}[x=1cm, y=1cm, >=Latex, font=\small]
+  \node at (0,4.4) {Start};
+  \node at (-3.2,2.8) {Ham};
+  \node at (0,2.8) {Turkey};
+  \node at (3.2,2.8) {Veggie};
+  \node at (-4.5,0.9) {Chips};
+  \node at (-1.9,0.9) {Fruit};
+  \node at (-1.3,0.9) {Chips};
+  \node at (1.3,0.9) {Fruit};
+  \node at (1.9,0.9) {Chips};
+  \node at (4.5,0.9) {Fruit};
+
+  \draw[thick,->] (0,4.12) -- (-3.2,3.08);
+  \draw[thick,->] (0,4.12) -- (0,3.08);
+  \draw[thick,->] (0,4.12) -- (3.2,3.08);
+
+  \draw[thick,->] (-3.2,2.48) -- (-4.5,1.18);
+  \draw[thick,->] (-3.2,2.48) -- (-1.9,1.18);
+  \draw[thick,->] (0,2.48) -- (-1.3,1.18);
+  \draw[thick,->] (0,2.48) -- (1.3,1.18);
+  \draw[thick,->] (3.2,2.48) -- (1.9,1.18);
+  \draw[thick,->] (3.2,2.48) -- (4.5,1.18);
 \end{tikzpicture}
 \end{center}
 
@@ -352,23 +356,30 @@ What is the probability of getting tails and a number greater than $2$? Express 
 The tree diagram shows outcomes for choosing an appetizer and an entree at a restaurant.
 
 \begin{center}
-\begin{tikzpicture}[level distance=2.5cm, sibling distance=2cm,
-  edge from parent/.style={draw,-latex}]
-  \node {Start}
-    child { node {Soup}
-      child { node {Steak} edge from parent node[left] {\footnotesize S} }
-      child { node {Pasta} edge from parent node[left] {\footnotesize P} }
-      child { node {Fish} edge from parent node[right] {\footnotesize F} }
-      child { node {Salad} edge from parent node[right] {\footnotesize Sa} }
-      edge from parent node[left] {}
-    }
-    child { node {Bread}
-      child { node {Steak} edge from parent node[left] {\footnotesize S} }
-      child { node {Pasta} edge from parent node[left] {\footnotesize P} }
-      child { node {Fish} edge from parent node[right] {\footnotesize F} }
-      child { node {Salad} edge from parent node[right] {\footnotesize Sa} }
-      edge from parent node[right] {}
-    };
+\begin{tikzpicture}[x=0.9cm, y=0.9cm, >=Latex, font=\small]
+  \node at (0,5.1) {Start};
+  \node at (-2.8,3.4) {Soup};
+  \node at (2.8,3.4) {Bread};
+  \node at (-5.8,1.1) {Steak};
+  \node at (-4.0,1.1) {Pasta};
+  \node at (-2.2,1.1) {Fish};
+  \node at (-0.4,1.1) {Salad};
+  \node at (1.4,1.1) {Steak};
+  \node at (3.2,1.1) {Pasta};
+  \node at (5.0,1.1) {Fish};
+  \node at (6.8,1.1) {Salad};
+
+  \draw[thick,->] (0,4.78) -- (-2.8,3.66);
+  \draw[thick,->] (0,4.78) -- (2.8,3.66);
+
+  \draw[thick,->] (-2.8,3.08) -- (-5.8,1.38);
+  \draw[thick,->] (-2.8,3.08) -- (-4.0,1.38);
+  \draw[thick,->] (-2.8,3.08) -- (-2.2,1.38);
+  \draw[thick,->] (-2.8,3.08) -- (-0.4,1.38);
+  \draw[thick,->] (2.8,3.08) -- (1.4,1.38);
+  \draw[thick,->] (2.8,3.08) -- (3.2,1.38);
+  \draw[thick,->] (2.8,3.08) -- (5.0,1.38);
+  \draw[thick,->] (2.8,3.08) -- (6.8,1.38);
 \end{tikzpicture}
 \end{center}
 

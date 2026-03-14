@@ -325,23 +325,23 @@ The diagram shows a rectangle with a perimeter of $58$ cm. Which equation can be
 The balance scale below is in equilibrium. Write an equation that represents the balance.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.8]
+\begin{tikzpicture}[scale=0.9]
   % Fulcrum
   \draw[thick] (0,-0.5) -- (-0.4,-1.2) -- (0.4,-1.2) -- cycle;
   % Beam
-  \draw[thick] (-4,0) -- (4,0);
+  \draw[thick] (-5,0) -- (5,0);
   % Left pan
-  \draw[thick] (-4,0) -- (-4.5,-0.5) -- (-3.5,-0.5) -- (-4,0);
-  \draw[thick,fill=funBlue!20] (-4.5,-0.5) -- (-4.5,-0.8) -- (-3.5,-0.8) -- (-3.5,-0.5) -- cycle;
+  \draw[thick] (-5,0) -- (-5.7,-0.7) -- (-4.3,-0.7) -- (-5,0);
+  \draw[thick,fill=funBlue!20] (-5.7,-0.7) -- (-5.7,-1.05) -- (-4.3,-1.05) -- (-4.3,-0.7) -- cycle;
   % Left: 3 boxes labeled n + one block labeled 15
-  \node[draw,fill=funBlue!40,minimum size=0.35cm] at (-4.3,-1.2) {\small $n$};
-  \node[draw,fill=funBlue!40,minimum size=0.35cm] at (-4.0,-1.2) {\small $n$};
-  \node[draw,fill=funBlue!40,minimum size=0.35cm] at (-3.7,-1.2) {\small $n$};
-  \node[draw,fill=funOrange!40,minimum size=0.35cm] at (-4.0,-1.6) {\small $15$};
+  \node[draw,fill=funBlue!40,minimum width=0.42cm,minimum height=0.42cm] at (-5.45,-1.48) {\small $n$};
+  \node[draw,fill=funBlue!40,minimum width=0.42cm,minimum height=0.42cm] at (-5.00,-1.48) {\small $n$};
+  \node[draw,fill=funBlue!40,minimum width=0.42cm,minimum height=0.42cm] at (-4.55,-1.48) {\small $n$};
+  \node[draw,fill=funOrange!40,minimum width=0.78cm,minimum height=0.5cm] at (-5.00,-1.98) {\small $15$};
   % Right pan
-  \draw[thick] (4,0) -- (4.5,-0.5) -- (3.5,-0.5) -- (4,0);
-  \draw[thick,fill=funOrange!20] (4.5,-0.5) -- (4.5,-0.8) -- (3.5,-0.8) -- (3.5,-0.5) -- cycle;
-  \node at (4,-0.65) {\small $72$};
+  \draw[thick] (5,0) -- (5.7,-0.7) -- (4.3,-0.7) -- (5,0);
+  \draw[thick,fill=funOrange!20] (5.7,-0.7) -- (5.7,-1.05) -- (4.3,-1.05) -- (4.3,-0.7) -- cycle;
+  \node at (5,-0.88) {\small $72$};
 \end{tikzpicture}
 \end{center}
 \end{questionText}

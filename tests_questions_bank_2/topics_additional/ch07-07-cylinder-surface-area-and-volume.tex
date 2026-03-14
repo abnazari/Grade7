@@ -244,15 +244,17 @@ A cylindrical jar has a radius of $6$ cm and a height of $10$ cm. A label wraps 
 The cylinder below has the dimensions shown. What is its volume? Use $\pi \approx 3.14$.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[scale=0.55]
   % Cylinder
-  \draw[thick] (0,0) ellipse (2 and 0.6);
-  \draw[thick] (-2,0) -- (-2,4);
-  \draw[thick] (2,0) -- (2,4);
-  \draw[thick] (0,4) ellipse (2 and 0.6);
+  \draw[thick] (0,0) ellipse (2.5 and 0.75);
+  \draw[thick] (-2.5,0) -- (-2.5,4.8);
+  \draw[thick] (2.5,0) -- (2.5,4.8);
+  \draw[thick] (0,4.8) ellipse (2.5 and 0.75);
   % Dimensions
-  \draw[thick,funBlue] (0,4) -- (2,4) node[midway,above] {$r = 4$};
-  \draw[thick,funBlue,<->] (2.8,0) -- (2.8,4) node[midway,right] {$h = 9$};
+  \draw[thick,funBlue] (0,4.8) -- (2.5,4.8);
+  \node[funBlue, fill=white, inner sep=1pt] at (1.25,5.35) {$r = 4$};
+  \draw[thick,funBlue,<->] (3.4,0) -- (3.4,4.8);
+  \node[funBlue, fill=white, inner sep=1pt] at (4.35,2.4) {$h = 9$};
 \end{tikzpicture}
 \end{center}
 \end{questionText}
@@ -269,15 +271,17 @@ The cylinder below has the dimensions shown. What is its volume? Use $\pi \appro
 The cylinder below has a diameter of $14$ cm and a height of $10$ cm. What is the surface area? Use $\pi \approx 3.14$.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.45]
+\begin{tikzpicture}[scale=0.5]
   % Cylinder
-  \draw[thick] (0,0) ellipse (2.5 and 0.7);
-  \draw[thick] (-2.5,0) -- (-2.5,4);
-  \draw[thick] (2.5,0) -- (2.5,4);
-  \draw[thick] (0,4) ellipse (2.5 and 0.7);
+  \draw[thick] (0,0) ellipse (2.7 and 0.78);
+  \draw[thick] (-2.7,0) -- (-2.7,4.6);
+  \draw[thick] (2.7,0) -- (2.7,4.6);
+  \draw[thick] (0,4.6) ellipse (2.7 and 0.78);
   % Dimensions
-  \draw[thick,funBlue,<->] (-2.5,4.5) -- (2.5,4.5) node[midway,above] {$d = 14$};
-  \draw[thick,funBlue,<->] (3.3,0) -- (3.3,4) node[midway,right] {$h = 10$};
+  \draw[thick,funBlue,<->] (-2.7,5.25) -- (2.7,5.25);
+  \node[funBlue, fill=white, inner sep=1pt] at (0,5.8) {$d = 14$};
+  \draw[thick,funBlue,<->] (3.7,0) -- (3.7,4.6);
+  \node[funBlue, fill=white, inner sep=1pt] at (4.8,2.3) {$h = 10$};
 \end{tikzpicture}
 \end{center}
 \end{questionText}
@@ -296,15 +300,15 @@ The net of a cylinder is shown below. The two circles have radius $3$ cm and the
 \begin{center}
 \begin{tikzpicture}[scale=0.45]
   % Top circle
-  \draw[thick,funBlue] (3,13) circle (1.5);
-  \node at (3,13) {\small $r = 3$};
+  \draw[thick,funBlue] (4.71,13.2) circle (1.5);
+  \node[fill=white, inner sep=1pt] at (4.71,13.2) {\small $r = 3$};
   % Rectangle (lateral surface)
   \draw[thick,funBlue] (0,0) rectangle (9.42,11);
-  \node at (4.71,5.5) {\small $h = 11$};
-  \node[below] at (4.71,0) {\small width $= 2\pi r$};
+  \node[fill=white, inner sep=1pt] at (4.71,5.5) {\small $h = 11$};
+  \node[fill=white, inner sep=1pt] at (4.71,-0.95) {\small width $= 2\pi r$};
   % Bottom circle
-  \draw[thick,funBlue] (3,-2) circle (1.5);
-  \node at (3,-2) {\small $r = 3$};
+  \draw[thick,funBlue] (4.71,-3.2) circle (1.5);
+  \node[fill=white, inner sep=1pt] at (4.71,-3.2) {\small $r = 3$};
 \end{tikzpicture}
 \end{center}
 \end{questionText}
@@ -321,15 +325,17 @@ The net of a cylinder is shown below. The two circles have radius $3$ cm and the
 The cylinder below has the dimensions shown. Find its volume. Use $\pi \approx 3.14$.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[scale=0.56]
   % Cylinder
-  \draw[thick] (0,0) ellipse (2.2 and 0.65);
-  \draw[thick] (-2.2,0) -- (-2.2,3);
-  \draw[thick] (2.2,0) -- (2.2,3);
-  \draw[thick] (0,3) ellipse (2.2 and 0.65);
+  \draw[thick] (0,0) ellipse (2.9 and 0.82);
+  \draw[thick] (-2.9,0) -- (-2.9,3.4);
+  \draw[thick] (2.9,0) -- (2.9,3.4);
+  \draw[thick] (0,3.4) ellipse (2.9 and 0.82);
   % Dimensions
-  \draw[thick,funBlue] (0,3) -- (2.2,3) node[midway,above] {$r = 6$};
-  \draw[thick,funBlue,<->] (3,0) -- (3,3) node[midway,right] {$h = 5$};
+  \draw[thick,funBlue] (0,3.4) -- (2.9,3.4);
+  \node[funBlue, fill=white, inner sep=1pt] at (1.45,4.0) {$r = 6$};
+  \draw[thick,funBlue,<->] (3.9,0) -- (3.9,3.4);
+  \node[funBlue, fill=white, inner sep=1pt] at (4.85,1.7) {$h = 5$};
 \end{tikzpicture}
 \end{center}
 \end{questionText}
@@ -363,23 +369,27 @@ The cylinder below has a diameter of $8$ cm and a height of $12$ cm. Find its su
 Two cylinders are shown below. Cylinder A has radius $2$ cm and height $15$ cm. Cylinder B has radius $5$ cm and height $4$ cm. Which cylinder has the greater volume, and by how much? Use $\pi \approx 3.14$.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.4]
+\begin{tikzpicture}[scale=0.46]
   % Cylinder A
-  \draw[thick] (-4,0) ellipse (1 and 0.3);
-  \draw[thick] (-5,0) -- (-5,6);
-  \draw[thick] (-3,0) -- (-3,6);
-  \draw[thick] (-4,6) ellipse (1 and 0.3);
-  \node[below] at (-4,-0.5) {Cylinder A};
-  \draw[thick,funBlue] (-4,6) -- (-3,6) node[midway,above] {\small $r\!=\!2$};
-  \draw[thick,funBlue,<->] (-2.2,0) -- (-2.2,6) node[midway,right] {\small $h\!=\!15$};
+  \draw[thick] (-4,0) ellipse (1.15 and 0.35);
+  \draw[thick] (-5.15,0) -- (-5.15,6.5);
+  \draw[thick] (-2.85,0) -- (-2.85,6.5);
+  \draw[thick] (-4,6.5) ellipse (1.15 and 0.35);
+  \node[below] at (-4,-0.7) {Cylinder A};
+  \draw[thick,funBlue] (-4,6.5) -- (-2.85,6.5);
+  \node[funBlue, fill=white, inner sep=1pt] at (-3.45,7.1) {\small $r=2$};
+  \draw[thick,funBlue,<->] (-2.05,0) -- (-2.05,6.5);
+  \node[funBlue, fill=white, inner sep=1pt] at (-1.0,3.25) {\small $h=15$};
   % Cylinder B
-  \draw[thick] (6,0) ellipse (2 and 0.6);
-  \draw[thick] (4,0) -- (4,2);
-  \draw[thick] (8,0) -- (8,2);
-  \draw[thick] (6,2) ellipse (2 and 0.6);
-  \node[below] at (6,-0.8) {Cylinder B};
-  \draw[thick,funBlue] (6,2) -- (8,2) node[midway,above] {\small $r\!=\!5$};
-  \draw[thick,funBlue,<->] (8.8,0) -- (8.8,2) node[midway,right] {\small $h\!=\!4$};
+  \draw[thick] (6.2,0) ellipse (2.35 and 0.7);
+  \draw[thick] (3.85,0) -- (3.85,2.45);
+  \draw[thick] (8.55,0) -- (8.55,2.45);
+  \draw[thick] (6.2,2.45) ellipse (2.35 and 0.7);
+  \node[below] at (6.2,-1.0) {Cylinder B};
+  \draw[thick,funBlue] (6.2,2.45) -- (8.55,2.45);
+  \node[funBlue, fill=white, inner sep=1pt] at (7.35,3.1) {\small $r=5$};
+  \draw[thick,funBlue,<->] (9.35,0) -- (9.35,2.45);
+  \node[funBlue, fill=white, inner sep=1pt] at (10.35,1.225) {\small $h=4$};
 \end{tikzpicture}
 \end{center}
 \end{questionText}

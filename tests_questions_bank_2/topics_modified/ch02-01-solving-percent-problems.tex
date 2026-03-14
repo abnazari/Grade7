@@ -270,7 +270,7 @@ Boots & $\$70$ & $40\%$ \\
 The bar graph shows a family's monthly spending. What percent of their total spending goes to food?
 
 \begin{center}
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[xscale=0.85, yscale=0.5]
   \draw[thick,->] (0,0) -- (0,6) node[above]{\small Amount (\$)};
   \draw[thick,->] (0,0) -- (10,0);
   \fill[funBlue!60] (0.5,0) rectangle (2,5);
@@ -354,18 +354,15 @@ The tape diagram represents a $\$160$ purchase where a portion is the discount a
 The circle graph shows how $200$ students chose their favorite sport. How many more chose basketball than soccer?
 
 \begin{center}
-\begin{tikzpicture}[scale=1.1]
+\begin{tikzpicture}[scale=1.7]
   \fill[funBlue!50] (0,0) -- (90:1) arc (90:198:1) -- cycle;
   \fill[funGreen!50] (0,0) -- (198:1) arc (198:306:1) -- cycle;
   \fill[funOrange!50] (0,0) -- (306:1) arc (306:450:1) -- cycle;
   \draw (0,0) circle (1);
   \draw (0,0) -- (90:1); \draw (0,0) -- (198:1); \draw (0,0) -- (306:1);
-  \node[font=\small] at (144:0.65) {Basketball};
-  \node[font=\small] at (144:0.35) {$30\%$};
-  \node[font=\small] at (252:0.65) {Soccer};
-  \node[font=\small] at (252:0.35) {$30\%$};
-  \node[font=\small] at (18:0.65) {Football};
-  \node[font=\small] at (18:0.35) {$40\%$};
+  \node[font=\small, align=center] at (144:0.6) {Basketball\\$30\%$};
+  \node[font=\small, align=center] at (252:0.6) {Soccer\\$30\%$};
+  \node[font=\small, align=center] at (18:0.6) {Football\\$40\%$};
 \end{tikzpicture}
 \end{center}
 \end{questionText}
@@ -378,16 +375,16 @@ The circle graph shows how $200$ students chose their favorite sport. How many m
 The number line shows a price after a $20\%$ markup. The marked-up price is $\$72$. What was the original cost?
 
 \begin{center}
-\begin{tikzpicture}[scale=0.7]
+\begin{tikzpicture}[scale=0.85]
   \draw[thick] (0,0) -- (10,0);
   \foreach \x/\lab in {0/$0$,2/$20$,4/$40$,6/$60$,8/$80$,10/$100$} {
     \draw (\x,-0.15) -- (\x,0.15);
     \node[below,font=\small] at (\x,-0.2) {\lab};
   }
-  \draw[thick,funBlue,->] (7.2,0.8) -- (7.2,0.2);
-  \node[above,font=\small,funBlue] at (7.2,0.8) {Selling: $\$72$};
-  \draw[thick,funRed,->] (6,1.5) -- (6,0.2);
-  \node[above,font=\small,funRed] at (6,1.5) {Original: ?};
+  \draw[thick,funBlue,->] (7.2,1.0) -- (7.2,0.2);
+  \node[right,font=\small,funBlue] at (7.2,1.0) {Selling: $\$72$};
+  \draw[thick,funRed,->] (6,1.0) -- (6,0.2);
+  \node[left,font=\small,funRed] at (6,1.0) {Original: ?};
 \end{tikzpicture}
 \end{center}
 \end{questionText}

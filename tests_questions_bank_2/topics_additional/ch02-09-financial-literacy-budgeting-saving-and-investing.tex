@@ -244,21 +244,17 @@ An investment earns $\$160$ in one year on a $\$2{,}000$ investment. What is the
 The pie chart shows a family's monthly budget. If their income is $\$4{,}000$, how much goes to housing?
 
 \begin{center}
-\begin{tikzpicture}[scale=1.1]
+\begin{tikzpicture}[scale=2.1]
   \fill[funBlue!50] (0,0) -- (90:1) arc (90:198:1) -- cycle;
   \fill[funGreen!50] (0,0) -- (198:1) arc (198:270:1) -- cycle;
   \fill[funOrange!50] (0,0) -- (270:1) arc (270:342:1) -- cycle;
   \fill[funRed!50] (0,0) -- (342:1) arc (342:450:1) -- cycle;
   \draw (0,0) circle (1);
   \draw (0,0) -- (90:1); \draw (0,0) -- (198:1); \draw (0,0) -- (270:1); \draw (0,0) -- (342:1);
-  \node[font=\small] at (144:0.65) {Housing};
-  \node[font=\small] at (144:0.35) {$30\%$};
-  \node[font=\small] at (234:0.65) {Food};
-  \node[font=\small] at (234:0.35) {$20\%$};
-  \node[font=\small] at (306:0.6) {Transport};
-  \node[font=\small] at (306:0.35) {$20\%$};
-  \node[font=\small] at (36:0.65) {Other};
-  \node[font=\small] at (36:0.35) {$30\%$};
+  \node[font=\footnotesize,align=center] at (144:0.6) {Housing\\$30\%$};
+  \node[font=\footnotesize,align=center] at (234:0.55) {Food\\$20\%$};
+  \node[font=\footnotesize,align=center] at (306:0.58) {Transport\\$20\%$};
+  \node[font=\footnotesize,align=center] at (36:0.6) {Other\\$30\%$};
 \end{tikzpicture}
 \end{center}
 \end{questionText}

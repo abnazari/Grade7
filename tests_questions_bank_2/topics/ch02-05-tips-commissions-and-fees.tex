@@ -358,18 +358,15 @@ Above $\$5{,}000$ & $8\%$ \\
 The pie chart shows how a $\$16$ tip was split among three servers. How much did Server B receive?
 
 \begin{center}
-\begin{tikzpicture}[scale=1.1]
+\begin{tikzpicture}[scale=1.55]
   \fill[funBlue!50] (0,0) -- (90:1) arc (90:234:1) -- cycle;
   \fill[funGreen!50] (0,0) -- (234:1) arc (234:324:1) -- cycle;
   \fill[funOrange!50] (0,0) -- (324:1) arc (324:450:1) -- cycle;
   \draw (0,0) circle (1);
   \draw (0,0) -- (90:1); \draw (0,0) -- (234:1); \draw (0,0) -- (324:1);
-  \node[font=\small] at (162:0.6) {A};
-  \node[font=\small] at (162:0.35) {$40\%$};
-  \node[font=\small] at (279:0.6) {B};
-  \node[font=\small] at (279:0.35) {$25\%$};
-  \node[font=\small] at (27:0.6) {C};
-  \node[font=\small] at (27:0.35) {$35\%$};
+  \node[font=\small,align=center] at (162:0.55) {A\\$40\%$};
+  \node[font=\small,align=center] at (279:0.52) {B\\$25\%$};
+  \node[font=\small,align=center] at (27:0.55) {C\\$35\%$};
 \end{tikzpicture}
 \end{center}
 \end{questionText}
@@ -382,17 +379,17 @@ The pie chart shows how a $\$16$ tip was split among three servers. How much did
 The bar graph shows a salesperson's weekly sales over four weeks. If the commission rate is $5\%$, what was the total commission earned over the four weeks?
 
 \begin{center}
-\begin{tikzpicture}[scale=0.45]
+\begin{tikzpicture}[xscale=0.62,yscale=0.45]
   \draw[thick,->] (0,0) -- (0,7) node[above]{\small Sales (\$)};
   \draw[thick,->] (0,0) -- (10,0);
   \fill[funBlue!60] (0.5,0) rectangle (2,3);
   \fill[funGreen!60] (2.5,0) rectangle (4,5);
   \fill[funOrange!60] (4.5,0) rectangle (6,4);
   \fill[funRed!60] (6.5,0) rectangle (8,4);
-  \node[below,font=\small] at (1.25,0) {Wk 1};
-  \node[below,font=\small] at (3.25,0) {Wk 2};
-  \node[below,font=\small] at (5.25,0) {Wk 3};
-  \node[below,font=\small] at (7.25,0) {Wk 4};
+  \node[below,font=\small] at (1.25,-0.1) {Wk 1};
+  \node[below,font=\small] at (3.25,-0.1) {Wk 2};
+  \node[below,font=\small] at (5.25,-0.1) {Wk 3};
+  \node[below,font=\small] at (7.25,-0.1) {Wk 4};
   \foreach \y/\lab in {1/1000,2/2000,3/3000,4/4000,5/5000,6/6000} {
     \draw (-0.1,\y) -- (0.1,\y) node[left,font=\small,xshift=-2pt] {\lab};
   }

@@ -1,0 +1,146 @@
+\documentclass[12pt, fleqn, openany]{studyGuide}
+\setstretch{1.4}
+\enableInlineReview
+\renewcommand{\VMBookTitle}{Audit Review}
+\renewcommand{\VMBookSubtitle}{Grade 7 --- Ch Graphic Review --- Changed Questions}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\begin{document}
+
+\begin{center}
+\begin{tcolorbox}[
+	enhanced,
+	colback=white,
+	colframe=funTeal!60,
+	boxrule=1.5pt,
+	arc=10pt,
+	outer arc=10pt,
+	width=0.9\linewidth,
+	halign=center,
+	top=5mm, bottom=5mm,
+]
+	{\Large\bfseries\sffamily\color{funTealDark}Audit Review}\\[2mm]
+	{\large\sffamily\color{funGrayDark}Grade 7 --- Ch Graphic Review --- Changed Questions}\\[2mm]
+	{\normalsize\sffamily\color{funGrayDark}Verify corrections below}
+\end{tcolorbox}
+\end{center}
+
+\newpage
+\section*{2-7-q23 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch02-07-percent-error.tex}}
+\begin{practiceQuestion}{2-7-q23}{gmc}
+\begin{questionText}
+The bar graph shows a student's estimated and actual quiz scores over four quizzes. On which quiz was the percent error the largest?
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.55,yscale=0.5]
+  \draw[thick,->] (0,0) -- (0,6) node[above]{\small Score};
+  \draw[thick,->] (0,0) -- (11,0);
+  % Quiz 1
+  \fill[funBlue!20] (0.5,0) rectangle (1.5,4);
+  \fill[funBlue!85!black] (1.5,0) rectangle (2.5,5);
+  % Quiz 2
+  \fill[funBlue!20] (3,0) rectangle (4,3);
+  \fill[funBlue!85!black] (4,0) rectangle (5,4);
+  % Quiz 3
+  \fill[funBlue!20] (5.5,0) rectangle (6.5,4.5);
+  \fill[funBlue!85!black] (6.5,0) rectangle (7.5,4);
+  % Quiz 4
+  \fill[funBlue!20] (8,0) rectangle (9,5);
+  \fill[funBlue!85!black] (9,0) rectangle (10,5);
+  \node[below,font=\small] at (1.5,0) {Q1};
+  \node[below,font=\small] at (4,0) {Q2};
+  \node[below,font=\small] at (6.5,0) {Q3};
+  \node[below,font=\small] at (9,0) {Q4};
+  \node[above,font=\tiny] at (1,4) {80};
+  \node[above,font=\tiny] at (2,5) {100};
+  \node[above,font=\tiny] at (3.5,3) {60};
+  \node[above,font=\tiny] at (4.5,4) {80};
+  \node[above,font=\tiny] at (6,4.5) {90};
+  \node[above,font=\tiny] at (7,4) {80};
+  \node[above,font=\tiny] at (8.5,5) {100};
+  \node[above,font=\tiny] at (9.5,5) {100};
+  \foreach \y/\lab in {1/20,2/40,3/60,4/80,5/100} {
+    \draw (-0.1,\y) -- (0.1,\y) node[left,font=\small,xshift=-2pt] {\lab};
+  }
+  \node[font=\small] at (11.9,4.5) {\textcolor{funBlue!20!black}{Est.}};
+  \node[font=\small] at (11.9,3.5) {\textcolor{funBlue!85!black}{Act.}};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{Quiz 1 ($20\%$)}
+\choiceB{Quiz 2 ($25\%$)}
+\choiceC{Quiz 3 ($12.5\%$)}
+\choiceD{Quiz 4 ($0\%$)}
+\correctAnswer{B}
+\explanation{Q1: $\frac{|80-100|}{100} = 20\%$. Q2: $\frac{|60-80|}{80} = 25\%$. Q3: $\frac{|90-80|}{80} = 12.5\%$. Q4: $0\%$. Quiz 2 is highest.}
+\end{practiceQuestion}
+
+\newpage
+\section*{2-7-q24 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch02-07-percent-error.tex}}
+\begin{practiceQuestion}{2-7-q24}{gmc}
+\begin{questionText}
+A number line shows an estimated measurement and the actual measurement. What is the percent error?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+  \draw[thick] (0,0) -- (10,0);
+  \foreach \x/\lab in {0/0,2/20,4/40,6/60,8/80,10/100} {
+    \draw (\x,-0.15) -- (\x,0.15);
+    \node[below,font=\small] at (\x,-0.2) {\lab};
+  }
+  \draw[thick,funRed,->] (7,1.0) -- (7,0.2);
+  \node[above left,font=\small,funRed] at (7,1.0) {Estimated: 70};
+  \draw[thick,funBlue,->] (8,0.9) -- (8,0.2);
+  \node[above right,font=\small,funBlue] at (8,0.9) {Actual: 80};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{$10\%$}
+\choiceB{$12.5\%$}
+\choiceC{$14.3\%$}
+\choiceD{$20\%$}
+\correctAnswer{B}
+\explanation{$\dfrac{|70 - 80|}{80} \times 100 = \dfrac{10}{80} \times 100 = 12.5\%$.}
+\end{practiceQuestion}
+
+\newpage
+\section*{2-7-q26 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch02-07-percent-error.tex}}
+\begin{practiceQuestion}{2-7-q26}{gsa}
+\begin{questionText}
+The double bar graph compares estimated and actual temperatures for three cities. Find the percent error for City B (to the nearest tenth).
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.52,yscale=0.45]
+  \draw[thick,->] (0,0) -- (0,7) node[above]{\small Temp (\textdegree F)};
+  \draw[thick,->] (0,0) -- (10,0);
+  % City A
+  \fill[funRed!20] (0.5,0) rectangle (1.5,5);
+  \fill[funRed!90!black] (1.5,0) rectangle (2.5,4);
+  % City B
+  \fill[funRed!20] (3.5,0) rectangle (4.5,4.5);
+  \fill[funRed!90!black] (4.5,0) rectangle (5.5,6);
+  % City C
+  \fill[funRed!20] (6.5,0) rectangle (7.5,3);
+  \fill[funRed!90!black] (7.5,0) rectangle (8.5,3);
+  \node[below,font=\small] at (1.5,0) {A};
+  \node[below,font=\small] at (4.5,0) {B};
+  \node[below,font=\small] at (7.5,0) {C};
+  \foreach \y/\lab in {1/10,2/20,3/30,4/40,5/50,6/60} {
+    \draw (-0.1,\y) -- (0.1,\y) node[left,font=\small,xshift=-2pt] {\lab};
+  }
+  \node[above,font=\tiny] at (1,5) {50};
+  \node[above,font=\tiny] at (2,4) {40};
+  \node[above,font=\tiny] at (4,4.5) {45};
+  \node[above,font=\tiny] at (5,6) {60};
+  \node[above,font=\tiny] at (7,3) {30};
+  \node[above,font=\tiny] at (8,3) {30};
+  \node[font=\small] at (10.2,5.5) {\textcolor{funRed!20!black}{Est.}};
+  \node[font=\small] at (10.2,4.5) {\textcolor{funRed!90!black}{Act.}};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\correctAnswer{$25\%$}
+\explanation{City B: Est. $= 45$, Act. $= 60$. $\dfrac{|45 - 60|}{60} \times 100 = \dfrac{15}{60} \times 100 = 25\%$.}
+\end{practiceQuestion}
+
+\end{document}

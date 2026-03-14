@@ -1,0 +1,164 @@
+\documentclass[12pt, fleqn, openany]{studyGuide}
+\setstretch{1.4}
+\enableInlineReview
+\renewcommand{\VMBookTitle}{Audit Review}
+\renewcommand{\VMBookSubtitle}{Grade 7 --- Ch Graphic Review --- Changed Questions}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\begin{document}
+
+\begin{center}
+\begin{tcolorbox}[
+	enhanced,
+	colback=white,
+	colframe=funTeal!60,
+	boxrule=1.5pt,
+	arc=10pt,
+	outer arc=10pt,
+	width=0.9\linewidth,
+	halign=center,
+	top=5mm, bottom=5mm,
+]
+	{\Large\bfseries\sffamily\color{funTealDark}Audit Review}\\[2mm]
+	{\large\sffamily\color{funGrayDark}Grade 7 --- Ch Graphic Review --- Changed Questions}\\[2mm]
+	{\normalsize\sffamily\color{funGrayDark}Verify corrections below}
+\end{tcolorbox}
+\end{center}
+
+\newpage
+\section*{m-9-3-q23 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics\_modified/ch09-03-experimental-probability.tex}}
+\begin{practiceQuestion}{m-9-3-q23}{gmc}
+\begin{questionText}
+The bar graph shows the results of a simulation comparing experimental and theoretical frequencies of an event across different trial counts.
+
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    ybar,
+    bar width=11pt,
+    ymin=0,
+    ymax=0.7,
+    width=9.2cm,
+    height=5.7cm,
+    ylabel={Probability},
+    xlabel={Number of Trials},
+    symbolic x coords={$20$, $50$, $100$, $500$},
+    xtick=data,
+    ytick={0,0.2,0.4,0.6},
+    enlarge x limits=0.24,
+    axis line style={draw=black},
+    tick style={draw=black},
+    tick label style={font=\small},
+    label style={font=\small},
+    legend style={
+      at={(0.5,1.03)},
+      anchor=south,
+      legend columns=2,
+      draw=black,
+      fill=white,
+      font=\small,
+      cells={anchor=west}
+    },
+    nodes near coords,
+    every node near coord/.append style={font=\scriptsize, yshift=2pt, text=black}
+  ]
+  \addplot[draw=black, fill=funBlue!75] coordinates {($20$,0.55) ($50$,0.44) ($100$,0.38) ($500$,0.34)};
+  \addplot[draw=black, fill=white] coordinates {($20$,0.33) ($50$,0.33) ($100$,0.33) ($500$,0.33)};
+  \legend{Experimental, Theoretical}
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Which conclusion does the graph support?
+\end{questionText}
+\choiceA{More trials make the experimental probability less accurate.}
+\choiceB{The theoretical probability changes with more trials.}
+\choiceC{As the number of trials increases, the experimental probability approaches the theoretical probability.}
+\choiceD{$20$ trials gives the most accurate result.}
+\correctAnswer{C}
+\explanation{The experimental probability drops from $0.55$ at $20$ trials to $0.34$ at $500$ trials, getting closer to the theoretical $0.33$. This demonstrates the Law of Large Numbers.}
+\end{practiceQuestion}
+
+\newpage
+\section*{9-5-q22 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch09-05-sample-spaces-for-compound-events.tex}}
+\begin{practiceQuestion}{9-5-q22}{gmc}
+\begin{questionText}
+Look at the tree diagram below showing the outcomes of picking a snack and a drink.
+
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm, >=Latex, font=\small]
+  \node at (0,4.2) {Start};
+  \node at (-3,2.7) {Apple};
+  \node at (0,2.7) {Granola};
+  \node at (3,2.7) {Crackers};
+  \node at (-4,0.9) {Water};
+  \node at (-2,0.9) {Juice};
+  \node at (-1,0.9) {Water};
+  \node at (1,0.9) {Juice};
+  \node at (2,0.9) {Water};
+  \node at (4,0.9) {Juice};
+
+  \draw[thick,->] (0,3.95) -- (-3,3.02);
+  \draw[thick,->] (0,3.95) -- (0,3.02);
+  \draw[thick,->] (0,3.95) -- (3,3.02);
+
+  \draw[thick,->] (-3,2.42) -- (-4,1.18);
+  \draw[thick,->] (-3,2.42) -- (-2,1.18);
+  \draw[thick,->] (0,2.42) -- (-1,1.18);
+  \draw[thick,->] (0,2.42) -- (1,1.18);
+  \draw[thick,->] (3,2.42) -- (2,1.18);
+  \draw[thick,->] (3,2.42) -- (4,1.18);
+\end{tikzpicture}
+\end{center}
+
+How many outcomes are in the sample space?
+\end{questionText}
+\choiceA{$3$}
+\choiceB{$5$}
+\choiceC{$6$}
+\choiceD{$9$}
+\correctAnswer{C}
+\explanation{The tree diagram shows $3$ snack choices each paired with $2$ drink choices. Counting the branch endpoints gives $3 \times 2 = 6$ outcomes.}
+\end{practiceQuestion}
+
+\newpage
+\section*{9-5-q24 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch09-05-sample-spaces-for-compound-events.tex}}
+\begin{practiceQuestion}{9-5-q24}{gmc}
+\begin{questionText}
+A tree diagram shows outcomes for choosing a pen color (Black or Blue) and a pen type (Gel, Ballpoint, or Felt-tip).
+
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm, >=Latex, font=\small]
+  \node at (0,4.4) {Start};
+  \node at (-2.8,2.8) {Black};
+  \node at (2.8,2.8) {Blue};
+  \node at (-4.6,1.0) {Gel};
+  \node at (-2.8,1.0) {Ballpoint};
+  \node at (-1.0,1.0) {Felt-tip};
+  \node at (1.0,1.0) {Gel};
+  \node at (2.8,1.0) {Ballpoint};
+  \node at (4.6,1.0) {Felt-tip};
+
+  \draw[thick,->] (0,4.12) -- (-2.8,3.08);
+  \draw[thick,->] (0,4.12) -- (2.8,3.08);
+
+  \draw[thick,->] (-2.8,2.52) -- (-4.6,1.28);
+  \draw[thick,->] (-2.8,2.52) -- (-2.8,1.28);
+  \draw[thick,->] (-2.8,2.52) -- (-1.0,1.28);
+  \draw[thick,->] (2.8,2.52) -- (1.0,1.28);
+  \draw[thick,->] (2.8,2.52) -- (2.8,1.28);
+  \draw[thick,->] (2.8,2.52) -- (4.6,1.28);
+\end{tikzpicture}
+\end{center}
+
+Which outcome is NOT shown in this tree diagram?
+\end{questionText}
+\choiceA{Black Gel}
+\choiceB{Blue Ballpoint}
+\choiceC{Red Felt-tip}
+\choiceD{Blue Gel}
+\correctAnswer{C}
+\explanation{The tree diagram only includes Black and Blue pen colors. Red is not one of the options, so ``Red Felt-tip'' is not in the sample space.}
+\end{practiceQuestion}
+
+\end{document}

@@ -1,0 +1,134 @@
+\documentclass[12pt, fleqn, openany]{studyGuide}
+\setstretch{1.4}
+\enableInlineReview
+\renewcommand{\VMBookTitle}{Audit Review}
+\renewcommand{\VMBookSubtitle}{Grade 7 --- Ch Graphic Review --- Changed Questions}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\begin{document}
+
+\begin{center}
+\begin{tcolorbox}[
+	enhanced,
+	colback=white,
+	colframe=funTeal!60,
+	boxrule=1.5pt,
+	arc=10pt,
+	outer arc=10pt,
+	width=0.9\linewidth,
+	halign=center,
+	top=5mm, bottom=5mm,
+]
+	{\Large\bfseries\sffamily\color{funTealDark}Audit Review}\\[2mm]
+	{\large\sffamily\color{funGrayDark}Grade 7 --- Ch Graphic Review --- Changed Questions}\\[2mm]
+	{\normalsize\sffamily\color{funGrayDark}Verify corrections below}
+\end{tcolorbox}
+\end{center}
+
+\newpage
+\section*{2-4-q24 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch02-04-markups-discounts-and-sales-tax.tex}}
+\begin{practiceQuestion}{2-4-q24}{gmc}
+\begin{questionText}
+The bar model shows the flow from cost to final customer price. What is the sales tax rate?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+  % Cost bar
+  \fill[funBlue!30] (0,4.6) rectangle (5,5.4);
+  \draw[thick] (0,4.6) rectangle (5,5.4);
+  \node[font=\small,above] at (2.5,5.4) {Cost: $\$50$};
+  % After markup
+  \fill[funGreen!30] (0,2.6) rectangle (7.5,3.4);
+  \draw[thick] (0,2.6) rectangle (7.5,3.4);
+  \node[font=\small,above] at (3.75,3.4) {After $50\%$ markup: $\$75$};
+  % After tax
+  \fill[funOrange!30] (0,0) rectangle (8.25,0.8);
+  \draw[thick] (0,0) rectangle (8.25,0.8);
+  \node[font=\small,below] at (4.125,0) {Final price: $\$81$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{$6\%$}
+\choiceB{$8\%$}
+\choiceC{$10\%$}
+\choiceD{$12\%$}
+\correctAnswer{B}
+\explanation{After markup: $\$75$. Tax amount: $81 - 75 = \$6$. Tax rate: $6 \div 75 = 0.08 = 8\%$.}
+\end{practiceQuestion}
+
+\newpage
+\section*{2-4-q27 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch02-04-markups-discounts-and-sales-tax.tex}}
+\begin{practiceQuestion}{2-4-q27}{gsa}
+\begin{questionText}
+The diagram shows the price of a coat at every stage. What was the discount percent?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+  \node[draw,thick,rounded corners,fill=funBlue!15,minimum width=2.8cm,minimum height=0.9cm] (A) at (0,0) {Cost: $\$50$};
+  \node[draw,thick,rounded corners,fill=funGreen!15,minimum width=2.8cm,minimum height=0.9cm] (B) at (6.2,0) {Retail: $\$85$};
+  \node[draw,thick,rounded corners,fill=funOrange!15,minimum width=2.8cm,minimum height=0.9cm] (C) at (12.4,0) {Sale: $\$68$};
+  \draw[thick,->] (A.east) -- (B.west) node[midway,above=5pt,font=\small,fill=white,inner sep=1pt] {$70\%$ markup};
+  \draw[thick,->] (B.east) -- (C.west) node[midway,above=5pt,font=\small,fill=white,inner sep=1pt] {? discount};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\correctAnswer{$20\%$}
+\explanation{Discount amount: $85 - 68 = \$17$. Percent discount: $17 \div 85 = 0.20 = 20\%$.}
+\end{practiceQuestion}
+
+\newpage
+\section*{2-5-q26 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch02-05-tips-commissions-and-fees.tex}}
+\begin{practiceQuestion}{2-5-q26}{gsa}
+\begin{questionText}
+The pie chart shows how a $\$16$ tip was split among three servers. How much did Server B receive?
+
+\begin{center}
+\begin{tikzpicture}[scale=1.55]
+  \fill[funBlue!50] (0,0) -- (90:1) arc (90:234:1) -- cycle;
+  \fill[funGreen!50] (0,0) -- (234:1) arc (234:324:1) -- cycle;
+  \fill[funOrange!50] (0,0) -- (324:1) arc (324:450:1) -- cycle;
+  \draw (0,0) circle (1);
+  \draw (0,0) -- (90:1); \draw (0,0) -- (234:1); \draw (0,0) -- (324:1);
+  \node[font=\small,align=center] at (162:0.55) {A\\$40\%$};
+  \node[font=\small,align=center] at (279:0.52) {B\\$25\%$};
+  \node[font=\small,align=center] at (27:0.55) {C\\$35\%$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\correctAnswer{$\$4$}
+\explanation{Server B gets $25\%$ of $\$16$: $0.25 \times 16 = \$4$.}
+\end{practiceQuestion}
+
+\newpage
+\section*{2-5-q27 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch02-05-tips-commissions-and-fees.tex}}
+\begin{practiceQuestion}{2-5-q27}{gsa}
+\begin{questionText}
+The bar graph shows a salesperson's weekly sales over four weeks. If the commission rate is $5\%$, what was the total commission earned over the four weeks?
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.62,yscale=0.45]
+  \draw[thick,->] (0,0) -- (0,7) node[above]{\small Sales (\$)};
+  \draw[thick,->] (0,0) -- (10,0);
+  \fill[funBlue!60] (0.5,0) rectangle (2,3);
+  \fill[funGreen!60] (2.5,0) rectangle (4,5);
+  \fill[funOrange!60] (4.5,0) rectangle (6,4);
+  \fill[funRed!60] (6.5,0) rectangle (8,4);
+  \node[below,font=\small] at (1.25,-0.1) {Wk 1};
+  \node[below,font=\small] at (3.25,-0.1) {Wk 2};
+  \node[below,font=\small] at (5.25,-0.1) {Wk 3};
+  \node[below,font=\small] at (7.25,-0.1) {Wk 4};
+  \foreach \y/\lab in {1/1000,2/2000,3/3000,4/4000,5/5000,6/6000} {
+    \draw (-0.1,\y) -- (0.1,\y) node[left,font=\small,xshift=-2pt] {\lab};
+  }
+  \node[above,font=\small] at (1.25,3) {$\$3{,}000$};
+  \node[above,font=\small] at (3.25,5) {$\$5{,}000$};
+  \node[above,font=\small] at (5.25,4) {$\$4{,}000$};
+  \node[above,font=\small] at (7.25,4) {$\$4{,}000$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\correctAnswer{$\$800$}
+\explanation{Total sales: $3{,}000 + 5{,}000 + 4{,}000 + 4{,}000 = \$16{,}000$. Commission: $16{,}000 \times 0.05 = \$800$.}
+\end{practiceQuestion}
+
+\end{document}

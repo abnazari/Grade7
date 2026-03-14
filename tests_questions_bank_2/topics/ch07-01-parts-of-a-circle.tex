@@ -244,23 +244,22 @@ Circle A has a radius of $8$ cm and Circle B has a radius of $5$ cm. How much lo
 Look at the circle below. Which labeled segment is a radius?
 
 \begin{center}
-\begin{tikzpicture}
-  \draw[thick] (0,0) circle (2);
-  \fill (0,0) circle (2pt) node[below left] {$O$};
+\begin{tikzpicture}[scale=0.95]
+  \draw[thick] (0,0) circle (2.2);
+  \fill (0,0) circle (2pt) node[below left=1pt] {$O$};
   % Radius OA
-  \draw[thick,funBlue] (0,0) -- (2,0);
-  \fill (2,0) circle (2pt) node[right] {$A$};
-  \node[funBlue,below] at (1,0) {Segment 1};
+  \draw[thick,funBlue] (0,0) -- (2.2,0);
+  \fill (2.2,0) circle (2pt) node[right=2pt] {$A$};
+  \node[funBlue, fill=white, inner sep=1pt] at (1.38,-0.3) {Segment 1};
   % Chord BC (not through center)
-  \fill (-1.4,1.4) circle (2pt) node[above left] {$B$};
-  \fill (1.4,1.4) circle (2pt) node[above right] {$C$};
-  \draw[thick,funOrange] (-1.4,1.4) -- (1.4,1.4);
-  \node[funOrange,above] at (0,1.4) {Segment 2};
+  \fill (-1.45,1.65) circle (2pt) node[above left=1pt] {$B$};
+  \fill (1.45,1.65) circle (2pt) node[above right=1pt] {$C$};
+  \draw[thick,funOrange] (-1.45,1.65) -- (1.45,1.65);
+  \node[funOrange, fill=white, inner sep=1pt] at (0,1.98) {Segment 2};
   % Diameter DE
-  \fill (-2,0) circle (2pt) node[left] {$D$};
-  \fill (2,0) circle (2pt);
-  \draw[thick,funGreen] (-2,0) -- (2,0);
-  \node[funGreen,above] at (-1,0) {Segment 3};
+  \fill (-2.2,0) circle (2pt) node[left=2pt] {$D$};
+  \draw[thick,funGreen] (-2.2,0) -- (2.2,0);
+  \node[funGreen, fill=white, inner sep=1pt] at (-1.15,0.34) {Segment 3};
 \end{tikzpicture}
 \end{center}
 \end{questionText}

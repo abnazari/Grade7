@@ -1,0 +1,153 @@
+\documentclass[12pt, fleqn, openany]{studyGuide}
+\setstretch{1.4}
+\enableInlineReview
+\renewcommand{\VMBookTitle}{Audit Review}
+\renewcommand{\VMBookSubtitle}{Grade 7 --- Ch Graphic Review --- Changed Questions}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\begin{document}
+
+\begin{center}
+\begin{tcolorbox}[
+	enhanced,
+	colback=white,
+	colframe=funTeal!60,
+	boxrule=1.5pt,
+	arc=10pt,
+	outer arc=10pt,
+	width=0.9\linewidth,
+	halign=center,
+	top=5mm, bottom=5mm,
+]
+	{\Large\bfseries\sffamily\color{funTealDark}Audit Review}\\[2mm]
+	{\large\sffamily\color{funGrayDark}Grade 7 --- Ch Graphic Review --- Changed Questions}\\[2mm]
+	{\normalsize\sffamily\color{funGrayDark}Verify corrections below}
+\end{tcolorbox}
+\end{center}
+
+\newpage
+\section*{5-1-q25 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch05-01-writing-two-step-equations.tex}}
+\begin{practiceQuestion}{5-1-q25}{gsa}
+\begin{questionText}
+The balance scale below is in equilibrium. Write an equation that represents the balance.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  % Fulcrum
+  \draw[thick] (0,-0.5) -- (-0.4,-1.2) -- (0.4,-1.2) -- cycle;
+  % Beam
+  \draw[thick] (-5,0) -- (5,0);
+  % Left pan
+  \draw[thick] (-5,0) -- (-5.7,-0.7) -- (-4.3,-0.7) -- (-5,0);
+  \draw[thick,fill=funBlue!20] (-5.7,-0.7) -- (-5.7,-1.05) -- (-4.3,-1.05) -- (-4.3,-0.7) -- cycle;
+  % Left: 3 boxes labeled n + one block labeled 15
+  \node[draw,fill=funBlue!40,minimum width=0.42cm,minimum height=0.42cm] at (-5.45,-1.48) {\small $n$};
+  \node[draw,fill=funBlue!40,minimum width=0.42cm,minimum height=0.42cm] at (-5.00,-1.48) {\small $n$};
+  \node[draw,fill=funBlue!40,minimum width=0.42cm,minimum height=0.42cm] at (-4.55,-1.48) {\small $n$};
+  \node[draw,fill=funOrange!40,minimum width=0.78cm,minimum height=0.5cm] at (-5.00,-1.98) {\small $15$};
+  % Right pan
+  \draw[thick] (5,0) -- (5.7,-0.7) -- (4.3,-0.7) -- (5,0);
+  \draw[thick,fill=funOrange!20] (5.7,-0.7) -- (5.7,-1.05) -- (4.3,-1.05) -- (4.3,-0.7) -- cycle;
+  \node at (5,-0.88) {\small $72$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\correctAnswer{$3n + 15 = 72$}
+\explanation{The left pan has $3$ boxes of $n$ and one block of $15$, giving $3n + 15$. The right pan has $72$. Since the scale balances, $3n + 15 = 72$.}
+\end{practiceQuestion}
+
+\newpage
+\section*{5-2-q22 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch05-02-solving-two-step-equations.tex}}
+\begin{practiceQuestion}{5-2-q22}{gmc}
+\begin{questionText}
+Look at the balance scale. Both sides are equal. What is the value of $x$?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.84]
+  % Fulcrum
+  \draw[thick] (0,-0.5) -- (-0.4,-1.2) -- (0.4,-1.2) -- cycle;
+  % Beam
+  \draw[thick] (-5,0) -- (5,0);
+  % Left pan
+  \draw[thick] (-5,0) -- (-5.8,-0.7) -- (-4.2,-0.7) -- (-5,0);
+  \draw[thick,fill=funBlue!20] (-5.8,-0.7) -- (-5.8,-1.05) -- (-4.2,-1.05) -- (-4.2,-0.7) -- cycle;
+  % Left: 3x + 9
+  \node[draw,fill=funBlue!40,minimum width=0.42cm,minimum height=0.42cm] at (-5.45,-1.48) {\small $x$};
+  \node[draw,fill=funBlue!40,minimum width=0.42cm,minimum height=0.42cm] at (-5.00,-1.48) {\small $x$};
+  \node[draw,fill=funBlue!40,minimum width=0.42cm,minimum height=0.42cm] at (-4.55,-1.48) {\small $x$};
+  \node at (-5.38,-1.98) {\small $+$};
+  \node[draw,fill=funOrange!35,minimum width=0.78cm,minimum height=0.5cm] at (-4.96,-1.98) {\small $9$};
+  % Right pan
+  \draw[thick] (5,0) -- (5.8,-0.7) -- (4.2,-0.7) -- (5,0);
+  \draw[thick,fill=funOrange!20] (5.8,-0.7) -- (5.8,-1.05) -- (4.2,-1.05) -- (4.2,-0.7) -- cycle;
+  \node at (5,-0.88) {\small $42$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{$x = 11$}
+\choiceB{$x = 14$}
+\choiceC{$x = 17$}
+\choiceD{$x = 33$}
+\correctAnswer{A}
+\explanation{The balance gives $3x + 9 = 42$. Subtract $9$: $3x = 33$. Divide by $3$: $x = 11$.}
+\end{practiceQuestion}
+
+\newpage
+\section*{5-2-q25 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch05-02-solving-two-step-equations.tex}}
+\begin{practiceQuestion}{5-2-q25}{gsa}
+\begin{questionText}
+The balance scale is in equilibrium. Find the value of $n$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.84]
+  % Fulcrum
+  \draw[thick] (0,-0.5) -- (-0.4,-1.2) -- (0.4,-1.2) -- cycle;
+  % Beam
+  \draw[thick] (-5,0) -- (5,0);
+  % Left pan
+  \draw[thick] (-5,0) -- (-5.8,-0.7) -- (-4.2,-0.7) -- (-5,0);
+  \draw[thick,fill=funBlue!20] (-5.8,-0.7) -- (-5.8,-1.05) -- (-4.2,-1.05) -- (-4.2,-0.7) -- cycle;
+  \node at (-5,-0.88) {\small $5n - 7$};
+  % Right pan
+  \draw[thick] (5,0) -- (5.8,-0.7) -- (4.2,-0.7) -- (5,0);
+  \draw[thick,fill=funOrange!20] (5.8,-0.7) -- (5.8,-1.05) -- (4.2,-1.05) -- (4.2,-0.7) -- cycle;
+  \node at (5,-0.88) {\small $38$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\correctAnswer{$n = 9$}
+\explanation{The balance gives $5n - 7 = 38$. Add $7$: $5n = 45$. Divide by $5$: $n = 9$. Check: $5(9) - 7 = 38$ \checkmark.}
+\end{practiceQuestion}
+
+\newpage
+\section*{5-3-q24 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch05-03-solving-equations-with-distributive-property.tex}}
+\begin{practiceQuestion}{5-3-q24}{gmc}
+\begin{questionText}
+The balance scale below is in equilibrium. What is $x$?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.84]
+  % Fulcrum
+  \draw[thick] (0,-0.5) -- (-0.4,-1.2) -- (0.4,-1.2) -- cycle;
+  % Beam
+  \draw[thick] (-5,0) -- (5,0);
+  % Left pan: 2 groups of (x+4)
+  \draw[thick] (-5,0) -- (-5.8,-0.7) -- (-4.2,-0.7) -- (-5,0);
+  \draw[thick,fill=funBlue!20] (-5.8,-0.7) -- (-5.8,-1.05) -- (-4.2,-1.05) -- (-4.2,-0.7) -- cycle;
+  \node at (-5,-0.88) {\small $2(x + 4)$};
+  % Right pan
+  \draw[thick] (5,0) -- (5.8,-0.7) -- (4.2,-0.7) -- (5,0);
+  \draw[thick,fill=funOrange!20] (5.8,-0.7) -- (5.8,-1.05) -- (4.2,-1.05) -- (4.2,-0.7) -- cycle;
+  \node at (5,-0.88) {\small $26$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{$x = 7$}
+\choiceB{$x = 9$}
+\choiceC{$x = 11$}
+\choiceD{$x = 13$}
+\correctAnswer{B}
+\explanation{The balance gives $2(x + 4) = 26$. Divide by $2$: $x + 4 = 13$. Subtract $4$: $x = 9$.}
+\end{practiceQuestion}
+
+\end{document}

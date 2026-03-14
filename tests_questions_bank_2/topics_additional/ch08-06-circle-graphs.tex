@@ -278,26 +278,21 @@ How many students walk to school?
 The circle graph below shows a family's monthly budget.
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=1.08]
   % Housing 35%=126°, Food 20%=72°, Transport 15%=54°, Savings 20%=72°, Other 10%=36°
-  \fill[funBlue!70] (0,0) -- (0:2) arc (0:126:2) -- cycle;
-  \fill[funRed!70] (0,0) -- (126:2) arc (126:198:2) -- cycle;
-  \fill[funGreen!70] (0,0) -- (198:2) arc (198:252:2) -- cycle;
-  \fill[yellow!70] (0,0) -- (252:2) arc (252:324:2) -- cycle;
-  \fill[gray!40] (0,0) -- (324:2) arc (324:360:2) -- cycle;
-  \draw (0,0) circle (2);
-  \draw (0,0) -- (0:2); \draw (0,0) -- (126:2); \draw (0,0) -- (198:2);
-  \draw (0,0) -- (252:2); \draw (0,0) -- (324:2);
-  \node at (63:1.3) {\small Housing};
-  \node at (63:0.8) {\small $35\%$};
-  \node at (162:1.3) {\small Food};
-  \node at (162:0.8) {\small $20\%$};
-  \node at (225:1.3) {\small Transport};
-  \node at (225:0.7) {\small $15\%$};
-  \node at (288:1.3) {\small Savings};
-  \node at (288:0.8) {\small $20\%$};
-  \node at (342:1.3) {\small Other};
-  \node at (342:0.8) {\small $10\%$};
+  \fill[funBlue!70] (0,0) -- (0:2.45) arc (0:126:2.45) -- cycle;
+  \fill[funRed!70] (0,0) -- (126:2.45) arc (126:198:2.45) -- cycle;
+  \fill[funGreen!70] (0,0) -- (198:2.45) arc (198:252:2.45) -- cycle;
+  \fill[yellow!70] (0,0) -- (252:2.45) arc (252:324:2.45) -- cycle;
+  \fill[gray!40] (0,0) -- (324:2.45) arc (324:360:2.45) -- cycle;
+  \draw (0,0) circle (2.45);
+  \draw (0,0) -- (0:2.45); \draw (0,0) -- (126:2.45); \draw (0,0) -- (198:2.45);
+  \draw (0,0) -- (252:2.45); \draw (0,0) -- (324:2.45);
+  \node[align=center] at (63:1.45) {\small Housing\\[-1pt]$35\%$};
+  \node[align=center] at (162:1.33) {\small Food\\[-1pt]$20\%$};
+  \node[align=center] at (225:1.18) {\scriptsize Transport\\[-1pt]$15\%$};
+  \node[align=center] at (288:1.33) {\small Savings\\[-1pt]$20\%$};
+  \node[align=center] at (342:1.22) {\small Other\\[-1pt]$10\%$};
 \end{tikzpicture}
 \end{center}
 
@@ -316,22 +311,18 @@ If the family earns $\$5{,}000$ per month, how much more do they spend on housin
 The circle graph shows the favorite seasons of $120$ students.
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=1.08]
   % Spring 30%=108°, Summer 35%=126°, Fall 20%=72°, Winter 15%=54°
-  \fill[funGreen!60] (0,0) -- (0:2) arc (0:108:2) -- cycle;
-  \fill[yellow!60] (0,0) -- (108:2) arc (108:234:2) -- cycle;
-  \fill[orange!60] (0,0) -- (234:2) arc (234:306:2) -- cycle;
-  \fill[funBlue!40] (0,0) -- (306:2) arc (306:360:2) -- cycle;
-  \draw (0,0) circle (2);
-  \draw (0,0) -- (0:2); \draw (0,0) -- (108:2); \draw (0,0) -- (234:2); \draw (0,0) -- (306:2);
-  \node at (54:1.3) {\small Spring};
-  \node at (54:0.8) {\small $30\%$};
-  \node at (171:1.3) {\small Summer};
-  \node at (171:0.8) {\small $35\%$};
-  \node at (270:1.3) {\small Fall};
-  \node at (270:0.8) {\small $20\%$};
-  \node at (333:1.3) {\small Winter};
-  \node at (333:0.8) {\small $15\%$};
+  \fill[funGreen!60] (0,0) -- (0:2.45) arc (0:108:2.45) -- cycle;
+  \fill[yellow!60] (0,0) -- (108:2.45) arc (108:234:2.45) -- cycle;
+  \fill[orange!60] (0,0) -- (234:2.45) arc (234:306:2.45) -- cycle;
+  \fill[funBlue!40] (0,0) -- (306:2.45) arc (306:360:2.45) -- cycle;
+  \draw (0,0) circle (2.45);
+  \draw (0,0) -- (0:2.45); \draw (0,0) -- (108:2.45); \draw (0,0) -- (234:2.45); \draw (0,0) -- (306:2.45);
+  \node[align=center] at (54:1.42) {\small Spring\\[-1pt]$30\%$};
+  \node[align=center] at (171:1.36) {\small Summer\\[-1pt]$35\%$};
+  \node[align=center] at (270:1.26) {\small Fall\\[-1pt]$20\%$};
+  \node[align=center] at (333:1.18) {\small Winter\\[-1pt]$15\%$};
 \end{tikzpicture}
 \end{center}
 
@@ -350,26 +341,21 @@ How many more students chose summer than winter?
 The circle graph shows how a student spends $10$ hours on a weekend day.
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=1.08]
   % Homework 20%=72°, Video games 30%=108°, Reading 10%=36°, Outside 25%=90°, Other 15%=54°
-  \fill[funBlue!70] (0,0) -- (0:2) arc (0:72:2) -- cycle;
-  \fill[funRed!70] (0,0) -- (72:2) arc (72:180:2) -- cycle;
-  \fill[funGreen!70] (0,0) -- (180:2) arc (180:216:2) -- cycle;
-  \fill[yellow!70] (0,0) -- (216:2) arc (216:306:2) -- cycle;
-  \fill[gray!40] (0,0) -- (306:2) arc (306:360:2) -- cycle;
-  \draw (0,0) circle (2);
-  \draw (0,0) -- (0:2); \draw (0,0) -- (72:2); \draw (0,0) -- (180:2);
-  \draw (0,0) -- (216:2); \draw (0,0) -- (306:2);
-  \node at (36:1.3) {\small HW};
-  \node at (36:0.8) {\small $20\%$};
-  \node at (126:1.3) {\small Games};
-  \node at (126:0.8) {\small $30\%$};
-  \node at (198:1.3) {\small Read};
-  \node at (198:0.8) {\small $10\%$};
-  \node at (261:1.3) {\small Outside};
-  \node at (261:0.8) {\small $25\%$};
-  \node at (333:1.3) {\small Other};
-  \node at (333:0.8) {\small $15\%$};
+  \fill[funBlue!70] (0,0) -- (0:2.45) arc (0:72:2.45) -- cycle;
+  \fill[funRed!70] (0,0) -- (72:2.45) arc (72:180:2.45) -- cycle;
+  \fill[funGreen!70] (0,0) -- (180:2.45) arc (180:216:2.45) -- cycle;
+  \fill[yellow!70] (0,0) -- (216:2.45) arc (216:306:2.45) -- cycle;
+  \fill[gray!40] (0,0) -- (306:2.45) arc (306:360:2.45) -- cycle;
+  \draw (0,0) circle (2.45);
+  \draw (0,0) -- (0:2.45); \draw (0,0) -- (72:2.45); \draw (0,0) -- (180:2.45);
+  \draw (0,0) -- (216:2.45); \draw (0,0) -- (306:2.45);
+  \node[align=center] at (36:1.28) {\small HW\\[-1pt]$20\%$};
+  \node[align=center] at (126:1.42) {\small Games\\[-1pt]$30\%$};
+  \node[align=center] at (198:1.08) {\small Read\\[-1pt]$10\%$};
+  \node[align=center] at (261:1.38) {\small Outside\\[-1pt]$25\%$};
+  \node[align=center] at (333:1.18) {\small Other\\[-1pt]$15\%$};
 \end{tikzpicture}
 \end{center}
 

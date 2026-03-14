@@ -301,7 +301,7 @@ The bar graph compares the total amount after $2$ years for simple and compound 
 The line graph shows the growth of $\$500$ at $10\%$ annual compound interest. What is the balance at Year $2$?
 
 \begin{center}
-\begin{tikzpicture}[scale=0.7]
+\begin{tikzpicture}[xscale=0.95,yscale=0.75]
   \draw[thick,->] (0,0) -- (5,0) node[right]{\small Year};
   \draw[thick,->] (0,0) -- (0,5) node[above]{\small Balance (\$)};
   \foreach \x/\lab in {0/0,1/1,2/2,3/3} {
@@ -311,10 +311,10 @@ The line graph shows the growth of $\$500$ at $10\%$ annual compound interest. W
     \draw (-0.1,\y) -- (0.1,\y) node[left,font=\small,xshift=-2pt] {\lab};
   }
   \draw[thick,funOrange,mark=*,mark size=2pt] plot coordinates {(0,2.5) (1,2.75) (2,3.025) (3,3.325)};
-  \node[above right,font=\small,funOrange] at (0,2.5) {$\$500$};
-  \node[above right,font=\small,funOrange] at (1,2.75) {$\$550$};
-  \node[above right,font=\small,funOrange] at (2,3.025) {?};
-  \node[above right,font=\small,funOrange] at (3,3.325) {$\$665.50$};
+  \node[left,font=\small,funOrange] at (-0.03,2.58) {$\$500$};
+  \node[above,font=\small,funOrange] at (1.02,2.86) {$\$550$};
+  \node[above,font=\small,funOrange] at (2.0,3.18) {?};
+  \node[above right,font=\small,funOrange] at (3.05,3.36) {$\$665.50$};
 \end{tikzpicture}
 \end{center}
 \end{questionText}

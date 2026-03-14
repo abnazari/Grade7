@@ -1,0 +1,185 @@
+\documentclass[12pt, fleqn, openany]{studyGuide}
+\setstretch{1.4}
+\enableInlineReview
+\renewcommand{\VMBookTitle}{Audit Review}
+\renewcommand{\VMBookSubtitle}{Grade 7 --- Ch Graphic Review --- Changed Questions}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\begin{document}
+
+\begin{center}
+\begin{tcolorbox}[
+	enhanced,
+	colback=white,
+	colframe=funTeal!60,
+	boxrule=1.5pt,
+	arc=10pt,
+	outer arc=10pt,
+	width=0.9\linewidth,
+	halign=center,
+	top=5mm, bottom=5mm,
+]
+	{\Large\bfseries\sffamily\color{funTealDark}Audit Review}\\[2mm]
+	{\large\sffamily\color{funGrayDark}Grade 7 --- Ch Graphic Review --- Changed Questions}\\[2mm]
+	{\normalsize\sffamily\color{funGrayDark}Verify corrections below}
+\end{tcolorbox}
+\end{center}
+
+\newpage
+\section*{7-7-q27 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics\_additional/ch07-07-cylinder-surface-area-and-volume.tex}}
+\begin{practiceQuestion}{7-7-q27}{gsa}
+\begin{questionText}
+Two cylinders are shown below. Cylinder A has radius $2$ cm and height $15$ cm. Cylinder B has radius $5$ cm and height $4$ cm. Which cylinder has the greater volume, and by how much? Use $\pi \approx 3.14$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.46]
+  % Cylinder A
+  \draw[thick] (-4,0) ellipse (1.15 and 0.35);
+  \draw[thick] (-5.15,0) -- (-5.15,6.5);
+  \draw[thick] (-2.85,0) -- (-2.85,6.5);
+  \draw[thick] (-4,6.5) ellipse (1.15 and 0.35);
+  \node[below] at (-4,-0.7) {Cylinder A};
+  \draw[thick,funBlue] (-4,6.5) -- (-2.85,6.5);
+  \node[funBlue, fill=white, inner sep=1pt] at (-3.45,7.1) {\small $r=2$};
+  \draw[thick,funBlue,<->] (-2.05,0) -- (-2.05,6.5);
+  \node[funBlue, fill=white, inner sep=1pt] at (-1.0,3.25) {\small $h=15$};
+  % Cylinder B
+  \draw[thick] (6.2,0) ellipse (2.35 and 0.7);
+  \draw[thick] (3.85,0) -- (3.85,2.45);
+  \draw[thick] (8.55,0) -- (8.55,2.45);
+  \draw[thick] (6.2,2.45) ellipse (2.35 and 0.7);
+  \node[below] at (6.2,-1.0) {Cylinder B};
+  \draw[thick,funBlue] (6.2,2.45) -- (8.55,2.45);
+  \node[funBlue, fill=white, inner sep=1pt] at (7.35,3.1) {\small $r=5$};
+  \draw[thick,funBlue,<->] (9.35,0) -- (9.35,2.45);
+  \node[funBlue, fill=white, inner sep=1pt] at (10.35,1.225) {\small $h=4$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\correctAnswer{Cylinder B by $125.6$ cm$^3$}
+\explanation{Cylinder A: $V = 3.14 \times 4 \times 15 = 188.4$ cm$^3$. Cylinder B: $V = 3.14 \times 25 \times 4 = 314$ cm$^3$. Cylinder B is greater by $314 - 188.4 = 125.6$ cubic centimeters.}
+\end{practiceQuestion}
+
+\newpage
+\section*{8-1-q26 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch08-01-populations-and-samples.tex}}
+\begin{practiceQuestion}{8-1-q26}{gsa}
+\begin{questionText}
+Look at the two sampling scenarios described in the diagram below.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+% Scenario 1
+\node[draw, rounded corners, fill=funBlue!15, minimum width=7cm, minimum height=1.55cm, text width=6.5cm, inner sep=6pt, align=center] at (0,2.2) {Scenario 1: Survey $30$ students\\waiting in the lunch line};
+% Scenario 2
+\node[draw, rounded corners, fill=funGreen!15, minimum width=8cm, minimum height=1.55cm, text width=7.4cm, inner sep=6pt, align=center] at (0,0) {Scenario 2: Randomly select $30$ students\\from the full student roster};
+% Arrow labels
+\node[right] at (4.2,2.2) {\textit{Convenience}};
+\node[right] at (4.2,0) {\textit{Random}};
+\end{tikzpicture}
+\end{center}
+
+Which scenario is more likely to produce a representative sample, and why?
+\end{questionText}
+\correctAnswer{Scenario 2, because every student has an equal chance of being selected.}
+\explanation{Random sampling from the full roster gives every student an equal chance of selection, producing a representative sample. The lunch-line sample is convenience-based and may miss students who bring lunch or eat elsewhere.}
+\end{practiceQuestion}
+
+\newpage
+\section*{8-6-q23 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics\_additional/ch08-06-circle-graphs.tex}}
+\begin{practiceQuestion}{8-6-q23}{gmc}
+\begin{questionText}
+The circle graph below shows a family's monthly budget.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.08]
+  % Housing 35%=126°, Food 20%=72°, Transport 15%=54°, Savings 20%=72°, Other 10%=36°
+  \fill[funBlue!70] (0,0) -- (0:2.45) arc (0:126:2.45) -- cycle;
+  \fill[funRed!70] (0,0) -- (126:2.45) arc (126:198:2.45) -- cycle;
+  \fill[funGreen!70] (0,0) -- (198:2.45) arc (198:252:2.45) -- cycle;
+  \fill[yellow!70] (0,0) -- (252:2.45) arc (252:324:2.45) -- cycle;
+  \fill[gray!40] (0,0) -- (324:2.45) arc (324:360:2.45) -- cycle;
+  \draw (0,0) circle (2.45);
+  \draw (0,0) -- (0:2.45); \draw (0,0) -- (126:2.45); \draw (0,0) -- (198:2.45);
+  \draw (0,0) -- (252:2.45); \draw (0,0) -- (324:2.45);
+  \node[align=center] at (63:1.45) {\small Housing\\[-1pt]$35\%$};
+  \node[align=center] at (162:1.33) {\small Food\\[-1pt]$20\%$};
+  \node[align=center] at (225:1.18) {\scriptsize Transport\\[-1pt]$15\%$};
+  \node[align=center] at (288:1.33) {\small Savings\\[-1pt]$20\%$};
+  \node[align=center] at (342:1.22) {\small Other\\[-1pt]$10\%$};
+\end{tikzpicture}
+\end{center}
+
+If the family earns $\$5{,}000$ per month, how much more do they spend on housing than on transportation?
+\end{questionText}
+\choiceA{$\$500$}
+\choiceB{$\$750$}
+\choiceC{$\$1{,}000$}
+\choiceD{$\$1{,}250$}
+\correctAnswer{C}
+\explanation{Housing: $0.35 \times \$5{,}000 = \$1{,}750$. Transportation: $0.15 \times \$5{,}000 = \$750$. Difference: $\$1{,}750 - \$750 = \$1{,}000$.}
+\end{practiceQuestion}
+
+\newpage
+\section*{8-6-q24 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics\_additional/ch08-06-circle-graphs.tex}}
+\begin{practiceQuestion}{8-6-q24}{gmc}
+\begin{questionText}
+The circle graph shows the favorite seasons of $120$ students.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.08]
+  % Spring 30%=108°, Summer 35%=126°, Fall 20%=72°, Winter 15%=54°
+  \fill[funGreen!60] (0,0) -- (0:2.45) arc (0:108:2.45) -- cycle;
+  \fill[yellow!60] (0,0) -- (108:2.45) arc (108:234:2.45) -- cycle;
+  \fill[orange!60] (0,0) -- (234:2.45) arc (234:306:2.45) -- cycle;
+  \fill[funBlue!40] (0,0) -- (306:2.45) arc (306:360:2.45) -- cycle;
+  \draw (0,0) circle (2.45);
+  \draw (0,0) -- (0:2.45); \draw (0,0) -- (108:2.45); \draw (0,0) -- (234:2.45); \draw (0,0) -- (306:2.45);
+  \node[align=center] at (54:1.42) {\small Spring\\[-1pt]$30\%$};
+  \node[align=center] at (171:1.36) {\small Summer\\[-1pt]$35\%$};
+  \node[align=center] at (270:1.26) {\small Fall\\[-1pt]$20\%$};
+  \node[align=center] at (333:1.18) {\small Winter\\[-1pt]$15\%$};
+\end{tikzpicture}
+\end{center}
+
+How many more students chose summer than winter?
+\end{questionText}
+\choiceA{$18$}
+\choiceB{$20$}
+\choiceC{$24$}
+\choiceD{$42$}
+\correctAnswer{C}
+\explanation{Summer: $0.35 \times 120 = 42$ students. Winter: $0.15 \times 120 = 18$ students. Difference: $42 - 18 = 24$ students.}
+\end{practiceQuestion}
+
+\newpage
+\section*{8-6-q25 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics\_additional/ch08-06-circle-graphs.tex}}
+\begin{practiceQuestion}{8-6-q25}{gsa}
+\begin{questionText}
+The circle graph shows how a student spends $10$ hours on a weekend day.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.08]
+  % Homework 20%=72°, Video games 30%=108°, Reading 10%=36°, Outside 25%=90°, Other 15%=54°
+  \fill[funBlue!70] (0,0) -- (0:2.45) arc (0:72:2.45) -- cycle;
+  \fill[funRed!70] (0,0) -- (72:2.45) arc (72:180:2.45) -- cycle;
+  \fill[funGreen!70] (0,0) -- (180:2.45) arc (180:216:2.45) -- cycle;
+  \fill[yellow!70] (0,0) -- (216:2.45) arc (216:306:2.45) -- cycle;
+  \fill[gray!40] (0,0) -- (306:2.45) arc (306:360:2.45) -- cycle;
+  \draw (0,0) circle (2.45);
+  \draw (0,0) -- (0:2.45); \draw (0,0) -- (72:2.45); \draw (0,0) -- (180:2.45);
+  \draw (0,0) -- (216:2.45); \draw (0,0) -- (306:2.45);
+  \node[align=center] at (36:1.28) {\small HW\\[-1pt]$20\%$};
+  \node[align=center] at (126:1.42) {\small Games\\[-1pt]$30\%$};
+  \node[align=center] at (198:1.08) {\small Read\\[-1pt]$10\%$};
+  \node[align=center] at (261:1.38) {\small Outside\\[-1pt]$25\%$};
+  \node[align=center] at (333:1.18) {\small Other\\[-1pt]$15\%$};
+\end{tikzpicture}
+\end{center}
+
+How many hours does the student spend on homework, and what is the central angle for the ``Outside'' sector?
+\end{questionText}
+\correctAnswer{Homework $= 2$ hours; Outside central angle $= 90°$}
+\explanation{Homework: $20\%$ of $10 = 2$ hours. Outside central angle: $0.25 \times 360° = 90°$.}
+\end{practiceQuestion}
+
+\end{document}

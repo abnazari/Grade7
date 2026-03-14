@@ -264,10 +264,11 @@ The number line shows the location of $\sqrt{20}$. Between which two integers is
 The diagram shows a square with area $A$. What is the side length?
 
 \begin{center}
-\begin{tikzpicture}[scale=0.6]
-  \draw[thick] (0,0) rectangle (3,3);
-  \node at (1.5,1.5) {$A = 169$ ft$^2$};
-  \draw[thick,<->] (0,-0.4) -- (3,-0.4) node[midway,below,font=\small] {$s = ?$};
+\begin{tikzpicture}[scale=0.78]
+  \draw[thick] (0,0) rectangle (3.2,3.2);
+  \node[font=\small] at (1.6,1.6) {$A = 169$ ft$^2$};
+  \draw[thick,<->] (0,-0.45) -- (3.2,-0.45);
+  \node[midway,below,font=\small] at (1.6,-0.45) {$s = ?$};
 \end{tikzpicture}
 \end{center}
 \end{questionText}
@@ -308,11 +309,11 @@ $10$ & $110$ & $\sqrt{110} = 10$ \\ \hline
 The diagram shows two squares. What is the total area?
 
 \begin{center}
-\begin{tikzpicture}[scale=0.4]
-  \draw[thick] (0,0) rectangle (4,4);
-  \node at (2,2) {$s = 4$ cm};
-  \draw[thick] (5,0) rectangle (8,3);
-  \node at (6.5,1.5) {$s = 3$ cm};
+\begin{tikzpicture}[scale=0.52]
+  \draw[thick] (0,0) rectangle (4.2,4.2);
+  \node[font=\small] at (2.1,2.1) {$s = 4$ cm};
+  \draw[thick] (5.4,0) rectangle (8.6,3.2);
+  \node[font=\small] at (7.0,1.6) {$s = 3$ cm};
 \end{tikzpicture}
 \end{center}
 \end{questionText}
@@ -325,13 +326,14 @@ The diagram shows two squares. What is the total area?
 Use the number line to estimate $\sqrt{45}$ to the nearest tenth.
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=1.05]
   \draw[thick,->] (5.5,0) -- (8.5,0);
   \foreach \x in {6,7,8} \draw (\x,0.1) -- (\x,-0.1) node[below,font=\small] {$\x$};
   \foreach \x in {6.1,6.2,...,7.9} \draw (\x,0.05) -- (\x,-0.05);
-  \node[above,font=\small] at (6,-0.05) {$\sqrt{36}$};
-  \node[above,font=\small] at (7,-0.05) {$\sqrt{49}$};
-  \fill[funBlue] (6.7,0) circle (0.1) node[above=6pt,font=\small] {$\sqrt{45} \approx ?$};
+  \node[above left,font=\small] at (6.12,0.08) {$\sqrt{36}$};
+  \node[above right,font=\small] at (6.88,0.08) {$\sqrt{49}$};
+  \fill[funBlue] (6.7,0) circle (0.1);
+  \node[above,font=\small,funBlue] at (6.7,0.38) {$\sqrt{45} \approx ?$};
 \end{tikzpicture}
 \end{center}
 \end{questionText}

@@ -1,0 +1,174 @@
+\documentclass[12pt, fleqn, openany]{studyGuide}
+\setstretch{1.4}
+\enableInlineReview
+\renewcommand{\VMBookTitle}{Audit Review}
+\renewcommand{\VMBookSubtitle}{Grade 7 --- Ch Graphic Review --- Changed Questions}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\begin{document}
+
+\begin{center}
+\begin{tcolorbox}[
+	enhanced,
+	colback=white,
+	colframe=funTeal!60,
+	boxrule=1.5pt,
+	arc=10pt,
+	outer arc=10pt,
+	width=0.9\linewidth,
+	halign=center,
+	top=5mm, bottom=5mm,
+]
+	{\Large\bfseries\sffamily\color{funTealDark}Audit Review}\\[2mm]
+	{\large\sffamily\color{funGrayDark}Grade 7 --- Ch Graphic Review --- Changed Questions}\\[2mm]
+	{\normalsize\sffamily\color{funGrayDark}Verify corrections below}
+\end{tcolorbox}
+\end{center}
+
+\newpage
+\section*{7-1-q22 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch07-01-parts-of-a-circle.tex}}
+\begin{practiceQuestion}{7-1-q22}{gmc}
+\begin{questionText}
+Look at the circle below. Which labeled segment is a radius?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+  \draw[thick] (0,0) circle (2.2);
+  \fill (0,0) circle (2pt) node[below left=1pt] {$O$};
+  % Radius OA
+  \draw[thick,funBlue] (0,0) -- (2.2,0);
+  \fill (2.2,0) circle (2pt) node[right=2pt] {$A$};
+  \node[funBlue, fill=white, inner sep=1pt] at (1.38,-0.3) {Segment 1};
+  % Chord BC (not through center)
+  \fill (-1.45,1.65) circle (2pt) node[above left=1pt] {$B$};
+  \fill (1.45,1.65) circle (2pt) node[above right=1pt] {$C$};
+  \draw[thick,funOrange] (-1.45,1.65) -- (1.45,1.65);
+  \node[funOrange, fill=white, inner sep=1pt] at (0,1.98) {Segment 2};
+  % Diameter DE
+  \fill (-2.2,0) circle (2pt) node[left=2pt] {$D$};
+  \draw[thick,funGreen] (-2.2,0) -- (2.2,0);
+  \node[funGreen, fill=white, inner sep=1pt] at (-1.15,0.34) {Segment 3};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{Segment 1 only}
+\choiceB{Segment 2 only}
+\choiceC{Segment 3 only}
+\choiceD{Segments 1 and 2}
+\correctAnswer{A}
+\explanation{A radius connects the center of the circle to a point on the circle. Segment 1 ($OA$) runs from center $O$ to point $A$ on the circle, so it is the radius. Segment 2 is a chord and Segment 3 is a diameter.}
+\end{practiceQuestion}
+
+\newpage
+\section*{7-7-q22 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics\_additional/ch07-07-cylinder-surface-area-and-volume.tex}}
+\begin{practiceQuestion}{7-7-q22}{gmc}
+\begin{questionText}
+The cylinder below has the dimensions shown. What is its volume? Use $\pi \approx 3.14$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+  % Cylinder
+  \draw[thick] (0,0) ellipse (2.5 and 0.75);
+  \draw[thick] (-2.5,0) -- (-2.5,4.8);
+  \draw[thick] (2.5,0) -- (2.5,4.8);
+  \draw[thick] (0,4.8) ellipse (2.5 and 0.75);
+  % Dimensions
+  \draw[thick,funBlue] (0,4.8) -- (2.5,4.8);
+  \node[funBlue, fill=white, inner sep=1pt] at (1.25,5.35) {$r = 4$};
+  \draw[thick,funBlue,<->] (3.4,0) -- (3.4,4.8);
+  \node[funBlue, fill=white, inner sep=1pt] at (4.35,2.4) {$h = 9$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{$113.04$ cm$^3$}
+\choiceB{$226.08$ cm$^3$}
+\choiceC{$452.16$ cm$^3$}
+\choiceD{$904.32$ cm$^3$}
+\correctAnswer{C}
+\explanation{$V = \pi r^2 h = 3.14 \times 16 \times 9 = 452.16$ cubic centimeters.}
+\end{practiceQuestion}
+
+\newpage
+\section*{7-7-q23 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics\_additional/ch07-07-cylinder-surface-area-and-volume.tex}}
+\begin{practiceQuestion}{7-7-q23}{gmc}
+\begin{questionText}
+The cylinder below has a diameter of $14$ cm and a height of $10$ cm. What is the surface area? Use $\pi \approx 3.14$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+  % Cylinder
+  \draw[thick] (0,0) ellipse (2.7 and 0.78);
+  \draw[thick] (-2.7,0) -- (-2.7,4.6);
+  \draw[thick] (2.7,0) -- (2.7,4.6);
+  \draw[thick] (0,4.6) ellipse (2.7 and 0.78);
+  % Dimensions
+  \draw[thick,funBlue,<->] (-2.7,5.25) -- (2.7,5.25);
+  \node[funBlue, fill=white, inner sep=1pt] at (0,5.8) {$d = 14$};
+  \draw[thick,funBlue,<->] (3.7,0) -- (3.7,4.6);
+  \node[funBlue, fill=white, inner sep=1pt] at (4.8,2.3) {$h = 10$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{$439.60$ cm$^2$}
+\choiceB{$615.44$ cm$^2$}
+\choiceC{$747.32$ cm$^2$}
+\choiceD{$1{,}494.64$ cm$^2$}
+\correctAnswer{C}
+\explanation{$r = 7$ cm. $SA = 2\pi r^2 + 2\pi rh = 2(3.14)(49) + 2(3.14)(7)(10) = 307.72 + 439.6 = 747.32$ square centimeters.}
+\end{practiceQuestion}
+
+\newpage
+\section*{7-7-q24 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics\_additional/ch07-07-cylinder-surface-area-and-volume.tex}}
+\begin{practiceQuestion}{7-7-q24}{gmc}
+\begin{questionText}
+The net of a cylinder is shown below. The two circles have radius $3$ cm and the rectangle has a height of $11$ cm. What is the total surface area? Use $\pi \approx 3.14$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.45]
+  % Top circle
+  \draw[thick,funBlue] (4.71,13.2) circle (1.5);
+  \node[fill=white, inner sep=1pt] at (4.71,13.2) {\small $r = 3$};
+  % Rectangle (lateral surface)
+  \draw[thick,funBlue] (0,0) rectangle (9.42,11);
+  \node[fill=white, inner sep=1pt] at (4.71,5.5) {\small $h = 11$};
+  \node[fill=white, inner sep=1pt] at (4.71,-0.95) {\small width $= 2\pi r$};
+  % Bottom circle
+  \draw[thick,funBlue] (4.71,-3.2) circle (1.5);
+  \node[fill=white, inner sep=1pt] at (4.71,-3.2) {\small $r = 3$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\choiceA{$207.24$ cm$^2$}
+\choiceB{$263.76$ cm$^2$}
+\choiceC{$320.28$ cm$^2$}
+\choiceD{$527.52$ cm$^2$}
+\correctAnswer{B}
+\explanation{Two circles: $2 \times 3.14 \times 9 = 56.52$ cm$^2$. Rectangle (lateral): $2\pi r \times h = 2 \times 3.14 \times 3 \times 11 = 207.24$ cm$^2$. Total: $56.52 + 207.24 = 263.76$ square centimeters.}
+\end{practiceQuestion}
+
+\newpage
+\section*{7-7-q25 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics\_additional/ch07-07-cylinder-surface-area-and-volume.tex}}
+\begin{practiceQuestion}{7-7-q25}{gsa}
+\begin{questionText}
+The cylinder below has the dimensions shown. Find its volume. Use $\pi \approx 3.14$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.56]
+  % Cylinder
+  \draw[thick] (0,0) ellipse (2.9 and 0.82);
+  \draw[thick] (-2.9,0) -- (-2.9,3.4);
+  \draw[thick] (2.9,0) -- (2.9,3.4);
+  \draw[thick] (0,3.4) ellipse (2.9 and 0.82);
+  % Dimensions
+  \draw[thick,funBlue] (0,3.4) -- (2.9,3.4);
+  \node[funBlue, fill=white, inner sep=1pt] at (1.45,4.0) {$r = 6$};
+  \draw[thick,funBlue,<->] (3.9,0) -- (3.9,3.4);
+  \node[funBlue, fill=white, inner sep=1pt] at (4.85,1.7) {$h = 5$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\correctAnswer{$565.2$ cm$^3$}
+\explanation{$V = \pi r^2 h = 3.14 \times 36 \times 5 = 565.2$ cubic centimeters.}
+\end{practiceQuestion}
+
+\end{document}

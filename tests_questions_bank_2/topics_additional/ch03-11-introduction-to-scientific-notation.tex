@@ -334,16 +334,18 @@ $0.0034$ & ? \\ \hline
 The bar graph compares masses of objects in scientific notation. About how many times heavier is Object B than Object A?
 
 \begin{center}
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[xscale=0.7,yscale=0.55]
   \draw[thick,->] (0,0) -- (0,6);
   \draw[thick,->] (0,0) -- (5,0);
-  \node[left,font=\footnotesize,rotate=90] at (-0.8,3) {Mass (kg)};
-  \node[left,font=\footnotesize] at (-0.2,2) {$10^2$};
-  \node[left,font=\footnotesize] at (-0.2,5) {$10^5$};
+  \node[font=\small,rotate=90] at (-1.0,3) {Mass (kg)};
+  \draw (-0.1,2) -- (0.1,2);
+  \draw (-0.1,5) -- (0.1,5);
+  \node[left,font=\small] at (-0.18,2) {$10^2$};
+  \node[left,font=\small] at (-0.18,5) {$10^5$};
   \fill[funBlue] (1,0) rectangle (2,2);
   \fill[funGreen] (3,0) rectangle (4,5);
-  \node[below,font=\footnotesize] at (1.5,-0.2) {A};
-  \node[below,font=\footnotesize] at (3.5,-0.2) {B};
+  \node[below,font=\small] at (1.5,-0.18) {A};
+  \node[below,font=\small] at (3.5,-0.18) {B};
 \end{tikzpicture}
 \end{center}
 \end{questionText}

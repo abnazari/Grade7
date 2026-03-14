@@ -1,0 +1,112 @@
+\documentclass[12pt, fleqn, openany]{studyGuide}
+\setstretch{1.4}
+\enableInlineReview
+\renewcommand{\VMBookTitle}{Audit Review}
+\renewcommand{\VMBookSubtitle}{Grade 7 --- Ch Graphic Review --- Changed Questions}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\begin{document}
+
+\begin{center}
+\begin{tcolorbox}[
+	enhanced,
+	colback=white,
+	colframe=funTeal!60,
+	boxrule=1.5pt,
+	arc=10pt,
+	outer arc=10pt,
+	width=0.9\linewidth,
+	halign=center,
+	top=5mm, bottom=5mm,
+]
+	{\Large\bfseries\sffamily\color{funTealDark}Audit Review}\\[2mm]
+	{\large\sffamily\color{funGrayDark}Grade 7 --- Ch Graphic Review --- Changed Questions}\\[2mm]
+	{\normalsize\sffamily\color{funGrayDark}Verify corrections below}
+\end{tcolorbox}
+\end{center}
+
+\newpage
+\section*{8-7-q22 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics\_additional/ch08-07-data-displays-extended.tex}}
+\begin{practiceQuestion}{8-7-q22}{gmc}
+\begin{questionText}
+The double bar graph below shows the number of students participating in two clubs over three months.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    ybar,
+    bar width=13pt,
+    width=9.4cm, height=6.2cm,
+    ymin=0, ymax=35,
+    ylabel={Students},
+    symbolic x coords={Sep,Oct,Nov},
+    xtick=data,
+    ylabel style={font=\small},
+    tick label style={font=\small},
+    legend style={
+        at={(0.5,-0.2)},
+        anchor=north,
+        legend columns=2,
+        font=\small,
+        draw=black,
+        fill=white,
+        cells={anchor=west}
+    },
+    nodes near coords,
+    every node near coord/.style={font=\scriptsize\bfseries, text=black, yshift=2pt},
+    enlarge x limits=0.32,
+]
+\addplot[draw=black, fill=funBlue!45, line width=0.9pt] coordinates {(Sep,20) (Oct,25) (Nov,30)};
+\addplot[draw=black, fill=white, line width=0.9pt] coordinates {(Sep,15) (Oct,18) (Nov,22)};
+\legend{Art Club, Science Club}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+In which month is the difference between Art Club and Science Club membership the greatest?
+\end{questionText}
+\choiceA{September}
+\choiceB{October}
+\choiceC{November}
+\choiceD{They are all the same.}
+\correctAnswer{C}
+\explanation{Sept: $20 - 15 = 5$. Oct: $25 - 18 = 7$. Nov: $30 - 22 = 8$. The greatest difference is in November.}
+\end{practiceQuestion}
+
+\newpage
+\section*{8-7-q25 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics\_additional/ch08-07-data-displays-extended.tex}}
+\begin{practiceQuestion}{8-7-q25}{gsa}
+\begin{questionText}
+The double line graph below shows monthly sales for two products over $4$ months.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=9.4cm, height=6cm,
+    xlabel={Month}, ylabel={Units Sold},
+    xlabel style={font=\small, yshift=2pt},
+    ylabel style={font=\small},
+    tick label style={font=\small},
+    xmin=0.5, xmax=4.9, ymin=0, ymax=115,
+    xtick={1,2,3,4},
+    xticklabels={Jan,Feb,Mar,Apr},
+    ytick={0,20,40,60,80,100},
+    grid=major,
+    grid style={black!15},
+    clip=false,
+]
+\addplot[funBlue, thick, mark=square*, mark size=2.8pt] coordinates {(1,40) (2,60) (3,80) (4,100)};
+\addplot[funRed, thick, mark=triangle*, mark size=3pt, mark options={solid}] coordinates {(1,70) (2,65) (3,55) (4,50)};
+\node[anchor=west, fill=white, inner sep=1.5pt, font=\small] at (axis cs:4.1,100) {Product X};
+\node[anchor=west, fill=white, inner sep=1.5pt, font=\small] at (axis cs:4.1,50) {Product Y};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+In which month did Product X first outsell Product Y, and what was the combined total of both products in April?
+\end{questionText}
+\correctAnswer{March; combined April total is $150$ units}
+\explanation{Jan: X $40$ vs Y $70$. Feb: X $60$ vs Y $65$. Mar: X $80$ vs Y $55$ — Product X first outsells Y in March. April combined: $100 + 50 = 150$ units.}
+\end{practiceQuestion}
+
+\end{document}

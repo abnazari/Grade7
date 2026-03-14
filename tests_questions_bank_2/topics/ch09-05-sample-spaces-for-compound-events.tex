@@ -244,24 +244,28 @@ A phone cover comes in $6$ designs and $3$ materials. If the company adds $2$ mo
 Look at the tree diagram below showing the outcomes of picking a snack and a drink.
 
 \begin{center}
-\begin{tikzpicture}[level distance=2.5cm, sibling distance=2cm,
-  edge from parent/.style={draw,-latex}]
-  \node {Start}
-    child { node {Apple}
-      child { node {Water} edge from parent node[left] {} }
-      child { node {Juice} edge from parent node[right] {} }
-      edge from parent node[left] {}
-    }
-    child { node {Granola}
-      child { node {Water} edge from parent node[left] {} }
-      child { node {Juice} edge from parent node[right] {} }
-      edge from parent node[right] {}
-    }
-    child { node {Crackers}
-      child { node {Water} edge from parent node[left] {} }
-      child { node {Juice} edge from parent node[right] {} }
-      edge from parent node[right] {}
-    };
+\begin{tikzpicture}[x=1cm, y=1cm, >=Latex, font=\small]
+  \node at (0,4.2) {Start};
+  \node at (-3,2.7) {Apple};
+  \node at (0,2.7) {Granola};
+  \node at (3,2.7) {Crackers};
+  \node at (-4,0.9) {Water};
+  \node at (-2,0.9) {Juice};
+  \node at (-1,0.9) {Water};
+  \node at (1,0.9) {Juice};
+  \node at (2,0.9) {Water};
+  \node at (4,0.9) {Juice};
+
+  \draw[thick,->] (0,3.95) -- (-3,3.02);
+  \draw[thick,->] (0,3.95) -- (0,3.02);
+  \draw[thick,->] (0,3.95) -- (3,3.02);
+
+  \draw[thick,->] (-3,2.42) -- (-4,1.18);
+  \draw[thick,->] (-3,2.42) -- (-2,1.18);
+  \draw[thick,->] (0,2.42) -- (-1,1.18);
+  \draw[thick,->] (0,2.42) -- (1,1.18);
+  \draw[thick,->] (3,2.42) -- (2,1.18);
+  \draw[thick,->] (3,2.42) -- (4,1.18);
 \end{tikzpicture}
 \end{center}
 
@@ -307,21 +311,26 @@ How many total outcomes are in this sample space?
 A tree diagram shows outcomes for choosing a pen color (Black or Blue) and a pen type (Gel, Ballpoint, or Felt-tip).
 
 \begin{center}
-\begin{tikzpicture}[level distance=2.5cm, sibling distance=2cm,
-  edge from parent/.style={draw,-latex}]
-  \node {Start}
-    child { node {Black}
-      child { node {Gel} edge from parent node[left] {} }
-      child { node {Ball} edge from parent node[left] {} }
-      child { node {Felt} edge from parent node[right] {} }
-      edge from parent node[left] {}
-    }
-    child { node {Blue}
-      child { node {Gel} edge from parent node[left] {} }
-      child { node {Ball} edge from parent node[left] {} }
-      child { node {Felt} edge from parent node[right] {} }
-      edge from parent node[right] {}
-    };
+\begin{tikzpicture}[x=1cm, y=1cm, >=Latex, font=\small]
+  \node at (0,4.4) {Start};
+  \node at (-2.8,2.8) {Black};
+  \node at (2.8,2.8) {Blue};
+  \node at (-4.6,1.0) {Gel};
+  \node at (-2.8,1.0) {Ballpoint};
+  \node at (-1.0,1.0) {Felt-tip};
+  \node at (1.0,1.0) {Gel};
+  \node at (2.8,1.0) {Ballpoint};
+  \node at (4.6,1.0) {Felt-tip};
+
+  \draw[thick,->] (0,4.12) -- (-2.8,3.08);
+  \draw[thick,->] (0,4.12) -- (2.8,3.08);
+
+  \draw[thick,->] (-2.8,2.52) -- (-4.6,1.28);
+  \draw[thick,->] (-2.8,2.52) -- (-2.8,1.28);
+  \draw[thick,->] (-2.8,2.52) -- (-1.0,1.28);
+  \draw[thick,->] (2.8,2.52) -- (1.0,1.28);
+  \draw[thick,->] (2.8,2.52) -- (2.8,1.28);
+  \draw[thick,->] (2.8,2.52) -- (4.6,1.28);
 \end{tikzpicture}
 \end{center}
 
@@ -362,21 +371,33 @@ How many total outcomes are in this sample space?
 Draw the sample space as an organized list for the compound event: flip a coin and pick a card from $\{1, 2, 3\}$.
 
 \begin{center}
-\begin{tikzpicture}[level distance=2cm, sibling distance=2.5cm,
-  edge from parent/.style={draw,-latex}]
-  \node {Start}
-    child { node {H}
-      child { node {H1} edge from parent node[left] {\footnotesize 1} }
-      child { node {H2} edge from parent node[left] {\footnotesize 2} }
-      child { node {H3} edge from parent node[right] {\footnotesize 3} }
-      edge from parent node[left] {H}
-    }
-    child { node {T}
-      child { node {T1} edge from parent node[left] {\footnotesize 1} }
-      child { node {T2} edge from parent node[left] {\footnotesize 2} }
-      child { node {T3} edge from parent node[right] {\footnotesize 3} }
-      edge from parent node[right] {T}
-    };
+\begin{tikzpicture}[x=1cm, y=1cm, >=Latex, font=\small]
+  \node at (0,4.4) {Start};
+  \node at (-2.3,2.8) {H};
+  \node at (2.3,2.8) {T};
+  \node at (-3.9,0.9) {H1};
+  \node at (-2.3,0.9) {H2};
+  \node at (-0.7,0.9) {H3};
+  \node at (0.7,0.9) {T1};
+  \node at (2.3,0.9) {T2};
+  \node at (3.9,0.9) {T3};
+
+  \draw[thick,->] (0,4.12) -- (-2.3,3.06);
+  \draw[thick,->] (0,4.12) -- (2.3,3.06);
+
+  \draw[thick,->] (-2.3,2.48) -- (-3.9,1.18);
+  \draw[thick,->] (-2.3,2.48) -- (-2.3,1.18);
+  \draw[thick,->] (-2.3,2.48) -- (-0.7,1.18);
+  \draw[thick,->] (2.3,2.48) -- (0.7,1.18);
+  \draw[thick,->] (2.3,2.48) -- (2.3,1.18);
+  \draw[thick,->] (2.3,2.48) -- (3.9,1.18);
+
+  \node[font=\scriptsize] at (-3.15,1.95) {1};
+  \node[font=\scriptsize] at (-2.3,1.9) {2};
+  \node[font=\scriptsize] at (-1.45,1.95) {3};
+  \node[font=\scriptsize] at (1.45,1.95) {1};
+  \node[font=\scriptsize] at (2.3,1.9) {2};
+  \node[font=\scriptsize] at (3.15,1.95) {3};
 \end{tikzpicture}
 \end{center}
 

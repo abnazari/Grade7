@@ -16,8 +16,11 @@ Locate a specific `\begin{tikzpicture}` block inside a `practiceQuestion`, rewri
 - User pastes a screenshot of a bad-looking TikZ diagram and asks for it to be redrawn
 
 ## Step 1 — Locate the Question
+### From the screenshot (most common)
+the screenshot usually includes the question id and the file path. You can use it to locate the question. 
 
-### From a question ID (most common)
+
+### From a question ID 
 User provides a file path + ID like `8-3-q27`.  
 Read the file and find `\begin{practiceQuestion}{8-3-q27}`.
 

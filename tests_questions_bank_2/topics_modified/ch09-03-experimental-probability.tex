@@ -270,19 +270,36 @@ The bar graph shows the results of a simulation comparing experimental and theor
 \begin{center}
 \begin{tikzpicture}
   \begin{axis}[
-    ybar, bar width=10pt, ymin=0, ymax=0.7,
+    ybar,
+    bar width=11pt,
+    ymin=0,
+    ymax=0.7,
+    width=9.2cm,
+    height=5.7cm,
     ylabel={Probability},
     xlabel={Number of Trials},
     symbolic x coords={$20$, $50$, $100$, $500$},
     xtick=data,
-    width=9cm, height=5.5cm,
-    enlarge x limits=0.2,
-    legend style={at={(0.5,1.05)}, anchor=south, legend columns=2},
+    ytick={0,0.2,0.4,0.6},
+    enlarge x limits=0.24,
+    axis line style={draw=black},
+    tick style={draw=black},
+    tick label style={font=\small},
+    label style={font=\small},
+    legend style={
+      at={(0.5,1.03)},
+      anchor=south,
+      legend columns=2,
+      draw=black,
+      fill=white,
+      font=\small,
+      cells={anchor=west}
+    },
     nodes near coords,
-    every node near coord/.append style={font=\footnotesize}
+    every node near coord/.append style={font=\scriptsize, yshift=2pt, text=black}
   ]
-  \addplot[fill=funBlue!80] coordinates {($20$,0.55) ($50$,0.44) ($100$,0.38) ($500$,0.34)};
-  \addplot[fill=funRed!40] coordinates {($20$,0.33) ($50$,0.33) ($100$,0.33) ($500$,0.33)};
+  \addplot[draw=black, fill=funBlue!75] coordinates {($20$,0.55) ($50$,0.44) ($100$,0.38) ($500$,0.34)};
+  \addplot[draw=black, fill=white] coordinates {($20$,0.33) ($50$,0.33) ($100$,0.33) ($500$,0.33)};
   \legend{Experimental, Theoretical}
   \end{axis}
 \end{tikzpicture}
