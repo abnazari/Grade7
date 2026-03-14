@@ -1,0 +1,404 @@
+% ============================================================
+% Question Bank: ch08-04 Comparing Populations with Measures (Modified — AK/OK/TX)
+% Topic Title: Comparing Populations with Measures of Center and Variability (Extended Measures Emphasis)
+% CCSS: 7.SP.B.4 (AK/OK/TX: extended measures emphasis — IQR/range over MAD)
+% Questions: 27 (15 MC + 6 SA + 6 Graphical)
+% ============================================================
+
+% --- Multiple Choice Questions (15) ---
+
+\begin{practiceQuestion}{m-8-4-q01}{mc}
+\begin{questionText}
+Which measure of variability is calculated using only the middle $50\%$ of the data?
+\end{questionText}
+\choiceA{Range}
+\choiceB{Mean}
+\choiceC{Interquartile range (IQR)}
+\choiceD{Mode}
+\correctAnswer{C}
+\explanation{The IQR equals Q3 $-$ Q1, capturing the spread of only the middle $50\%$ of the data. Range uses all values, and mean and mode are measures of center.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q02}{mc}
+\begin{questionText}
+Data set A: $\{10, 12, 14, 16, 18\}$. Data set B: $\{2, 8, 14, 20, 26\}$. Which data set has a greater range?
+\end{questionText}
+\choiceA{Data set A}
+\choiceB{Data set B}
+\choiceC{Both have the same range.}
+\choiceD{Cannot determine.}
+\correctAnswer{B}
+\explanation{Range of A: $18 - 10 = 8$. Range of B: $26 - 2 = 24$. Data set B has a greater range.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q03}{mc}
+\begin{questionText}
+The five-number summary for a data set is: Min $= 22$, Q1 $= 30$, Median $= 38$, Q3 $= 46$, Max $= 54$. What is the IQR?
+\end{questionText}
+\choiceA{$8$}
+\choiceB{$16$}
+\choiceC{$32$}
+\choiceD{$38$}
+\correctAnswer{B}
+\explanation{IQR $=$ Q3 $-$ Q1 $= 46 - 30 = 16$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q04}{mc}
+\begin{questionText}
+Two classes took a quiz. Class X has a mean of $82$ and Class Y has a mean of $78$. Class X has a range of $30$ and Class Y has a range of $12$. Which class performed more consistently?
+\end{questionText}
+\choiceA{Class X}
+\choiceB{Class Y}
+\choiceC{Both equally consistent}
+\choiceD{Cannot determine}
+\correctAnswer{B}
+\explanation{A smaller range means less spread. Class Y's range ($12$) is much smaller than Class X's ($30$), so Class Y performed more consistently.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q05}{mc}
+\begin{questionText}
+Adding an outlier to a data set will most affect which measure?
+\end{questionText}
+\choiceA{Median}
+\choiceB{IQR}
+\choiceC{Mode}
+\choiceD{Range}
+\correctAnswer{D}
+\explanation{An outlier changes the maximum or minimum, directly affecting the range. The median, IQR, and mode are resistant to outliers.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q06}{mc}
+\begin{questionText}
+A data set has Q1 $= 45$ and Q3 $= 65$. Any value below $\_\_$ or above $\_\_$ would be considered a potential outlier using the $1.5 \times$ IQR rule.
+\end{questionText}
+\choiceA{Below $15$, above $95$}
+\choiceB{Below $20$, above $90$}
+\choiceC{Below $25$, above $85$}
+\choiceD{Below $30$, above $80$}
+\correctAnswer{A}
+\explanation{IQR $= 65 - 45 = 20$. $1.5 \times 20 = 30$. Lower fence: $45 - 30 = 15$. Upper fence: $65 + 30 = 95$. Values below $15$ or above $95$ are potential outliers.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q07}{mc}
+\begin{questionText}
+Team A scores: $\{60, 65, 70, 72, 78\}$. Team B scores: $\{55, 62, 70, 80, 88\}$. Both teams have the same median. Which team has more variability?
+\end{questionText}
+\choiceA{Team A}
+\choiceB{Team B}
+\choiceC{Both the same}
+\choiceD{Cannot determine}
+\correctAnswer{B}
+\explanation{Both medians are $70$. Team A range: $78 - 60 = 18$. Team B range: $88 - 55 = 33$. Team B has much more variability.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q08}{mc}
+\begin{questionText}
+Which measure of center is best to use when a data set has extreme outliers?
+\end{questionText}
+\choiceA{Mean}
+\choiceB{Median}
+\choiceC{Range}
+\choiceD{IQR}
+\correctAnswer{B}
+\explanation{The median is resistant to outliers because it depends on position, not value. The mean is pulled toward outliers. Range and IQR are measures of spread, not center.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q09}{mc}
+\begin{questionText}
+Data set: $\{10, 15, 20, 22, 25, 28, 30, 35, 40\}$. What is the IQR?
+\end{questionText}
+\choiceA{$10$}
+\choiceB{$12$}
+\choiceC{$15$}
+\choiceD{$25$}
+\correctAnswer{C}
+\explanation{$9$ values. Median (5th value) $= 25$. Lower half: $\{10, 15, 20, 22\}$. Q1 $= \frac{15+20}{2} = 17.5$. Upper half: $\{28, 30, 35, 40\}$. Q3 $= \frac{30+35}{2} = 32.5$. IQR $= 32.5 - 17.5 = 15$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q10}{mc}
+\begin{questionText}
+Two data sets each have $7$ values. Set P: $\{40, 42, 44, 46, 48, 50, 52\}$. Set Q: $\{30, 36, 42, 46, 52, 58, 60\}$. Which set has the smaller IQR?
+\end{questionText}
+\choiceA{Set P}
+\choiceB{Set Q}
+\choiceC{Both the same}
+\choiceD{Cannot determine}
+\correctAnswer{A}
+\explanation{Set P: Q1 $= 42$, Q3 $= 50$, IQR $= 8$. Set Q: Q1 $= 36$, Q3 $= 58$, IQR $= 22$. Set P has the smaller IQR.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q11}{mc}
+\begin{questionText}
+A delivery company tracks delivery times. Last month: mean $= 4.2$ days, range $= 6$ days. This month: mean $= 3.8$ days, range $= 3$ days. What improved this month?
+\end{questionText}
+\choiceA{Deliveries are faster and more consistent.}
+\choiceB{Deliveries are slower but more consistent.}
+\choiceC{Deliveries are faster but less consistent.}
+\choiceD{Nothing changed.}
+\correctAnswer{A}
+\explanation{The mean decreased ($4.2 \to 3.8$), meaning faster deliveries. The range decreased ($6 \to 3$), meaning more consistent times. Both improved.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q12}{mc}
+\begin{questionText}
+Data set: $\{5, 8, 10, 12, 15, 18, 20\}$. If the value $20$ is replaced by $50$, which measure changes the most?
+\end{questionText}
+\choiceA{Median}
+\choiceB{IQR}
+\choiceC{Mean}
+\choiceD{Mode}
+\correctAnswer{C}
+\explanation{Original mean: $\frac{88}{7} \approx 12.6$. New mean: $\frac{118}{7} \approx 16.9$. Change $\approx 4.3$. Median stays $12$. IQR barely changes since Q1 and Q3 positions don't shift. Mean is most affected.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q13}{mc}
+\begin{questionText}
+Which pair of measures would you compare to decide whether two groups are meaningfully different?
+\end{questionText}
+\choiceA{Mean and mode}
+\choiceB{Range and maximum}
+\choiceC{Difference in medians and IQR}
+\choiceD{Minimum and maximum}
+\correctAnswer{C}
+\explanation{Comparing the difference in medians (or means) relative to a measure of variability (like IQR) helps determine whether the difference is meaningful or just due to natural spread.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q14}{mc}
+\begin{questionText}
+Group A: median $= 54$, IQR $= 8$. Group B: median $= 60$, IQR $= 10$. The difference in medians expressed as a multiple of Group A's IQR is:
+\end{questionText}
+\choiceA{$0.5$}
+\choiceB{$0.75$}
+\choiceC{$1.0$}
+\choiceD{$1.5$}
+\correctAnswer{B}
+\explanation{Difference in medians: $60 - 54 = 6$. Divided by Group A's IQR: $\frac{6}{8} = 0.75$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q15}{mc}
+\begin{questionText}
+Two sets of data have the same mean of $50$. Set A has a range of $10$ and Set B has a range of $40$. If you pick a random value from each set, which set is more likely to give a value far from $50$?
+\end{questionText}
+\choiceA{Set A}
+\choiceB{Set B}
+\choiceC{Both equally likely}
+\choiceD{Cannot determine}
+\correctAnswer{B}
+\explanation{Set B has a much larger range ($40$ vs $10$), meaning values are more spread out. A random value from Set B is more likely to be far from the mean.}
+\end{practiceQuestion}
+
+% --- Short Answer Questions (6) ---
+
+\begin{practiceQuestion}{m-8-4-q16}{sa}
+\begin{questionText}
+Data set A: $\{24, 28, 30, 32, 36\}$. Data set B: $\{18, 24, 30, 36, 42\}$. Find the mean and range of each set. Which has more variability?
+\end{questionText}
+\correctAnswer{Set A: mean $= 30$, range $= 12$. Set B: mean $= 30$, range $= 24$. Set B has more variability.}
+\explanation{Set A: $\frac{150}{5} = 30$, range $= 36-24=12$. Set B: $\frac{150}{5} = 30$, range $= 42-18=24$. Same mean, but Set B is more spread out.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q17}{sa}
+\begin{questionText}
+Find the IQR of: $\{12, 15, 18, 20, 23, 25, 28, 30\}$.
+\end{questionText}
+\correctAnswer{IQR $= 10$}
+\explanation{$8$ values. Lower half: $\{12, 15, 18, 20\}$. Q1 $= \frac{15+18}{2} = 16.5$. Upper half: $\{23, 25, 28, 30\}$. Q3 $= \frac{25+28}{2} = 26.5$. IQR $= 26.5 - 16.5 = 10$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q18}{sa}
+\begin{questionText}
+A coach collected race times (seconds) for two runners.
+
+Runner 1: $\{58, 60, 61, 63, 65\}$
+
+Runner 2: $\{55, 59, 62, 66, 70\}$
+
+Compare using mean and range. Which runner is faster on average? Which is more consistent?
+\end{questionText}
+\correctAnswer{Runner 1: mean $= 61.4$, range $= 7$. Runner 2: mean $= 62.4$, range $= 15$. Runner 1 is faster (lower mean) and more consistent (smaller range).}
+\explanation{Runner 1: $\frac{307}{5}=61.4$, range $=65-58=7$. Runner 2: $\frac{312}{5}=62.4$, range $=70-55=15$. Runner 1 is both faster and more consistent.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q19}{sa}
+\begin{questionText}
+A data set is: $\{10, 14, 16, 18, 20, 22, 24, 26, 90\}$. Explain why the median is a better measure of center than the mean for this data set.
+\end{questionText}
+\correctAnswer{The value $90$ is an extreme outlier. The mean ($\frac{240}{9} \approx 26.7$) is pulled up by the outlier and does not represent most of the data. The median ($20$) better represents the typical value.}
+\explanation{Most values are between $10$ and $26$, but $90$ skews the mean upward. The median is resistant to outliers and stays near the center of the majority of values.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q20}{sa}
+\begin{questionText}
+Store A daily sales: mean $= \$420$, IQR $= \$60$. Store B daily sales: mean $= \$480$, IQR $= \$120$. Express the difference in means as a multiple of each store's IQR. Which comparison suggests a more meaningful difference?
+\end{questionText}
+\correctAnswer{Difference $= \$60$. As a multiple of Store A's IQR: $\frac{60}{60} = 1.0$. As a multiple of Store B's IQR: $\frac{60}{120} = 0.5$. Using Store A's IQR, the difference appears more meaningful ($1.0$ IQRs vs $0.5$ IQRs).}
+\explanation{The same dollar difference looks larger when compared to a smaller measure of variability. Against Store A's IQR, the difference is $1$ full IQR, which is notable. Against Store B's wider spread, it is only $0.5$ IQR.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q21}{sa}
+\begin{questionText}
+A soccer team's goals per game over $8$ games: $\{1, 2, 2, 3, 3, 4, 5, 8\}$. Use the $1.5 \times$ IQR rule to determine if any values are outliers.
+\end{questionText}
+\correctAnswer{Q1 $= 2$, Q3 $= 4.5$, IQR $= 2.5$. Lower fence: $2 - 3.75 = -1.75$. Upper fence: $4.5 + 3.75 = 8.25$. No values are below $-1.75$ or above $8.25$, so there are no outliers.}
+\explanation{$1.5 \times 2.5 = 3.75$. Lower fence: $2 - 3.75 = -1.75$. Upper fence: $4.5 + 3.75 = 8.25$. All values ($1$ through $8$) fall within the fences, so no outliers.}
+\end{practiceQuestion}
+
+% --- Graphical Questions (3 GMC + 3 GSA) ---
+
+\begin{practiceQuestion}{m-8-4-q22}{gmc}
+\begin{questionText}
+The box plots below show test scores for two classes.
+
+\begin{center}
+\begin{tikzpicture}
+  \draw[->] (0,0) -- (11,0);
+  \foreach \x/\v in {0/50,1/55,2/60,3/65,4/70,5/75,6/80,7/85,8/90,9/95,10/100}
+    {\draw (\x,0.1) -- (\x,-0.1) node[below]{\tiny \v};}
+
+  % Class M: min=55, Q1=65, med=75, Q3=85, max=95
+  \node[left] at (-0.3,1) {\small Class M};
+  \draw[thick] (1,0.7) -- (1,1.3);
+  \draw[thick] (1,1) -- (3,1);
+  \draw[thick,fill=funBlue!30] (3,0.7) rectangle (7,1.3);
+  \draw[thick,funRed] (5,0.7) -- (5,1.3);
+  \draw[thick] (7,1) -- (9,1);
+  \draw[thick] (9,0.7) -- (9,1.3);
+
+  % Class N: min=60, Q1=70, med=78, Q3=84, max=92
+  \node[left] at (-0.3,2.2) {\small Class N};
+  \draw[thick] (2,1.9) -- (2,2.5);
+  \draw[thick] (2,2.2) -- (4,2.2);
+  \draw[thick,fill=funGreen!30] (4,1.9) rectangle (6.8,2.5);
+  \draw[thick,funRed] (5.6,1.9) -- (5.6,2.5);
+  \draw[thick] (6.8,2.2) -- (8.4,2.2);
+  \draw[thick] (8.4,1.9) -- (8.4,2.5);
+\end{tikzpicture}
+\end{center}
+
+Which class has a larger IQR?
+\end{questionText}
+\choiceA{Class M}
+\choiceB{Class N}
+\choiceC{Both the same}
+\choiceD{Cannot determine}
+\correctAnswer{A}
+\explanation{Class M: IQR $= 85 - 65 = 20$. Class N: IQR $= 84 - 70 = 14$. Class M has a larger IQR.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q23}{gmc}
+\begin{questionText}
+The table below shows statistics for two groups of runners.
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+& \textbf{Mean (s)} & \textbf{Median (s)} & \textbf{Range (s)} & \textbf{IQR (s)} \\
+\hline
+Group 1 & $48.5$ & $47$ & $18$ & $8$ \\
+Group 2 & $52.0$ & $51$ & $10$ & $5$ \\
+\hline
+\end{tabular}
+\end{center}
+
+What is the difference in medians expressed as a multiple of Group 2's IQR?
+\end{questionText}
+\choiceA{$0.4$}
+\choiceB{$0.8$}
+\choiceC{$1.6$}
+\choiceD{$4.0$}
+\correctAnswer{B}
+\explanation{Difference in medians: $51 - 47 = 4$. Divide by Group 2's IQR: $\frac{4}{5} = 0.8$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q24}{gmc}
+\begin{questionText}
+The dot plots below show daily temperatures ($°$F) for two weeks in two cities.
+
+\begin{center}
+\begin{tikzpicture}
+  % City P
+  \node[above] at (5,1.8) {\textbf{City P}};
+  \draw[->] (0,0) -- (11,0);
+  \foreach \x/\v in {0/60,1/62,2/64,3/66,4/68,5/70,6/72,7/74,8/76,9/78,10/80}
+    {\draw (\x,0.1) -- (\x,-0.1) node[below]{\tiny \v};}
+  % Data: 64,66,66,68,68,68,70,70,72,74
+  \foreach \x/\y in {2/1,3/1,3/2,4/1,4/2,4/3,5/1,5/2,6/1,7/1}
+    {\fill[funBlue] (\x,\y*0.3+0.15) circle (0.1);}
+\end{tikzpicture}
+\end{center}
+\vspace{0.3cm}
+\begin{center}
+\begin{tikzpicture}
+  % City Q
+  \node[above] at (5,1.8) {\textbf{City Q}};
+  \draw[->] (0,0) -- (11,0);
+  \foreach \x/\v in {0/60,1/62,2/64,3/66,4/68,5/70,6/72,7/74,8/76,9/78,10/80}
+    {\draw (\x,0.1) -- (\x,-0.1) node[below]{\tiny \v};}
+  % Data: 60,62,66,68,70,72,74,76,78,80
+  \foreach \x/\y in {0/1,1/1,3/1,4/1,5/1,6/1,7/1,8/1,9/1,10/1}
+    {\fill[funRed] (\x,\y*0.3+0.15) circle (0.1);}
+\end{tikzpicture}
+\end{center}
+
+Which city has a greater range of temperatures?
+\end{questionText}
+\choiceA{City P}
+\choiceB{City Q}
+\choiceC{Both the same}
+\choiceD{Cannot determine}
+\correctAnswer{B}
+\explanation{City P range: $74 - 64 = 10°$F. City Q range: $80 - 60 = 20°$F. City Q has a greater range.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q25}{gsa}
+\begin{questionText}
+Two basketball players' points per game are shown below.
+
+Player A: $\{12, 14, 15, 18, 20, 22, 25\}$
+
+Player B: $\{10, 13, 16, 18, 19, 24, 28\}$
+
+Find the median, range, and IQR for each player. Which player is more consistent?
+\end{questionText}
+\correctAnswer{Player A: median $= 18$, range $= 13$, IQR $= 22-14 = 8$. Player B: median $= 18$, range $= 18$, IQR $= 24-13 = 11$. Player A is more consistent (smaller range and IQR).}
+\explanation{Both have median $18$. Player A: range $= 25-12=13$, Q1$=14$, Q3$=22$, IQR$=8$. Player B: range $= 28-10=18$, Q1$=13$, Q3$=24$, IQR$=11$. Player A is more consistent.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q26}{gsa}
+\begin{questionText}
+The table shows quiz results for two classes.
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+& \textbf{Min} & \textbf{Q1} & \textbf{Median} & \textbf{Q3} & \textbf{Max} \\
+\hline
+Class J & $62$ & $70$ & $78$ & $86$ & $98$ \\
+Class K & $68$ & $74$ & $82$ & $88$ & $94$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Find the IQR and range for each class. Express the difference in medians as a multiple of each class's IQR.
+\end{questionText}
+\correctAnswer{Class J: IQR $= 16$, range $= 36$. Class K: IQR $= 14$, range $= 26$. Difference in medians: $82 - 78 = 4$. As a multiple of J's IQR: $\frac{4}{16} = 0.25$. As a multiple of K's IQR: $\frac{4}{14} \approx 0.29$.}
+\explanation{Both ratios are small (well under $1$), suggesting the difference in medians is not very meaningful compared to the spread of each class's scores.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-8-4-q27}{gsa}
+\begin{questionText}
+Two farms recorded the weights (lbs) of pumpkins harvested.
+
+Farm A: $\{8, 10, 12, 14, 16, 18, 20\}$
+
+Farm B: $\{6, 9, 11, 14, 17, 21, 50\}$
+
+\begin{enumerate}
+\item Find the mean and median for each farm.
+\item Which measure of center better represents Farm B's data? Explain.
+\item Use the $1.5 \times$ IQR rule to determine if Farm B has any outliers.
+\end{enumerate}
+\end{questionText}
+\correctAnswer{Farm A: mean $= 14$, median $= 14$. Farm B: mean $\approx 18.3$, median $= 14$. The median better represents Farm B because the outlier ($50$) pulls the mean upward. Farm B: Q1 $= 9$, Q3 $= 21$, IQR $= 12$. Upper fence: $21 + 18 = 39$. Since $50 > 39$, the value $50$ is an outlier.}
+\explanation{Farm A: $\frac{98}{7} = 14$. Farm B: $\frac{128}{7} \approx 18.3$. Farm B's mean is inflated by $50$. Median ($14$) matches Farm A and reflects the typical pumpkin weight. IQR rule: $1.5 \times 12 = 18$, upper fence $= 21 + 18 = 39$. Since $50 > 39$, it is an outlier.}
+\end{practiceQuestion}

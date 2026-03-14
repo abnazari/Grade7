@@ -1,0 +1,397 @@
+% ============================================================
+% Question Bank: ch09-07 Simulating Compound Events
+% Topic Title: Simulating Compound Events
+% CCSS: 7.SP.C.8c
+% Questions: 27 (15 MC + 6 SA + 6 Graphical)
+% ============================================================
+
+% --- Multiple Choice Questions (15) ---
+
+\begin{practiceQuestion}{9-7-q01}{mc}
+\begin{questionText}
+A student wants to simulate an event that has a $30\%$ chance of occurring. Using random digits $0$--$9$, which set of digits could represent the event occurring?
+\end{questionText}
+\choiceA{$0, 1, 2$}
+\choiceB{$0, 1, 2, 3$}
+\choiceC{$0, 1, 2, 3, 4$}
+\choiceD{$0, 1$}
+\correctAnswer{A}
+\explanation{Using digits $0$--$9$ gives $10$ equally likely outcomes. To simulate $30\%$, assign $3$ digits: $0, 1, 2$. That gives $\frac{3}{10} = 30\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q02}{mc}
+\begin{questionText}
+Why are simulations useful in probability?
+\end{questionText}
+\choiceA{They always give the exact theoretical probability.}
+\choiceB{They allow us to model events that may be difficult or expensive to carry out in real life.}
+\choiceC{They replace the need for any mathematical calculations.}
+\choiceD{They only work for events with $50\%$ probability.}
+\correctAnswer{B}
+\explanation{Simulations are useful because they let us model real-world events without actually performing them. This is especially valuable when the actual event is costly, time-consuming, or impractical to repeat many times.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q03}{mc}
+\begin{questionText}
+A game designer wants to simulate a $\dfrac{1}{4}$ chance of finding a treasure. Using a standard number cube, which outcome(s) should represent finding treasure?
+\end{questionText}
+\choiceA{Rolling a $1$}
+\choiceB{Rolling a $1$ or $2$}
+\choiceC{Rolling a $1$, $2$, or $3$}
+\choiceD{A standard number cube cannot simulate $\frac{1}{4}$ exactly.}
+\correctAnswer{D}
+\explanation{A standard number cube has $6$ equally likely outcomes. There is no whole number of outcomes that equals $\frac{1}{4}$ of $6$ (since $\frac{6}{4} = 1.5$). A different tool, like random digits $0$--$3$, would be needed.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q04}{mc}
+\begin{questionText}
+To simulate a $50\%$ chance of rain on any given day, which tool is most appropriate?
+\end{questionText}
+\choiceA{A spinner with $3$ equal sections}
+\choiceB{A standard number cube}
+\choiceC{A fair coin}
+\choiceD{A bag with $3$ red and $7$ blue marbles}
+\correctAnswer{C}
+\explanation{A fair coin has exactly $2$ equally likely outcomes, so $P(\text{heads}) = \frac{1}{2} = 50\%$. This perfectly models a $50\%$ chance of rain.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q05}{mc}
+\begin{questionText}
+A student simulates rolling a number cube $60$ times using a random number generator. She gets a $4$ a total of $14$ times. The theoretical probability of rolling a $4$ is $\dfrac{1}{6}$. Which statement is correct?
+\end{questionText}
+\choiceA{The simulation proves the die is unfair.}
+\choiceB{The expected frequency was $10$, so the simulation result of $14$ is slightly higher but within normal variation.}
+\choiceC{The simulation is wrong because it does not match the theory exactly.}
+\choiceD{The theoretical probability should be updated to $\frac{14}{60}$.}
+\correctAnswer{B}
+\explanation{The expected frequency is $\frac{1}{6} \times 60 = 10$. Getting $14$ is higher than expected but reasonable for only $60$ trials. Random variation is normal in simulations.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q06}{mc}
+\begin{questionText}
+A teacher uses random digits $0$--$9$ to simulate whether a student passes or fails a quiz. Digits $0$--$6$ represent passing. What probability of passing is being simulated?
+\end{questionText}
+\choiceA{$60\%$}
+\choiceB{$65\%$}
+\choiceC{$70\%$}
+\choiceD{$75\%$}
+\correctAnswer{C}
+\explanation{Digits $0$ through $6$ is $7$ digits out of $10$ total ($0$--$9$). So $\frac{7}{10} = 70\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q07}{mc}
+\begin{questionText}
+To simulate a compound event of two independent events each with probability $\dfrac{1}{2}$, which method is most appropriate?
+\end{questionText}
+\choiceA{Roll one die twice}
+\choiceB{Flip two coins}
+\choiceC{Draw two cards from a deck}
+\choiceD{Spin a spinner with $4$ sections once}
+\correctAnswer{B}
+\explanation{Each coin flip has a probability of $\frac{1}{2}$ for heads or tails. Flipping two coins independently simulates two events each with probability $\frac{1}{2}$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q08}{mc}
+\begin{questionText}
+A simulation uses digits $0$--$9$ to model whether a free throw is made. Digits $0$--$7$ mean ``made'' and $8$--$9$ mean ``missed.'' In $50$ trials, the free throw is made $38$ times. What is the experimental probability of making the free throw?
+\end{questionText}
+\choiceA{$\dfrac{4}{5}$}
+\choiceB{$\dfrac{19}{25}$}
+\choiceC{$\dfrac{38}{50}$}
+\choiceD{$\dfrac{7}{10}$}
+\correctAnswer{B}
+\explanation{The experimental probability is $\frac{38}{50} = \frac{19}{25}$. The simulated probability ($80\%$ design) and experimental result ($76\%$) are close, as expected.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q09}{mc}
+\begin{questionText}
+How does increasing the number of trials in a simulation affect the results?
+\end{questionText}
+\choiceA{It makes no difference.}
+\choiceB{The experimental probability moves farther from the theoretical probability.}
+\choiceC{The experimental probability tends to get closer to the theoretical probability.}
+\choiceD{It guarantees the experimental probability will exactly equal the theoretical probability.}
+\correctAnswer{C}
+\explanation{The Law of Large Numbers states that as the number of trials increases, the experimental probability tends to approach the theoretical probability. More trials give more reliable estimates.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q10}{mc}
+\begin{questionText}
+A company wants to simulate a $40\%$ return rate for online orders. Which simulation model correctly represents this?
+\end{questionText}
+\choiceA{Roll a die; $1$ or $2$ = return}
+\choiceB{Use digits $0$--$9$; $0, 1, 2, 3$ = return}
+\choiceC{Flip a coin; heads = return}
+\choiceD{Spin a spinner with $3$ equal sections; section A = return}
+\correctAnswer{B}
+\explanation{Using digits $0$--$9$, assigning $4$ digits ($0, 1, 2, 3$) to represent returns gives $\frac{4}{10} = 40\%$. The other options give $\frac{1}{3}$, $\frac{1}{2}$, or $\frac{1}{3}$ — none equal $40\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q11}{mc}
+\begin{questionText}
+Maya wants to simulate a $\dfrac{1}{6}$ chance of winning a prize. Which tool can she use?
+\end{questionText}
+\choiceA{A fair coin}
+\choiceB{A standard number cube}
+\choiceC{A spinner with $4$ equal sections}
+\choiceD{A bag with $3$ red and $3$ blue marbles}
+\correctAnswer{B}
+\explanation{A standard number cube has $6$ equally likely outcomes. Assigning $1$ outcome (e.g., rolling a $6$) to represent winning gives $P = \frac{1}{6}$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q12}{mc}
+\begin{questionText}
+A student runs a simulation $200$ times to estimate the probability of a compound event. She finds the event occurs $48$ times. What is the experimental probability?
+\end{questionText}
+\choiceA{$\dfrac{12}{50}$}
+\choiceB{$\dfrac{6}{25}$}
+\choiceC{$\dfrac{24}{100}$}
+\choiceD{$\dfrac{48}{100}$}
+\correctAnswer{B}
+\explanation{Experimental probability $= \frac{48}{200} = \frac{6}{25} = 0.24$. Choice B is the simplified form.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q13}{mc}
+\begin{questionText}
+A random number generator produces integers $1$--$10$. To simulate a $60\%$ chance of sunshine, which numbers should represent sunshine?
+\end{questionText}
+\choiceA{$1, 2, 3, 4, 5$}
+\choiceB{$1, 2, 3, 4, 5, 6$}
+\choiceC{$1, 2, 3, 4, 5, 6, 7$}
+\choiceD{$1, 2, 3$}
+\correctAnswer{B}
+\explanation{With integers $1$--$10$, there are $10$ equally likely outcomes. Assigning $6$ numbers to sunshine gives $\frac{6}{10} = 60\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q14}{mc}
+\begin{questionText}
+Devon simulates flipping a coin $4$ times by using random digits $0$--$9$. He lets even digits represent heads and odd digits represent tails. In one trial, his digits are $3, 8, 1, 6$. How many heads did he get in this trial?
+\end{questionText}
+\choiceA{$1$}
+\choiceB{$2$}
+\choiceC{$3$}
+\choiceD{$4$}
+\correctAnswer{B}
+\explanation{Even digits represent heads: $8$ and $6$ are even. Odd digits represent tails: $3$ and $1$ are odd. So there are $2$ heads in this trial.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q15}{mc}
+\begin{questionText}
+A simulation of $100$ trials models a $25\%$ chance of an event. The event occurs $30$ times. Which conclusion is best?
+\end{questionText}
+\choiceA{The simulation is flawed and should be redone.}
+\choiceB{The result of $30\%$ is reasonably close to $25\%$, consistent with random variation.}
+\choiceC{The theoretical probability must be $30\%$, not $25\%$.}
+\choiceD{The simulation proves the event has a $30\%$ probability.}
+\correctAnswer{B}
+\explanation{With only $100$ trials, getting $30$ out of $100$ ($30\%$) when the model says $25\%$ is a small difference due to random chance. This is within normal variation and does not disprove the model.}
+\end{practiceQuestion}
+
+% --- Short Answer Questions (6) ---
+
+\begin{practiceQuestion}{9-7-q16}{sa}
+\begin{questionText}
+A student uses random digits $0$--$9$ to simulate a $20\%$ chance of a bus being late. Which digits should represent the bus being late?
+\end{questionText}
+\correctAnswer{Any $2$ digits, e.g., $0$ and $1$}
+\explanation{To simulate $20\%$, assign $2$ out of $10$ digits. For example, digits $0$ and $1$ represent late ($\frac{2}{10} = 20\%$) and digits $2$--$9$ represent on time.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q17}{sa}
+\begin{questionText}
+A simulation uses a number cube to model a $\dfrac{1}{3}$ probability of rain. Rolling a $1$ or $2$ represents rain. In $90$ trials, rain occurs $28$ times. What is the expected number of rainy trials based on the theoretical probability?
+\end{questionText}
+\correctAnswer{$30$}
+\explanation{Expected frequency = $\frac{1}{3} \times 90 = 30$ trials. The observed $28$ is close to the predicted $30$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q18}{sa}
+\begin{questionText}
+A random number generator gives integers $1$--$5$. To simulate a compound event, each pair of two consecutive numbers is one trial. How many outcomes are in the sample space for one trial?
+\end{questionText}
+\correctAnswer{$25$}
+\explanation{Each number in the pair can be $1, 2, 3, 4,$ or $5$. The sample space has $5 \times 5 = 25$ outcomes.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q19}{sa}
+\begin{questionText}
+A simulation of $500$ trials finds that a compound event occurs $180$ times. What is the experimental probability? Express your answer as a simplified fraction.
+\end{questionText}
+\correctAnswer{$\frac{9}{25}$}
+\explanation{Experimental probability $= \frac{180}{500} = \frac{9}{25}$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q20}{sa}
+\begin{questionText}
+A store offers a promotion where each customer has a $10\%$ chance of winning a discount. Using random digits $0$--$9$, a student assigns $0$ to represent winning. In $200$ simulated customers, how many winners should the student expect?
+\end{questionText}
+\correctAnswer{$20$}
+\explanation{$P(\text{win}) = \frac{1}{10} = 10\%$. Expected winners: $\frac{1}{10} \times 200 = 20$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q21}{sa}
+\begin{questionText}
+Carlos simulates drawing a marble from a bag containing $3$ red and $7$ blue marbles by using random digits $0$--$9$. Digits $0, 1, 2$ represent red. He runs $40$ trials and gets red $15$ times. How does the experimental probability compare to the simulated theoretical probability?
+\end{questionText}
+\correctAnswer{Experimental ($\frac{3}{8}$) is greater than theoretical ($\frac{3}{10}$)}
+\explanation{Theoretical: $P(\text{red}) = \frac{3}{10} = 0.30$. Experimental: $\frac{15}{40} = \frac{3}{8} = 0.375$. The experimental probability ($0.375$) is greater than the theoretical ($0.30$).}
+\end{practiceQuestion}
+
+% --- Graphical Multiple Choice Questions (3) ---
+
+\begin{practiceQuestion}{9-7-q22}{gmc}
+\begin{questionText}
+The table below shows the results of a simulation. A random digit ($0$--$9$) is generated $100$ times. Digits $0$--$3$ represent ``success'' and $4$--$9$ represent ``failure.''
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Digit Range} & \textbf{Outcome} & \textbf{Frequency} \\
+\hline
+$0$--$3$ & Success & $43$ \\
+\hline
+$4$--$9$ & Failure & $57$ \\
+\hline
+\end{tabular}
+\end{center}
+
+What theoretical probability was being simulated?
+\end{questionText}
+\choiceA{$43\%$}
+\choiceB{$30\%$}
+\choiceC{$40\%$}
+\choiceD{$50\%$}
+\correctAnswer{C}
+\explanation{Digits $0, 1, 2, 3$ — that is $4$ out of $10$ digits — represent success. The simulated theoretical probability is $\frac{4}{10} = 40\%$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q23}{gmc}
+\begin{questionText}
+The bar graph shows the results of a simulation that modeled spinning a spinner with $3$ equal sections (A, B, C) two times and counting how many times both spins matched.
+
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    ybar, bar width=20pt, ymin=0, ymax=60,
+    ylabel={Frequency},
+    symbolic x coords={Match, No Match},
+    xtick=data,
+    nodes near coords,
+    width=7cm, height=5.5cm,
+    enlarge x limits=0.5
+  ]
+  \addplot[fill=funBlue!70] coordinates {(Match,37) (No Match,113)};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
+The simulation was run $150$ times. What is the experimental probability of a match?
+\end{questionText}
+\choiceA{$\dfrac{37}{113}$}
+\choiceB{$\dfrac{37}{150}$}
+\choiceC{$\dfrac{1}{3}$}
+\choiceD{$\dfrac{1}{9}$}
+\correctAnswer{B}
+\explanation{Experimental probability $= \frac{\text{matches}}{\text{total trials}} = \frac{37}{150}$. The theoretical probability of matching on a $3$-section spinner is $\frac{3}{9} = \frac{1}{3} \approx \frac{50}{150}$, so the simulation result is somewhat close.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q24}{gmc}
+\begin{questionText}
+A random number table is shown below. Each pair of digits represents one trial. Digits $00$--$24$ mean ``win'' and $25$--$99$ mean ``lose.''
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$73$ & $12$ & $45$ & $08$ & $91$ & $37$ & $22$ & $56$ & $03$ & $68$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Out of these $10$ trials, how many are wins?
+\end{questionText}
+\choiceA{$2$}
+\choiceB{$3$}
+\choiceC{$4$}
+\choiceD{$5$}
+\correctAnswer{C}
+\explanation{Check each pair: $73$ (lose), $12$ (win), $45$ (lose), $08$ (win), $91$ (lose), $37$ (lose), $22$ (win), $56$ (lose), $03$ (win), $68$ (lose). Wins: $12, 08, 22, 03$ — that is $4$ wins.}
+\end{practiceQuestion}
+
+% --- Graphical Short Answer Questions (3) ---
+
+\begin{practiceQuestion}{9-7-q25}{gsa}
+\begin{questionText}
+A student runs a simulation $200$ times. The frequency table below shows how many times each outcome occurred for a compound event with $4$ possible outcomes.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Outcome} & A & B & C & D \\
+\hline
+\textbf{Frequency} & $52$ & $48$ & $55$ & $45$ \\
+\hline
+\textbf{Theoretical $P$} & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{4}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+What is the expected frequency for each outcome? Which outcome's experimental result is farthest from the expected frequency?
+\end{questionText}
+\correctAnswer{Expected: $50$; Outcome C (or D) is farthest}
+\explanation{Expected frequency: $\frac{1}{4} \times 200 = 50$. Differences: A = $|52 - 50| = 2$, B = $|48 - 50| = 2$, C = $|55 - 50| = 5$, D = $|45 - 50| = 5$. Outcomes C and D are both farthest from expected, each differing by $5$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q26}{gsa}
+\begin{questionText}
+The line graph below shows how the experimental probability of heads changes as the number of coin flip trials increases.
+
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    xlabel={Number of Trials},
+    ylabel={$P(\text{Heads})$},
+    xmin=0, xmax=550, ymin=0.3, ymax=0.7,
+    width=9cm, height=5.5cm,
+    grid=major,
+    xtick={0,100,200,300,400,500},
+    ytick={0.3,0.4,0.5,0.6,0.7}
+  ]
+  \addplot[thick, funBlue, mark=*] coordinates {
+    (10,0.60) (50,0.56) (100,0.53) (200,0.515) (500,0.504)
+  };
+  \addplot[dashed, funRed] coordinates {(0,0.5) (550,0.5)};
+  \node[funRed, right] at (axis cs:420,0.48) {\footnotesize Theoretical};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Based on the graph, what happens to the experimental probability as the number of trials increases?
+\end{questionText}
+\correctAnswer{It gets closer to the theoretical probability of $0.5$}
+\explanation{The graph shows the experimental probability starting high ($0.60$ at $10$ trials) and gradually approaching $0.5$ as trials increase to $500$. This illustrates the Law of Large Numbers — more trials lead to experimental probability converging toward the theoretical value.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{9-7-q27}{gsa}
+\begin{questionText}
+A random number table is used to simulate two independent events. Event A has a $50\%$ probability and Event B has a $30\%$ probability. The table below shows $10$ trials where each trial uses two digits: the first for Event A ($0$--$4$ = occurs) and the second for Event B ($0$--$2$ = occurs).
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\textbf{Trial} & $1$ & $2$ & $3$ & $4$ & $5$ \\
+\hline
+\textbf{Digits} & $3, 7$ & $8, 1$ & $2, 5$ & $6, 0$ & $1, 2$ \\
+\hline
+\hline
+\textbf{Trial} & $6$ & $7$ & $8$ & $9$ & $10$ \\
+\hline
+\textbf{Digits} & $4, 4$ & $9, 8$ & $0, 3$ & $5, 1$ & $7, 6$ \\
+\hline
+\end{tabular}
+\end{center}
+
+In how many trials do BOTH events occur?
+\end{questionText}
+\correctAnswer{$1$}
+\explanation{Event A occurs when the first digit is $0$--$4$; Event B occurs when the second digit is $0$--$2$. Check each trial: Trial $1$ (A yes, B no), Trial $2$ (A no, B yes), Trial $3$ (A yes, B no), Trial $4$ (A no, B yes), Trial $5$ (A yes, B yes), Trial $6$ (A yes, B no), Trial $7$ (A no, B no), Trial $8$ (A yes, B no), Trial $9$ (A no, B yes), Trial $10$ (A no, B no). Both occur only in Trial $5$: $1$ trial.}
+\end{practiceQuestion}

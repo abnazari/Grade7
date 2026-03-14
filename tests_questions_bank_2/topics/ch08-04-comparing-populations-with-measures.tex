@@ -1,0 +1,430 @@
+% ============================================================
+% Question Bank: ch08-04 Comparing Populations with Measures of Center and Variability
+% Topic Title: Comparing Populations with Measures of Center and Variability
+% CCSS: 7.SP.B.4
+% Questions: 27 (15 MC + 6 SA + 6 Graphical)
+% ============================================================
+
+% --- Multiple Choice Questions (15) ---
+
+\begin{practiceQuestion}{8-4-q01}{mc}
+\begin{questionText}
+Data set: $15, 18, 20, 22, 25$. What is the mean?
+\end{questionText}
+\choiceA{$18$}
+\choiceB{$20$}
+\choiceC{$22$}
+\choiceD{$100$}
+\correctAnswer{B}
+\explanation{Add: $15+18+20+22+25 = 100$. Divide by $5$: $\frac{100}{5} = 20$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q02}{mc}
+\begin{questionText}
+Data set: $4, 8, 10, 14, 18, 20, 24$. What is the median?
+\end{questionText}
+\choiceA{$10$}
+\choiceB{$14$}
+\choiceC{$18$}
+\choiceD{$12$}
+\correctAnswer{B}
+\explanation{There are $7$ values. The middle (4th) value in the ordered list is $14$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q03}{mc}
+\begin{questionText}
+Gym A: mean bench press $= 135$ lb, MAD $= 10$ lb. Gym B: mean bench press $= 155$ lb, MAD $= 10$ lb. The difference in means expressed in MADs is:
+\end{questionText}
+\choiceA{$0.5$}
+\choiceB{$1$}
+\choiceC{$2$}
+\choiceD{$10$}
+\correctAnswer{C}
+\explanation{Difference: $155 - 135 = 20$ lb. Divide by the MAD: $\frac{20}{10} = 2$ MADs. This suggests a meaningful difference between the two gyms.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q04}{mc}
+\begin{questionText}
+Data set: $30, 35, 40, 45, 50, 55, 60$. What is the IQR?
+\end{questionText}
+\choiceA{$30$}
+\choiceB{$20$}
+\choiceC{$15$}
+\choiceD{$10$}
+\correctAnswer{B}
+\explanation{$Q_1 = 35$ (median of the lower half) and $Q_3 = 55$ (median of the upper half). IQR $= 55 - 35 = 20$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q05}{mc}
+\begin{questionText}
+Which measure of center is least affected by outliers?
+\end{questionText}
+\choiceA{Mean}
+\choiceB{Range}
+\choiceC{Median}
+\choiceD{MAD}
+\correctAnswer{C}
+\explanation{The median is the middle value and is resistant to extreme values (outliers). The mean is pulled toward outliers, making it less robust.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q06}{mc}
+\begin{questionText}
+Class J: mean $= 92$, median $= 91$, range $= 10$, IQR $= 5$. Class K: mean $= 85$, median $= 84$, range $= 28$, IQR $= 14$. Which class is more consistent?
+\end{questionText}
+\choiceA{Class K because its mean is lower}
+\choiceB{Class J because its IQR and range are smaller}
+\choiceC{Class K because its range is larger}
+\choiceD{They are equally consistent}
+\correctAnswer{B}
+\explanation{Smaller IQR ($5$ vs $14$) and smaller range ($10$ vs $28$) indicate that Class J's scores are more tightly grouped. Less variability means more consistency.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q07}{mc}
+\begin{questionText}
+Data set: $10, 12, 14, 16, 18$. The mean is $14$. What is the MAD?
+\end{questionText}
+\choiceA{$1.6$}
+\choiceB{$2.4$}
+\choiceC{$4$}
+\choiceD{$8$}
+\correctAnswer{B}
+\explanation{Deviations from $14$: $|10-14|=4$, $|12-14|=2$, $|14-14|=0$, $|16-14|=2$, $|18-14|=4$. MAD $= \frac{4+2+0+2+4}{5} = \frac{12}{5} = 2.4$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q08}{mc}
+\begin{questionText}
+Team R: mean $= 70$ points, IQR $= 8$. Team S: mean $= 78$ points, IQR $= 8$. The difference in means expressed as a multiple of the IQR is:
+\end{questionText}
+\choiceA{$0.5$}
+\choiceB{$1$}
+\choiceC{$2$}
+\choiceD{$8$}
+\correctAnswer{B}
+\explanation{Difference: $78 - 70 = 8$. Divide by the IQR: $\frac{8}{8} = 1$ IQR. A difference of $1$ IQR suggests some separation but the groups still overlap.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q09}{mc}
+\begin{questionText}
+Data set: $3, 5, 8, 12, 15, 18, 60$. Which statement is true?
+\end{questionText}
+\choiceA{The mean and median are equal}
+\choiceB{The mean is greater than the median because of the outlier $60$}
+\choiceC{The median is greater than the mean}
+\choiceD{The outlier does not affect any measure}
+\correctAnswer{B}
+\explanation{Median (4th value) $= 12$. Mean $= \frac{3+5+8+12+15+18+60}{7} = \frac{121}{7} \approx 17.3$. The outlier $60$ pulls the mean higher than the median.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q10}{mc}
+\begin{questionText}
+School P has quiz scores: $70, 75, 80, 85, 90$. School Q has quiz scores: $60, 70, 80, 90, 100$. Which school has the greater range?
+\end{questionText}
+\choiceA{School P, range $= 20$}
+\choiceB{School Q, range $= 40$}
+\choiceC{Both have the same range}
+\choiceD{School P, range $= 40$}
+\correctAnswer{B}
+\explanation{School P: $90 - 70 = 20$. School Q: $100 - 60 = 40$. School Q has the greater range, meaning more spread in its scores.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q11}{mc}
+\begin{questionText}
+A data set has a mean of $50$ and a MAD of $6$. A second data set has a mean of $62$ and a MAD of $6$. Which conclusion is best supported?
+\end{questionText}
+\choiceA{The difference is not meaningful because both MADs are $6$}
+\choiceB{The difference of $12$ is $2$ MADs, indicating a meaningful difference}
+\choiceC{The second set is always larger than the first}
+\choiceD{The two sets have the same distribution}
+\correctAnswer{B}
+\explanation{Difference: $62 - 50 = 12$. In MADs: $\frac{12}{6} = 2$. A difference of $2$ MADs is generally considered meaningful, suggesting the populations are different.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q12}{mc}
+\begin{questionText}
+Data set A: $20, 22, 24, 26, 28$. Data set B: $10, 18, 24, 30, 38$. Both sets have a mean of $24$. Which set has a larger IQR?
+\end{questionText}
+\choiceA{Set A}
+\choiceB{Set B}
+\choiceC{They have the same IQR}
+\choiceD{IQR cannot be compared}
+\correctAnswer{B}
+\explanation{Set A: $Q_1 = 22$, $Q_3 = 26$, IQR $= 4$. Set B: $Q_1 = 18$, $Q_3 = 30$, IQR $= 12$. Set B has a much larger IQR, showing more variability.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q13}{mc}
+\begin{questionText}
+Which pair of measures best summarizes a data distribution when there are outliers?
+\end{questionText}
+\choiceA{Mean and range}
+\choiceB{Mean and MAD}
+\choiceC{Median and IQR}
+\choiceD{Mode and range}
+\correctAnswer{C}
+\explanation{The median and IQR are resistant to outliers. The mean, range, and MAD are all influenced by extreme values, making median and IQR better choices when outliers are present.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q14}{mc}
+\begin{questionText}
+A report says ``the difference in mean heights of students in two schools is $1.5$ MADs.'' This means:
+\end{questionText}
+\choiceA{The schools have the same average height}
+\choiceB{The difference is small and the distributions overlap heavily}
+\choiceC{There is a noticeable difference, but the distributions still overlap somewhat}
+\choiceD{The schools are completely different with no overlap}
+\correctAnswer{C}
+\explanation{A difference of $1.5$ MADs indicates a noticeable shift between the two centers. There is still some overlap, but the groups are more distinct than at $1$ MAD apart.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q15}{mc}
+\begin{questionText}
+Lab A recorded experiment times: $12, 14, 15, 16, 18$ minutes. Lab B: $8, 11, 15, 19, 22$ minutes. Both have a median of $15$. Which lab's data is more spread out?
+\end{questionText}
+\choiceA{Lab A}
+\choiceB{Lab B}
+\choiceC{They have the same spread}
+\choiceD{Cannot be determined}
+\correctAnswer{B}
+\explanation{Lab A range $= 18 - 12 = 6$. Lab B range $= 22 - 8 = 14$. Lab B's data spans a wider interval, indicating more spread.}
+\end{practiceQuestion}
+
+% --- Short Answer Questions (6) ---
+
+\begin{practiceQuestion}{8-4-q16}{sa}
+\begin{questionText}
+Data set: $5, 8, 10, 12, 15$. Calculate the mean and the MAD.
+\end{questionText}
+\correctAnswer{Mean $= 10$; MAD $= 2.8$}
+\explanation{Mean: $\frac{5+8+10+12+15}{5} = \frac{50}{5} = 10$. Deviations: $|5-10|=5$, $|8-10|=2$, $|10-10|=0$, $|12-10|=2$, $|15-10|=5$. MAD $= \frac{5+2+0+2+5}{5} = \frac{14}{5} = 2.8$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q17}{sa}
+\begin{questionText}
+Data set: $22, 28, 30, 34, 38, 42, 46$. Find the IQR.
+\end{questionText}
+\correctAnswer{$14$}
+\explanation{$Q_1$ is the median of $22, 28, 30$, which is $28$. $Q_3$ is the median of $38, 42, 46$, which is $42$. IQR $= Q_3 - Q_1 = 42 - 28 = 14$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q18}{sa}
+\begin{questionText}
+City A has a mean temperature of $72°$F with a MAD of $5°$F. City B has a mean of $84°$F with a MAD of $5°$F. Express the difference in means as a multiple of the MAD.
+\end{questionText}
+\correctAnswer{$2.4$ MADs}
+\explanation{Difference: $84 - 72 = 12$. Divide by the MAD: $\frac{12}{5} = 2.4$ MADs. This indicates a meaningful difference in temperature between the two cities.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q19}{sa}
+\begin{questionText}
+A data set has values $40, 44, 46, 48, 50, 52, 56$. What is the range?
+\end{questionText}
+\correctAnswer{$16$}
+\explanation{Range $=$ maximum $-$ minimum $= 56 - 40 = 16$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q20}{sa}
+\begin{questionText}
+The heights (in inches) of students on two volleyball teams are:
+Team X: $62, 64, 65, 67, 72$.
+Team Y: $60, 63, 66, 69, 72$.
+Find the mean height for each team.
+\end{questionText}
+\correctAnswer{Team X: $66$ in; Team Y: $66$ in}
+\explanation{Team X: $\frac{62+64+65+67+72}{5} = \frac{330}{5} = 66$ inches. Team Y: $\frac{60+63+66+69+72}{5} = \frac{330}{5} = 66$ inches. Both teams have the same mean height.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q21}{sa}
+\begin{questionText}
+Using the data from the previous problem, Team X range $= 10$ and Team Y range $= 12$. Which team has heights that are more spread out?
+\end{questionText}
+\correctAnswer{Team Y}
+\explanation{Team Y has a range of $12$ compared to Team X's range of $10$. A larger range indicates the data values are more spread out.}
+\end{practiceQuestion}
+
+% --- Graphical Questions (3 GMC + 3 GSA) ---
+
+\begin{practiceQuestion}{8-4-q22}{gmc}
+\begin{questionText}
+The box plots below compare the number of points scored per game by two basketball players.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.4]
+  \draw[thick,->] (4,0) -- (31,0);
+  \foreach \x in {5,10,...,30} \draw (\x,0.2) -- (\x,-0.2) node[below] {$\x$};
+  \node[below] at (17.5,-1.2) {Points per Game};
+  % Player A: min=8, Q1=12, med=16, Q3=20, max=26
+  \draw[thick] (8,2) -- (12,2);
+  \draw[thick,fill=funBlue!30] (12,1.2) rectangle (20,2.8);
+  \draw[very thick,funBlue] (16,1.2) -- (16,2.8);
+  \draw[thick] (20,2) -- (26,2);
+  \draw[thick] (8,1.5) -- (8,2.5);
+  \draw[thick] (26,1.5) -- (26,2.5);
+  \node[right] at (27,2) {\small Player A};
+  % Player B: min=12, Q1=18, med=22, Q3=26, max=30
+  \draw[thick] (12,5) -- (18,5);
+  \draw[thick,fill=funRed!30] (18,4.2) rectangle (26,5.8);
+  \draw[very thick,funRed] (22,4.2) -- (22,5.8);
+  \draw[thick] (26,5) -- (30,5);
+  \draw[thick] (12,4.5) -- (12,5.5);
+  \draw[thick] (30,4.5) -- (30,5.5);
+  \node[right] at (31,5) {\small Player B};
+\end{tikzpicture}
+\end{center}
+
+What is the difference in the medians of the two players?
+\end{questionText}
+\choiceA{$4$ points}
+\choiceB{$6$ points}
+\choiceC{$8$ points}
+\choiceD{$10$ points}
+\correctAnswer{B}
+\explanation{Player A's median is $16$ points and Player B's median is $22$ points. Difference: $22 - 16 = 6$ points. Player B tends to score more per game.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q23}{gmc}
+\begin{questionText}
+The dot plots show the ages of volunteers at two community events.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.45]
+  \draw[thick,->] (9.5,0) -- (26,0);
+  \foreach \x in {10,...,25} \draw (\x,0.15) -- (\x,-0.15) node[below,font=\tiny] {$\x$};
+  \node[below] at (17.5,-0.9) {Age (years)};
+  % Event A: 12,13,13,14,14,14,15,15,16 mean=126/9=14
+  \fill[funBlue] (12,0.5) circle (4pt);
+  \foreach \y in {1,2} \fill[funBlue] (13,0.1+\y*0.4) circle (4pt);
+  \foreach \y in {1,2,3} \fill[funBlue] (14,0.1+\y*0.4) circle (4pt);
+  \foreach \y in {1,2} \fill[funBlue] (15,0.1+\y*0.4) circle (4pt);
+  \fill[funBlue] (16,0.5) circle (4pt);
+  \node[funBlue,above] at (14,2) {\small Event A};
+  % Event B: 18,19,19,20,20,20,21,21,22 mean=180/9=20
+  \fill[funRed] (18,0.5) circle (4pt);
+  \foreach \y in {1,2} \fill[funRed] (19,0.1+\y*0.4) circle (4pt);
+  \foreach \y in {1,2,3} \fill[funRed] (20,0.1+\y*0.4) circle (4pt);
+  \foreach \y in {1,2} \fill[funRed] (21,0.1+\y*0.4) circle (4pt);
+  \fill[funRed] (22,0.5) circle (4pt);
+  \node[funRed,above] at (20,2) {\small Event B};
+\end{tikzpicture}
+\end{center}
+
+What is the mean age for each event?
+\end{questionText}
+\choiceA{Event A: $13$, Event B: $19$}
+\choiceB{Event A: $14$, Event B: $20$}
+\choiceC{Event A: $15$, Event B: $21$}
+\choiceD{Event A: $14$, Event B: $19$}
+\correctAnswer{B}
+\explanation{Event A: $\frac{12+13+13+14+14+14+15+15+16}{9} = \frac{126}{9} = 14$. Event B: $\frac{18+19+19+20+20+20+21+21+22}{9} = \frac{180}{9} = 20$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q24}{gmc}
+\begin{questionText}
+Two data sets are summarized in the table below.
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+& \textbf{Mean} & \textbf{Median} & \textbf{Range} & \textbf{IQR} \\
+\hline
+Set A & $48$ & $47$ & $18$ & $10$ \\
+Set B & $48$ & $49$ & $30$ & $22$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Which statement best compares the two sets?
+\end{questionText}
+\choiceA{Set A has more variability because its mean is lower}
+\choiceB{Set B has more variability because its range and IQR are larger}
+\choiceC{Both sets are identical since they have the same mean}
+\choiceD{Set A has more variability because its median is lower}
+\correctAnswer{B}
+\explanation{Both sets have the same mean ($48$) and similar medians, but Set B has a range of $30$ vs $18$ and IQR of $22$ vs $10$. These larger spread measures show Set B has more variability.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q25}{gsa}
+\begin{questionText}
+The box plots below compare daily sales (in dollars) at two stores.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.35]
+  \draw[thick,->] (9,0) -- (46,0);
+  \foreach \x in {10,15,...,45} \draw (\x,0.2) -- (\x,-0.2) node[below] {\tiny $\x$0};
+  \node[below] at (27,-1.2) {Daily Sales (\$)};
+  % Store A: min=150, Q1=200, med=250, Q3=300, max=350
+  % scaled: 15, 20, 25, 30, 35
+  \draw[thick] (15,2) -- (20,2);
+  \draw[thick,fill=funBlue!30] (20,1.2) rectangle (30,2.8);
+  \draw[very thick,funBlue] (25,1.2) -- (25,2.8);
+  \draw[thick] (30,2) -- (35,2);
+  \draw[thick] (15,1.5) -- (15,2.5);
+  \draw[thick] (35,1.5) -- (35,2.5);
+  \node[right] at (36,2) {\small Store A};
+  % Store B: min=200, Q1=280, med=320, Q3=360, max=420
+  % scaled: 20, 28, 32, 36, 42
+  \draw[thick] (20,5) -- (28,5);
+  \draw[thick,fill=funRed!30] (28,4.2) rectangle (36,5.8);
+  \draw[very thick,funRed] (32,4.2) -- (32,5.8);
+  \draw[thick] (36,5) -- (42,5);
+  \draw[thick] (20,4.5) -- (20,5.5);
+  \draw[thick] (42,4.5) -- (42,5.5);
+  \node[right] at (43,5) {\small Store B};
+\end{tikzpicture}
+\end{center}
+
+Find the IQR for each store and the difference in medians.
+\end{questionText}
+\correctAnswer{Store A IQR $= \$100$; Store B IQR $= \$80$; difference in medians $= \$70$}
+\explanation{Store A: IQR $= 300 - 200 = 100$, median $= \$250$. Store B: IQR $= 360 - 280 = 80$, median $= \$320$. Difference in medians: $320 - 250 = \$70$. Store B has higher typical sales.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q26}{gsa}
+\begin{questionText}
+The table shows test scores for two groups.
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|}
+\hline
+\textbf{Group A} & $55$ & $60$ & $65$ & $70$ & $75$ & $80$ & $85$ \\
+\hline
+\textbf{Group B} & $70$ & $72$ & $75$ & $78$ & $80$ & $82$ & $83$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Calculate the mean and range for each group.
+\end{questionText}
+\correctAnswer{Group A: mean $= 70$, range $= 30$; Group B: mean $= 77.14$, range $= 13$}
+\explanation{Group A: $\frac{55+60+65+70+75+80+85}{7} = \frac{490}{7} = 70$, range $= 85-55=30$. Group B: $\frac{70+72+75+78+80+82+83}{7} = \frac{540}{7} \approx 77.1$, range $= 83-70=13$. Group B scores higher on average with less spread.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{8-4-q27}{gsa}
+\begin{questionText}
+The dot plots show the number of sit-ups completed by students in two fitness classes.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+  \draw[thick,->] (14.5,0) -- (30,0);
+  \foreach \x in {15,...,29} \draw (\x,0.15) -- (\x,-0.15) node[below,font=\tiny] {$\x$};
+  \node[below] at (22,-0.9) {Sit-ups};
+  % Fitness A: 16,18,18,20,20,20,22,22,24 mean=180/9=20
+  \fill[funBlue] (16,0.5) circle (4pt);
+  \foreach \y in {1,2} \fill[funBlue] (18,0.1+\y*0.4) circle (4pt);
+  \foreach \y in {1,2,3} \fill[funBlue] (20,0.1+\y*0.4) circle (4pt);
+  \foreach \y in {1,2} \fill[funBlue] (22,0.1+\y*0.4) circle (4pt);
+  \fill[funBlue] (24,0.5) circle (4pt);
+  \node[funBlue,above] at (20,2) {\small Class A};
+  % Fitness B: 20,22,22,24,24,24,26,26,28 mean=216/9=24
+  \fill[funRed] (20,0.5) circle (4pt);
+  \foreach \y in {1,2} \fill[funRed] (22,0.1+\y*0.4) circle (4pt);
+  \foreach \y in {1,2,3} \fill[funRed] (24,0.1+\y*0.4) circle (4pt);
+  \foreach \y in {1,2} \fill[funRed] (26,0.1+\y*0.4) circle (4pt);
+  \fill[funRed] (28,0.5) circle (4pt);
+  \node[funRed,above] at (24,2) {\small Class B};
+\end{tikzpicture}
+\end{center}
+
+Find the mean for each class and the MAD for Class A. Then express the difference in means as a multiple of the MAD.
+\end{questionText}
+\correctAnswer{Class A mean $= 20$, Class B mean $= 24$; MAD of A $\approx 2.2$; difference $\approx 1.8$ MADs}
+\explanation{Class A: $\frac{16+18+18+20+20+20+22+22+24}{9} = \frac{180}{9} = 20$. Deviations: $4,2,2,0,0,0,2,2,4$; MAD $= \frac{16}{9} \approx 1.78$. Class B: $\frac{20+22+22+24+24+24+26+26+28}{9} = \frac{216}{9} = 24$. Difference: $\frac{24-20}{1.78} \approx 2.25$ MADs, suggesting a meaningful difference.}
+\end{practiceQuestion}

@@ -1,0 +1,411 @@
+% ============================================================
+% Question Bank: ch09-03 Experimental Probability (Modified)
+% Topic Title: Experimental Probability (Modified for FL, TX)
+% CCSS: 7.SP.C.6 / State-specific extensions
+% Questions: 27 (15 MC + 6 SA + 6 Graphical)
+% ============================================================
+
+% --- Multiple Choice Questions (15) ---
+
+\begin{practiceQuestion}{m-9-3-q01}{mc}
+\begin{questionText}
+A store surveys $400$ customers and finds that $140$ purchase the store's loyalty card. What is the experimental probability that a customer purchases the loyalty card?
+\end{questionText}
+\choiceA{$\dfrac{7}{20}$}
+\choiceB{$\dfrac{14}{40}$}
+\choiceC{$\dfrac{1}{3}$}
+\choiceD{$\dfrac{2}{5}$}
+\correctAnswer{A}
+\explanation{Experimental probability $= \frac{140}{400} = \frac{7}{20}$. This is the best estimate based on observed data.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q02}{mc}
+\begin{questionText}
+A random number generator produces digits $0$--$9$. To simulate a die roll, a student assigns: $0$ or $1 \to$ face $1$, $2$ or $3 \to$ face $2$, and so on, discarding $0$. Why might this simulation not be ideal?
+\end{questionText}
+\choiceA{Random number generators are always biased.}
+\choiceB{Digits $0$--$9$ give $10$ outcomes, which does not divide evenly into $6$ faces.}
+\choiceC{Simulations can never model dice.}
+\choiceD{It would take too many trials.}
+\correctAnswer{B}
+\explanation{There are $10$ digits and $6$ faces, so some faces would be assigned more digits than others ($10 \div 6$ is not a whole number). This creates unequal probabilities for different faces, making the simulation inaccurate.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q03}{mc}
+\begin{questionText}
+A scientist conducts $300$ trials of an experiment where the theoretical probability of success is $\dfrac{1}{3}$. The experiment succeeds $108$ times. How does the experimental probability compare to the theoretical?
+\end{questionText}
+\choiceA{They are exactly equal.}
+\choiceB{The experimental probability ($\frac{108}{300}$) is slightly greater than the theoretical ($\frac{1}{3}$).}
+\choiceC{The experimental probability ($\frac{108}{300}$) is slightly less than the theoretical ($\frac{1}{3}$).}
+\choiceD{There is not enough information to compare.}
+\correctAnswer{B}
+\explanation{Experimental: $\frac{108}{300} = \frac{9}{25} = 0.36$. Theoretical: $\frac{1}{3} \approx 0.333$. Since $0.36 > 0.333$, the experimental probability is slightly greater than the theoretical.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q04}{mc}
+\begin{questionText}
+A simulation uses random digits $0$--$9$ to model an event with $P = 0.60$. Digits $0$--$5$ represent the event occurring. After $250$ trials, the event occurs $158$ times. What is the experimental probability?
+\end{questionText}
+\choiceA{$\dfrac{79}{125}$}
+\choiceB{$\dfrac{3}{5}$}
+\choiceC{$0.60$}
+\choiceD{$\dfrac{158}{250}$}
+\correctAnswer{A}
+\explanation{Experimental probability $= \frac{158}{250} = \frac{79}{125} = 0.632$. This is close to the simulated theoretical probability of $0.60$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q05}{mc}
+\begin{questionText}
+A school nurse records that $63$ out of $210$ students visiting the clinic came for a headache. Based on this data, how many students out of the next $700$ clinic visitors should she expect to come for headaches?
+\end{questionText}
+\choiceA{$63$}
+\choiceB{$150$}
+\choiceC{$210$}
+\choiceD{$300$}
+\correctAnswer{C}
+\explanation{Experimental probability $= \frac{63}{210} = \frac{3}{10}$. For $700$ visitors: $\frac{3}{10} \times 700 = 210$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q06}{mc}
+\begin{questionText}
+A student wants to use a simulation to estimate the probability that exactly $2$ out of $3$ free throws are made, given an $80\%$ free throw rate. Which simulation design is appropriate?
+\end{questionText}
+\choiceA{Flip $3$ coins and count heads.}
+\choiceB{Use digits $0$--$9$; digits $0$--$7$ = made, $8$--$9$ = missed. Generate $3$ digits per trial.}
+\choiceC{Roll a die $3$ times; even = made, odd = missed.}
+\choiceD{Draw $3$ cards from a deck; red = made, black = missed.}
+\correctAnswer{B}
+\explanation{An $80\%$ free throw rate means $P(\text{made}) = 0.80$. Using digits $0$--$9$, assign $8$ digits ($0$--$7$) for made and $2$ digits ($8$--$9$) for missed. Generate $3$ digits per trial to simulate $3$ free throws.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q07}{mc}
+\begin{questionText}
+A frequency table from a simulation of rolling two dice $360$ times shows: sum of $7$ appeared $58$ times, sum of $2$ appeared $12$ times. The theoretical probability of sum $7$ is $\dfrac{1}{6}$ and sum $2$ is $\dfrac{1}{36}$. Which sum's experimental result is closer to the theoretical prediction?
+\end{questionText}
+\choiceA{Sum $7$, because $58$ is closer to $60$ than $12$ is to $10$.}
+\choiceB{Sum $2$, because $12$ is closer to $10$ than $58$ is to $60$.}
+\choiceC{Both are equally close to their predictions.}
+\choiceD{Neither can be compared because the probabilities are different.}
+\correctAnswer{C}
+\explanation{Expected for sum $7$: $\frac{1}{6} \times 360 = 60$; difference is $|58 - 60| = 2$. Expected for sum $2$: $\frac{1}{36} \times 360 = 10$; difference is $|12 - 10| = 2$. Both differ by $2$ from their prediction, so they are equally close in absolute terms.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q08}{mc}
+\begin{questionText}
+A librarian tracks checkouts over $500$ visits: fiction $= 235$, non-fiction $= 165$, audiobooks $= 100$. Using this data, what is the experimental probability of a non-fiction checkout?
+\end{questionText}
+\choiceA{$\dfrac{33}{100}$}
+\choiceB{$\dfrac{1}{3}$}
+\choiceC{$\dfrac{165}{500}$}
+\choiceD{$\dfrac{165}{235}$}
+\correctAnswer{A}
+\explanation{$P(\text{non-fiction}) = \frac{165}{500} = \frac{33}{100}$. Choice A is the simplified form.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q09}{mc}
+\begin{questionText}
+A student designs a simulation for a $\dfrac{3}{4}$ probability event. She uses a spinner with $4$ equal sections, coloring $3$ sections blue and $1$ section red. Blue represents the event occurring. Is this a valid simulation design?
+\end{questionText}
+\choiceA{No, because spinners cannot simulate probabilities.}
+\choiceB{No, because $\frac{3}{4}$ requires $10$-section spinners.}
+\choiceC{Yes, because $3$ out of $4$ equal sections gives $P(\text{blue}) = \frac{3}{4}$.}
+\choiceD{Yes, but only if she spins it more than $100$ times.}
+\correctAnswer{C}
+\explanation{The spinner correctly models the probability: $3$ blue sections out of $4$ total gives $P(\text{event}) = \frac{3}{4} = 75\%$. The design is valid regardless of the number of trials.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q10}{mc}
+\begin{questionText}
+Rainfall data shows that it rained on $72$ out of $240$ afternoons last summer. A meteorologist runs a simulation using random digits $0$--$9$, assigning $0, 1, 2$ to ``rain.'' In the simulation of $300$ trials, rain occurs $85$ times. How do the experimental results compare?
+\end{questionText}
+\choiceA{Data probability: $\frac{3}{10}$; simulation probability: $\frac{17}{60}$. The simulation is close.}
+\choiceB{Data probability: $\frac{3}{10}$; simulation probability: $\frac{85}{300}$. They are exactly equal.}
+\choiceC{Data probability: $\frac{1}{3}$; simulation probability: $\frac{85}{300}$. They are close.}
+\choiceD{The simulation cannot model real rainfall data.}
+\correctAnswer{A}
+\explanation{Data: $\frac{72}{240} = \frac{3}{10} = 0.30$. Simulation: $\frac{85}{300} = \frac{17}{60} \approx 0.283$. The simulation result is close to the data probability, as expected.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q11}{mc}
+\begin{questionText}
+A quality control team tests $800$ light switches and finds $24$ are defective. They want to predict how many switches will be defective in a shipment of $5{,}000$. What is their best prediction?
+\end{questionText}
+\choiceA{$24$}
+\choiceB{$100$}
+\choiceC{$150$}
+\choiceD{$200$}
+\correctAnswer{C}
+\explanation{Experimental probability of defective: $\frac{24}{800} = \frac{3}{100}$. In $5{,}000$: $\frac{3}{100} \times 5000 = 150$ defective switches.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q12}{mc}
+\begin{questionText}
+Two students each simulate a coin flip $50$ times using different random number generators. Student A gets $28$ heads, Student B gets $23$ heads. Which statement is best?
+\end{questionText}
+\choiceA{Student A's generator is better because $28$ is closer to $25$.}
+\choiceB{Student B's generator is better because $23$ is closer to $25$.}
+\choiceC{Both results are reasonable for $50$ trials, as random variation naturally produces different outcomes.}
+\choiceD{Both generators are broken because neither got exactly $25$ heads.}
+\correctAnswer{C}
+\explanation{With only $50$ trials, variation from the theoretical $25$ is expected. Both $28$ ($56\%$) and $23$ ($46\%$) are reasonably close to $50\%$. Different simulations naturally produce different results.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q13}{mc}
+\begin{questionText}
+A veterinarian records that $56$ out of $160$ pets brought in for checkups are cats. Based on this data, predict how many of the next $400$ pets will be cats.
+\end{questionText}
+\choiceA{$56$}
+\choiceB{$100$}
+\choiceC{$140$}
+\choiceD{$200$}
+\correctAnswer{C}
+\explanation{Experimental probability: $\frac{56}{160} = \frac{7}{20}$. Prediction for $400$: $\frac{7}{20} \times 400 = 140$ cats.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q14}{mc}
+\begin{questionText}
+A student uses a random number generator ($1$--$10$) to simulate a compound event. Numbers $1$--$4$ mean Event A occurs, numbers $1$--$6$ mean Event B occurs. She generates $50$ pairs. In how many trials should she expect BOTH events to occur?
+\end{questionText}
+\choiceA{$6$}
+\choiceB{$12$}
+\choiceC{$20$}
+\choiceD{$24$}
+\correctAnswer{B}
+\explanation{$P(\text{A}) = \frac{4}{10}$ and $P(\text{B}) = \frac{6}{10}$. For independent events, $P(\text{A and B}) = \frac{4}{10} \times \frac{6}{10} = \frac{24}{100} = \frac{6}{25}$. Expected: $\frac{6}{25} \times 50 = 12$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q15}{mc}
+\begin{questionText}
+A simulation models drawing a marble from a bag with $2$ red and $8$ blue marbles, using digits $0$--$9$ (digits $0, 1$ = red). In $1{,}000$ trials, red appears $214$ times. The theoretical probability is $\dfrac{1}{5}$. Which conclusion is supported?
+\end{questionText}
+\choiceA{The simulation proves the theoretical probability is wrong.}
+\choiceB{The experimental probability ($0.214$) is close to the theoretical ($0.20$), supporting the model.}
+\choiceC{The model should be changed because $214 \neq 200$.}
+\choiceD{$1{,}000$ trials is not enough to draw any conclusion.}
+\correctAnswer{B}
+\explanation{Expected: $\frac{1}{5} \times 1000 = 200$. Observed: $214$. The difference of $14$ out of $1{,}000$ trials is small. The experimental probability $\frac{214}{1000} = 0.214$ is close to $0.20$, supporting the model.}
+\end{practiceQuestion}
+
+% --- Short Answer Questions (6) ---
+
+\begin{practiceQuestion}{m-9-3-q16}{sa}
+\begin{questionText}
+An airline tracks that $126$ out of $420$ flights are delayed. What is the experimental probability that a flight is delayed? Express your answer as a simplified fraction.
+\end{questionText}
+\correctAnswer{$\frac{3}{10}$}
+\explanation{$P(\text{delayed}) = \frac{126}{420} = \frac{3}{10}$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q17}{sa}
+\begin{questionText}
+A student simulates an event with $P = 0.45$ using random digits $0$--$19$. How many digits should represent the event occurring?
+\end{questionText}
+\correctAnswer{$9$}
+\explanation{With $20$ equally likely digits ($0$--$19$), assign $0.45 \times 20 = 9$ digits to the event. This gives $P = \frac{9}{20} = 0.45$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q18}{sa}
+\begin{questionText}
+A simulation of $600$ trials yields the following results: Event A occurs $186$ times, Event B occurs $252$ times, Event C occurs $162$ times. What is the experimental probability of Event B? Express your answer as a simplified fraction.
+\end{questionText}
+\correctAnswer{$\frac{21}{50}$}
+\explanation{$P(\text{B}) = \frac{252}{600} = \frac{21}{50}$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q19}{sa}
+\begin{questionText}
+A snack company tests $2{,}000$ bags and finds that $60$ contain less than the labeled weight. Based on this, how many bags in a production run of $50{,}000$ should be expected to be underweight?
+\end{questionText}
+\correctAnswer{$1{,}500$}
+\explanation{Experimental probability: $\frac{60}{2000} = \frac{3}{100}$. Prediction: $\frac{3}{100} \times 50000 = 1500$ underweight bags.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q20}{sa}
+\begin{questionText}
+A student uses a $4$-section spinner (equal sections: $1, 2, 3, 4$) to simulate an event with $P = 0.25$. Section $1$ represents the event. She spins $80$ times and the event occurs $24$ times. What is the experimental probability as a simplified fraction?
+\end{questionText}
+\correctAnswer{$\frac{3}{10}$}
+\explanation{$P(\text{event}) = \frac{24}{80} = \frac{3}{10} = 0.30$. This is close to the theoretical $0.25$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q21}{sa}
+\begin{questionText}
+An experiment is performed $50$ times, $200$ times, and $1{,}000$ times. The experimental probabilities of an event at each stage are $0.34$, $0.27$, and $0.245$, respectively. The theoretical probability is $0.25$. Describe the trend.
+\end{questionText}
+\correctAnswer{As the number of trials increases, the experimental probability gets closer to $0.25$}
+\explanation{This illustrates the Law of Large Numbers. At $50$ trials the result ($0.34$) is far from $0.25$; at $200$ trials ($0.27$) it is closer; at $1{,}000$ trials ($0.245$) it is very close. More trials yield better estimates.}
+\end{practiceQuestion}
+
+% --- Graphical Multiple Choice Questions (3) ---
+
+\begin{practiceQuestion}{m-9-3-q22}{gmc}
+\begin{questionText}
+The frequency table below shows the results of rolling a $10$-sided die (faces $1$--$10$) a total of $500$ times.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Face} & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ \\
+\hline
+\textbf{Freq.} & $52$ & $48$ & $50$ & $53$ & $47$ & $51$ & $49$ & $50$ & $48$ & $52$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The expected frequency for each face is $50$. Which face is farthest from the expected?
+\end{questionText}
+\choiceA{Face $1$}
+\choiceB{Face $4$}
+\choiceC{Face $5$}
+\choiceD{Both Face $4$ and Face $5$}
+\correctAnswer{D}
+\explanation{Differences from $50$: Face $1$ ($+2$), Face $4$ ($+3$), Face $5$ ($-3$). Faces $4$ and $5$ each differ by $3$ from the expected value, which is the largest deviation.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q23}{gmc}
+\begin{questionText}
+The bar graph shows the results of a simulation comparing experimental and theoretical frequencies of an event across different trial counts.
+
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    ybar, bar width=10pt, ymin=0, ymax=0.7,
+    ylabel={Probability},
+    xlabel={Number of Trials},
+    symbolic x coords={$20$, $50$, $100$, $500$},
+    xtick=data,
+    width=9cm, height=5.5cm,
+    enlarge x limits=0.2,
+    legend style={at={(0.5,1.05)}, anchor=south, legend columns=2},
+    nodes near coords,
+    every node near coord/.append style={font=\footnotesize}
+  ]
+  \addplot[fill=funBlue!80] coordinates {($20$,0.55) ($50$,0.44) ($100$,0.38) ($500$,0.34)};
+  \addplot[fill=funRed!40] coordinates {($20$,0.33) ($50$,0.33) ($100$,0.33) ($500$,0.33)};
+  \legend{Experimental, Theoretical}
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Which conclusion does the graph support?
+\end{questionText}
+\choiceA{More trials make the experimental probability less accurate.}
+\choiceB{The theoretical probability changes with more trials.}
+\choiceC{As the number of trials increases, the experimental probability approaches the theoretical probability.}
+\choiceD{$20$ trials gives the most accurate result.}
+\correctAnswer{C}
+\explanation{The experimental probability drops from $0.55$ at $20$ trials to $0.34$ at $500$ trials, getting closer to the theoretical $0.33$. This demonstrates the Law of Large Numbers.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q24}{gmc}
+\begin{questionText}
+The circle graph shows how $360$ students get to school.
+
+\begin{center}
+\begin{tikzpicture}
+  \fill[funYellow!60] (0,0) -- (0:2.5) arc (0:160:2.5) -- cycle;
+  \fill[funBlue!60] (0,0) -- (160:2.5) arc (160:260:2.5) -- cycle;
+  \fill[funGreen!60] (0,0) -- (260:2.5) arc (260:320:2.5) -- cycle;
+  \fill[funRed!60] (0,0) -- (320:2.5) arc (320:360:2.5) -- cycle;
+  \draw[thick] (0,0) circle (2.5);
+  \draw[thick] (0,0) -- (0:2.5);
+  \draw[thick] (0,0) -- (160:2.5);
+  \draw[thick] (0,0) -- (260:2.5);
+  \draw[thick] (0,0) -- (320:2.5);
+  \node at (80:1.5) {\textbf{Bus}};
+  \node at (80:1.0) {$160$};
+  \node at (210:1.5) {\textbf{Car}};
+  \node at (210:1.0) {$100$};
+  \node at (290:1.4) {\textbf{Walk}};
+  \node at (290:0.9) {$60$};
+  \node at (340:1.5) {\textbf{Bike}};
+  \node at (340:1.0) {$40$};
+\end{tikzpicture}
+\end{center}
+
+Based on this data, what is the experimental probability that a randomly selected student walks to school?
+\end{questionText}
+\choiceA{$\dfrac{60}{300}$}
+\choiceB{$\dfrac{1}{6}$}
+\choiceC{$\dfrac{1}{4}$}
+\choiceD{$\dfrac{60}{160}$}
+\correctAnswer{B}
+\explanation{$P(\text{walk}) = \frac{60}{360} = \frac{1}{6}$.}
+\end{practiceQuestion}
+
+% --- Graphical Short Answer Questions (3) ---
+
+\begin{practiceQuestion}{m-9-3-q25}{gsa}
+\begin{questionText}
+A random number table is used to simulate whether a package is delivered on time ($P = 0.90$). Digits $0$--$8$ mean ``on time'' and digit $9$ means ``late.'' The table below shows $20$ simulated deliveries.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$3$ & $7$ & $9$ & $1$ & $5$ & $0$ & $4$ & $8$ & $2$ & $6$ \\
+\hline
+$9$ & $4$ & $1$ & $7$ & $3$ & $8$ & $5$ & $0$ & $9$ & $2$ \\
+\hline
+\end{tabular}
+\end{center}
+
+How many of the $20$ deliveries were late in this simulation?
+\end{questionText}
+\correctAnswer{$3$}
+\explanation{Digit $9$ represents late. Scanning the table: row $1$ has one $9$, row $2$ has two $9$s. Total late deliveries: $3$. The experimental probability is $\frac{3}{20} = 0.15$, compared to the theoretical $0.10$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q26}{gsa}
+\begin{questionText}
+A simulation compares three different models for predicting outcomes. The table shows the theoretical probability and the experimental probability from $1{,}000$ trials for each model.
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Model} & \textbf{Theoretical $P$} & \textbf{Experimental $P$ ($1{,}000$ trials)} \\
+\hline
+Model A & $0.50$ & $0.487$ \\
+\hline
+Model B & $0.25$ & $0.261$ \\
+\hline
+Model C & $0.10$ & $0.103$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Which model's experimental probability is closest to its theoretical probability? What is the difference?
+\end{questionText}
+\correctAnswer{Model C; difference is $0.003$}
+\explanation{Differences: Model A: $|0.50 - 0.487| = 0.013$, Model B: $|0.25 - 0.261| = 0.011$, Model C: $|0.10 - 0.103| = 0.003$. Model C has the smallest difference of $0.003$.}
+\end{practiceQuestion}
+
+\begin{practiceQuestion}{m-9-3-q27}{gsa}
+\begin{questionText}
+A student runs three separate simulations of a spinner with $5$ equal sections. The graph below shows the experimental probability of landing on Section A for each simulation.
+
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    ybar, bar width=22pt, ymin=0, ymax=0.4,
+    ylabel={$P(\text{Section A})$},
+    symbolic x coords={Sim 1\\(50 trials), Sim 2\\(200 trials), Sim 3\\(800 trials)},
+    xtick=data,
+    nodes near coords,
+    every node near coord/.append style={font=\footnotesize},
+    width=9cm, height=6cm,
+    enlarge x limits=0.3,
+    x tick label style={align=center, font=\footnotesize}
+  ]
+  \addplot[fill=funBlue!70] coordinates {({Sim 1\\(50 trials)},0.28) ({Sim 2\\(200 trials)},0.215) ({Sim 3\\(800 trials)},0.198)};
+  \addplot[thick, funRed, sharp plot, update limits=false] coordinates {({Sim 1\\(50 trials)},0.2) ({Sim 3\\(800 trials)},0.2)};
+  \end{axis}
+  \node[funRed, right] at (7.5,2.0) {\footnotesize Theoretical: $0.20$};
+\end{tikzpicture}
+\end{center}
+
+Based on the graph, which simulation gives the most reliable estimate? Explain why.
+\end{questionText}
+\correctAnswer{Sim 3 (800 trials); more trials give a probability closer to the theoretical value}
+\explanation{Sim 3 ($800$ trials) produced $P = 0.198$, which is closest to the theoretical $0.20$. By the Law of Large Numbers, larger sample sizes produce experimental probabilities that more closely approximate the theoretical probability.}
+\end{practiceQuestion}
