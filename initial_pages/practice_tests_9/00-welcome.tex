@@ -1,0 +1,143 @@
+% ============================================================================
+% Welcome Page — 9 Practice Tests: The Summit
+% Mountain climbing / alpinist theme — slate, alpine crimson, ice blue
+% Grade 7 · Peak silhouettes, flag motifs, altitude markers, 9-camp metaphor
+% ============================================================================
+
+% --- Custom palette (scoped to this book) ---
+\definecolor{alpSlate}{HTML}{3C4858}
+\definecolor{alpCrimson}{HTML}{C62E3E}
+\definecolor{alpIce}{HTML}{AED9E0}
+\definecolor{alpSnow}{HTML}{F0F4F8}
+\definecolor{alpPine}{HTML}{2D5A3E}
+\definecolor{alpRock}{HTML}{7A7D82}
+\definecolor{alpSunrise}{HTML}{E8A838}
+
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+    % --- Icy sky gradient ---
+    \fill[alpSlate!90!black]
+        (current page.south west) rectangle (current page.north east);
+
+    % --- Mountain silhouette layer (background peaks) ---
+    \fill[alpSlate!70!black]
+        ([xshift=-1cm, yshift=-3cm]current page.south west) --
+        ([xshift=2cm, yshift=4cm]current page.south west) --
+        ([xshift=5cm, yshift=1cm]current page.south west) --
+        ([xshift=7cm, yshift=6cm]current page.south west) --
+        ([xshift=9cm, yshift=2cm]current page.south west) --
+        ([xshift=12cm, yshift=5cm]current page.south west) --
+        ([xshift=15cm, yshift=0.5cm]current page.south west) --
+        ([xshift=18cm, yshift=3.5cm]current page.south west) --
+        ([xshift=22cm, yshift=-3cm]current page.south west) -- cycle;
+
+    % --- Snow caps on peaks ---
+    \fill[white, opacity=0.08]
+        ([xshift=6cm, yshift=5.5cm]current page.south west) --
+        ([xshift=7cm, yshift=6cm]current page.south west) --
+        ([xshift=8cm, yshift=5.5cm]current page.south west) -- cycle;
+    \fill[white, opacity=0.08]
+        ([xshift=11cm, yshift=4.5cm]current page.south west) --
+        ([xshift=12cm, yshift=5cm]current page.south west) --
+        ([xshift=13cm, yshift=4.5cm]current page.south west) -- cycle;
+
+    % --- Altitude lines (subtle) ---
+    \foreach \a in {-6,-3,...,9} {
+        \draw[alpIce!8, line width=0.3pt, dashed]
+            ([yshift=\a cm]current page.west) -- ([yshift=\a cm]current page.east);
+    }
+
+    % --- Large "9" watermark ---
+    \node[font=\fontsize{220}{220}\selectfont\bfseries, text=white, opacity=0.025]
+        at ([xshift=-3cm, yshift=1cm]current page.center) {9};
+
+    % --- Top header band ---
+    \fill[alpCrimson!85]
+        (current page.north west) rectangle
+        ([yshift=-4.8cm]current page.north east);
+
+    % --- Diagonal snow edge ---
+    \fill[alpCrimson!85]
+        ([yshift=-4.8cm]current page.north west) --
+        ([yshift=-4.8cm]current page.north east) --
+        ([yshift=-5.6cm]current page.north east) --
+        ([yshift=-5.2cm]current page.north west) -- cycle;
+
+    % --- Flag badge at top ---
+    \node[
+        draw=alpSunrise, line width=2pt,
+        fill=alpSlate!50, minimum size=2.8cm,
+        rounded corners=4pt, inner sep=0pt,
+    ] at ([yshift=-2.6cm]current page.north) {};
+    \node[font=\fontsize{22}{22}\selectfont, text=alpSunrise]
+        at ([yshift=-2.6cm]current page.north) {\faFlag};
+
+    % --- "THE SUMMIT" spaced text ---
+    \node[font=\fontsize{10}{12}\selectfont\sffamily\color{white!60}]
+        at ([yshift=-1cm]current page.north)
+        {T\kern0.12em H\kern0.12em E\hspace{0.5em}S\kern0.12em U\kern0.12em M\kern0.12em M\kern0.12em I\kern0.12em T};
+
+    % --- Main title ---
+    \node[font=\fontsize{34}{40}\selectfont\sffamily\bfseries, text=white,
+          text width=0.75\paperwidth, align=center]
+        at ([yshift=-3.8cm]current page.north)
+        {9 Practice Tests};
+
+    % --- Subtitle ---
+    \node[font=\fontsize{14}{18}\selectfont\sffamily, text=alpSunrise!80]
+        at ([yshift=-6cm]current page.north)
+        {\faMountain\hspace{3mm}Grade 7 Math --- Climb to Mastery\hspace{3mm}\faMountain};
+
+    % --- Welcome message panel ---
+    \node[
+        fill=alpSlate!45!black, draw=alpCrimson!30, rounded corners=12pt,
+        inner sep=7mm, text width=0.68\paperwidth, align=center,
+        font=\sffamily\normalsize\color{white!90},
+    ] at ([yshift=-1.5cm]current page.center)
+    {
+        Welcome to \textbf{The Summit.}\\[4mm]
+        Nine camps stand between you and the peak. Each practice
+        test is one camp higher --- building your stamina, sharpening
+        your skills, and preparing you for the final ascent.\\[6mm]
+        \textcolor{alpSunrise}{\faFlag}~\textbf{Base Camp (Tests 1--3):} Acclimate and explore\\[2mm]
+        \textcolor{alpSunrise}{\faFlag}~\textbf{The Ridge (Tests 4--6):} Build strength and speed\\[2mm]
+        \textcolor{alpSunrise}{\faFlag}~\textbf{Summit Push (Tests 7--9):} Full power, full conditions\\[6mm]
+        \textit{\textcolor{alpIce!70}{The mountain doesn't get easier. You get stronger.}}
+    };
+
+    % --- Owl (bottom right) ---
+    \node at ([xshift=-3cm, yshift=3.5cm]current page.south east)
+        {\iconOwl[2.5cm]};
+
+    % --- Speech bubble ---
+    \node[
+        draw=alpCrimson!35, fill=alpSlate!45,
+        rounded corners=10pt, inner sep=4mm,
+        font=\sffamily\small\itshape\color{white!85},
+        text width=5.5cm, align=center,
+        anchor=south east,
+    ] at ([xshift=-5.8cm, yshift=5.5cm]current page.south east)
+    {
+        \faQuoteLeft~Nine camps, nine chances to prove what
+        you're made of. Every step upward makes
+        the view from the top worth it.~\faQuoteRight
+    };
+
+    % --- Altitude marker (left side) ---
+    \foreach \c/\cy in {1/-11, 2/-9.5, 3/-8, 4/-6.5, 5/-5, 6/-3.5, 7/-2, 8/-0.5, 9/1} {
+        \node[font=\tiny\sffamily\bfseries, text=alpIce!40]
+            at ([xshift=1.2cm, yshift=\cy cm]current page.center)
+            {Camp \c};
+        \fill[alpIce!20] ([xshift=0.3cm, yshift=\cy cm]current page.center) circle (1.5pt);
+    }
+
+    % --- Copyright ---
+    \node[font=\tiny\sffamily\color{white!25}, anchor=south]
+        at ([yshift=0.8cm]current page.south)
+        {\textcopyright~ViewMath.com --- All Rights Reserved};
+
+\end{tikzpicture}
+
+\newpage

@@ -1,0 +1,123 @@
+% ============================================================================
+% Welcome Page — 6 Practice Tests: The Navigator
+% Nautical / ocean-charting theme — deep navy, sea teal, compass gold
+% Grade 7 · Compass rose, wave motifs, lighthouse beacon, 6-voyage metaphor
+% ============================================================================
+
+% --- Custom palette (scoped to this book) ---
+\definecolor{navDeep}{HTML}{1B3A5C}
+\definecolor{navTeal}{HTML}{0E7C7B}
+\definecolor{navGold}{HTML}{D4A843}
+\definecolor{navGoldLight}{HTML}{FDF6E3}
+\definecolor{navSand}{HTML}{F5F0E8}
+\definecolor{navStorm}{HTML}{5C6B7A}
+\definecolor{navWave}{HTML}{E8F4F8}
+
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+    % --- Deep ocean gradient ---
+    \fill[navDeep!95!black]
+        (current page.south west) rectangle (current page.north east);
+
+    % --- Subtle wave lines across the page ---
+    \foreach \w in {-8,-6,...,8} {
+        \draw[navTeal!12, line width=0.5pt, smooth]
+            ([yshift=\w cm]current page.west)
+            .. controls ++(3,0.3) and ++(3,-0.3) ..
+            ([yshift=\w cm, xshift=6cm]current page.west)
+            .. controls ++(3,0.3) and ++(3,-0.3) ..
+            ([yshift=\w cm]current page.east);
+    }
+
+    % --- Large compass rose watermark (center-right) ---
+    \node[font=\fontsize{160}{160}\selectfont, text=navGold!6, opacity=0.5]
+        at ([xshift=3cm, yshift=-1cm]current page.center) {\faCompass};
+
+    % --- Top header band ---
+    \fill[navDeep!80!black]
+        (current page.north west) rectangle
+        ([yshift=-5cm]current page.north east);
+
+    % --- Gold accent stripe at bottom of header ---
+    \fill[navGold!80]
+        ([yshift=-5cm]current page.north west) rectangle
+        ([yshift=-5.25cm]current page.north east);
+
+    % --- Compass badge at top ---
+    \node[
+        circle, minimum size=3.2cm,
+        draw=navGold, line width=2pt,
+        fill=navDeep!60!black,
+    ] at ([yshift=-2.8cm]current page.north) {};
+    \node[font=\fontsize{22}{22}\selectfont, text=navGold]
+        at ([yshift=-2.8cm]current page.north) {\faCompass};
+
+    % --- "THE NAVIGATOR" spaced text ---
+    \node[font=\fontsize{10}{12}\selectfont\sffamily\color{navGold!55}]
+        at ([yshift=-1cm]current page.north)
+        {T\kern0.12em H\kern0.12em E\hspace{0.5em}N\kern0.12em A\kern0.12em V\kern0.12em I\kern0.12em G\kern0.12em A\kern0.12em T\kern0.12em O\kern0.12em R};
+
+    % --- Main title ---
+    \node[font=\fontsize{34}{40}\selectfont\sffamily\bfseries, text=white,
+          text width=0.75\paperwidth, align=center]
+        at ([yshift=-4.3cm]current page.north)
+        {6 Practice Tests};
+
+    % --- Subtitle ---
+    \node[font=\fontsize{14}{18}\selectfont\sffamily, text=navGold!70]
+        at ([yshift=-6.2cm]current page.north)
+        {\faAnchor\hspace{3mm}Grade 7 Math --- Chart Your Course\hspace{3mm}\faAnchor};
+
+    % --- Large "6" watermark ---
+    \node[font=\fontsize{200}{200}\selectfont\bfseries, text=white, opacity=0.025]
+        at ([xshift=-4cm, yshift=-2cm]current page.center) {6};
+
+    % --- Welcome message panel ---
+    \node[
+        fill=navDeep!50!black, draw=navTeal!35, rounded corners=12pt,
+        inner sep=7mm, text width=0.68\paperwidth, align=center,
+        font=\sffamily\normalsize\color{white!90},
+    ] at ([yshift=-1.2cm]current page.center)
+    {
+        Welcome aboard, navigator!\\[4mm]
+        Six voyages lie ahead. Each one charts a different
+        stretch of the Grade~7 math ocean --- from the shallows of
+        rational numbers to the deep waters of geometry and statistics.\\[6mm]
+        \textcolor{navGold}{\faAnchor}~\textbf{Voyage 1--2:} Coastal waters --- learn the tides\\[2mm]
+        \textcolor{navGold}{\faAnchor}~\textbf{Voyage 3--4:} Open sea --- navigate with precision\\[2mm]
+        \textcolor{navGold}{\faAnchor}~\textbf{Voyage 5--6:} Charted mastery --- full speed ahead\\[6mm]
+        \textit{\textcolor{navGold!60}{A steady compass and six voyages will carry you anywhere.}}
+    };
+
+    % --- Owl at bottom left ---
+    \node at ([xshift=3.5cm, yshift=3.8cm]current page.south west)
+        {\iconOwl[2.5cm]};
+
+    % --- Speech bubble ---
+    \node[
+        draw=navTeal!40, fill=navDeep!45,
+        rounded corners=10pt, inner sep=4mm,
+        font=\sffamily\small\itshape\color{white!85},
+        text width=5.5cm, align=center,
+        anchor=south west,
+    ] at ([xshift=6cm, yshift=3.2cm]current page.south west)
+    {
+        \faQuoteLeft~Every great voyage starts with the first
+        wave. Six tests, six chances to steer yourself
+        toward a perfect score.~\faQuoteRight
+    };
+
+    % --- Lighthouse beacon (bottom right) ---
+    \node[opacity=0.25, font=\fontsize{40}{40}\selectfont, text=navGold, rotate=-10]
+        at ([xshift=-2cm, yshift=3cm]current page.south east) {\faLightbulb};
+
+    % --- Copyright ---
+    \node[font=\tiny\sffamily\color{white!25}, anchor=south]
+        at ([yshift=0.8cm]current page.south)
+        {\textcopyright~ViewMath.com --- All Rights Reserved};
+
+\end{tikzpicture}
+
+\newpage

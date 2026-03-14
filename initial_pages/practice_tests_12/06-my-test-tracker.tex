@@ -1,0 +1,185 @@
+% ============================================================================
+% Performance Ledger (Test Tracker) — 12 Practice Tests: The Maestro
+% Concert-styled 4-movement tracker with movement-by-movement progress
+% Grade 7
+% ============================================================================
+
+\thispagestyle{empty}
+
+{
+\sffamily
+
+% --- Title ---
+\begin{center}
+    \textcolor{musBlack}{\fontsize{26}{30}\selectfont\bfseries
+    \faMusic~Performance Ledger~\faMusic}
+
+    \smallskip
+    \textcolor{musSilver}{\normalsize Record each performance and hear your progress crescendo}
+\end{center}
+
+\vspace{2mm}
+
+% --- Performer info ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=musIvory,
+    colframe=musGold!40,
+    arc=4pt, boxrule=1pt,
+    left=5mm, right=5mm, top=2mm, bottom=2mm,
+    borderline west={3pt}{0pt}{musGold!55},
+]
+    \centering\normalsize
+    \textbf{Performer:} \rule{7cm}{0.4pt}
+    \hfill
+    \textbf{Opening Night:} \rule{3.5cm}{0.4pt}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% --- Helper for each performance entry ---
+\newcommand{\perfEntry}[2]{%
+    % #1 = test number, #2 = icon color
+    \noindent
+    \textcolor{#2}{\fontsize{11}{11}\selectfont\faMusic}~%
+    \textbf{Mvt.\ #1}\hfill
+    Date: \rule{1.6cm}{0.3pt}\hfill
+    Score: \rule{0.8cm}{0.3pt}\,/\,\rule{0.8cm}{0.3pt}\hfill
+    \%: \rule{0.8cm}{0.3pt}\hfill
+    \textcolor{#2!25}{\faStar\faStar\faStar\faStar\faStar}%
+    \\[2pt]
+}
+
+% --- Movement I: Prelude (Tests 1-3) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=musGold!4,
+    colframe=musGold!35,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{Movement I: Prelude --- Tests 1--3}},
+    colbacktitle=musGold!65,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{musGold!50},
+]
+    \small
+    \perfEntry{1}{musGold!85!black}
+    \perfEntry{2}{musGold!85!black}
+    \perfEntry{3}{musGold!85!black}
+\end{tcolorbox}
+
+\vspace{1mm}
+
+% --- Movement II: Development (Tests 4-6) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=musBurgundy!4,
+    colframe=musBurgundy!30,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{Movement II: Development --- Tests 4--6}},
+    colbacktitle=musBurgundy!60,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{musBurgundy!45},
+]
+    \small
+    \perfEntry{4}{musBurgundy}
+    \perfEntry{5}{musBurgundy}
+    \perfEntry{6}{musBurgundy}
+\end{tcolorbox}
+
+\vspace{1mm}
+
+% --- Movement III: Intermezzo (Tests 7-9) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=musBlack!4,
+    colframe=musBlack!30,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{Movement III: Intermezzo --- Tests 7--9}},
+    colbacktitle=musBlack!65,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{musBlack!45},
+]
+    \small
+    \perfEntry{7}{musBlack}
+    \perfEntry{8}{musBlack}
+    \perfEntry{9}{musBlack}
+\end{tcolorbox}
+
+\vspace{1mm}
+
+% --- Movement IV: Finale (Tests 10-12) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=musCrimson!4,
+    colframe=musCrimson!35,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{Movement IV: Finale --- Tests 10--12}},
+    colbacktitle=musCrimson!70,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{musCrimson!50},
+]
+    \small
+    \perfEntry{10}{musCrimson}
+    \perfEntry{11}{musCrimson}
+    \perfEntry{12}{musCrimson}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% --- Rating system ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=musIvory,
+    colframe=musGold!25,
+    arc=4pt, boxrule=0.8pt,
+    left=5mm, right=5mm, top=2mm, bottom=2mm,
+    borderline west={2pt}{0pt}{musGold!40},
+]
+    \small\centering
+    \textbf{Concert Rating:}\quad
+    \textcolor{musSilver}{\faMusic}~Understudy (0--39\%)
+    \quad
+    \textcolor{musGold!85!black}{\faMusic}~Soloist (40--59\%)
+    \quad
+    \textcolor{musBurgundy}{\faMusic}~Virtuoso (60--79\%)
+    \quad
+    \textcolor{musCrimson}{\faMusic}~\textbf{Maestro} (80--100\%)
+
+    \vspace{1mm}
+    {\scriptsize Colour the stars: one star per 20\% of your score. Watch your symphony grow!}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% --- Reflection ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=musPearl,
+    colframe=musBurgundy!25,
+    arc=6pt, boxrule=0.8pt,
+    left=5mm, right=5mm, top=4mm, bottom=4mm,
+    title={\small\textcolor{white}{\faPenFancy~Curtain Call Reflection}},
+    colbacktitle=musBlack!65,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{musBlack!40},
+]
+    \small\color{musBlack}
+    \faMusic~My strongest topic: \rule{8cm}{0.3pt}
+
+    \medskip
+    \faMusic~The topic I improved most: \rule{7cm}{0.3pt}
+
+    \medskip
+    \faMusic~My score rose from Movement 1 (\rule{1.3cm}{0.3pt}\%) to Movement 12 (\rule{1.3cm}{0.3pt}\%)
+
+    \medskip
+    \faMusic~One thing I'm proud of: \rule{7.5cm}{0.3pt}
+\end{tcolorbox}
+
+}
+
+\newpage

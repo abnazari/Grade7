@@ -1,0 +1,165 @@
+% ============================================================================
+% Altitude Log (Test Tracker) — 9 Practice Tests: The Summit
+% Alpine-styled 3-phase tracker with camp-by-camp progress
+% Grade 7
+% ============================================================================
+
+\thispagestyle{empty}
+
+{
+\sffamily
+
+% --- Title ---
+\begin{center}
+    \textcolor{alpSlate}{\fontsize{26}{30}\selectfont\bfseries
+    \faMountain~Altitude Log~\faMountain}
+
+    \smallskip
+    \textcolor{alpRock}{\normalsize Record each camp and measure your ascent}
+\end{center}
+
+\vspace{2mm}
+
+% --- Climber info ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=alpIce!15,
+    colframe=alpSlate!40,
+    arc=4pt, boxrule=1pt,
+    left=5mm, right=5mm, top=2mm, bottom=2mm,
+    borderline west={3pt}{0pt}{alpCrimson!50},
+]
+    \centering\normalsize
+    \textbf{Climber:} \rule{7cm}{0.4pt}
+    \hfill
+    \textbf{Expedition Start:} \rule{3.5cm}{0.4pt}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% --- Helper for each camp entry ---
+\newcommand{\campEntry}[2]{%
+    % #1 = test number, #2 = icon color
+    \noindent
+    \textcolor{#2}{\fontsize{12}{12}\selectfont\faFlag}~%
+    \textbf{Camp #1}\hfill
+    Date: \rule{1.8cm}{0.3pt}\hfill
+    Score: \rule{0.9cm}{0.3pt}\,/\,\rule{0.9cm}{0.3pt}\hfill
+    \%: \rule{0.9cm}{0.3pt}\hfill
+    \textcolor{#2!25}{\faStar\faStar\faStar\faStar\faStar}%
+    \\[2pt]
+}
+
+% --- Phase I: Base Camp (Tests 1-3) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=alpPine!4,
+    colframe=alpPine!35,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{Base Camp --- Camps 1--3}},
+    colbacktitle=alpPine!65,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{alpPine!50},
+]
+    \small
+    \campEntry{1}{alpPine}
+    \campEntry{2}{alpPine}
+    \campEntry{3}{alpPine}
+\end{tcolorbox}
+
+\vspace{1mm}
+
+% --- Phase II: The Ridge (Tests 4-6) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=alpSunrise!4,
+    colframe=alpSunrise!35,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{The Ridge --- Camps 4--6}},
+    colbacktitle=alpSunrise!65,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{alpSunrise!50},
+]
+    \small
+    \campEntry{4}{alpSunrise!85!black}
+    \campEntry{5}{alpSunrise!85!black}
+    \campEntry{6}{alpSunrise!85!black}
+\end{tcolorbox}
+
+\vspace{1mm}
+
+% --- Phase III: Summit Push (Tests 7-9) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=alpCrimson!4,
+    colframe=alpCrimson!35,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{Summit Push --- Camps 7--9}},
+    colbacktitle=alpCrimson!70,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{alpCrimson!50},
+]
+    \small
+    \campEntry{7}{alpCrimson}
+    \campEntry{8}{alpCrimson}
+    \campEntry{9}{alpCrimson}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% --- Rank system ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=alpSnow,
+    colframe=alpSlate!25,
+    arc=4pt, boxrule=0.8pt,
+    left=5mm, right=5mm, top=2mm, bottom=2mm,
+    borderline west={2pt}{0pt}{alpSlate!40},
+]
+    \small\centering
+    \textbf{Climber Rank:}\quad
+    \textcolor{alpRock}{\faFlag}~Hiker (0--39\%)
+    \quad
+    \textcolor{alpPine}{\faFlag}~Trekker (40--59\%)
+    \quad
+    \textcolor{alpSunrise!85!black}{\faFlag}~Alpinist (60--79\%)
+    \quad
+    \textcolor{alpCrimson}{\faFlag}~\textbf{Summiteer} (80--100\%)
+
+    \vspace{1mm}
+    {\scriptsize Colour the stars: one star per 20\% of your score. Track your altitude!}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% --- Reflection section ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=alpIce!12,
+    colframe=alpSlate!25,
+    arc=6pt, boxrule=0.8pt,
+    left=5mm, right=5mm, top=4mm, bottom=4mm,
+    title={\small\textcolor{white}{\faPenFancy~Summit Reflection}},
+    colbacktitle=alpSlate!60,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{alpSlate!40},
+]
+    \small\color{alpSlate}
+    \faFlag~My strongest topic: \rule{8cm}{0.3pt}
+
+    \medskip
+    \faFlag~The topic I improved most: \rule{7cm}{0.3pt}
+
+    \medskip
+    \faFlag~My score climbed from Camp 1 (\rule{1.5cm}{0.3pt}\%) to Camp 9 (\rule{1.5cm}{0.3pt}\%)
+
+    \medskip
+    \faFlag~One thing I'm proud of: \rule{7.5cm}{0.3pt}
+\end{tcolorbox}
+
+}
+
+\newpage

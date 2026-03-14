@@ -1,0 +1,127 @@
+% ============================================================================
+% Welcome Page — 12 Practice Tests: The Maestro
+% Orchestra / music composition theme — concert black, royal gold, burgundy
+% Grade 7 · Musical motifs, conductor's baton, 12-movement metaphor
+% ============================================================================
+
+% --- Custom palette (scoped to this book) ---
+\definecolor{musBlack}{HTML}{1A1A2E}
+\definecolor{musGold}{HTML}{B8860B}
+\definecolor{musBurgundy}{HTML}{722F37}
+\definecolor{musIvory}{HTML}{FAF8F0}
+\definecolor{musSilver}{HTML}{A8A9AD}
+\definecolor{musCrimson}{HTML}{8B1A2B}
+\definecolor{musPearl}{HTML}{F5F2ED}
+
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+    % --- Deep concert-hall black ---
+    \fill[musBlack]
+        (current page.south west) rectangle (current page.north east);
+
+    % --- Subtle staff lines (5 lines, repeated) ---
+    \foreach \s in {-8,-4,...,8} {
+        \foreach \l in {-0.3,-0.15,0,0.15,0.3} {
+            \draw[musGold!8, line width=0.3pt]
+                ([yshift=\s cm + \l cm]current page.west) --
+                ([yshift=\s cm + \l cm]current page.east);
+        }
+    }
+
+    % --- Large treble clef watermark ---
+    \node[font=\fontsize{200}{200}\selectfont, text=musGold!5, opacity=0.6]
+        at ([xshift=4cm, yshift=-1cm]current page.center) {\faMusic};
+
+    % --- Top header band (burgundy velvet) ---
+    \fill[musBurgundy!90]
+        (current page.north west) rectangle
+        ([yshift=-5cm]current page.north east);
+
+    % --- Gold trim at bottom of header ---
+    \fill[musGold]
+        ([yshift=-5cm]current page.north west) rectangle
+        ([yshift=-5.15cm]current page.north east);
+
+    % --- Conductor's circle badge ---
+    \node[
+        circle, minimum size=3.2cm,
+        draw=musGold, line width=2pt,
+        fill=musBlack!80,
+    ] at ([yshift=-2.8cm]current page.north) {};
+    \node[font=\fontsize{22}{22}\selectfont, text=musGold]
+        at ([yshift=-2.8cm]current page.north) {\faMusic};
+
+    % --- "THE MAESTRO" spaced text ---
+    \node[font=\fontsize{10}{12}\selectfont\sffamily\color{musGold!50}]
+        at ([yshift=-1cm]current page.north)
+        {T\kern0.12em H\kern0.12em E\hspace{0.5em}M\kern0.12em A\kern0.12em E\kern0.12em S\kern0.12em T\kern0.12em R\kern0.12em O};
+
+    % --- Main title ---
+    \node[font=\fontsize{34}{40}\selectfont\sffamily\bfseries, text=white,
+          text width=0.75\paperwidth, align=center]
+        at ([yshift=-4.2cm]current page.north)
+        {12 Practice Tests};
+
+    % --- Subtitle ---
+    \node[font=\fontsize{14}{18}\selectfont\sffamily, text=musGold!70]
+        at ([yshift=-6.2cm]current page.north)
+        {\faMusic\hspace{3mm}Grade 7 Math --- Compose Your Mastery\hspace{3mm}\faMusic};
+
+    % --- Large "12" watermark ---
+    \node[font=\fontsize{180}{180}\selectfont\bfseries, text=white, opacity=0.02]
+        at ([xshift=-4cm, yshift=-2cm]current page.center) {12};
+
+    % --- Welcome message panel ---
+    \node[
+        fill=musBlack!70, draw=musGold!30, rounded corners=12pt,
+        inner sep=7mm, text width=0.68\paperwidth, align=center,
+        font=\sffamily\normalsize\color{white!90},
+    ] at ([yshift=-1.5cm]current page.center)
+    {
+        Welcome to \textbf{The Maestro's Hall.}\\[4mm]
+        Twelve movements make a grand symphony. Each practice test
+        is one movement --- building from a quiet prelude to a
+        triumphant finale of total mastery.\\[6mm]
+        \textcolor{musGold}{\faMusic}~\textbf{Prelude (Tests 1--3):} Tune your instruments\\[2mm]
+        \textcolor{musGold}{\faMusic}~\textbf{Development (Tests 4--6):} Develop your themes\\[2mm]
+        \textcolor{musGold}{\faMusic}~\textbf{Intermezzo (Tests 7--9):} Build intensity\\[2mm]
+        \textcolor{musGold}{\faMusic}~\textbf{Finale (Tests 10--12):} The grand performance\\[6mm]
+        \textit{\textcolor{musGold!55}{Twelve movements. One masterpiece. Standing ovation.}}
+    };
+
+    % --- Owl at bottom left ---
+    \node at ([xshift=3.5cm, yshift=3.8cm]current page.south west)
+        {\iconOwl[2.5cm]};
+
+    % --- Speech bubble ---
+    \node[
+        draw=musBurgundy!40, fill=musBlack!60,
+        rounded corners=10pt, inner sep=4mm,
+        font=\sffamily\small\itshape\color{white!85},
+        text width=5.5cm, align=center,
+        anchor=south west,
+    ] at ([xshift=6cm, yshift=3.2cm]current page.south west)
+    {
+        \faQuoteLeft~A maestro doesn't play all twelve
+        movements at once. Practice, refine, and
+        let the music build to perfection.~\faQuoteRight
+    };
+
+    % --- Movement markers (right side) ---
+    \foreach \m/\my in {1/-12.5, 2/-11.3, 3/-10.1, 4/-8.9, 5/-7.7, 6/-6.5, 7/-5.3, 8/-4.1, 9/-2.9, 10/-1.7, 11/-0.5, 12/0.7} {
+        \node[font=\tiny\sffamily, text=musGold!30]
+            at ([xshift=-1.3cm, yshift=\my cm]current page.center) {\m};
+        \fill[musGold!15]
+            ([xshift=-0.5cm, yshift=\my cm]current page.center) circle (1.2pt);
+    }
+
+    % --- Copyright ---
+    \node[font=\tiny\sffamily\color{white!20}, anchor=south]
+        at ([yshift=0.8cm]current page.south)
+        {\textcopyright~ViewMath.com --- All Rights Reserved};
+
+\end{tikzpicture}
+
+\newpage

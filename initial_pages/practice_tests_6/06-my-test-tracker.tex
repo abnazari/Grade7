@@ -1,0 +1,162 @@
+% ============================================================================
+% Captain's Logbook (Test Tracker) — 6 Practice Tests: The Navigator
+% Maritime-styled 3-phase tracker with voyage-by-voyage progress
+% Grade 7
+% ============================================================================
+
+\thispagestyle{empty}
+
+{
+\sffamily
+
+% --- Title ---
+\begin{center}
+    \textcolor{navDeep}{\fontsize{26}{30}\selectfont\bfseries
+    \faShip~Captain's Logbook~\faShip}
+
+    \smallskip
+    \textcolor{navStorm}{\normalsize Record each voyage and watch your course unfold}
+\end{center}
+
+\vspace{2mm}
+
+% --- Navigator info ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=navWave,
+    colframe=navTeal!40,
+    arc=4pt, boxrule=1pt,
+    left=5mm, right=5mm, top=2mm, bottom=2mm,
+    borderline west={3pt}{0pt}{navTeal!55},
+]
+    \centering\normalsize
+    \textbf{Navigator:} \rule{7cm}{0.4pt}
+    \hfill
+    \textbf{Departure Date:} \rule{3.5cm}{0.4pt}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% --- Helper for each voyage entry ---
+\newcommand{\voyageEntry}[2]{%
+    % #1 = test number, #2 = icon color
+    \noindent
+    \textcolor{#2}{\fontsize{12}{12}\selectfont\faAnchor}~%
+    \textbf{Voyage #1}\hfill
+    Date: \rule{1.8cm}{0.3pt}\hfill
+    Score: \rule{0.9cm}{0.3pt}\,/\,\rule{0.9cm}{0.3pt}\hfill
+    \%: \rule{0.9cm}{0.3pt}\hfill
+    \textcolor{#2!25}{\faStar\faStar\faStar\faStar\faStar}%
+    \\[2pt]
+}
+
+% --- Voyage I: Coastal Waters (Tests 1-2) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=navTeal!4,
+    colframe=navTeal!35,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{Voyage I: Coastal Waters --- Tests 1--2}},
+    colbacktitle=navTeal!65,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{navTeal!55},
+]
+    \small
+    \voyageEntry{1}{navTeal}
+    \voyageEntry{2}{navTeal}
+\end{tcolorbox}
+
+\vspace{1mm}
+
+% --- Voyage II: Open Sea (Tests 3-4) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=navGold!4,
+    colframe=navGold!35,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{Voyage II: Open Sea --- Tests 3--4}},
+    colbacktitle=navGold!65,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{navGold!55},
+]
+    \small
+    \voyageEntry{3}{navGold!80!black}
+    \voyageEntry{4}{navGold!80!black}
+\end{tcolorbox}
+
+\vspace{1mm}
+
+% --- Voyage III: Charted Mastery (Tests 5-6) ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=navDeep!4,
+    colframe=navDeep!35,
+    arc=4pt, boxrule=0.8pt,
+    left=4mm, right=4mm, top=2mm, bottom=2mm,
+    title={\small\textcolor{white}{Voyage III: Charted Mastery --- Tests 5--6}},
+    colbacktitle=navDeep!70,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{navDeep!55},
+]
+    \small
+    \voyageEntry{5}{navDeep}
+    \voyageEntry{6}{navDeep}
+\end{tcolorbox}
+
+\vspace{3mm}
+
+% --- Rank system ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=navWave,
+    colframe=navTeal!25,
+    arc=4pt, boxrule=0.8pt,
+    left=5mm, right=5mm, top=2mm, bottom=2mm,
+    borderline west={2pt}{0pt}{navTeal!45},
+]
+    \small\centering
+    \textbf{Navigator Rank:}\quad
+    \textcolor{navStorm}{\faAnchor}~Deckhand (0--39\%)
+    \quad
+    \textcolor{navTeal}{\faAnchor}~Helmsman (40--59\%)
+    \quad
+    \textcolor{navGold!80!black}{\faAnchor}~First Mate (60--79\%)
+    \quad
+    \textcolor{navDeep}{\faAnchor}~\textbf{Captain} (80--100\%)
+
+    \vspace{1mm}
+    {\scriptsize Colour the stars: one star per 20\% of your score. Watch your fleet grow!}
+\end{tcolorbox}
+
+\vspace{3mm}
+
+% --- Reflection section ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=navSand,
+    colframe=navGold!30,
+    arc=6pt, boxrule=0.8pt,
+    left=5mm, right=5mm, top=4mm, bottom=4mm,
+    title={\small\textcolor{white}{\faPenFancy~End-of-Journey Reflection}},
+    colbacktitle=navGold!60,
+    fonttitle=\bfseries\sffamily,
+    borderline west={2pt}{0pt}{navGold!45},
+]
+    \small\color{navDeep}
+    \faAnchor~My strongest topic: \rule{8cm}{0.3pt}
+
+    \medskip
+    \faAnchor~The topic I improved most: \rule{7cm}{0.3pt}
+
+    \medskip
+    \faAnchor~My score improved from Voyage 1 (\rule{1.5cm}{0.3pt}\%) to Voyage 6 (\rule{1.5cm}{0.3pt}\%)
+
+    \medskip
+    \faAnchor~One thing I'm proud of: \rule{7.5cm}{0.3pt}
+\end{tcolorbox}
+
+}
+
+\newpage
