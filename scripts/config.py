@@ -538,15 +538,15 @@ GENERIC_BOOK_TITLES: Dict[str, Tuple[str, str]] = {
     ),
     "6_practice_tests": (
         "6 Full-Length Grade 7 Math Practice Tests",
-        "Targeted Test Prep with Step-by-Step Answer Explanations",
+        "Guided Test Prep with Tips, Strategies & Detailed Answers",
     ),
     "9_practice_tests": (
         "9 Full-Length Grade 7 Math Practice Tests",
-        "In-Depth Practice for Exam Day Confidence",
+        "Test Prep with Tips, Strategies & Answer Explanations",
     ),
     "12_practice_tests": (
         "12 Full-Length Grade 7 Math Practice Tests",
-        "The Complete Test Prep Library with Detailed Answer Keys",
+        "The Complete Guided Test Prep with Tips & Detailed Answer Keys",
     ),
     "in_30_days": (
         "Grade 7 Math in 30 Days",
@@ -726,16 +726,16 @@ _TITLE_TEMPLATES: Dict[str, Tuple[str, str]] = {
         "The Ultimate Test Prep Collection with Answer Explanations",
     ),
     "6_practice_tests": (
-        "6 {state} {exam} Grade {grade_n} Math Practice Tests",
-        "Targeted Test Prep with Step-by-Step Answer Explanations",
+        "6 {state} {exam} {ordinal} Grade Math Practice Tests",
+        "Guided Test Prep with Tips, Strategies & Detailed Answers",
     ),
     "9_practice_tests": (
         "9 Full-Length {state} {exam} Grade {grade_n} Math Practice Tests",
-        "In-Depth Practice for Exam Day Confidence",
+        "Test Prep with Tips, Strategies & Answer Explanations",
     ),
     "12_practice_tests": (
         "12 {state} {exam} Grade {grade_n} Math Practice Tests",
-        "The Complete Test Prep Library with Detailed Answer Keys",
+        "The Complete Guided Test Prep with Tips & Detailed Answer Keys",
     ),
     "in_30_days": (
         "{state} {exam} Grade {grade_n} Math in 30 Days",
@@ -873,14 +873,14 @@ _TPT_TIERS: Dict[str, Dict[str, list]] = {
     },
     "6_practice_tests": {
         "titles": [
-            "6 {state} {exam} Grade {grade_n} Math Practice Tests",
+            "6 {state} {exam} {ordinal} Grade Math Practice Tests",
         ],
         "subtitles": [
-            "Targeted Test Prep with Step-by-Step Answer Explanations",  # 55
-            "Targeted Test Prep with Answer Explanations",               # 44
-            "Test Prep with Step-by-Step Answers",                       # 34
-            "Test Prep & Answer Explanations",                           # 30
-            "Answers & Explanations",                                    # 22
+            "Guided Test Prep with Tips, Strategies & Detailed Answers",  # 55
+            "Guided Test Prep with Tips & Detailed Answers",              # 44
+            "Test Prep with Tips, Strategies & Answers",                  # 40
+            "Test Prep with Tips & Answers",                              # 27
+            "Tips, Strategies & Answers",                                 # 26
         ],
     },
     "9_practice_tests": {
@@ -889,11 +889,11 @@ _TPT_TIERS: Dict[str, Dict[str, list]] = {
             "9 {state} {exam} Grade {grade_n} Math Practice Tests",
         ],
         "subtitles": [
-            "In-Depth Practice for Exam Day Confidence",            # 41
-            "In-Depth Practice for Test Day",                       # 30
-            "Extra Practice & Test Prep",                           # 26
-            "Answers & Explanations",                               # 22
-            "Answer Key Included",                                  # 19
+            "Test Prep with Tips, Strategies & Answer Explanations",      # 52
+            "Test Prep with Tips & Answer Explanations",                  # 42
+            "Guided Test Prep with Tips & Answers",                       # 35
+            "Test Prep with Tips & Answers",                              # 29
+            "Answers & Explanations",                                     # 22
         ],
     },
     "12_practice_tests": {
@@ -901,12 +901,13 @@ _TPT_TIERS: Dict[str, Dict[str, list]] = {
             "12 {state} {exam} Grade {grade_n} Math Practice Tests",
         ],
         "subtitles": [
-            "The Complete Test Prep Library with Detailed Answer Keys",  # 55
-            "Complete Test Prep with Detailed Answer Keys",              # 44
-            "Test Prep with Detailed Answer Keys",                       # 34
-            "Test Prep & Detailed Answers",                              # 28
-            "Answers & Explanations",                                    # 22
-            "Answer Key Included",                                       # 19
+            "The Complete Guided Test Prep with Tips & Detailed Answer Keys",  # 61
+            "Complete Guided Test Prep with Tips & Answer Keys",               # 49
+            "Guided Test Prep with Tips & Answer Keys",                        # 39
+            "Complete Test Prep with Tips & Answers",                          # 37
+            "Test Prep with Tips & Answers",                                   # 29
+            "Answers & Explanations",                                          # 22
+            "Answer Key Included",                                             # 19
         ],
     },
     "in_30_days": {

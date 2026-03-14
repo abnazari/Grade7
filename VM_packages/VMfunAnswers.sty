@@ -1,5 +1,5 @@
 %----------------------------------------------------------------------------------------
-% VMfunAnswers.sty - Answer Key System for Grade 7 Study Guide
+% VMfunAnswers.sty - Answer Key System for Grade 8 Study Guide
 % Collects answers from practice problems and prints them at the end of the book.
 % Answers are written to \jobname.ans during compilation and rendered by \printAnswerKey.
 %
@@ -8,7 +8,7 @@
 %   2. Practice Test mode: collects from \correctAnswer{} and \explanation{}
 %      Activate with \enablePracticeTestAnswers in the preamble.
 %----------------------------------------------------------------------------------------
-\ProvidesPackage{VMfunAnswers}[2026/03/02 Grade 7 Answer Key System]
+\ProvidesPackage{VMfunAnswers}[2026/03/02 Grade 8 Answer Key System]
 
 %========================================================================================
 % 1. ANSWER COLLECTION - Write answers to an external .ans file
@@ -131,6 +131,42 @@
                 \string\ansExplain{\thefunProblem}{\unexpanded{##1}}%
             }%
         \fi
+    }%
+}
+
+%========================================================================================
+% 3b-REVIEW. INLINE REVIEW MODE
+%     Call \enableInlineReview in the preamble to render the correct answer
+%     and explanation visually right after each question (for auditing).
+%     No .ans file writing; no \printAnswerKey needed.
+%========================================================================================
+\newcommand{\enableInlineReview}{%
+    % Reset question numbering at every \section* so each topic starts at 1
+    \let\origstartsection\section
+    \renewcommand{\section}{\setcounter{funProblem}{0}\origstartsection}%
+    \renewcommand{\correctAnswer}[1]{%
+        \par\vspace{2mm}%
+        \noindent
+        \begin{tcolorbox}[
+            enhanced, colback=green!5, colframe=green!50!black,
+            boxrule=0.6pt, arc=4pt, left=3mm, right=3mm,
+            top=1.5mm, bottom=1.5mm,
+            before skip=2pt, after skip=2pt,
+        ]
+        {\small\bfseries\sffamily\color{green!40!black}\faCheckCircle\hspace{2mm}Answer:}\hspace{3mm}{\small ##1}%
+        \end{tcolorbox}%
+    }%
+    \renewcommand{\explanation}[1]{%
+        \par\vspace{1mm}%
+        \noindent
+        \begin{tcolorbox}[
+            enhanced, colback=blue!3, colframe=blue!30,
+            boxrule=0.4pt, arc=4pt, left=3mm, right=3mm,
+            top=1.5mm, bottom=1.5mm,
+            before skip=2pt, after skip=4pt,
+        ]
+        {\small\bfseries\sffamily\color{blue!50!black}\faLightbulb[regular]\hspace{2mm}Explanation:}\hspace{2mm}{\small ##1}%
+        \end{tcolorbox}%
     }%
 }
 

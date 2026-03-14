@@ -15,7 +15,8 @@ No Jinja, no HTML — just facts.
 Supported book types:
     all_in_one, study_guide, workbook, step_by_step, in_30_days,
     quiz, puzzles, worksheet,
-    3_practice_tests, 5_practice_tests, 7_practice_tests, 10_practice_tests
+    3_practice_tests, 5_practice_tests, 7_practice_tests, 10_practice_tests,
+    6_practice_tests, 9_practice_tests, 12_practice_tests
 """
 
 from __future__ import annotations
@@ -324,7 +325,7 @@ BOOK_TYPE_INFO: Dict[str, Dict[str, Any]] = {
     },
 }
 
-# Generate practice test entries
+# Generate standard practice test entries (3, 5, 7, 10)
 for _n in [3, 5, 7, 10]:
     _key = f"{_n}_practice_tests"
     _total = _n * QUESTIONS_PER_TEST
@@ -353,10 +354,52 @@ for _n in [3, 5, 7, 10]:
         ],
     }
 
+# Generate guided practice test entries (6, 9, 12)
+# These books include pre-test guidance pages (mindset, strategies, game plan)
+# and post-test reflection pages (score analysis, growth tracking, next steps)
+# before and after every single test.
+for _n in [6, 9, 12]:
+    _key = f"{_n}_practice_tests"
+    _total = _n * QUESTIONS_PER_TEST
+    BOOK_TYPE_INFO[_key] = {
+        "display_name": f"{_n} Practice Tests",
+        "subtitle": "Guided Test Prep with Tips, Strategies & Detailed Answers",
+        "what_it_is": (
+            f"The guided test prep resource. {_n} full-length practice tests "
+            f"with {QUESTIONS_PER_TEST} questions each, plus a guidance page "
+            f"before and after every test — mindset tips, test-taking "
+            f"strategies, and post-test score analysis."
+        ),
+        "num_tests": _n,
+        "questions_per_test": QUESTIONS_PER_TEST,
+        "total_questions": _total,
+        "features": [
+            f"{_n} complete tests × {QUESTIONS_PER_TEST} questions = {_total} problems with full answer explanations",
+            "Pre-test guidance page before every test — mindset tips, strategies, and a focused game plan for that specific test",
+            "Post-test reflection page after every test — score analysis, growth tracking, and targeted next-steps guidance",
+            "Question formats mirror the real state exam: multiple-choice, short-answer, and extended response",
+            "Detailed step-by-step explanations for every question — students learn from every answer",
+            f"Built-in score tracker across all {_n} tests so students see measurable growth over time",
+            "Test-taking strategies woven throughout — time management, process of elimination, checking work, and reducing anxiety",
+            "Covers every Grade 7 math strand: ratios and rates, the number system, expressions and equations, geometry, and statistics",
+        ],
+        "use_cases": [
+            "State exam preparation with built-in guidance — more than just practice, it's guided test prep",
+            "Students who need confidence-building alongside practice — the guidance pages reduce test anxiety",
+            "Classroom test-prep programs — one guided test per week leading up to exam day",
+            "Tutoring sessions — use the guidance pages as discussion starters and the tests for focused practice",
+            "Homeschool families — the guidance pages help parents lead test prep even without teaching experience",
+            "Self-study students — the pre-test tips and post-test reflections create a complete self-guided learning loop",
+        ],
+    }
+
 
 # ============================================================================
 # SERIES CROSS-SELL
 # ============================================================================
+
+_STANDARD_PT = {"3_practice_tests", "5_practice_tests", "7_practice_tests", "10_practice_tests"}
+_GUIDED_PT = {"6_practice_tests", "9_practice_tests", "12_practice_tests"}
 
 SERIES_DESCRIPTIONS: Dict[str, str] = {
     "all_in_one": "All-in-One — The complete resource with full lessons, worked examples, and practice for every topic",
@@ -368,26 +411,26 @@ SERIES_DESCRIPTIONS: Dict[str, str] = {
     "puzzles": "Puzzles & Brain Teasers — Curriculum-aligned games, riddles, and challenges that make math fun",
     "worksheet": "Worksheets — Standalone printable activities for any topic, ready to use in any order",
     "practice_tests": "Practice Tests (3, 5, 7, or 10 editions) — Full-length, realistic test prep with detailed answer explanations — every edition contains unique tests",
+    "guided_practice_tests": "Guided Practice Tests (6, 9, or 12 editions) — Full-length tests plus tips, strategies, score analysis & growth tracking before and after each test",
 }
 
 
 def get_series_list(current_book_type: str) -> List[str]:
     """Return series cross-sell descriptions, excluding the current book type."""
+    is_standard_pt = current_book_type in _STANDARD_PT
+    is_guided_pt = current_book_type in _GUIDED_PT
+
     result = []
     for key, desc in SERIES_DESCRIPTIONS.items():
         if key == current_book_type:
             continue
-        # For practice tests, skip individual editions if current is any practice test
-        if key == "practice_tests" and current_book_type.endswith("_practice_tests"):
+        # Skip the aggregated standard-PT entry when current is a standard PT
+        if key == "practice_tests" and is_standard_pt:
             continue
-        if key.endswith("_practice_tests"):
+        # Skip the aggregated guided-PT entry when current is a guided PT
+        if key == "guided_practice_tests" and is_guided_pt:
             continue
         result.append(desc)
-    # Add practice tests as a combined entry (unless current is a practice test)
-    if not current_book_type.endswith("_practice_tests") and "practice_tests" in SERIES_DESCRIPTIONS:
-        pass  # already added above
-    elif current_book_type.endswith("_practice_tests"):
-        pass  # skip
     return result
 
 
