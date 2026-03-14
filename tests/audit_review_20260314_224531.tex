@@ -1,0 +1,69 @@
+\documentclass[12pt, fleqn, openany]{studyGuide}
+\setstretch{1.4}
+\enableInlineReview
+\renewcommand{\VMBookTitle}{Audit Review}
+\renewcommand{\VMBookSubtitle}{Grade 7 --- Ch Graphic Review --- Changed Questions}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\begin{document}
+
+\begin{center}
+\begin{tcolorbox}[
+	enhanced,
+	colback=white,
+	colframe=funTeal!60,
+	boxrule=1.5pt,
+	arc=10pt,
+	outer arc=10pt,
+	width=0.9\linewidth,
+	halign=center,
+	top=5mm, bottom=5mm,
+]
+	{\Large\bfseries\sffamily\color{funTealDark}Audit Review}\\[2mm]
+	{\large\sffamily\color{funGrayDark}Grade 7 --- Ch Graphic Review --- Changed Questions}\\[2mm]
+	{\normalsize\sffamily\color{funGrayDark}Verify corrections below}
+\end{tcolorbox}
+\end{center}
+
+\newpage
+\section*{8-4-q27 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch08-04-comparing-populations-with-measures.tex}}
+\begin{practiceQuestion}{8-4-q27}{gsa}
+\begin{questionText}
+The dot plots show the number of sit-ups completed by students in two fitness classes.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+  % --- Class A (solid circles) ---
+  \draw[thick,->] (14.5,0) -- (30,0);
+  \foreach \x in {15,...,29} \draw (\x,0.15) -- (\x,-0.15) node[below,font=\tiny] {$\x$};
+  % Class A: 16,18,18,20,20,20,22,22,24  sum=180 mean=20
+  \fill[funBlue] (16,0.5) circle (4pt);
+  \foreach \y in {1,2} \fill[funBlue] (18,0.1+\y*0.4) circle (4pt);
+  \foreach \y in {1,2,3} \fill[funBlue] (20,0.1+\y*0.4) circle (4pt);
+  \foreach \y in {1,2} \fill[funBlue] (22,0.1+\y*0.4) circle (4pt);
+  \fill[funBlue] (24,0.5) circle (4pt);
+  \node[funBlue,above] at (20,1.6) {\small Class A};
+
+  \begin{scope}[yshift=-4cm]
+    % --- Class B (open circles) ---
+    \draw[thick,->] (14.5,0) -- (30,0);
+    \foreach \x in {15,...,29} \draw (\x,0.15) -- (\x,-0.15) node[below,font=\tiny] {$\x$};
+    % Class B: 20,22,22,24,24,24,26,26,28  sum=216 mean=24
+    \draw[funRed,thick] (20,0.5) circle (4pt);
+    \foreach \y in {1,2} \draw[funRed,thick] (22,0.1+\y*0.4) circle (4pt);
+    \foreach \y in {1,2,3} \draw[funRed,thick] (24,0.1+\y*0.4) circle (4pt);
+    \foreach \y in {1,2} \draw[funRed,thick] (26,0.1+\y*0.4) circle (4pt);
+    \draw[funRed,thick] (28,0.5) circle (4pt);
+    \node[funRed,above] at (24,1.6) {\small Class B};
+    \node[below] at (22,-1.0) {Sit-ups};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+Find the mean for each class and the MAD for Class A. Then express the difference in means as a multiple of the MAD.
+\end{questionText}
+\correctAnswer{Class A mean $= 20$, Class B mean $= 24$; MAD of A $\approx 1.8$; difference $\approx 2.2$ MADs}
+\explanation{Class A: $\frac{16+18+18+20+20+20+22+22+24}{9} = \frac{180}{9} = 20$. Deviations: $4,2,2,0,0,0,2,2,4$; MAD $= \frac{16}{9} \approx 1.78$. Class B: $\frac{20+22+22+24+24+24+26+26+28}{9} = \frac{216}{9} = 24$. Difference: $\frac{24-20}{1.78} \approx 2.25$ MADs, suggesting a meaningful difference.}
+\end{practiceQuestion}
+
+\end{document}

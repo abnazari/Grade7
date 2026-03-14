@@ -1,0 +1,52 @@
+\documentclass[12pt, fleqn, openany]{studyGuide}
+\setstretch{1.4}
+\enableInlineReview
+\renewcommand{\VMBookTitle}{Audit Review}
+\renewcommand{\VMBookSubtitle}{Grade 7 --- Ch Graphic Review --- Changed Questions}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\begin{document}
+
+\begin{center}
+\begin{tcolorbox}[
+	enhanced,
+	colback=white,
+	colframe=funTeal!60,
+	boxrule=1.5pt,
+	arc=10pt,
+	outer arc=10pt,
+	width=0.9\linewidth,
+	halign=center,
+	top=5mm, bottom=5mm,
+]
+	{\Large\bfseries\sffamily\color{funTealDark}Audit Review}\\[2mm]
+	{\large\sffamily\color{funGrayDark}Grade 7 --- Ch Graphic Review --- Changed Questions}\\[2mm]
+	{\normalsize\sffamily\color{funGrayDark}Verify corrections below}
+\end{tcolorbox}
+\end{center}
+
+\newpage
+\section*{m-6-6-q25 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics\_modified/ch06-06-angle-relationships.tex}}
+\begin{practiceQuestion}{m-6-6-q25}{gsa}
+\begin{questionText}
+In the diagram, two parallel lines $\ell_1$ and $\ell_2$ are cut by a transversal $t$. Find the values of $a$ and $b$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+  % Parallel lines
+  \draw[thick] (-3,2) -- (4,2) node[right] {$\ell_1$};
+  \draw[thick] (-3,-1) -- (4,-1) node[right] {$\ell_2$};
+  % Transversal
+  \draw[thick] (-1,3.5) -- (2,-2.5) node[right] {$t$};
+  % Angle labels
+  \node at (1.2,2.4) {$a°$};
+  \node at (-0.8,1.6) {$115°$};
+  \node at (1.8,-0.5) {$b°$};
+\end{tikzpicture}
+\end{center}
+\end{questionText}
+\correctAnswer{$a = 115°$, $b = 115°$}
+\explanation{The $115°$ angle and angle $a$ are vertical angles at the top intersection, so $a = 115°$. Angle $b$ is corresponding to angle $a$ on the lower parallel line, so $b = 115°$.}
+\end{practiceQuestion}
+
+\end{document}

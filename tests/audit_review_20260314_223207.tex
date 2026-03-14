@@ -1,0 +1,70 @@
+\documentclass[12pt, fleqn, openany]{studyGuide}
+\setstretch{1.4}
+\enableInlineReview
+\renewcommand{\VMBookTitle}{Audit Review}
+\renewcommand{\VMBookSubtitle}{Grade 7 --- Ch Comparing Two Populations Visually --- Changed Questions}
+\renewcommand{\VMFooterURL}{https://viewmath.com/grade7}
+\renewcommand{\VMFooterURLDisplay}{ViewMath.com/Grade7}
+\begin{document}
+
+\begin{center}
+\begin{tcolorbox}[
+	enhanced,
+	colback=white,
+	colframe=funTeal!60,
+	boxrule=1.5pt,
+	arc=10pt,
+	outer arc=10pt,
+	width=0.9\linewidth,
+	halign=center,
+	top=5mm, bottom=5mm,
+]
+	{\Large\bfseries\sffamily\color{funTealDark}Audit Review}\\[2mm]
+	{\large\sffamily\color{funGrayDark}Grade 7 --- Ch Comparing Two Populations Visually --- Changed Questions}\\[2mm]
+	{\normalsize\sffamily\color{funGrayDark}Verify corrections below}
+\end{tcolorbox}
+\end{center}
+
+\newpage
+\section*{8-3-q27 \hfill \normalsize\texttt{tests\_questions\_bank\_2/topics/ch08-03-comparing-two-populations-visually.tex}}
+\begin{practiceQuestion}{8-3-q27}{gsa}
+\begin{questionText}
+The dot plots show hours of community service completed by members of two clubs.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+  % Club A number line
+  \draw[thick,->] (3.5,0) -- (14,0);
+  \foreach \x in {4,...,13} \draw (\x,0.15) -- (\x,-0.15) node[below,font=\tiny] {$\x$};
+  % Club A: 6,7,7,8,8,8,9,9,10 sum=72 mean=8
+  \fill[funBlue] (6,0.5) circle (4pt);
+  \foreach \y in {1,2} \fill[funBlue] (7,0.1+\y*0.4) circle (4pt);
+  \foreach \y in {1,2,3} \fill[funBlue] (8,0.1+\y*0.4) circle (4pt);
+  \foreach \y in {1,2} \fill[funBlue] (9,0.1+\y*0.4) circle (4pt);
+  \fill[funBlue] (10,0.5) circle (4pt);
+  \node[funBlue,above] at (8,1.6) {\small Club A};
+
+  \begin{scope}[yshift=-4cm]
+    % Club B number line
+    \draw[thick,->] (3.5,0) -- (14,0);
+    \foreach \x in {4,...,13} \draw (\x,0.15) -- (\x,-0.15) node[below,font=\tiny] {$\x$};
+    % Club B: 9,10,10,11,11,11,12,12,13 sum=99 mean=11
+    \fill[funRed] (9,0.5) circle (4pt);
+    \foreach \y in {1,2} \fill[funRed] (10,0.1+\y*0.4) circle (4pt);
+    \foreach \y in {1,2,3} \fill[funRed] (11,0.1+\y*0.4) circle (4pt);
+    \foreach \y in {1,2} \fill[funRed] (12,0.1+\y*0.4) circle (4pt);
+    \fill[funRed] (13,0.5) circle (4pt);
+    \node[funRed,above] at (11,1.6) {\small Club B};
+  \end{scope}
+
+  \node[below] at (8.5,-5.2) {Hours};
+\end{tikzpicture}
+\end{center}
+
+Find the mean for each club. Then find the MAD for Club A and express the difference in means as a multiple of the MAD.
+\end{questionText}
+\correctAnswer{Club A mean $= 8$, Club B mean $= 11$; MAD of Club A $\approx 0.9$; difference $\approx 3.4$ MADs}
+\explanation{Club A: $\frac{6+7+7+8+8+8+9+9+10}{9} = \frac{72}{9} = 8$. Deviations from $8$: $2,1,1,0,0,0,1,1,2$; MAD $= \frac{8}{9} \approx 0.89$. Club B mean: $\frac{9+10+10+11+11+11+12+12+13}{9} = \frac{99}{9} = 11$. Difference: $\frac{11-8}{0.89} \approx 3.4$ MADs, indicating a meaningful difference.}
+\end{practiceQuestion}
+
+\end{document}

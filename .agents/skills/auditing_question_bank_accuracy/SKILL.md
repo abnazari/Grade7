@@ -120,46 +120,42 @@ For each confirmed issue:
 
 ### Step 6: Validate with Audit Review PDF
 
-After editing, build a review PDF containing **only the changed files** so the user can visually verify the corrections.
+After editing, build a review PDF containing **only the changed questions** so the user can visually verify the corrections. Use the `build_audit_review.py` script, which has two subcommands: `add` to accumulate changed questions, and `open` to compile and display the PDF.
 
-#### 6a. Copy the audit-review template
+#### 6a. Add changed questions (call after each fix)
 
-```bash
-cp audit_review_template.tex tests/audit_review.tex
-```
-
-#### 6b. Insert the changed files
-
-Edit `tests/audit_review.tex`: between the `%%% INSERT CHANGED FILES BELOW %%%` and `%%% INSERT CHANGED FILES ABOVE %%%` comment markers, add one `\input{}` block per changed file. Use the same pattern as the chapter review documents:
-
-```latex
-\newpage
-\section*{1-1: Rational and Irrational Numbers}
-\input{tests_questions_bank_2/topics/ch01-01-rational-and-irrational-numbers}
-```
-
-Include **every** file you edited — no more, no less. The `\section*{}` title should indicate the bank (1 or 2) and subdirectory (core `topics/`, `topics_additional/`, or `topics_modified/`) so the user can trace each fix to its source.
-
-Question numbering resets automatically at each `\section*{}`.
-
-#### 6c. Compile the review PDF
+Each time you fix a question, immediately register it with the script. Pass the chapter title on the first call via `--chapter`; subsequent calls inherit it.
 
 ```bash
-cd /path/to/Grade7
-latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build tests/audit_review.tex
+# First call — include --chapter
+python3 scripts/build_audit_review.py add \
+    --chapter "Ratios and Proportional Relationships" \
+    tests_questions_bank_2/topics/ch01-02-recognizing-proportional-relationships.tex 1-2-q03 1-2-q15
+
+# Later calls — chapter is inherited
+python3 scripts/build_audit_review.py add \
+    tests_questions_bank_2/topics_additional/ch01-07-proportional-reasoning-with-scale-models.tex 1-7-q12
 ```
+
+The positional arguments are: a `.tex` file path (relative to workspace root) followed by the question IDs you changed in that file. Multiple files can be passed in one call. If you re-edit a question, just `add` it again — the script replaces the earlier version.
+
+The grade is read automatically from `config.py`.
+
+#### 6b. Open the review PDF (call once at the end)
+
+After all fixes are done:
+
+```bash
+python3 scripts/build_audit_review.py open
+```
+
+This generates `tests/audit_review.tex`, compiles it into `build/audit_review.pdf`, opens the PDF, and clears the accumulated data for the next audit.
+
+Each page shows one question with its ID and source file in the header, rendered with inline answer/explanation boxes.
 
 If compilation fails, check editor diagnostics on every changed file and fix any LaTeX syntax errors before retrying.
 
-#### 6d. Open the PDF for the user
-
-```bash
-open build/audit_review.pdf
-```
-
-This lets the user visually inspect every corrected question, its answer key, and explanation in rendered form.
-
-#### 6e. Report what you fixed
+#### 6c. Report what you fixed
 
 List each question ID, the file it lives in, what was wrong, and what you changed.
 

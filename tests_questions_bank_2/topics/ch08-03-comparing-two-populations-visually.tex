@@ -201,8 +201,8 @@ Group R has a mean of $36$ and a MAD of $5$. Group S has a mean of $46$. Express
 \begin{questionText}
 Team C: mean $65$, MAD $7$. Team D: mean $72$, MAD $7$. Is the difference in means meaningful? Justify using MADs.
 \end{questionText}
-\correctAnswer{Yes; the difference is $1$ MAD.}
-\explanation{Difference: $72 - 65 = 7$. In MADs: $\frac{7}{7} = 1$. A difference of $1$ MAD shows some separation, though there is still considerable overlap. Many guidelines consider $1$ MAD borderline.}
+\correctAnswer{No; the difference is $1$ MAD, so it is not clearly meaningful.}
+\explanation{Difference: $72 - 65 = 7$. In MADs: $\frac{7}{7} = 1$. A difference of $1$ MAD shows only modest separation with considerable overlap, so it is not usually considered a meaningful difference.}
 \end{practiceQuestion}
 
 \begin{practiceQuestion}{8-3-q18}{sa}
@@ -446,31 +446,36 @@ The dot plots show hours of community service completed by members of two clubs.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
+  % Club A number line
   \draw[thick,->] (3.5,0) -- (14,0);
   \foreach \x in {4,...,13} \draw (\x,0.15) -- (\x,-0.15) node[below,font=\tiny] {$\x$};
-  \node[below] at (8.5,-0.9) {Hours};
-  % Club A: 5,6,7,7,8,8,8,9,10 → mean=68/9≈7.56, use mean=8, MAD calculation
-  % Actually let me use: 5,6,7,7,8,8,8,9,10 sum=68 mean=68/9 not clean
-  % Use: 6,7,7,8,8,8,9,9,10 sum=72 mean=8
+  % Club A: 6,7,7,8,8,8,9,9,10 sum=72 mean=8
   \fill[funBlue] (6,0.5) circle (4pt);
   \foreach \y in {1,2} \fill[funBlue] (7,0.1+\y*0.4) circle (4pt);
   \foreach \y in {1,2,3} \fill[funBlue] (8,0.1+\y*0.4) circle (4pt);
   \foreach \y in {1,2} \fill[funBlue] (9,0.1+\y*0.4) circle (4pt);
   \fill[funBlue] (10,0.5) circle (4pt);
-  \node[funBlue,above] at (8,2) {\small Club A};
-  % Club B: 8,9,10,10,11,11,11,12,13 sum=95, not 9 values... 95/9 not clean
-  % Use: 9,10,10,11,11,11,12,12,13 sum=99 mean=11
-  \fill[funRed] (9,0.5) circle (4pt);
-  \foreach \y in {1,2} \fill[funRed] (10,0.1+\y*0.4) circle (4pt);
-  \foreach \y in {1,2,3} \fill[funRed] (11,0.1+\y*0.4) circle (4pt);
-  \foreach \y in {1,2} \fill[funRed] (12,0.1+\y*0.4) circle (4pt);
-  \fill[funRed] (13,0.5) circle (4pt);
-  \node[funRed,above] at (11,2) {\small Club B};
+  \node[funBlue,above] at (8,1.6) {\small Club A};
+
+  \begin{scope}[yshift=-4cm]
+    % Club B number line
+    \draw[thick,->] (3.5,0) -- (14,0);
+    \foreach \x in {4,...,13} \draw (\x,0.15) -- (\x,-0.15) node[below,font=\tiny] {$\x$};
+    % Club B: 9,10,10,11,11,11,12,12,13 sum=99 mean=11
+    \fill[funRed] (9,0.5) circle (4pt);
+    \foreach \y in {1,2} \fill[funRed] (10,0.1+\y*0.4) circle (4pt);
+    \foreach \y in {1,2,3} \fill[funRed] (11,0.1+\y*0.4) circle (4pt);
+    \foreach \y in {1,2} \fill[funRed] (12,0.1+\y*0.4) circle (4pt);
+    \fill[funRed] (13,0.5) circle (4pt);
+    \node[funRed,above] at (11,1.6) {\small Club B};
+  \end{scope}
+
+  \node[below] at (8.5,-5.2) {Hours};
 \end{tikzpicture}
 \end{center}
 
 Find the mean for each club. Then find the MAD for Club A and express the difference in means as a multiple of the MAD.
 \end{questionText}
-\correctAnswer{Club A mean $= 8$, Club B mean $= 11$; MAD of Club A $\approx 1.1$; difference $\approx 2.7$ MADs}
+\correctAnswer{Club A mean $= 8$, Club B mean $= 11$; MAD of Club A $\approx 0.9$; difference $\approx 3.4$ MADs}
 \explanation{Club A: $\frac{6+7+7+8+8+8+9+9+10}{9} = \frac{72}{9} = 8$. Deviations from $8$: $2,1,1,0,0,0,1,1,2$; MAD $= \frac{8}{9} \approx 0.89$. Club B mean: $\frac{9+10+10+11+11+11+12+12+13}{9} = \frac{99}{9} = 11$. Difference: $\frac{11-8}{0.89} \approx 3.4$ MADs, indicating a meaningful difference.}
 \end{practiceQuestion}

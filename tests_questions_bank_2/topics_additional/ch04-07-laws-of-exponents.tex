@@ -246,7 +246,7 @@ The diagram below shows an exponent rule machine. What is the output?
 \begin{center}
 \begin{tikzpicture}[scale=0.7]
   \node[draw, thick, rounded corners, fill=funBlue!15, minimum width=2.5cm, minimum height=1cm] (input) at (0,0) {Input: $6^5$};
-  \node[draw, thick, rounded corners, fill=funOrange!20, minimum width=3cm, minimum height=1.5cm] (machine) at (5,0) {MULTIPLY \\ by $6^3$};
+  \node[draw, thick, rounded corners, fill=funOrange!20, minimum width=3cm, minimum height=1.5cm, align=center] (machine) at (5,0) {MULTIPLY \\ by $6^3$};
   \node[draw, thick, rounded corners, fill=funGreen!15, minimum width=2.5cm, minimum height=1cm] (output) at (10,0) {Output: $?$};
   \draw[->, thick] (input) -- (machine);
   \draw[->, thick] (machine) -- (output);

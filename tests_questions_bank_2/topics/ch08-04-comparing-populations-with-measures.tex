@@ -148,7 +148,7 @@ Data set A: $20, 22, 24, 26, 28$. Data set B: $10, 18, 24, 30, 38$. Both sets ha
 \choiceC{They have the same IQR}
 \choiceD{IQR cannot be compared}
 \correctAnswer{B}
-\explanation{Set A: $Q_1 = 22$, $Q_3 = 26$, IQR $= 4$. Set B: $Q_1 = 18$, $Q_3 = 30$, IQR $= 12$. Set B has a much larger IQR, showing more variability.}
+\explanation{Set A: $Q_1 = 21$, $Q_3 = 27$, IQR $= 6$. Set B: $Q_1 = 14$, $Q_3 = 34$, IQR $= 20$. Set B has a much larger IQR, showing more variability.}
 \end{practiceQuestion}
 
 \begin{practiceQuestion}{8-4-q13}{mc}
@@ -403,28 +403,35 @@ The dot plots show the number of sit-ups completed by students in two fitness cl
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
+  % --- Class A (solid circles) ---
   \draw[thick,->] (14.5,0) -- (30,0);
   \foreach \x in {15,...,29} \draw (\x,0.15) -- (\x,-0.15) node[below,font=\tiny] {$\x$};
-  \node[below] at (22,-0.9) {Sit-ups};
-  % Fitness A: 16,18,18,20,20,20,22,22,24 mean=180/9=20
+  % Class A: 16,18,18,20,20,20,22,22,24  sum=180 mean=20
   \fill[funBlue] (16,0.5) circle (4pt);
   \foreach \y in {1,2} \fill[funBlue] (18,0.1+\y*0.4) circle (4pt);
   \foreach \y in {1,2,3} \fill[funBlue] (20,0.1+\y*0.4) circle (4pt);
   \foreach \y in {1,2} \fill[funBlue] (22,0.1+\y*0.4) circle (4pt);
   \fill[funBlue] (24,0.5) circle (4pt);
-  \node[funBlue,above] at (20,2) {\small Class A};
-  % Fitness B: 20,22,22,24,24,24,26,26,28 mean=216/9=24
-  \fill[funRed] (20,0.5) circle (4pt);
-  \foreach \y in {1,2} \fill[funRed] (22,0.1+\y*0.4) circle (4pt);
-  \foreach \y in {1,2,3} \fill[funRed] (24,0.1+\y*0.4) circle (4pt);
-  \foreach \y in {1,2} \fill[funRed] (26,0.1+\y*0.4) circle (4pt);
-  \fill[funRed] (28,0.5) circle (4pt);
-  \node[funRed,above] at (24,2) {\small Class B};
+  \node[funBlue,above] at (20,1.6) {\small Class A};
+
+  \begin{scope}[yshift=-4cm]
+    % --- Class B (open circles) ---
+    \draw[thick,->] (14.5,0) -- (30,0);
+    \foreach \x in {15,...,29} \draw (\x,0.15) -- (\x,-0.15) node[below,font=\tiny] {$\x$};
+    % Class B: 20,22,22,24,24,24,26,26,28  sum=216 mean=24
+    \draw[funRed,thick] (20,0.5) circle (4pt);
+    \foreach \y in {1,2} \draw[funRed,thick] (22,0.1+\y*0.4) circle (4pt);
+    \foreach \y in {1,2,3} \draw[funRed,thick] (24,0.1+\y*0.4) circle (4pt);
+    \foreach \y in {1,2} \draw[funRed,thick] (26,0.1+\y*0.4) circle (4pt);
+    \draw[funRed,thick] (28,0.5) circle (4pt);
+    \node[funRed,above] at (24,1.6) {\small Class B};
+    \node[below] at (22,-1.0) {Sit-ups};
+  \end{scope}
 \end{tikzpicture}
 \end{center}
 
 Find the mean for each class and the MAD for Class A. Then express the difference in means as a multiple of the MAD.
 \end{questionText}
-\correctAnswer{Class A mean $= 20$, Class B mean $= 24$; MAD of A $\approx 2.2$; difference $\approx 1.8$ MADs}
+\correctAnswer{Class A mean $= 20$, Class B mean $= 24$; MAD of A $\approx 1.8$; difference $\approx 2.2$ MADs}
 \explanation{Class A: $\frac{16+18+18+20+20+20+22+22+24}{9} = \frac{180}{9} = 20$. Deviations: $4,2,2,0,0,0,2,2,4$; MAD $= \frac{16}{9} \approx 1.78$. Class B: $\frac{20+22+22+24+24+24+26+26+28}{9} = \frac{216}{9} = 24$. Difference: $\frac{24-20}{1.78} \approx 2.25$ MADs, suggesting a meaningful difference.}
 \end{practiceQuestion}

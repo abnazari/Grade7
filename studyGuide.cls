@@ -18,6 +18,8 @@
 
 \usepackage{float}
 \usepackage[usenames, dvipsnames, svgnames, table]{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 \usepackage{calc}
 \usepackage{changepage}
 \usepackage{etoolbox}
