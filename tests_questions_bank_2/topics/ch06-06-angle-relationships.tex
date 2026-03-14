@@ -297,8 +297,8 @@ Two lines intersect as shown below. What is the value of $y$?
 \begin{tikzpicture}[scale=0.9]
   \draw[thick] (-3,-1.5) -- (3,1.5);
   \draw[thick] (-3,1.5) -- (3,-1.5);
-  \node at (1.5,0.8) {$(3y + 15)°$};
-  \node at (-1.8,-0.8) {$(5y - 25)°$};
+  \node at (2.0,0.15) {$(3y + 15)°$};
+  \node at (-2.2,-0.15) {$(5y - 25)°$};
 \end{tikzpicture}
 \end{center}
 \end{questionText}
@@ -319,17 +319,17 @@ In the diagram below, lines $\ell$ and $m$ intersect at point $P$. Find the meas
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
   \draw[thick] (-3,0) -- (3,0) node[right] {$\ell$};
-  \draw[thick] (-2,-2.5) -- (2,2.5) node[right] {$m$};
-  \node at (0,-0.3) {$P$};
-  \node at (1.2,0.5) {$a$};
-  \node at (-0.8,0.5) {$58°$};
-  \node at (-1.2,-0.5) {$b$};
-  \node at (0.8,-0.5) {$c$};
+  \draw[thick] ({-2.5*cos(58)},{-2.5*sin(58)}) -- ({2.5*cos(58)},{2.5*sin(58)}) node[right] {$m$};
+  \node at (0,-0.35) {$P$};
+  \node at (1.4,0.55) {$58°$};
+  \node at (-0.7,0.7) {$a$};
+  \node at (-1.4,-0.55) {$c$};
+  \node at (0.7,-0.7) {$b$};
 \end{tikzpicture}
 \end{center}
 \end{questionText}
-\correctAnswer{$a = 122°$, $b = 58°$, $c = 122°$}
-\explanation{Angle $a$ and the $58°$ angle are supplementary (linear pair): $a = 180° - 58° = 122°$. Angle $b$ is vertical to the $58°$ angle, so $b = 58°$. Angle $c$ is vertical to angle $a$, so $c = 122°$.}
+\correctAnswer{$a = 122°$, $b = 122°$, $c = 58°$}
+\explanation{Angle $a$ and the $58°$ angle are supplementary (linear pair), so $a = 180° - 58° = 122°$. Angle $b$ is vertical to angle $a$, so $b = 122°$. Angle $c$ is vertical to the $58°$ angle, so $c = 58°$.}
 \end{practiceQuestion}
 
 \begin{practiceQuestion}{6-6-q26}{gsa}

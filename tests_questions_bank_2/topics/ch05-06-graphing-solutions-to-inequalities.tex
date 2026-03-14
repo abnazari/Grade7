@@ -339,14 +339,14 @@ Solve $-2x + 5 > 11$ and graph the solution.
 A student scored at least $75$ on every test. The number line below shows the possible scores $s$. Write the inequality and state whether $75$ is included.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.06]
-  \draw[thick,->] (600,0) -- (1050,0);
+\begin{tikzpicture}[scale=0.6]
+  \draw[thick,->] (60,0) -- (105,0);
   \foreach \x in {65,70,...,100} {
-    \pgfmathsetmacro\pos{\x*10}
+    \pgfmathsetmacro\pos{\x}
     \draw (\pos,2) -- (\pos,-2) node[below] {$\x$};
   }
-  \draw[thick,funBlue,->] (750,0) -- (1050,0);
-  \fill[funBlue] (750,0) circle (60pt);
+  \draw[thick,funBlue,->] (75,0) -- (105,0);
+  \fill[funBlue] (75,0) circle (6pt);
 \end{tikzpicture}
 \end{center}
 \end{questionText}
