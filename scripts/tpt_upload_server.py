@@ -24,7 +24,7 @@ import os
 import re
 import subprocess
 import sys
-from datetime import date
+from datetime import datetime
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -38,6 +38,23 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from config import BOOK_TYPES, BOOK_DISPLAY_NAMES, find_workspace
+
+
+class RequestLogger:
+    """Append structured request events to a JSONL log file."""
+
+    def __init__(self, workspace: Path):
+        log_dir = workspace / "logs"
+        log_dir.mkdir(parents=True, exist_ok=True)
+        self.path = log_dir / "tpt_upload_server_requests.jsonl"
+
+    def write(self, **payload) -> None:
+        event = {
+            "timestamp": datetime.now().isoformat(timespec="seconds"),
+            **payload,
+        }
+        with self.path.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps(event, ensure_ascii=False) + "\n")
 
 
 # ============================================================================
@@ -99,6 +116,9 @@ class BookStore:
             entries = self._build_entries(bt)
             if entries:
                 self.books[bt] = entries
+
+        # Load bundles from bundles.json
+        self.bundles: Dict[str, List[dict]] = self._load_bundles()
 
     def _load_all_titles(self) -> list:
         titles_path = self.workspace / "titles.json"
@@ -191,6 +211,113 @@ class BookStore:
     def get_books(self, book_type: str) -> Optional[List[dict]]:
         return self.books.get(book_type)
 
+    def get_book_entry(self, book_type: str, state_slug: str) -> Optional[dict]:
+        for entry in self.books.get(book_type, []):
+            if entry.get("state_slug") == state_slug:
+                return entry
+        return None
+
+    def get_book_entry_by_filename(self, book_type: str, filename: str) -> Optional[dict]:
+        for entry in self.books.get(book_type, []):
+            if filename in {
+                entry.get("product_filename"),
+                entry.get("preview_filename"),
+                entry.get("description_filename"),
+            }:
+                return entry
+        return None
+
+    def lookup_by_tpt_title(self, tpt_title: str) -> Optional[dict]:
+        """Find a book entry by its TPT title (exact or fuzzy match).
+
+        Returns the enriched entry (with product_filename, etc.) if found.
+        """
+        tpt_title = tpt_title.strip()
+        # Exact match first
+        for bt, entries in self.books.items():
+            for entry in entries:
+                if entry.get("tpt_title", "").strip() == tpt_title:
+                    return entry
+        # Fallback: case-insensitive match
+        lower = tpt_title.lower()
+        for bt, entries in self.books.items():
+            for entry in entries:
+                if entry.get("tpt_title", "").strip().lower() == lower:
+                    return entry
+        return None
+
+    # ── Bundle helpers ─────────────────────────────────────────────────
+
+    def _load_bundles(self) -> Dict[str, List[dict]]:
+        """Load bundles from bundles.json grouped by bundle_type."""
+        bundles_path = self.workspace / "bundles.json"
+        if not bundles_path.is_file():
+            return {}
+
+        with open(bundles_path) as f:
+            all_bundles = json.load(f)
+
+        # Enrich each entry with file availability
+        grouped: Dict[str, List[dict]] = {}
+        for entry in all_bundles:
+            bt = entry.get("bundle_type", "")
+            files = entry.get("files", {})
+
+            # Check file existence
+            desc_path = self.workspace / files.get("description_html", "")
+            preview_path = self.workspace / files.get("preview_pdf", "")
+            thumbnails = files.get("thumbnails", [])
+
+            entry["has_description"] = desc_path.is_file()
+            entry["has_preview_pdf"] = preview_path.is_file()
+            entry["thumbnail_count"] = sum(
+                1 for t in thumbnails
+                if (self.workspace / t).is_file()
+            )
+            entry["has_all_thumbnails"] = (
+                entry["thumbnail_count"] == len(thumbnails) and len(thumbnails) > 0
+            )
+
+            if bt not in grouped:
+                grouped[bt] = []
+            grouped[bt].append(entry)
+
+        return grouped
+
+    def available_bundle_types(self) -> list:
+        """Return [{key, display_name, count}, …] for loaded bundle types."""
+        result = []
+        for bt, entries in self.bundles.items():
+            display = entries[0].get("display_name", bt) if entries else bt
+            result.append({
+                "key": bt,
+                "display_name": display,
+                "count": len(entries),
+            })
+        result.sort(key=lambda x: x["key"])
+        return result
+
+    def get_bundles(self, bundle_type: str) -> Optional[List[dict]]:
+        return self.bundles.get(bundle_type)
+
+    def get_bundle_entry(self, bundle_type: str, state_slug: str) -> Optional[dict]:
+        for entry in self.bundles.get(bundle_type, []):
+            if entry.get("state_slug") == state_slug:
+                return entry
+        return None
+
+    def get_bundle_entry_by_filename(self, bundle_type: str, filename: str) -> Optional[dict]:
+        for entry in self.bundles.get(bundle_type, []):
+            files = entry.get("files", {})
+            known_names = {
+                Path(files.get("description_html", "")).name,
+                Path(files.get("preview_pdf", "")).name,
+            }
+            known_names.update(Path(path).name for path in files.get("thumbnails", []))
+            if filename in known_names:
+                return entry
+        return None
+
 
 # ============================================================================
 # HTTP REQUEST HANDLER
@@ -200,6 +327,7 @@ class TPTHandler(BaseHTTPRequestHandler):
     """Stateless handler — serves book data and files."""
 
     store: BookStore  # set by the server factory
+    request_logger: RequestLogger
 
     def do_GET(self):
         parsed = urlparse(self.path)
@@ -207,17 +335,27 @@ class TPTHandler(BaseHTTPRequestHandler):
         params = parse_qs(parsed.query)
 
         if path == "/api/book-types":
+            self._log_request_event(200, "book_types")
             self._json_response(self.store.available_book_types())
 
         elif path == "/api/books":
             bt = params.get("type", [None])[0]
             if not bt:
+                self._log_request_event(400, "books_list", error="missing type")
                 self._error(400, "Missing ?type= parameter")
                 return
             books = self.store.get_books(bt)
             if books is None:
+                self._log_request_event(404, "books_list", book_type=bt, error="unknown book type")
                 self._error(404, f"Unknown book type: {bt}")
                 return
+            self._log_request_event(
+                200,
+                "books_list",
+                book_type=bt,
+                book_type_display=BOOK_DISPLAY_NAMES.get(bt, bt),
+                count=len(books),
+            )
             self._json_response({
                 "book_type": bt,
                 "book_type_display": BOOK_DISPLAY_NAMES.get(bt, bt),
@@ -236,6 +374,73 @@ class TPTHandler(BaseHTTPRequestHandler):
             parts = path.split("/", 4)
             if len(parts) >= 5:
                 self._serve_file(parts[3], parts[4])
+            else:
+                self._error(400, "Invalid path")
+
+        elif path == "/api/lookup":
+            title = params.get("title", [None])[0]
+            if not title:
+                self._log_request_event(400, "lookup", error="missing title")
+                self._error(400, "Missing ?title= parameter")
+                return
+            entry = self.store.lookup_by_tpt_title(title)
+            if not entry:
+                self._log_request_event(404, "lookup", requested_title=title, error="not found")
+                self._error(404, f"No book found for title: {title}")
+                return
+            self._log_request_event(
+                200,
+                "lookup",
+                requested_title=title,
+                book_type=entry.get("book_type"),
+                state_slug=entry.get("state_slug"),
+                state_name=entry.get("state_name"),
+                tpt_title=entry.get("tpt_title"),
+            )
+            self._json_response(entry)
+
+        elif path == "/api/bundle-types":
+            self._log_request_event(200, "bundle_types")
+            self._json_response(self.store.available_bundle_types())
+
+        elif path == "/api/bundles":
+            bt = params.get("type", [None])[0]
+            if not bt:
+                self._log_request_event(400, "bundles_list", error="missing type")
+                self._error(400, "Missing ?type= parameter")
+                return
+            bundles = self.store.get_bundles(bt)
+            if bundles is None:
+                self._log_request_event(404, "bundles_list", bundle_type=bt, error="unknown bundle type")
+                self._error(404, f"Unknown bundle type: {bt}")
+                return
+            self._log_request_event(
+                200,
+                "bundles_list",
+                bundle_type=bt,
+                display_name=bundles[0].get("display_name", bt) if bundles else bt,
+                count=len(bundles),
+            )
+            self._json_response({
+                "bundle_type": bt,
+                "display_name": bundles[0].get("display_name", bt) if bundles else bt,
+                "count": len(bundles),
+                "bundles": bundles,
+            })
+
+        elif path.startswith("/api/bundle-description/"):
+            # /api/bundle-description/<bundle_type>/<state_slug>
+            parts = path.split("/")
+            if len(parts) >= 5:
+                self._serve_bundle_description(parts[3], parts[4])
+            else:
+                self._error(400, "Invalid path")
+
+        elif path.startswith("/api/bundle-file/"):
+            # /api/bundle-file/<bundle_type>/<filename>
+            parts = path.split("/", 4)
+            if len(parts) >= 5:
+                self._serve_bundle_file(parts[3], parts[4])
             else:
                 self._error(400, "Invalid path")
 
@@ -266,10 +471,21 @@ class TPTHandler(BaseHTTPRequestHandler):
     def _error(self, status: int, message: str):
         self._json_response({"error": message}, status)
 
+    def _log_request_event(self, status: int, request_kind: str, **fields):
+        self.request_logger.write(
+            status=status,
+            request_kind=request_kind,
+            method=self.command,
+            path=self.path,
+            client_ip=self.client_address[0] if self.client_address else None,
+            **fields,
+        )
+
     def _serve_description(self, book_type: str, state_slug: str):
         """Serve description HTML file, stripping the comment lines at the top."""
         bt_cfg = BOOK_TYPES.get(book_type)
         if not bt_cfg:
+            self._log_request_event(404, "description", book_type=book_type, state_slug=state_slug, error="unknown book type")
             self._error(404, f"Unknown book type: {book_type}")
             return
 
@@ -281,8 +497,20 @@ class TPTHandler(BaseHTTPRequestHandler):
         desc_file = (output_dir / desc_name) if desc_name else None
 
         if not desc_file or not desc_file.is_file():
+            self._log_request_event(404, "description", book_type=book_type, state_slug=state_slug, filename=desc_name, error="not found")
             self._error(404, f"Description not found for {book_type}/{state_slug}")
             return
+
+        entry = self.store.get_book_entry(book_type, state_slug)
+        self._log_request_event(
+            200,
+            "description",
+            book_type=book_type,
+            state_slug=state_slug,
+            state_name=entry.get("state_name") if entry else None,
+            tpt_title=entry.get("tpt_title") if entry else None,
+            filename=desc_file.name,
+        )
 
         content = desc_file.read_text(encoding="utf-8")
         # Strip HTML comment lines at top
@@ -302,19 +530,139 @@ class TPTHandler(BaseHTTPRequestHandler):
     def _serve_file(self, book_type: str, filename: str):
         """Serve a file (PDF, etc.) from the final_output directory."""
         if ".." in filename or "/" in filename:
+            self._log_request_event(400, "book_file", book_type=book_type, filename=filename, error="invalid filename")
             self._error(400, "Invalid filename")
             return
 
         bt_cfg = BOOK_TYPES.get(book_type)
         if not bt_cfg:
+            self._log_request_event(404, "book_file", book_type=book_type, filename=filename, error="unknown book type")
             self._error(404, f"Unknown book type: {book_type}")
             return
 
         file_path = (self.store.workspace / "final_output"
                      / bt_cfg["output_subdir"] / filename)
         if not file_path.is_file():
+            self._log_request_event(404, "book_file", book_type=book_type, filename=filename, error="not found")
             self._error(404, f"File not found: {filename}")
             return
+
+        entry = self.store.get_book_entry_by_filename(book_type, filename)
+        file_role = "product_pdf"
+        if entry and filename == entry.get("preview_filename"):
+            file_role = "preview_pdf"
+        elif entry and filename == entry.get("description_filename"):
+            file_role = "description_html"
+        self._log_request_event(
+            200,
+            "book_file",
+            book_type=book_type,
+            state_slug=entry.get("state_slug") if entry else None,
+            state_name=entry.get("state_name") if entry else None,
+            tpt_title=entry.get("tpt_title") if entry else None,
+            filename=filename,
+            file_role=file_role,
+        )
+
+        mime_type, _ = mimetypes.guess_type(filename)
+        if not mime_type:
+            mime_type = "application/octet-stream"
+
+        file_size = file_path.stat().st_size
+        body = file_path.read_bytes()
+
+        self.send_response(200)
+        self.send_header("Content-Type", mime_type)
+        self.send_header("Content-Length", str(file_size))
+        self._cors_headers()
+        self.end_headers()
+        self.wfile.write(body)
+
+    def _serve_bundle_description(self, bundle_type: str, state_slug: str):
+        """Serve bundle description HTML file."""
+        bundles = self.store.get_bundles(bundle_type)
+        if bundles is None:
+            self._log_request_event(404, "bundle_description", bundle_type=bundle_type, state_slug=state_slug, error="unknown bundle type")
+            self._error(404, f"Unknown bundle type: {bundle_type}")
+            return
+
+        # Find the bundle entry for this state
+        entry = None
+        for b in bundles:
+            if b.get("state_slug") == state_slug:
+                entry = b
+                break
+        if not entry:
+            self._log_request_event(404, "bundle_description", bundle_type=bundle_type, state_slug=state_slug, error="bundle not found")
+            self._error(404, f"Bundle not found for {bundle_type}/{state_slug}")
+            return
+
+        desc_rel = entry.get("files", {}).get("description_html", "")
+        desc_path = self.store.workspace / desc_rel
+        if not desc_path.is_file():
+            self._log_request_event(404, "bundle_description", bundle_type=bundle_type, state_slug=state_slug, filename=Path(desc_rel).name, error="not found")
+            self._error(404, f"Description not found for {bundle_type}/{state_slug}")
+            return
+
+        self._log_request_event(
+            200,
+            "bundle_description",
+            bundle_type=bundle_type,
+            state_slug=state_slug,
+            state_name=entry.get("state_name"),
+            title=entry.get("title"),
+            filename=desc_path.name,
+        )
+
+        content = desc_path.read_text(encoding="utf-8")
+        # Strip HTML comment lines at top
+        lines = content.split("\n")
+        filtered = [l for l in lines
+                     if not (l.strip().startswith("<!--")
+                             and l.strip().endswith("-->"))]
+        content = "\n".join(filtered).strip()
+
+        body = content.encode("utf-8")
+        self.send_response(200)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self._cors_headers()
+        self.end_headers()
+        self.wfile.write(body)
+
+    def _serve_bundle_file(self, bundle_type: str, filename: str):
+        """Serve a file (PDF, JPEG, etc.) from a bundle's directory."""
+        if ".." in filename or "/" in filename:
+            self._log_request_event(400, "bundle_file", bundle_type=bundle_type, filename=filename, error="invalid filename")
+            self._error(400, "Invalid filename")
+            return
+
+        file_path = (self.store.workspace / "final_output"
+                     / "bundles" / bundle_type / filename)
+        if not file_path.is_file():
+            self._log_request_event(404, "bundle_file", bundle_type=bundle_type, filename=filename, error="not found")
+            self._error(404, f"File not found: {filename}")
+            return
+
+        entry = self.store.get_bundle_entry_by_filename(bundle_type, filename)
+        file_role = "bundle_file"
+        if entry:
+            files = entry.get("files", {})
+            if filename == Path(files.get("preview_pdf", "")).name:
+                file_role = "preview_pdf"
+            elif filename == Path(files.get("description_html", "")).name:
+                file_role = "description_html"
+            elif filename in [Path(path).name for path in files.get("thumbnails", [])]:
+                file_role = "thumbnail"
+        self._log_request_event(
+            200,
+            "bundle_file",
+            bundle_type=bundle_type,
+            state_slug=entry.get("state_slug") if entry else None,
+            state_name=entry.get("state_name") if entry else None,
+            title=entry.get("title") if entry else None,
+            filename=filename,
+            file_role=file_role,
+        )
 
         mime_type, _ = mimetypes.guess_type(filename)
         if not mime_type:
@@ -384,6 +732,7 @@ Examples:
     workspace = find_workspace()
     store = BookStore(workspace, book_type_filter=args.book_type,
                       date_filter=args.date)
+    request_logger = RequestLogger(workspace)
 
     if not store.books:
         print(f"\033[31mError:\033[0m No books found"
@@ -391,6 +740,7 @@ Examples:
         sys.exit(1)
 
     total_count = sum(len(v) for v in store.books.values())
+    total_bundles = sum(len(v) for v in store.bundles.values())
     print(f"\n\033[1m📚 TPT Upload Server\033[0m")
     if args.book_type:
         display = BOOK_DISPLAY_NAMES.get(args.book_type, args.book_type)
@@ -398,11 +748,15 @@ Examples:
     else:
         print(f"   Book types: {len(store.books)} loaded")
     print(f"   Books:      {total_count} total entries")
+    if total_bundles:
+        print(f"   Bundles:    {total_bundles} total entries"
+              f" ({len(store.bundles)} bundle types)")
     if args.date:
         print(f"   Date:       {args.date}  (pinned)")
     else:
         print(f"   Date:       newest available")
     print(f"   Server:     http://localhost:{args.port}")
+    print(f"   Request log: {request_logger.path.relative_to(workspace)}")
     print(f"\n   Open the TPT Upload Helper extension in Chrome to begin.\n")
 
     # Summarise missing files per book type
@@ -422,7 +776,11 @@ Examples:
             print(f"   \033[33m⚠ {display}:\033[0m missing {', '.join(parts)}")
     print()
 
-    handler_class = type("Handler", (TPTHandler,), {"store": store})
+    handler_class = type(
+        "Handler",
+        (TPTHandler,),
+        {"store": store, "request_logger": request_logger},
+    )
 
     class ReusableHTTPServer(HTTPServer):
         allow_reuse_address = True
