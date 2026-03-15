@@ -16,9 +16,11 @@
 % REQUIRED PACKAGES
 %----------------------------------------------------------------------------------------
 \RequirePackage{tikz}
+\usetikzlibrary{calc,decorations.text,shadows.blur}
 \RequirePackage{graphicx}
 \RequirePackage[paperwidth=7in, paperheight=7in, margin=0pt]{geometry}
 \RequirePackage{fontspec}
+\RequirePackage{eso-pic}
 \RequirePackage{etoolbox}   % \ifdefstring
 
 % No headers / footers / page numbers
@@ -44,6 +46,9 @@
 
 \newcommand{\theBundleStateNameRotation}{0}
 \newcommand{\BundleStateNameRotation}[1]{\renewcommand{\theBundleStateNameRotation}{#1}}
+
+\newcommand{\theBundleStateNameArc}{0}
+\newcommand{\BundleStateNameArc}[1]{\renewcommand{\theBundleStateNameArc}{#1}}
 
 \newcommand{\theBundleStateNameFontSize}{36}
 \newcommand{\BundleStateNameFontSize}[1]{\renewcommand{\theBundleStateNameFontSize}{#1}}
@@ -73,6 +78,8 @@
 \newfontface\@btFontComicNeue{ComicNeue-Bold.otf}[
     Path=/usr/local/texlive/2025/texmf-dist/fonts/opentype/rozynski/comicneue/]
 
+\newsavebox{\@btStateNameBox}
+
 % --- Resolve font style token → font switch ---
 \newcommand{\@resolveBTFont}{%
     \def\@btstyle{\theBundleStateNameFontStyle}%
@@ -87,6 +94,22 @@
     }}}}}}}%
 }
 
+% Pre-resolve font into a \let alias (safe inside tikzpicture/sbox).
+% Call once; then use \@btActiveFontCmd wherever the font is needed.
+\newcommand{\@btActiveFontCmd}{\@btFontNunitoBlack}
+\newcommand{\@btPreResolveFont}{%
+    \def\@btstyle{\theBundleStateNameFontStyle}%
+    \ifdefstring{\@btstyle}{bold-sans}{\global\let\@btActiveFontCmd\@btFontNunitoBlack}{%
+    \ifdefstring{\@btstyle}{helvetica}{\global\let\@btActiveFontCmd\@btFontHelvetica}{%
+    \ifdefstring{\@btstyle}{arial-rounded}{\global\let\@btActiveFontCmd\@btFontArialRounded}{%
+    \ifdefstring{\@btstyle}{chalkboard}{\global\let\@btActiveFontCmd\@btFontChalkboard}{%
+    \ifdefstring{\@btstyle}{nunito-xbold}{\global\let\@btActiveFontCmd\@btFontNunitoXBold}{%
+    \ifdefstring{\@btstyle}{comic-neue}{\global\let\@btActiveFontCmd\@btFontComicNeue}{%
+    \ifdefstring{\@btstyle}{custom}{\global\let\@btActiveFontCmd\theBundleStateNameCustomFont}{%
+        \global\let\@btActiveFontCmd\@btFontNunitoBlack
+    }}}}}}}%
+}
+
 %----------------------------------------------------------------------------------------
 % \placeCover{image-path}{x-offset}{y-offset}{width}
 %
@@ -95,8 +118,10 @@
 % The image is anchored at its south-west corner.
 %----------------------------------------------------------------------------------------
 \newcommand{\placeCover}[4]{%
-    \node[anchor=south west, inner sep=0] at
-        ([xshift=#2, yshift=#3]current page.south west)
+    \node[anchor=south west, inner sep=1.5pt, fill=white,
+          blur shadow={shadow xshift=3pt, shadow yshift=-3pt,
+                       shadow blur radius=5pt, shadow opacity=40}
+    ] at ([xshift=#2, yshift=#3]current page.south west)
         {\includegraphics[width=#4]{#1}};%
 }
 
@@ -117,22 +142,69 @@
 
 % Sub-command: draw the full-bleed background
 \newcommand{\makeBundleBackground}{%
-    \node[anchor=south west, inner sep=0] at (current page.south west) {%
-        \includegraphics[width=\paperwidth, height=\paperheight]{\theBundleBackground}%
-    };%
+    \AddToShipoutPictureBG*{%
+        \AtPageLowerLeft{%
+            \includegraphics[width=\paperwidth, height=\paperheight]{\theBundleBackground}%
+        }%
+    }%
 }
 
 % Sub-command: draw the state name overlay
+\newcommand{\@btBundleStateNameContent}{%
+    {\fontsize{\theBundleStateNameFontSize}{\theBundleStateNameBaselineSkip}\selectfont
+     \@resolveBTFont
+     \color{\theBundleStateNameColor}
+     \theBundleStateName}%
+}
+
 \newcommand{\makeBundleStateName}{%
-    \node[
-        anchor=center,
-        color=\theBundleStateNameColor,
-        rotate=\theBundleStateNameRotation
-    ] at ([xshift=\theBundleStateNameXOffset,
-           yshift=\theBundleStateNameYOffset]current page.south west) {%
-        {\fontsize{\theBundleStateNameFontSize}{\theBundleStateNameBaselineSkip}\selectfont
-         \@resolveBTFont \theBundleStateName}%
-    };%
+    \@btPreResolveFont
+    \pgfmathsetmacro{\@btArcMagnitude}{abs(\theBundleStateNameArc)}%
+    \ifdim \@btArcMagnitude pt < 0.01pt
+        \node[
+            anchor=center,
+            color=\theBundleStateNameColor,
+            rotate=\theBundleStateNameRotation
+        ] at ([xshift=\theBundleStateNameXOffset,
+               yshift=\theBundleStateNameYOffset]current page.south west) {%
+            \@btBundleStateNameContent
+        };%
+    \else
+        % Measure text width — \pgfinterruptpicture exits the tikzpicture
+        % context so fontspec face commands work correctly in the sbox.
+        \@btPreResolveFont
+        \setbox\@btStateNameBox\hbox{%
+            \pgfinterruptpicture
+            \fontsize{\theBundleStateNameFontSize}{\theBundleStateNameBaselineSkip}\selectfont
+            \@btActiveFontCmd
+            \theBundleStateName
+            \endpgfinterruptpicture
+        }%
+        \pgfmathsetlengthmacro{\@btArcTextWidth}{\the\wd\@btStateNameBox}%
+        \pgfmathsetlengthmacro{\@btArcHalfTextWidth}{0.5 * \@btArcTextWidth}%
+        \pgfmathsetlengthmacro{\@btArcQuarterTextWidth}{0.25 * \@btArcTextWidth}%
+        \pgfmathsetlengthmacro{\@btArcHeight}{\theBundleStateNameArc pt}%
+        \begin{scope}[
+            shift={([xshift=\theBundleStateNameXOffset,
+                     yshift=\theBundleStateNameYOffset]current page.south west)},
+            rotate=\theBundleStateNameRotation
+        ]
+            \fontsize{\theBundleStateNameFontSize}{\theBundleStateNameBaselineSkip}\selectfont
+            \@btActiveFontCmd
+            \path[
+                decorate,
+                decoration={
+                    text along path,
+                    text align=center,
+                    text color=\theBundleStateNameColor,
+                    text={\theBundleStateName}
+                }
+            ] (-\@btArcHalfTextWidth,0)
+                .. controls (-\@btArcQuarterTextWidth,\@btArcHeight)
+                and (\@btArcQuarterTextWidth,\@btArcHeight)
+                .. (\@btArcHalfTextWidth,0);
+        \end{scope}%
+    \fi
 }
 
 %----------------------------------------------------------------------------------------

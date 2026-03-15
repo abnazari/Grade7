@@ -36,6 +36,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -98,6 +99,64 @@ BUNDLE_DISPLAY_NAMES: Dict[str, str] = {
 }
 
 
+def ensure_bundle_background_exists(bundle_type: str) -> None:
+    """Fail fast if the derived bundle background image does not exist."""
+    bundle_name = bundle_type.removesuffix("_bundle")
+    image_path = WORKSPACE / "images" / "bundle_covers" / f"{bundle_name}.png"
+    if not image_path.exists():
+        raise FileNotFoundError(
+            f"Background image not found: {image_path.relative_to(WORKSPACE)}\n"
+            f"Expected bundle thumbnail background at images/bundle_covers/{bundle_name}.png"
+        )
+
+
+def expected_bundle_background_path(bundle_type: str) -> str:
+    """Return the required background path for a bundle template."""
+    bundle_name = bundle_type.removesuffix("_bundle")
+    return f"images/bundle_covers/{bundle_name}.png"
+
+
+def validate_template_assets(
+    bundle_type: str,
+    template_path: Path,
+    tex_source: str,
+    workspace: Path,
+) -> None:
+    """Fail fast with actionable errors if a template references missing image assets."""
+    missing_messages: List[str] = []
+
+    background_match = re.search(r"\\BundleBackground\{([^}]+)\}", tex_source)
+    expected_background = expected_bundle_background_path(bundle_type)
+    if not background_match:
+        missing_messages.append(
+            "Template background is missing. "
+            f"Set \\BundleBackground{{{expected_background}}} in {template_path.relative_to(workspace)}"
+        )
+    else:
+        actual_background = background_match.group(1)
+        if actual_background != expected_background:
+            missing_messages.append(
+                "Template background path is wrong. "
+                f"Set \\BundleBackground{{{expected_background}}} in {template_path.relative_to(workspace)}"
+            )
+
+    cover_paths = re.findall(r"\\placeCover\{([^}]+)\}", tex_source)
+    for cover_path_text in cover_paths:
+        cover_path = workspace / Path(cover_path_text)
+        if cover_path.exists():
+            continue
+        rel_path = cover_path.relative_to(workspace)
+        book_type = cover_path.parent.name
+        state_slug = cover_path.stem
+        missing_messages.append(
+            "Cover image missing. "
+            f"Put the {book_type} cover JPG for {state_slug} at {rel_path}"
+        )
+
+    if missing_messages:
+        raise FileNotFoundError("\n".join(missing_messages))
+
+
 # ── Template-based .tex generation ─────────────────────────────────────
 
 def generate_tex_from_template(
@@ -116,6 +175,8 @@ def generate_tex_from_template(
     source = template_path.read_text(encoding="utf-8")
     source = source.replace("INSERT-STATE-NAME-HERE", state_display_name)
     source = source.replace("INSERT-STATE-SLUG-HERE", state_slug)
+    ensure_bundle_background_exists(bundle_type)
+    validate_template_assets(bundle_type, template_path, source, WORKSPACE)
     return source
 
 
@@ -235,6 +296,100 @@ def convert_pdf_to_jpg(
     return output_jpg.exists()
 
 
+# ── Extra thumbnails (2-4): covers only, no background ────────────────
+
+PAGE_SIZE = 7.0  # inches — must match geometry in VMfunBundleThumbnail.sty
+COVER_ASPECT = 1.5  # height / width for typical book covers
+
+
+def extract_cover_paths(tex_source: str) -> List[str]:
+    """Extract cover image paths from \\placeCover commands in the template."""
+    return re.findall(r"\\placeCover\{([^}]+)\}", tex_source)
+
+
+def split_into_groups(items: List[str], n_groups: int = 3) -> List[List[str]]:
+    """Split items into *n_groups* as evenly as possible (front-loaded)."""
+    n = len(items)
+    groups: List[List[str]] = []
+    per = n // n_groups
+    rem = n % n_groups
+    idx = 0
+    for i in range(n_groups):
+        size = per + (1 if i < rem else 0)
+        groups.append(items[idx : idx + size])
+        idx += size
+    return groups
+
+
+def _cover_positions(n: int) -> Tuple[float, float, float]:
+    """Return (cover_width, gap, y_offset) for *n* covers in a row."""
+    margin = 0.6  # total horizontal margin
+    available = PAGE_SIZE - margin
+    if n == 1:
+        w = 3.0
+        gap = 0.0
+    else:
+        gap = 0.4
+        w = (available - (n - 1) * gap) / n
+        w = min(w, 3.0)
+    h = w * COVER_ASPECT
+    max_h = PAGE_SIZE - 1.0
+    if h > max_h:
+        h = max_h
+        w = h / COVER_ASPECT
+    y = (PAGE_SIZE - h) / 2
+    return (w, gap, y)
+
+
+def generate_covers_only_tex(cover_paths: List[str]) -> str:
+    """Generate a minimal .tex placing covers centred on an orange 7×7 page.
+
+    Uses simple LaTeX flow layout (not TikZ overlay) so that it renders
+    correctly in a single xelatex pass.
+    """
+    n = len(cover_paths)
+    if n == 0:
+        return ""
+
+    if n == 1:
+        cover_h = 6.0
+    elif n == 2:
+        cover_h = 5.5
+    else:
+        cover_h = 4.3
+
+    gap = 0.12  # inches between covers
+
+    lines = [
+        r"\documentclass[12pt]{article}",
+        r"\usepackage[paperwidth=7in, paperheight=7in, margin=0pt]{geometry}",
+        r"\usepackage{graphicx}",
+        r"\usepackage{xcolor}",
+        r"\pagestyle{empty}",
+        r"\setlength{\parindent}{0pt}",
+        r"\definecolor{bundlethumborange}{HTML}{F2A04B}",
+        "",
+        r"\begin{document}",
+        r"\pagecolor{bundlethumborange}",
+        r"\null\vfill",
+        r"\centering",
+    ]
+
+    img_parts = []
+    for path in cover_paths:
+        img_parts.append(f"\\includegraphics[height={cover_h:.1f}in]{{{path}}}")
+
+    separator = f"%\n\\hspace{{{gap:.1f}in}}%\n"
+    lines.append(r"\makebox[\paperwidth][c]{%")
+    lines.append(separator.join(img_parts))
+    lines.append(r"}%")
+    lines += [
+        r"\vfill",
+        r"\end{document}",
+    ]
+    return "\n".join(lines)
+
+
 # ── Full pipeline for one bundle × state ──────────────────────────────
 
 def process_one(
@@ -246,7 +401,7 @@ def process_one(
     """Read template, replace placeholders, compile, convert to JPG."""
     label = f"{bundle_type}/{state_slug}"
 
-    # 1) Generate .tex from template
+    # 1) Generate .tex from template (thumbnail 1 — main)
     try:
         tex_source = generate_tex_from_template(bundle_type, state_slug, state_display_name)
     except FileNotFoundError as e:
@@ -258,28 +413,47 @@ def process_one(
     tex_path = tex_dir / tex_name
     tex_path.write_text(tex_source, encoding="utf-8")
 
-    # 2) Compile
+    # 2) Compile thumbnail 1
     job_name, ok, msg = compile_thumbnail(tex_path, workspace)
     if not ok:
         return (label, False, msg)
 
     pdf_path = Path(msg)
 
-    # 3) Convert to JPG
+    # 3) Convert thumbnail 1 to JPG
     output_dir = OUTPUT_BASE / bundle_type
     output_jpg = output_dir / f"{state_slug}_thumbnail_1.jpeg"
-    if convert_pdf_to_jpg(pdf_path, output_jpg):
-        tex_rel = tex_path.relative_to(workspace)
-        pdf_rel = pdf_path.relative_to(workspace)
-        jpg_rel = output_jpg.relative_to(workspace)
-        success_message = (
-            f"tex: {tex_rel}\n"
-            f"       pdf: {pdf_rel}\n"
-            f"       jpg: {jpg_rel}"
-        )
-        return (label, True, success_message)
-    else:
+    if not convert_pdf_to_jpg(pdf_path, output_jpg):
         return (label, False, f"PDF→JPG conversion failed for {pdf_path}")
+
+    jpg_paths = [output_jpg.relative_to(workspace)]
+
+    # 4) Generate extra thumbnails 2-4 (covers only, white background)
+    cover_paths = extract_cover_paths(tex_source)
+    groups = split_into_groups(cover_paths, 3)
+
+    for thumb_idx, group in enumerate(groups, start=2):
+        if not group:
+            continue
+        extra_tex = generate_covers_only_tex(group)
+        extra_name = f"{bundle_type}_{state_slug}_thumb{thumb_idx}.tex"
+        extra_path = tex_dir / extra_name
+        extra_path.write_text(extra_tex, encoding="utf-8")
+
+        _, ok2, msg2 = compile_thumbnail(extra_path, workspace)
+        if ok2:
+            extra_jpg = output_dir / f"{state_slug}_thumbnail_{thumb_idx}.jpeg"
+            if convert_pdf_to_jpg(Path(msg2), extra_jpg):
+                jpg_paths.append(extra_jpg.relative_to(workspace))
+
+    tex_rel = tex_path.relative_to(workspace)
+    pdf_rel = pdf_path.relative_to(workspace)
+    success_message = (
+        f"tex: {tex_rel}\n"
+        f"       pdf: {pdf_rel}\n"
+        f"       jpg: {', '.join(str(p) for p in jpg_paths)}"
+    )
+    return (label, True, success_message)
 
 
 # ── Interactive prompts ────────────────────────────────────────────────

@@ -1,0 +1,43 @@
+% ============================================================================
+% Bundle Thumbnail: Practice Tests Bundle
+%
+% Compile:  xelatex -output-directory=build/bundle_thumbnails \
+%                    bundle_thumbnails/practice_tests_bundle.tex
+%
+% Contains: 3, 5, 7, 10 Practice Tests (4 covers)
+% Background image must exist at the path below.
+% Cover JPGs from final_output/covers_jpg/<book_type>/<state_slug>.jpg
+% ============================================================================
+\documentclass[12pt]{article}
+\usepackage{VM_packages/VMfunBundleThumbnail}
+
+% --- Background ---
+\BundleBackground{images/bundle_covers/practice_tests.png}
+
+% --- State name ---
+\BundleStateName{Wyoming}
+\BundleStateNameXOffset{3.5in}
+\BundleStateNameYOffset{5in}
+\BundleStateNameRotation{0}
+\BundleStateNameArc{0}
+\BundleStateNameFontSize{55}
+\BundleStateNameBaselineSkip{43}
+\BundleStateNameColor{white}
+\BundleStateNameFontStyle{bold-sans}
+
+\begin{document}
+\begin{bundlethumbnailpage}
+    % 1) Full-bleed background
+    \makeBundleBackground
+
+    % 2) Book covers — four across
+    %    First number: horizontal position. Second number: vertical position. Third number: cover height.
+    \placeCover{final_output/covers_jpg/3_practice_tests/wyoming.jpg}{0.03in}{1.2in}{2.3in}
+    \placeCover{final_output/covers_jpg/5_practice_tests/wyoming.jpg}{1.78in}{1.2in}{2.3in}
+    \placeCover{final_output/covers_jpg/7_practice_tests/wyoming.jpg}{3.53in}{1.2in}{2.3in}
+    \placeCover{final_output/covers_jpg/10_practice_tests/wyoming.jpg}{5.28in}{1.2in}{2.3in}
+
+    % 3) State name overlay (on top of everything)
+    \makeBundleStateName
+\end{bundlethumbnailpage}
+\end{document}

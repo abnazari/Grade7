@@ -1,0 +1,38 @@
+% PREVIEW — Practice Tests Bundle
+% Bundle preview — sample content from each book
+\documentclass[12pt, fleqn, openany]{studyGuide}
+
+% Line spacing for young readers
+\setstretch{1.4}
+
+% PREVIEW watermark on every page
+\usepackage{VM_packages/VMfunPreview}
+
+% Enable practice test answer collection
+\enablePracticeTestAnswers
+
+\begin{document}
+
+\pagenumbering{roman}
+\renewcommand{\VMBookTitle}{Grade 7 Math — Practice Tests Bundle}
+\renewcommand{\VMBookSubtitle}{Preview — Sample Pages from Every Book in This Bundle}
+\input{initial_pages/common/copyright_page}
+
+\tableofcontents
+\cleardoublepage
+\pagenumbering{arabic}
+
+% === Sample Practice Test ===
+\chapter{Sample: Practice Test}
+
+\practiceTestPage{1}{30}
+
+\input{practice_tests/wyoming/practice_test_01}
+
+\testScorePage{1}{30}
+
+\printAnswerKey
+
+\input{initial_pages/common/preview-cta-page}
+
+\end{document}
