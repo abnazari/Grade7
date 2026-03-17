@@ -37,7 +37,7 @@ _DATE_RE = re.compile(r'(\d{4}-\d{2}-\d{2})')
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 
-from config import BOOK_TYPES, BOOK_DISPLAY_NAMES, find_workspace
+from config import BOOK_TYPES, BOOK_DISPLAY_NAMES, GRADE_NUMBER, find_workspace
 
 
 class RequestLogger:
@@ -55,6 +55,18 @@ class RequestLogger:
         }
         with self.path.open("a", encoding="utf-8") as fh:
             fh.write(json.dumps(event, ensure_ascii=False) + "\n")
+
+
+# ============================================================================
+# GRADE ORDINAL HELPER
+# ============================================================================
+
+def _ordinal(n: int) -> str:
+    """Return ordinal string: 1→'1st', 2→'2nd', 3→'3rd', 7→'7th', etc."""
+    if 11 <= (n % 100) <= 13:
+        return f"{n}th"
+    suffix = {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
+    return f"{n}{suffix}"
 
 
 # ============================================================================
@@ -334,7 +346,16 @@ class TPTHandler(BaseHTTPRequestHandler):
         path = parsed.path
         params = parse_qs(parsed.query)
 
-        if path == "/api/book-types":
+        if path == "/api/grade-info":
+            ordinal = _ordinal(GRADE_NUMBER)
+            self._log_request_event(200, "grade_info")
+            self._json_response({
+                "grade_number": GRADE_NUMBER,
+                "grade_id": f"checkbox_{ordinal}-grade",
+                "grade_label": f"{ordinal} grade",
+            })
+
+        elif path == "/api/book-types":
             self._log_request_event(200, "book_types")
             self._json_response(self.store.available_book_types())
 
