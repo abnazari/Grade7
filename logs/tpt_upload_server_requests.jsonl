@@ -1,0 +1,21 @@
+{"timestamp": "2026-03-16T14:56:35", "status": 200, "request_kind": "book_types", "method": "GET", "path": "/api/book-types", "client_ip": "127.0.0.1"}
+{"timestamp": "2026-03-16T14:56:52", "status": 200, "request_kind": "book_types", "method": "GET", "path": "/api/book-types", "client_ip": "127.0.0.1"}
+{"timestamp": "2026-03-16T14:56:52", "status": 200, "request_kind": "book_types", "method": "GET", "path": "/api/book-types", "client_ip": "127.0.0.1"}
+{"timestamp": "2026-03-16T14:56:52", "status": 200, "request_kind": "books_list", "method": "GET", "path": "/api/books?type=3_practice_tests", "client_ip": "127.0.0.1", "book_type": "3_practice_tests", "book_type_display": "3 Practice Tests", "count": 50}
+{"timestamp": "2026-03-16T14:58:34", "status": 200, "request_kind": "books_list", "method": "GET", "path": "/api/books?type=3_practice_tests", "client_ip": "127.0.0.1", "book_type": "3_practice_tests", "book_type_display": "3 Practice Tests", "count": 50}
+{"timestamp": "2026-03-16T15:00:18", "status": 200, "request_kind": "bundle_types", "method": "GET", "path": "/api/bundle-types", "client_ip": "127.0.0.1"}
+{"timestamp": "2026-03-16T15:00:18", "status": 200, "request_kind": "bundles_list", "method": "GET", "path": "/api/bundles?type=activities_assessments_bundle", "client_ip": "127.0.0.1", "bundle_type": "activities_assessments_bundle", "display_name": "Activities & Assessments Bundle", "count": 50}
+{"timestamp": "2026-03-16T15:09:42", "status": 200, "request_kind": "book_types", "method": "GET", "path": "/api/book-types", "client_ip": "127.0.0.1"}
+{"timestamp": "2026-03-16T15:09:42", "status": 200, "request_kind": "book_types", "method": "GET", "path": "/api/book-types", "client_ip": "127.0.0.1"}
+{"timestamp": "2026-03-16T15:09:42", "status": 200, "request_kind": "bundle_types", "method": "GET", "path": "/api/bundle-types", "client_ip": "127.0.0.1"}
+{"timestamp": "2026-03-16T15:09:43", "status": 200, "request_kind": "books_list", "method": "GET", "path": "/api/books?type=3_practice_tests", "client_ip": "127.0.0.1", "book_type": "3_practice_tests", "book_type_display": "3 Practice Tests", "count": 50}
+{"timestamp": "2026-03-16T15:09:54", "status": 200, "request_kind": "bundles_list", "method": "GET", "path": "/api/bundles?type=practice_tests_bundle", "client_ip": "127.0.0.1", "bundle_type": "practice_tests_bundle", "display_name": "Practice Tests Bundle", "count": 50}
+{"timestamp": "2026-03-16T15:11:04", "status": 200, "request_kind": "book_types", "method": "GET", "path": "/api/book-types", "client_ip": "127.0.0.1"}
+{"timestamp": "2026-03-16T15:11:04", "status": 200, "request_kind": "book_types", "method": "GET", "path": "/api/book-types", "client_ip": "127.0.0.1"}
+{"timestamp": "2026-03-16T15:11:04", "status": 200, "request_kind": "bundle_types", "method": "GET", "path": "/api/bundle-types", "client_ip": "127.0.0.1"}
+{"timestamp": "2026-03-16T15:11:04", "status": 200, "request_kind": "bundles_list", "method": "GET", "path": "/api/bundles?type=practice_tests_bundle", "client_ip": "127.0.0.1", "bundle_type": "practice_tests_bundle", "display_name": "Practice Tests Bundle", "count": 50}
+{"timestamp": "2026-03-16T15:11:32", "status": 404, "request_kind": "bundle_file", "method": "GET", "path": "/api/bundle-file/practice_tests_bundle/undefined", "client_ip": "127.0.0.1", "bundle_type": "practice_tests_bundle", "filename": "undefined", "error": "not found"}
+{"timestamp": "2026-03-16T15:12:44", "status": 200, "request_kind": "book_types", "method": "GET", "path": "/api/book-types", "client_ip": "127.0.0.1"}
+{"timestamp": "2026-03-16T15:12:44", "status": 200, "request_kind": "book_types", "method": "GET", "path": "/api/book-types", "client_ip": "127.0.0.1"}
+{"timestamp": "2026-03-16T15:12:44", "status": 200, "request_kind": "bundle_types", "method": "GET", "path": "/api/bundle-types", "client_ip": "127.0.0.1"}
+{"timestamp": "2026-03-16T15:12:44", "status": 200, "request_kind": "bundles_list", "method": "GET", "path": "/api/bundles?type=practice_tests_bundle", "client_ip": "127.0.0.1", "bundle_type": "practice_tests_bundle", "display_name": "Practice Tests Bundle", "count": 50}
